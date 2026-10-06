@@ -52,7 +52,7 @@ A running total of fair-play penalties. **Starts at 0, only goes up, lower is be
 |---|---|---|
 | Started a player on their NFL team's bye (and they scored 0) | 10 each | NFL schedule + weekly player teams |
 | Started a player listed **Out** on the official NFL injury report (and they scored 0) | 8 each | NFL injury report (all seasons) |
-| Empty starting slot | 5 each | Matchups |
+| Empty starting slot | 0 (tracked only; a tactic, D22) | Matchups |
 | Started a player listed **Questionable** who then didn't play and scored 0 | 6 each | NFL report + Sleeper weekly stats |
 | Started a player listed **Doubtful** on the report (and they scored 0) | 3 each | NFL injury report (all seasons) |
 | Out/Doubtful at a game-day snapshot and still in the final lineup | same as above | Game-day snapshots (live weeks) |

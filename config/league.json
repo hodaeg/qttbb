@@ -11,7 +11,7 @@
   ],
   "tegridy": {
     "weights": {
-      "empty_slot": 5,
+      "empty_slot": 0,
       "injured_starter_out": 8,
       "injured_starter_doubtful": 3,
       "bye_week_starter": 10,

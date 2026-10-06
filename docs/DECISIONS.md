@@ -56,7 +56,7 @@ Named by the owner (a South Park reference). **Starts at 0, only goes up; higher
 - Output renamed: `<season>/tegridy.json` (lowest first), plus `tegridy_alltime.json`.
 - Replaced `integrity.json`; removed the `points_left` penalty and `efficiency_bonus` entirely.
 **Observation:** results are heavily skewed toward few penalties: all-time, 2 of 12 managers have 0, and the max is 45 (TheBoarHouse). Of 195 total penalty points: Out 96, empty slot 50, bye 40, Doubtful 9.
-**Open:** whether *empty slots* belong here. They're a new category (8 instances), not discussed with the owner, and may be a lineup-skill issue rather than a fairness one.
+**Resolved by D22:** empty slots do not count.
 
 ### D10 — Optimal-lineup math validated against Sleeper — Accepted
 Our "best possible lineup" matches Sleeper's own `ppts` field exactly for all 12 rosters (2026, weeks 1–4). Dedicated slots are filled first, then flex slots.
@@ -137,6 +137,12 @@ Applied to each penalty: `penalty = base_penalty x multiplier`. Events record `b
 Effect on all-time totals (before -> after): TheBoarHouse 57 -> 82, BigDogsRevenge 36 -> 53.5, therealGandB 27 -> 34.75, ChinaKing 22 -> 28, gabroni 10 -> 17.5, Hodaeg 14 (unchanged), others small.
 Interpretation note: "2 or less" was read as 1-2 weeks out and "4-3" as 3-4 weeks out, so the last regular-season week counts as 1 week out.
 
+### D22 — Empty starting slots no longer count — Accepted
+Owner's ruling: leaving a slot empty is a **tactic**, not a fair-play violation. Example: a manager who has already clinched the win (BigDogsRevenge 2023 playoffs, TheBoarHouse 2022 playoffs) leaves slots empty so a bad game can't cost them points. That is also why it shows up mostly in the playoffs.
+`empty_slot` weight is now **0**. It is still recorded (`empty_slots` in `weeks.json`) but produces no penalty. Resolves the open question from D16.
+Effect: removed 8 penalties (all-time before -> after, with timing multipliers): TheBoarHouse 82 -> 57, BigDogsRevenge 53.5 -> 33.5, gabroni 17.5 -> 0, ToadLicker 7.5 -> 0, MrSeeYou 21 -> 16, therealGandB 34.75 -> 29.75.
+Note: this makes the score cleaner: every remaining penalty is "played someone who wasn't playing" (injured, inactive, or on bye).
+
 ---
 
 ## Infrastructure
@@ -149,6 +155,6 @@ Interpretation note: "2 or less" was read as 1-2 weeks out and "4-3" as 3-4 week
 ## Open questions
 
 1. Which protected rivalry pairs, and do they carry stakes? (D7)
-2. Final Tegridy weights, whether empty slots count, and does the score have consequences? (D9, D16)
+2. Final Tegridy weights, and does the score have consequences? (D9, D16)
 3. ~~Sunday-inactives source for the Questionable→Out gap~~ — mostly closed by D18; revisit only if the active-but-didn't-play ambiguity becomes a problem.
 4. Front-end contract: does the Figma design need any fields the JSON doesn't have yet?

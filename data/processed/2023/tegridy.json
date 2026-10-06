@@ -92,26 +92,10 @@
     "multiplier": 1.75,
     "penalty": 17.5,
     "week": 13
-   },
-   {
-    "base_penalty": 5,
-    "detail": "1 empty starting slot(s)",
-    "kind": "empty_slot",
-    "multiplier": 2.0,
-    "penalty": 10.0,
-    "week": 16
-   },
-   {
-    "base_penalty": 5,
-    "detail": "1 empty starting slot(s)",
-    "kind": "empty_slot",
-    "multiplier": 2.0,
-    "penalty": 10.0,
-    "week": 17
    }
   ],
   "owner_id": "471083964757438464",
   "roster_id": 5,
-  "tegridy_factor": 37.5
+  "tegridy_factor": 17.5
  }
 ]

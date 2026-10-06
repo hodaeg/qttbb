@@ -19,6 +19,12 @@
  },
  {
   "events": [],
+  "owner_id": "79761560662589440",
+  "roster_id": 4,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
   "owner_id": "471345530597797888",
   "roster_id": 6,
   "tegridy_factor": 0
@@ -36,6 +42,12 @@
   "tegridy_factor": 0
  },
  {
+  "events": [],
+  "owner_id": "471368473092550656",
+  "roster_id": 12,
+  "tegridy_factor": 0
+ },
+ {
   "events": [
    {
     "base_penalty": 3,
@@ -49,21 +61,6 @@
   "owner_id": "422102738889867264",
   "roster_id": 7,
   "tegridy_factor": 4.5
- },
- {
-  "events": [
-   {
-    "base_penalty": 5,
-    "detail": "1 empty starting slot(s)",
-    "kind": "empty_slot",
-    "multiplier": 1.0,
-    "penalty": 5.0,
-    "week": 1
-   }
-  ],
-  "owner_id": "471368473092550656",
-  "roster_id": 12,
-  "tegridy_factor": 5.0
  },
  {
   "events": [
@@ -94,21 +91,6 @@
   "owner_id": "471360899853053952",
   "roster_id": 9,
   "tegridy_factor": 8.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 10,
-    "detail": "2 empty starting slot(s)",
-    "kind": "empty_slot",
-    "multiplier": 1.75,
-    "penalty": 17.5,
-    "week": 14
-   }
-  ],
-  "owner_id": "79761560662589440",
-  "roster_id": 4,
-  "tegridy_factor": 17.5
  },
  {
   "events": [
