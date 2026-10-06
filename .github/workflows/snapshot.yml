@@ -24,6 +24,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - id: day
+        run: echo "d=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+      - name: Cache NFL player DB (fetched at most once a day)
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: players-${{ steps.day.outputs.d }}
+          restore-keys: players-
       - run: python scripts/snapshot.py
       - name: Commit snapshot
         run: |

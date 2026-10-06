@@ -1,0 +1,5843 @@
+{
+ "1": [
+  {
+   "bench_misses": [
+    {
+     "bench": "5000",
+     "bench_pts": 11.0,
+     "slot": "RB",
+     "started": "4137",
+     "started_pts": 2.7
+    },
+    {
+     "bench": "3157",
+     "bench_pts": 15.2,
+     "slot": "WR",
+     "started": "4983",
+     "started_pts": 7.4
+    },
+    {
+     "bench": "3157",
+     "bench_pts": 15.2,
+     "slot": "WR",
+     "started": "5927",
+     "started_pts": 8.6
+    },
+    {
+     "bench": "3157",
+     "bench_pts": 15.2,
+     "slot": "FLEX",
+     "started": "1067",
+     "started_pts": 7.5
+    }
+   ],
+   "efficiency": 0.8336,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 96.74,
+   "points": 80.64,
+   "points_left": 16.1,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6845",
+     "bench_pts": 10.2,
+     "slot": "RB",
+     "started": "1848",
+     "started_pts": 6.7
+    },
+    {
+     "bench": "6845",
+     "bench_pts": 10.2,
+     "slot": "FLEX",
+     "started": "4663",
+     "started_pts": 9.2
+    }
+   ],
+   "efficiency": 0.9659,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 102.62,
+   "points": 99.12,
+   "points_left": 3.5,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2588",
+     "bench_pts": 24.5,
+     "slot": "RB",
+     "started": "3198",
+     "started_pts": 14.6
+    },
+    {
+     "bench": "2588",
+     "bench_pts": 24.5,
+     "slot": "RB",
+     "started": "2320",
+     "started_pts": 13.1
+    },
+    {
+     "bench": "1825",
+     "bench_pts": 8.6,
+     "slot": "WR",
+     "started": "2078",
+     "started_pts": 3.7
+    },
+    {
+     "bench": "2588",
+     "bench_pts": 24.5,
+     "slot": "FLEX",
+     "started": "1339",
+     "started_pts": 9.3
+    }
+   ],
+   "efficiency": 0.8555,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 139.08,
+   "points": 118.98,
+   "points_left": 20.1,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4984",
+     "bench_pts": 26.18,
+     "slot": "QB",
+     "started": "4017",
+     "started_pts": 20.82
+    },
+    {
+     "bench": "2161",
+     "bench_pts": 11.9,
+     "slot": "RB",
+     "started": "4988",
+     "started_pts": 4.1
+    },
+    {
+     "bench": "2238",
+     "bench_pts": 16.0,
+     "slot": "WR",
+     "started": "4039",
+     "started_pts": 6.0
+    },
+    {
+     "bench": "2238",
+     "bench_pts": 16.0,
+     "slot": "WR",
+     "started": "4951",
+     "started_pts": 10.0
+    },
+    {
+     "bench": "2238",
+     "bench_pts": 16.0,
+     "slot": "FLEX",
+     "started": "956",
+     "started_pts": 2.9
+    }
+   ],
+   "efficiency": 0.768,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 128.28,
+   "points": 98.52,
+   "points_left": 29.76,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4962",
+     "bench_pts": 9.7,
+     "slot": "RB",
+     "started": "5052",
+     "started_pts": 9.2
+    }
+   ],
+   "efficiency": 0.9345,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 119.1,
+   "points": 111.3,
+   "points_left": 7.8,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2410",
+     "bench_pts": 21.0,
+     "slot": "WR",
+     "started": "3199",
+     "started_pts": 3.2
+    },
+    {
+     "bench": "2410",
+     "bench_pts": 21.0,
+     "slot": "WR",
+     "started": "2309",
+     "started_pts": 13.1
+    },
+    {
+     "bench": "367",
+     "bench_pts": 10.5,
+     "slot": "TE",
+     "started": "3271",
+     "started_pts": 5.5
+    },
+    {
+     "bench": "2410",
+     "bench_pts": 21.0,
+     "slot": "FLEX",
+     "started": "4098",
+     "started_pts": 9.1
+    }
+   ],
+   "efficiency": 0.7541,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 114.7,
+   "points": 86.5,
+   "points_left": 28.2,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5848",
+     "bench_pts": 12.6,
+     "slot": "WR",
+     "started": "4037",
+     "started_pts": 10.9
+    }
+   ],
+   "efficiency": 0.9861,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 122.2,
+   "points": 120.5,
+   "points_left": 1.7,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1817",
+     "bench_pts": 18.0,
+     "slot": "WR",
+     "started": "5038",
+     "started_pts": 6.5
+    },
+    {
+     "bench": "1817",
+     "bench_pts": 18.0,
+     "slot": "FLEX",
+     "started": "2197",
+     "started_pts": 3.0
+    }
+   ],
+   "efficiency": 0.8735,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 137.54,
+   "points": 120.14,
+   "points_left": 17.4,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6806",
+     "bench_pts": 14.2,
+     "slot": "RB",
+     "started": "4018",
+     "started_pts": 4.6
+    },
+    {
+     "bench": "6806",
+     "bench_pts": 14.2,
+     "slot": "RB",
+     "started": "6813",
+     "started_pts": 11.9
+    },
+    {
+     "bench": "6149",
+     "bench_pts": 25.2,
+     "slot": "WR",
+     "started": "3321",
+     "started_pts": 13.1
+    },
+    {
+     "bench": "6149",
+     "bench_pts": 25.2,
+     "slot": "WR",
+     "started": "5846",
+     "started_pts": 17.5
+    },
+    {
+     "bench": "6149",
+     "bench_pts": 25.2,
+     "slot": "FLEX",
+     "started": "5892",
+     "started_pts": 7.9
+    }
+   ],
+   "efficiency": 0.7373,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 102.4,
+   "points": 75.5,
+   "points_left": 26.9,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 131.86,
+   "points": 131.86,
+   "points_left": 0.0,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "CHI"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2216",
+     "bench_pts": 6.7,
+     "slot": "WR",
+     "started": "5859",
+     "started_pts": 6.4
+    },
+    {
+     "bench": "2216",
+     "bench_pts": 6.7,
+     "slot": "FLEX",
+     "started": "1479",
+     "started_pts": 5.7
+    }
+   ],
+   "efficiency": 0.9855,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 82.86,
+   "points": 81.66,
+   "points_left": 1.2,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1502",
+     "bench_pts": 1.6,
+     "slot": "RB",
+     "started": "5068",
+     "started_pts": 1.4
+    },
+    {
+     "bench": "6786",
+     "bench_pts": 8.4,
+     "slot": "FLEX",
+     "started": "1110",
+     "started_pts": 7.3
+    }
+   ],
+   "efficiency": 0.9911,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 146.8,
+   "points": 145.5,
+   "points_left": 1.3,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "10": [
+  {
+   "bench_misses": [
+    {
+     "bench": "4983",
+     "bench_pts": 17.6,
+     "slot": "WR",
+     "started": "5927",
+     "started_pts": 12.7
+    },
+    {
+     "bench": "4602",
+     "bench_pts": 4.8,
+     "slot": "TE",
+     "started": "616",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "4983",
+     "bench_pts": 17.6,
+     "slot": "FLEX",
+     "started": "5000",
+     "started_pts": 9.2
+    },
+    {
+     "bench": "LAR",
+     "bench_pts": 13.0,
+     "slot": "DEF",
+     "started": "GB",
+     "started_pts": 8.0
+    }
+   ],
+   "efficiency": 0.865,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 134.8,
+   "points": 116.6,
+   "points_left": 18.2,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "616"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "3327",
+     "bench_pts": 11.2,
+     "slot": "RB",
+     "started": "3969",
+     "started_pts": 4.0
+    },
+    {
+     "bench": "3327",
+     "bench_pts": 11.2,
+     "slot": "RB",
+     "started": "6845",
+     "started_pts": 2.2
+    },
+    {
+     "bench": "4036",
+     "bench_pts": 9.2,
+     "slot": "WR",
+     "started": "6059",
+     "started_pts": 1.3
+    },
+    {
+     "bench": "3327",
+     "bench_pts": 11.2,
+     "slot": "FLEX",
+     "started": "4039",
+     "started_pts": 7.5
+    }
+   ],
+   "efficiency": 0.8272,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 97.82,
+   "points": 80.92,
+   "points_left": 16.9,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5248",
+     "bench_pts": 7.8,
+     "slot": "RB",
+     "started": "2320",
+     "started_pts": 4.6
+    },
+    {
+     "bench": "6803",
+     "bench_pts": 16.2,
+     "slot": "WR",
+     "started": "1825",
+     "started_pts": 4.4
+    },
+    {
+     "bench": "6803",
+     "bench_pts": 16.2,
+     "slot": "FLEX",
+     "started": "4950",
+     "started_pts": 4.7
+    }
+   ],
+   "efficiency": 0.7728,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 79.22,
+   "points": 61.22,
+   "points_left": 18.0,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5947",
+     "bench_pts": 13.36,
+     "slot": "WR",
+     "started": "3225",
+     "started_pts": 7.1
+    },
+    {
+     "bench": "5947",
+     "bench_pts": 13.36,
+     "slot": "WR",
+     "started": "2238",
+     "started_pts": 10.2
+    },
+    {
+     "bench": "LAC",
+     "bench_pts": 3.0,
+     "slot": "DEF",
+     "started": "WAS",
+     "started_pts": -1.0
+    }
+   ],
+   "efficiency": 0.9239,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 134.82,
+   "points": 124.56,
+   "points_left": 10.26,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6801",
+     "bench_pts": 18.0,
+     "slot": "WR",
+     "started": "6794",
+     "started_pts": 17.5
+    },
+    {
+     "bench": "4066",
+     "bench_pts": 2.5,
+     "slot": "TE",
+     "started": "5844",
+     "started_pts": 2.3
+    },
+    {
+     "bench": "6801",
+     "bench_pts": 18.0,
+     "slot": "FLEX",
+     "started": "1352",
+     "started_pts": 6.1
+    }
+   ],
+   "efficiency": 0.8924,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 112.46,
+   "points": 100.36,
+   "points_left": 12.1,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "3451"
+   ]
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 59.54,
+   "points": 59.54,
+   "points_left": 0.0,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "367"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4994",
+     "bench_pts": 12.7,
+     "slot": "RB",
+     "started": "6130",
+     "started_pts": 1.5
+    },
+    {
+     "bench": "536",
+     "bench_pts": 10.1,
+     "slot": "WR",
+     "started": "2374",
+     "started_pts": 9.1
+    }
+   ],
+   "efficiency": 0.9187,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 150.04,
+   "points": 137.84,
+   "points_left": 12.2,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 91.26,
+   "points": 91.26,
+   "points_left": 0.0,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4147",
+     "bench_pts": 6.0,
+     "slot": "RB",
+     "started": "6806",
+     "started_pts": 1.9
+    },
+    {
+     "bench": "4147",
+     "bench_pts": 6.0,
+     "slot": "RB",
+     "started": "6813",
+     "started_pts": 4.7
+    }
+   ],
+   "efficiency": 0.9529,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 86.98,
+   "points": 82.88,
+   "points_left": 4.1,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "138",
+     "bench_pts": 29.32,
+     "slot": "QB",
+     "started": "3163",
+     "started_pts": 9.48
+    },
+    {
+     "bench": "5022",
+     "bench_pts": 5.3,
+     "slot": "TE",
+     "started": "5857",
+     "started_pts": 3.3
+    }
+   ],
+   "efficiency": 0.8399,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 136.42,
+   "points": 114.58,
+   "points_left": 21.84,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2588",
+     "bench_pts": 18.1,
+     "slot": "RB",
+     "started": "4137",
+     "started_pts": 5.8
+    },
+    {
+     "bench": "2588",
+     "bench_pts": 18.1,
+     "slot": "RB",
+     "started": "5916",
+     "started_pts": 9.8
+    },
+    {
+     "bench": "2588",
+     "bench_pts": 18.1,
+     "slot": "FLEX",
+     "started": "6783",
+     "started_pts": 8.8
+    }
+   ],
+   "efficiency": 0.7568,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 99.08,
+   "points": 74.98,
+   "points_left": 24.1,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 96.6,
+   "points": 96.6,
+   "points_left": 0.0,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "11": [
+  {
+   "bench_misses": [
+    {
+     "bench": "5000",
+     "bench_pts": 12.9,
+     "slot": "RB",
+     "started": "6151",
+     "started_pts": 6.6
+    },
+    {
+     "bench": "4983",
+     "bench_pts": 18.3,
+     "slot": "WR",
+     "started": "3157",
+     "started_pts": 11.0
+    },
+    {
+     "bench": "4983",
+     "bench_pts": 18.3,
+     "slot": "WR",
+     "started": "5927",
+     "started_pts": 10.9
+    },
+    {
+     "bench": "4381",
+     "bench_pts": 23.22,
+     "slot": "TE",
+     "started": "4602",
+     "started_pts": 12.9
+    },
+    {
+     "bench": "4381",
+     "bench_pts": 23.22,
+     "slot": "FLEX",
+     "started": "3242",
+     "started_pts": 14.0
+    }
+   ],
+   "efficiency": 0.8077,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 139.96,
+   "points": 113.04,
+   "points_left": 26.92,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4036",
+     "bench_pts": 13.8,
+     "slot": "WR",
+     "started": "6059",
+     "started_pts": 1.3
+    },
+    {
+     "bench": "4036",
+     "bench_pts": 13.8,
+     "slot": "FLEX",
+     "started": "3969",
+     "started_pts": 9.1
+    }
+   ],
+   "efficiency": 0.897,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 121.36,
+   "points": 108.86,
+   "points_left": 12.5,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6798",
+     "bench_pts": 7.2,
+     "slot": "WR",
+     "started": "1825",
+     "started_pts": 3.6
+    },
+    {
+     "bench": "6798",
+     "bench_pts": 7.2,
+     "slot": "WR",
+     "started": "1067",
+     "started_pts": 7.1
+    },
+    {
+     "bench": "6798",
+     "bench_pts": 7.2,
+     "slot": "FLEX",
+     "started": "4950",
+     "started_pts": 7.0
+    }
+   ],
+   "efficiency": 0.9726,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 131.34,
+   "points": 127.74,
+   "points_left": 3.6,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 104.32,
+   "points": 104.32,
+   "points_left": 0.0,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 118.44,
+   "points": 118.44,
+   "points_left": 0.0,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6908",
+     "bench_pts": 9.3,
+     "slot": "RB",
+     "started": "4098",
+     "started_pts": 8.6
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 17.8,
+     "slot": "WR",
+     "started": "3199",
+     "started_pts": 14.9
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 17.8,
+     "slot": "WR",
+     "started": "2309",
+     "started_pts": 11.1
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 17.8,
+     "slot": "FLEX",
+     "started": "3423",
+     "started_pts": 8.1
+    },
+    {
+     "bench": "BUF",
+     "bench_pts": 0.0,
+     "slot": "DEF",
+     "started": "NE",
+     "started_pts": -1.0
+    }
+   ],
+   "efficiency": 0.8458,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 99.9,
+   "points": 84.5,
+   "points_left": 15.4,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 101.84,
+   "points": 101.84,
+   "points_left": 0.0,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 0.9486,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 120.52,
+   "points": 114.32,
+   "points_left": 6.2,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6806",
+     "bench_pts": 17.5,
+     "slot": "RB",
+     "started": "5347",
+     "started_pts": 6.8
+    },
+    {
+     "bench": "6806",
+     "bench_pts": 17.5,
+     "slot": "RB",
+     "started": "6813",
+     "started_pts": 13.4
+    },
+    {
+     "bench": "6806",
+     "bench_pts": 17.5,
+     "slot": "FLEX",
+     "started": "4171",
+     "started_pts": 4.7
+    }
+   ],
+   "efficiency": 0.8793,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 106.04,
+   "points": 93.24,
+   "points_left": 12.8,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "4973",
+    "KC"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5857",
+     "bench_pts": 7.5,
+     "slot": "FLEX",
+     "started": "184",
+     "started_pts": 1.8
+    }
+   ],
+   "efficiency": 0.9488,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 111.28,
+   "points": 105.58,
+   "points_left": 5.7,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1049",
+     "bench_pts": 19.86,
+     "slot": "QB",
+     "started": "24",
+     "started_pts": 5.28
+    },
+    {
+     "bench": "2588",
+     "bench_pts": 3.3,
+     "slot": "RB",
+     "started": "5916",
+     "started_pts": 1.9
+    },
+    {
+     "bench": "830",
+     "bench_pts": 12.1,
+     "slot": "FLEX",
+     "started": "3664",
+     "started_pts": 7.4
+    }
+   ],
+   "efficiency": 0.8003,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 124.06,
+   "points": 99.28,
+   "points_left": 24.78,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6786",
+     "bench_pts": 14.6,
+     "slot": "WR",
+     "started": "947",
+     "started_pts": 4.9
+    },
+    {
+     "bench": "6786",
+     "bench_pts": 14.6,
+     "slot": "FLEX",
+     "started": "1386",
+     "started_pts": 7.5
+    },
+    {
+     "bench": "IND",
+     "bench_pts": 8.0,
+     "slot": "DEF",
+     "started": "MIA",
+     "started_pts": 1.0
+    }
+   ],
+   "efficiency": 0.8559,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 116.56,
+   "points": 99.76,
+   "points_left": 16.8,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "12": [
+  {
+   "bench_misses": [
+    {
+     "bench": "3242",
+     "bench_pts": 22.8,
+     "slot": "RB",
+     "started": "6151",
+     "started_pts": 5.2
+    },
+    {
+     "bench": "4381",
+     "bench_pts": 16.52,
+     "slot": "TE",
+     "started": "4602",
+     "started_pts": 15.2
+    },
+    {
+     "bench": "3242",
+     "bench_pts": 22.8,
+     "slot": "FLEX",
+     "started": "4983",
+     "started_pts": 8.1
+    },
+    {
+     "bench": "503",
+     "bench_pts": 13.0,
+     "slot": "K",
+     "started": "7062",
+     "started_pts": 2.0
+    }
+   ],
+   "efficiency": 0.8052,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 190.06,
+   "points": 153.04,
+   "points_left": 37.02,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4036",
+     "bench_pts": 8.5,
+     "slot": "WR",
+     "started": "4039",
+     "started_pts": 5.1
+    },
+    {
+     "bench": "4036",
+     "bench_pts": 8.5,
+     "slot": "WR",
+     "started": "2449",
+     "started_pts": 7.4
+    },
+    {
+     "bench": "4036",
+     "bench_pts": 8.5,
+     "slot": "FLEX",
+     "started": "6845",
+     "started_pts": 7.8
+    },
+    {
+     "bench": "TB",
+     "bench_pts": -1.0,
+     "slot": "DEF",
+     "started": "IND",
+     "started_pts": -6.0
+    }
+   ],
+   "efficiency": 0.8933,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 85.32,
+   "points": 76.22,
+   "points_left": 9.1,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "4144"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5248",
+     "bench_pts": 7.0,
+     "slot": "RB",
+     "started": "2320",
+     "started_pts": 3.1
+    },
+    {
+     "bench": "1825",
+     "bench_pts": 24.3,
+     "slot": "WR",
+     "started": "4950",
+     "started_pts": 3.4
+    },
+    {
+     "bench": "1825",
+     "bench_pts": 24.3,
+     "slot": "WR",
+     "started": "1067",
+     "started_pts": 7.8
+    },
+    {
+     "bench": "1825",
+     "bench_pts": 24.3,
+     "slot": "FLEX",
+     "started": "7210",
+     "started_pts": -2.78
+    },
+    {
+     "bench": "BAL",
+     "bench_pts": 9.0,
+     "slot": "DEF",
+     "started": "CLE",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.6488,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 133.5,
+   "points": 86.62,
+   "points_left": 46.88,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "CLE"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5947",
+     "bench_pts": 7.7,
+     "slot": "WR",
+     "started": "3225",
+     "started_pts": 3.0
+    },
+    {
+     "bench": "5947",
+     "bench_pts": 7.7,
+     "slot": "FLEX",
+     "started": "5850",
+     "started_pts": 2.9
+    }
+   ],
+   "efficiency": 0.9429,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 134.78,
+   "points": 127.08,
+   "points_left": 7.7,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4066",
+     "bench_pts": 12.9,
+     "slot": "TE",
+     "started": "5844",
+     "started_pts": 11.4
+    },
+    {
+     "bench": "4066",
+     "bench_pts": 12.9,
+     "slot": "FLEX",
+     "started": "1352",
+     "started_pts": 12.3
+    }
+   ],
+   "efficiency": 0.949,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 104.02,
+   "points": 98.72,
+   "points_left": 5.3,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "138",
+     "bench_pts": 12.54,
+     "slot": "QB",
+     "started": "954",
+     "started_pts": 3.96
+    },
+    {
+     "bench": "3423",
+     "bench_pts": 17.4,
+     "slot": "WR",
+     "started": "2319",
+     "started_pts": 14.9
+    },
+    {
+     "bench": "3423",
+     "bench_pts": 17.4,
+     "slot": "FLEX",
+     "started": "3199",
+     "started_pts": 7.1
+    },
+    {
+     "bench": "BUF",
+     "bench_pts": 6.0,
+     "slot": "DEF",
+     "started": "DAL",
+     "started_pts": 1.0
+    }
+   ],
+   "efficiency": 0.7816,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 109.34,
+   "points": 85.46,
+   "points_left": 23.88,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1476",
+     "bench_pts": 24.1,
+     "slot": "RB",
+     "started": "6156",
+     "started_pts": 10.8
+    },
+    {
+     "bench": "1476",
+     "bench_pts": 24.1,
+     "slot": "RB",
+     "started": "4035",
+     "started_pts": 5.7
+    },
+    {
+     "bench": "5185",
+     "bench_pts": 10.3,
+     "slot": "WR",
+     "started": "536",
+     "started_pts": 2.1
+    },
+    {
+     "bench": "1476",
+     "bench_pts": 24.1,
+     "slot": "FLEX",
+     "started": "2374",
+     "started_pts": 3.8
+    }
+   ],
+   "efficiency": 0.723,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 113.72,
+   "points": 82.22,
+   "points_left": 31.5,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4149",
+     "bench_pts": 13.3,
+     "slot": "RB",
+     "started": "3164",
+     "started_pts": 1.4
+    },
+    {
+     "bench": "4149",
+     "bench_pts": 13.3,
+     "slot": "RB",
+     "started": "4273",
+     "started_pts": 12.9
+    },
+    {
+     "bench": "4149",
+     "bench_pts": 13.3,
+     "slot": "FLEX",
+     "started": "2197",
+     "started_pts": 11.0
+    }
+   ],
+   "efficiency": 0.8896,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 107.78,
+   "points": 95.88,
+   "points_left": 11.9,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 156.24,
+   "points": 156.24,
+   "points_left": 0.0,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2749",
+     "bench_pts": 8.3,
+     "slot": "RB",
+     "started": "4029",
+     "started_pts": 7.2
+    }
+   ],
+   "efficiency": 0.9913,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 126.2,
+   "points": 125.1,
+   "points_left": 1.1,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 104.64,
+   "points": 104.64,
+   "points_left": 0.0,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 103.9,
+   "points": 103.9,
+   "points_left": 0.0,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "13": [
+  {
+   "bench_misses": [
+    {
+     "bench": "5000",
+     "bench_pts": 5.3,
+     "slot": "RB",
+     "started": "6945",
+     "started_pts": 1.4
+    },
+    {
+     "bench": "5000",
+     "bench_pts": 5.3,
+     "slot": "RB",
+     "started": "6151",
+     "started_pts": 3.1
+    },
+    {
+     "bench": "5007",
+     "bench_pts": 18.1,
+     "slot": "WR",
+     "started": "6886",
+     "started_pts": 4.8
+    },
+    {
+     "bench": "5007",
+     "bench_pts": 18.1,
+     "slot": "WR",
+     "started": "5927",
+     "started_pts": 2.4
+    },
+    {
+     "bench": "4381",
+     "bench_pts": 20.58,
+     "slot": "TE",
+     "started": "4602",
+     "started_pts": 11.9
+    },
+    {
+     "bench": "4381",
+     "bench_pts": 20.58,
+     "slot": "FLEX",
+     "started": "3242",
+     "started_pts": 12.8
+    },
+    {
+     "bench": "LAR",
+     "bench_pts": 14.0,
+     "slot": "DEF",
+     "started": "GB",
+     "started_pts": 12.0
+    }
+   ],
+   "efficiency": 0.663,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 115.98,
+   "points": 76.9,
+   "points_left": 39.08,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5170",
+     "bench_pts": 2.6,
+     "slot": "RB",
+     "started": "6820",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.9716,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 91.64,
+   "points": 89.04,
+   "points_left": 2.6,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "6820"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5248",
+     "bench_pts": 10.1,
+     "slot": "RB",
+     "started": "3198",
+     "started_pts": 4.4
+    },
+    {
+     "bench": "6803",
+     "bench_pts": 18.0,
+     "slot": "WR",
+     "started": "1825",
+     "started_pts": 16.44
+    },
+    {
+     "bench": "6803",
+     "bench_pts": 18.0,
+     "slot": "FLEX",
+     "started": "6819",
+     "started_pts": 7.1
+    }
+   ],
+   "efficiency": 0.8677,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 125.46,
+   "points": 108.86,
+   "points_left": 16.6,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "3225",
+     "bench_pts": 13.7,
+     "slot": "WR",
+     "started": "4981",
+     "started_pts": 13.3
+    },
+    {
+     "bench": "3225",
+     "bench_pts": 13.7,
+     "slot": "WR",
+     "started": "4951",
+     "started_pts": 5.1
+    },
+    {
+     "bench": "3225",
+     "bench_pts": 13.7,
+     "slot": "FLEX",
+     "started": "3209",
+     "started_pts": 5.6
+    }
+   ],
+   "efficiency": 0.9293,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 121.6,
+   "points": 113.0,
+   "points_left": 8.6,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4881",
+     "bench_pts": 24.68,
+     "slot": "QB",
+     "started": "3163",
+     "started_pts": 24.14
+    }
+   ],
+   "efficiency": 0.9957,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 125.08,
+   "points": 124.54,
+   "points_left": 0.54,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2325",
+     "bench_pts": 5.8,
+     "slot": "WR",
+     "started": "2319",
+     "started_pts": 5.5
+    }
+   ],
+   "efficiency": 0.9975,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 117.8,
+   "points": 117.5,
+   "points_left": 0.3,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6130",
+     "bench_pts": 9.8,
+     "slot": "RB",
+     "started": "1476",
+     "started_pts": 2.7
+    },
+    {
+     "bench": "6130",
+     "bench_pts": 9.8,
+     "slot": "FLEX",
+     "started": "5185",
+     "started_pts": 6.5
+    }
+   ],
+   "efficiency": 0.9321,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 104.54,
+   "points": 97.44,
+   "points_left": 7.1,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "943"
+   ]
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 0.9986,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 142.82,
+   "points": 142.62,
+   "points_left": 0.2,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6813",
+     "bench_pts": 21.0,
+     "slot": "RB",
+     "started": "5347",
+     "started_pts": 10.7
+    },
+    {
+     "bench": "6813",
+     "bench_pts": 21.0,
+     "slot": "FLEX",
+     "started": "4150",
+     "started_pts": 13.5
+    }
+   ],
+   "efficiency": 0.8604,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 103.86,
+   "points": 89.36,
+   "points_left": 14.5,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5857",
+     "bench_pts": 7.7,
+     "slot": "FLEX",
+     "started": "1848",
+     "started_pts": 1.6
+    }
+   ],
+   "efficiency": 0.9392,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 100.4,
+   "points": 94.3,
+   "points_left": 6.1,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5916",
+     "bench_pts": 14.4,
+     "slot": "RB",
+     "started": "6156",
+     "started_pts": 2.0
+    },
+    {
+     "bench": "5916",
+     "bench_pts": 14.4,
+     "slot": "RB",
+     "started": "5980",
+     "started_pts": 12.1
+    },
+    {
+     "bench": "1110",
+     "bench_pts": 21.0,
+     "slot": "WR",
+     "started": "1479",
+     "started_pts": 7.3
+    },
+    {
+     "bench": "1110",
+     "bench_pts": 21.0,
+     "slot": "WR",
+     "started": "5859",
+     "started_pts": 6.7
+    },
+    {
+     "bench": "1110",
+     "bench_pts": 21.0,
+     "slot": "FLEX",
+     "started": "5848",
+     "started_pts": 12.4
+    }
+   ],
+   "efficiency": 0.73,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 115.56,
+   "points": 84.36,
+   "points_left": 31.2,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2382",
+     "bench_pts": 6.2,
+     "slot": "RB",
+     "started": "1386",
+     "started_pts": 3.9
+    }
+   ],
+   "efficiency": 0.9808,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 119.72,
+   "points": 117.42,
+   "points_left": 2.3,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "14": [
+  {
+   "bench_misses": [
+    {
+     "bench": "4175",
+     "bench_pts": 9.1,
+     "slot": "WR",
+     "started": "6886",
+     "started_pts": 3.0
+    },
+    {
+     "bench": "4175",
+     "bench_pts": 9.1,
+     "slot": "WR",
+     "started": "5927",
+     "started_pts": 3.4
+    },
+    {
+     "bench": "4381",
+     "bench_pts": 17.94,
+     "slot": "TE",
+     "started": "4602",
+     "started_pts": 12.1
+    },
+    {
+     "bench": "4381",
+     "bench_pts": 17.94,
+     "slot": "FLEX",
+     "started": "5007",
+     "started_pts": 6.9
+    }
+   ],
+   "efficiency": 0.8642,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 152.04,
+   "points": 131.4,
+   "points_left": 20.64,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 0.9804,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 122.76,
+   "points": 120.36,
+   "points_left": 2.4,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5248",
+     "bench_pts": 17.8,
+     "slot": "RB",
+     "started": "2320",
+     "started_pts": 10.6
+    },
+    {
+     "bench": "6803",
+     "bench_pts": 16.9,
+     "slot": "WR",
+     "started": "1825",
+     "started_pts": 6.68
+    },
+    {
+     "bench": "6803",
+     "bench_pts": 16.9,
+     "slot": "WR",
+     "started": "1067",
+     "started_pts": 6.8
+    },
+    {
+     "bench": "5248",
+     "bench_pts": 17.8,
+     "slot": "FLEX",
+     "started": "6819",
+     "started_pts": 5.5
+    }
+   ],
+   "efficiency": 0.8369,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 138.04,
+   "points": 115.52,
+   "points_left": 22.52,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4622",
+     "bench_pts": 16.2,
+     "slot": "WR",
+     "started": "4951",
+     "started_pts": 2.6
+    },
+    {
+     "bench": "BUF",
+     "bench_pts": 15.0,
+     "slot": "DEF",
+     "started": "IND",
+     "started_pts": 10.0
+    }
+   ],
+   "efficiency": 0.8518,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 125.52,
+   "points": 106.92,
+   "points_left": 18.6,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 97.12,
+   "points": 97.12,
+   "points_left": 0.0,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2325",
+     "bench_pts": 18.5,
+     "slot": "WR",
+     "started": "3199",
+     "started_pts": 12.4
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 18.5,
+     "slot": "WR",
+     "started": "2309",
+     "started_pts": 13.1
+    },
+    {
+     "bench": "4993",
+     "bench_pts": 21.0,
+     "slot": "TE",
+     "started": "515",
+     "started_pts": 6.7
+    },
+    {
+     "bench": "4993",
+     "bench_pts": 21.0,
+     "slot": "FLEX",
+     "started": "3423",
+     "started_pts": 13.7
+    }
+   ],
+   "efficiency": 0.8552,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 140.9,
+   "points": 120.5,
+   "points_left": 20.4,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6130",
+     "bench_pts": 3.9,
+     "slot": "RB",
+     "started": "6039",
+     "started_pts": 1.6
+    },
+    {
+     "bench": "536",
+     "bench_pts": 7.4,
+     "slot": "WR",
+     "started": "4037",
+     "started_pts": 3.5
+    },
+    {
+     "bench": "536",
+     "bench_pts": 7.4,
+     "slot": "WR",
+     "started": "1689",
+     "started_pts": 5.4
+    }
+   ],
+   "efficiency": 0.9255,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 83.24,
+   "points": 77.04,
+   "points_left": 6.2,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1817",
+     "bench_pts": 6.2,
+     "slot": "WR",
+     "started": "4068",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.935,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 101.52,
+   "points": 94.92,
+   "points_left": 6.6,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "4068"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6938",
+     "bench_pts": 20.4,
+     "slot": "FLEX",
+     "started": "4150",
+     "started_pts": 8.8
+    }
+   ],
+   "efficiency": 0.9234,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 151.52,
+   "points": 139.92,
+   "points_left": 11.6,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6790",
+     "bench_pts": 13.0,
+     "slot": "RB",
+     "started": "2749",
+     "started_pts": 8.0
+    },
+    {
+     "bench": "6790",
+     "bench_pts": 13.0,
+     "slot": "FLEX",
+     "started": "2216",
+     "started_pts": 7.1
+    },
+    {
+     "bench": "ARI",
+     "bench_pts": 24.0,
+     "slot": "DEF",
+     "started": "NO",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.7681,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 128.96,
+   "points": 99.06,
+   "points_left": 29.9,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "NO"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "3300",
+     "bench_pts": 6.2,
+     "slot": "RB",
+     "started": "4137",
+     "started_pts": 0.8
+    }
+   ],
+   "efficiency": 0.9494,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 106.78,
+   "points": 101.38,
+   "points_left": 5.4,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2382",
+     "bench_pts": 5.9,
+     "slot": "RB",
+     "started": "1386",
+     "started_pts": 0.8
+    }
+   ],
+   "efficiency": 0.9233,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 117.36,
+   "points": 108.36,
+   "points_left": 9.0,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "15": [
+  {
+   "bench_misses": [
+    {
+     "bench": "5000",
+     "bench_pts": 14.1,
+     "slot": "RB",
+     "started": "3242",
+     "started_pts": 5.0
+    },
+    {
+     "bench": "5000",
+     "bench_pts": 14.1,
+     "slot": "RB",
+     "started": "6151",
+     "started_pts": 9.5
+    }
+   ],
+   "efficiency": 0.9165,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 108.92,
+   "points": 99.82,
+   "points_left": 9.1,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "3969",
+     "bench_pts": 20.0,
+     "slot": "RB",
+     "started": "4663",
+     "started_pts": 9.9
+    },
+    {
+     "bench": "3969",
+     "bench_pts": 20.0,
+     "slot": "RB",
+     "started": "6820",
+     "started_pts": 8.8
+    },
+    {
+     "bench": "3969",
+     "bench_pts": 20.0,
+     "slot": "FLEX",
+     "started": "4036",
+     "started_pts": 19.0
+    },
+    {
+     "bench": "WAS",
+     "bench_pts": 3.0,
+     "slot": "DEF",
+     "started": "TB",
+     "started_pts": 2.0
+    }
+   ],
+   "efficiency": 0.8773,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 119.02,
+   "points": 104.42,
+   "points_left": 14.6,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6918",
+     "bench_pts": 21.2,
+     "slot": "FLEX",
+     "started": "1825",
+     "started_pts": 15.6
+    }
+   ],
+   "efficiency": 0.9646,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 158.34,
+   "points": 152.74,
+   "points_left": 5.6,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6063",
+     "bench_pts": 13.6,
+     "slot": "WR",
+     "started": "538",
+     "started_pts": 9.6
+    },
+    {
+     "bench": "BUF",
+     "bench_pts": 15.0,
+     "slot": "DEF",
+     "started": "IND",
+     "started_pts": 10.0
+    }
+   ],
+   "efficiency": 0.9447,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 162.86,
+   "points": 153.86,
+   "points_left": 9.0,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4066",
+     "bench_pts": 6.6,
+     "slot": "TE",
+     "started": "5844",
+     "started_pts": -0.2
+    },
+    {
+     "bench": "CAR",
+     "bench_pts": 7.0,
+     "slot": "DEF",
+     "started": "MIN",
+     "started_pts": 1.0
+    }
+   ],
+   "efficiency": 0.8926,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 119.22,
+   "points": 106.42,
+   "points_left": 12.8,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "289",
+     "bench_pts": 19.36,
+     "slot": "QB",
+     "started": "138",
+     "started_pts": 4.7
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 6.9,
+     "slot": "WR",
+     "started": "3423",
+     "started_pts": 3.0
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 6.9,
+     "slot": "WR",
+     "started": "2309",
+     "started_pts": 1.3
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 6.9,
+     "slot": "FLEX",
+     "started": "4351",
+     "started_pts": 2.9
+    }
+   ],
+   "efficiency": 0.7304,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 75.16,
+   "points": 54.9,
+   "points_left": 20.26,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 0.951,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 130.7,
+   "points": 124.3,
+   "points_left": 6.4,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5967",
+     "bench_pts": 28.2,
+     "slot": "RB",
+     "started": "4273",
+     "started_pts": 7.9
+    },
+    {
+     "bench": "5967",
+     "bench_pts": 28.2,
+     "slot": "RB",
+     "started": "3164",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "1817",
+     "bench_pts": 8.0,
+     "slot": "WR",
+     "started": "4040",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "5967",
+     "bench_pts": 28.2,
+     "slot": "FLEX",
+     "started": "1144",
+     "started_pts": 15.2
+    }
+   ],
+   "efficiency": 0.6966,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 139.76,
+   "points": 97.36,
+   "points_left": 42.4,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "3164",
+    "4040"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6904",
+     "bench_pts": 34.82,
+     "slot": "QB",
+     "started": "6797",
+     "started_pts": 26.96
+    },
+    {
+     "bench": "6806",
+     "bench_pts": 13.6,
+     "slot": "FLEX",
+     "started": "6938",
+     "started_pts": 6.7
+    }
+   ],
+   "efficiency": 0.8945,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 139.92,
+   "points": 125.16,
+   "points_left": 14.76,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5857",
+     "bench_pts": 16.8,
+     "slot": "TE",
+     "started": "5022",
+     "started_pts": 5.9
+    },
+    {
+     "bench": "5857",
+     "bench_pts": 16.8,
+     "slot": "FLEX",
+     "started": "2216",
+     "started_pts": 14.0
+    }
+   ],
+   "efficiency": 0.9249,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 145.22,
+   "points": 134.32,
+   "points_left": 10.9,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5848",
+     "bench_pts": 12.8,
+     "slot": "WR",
+     "started": "1479",
+     "started_pts": 2.1
+    },
+    {
+     "bench": "5848",
+     "bench_pts": 12.8,
+     "slot": "FLEX",
+     "started": "1110",
+     "started_pts": 9.1
+    }
+   ],
+   "efficiency": 0.8952,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 102.12,
+   "points": 91.42,
+   "points_left": 10.7,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "2118"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1386",
+     "bench_pts": 22.2,
+     "slot": "RB",
+     "started": "2431",
+     "started_pts": 7.1
+    },
+    {
+     "bench": "1386",
+     "bench_pts": 22.2,
+     "slot": "RB",
+     "started": "2382",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "1386",
+     "bench_pts": 22.2,
+     "slot": "FLEX",
+     "started": "5955",
+     "started_pts": 0.9
+    }
+   ],
+   "efficiency": 0.6993,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 130.04,
+   "points": 90.94,
+   "points_left": 39.1,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "2382"
+   ]
+  }
+ ],
+ "16": [
+  {
+   "bench_misses": [
+    {
+     "bench": "6886",
+     "bench_pts": 7.4,
+     "slot": "WR",
+     "started": "4983",
+     "started_pts": 6.2
+    },
+    {
+     "bench": "6886",
+     "bench_pts": 7.4,
+     "slot": "WR",
+     "started": "5110",
+     "started_pts": 4.3
+    }
+   ],
+   "efficiency": 0.9616,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 80.74,
+   "points": 77.64,
+   "points_left": 3.1,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "3969",
+     "bench_pts": 14.1,
+     "slot": "RB",
+     "started": "6845",
+     "started_pts": 12.2
+    },
+    {
+     "bench": "3969",
+     "bench_pts": 14.1,
+     "slot": "FLEX",
+     "started": "4036",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.8996,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 140.46,
+   "points": 126.36,
+   "points_left": 14.1,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "4036"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "3200",
+     "bench_pts": 18.2,
+     "slot": "WR",
+     "started": "6803",
+     "started_pts": 3.6
+    },
+    {
+     "bench": "3200",
+     "bench_pts": 18.2,
+     "slot": "WR",
+     "started": "1067",
+     "started_pts": 3.4
+    },
+    {
+     "bench": "3200",
+     "bench_pts": 18.2,
+     "slot": "FLEX",
+     "started": "5007",
+     "started_pts": 6.9
+    }
+   ],
+   "efficiency": 0.7898,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 106.1,
+   "points": 83.8,
+   "points_left": 22.3,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4718",
+     "bench_pts": 9.3,
+     "slot": "RB",
+     "started": "5850",
+     "started_pts": 6.9
+    },
+    {
+     "bench": "4951",
+     "bench_pts": 14.2,
+     "slot": "WR",
+     "started": "538",
+     "started_pts": 11.5
+    },
+    {
+     "bench": "4951",
+     "bench_pts": 14.2,
+     "slot": "FLEX",
+     "started": "6063",
+     "started_pts": 4.1
+    }
+   ],
+   "efficiency": 0.893,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 116.8,
+   "points": 104.3,
+   "points_left": 12.5,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5248",
+     "bench_pts": 13.2,
+     "slot": "RB",
+     "started": "5890",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "4066",
+     "bench_pts": 10.5,
+     "slot": "TE",
+     "started": "5844",
+     "started_pts": 4.3
+    },
+    {
+     "bench": "5248",
+     "bench_pts": 13.2,
+     "slot": "FLEX",
+     "started": "1352",
+     "started_pts": 6.9
+    }
+   ],
+   "efficiency": 0.8411,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 122.12,
+   "points": 102.72,
+   "points_left": 19.4,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "5890"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1166",
+     "bench_pts": 22.64,
+     "slot": "QB",
+     "started": "289",
+     "started_pts": 8.14
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 24.0,
+     "slot": "WR",
+     "started": "3423",
+     "started_pts": 13.4
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 24.0,
+     "slot": "WR",
+     "started": "2309",
+     "started_pts": 14.1
+    }
+   ],
+   "efficiency": 0.7989,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 148.66,
+   "points": 118.76,
+   "points_left": 29.9,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1476",
+     "bench_pts": 11.1,
+     "slot": "RB",
+     "started": "6130",
+     "started_pts": 6.2
+    }
+   ],
+   "efficiency": 0.9709,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 168.62,
+   "points": 163.72,
+   "points_left": 4.9,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": true,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5038",
+     "bench_pts": 27.1,
+     "slot": "WR",
+     "started": "4040",
+     "started_pts": 19.1
+    },
+    {
+     "bench": "5038",
+     "bench_pts": 27.1,
+     "slot": "WR",
+     "started": "1144",
+     "started_pts": 3.2
+    },
+    {
+     "bench": "5038",
+     "bench_pts": 27.1,
+     "slot": "FLEX",
+     "started": "3164",
+     "started_pts": 15.9
+    }
+   ],
+   "efficiency": 0.6854,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 137.02,
+   "points": 93.92,
+   "points_left": 43.1,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5284",
+     "bench_pts": 26.9,
+     "slot": "RB",
+     "started": "6813",
+     "started_pts": 19.4
+    },
+    {
+     "bench": "5284",
+     "bench_pts": 26.9,
+     "slot": "RB",
+     "started": "5892",
+     "started_pts": 19.1
+    },
+    {
+     "bench": "5284",
+     "bench_pts": 26.9,
+     "slot": "FLEX",
+     "started": "6806",
+     "started_pts": 13.7
+    }
+   ],
+   "efficiency": 0.9012,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 133.58,
+   "points": 120.38,
+   "points_left": 13.2,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5857",
+     "bench_pts": 9.5,
+     "slot": "TE",
+     "started": "5022",
+     "started_pts": 5.3
+    }
+   ],
+   "efficiency": 0.9637,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 115.8,
+   "points": 111.6,
+   "points_left": 4.2,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5848",
+     "bench_pts": 10.5,
+     "slot": "WR",
+     "started": "5859",
+     "started_pts": 6.3
+    },
+    {
+     "bench": "2118",
+     "bench_pts": 13.2,
+     "slot": "TE",
+     "started": "4217",
+     "started_pts": 11.2
+    },
+    {
+     "bench": "2118",
+     "bench_pts": 13.2,
+     "slot": "FLEX",
+     "started": "1110",
+     "started_pts": 7.5
+    }
+   ],
+   "efficiency": 0.9283,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 138.14,
+   "points": 128.24,
+   "points_left": 9.9,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2391",
+     "bench_pts": 27.4,
+     "slot": "RB",
+     "started": "2431",
+     "started_pts": 8.8
+    },
+    {
+     "bench": "2391",
+     "bench_pts": 27.4,
+     "slot": "RB",
+     "started": "2382",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "2391",
+     "bench_pts": 27.4,
+     "slot": "FLEX",
+     "started": "5955",
+     "started_pts": 5.9
+    },
+    {
+     "bench": "DAL",
+     "bench_pts": 9.0,
+     "slot": "DEF",
+     "started": "MIA",
+     "started_pts": 2.0
+    }
+   ],
+   "efficiency": 0.7205,
+   "empty_slots": 0,
+   "injured_starters": {
+    "2382": {
+     "injury": "Neck",
+     "practice": "Did Not Participate In Practice",
+     "source": "nfl_report",
+     "status": "Out"
+    }
+   },
+   "optimal_points": 161.38,
+   "points": 116.28,
+   "points_left": 45.1,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": true,
+   "zero_point_starters": [
+    "2382"
+   ]
+  }
+ ],
+ "2": [
+  {
+   "bench_misses": [
+    {
+     "bench": "4137",
+     "bench_pts": 19.1,
+     "slot": "RB",
+     "started": "6151",
+     "started_pts": 17.6
+    },
+    {
+     "bench": "4137",
+     "bench_pts": 19.1,
+     "slot": "RB",
+     "started": "3242",
+     "started_pts": 10.5
+    },
+    {
+     "bench": "4137",
+     "bench_pts": 19.1,
+     "slot": "FLEX",
+     "started": "3157",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.873,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 159.9,
+   "points": 139.6,
+   "points_left": 20.3,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "3157"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "3969",
+     "bench_pts": 25.6,
+     "slot": "RB",
+     "started": "5347",
+     "started_pts": 0.9
+    },
+    {
+     "bench": "3969",
+     "bench_pts": 25.6,
+     "slot": "RB",
+     "started": "6820",
+     "started_pts": 10.0
+    },
+    {
+     "bench": "3969",
+     "bench_pts": 25.6,
+     "slot": "FLEX",
+     "started": "4663",
+     "started_pts": 16.8
+    }
+   ],
+   "efficiency": 0.8492,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 163.74,
+   "points": 139.04,
+   "points_left": 24.7,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "147",
+     "bench_pts": 9.4,
+     "slot": "FLEX",
+     "started": "1339",
+     "started_pts": 6.7
+    }
+   ],
+   "efficiency": 0.9825,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 154.42,
+   "points": 151.72,
+   "points_left": 2.7,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": true,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6955",
+     "bench_pts": 19.5,
+     "slot": "RB",
+     "started": "5850",
+     "started_pts": 12.0
+    },
+    {
+     "bench": "3225",
+     "bench_pts": 16.7,
+     "slot": "WR",
+     "started": "4951",
+     "started_pts": 10.4
+    },
+    {
+     "bench": "3225",
+     "bench_pts": 16.7,
+     "slot": "WR",
+     "started": "4039",
+     "started_pts": 9.5
+    },
+    {
+     "bench": "6955",
+     "bench_pts": 19.5,
+     "slot": "FLEX",
+     "started": "2238",
+     "started_pts": 16.2
+    }
+   ],
+   "efficiency": 0.8764,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 153.7,
+   "points": 134.7,
+   "points_left": 19.0,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "TEN"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "954",
+     "bench_pts": 34.58,
+     "slot": "QB",
+     "started": "4881",
+     "started_pts": 17.56
+    },
+    {
+     "bench": "5844",
+     "bench_pts": 8.2,
+     "slot": "FLEX",
+     "started": "5045",
+     "started_pts": 8.1
+    }
+   ],
+   "efficiency": 0.8655,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 127.28,
+   "points": 110.16,
+   "points_left": 17.12,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2319",
+     "bench_pts": 13.8,
+     "slot": "WR",
+     "started": "5880",
+     "started_pts": 0.7
+    },
+    {
+     "bench": "2319",
+     "bench_pts": 13.8,
+     "slot": "WR",
+     "started": "2309",
+     "started_pts": 13.0
+    },
+    {
+     "bench": "2319",
+     "bench_pts": 13.8,
+     "slot": "FLEX",
+     "started": "367",
+     "started_pts": 8.3
+    }
+   ],
+   "efficiency": 0.8899,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 156.28,
+   "points": 139.08,
+   "points_left": 17.2,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "BUF"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6798",
+     "bench_pts": 6.1,
+     "slot": "WR",
+     "started": "1689",
+     "started_pts": 4.6
+    }
+   ],
+   "efficiency": 0.9895,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 143.02,
+   "points": 141.52,
+   "points_left": 1.5,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2197",
+     "bench_pts": 12.0,
+     "slot": "WR",
+     "started": "4040",
+     "started_pts": 8.3
+    },
+    {
+     "bench": "2197",
+     "bench_pts": 12.0,
+     "slot": "WR",
+     "started": "5038",
+     "started_pts": 6.8
+    },
+    {
+     "bench": "2197",
+     "bench_pts": 12.0,
+     "slot": "FLEX",
+     "started": "1817",
+     "started_pts": 1.6
+    }
+   ],
+   "efficiency": 0.9152,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 122.58,
+   "points": 112.18,
+   "points_left": 10.4,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5892",
+     "bench_pts": 20.2,
+     "slot": "RB",
+     "started": "4018",
+     "started_pts": 10.6
+    },
+    {
+     "bench": "5892",
+     "bench_pts": 20.2,
+     "slot": "RB",
+     "started": "6813",
+     "started_pts": 18.0
+    },
+    {
+     "bench": "5857",
+     "bench_pts": 15.7,
+     "slot": "TE",
+     "started": "3202",
+     "started_pts": 3.2
+    },
+    {
+     "bench": "5892",
+     "bench_pts": 20.2,
+     "slot": "FLEX",
+     "started": "6149",
+     "started_pts": 4.8
+    }
+   ],
+   "efficiency": 0.7827,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 136.24,
+   "points": 106.64,
+   "points_left": 29.6,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "KC"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6790",
+     "bench_pts": 9.7,
+     "slot": "RB",
+     "started": "2315",
+     "started_pts": 6.1
+    },
+    {
+     "bench": "642",
+     "bench_pts": 7.2,
+     "slot": "WR",
+     "started": "1992",
+     "started_pts": 4.8
+    }
+   ],
+   "efficiency": 0.9456,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 110.2,
+   "points": 104.2,
+   "points_left": 6.0,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5980",
+     "bench_pts": 11.2,
+     "slot": "RB",
+     "started": "4866",
+     "started_pts": 2.8
+    },
+    {
+     "bench": "5980",
+     "bench_pts": 11.2,
+     "slot": "RB",
+     "started": "4157",
+     "started_pts": 3.2
+    },
+    {
+     "bench": "6783",
+     "bench_pts": 8.2,
+     "slot": "WR",
+     "started": "4950",
+     "started_pts": 7.0
+    }
+   ],
+   "efficiency": 0.8993,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 95.36,
+   "points": 85.76,
+   "points_left": 9.6,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1502",
+     "bench_pts": 10.2,
+     "slot": "RB",
+     "started": "2391",
+     "started_pts": 6.0
+    },
+    {
+     "bench": "1502",
+     "bench_pts": 10.2,
+     "slot": "RB",
+     "started": "5068",
+     "started_pts": 9.2
+    },
+    {
+     "bench": "6786",
+     "bench_pts": 14.5,
+     "slot": "WR",
+     "started": "2133",
+     "started_pts": 5.1
+    },
+    {
+     "bench": "6786",
+     "bench_pts": 14.5,
+     "slot": "WR",
+     "started": "947",
+     "started_pts": 3.4
+    },
+    {
+     "bench": "6786",
+     "bench_pts": 14.5,
+     "slot": "FLEX",
+     "started": "1110",
+     "started_pts": 4.3
+    }
+   ],
+   "efficiency": 0.8183,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 93.54,
+   "points": 76.54,
+   "points_left": 17.0,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": true,
+   "zero_point_starters": []
+  }
+ ],
+ "3": [
+  {
+   "bench_misses": [
+    {
+     "bench": "6945",
+     "bench_pts": 10.5,
+     "slot": "RB",
+     "started": "3242",
+     "started_pts": 8.4
+    },
+    {
+     "bench": "3157",
+     "bench_pts": 13.4,
+     "slot": "WR",
+     "started": "4983",
+     "started_pts": 7.5
+    },
+    {
+     "bench": "3157",
+     "bench_pts": 13.4,
+     "slot": "WR",
+     "started": "5927",
+     "started_pts": 10.6
+    },
+    {
+     "bench": "3157",
+     "bench_pts": 13.4,
+     "slot": "FLEX",
+     "started": "2216",
+     "started_pts": 13.2
+    }
+   ],
+   "efficiency": 0.9219,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 102.48,
+   "points": 94.48,
+   "points_left": 8.0,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5347",
+     "bench_pts": 8.1,
+     "slot": "RB",
+     "started": "3969",
+     "started_pts": 3.2
+    },
+    {
+     "bench": "5185",
+     "bench_pts": 23.4,
+     "slot": "WR",
+     "started": "4981",
+     "started_pts": 14.2
+    },
+    {
+     "bench": "5185",
+     "bench_pts": 23.4,
+     "slot": "WR",
+     "started": "2449",
+     "started_pts": 12.9
+    }
+   ],
+   "efficiency": 0.8585,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 147.68,
+   "points": 126.78,
+   "points_left": 20.9,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1825",
+     "bench_pts": 5.6,
+     "slot": "WR",
+     "started": "344",
+     "started_pts": 3.2
+    }
+   ],
+   "efficiency": 0.98,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 120.3,
+   "points": 117.9,
+   "points_left": 2.4,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2161",
+     "bench_pts": 15.2,
+     "slot": "FLEX",
+     "started": "5850",
+     "started_pts": 6.8
+    }
+   ],
+   "efficiency": 0.9523,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 176.04,
+   "points": 167.64,
+   "points_left": 8.4,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4962",
+     "bench_pts": 15.0,
+     "slot": "RB",
+     "started": "5052",
+     "started_pts": 8.3
+    },
+    {
+     "bench": "5844",
+     "bench_pts": 7.3,
+     "slot": "TE",
+     "started": "4066",
+     "started_pts": 3.7
+    },
+    {
+     "bench": "4962",
+     "bench_pts": 15.0,
+     "slot": "FLEX",
+     "started": "4131",
+     "started_pts": 14.7
+    }
+   ],
+   "efficiency": 0.8543,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 121.48,
+   "points": 103.78,
+   "points_left": 17.7,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "3423",
+     "bench_pts": 8.0,
+     "slot": "FLEX",
+     "started": "367",
+     "started_pts": 3.1
+    }
+   ],
+   "efficiency": 0.9462,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 91.02,
+   "points": 86.12,
+   "points_left": 4.9,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "BUF"
+   ]
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 147.92,
+   "points": 147.92,
+   "points_left": 0.0,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1817",
+     "bench_pts": 9.7,
+     "slot": "FLEX",
+     "started": "4068",
+     "started_pts": 2.2
+    }
+   ],
+   "efficiency": 0.9447,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 135.6,
+   "points": 128.1,
+   "points_left": 7.5,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5892",
+     "bench_pts": 6.4,
+     "slot": "RB",
+     "started": "7045",
+     "started_pts": 3.2
+    }
+   ],
+   "efficiency": 0.9598,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 99.58,
+   "points": 95.58,
+   "points_left": 4.0,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "96",
+     "bench_pts": 24.52,
+     "slot": "QB",
+     "started": "6011",
+     "started_pts": 8.2
+    }
+   ],
+   "efficiency": 0.8633,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 119.42,
+   "points": 103.1,
+   "points_left": 16.32,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6783",
+     "bench_pts": 8.0,
+     "slot": "WR",
+     "started": "5110",
+     "started_pts": 3.6
+    }
+   ],
+   "efficiency": 0.9635,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 120.44,
+   "points": 116.04,
+   "points_left": 4.4,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "184",
+     "bench_pts": 9.0,
+     "slot": "RB",
+     "started": "5068",
+     "started_pts": 3.5
+    },
+    {
+     "bench": "184",
+     "bench_pts": 9.0,
+     "slot": "FLEX",
+     "started": "1110",
+     "started_pts": 6.7
+    }
+   ],
+   "efficiency": 0.9371,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 89.1,
+   "points": 83.5,
+   "points_left": 5.6,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "4": [
+  {
+   "bench_misses": [
+    {
+     "bench": "6945",
+     "bench_pts": 20.8,
+     "slot": "RB",
+     "started": "6151",
+     "started_pts": 8.6
+    },
+    {
+     "bench": "6945",
+     "bench_pts": 20.8,
+     "slot": "RB",
+     "started": "3242",
+     "started_pts": 3.5
+    },
+    {
+     "bench": "3157",
+     "bench_pts": 19.8,
+     "slot": "WR",
+     "started": "4983",
+     "started_pts": 6.9
+    },
+    {
+     "bench": "3157",
+     "bench_pts": 19.8,
+     "slot": "WR",
+     "started": "5927",
+     "started_pts": 16.8
+    }
+   ],
+   "efficiency": 0.8048,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 174.68,
+   "points": 140.58,
+   "points_left": 34.1,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5347",
+     "bench_pts": 4.7,
+     "slot": "RB",
+     "started": "4663",
+     "started_pts": 1.9
+    },
+    {
+     "bench": "538",
+     "bench_pts": 12.3,
+     "slot": "WR",
+     "started": "4981",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "538",
+     "bench_pts": 12.3,
+     "slot": "FLEX",
+     "started": "1848",
+     "started_pts": 9.4
+    }
+   ],
+   "efficiency": 0.8187,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 83.3,
+   "points": 68.2,
+   "points_left": 15.1,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "4981"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5890",
+     "bench_pts": 10.0,
+     "slot": "RB",
+     "started": "2588",
+     "started_pts": 8.2
+    },
+    {
+     "bench": "1825",
+     "bench_pts": 12.78,
+     "slot": "WR",
+     "started": "344",
+     "started_pts": 5.0
+    },
+    {
+     "bench": "1825",
+     "bench_pts": 12.78,
+     "slot": "FLEX",
+     "started": "1466",
+     "started_pts": 8.5
+    }
+   ],
+   "efficiency": 0.8761,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 139.48,
+   "points": 122.2,
+   "points_left": 17.28,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2161",
+     "bench_pts": 19.2,
+     "slot": "RB",
+     "started": "6955",
+     "started_pts": 12.7
+    },
+    {
+     "bench": "2161",
+     "bench_pts": 19.2,
+     "slot": "RB",
+     "started": "4988",
+     "started_pts": 4.3
+    },
+    {
+     "bench": "4951",
+     "bench_pts": 25.5,
+     "slot": "WR",
+     "started": "3225",
+     "started_pts": 12.9
+    },
+    {
+     "bench": "4951",
+     "bench_pts": 25.5,
+     "slot": "WR",
+     "started": "4039",
+     "started_pts": 15.2
+    },
+    {
+     "bench": "4951",
+     "bench_pts": 25.5,
+     "slot": "FLEX",
+     "started": "5850",
+     "started_pts": 8.8
+    }
+   ],
+   "efficiency": 0.7673,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 135.82,
+   "points": 104.22,
+   "points_left": 31.6,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 107.82,
+   "points": 107.82,
+   "points_left": 0.0,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4098",
+     "bench_pts": 19.1,
+     "slot": "RB",
+     "started": "232",
+     "started_pts": 4.1
+    },
+    {
+     "bench": "4098",
+     "bench_pts": 19.1,
+     "slot": "FLEX",
+     "started": "3423",
+     "started_pts": 13.9
+    }
+   ],
+   "efficiency": 0.8847,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 130.04,
+   "points": 115.04,
+   "points_left": 15.0,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1476",
+     "bench_pts": 20.8,
+     "slot": "RB",
+     "started": "4035",
+     "started_pts": 19.4
+    },
+    {
+     "bench": "1476",
+     "bench_pts": 20.8,
+     "slot": "RB",
+     "started": "6130",
+     "started_pts": 16.2
+    },
+    {
+     "bench": "5848",
+     "bench_pts": 10.6,
+     "slot": "WR",
+     "started": "2374",
+     "started_pts": 4.9
+    },
+    {
+     "bench": "1476",
+     "bench_pts": 20.8,
+     "slot": "FLEX",
+     "started": "5086",
+     "started_pts": 6.5
+    },
+    {
+     "bench": "LAC",
+     "bench_pts": -1.0,
+     "slot": "DEF",
+     "started": "ARI",
+     "started_pts": -2.0
+    }
+   ],
+   "efficiency": 0.8048,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 107.6,
+   "points": 86.6,
+   "points_left": 21.0,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1144",
+     "bench_pts": 10.7,
+     "slot": "WR",
+     "started": "1817",
+     "started_pts": 3.3
+    },
+    {
+     "bench": "1144",
+     "bench_pts": 10.7,
+     "slot": "WR",
+     "started": "5038",
+     "started_pts": 3.9
+    },
+    {
+     "bench": "4149",
+     "bench_pts": 14.5,
+     "slot": "FLEX",
+     "started": "2197",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.7946,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 106.64,
+   "points": 84.74,
+   "points_left": 21.9,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "2197"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5001",
+     "bench_pts": 15.2,
+     "slot": "TE",
+     "started": "5857",
+     "started_pts": 6.0
+    },
+    {
+     "bench": "5001",
+     "bench_pts": 15.2,
+     "slot": "FLEX",
+     "started": "5892",
+     "started_pts": 9.2
+    }
+   ],
+   "efficiency": 0.9292,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 130.0,
+   "points": 120.8,
+   "points_left": 9.2,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6790",
+     "bench_pts": 13.2,
+     "slot": "FLEX",
+     "started": "1426",
+     "started_pts": 7.6
+    }
+   ],
+   "efficiency": 0.9324,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 136.18,
+   "points": 126.98,
+   "points_left": 9.2,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1387",
+     "bench_pts": 5.5,
+     "slot": "RB",
+     "started": "5916",
+     "started_pts": 4.2
+    },
+    {
+     "bench": "5110",
+     "bench_pts": 3.0,
+     "slot": "WR",
+     "started": "830",
+     "started_pts": 0.8
+    }
+   ],
+   "efficiency": 0.9597,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 116.76,
+   "points": 112.06,
+   "points_left": 4.7,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "184",
+     "bench_pts": 9.6,
+     "slot": "RB",
+     "started": "5284",
+     "started_pts": 2.4
+    },
+    {
+     "bench": "5872",
+     "bench_pts": 6.0,
+     "slot": "WR",
+     "started": "6519",
+     "started_pts": 3.1
+    },
+    {
+     "bench": "5872",
+     "bench_pts": 6.0,
+     "slot": "WR",
+     "started": "947",
+     "started_pts": 5.2
+    }
+   ],
+   "efficiency": 0.9129,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 116.02,
+   "points": 105.92,
+   "points_left": 10.1,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "5": [
+  {
+   "bench_misses": [
+    {
+     "bench": "5000",
+     "bench_pts": 17.7,
+     "slot": "RB",
+     "started": "6945",
+     "started_pts": 7.6
+    },
+    {
+     "bench": "4983",
+     "bench_pts": 17.3,
+     "slot": "WR",
+     "started": "2216",
+     "started_pts": 12.6
+    },
+    {
+     "bench": "4983",
+     "bench_pts": 17.3,
+     "slot": "WR",
+     "started": "5927",
+     "started_pts": 4.1
+    },
+    {
+     "bench": "5000",
+     "bench_pts": 17.7,
+     "slot": "FLEX",
+     "started": "3157",
+     "started_pts": 13.8
+    }
+   ],
+   "efficiency": 0.813,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 125.14,
+   "points": 101.74,
+   "points_left": 23.4,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 110.38,
+   "points": 110.38,
+   "points_left": 0.0,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6803",
+     "bench_pts": 5.9,
+     "slot": "FLEX",
+     "started": "1339",
+     "started_pts": 1.1
+    }
+   ],
+   "efficiency": 0.9659,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 140.8,
+   "points": 136.0,
+   "points_left": 4.8,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4017",
+     "bench_pts": 24.86,
+     "slot": "QB",
+     "started": "4984",
+     "started_pts": 16.32
+    },
+    {
+     "bench": "3225",
+     "bench_pts": 6.2,
+     "slot": "WR",
+     "started": "4951",
+     "started_pts": 3.1
+    },
+    {
+     "bench": "3225",
+     "bench_pts": 6.2,
+     "slot": "FLEX",
+     "started": "2161",
+     "started_pts": 1.5
+    }
+   ],
+   "efficiency": 0.8508,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 106.16,
+   "points": 90.32,
+   "points_left": 15.84,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6156",
+     "bench_pts": 1.9,
+     "slot": "FLEX",
+     "started": "5937",
+     "started_pts": 0.3
+    }
+   ],
+   "efficiency": 0.9816,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 87.1,
+   "points": 85.5,
+   "points_left": 1.6,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2410",
+     "bench_pts": 21.6,
+     "slot": "WR",
+     "started": "2309",
+     "started_pts": 3.1
+    },
+    {
+     "bench": "2410",
+     "bench_pts": 21.6,
+     "slot": "WR",
+     "started": "2319",
+     "started_pts": 12.0
+    },
+    {
+     "bench": "367",
+     "bench_pts": 12.2,
+     "slot": "TE",
+     "started": "3271",
+     "started_pts": 2.2
+    },
+    {
+     "bench": "2410",
+     "bench_pts": 21.6,
+     "slot": "FLEX",
+     "started": "3423",
+     "started_pts": 15.5
+    }
+   ],
+   "efficiency": 0.7371,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 108.4,
+   "points": 79.9,
+   "points_left": 28.5,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2168",
+     "bench_pts": 15.7,
+     "slot": "RB",
+     "started": "1476",
+     "started_pts": 6.7
+    }
+   ],
+   "efficiency": 0.9221,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 119.44,
+   "points": 110.14,
+   "points_left": 9.3,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2197",
+     "bench_pts": 26.1,
+     "slot": "WR",
+     "started": "4040",
+     "started_pts": 4.8
+    },
+    {
+     "bench": "2197",
+     "bench_pts": 26.1,
+     "slot": "WR",
+     "started": "5038",
+     "started_pts": 9.3
+    },
+    {
+     "bench": "2197",
+     "bench_pts": 26.1,
+     "slot": "FLEX",
+     "started": "1817",
+     "started_pts": 9.4
+    }
+   ],
+   "efficiency": 0.7703,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 162.8,
+   "points": 125.4,
+   "points_left": 37.4,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5892",
+     "bench_pts": 15.4,
+     "slot": "RB",
+     "started": "4018",
+     "started_pts": 12.4
+    },
+    {
+     "bench": "5892",
+     "bench_pts": 15.4,
+     "slot": "RB",
+     "started": "7045",
+     "started_pts": 4.3
+    },
+    {
+     "bench": "6149",
+     "bench_pts": 16.9,
+     "slot": "WR",
+     "started": "3321",
+     "started_pts": 16.8
+    },
+    {
+     "bench": "6149",
+     "bench_pts": 16.9,
+     "slot": "FLEX",
+     "started": "6813",
+     "started_pts": 14.4
+    }
+   ],
+   "efficiency": 0.8838,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 134.26,
+   "points": 118.66,
+   "points_left": 15.6,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6789",
+     "bench_pts": 18.8,
+     "slot": "WR",
+     "started": "1992",
+     "started_pts": 14.0
+    },
+    {
+     "bench": "616",
+     "bench_pts": 10.8,
+     "slot": "TE",
+     "started": "4054",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "6789",
+     "bench_pts": 18.8,
+     "slot": "FLEX",
+     "started": "642",
+     "started_pts": 6.2
+    }
+   ],
+   "efficiency": 0.8226,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 131.92,
+   "points": 108.52,
+   "points_left": 23.4,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "4054"
+   ]
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 136.7,
+   "points": 136.7,
+   "points_left": 0.0,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5284",
+     "bench_pts": 2.7,
+     "slot": "RB",
+     "started": "6885",
+     "started_pts": -1.5
+    },
+    {
+     "bench": "NE",
+     "bench_pts": 0.0,
+     "slot": "DEF",
+     "started": "PHI",
+     "started_pts": -1.0
+    }
+   ],
+   "efficiency": 0.9455,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 95.4,
+   "points": 90.2,
+   "points_left": 5.2,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "6": [
+  {
+   "bench_misses": [
+    {
+     "bench": "3242",
+     "bench_pts": 28.4,
+     "slot": "RB",
+     "started": "6151",
+     "started_pts": 10.7
+    },
+    {
+     "bench": "3242",
+     "bench_pts": 28.4,
+     "slot": "RB",
+     "started": "6945",
+     "started_pts": 7.5
+    },
+    {
+     "bench": "4983",
+     "bench_pts": 11.8,
+     "slot": "WR",
+     "started": "2216",
+     "started_pts": 1.5
+    },
+    {
+     "bench": "3242",
+     "bench_pts": 28.4,
+     "slot": "FLEX",
+     "started": "6886",
+     "started_pts": 16.1
+    }
+   ],
+   "efficiency": 0.7244,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 113.22,
+   "points": 82.02,
+   "points_left": 31.2,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6059",
+     "bench_pts": 16.5,
+     "slot": "WR",
+     "started": "2449",
+     "started_pts": 13.6
+    },
+    {
+     "bench": "6059",
+     "bench_pts": 16.5,
+     "slot": "WR",
+     "started": "4039",
+     "started_pts": 2.6
+    }
+   ],
+   "efficiency": 0.8964,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 134.2,
+   "points": 120.3,
+   "points_left": 13.9,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6803",
+     "bench_pts": 8.2,
+     "slot": "WR",
+     "started": "2078",
+     "started_pts": 3.5
+    },
+    {
+     "bench": "6803",
+     "bench_pts": 8.2,
+     "slot": "WR",
+     "started": "344",
+     "started_pts": 3.32
+    },
+    {
+     "bench": "6803",
+     "bench_pts": 8.2,
+     "slot": "FLEX",
+     "started": "5890",
+     "started_pts": 3.8
+    }
+   ],
+   "efficiency": 0.924,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 114.18,
+   "points": 105.5,
+   "points_left": 8.68,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 99.18,
+   "points": 99.18,
+   "points_left": 0.0,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6801",
+     "bench_pts": 15.7,
+     "slot": "WR",
+     "started": "4131",
+     "started_pts": 12.5
+    },
+    {
+     "bench": "6801",
+     "bench_pts": 15.7,
+     "slot": "WR",
+     "started": "1352",
+     "started_pts": 12.0
+    },
+    {
+     "bench": "5844",
+     "bench_pts": 8.7,
+     "slot": "TE",
+     "started": "4066",
+     "started_pts": 4.0
+    }
+   ],
+   "efficiency": 0.9399,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 139.84,
+   "points": 131.44,
+   "points_left": 8.4,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2410",
+     "bench_pts": 8.3,
+     "slot": "WR",
+     "started": "2319",
+     "started_pts": 5.0
+    }
+   ],
+   "efficiency": 0.9658,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 96.42,
+   "points": 93.12,
+   "points_left": 3.3,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 71.44,
+   "points": 71.44,
+   "points_left": 0.0,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "4993"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2197",
+     "bench_pts": 17.3,
+     "slot": "WR",
+     "started": "4040",
+     "started_pts": 1.6
+    },
+    {
+     "bench": "2197",
+     "bench_pts": 17.3,
+     "slot": "WR",
+     "started": "5038",
+     "started_pts": 3.3
+    },
+    {
+     "bench": "2197",
+     "bench_pts": 17.3,
+     "slot": "FLEX",
+     "started": "1144",
+     "started_pts": 12.5
+    }
+   ],
+   "efficiency": 0.8421,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 99.4,
+   "points": 83.7,
+   "points_left": 15.7,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6149",
+     "bench_pts": 10.8,
+     "slot": "WR",
+     "started": "3321",
+     "started_pts": 4.0
+    },
+    {
+     "bench": "6149",
+     "bench_pts": 10.8,
+     "slot": "WR",
+     "started": "5917",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.8736,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 85.44,
+   "points": 74.64,
+   "points_left": 10.8,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "5917"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4351",
+     "bench_pts": 12.1,
+     "slot": "WR",
+     "started": "1426",
+     "started_pts": 8.3
+    },
+    {
+     "bench": "4351",
+     "bench_pts": 12.1,
+     "slot": "WR",
+     "started": "1992",
+     "started_pts": 7.8
+    }
+   ],
+   "efficiency": 0.9526,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 90.7,
+   "points": 86.4,
+   "points_left": 4.3,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "24",
+     "bench_pts": 31.64,
+     "slot": "QB",
+     "started": "1049",
+     "started_pts": 27.64
+    },
+    {
+     "bench": "830",
+     "bench_pts": 13.6,
+     "slot": "WR",
+     "started": "6783",
+     "started_pts": 4.2
+    }
+   ],
+   "efficiency": 0.9097,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 148.44,
+   "points": 135.04,
+   "points_left": 13.4,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5872",
+     "bench_pts": 15.0,
+     "slot": "WR",
+     "started": "2133",
+     "started_pts": 9.1
+    },
+    {
+     "bench": "5872",
+     "bench_pts": 15.0,
+     "slot": "FLEX",
+     "started": "6786",
+     "started_pts": 8.9
+    }
+   ],
+   "efficiency": 0.9442,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 130.72,
+   "points": 123.42,
+   "points_left": 7.3,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "7": [
+  {
+   "bench_misses": [
+    {
+     "bench": "5000",
+     "bench_pts": 18.0,
+     "slot": "RB",
+     "started": "3242",
+     "started_pts": 4.6
+    },
+    {
+     "bench": "4983",
+     "bench_pts": 23.3,
+     "slot": "WR",
+     "started": "3157",
+     "started_pts": 11.0
+    },
+    {
+     "bench": "4983",
+     "bench_pts": 23.3,
+     "slot": "WR",
+     "started": "6886",
+     "started_pts": -0.7
+    },
+    {
+     "bench": "4983",
+     "bench_pts": 23.3,
+     "slot": "FLEX",
+     "started": "5927",
+     "started_pts": 18.5
+    }
+   ],
+   "efficiency": 0.7013,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 149.32,
+   "points": 104.72,
+   "points_left": 44.6,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "3969",
+     "bench_pts": 12.7,
+     "slot": "RB",
+     "started": "5131",
+     "started_pts": 8.0
+    },
+    {
+     "bench": "4036",
+     "bench_pts": 12.5,
+     "slot": "WR",
+     "started": "2449",
+     "started_pts": 7.8
+    },
+    {
+     "bench": "4036",
+     "bench_pts": 12.5,
+     "slot": "WR",
+     "started": "6059",
+     "started_pts": 9.8
+    },
+    {
+     "bench": "3969",
+     "bench_pts": 12.7,
+     "slot": "FLEX",
+     "started": "4039",
+     "started_pts": 8.9
+    }
+   ],
+   "efficiency": 0.9043,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 98.26,
+   "points": 88.86,
+   "points_left": 9.4,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6803",
+     "bench_pts": 14.5,
+     "slot": "WR",
+     "started": "2078",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "6803",
+     "bench_pts": 14.5,
+     "slot": "WR",
+     "started": "1825",
+     "started_pts": 8.46
+    },
+    {
+     "bench": "6803",
+     "bench_pts": 14.5,
+     "slot": "FLEX",
+     "started": "344",
+     "started_pts": 1.8
+    }
+   ],
+   "efficiency": 0.8042,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 103.18,
+   "points": 82.98,
+   "points_left": 20.2,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "2078"
+   ]
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 117.22,
+   "points": 117.22,
+   "points_left": 0.0,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "421",
+     "bench_pts": 18.4,
+     "slot": "QB",
+     "started": "954",
+     "started_pts": -0.18
+    },
+    {
+     "bench": "5937",
+     "bench_pts": 24.5,
+     "slot": "WR",
+     "started": "4131",
+     "started_pts": 14.4
+    },
+    {
+     "bench": "5937",
+     "bench_pts": 24.5,
+     "slot": "WR",
+     "started": "1352",
+     "started_pts": 3.0
+    },
+    {
+     "bench": "5844",
+     "bench_pts": 14.4,
+     "slot": "TE",
+     "started": "4066",
+     "started_pts": 7.9
+    },
+    {
+     "bench": "5937",
+     "bench_pts": 24.5,
+     "slot": "FLEX",
+     "started": "6801",
+     "started_pts": 16.3
+    }
+   ],
+   "efficiency": 0.6367,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 128.2,
+   "points": 81.62,
+   "points_left": 46.58,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 97.88,
+   "points": 97.88,
+   "points_left": 0.0,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1476",
+     "bench_pts": 6.1,
+     "slot": "RB",
+     "started": "2168",
+     "started_pts": 0.8
+    },
+    {
+     "bench": "1476",
+     "bench_pts": 6.1,
+     "slot": "FLEX",
+     "started": "6130",
+     "started_pts": 5.7
+    }
+   ],
+   "efficiency": 0.9655,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 153.66,
+   "points": 148.36,
+   "points_left": 5.3,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4149",
+     "bench_pts": 19.4,
+     "slot": "RB",
+     "started": "3164",
+     "started_pts": 5.6
+    },
+    {
+     "bench": "4149",
+     "bench_pts": 19.4,
+     "slot": "RB",
+     "started": "4273",
+     "started_pts": 4.6
+    },
+    {
+     "bench": "1144",
+     "bench_pts": 16.7,
+     "slot": "WR",
+     "started": "4040",
+     "started_pts": 13.0
+    },
+    {
+     "bench": "1144",
+     "bench_pts": 16.7,
+     "slot": "WR",
+     "started": "2197",
+     "started_pts": 9.5
+    },
+    {
+     "bench": "4149",
+     "bench_pts": 19.4,
+     "slot": "FLEX",
+     "started": "5038",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.7147,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 126.9,
+   "points": 90.7,
+   "points_left": 36.2,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "5038"
+   ]
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 0.9991,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 111.58,
+   "points": 111.48,
+   "points_left": 0.1,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "616",
+     "bench_pts": 5.6,
+     "slot": "TE",
+     "started": "5857",
+     "started_pts": 5.3
+    },
+    {
+     "bench": "6996",
+     "bench_pts": 7.8,
+     "slot": "FLEX",
+     "started": "2216",
+     "started_pts": 4.7
+    }
+   ],
+   "efficiency": 0.9668,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 102.32,
+   "points": 98.92,
+   "points_left": 3.4,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 0.9742,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 120.1,
+   "points": 117.0,
+   "points_left": 3.1,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5872",
+     "bench_pts": 9.7,
+     "slot": "FLEX",
+     "started": "6786",
+     "started_pts": 0.1
+    }
+   ],
+   "efficiency": 0.9341,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 145.6,
+   "points": 136.0,
+   "points_left": 9.6,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "8": [
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 79.54,
+   "points": 79.54,
+   "points_left": 0.0,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6845",
+     "bench_pts": 20.1,
+     "slot": "RB",
+     "started": "6820",
+     "started_pts": 4.6
+    },
+    {
+     "bench": "6845",
+     "bench_pts": 20.1,
+     "slot": "RB",
+     "started": "5131",
+     "started_pts": 15.7
+    },
+    {
+     "bench": "4036",
+     "bench_pts": 22.8,
+     "slot": "WR",
+     "started": "2449",
+     "started_pts": 12.2
+    },
+    {
+     "bench": "4036",
+     "bench_pts": 22.8,
+     "slot": "WR",
+     "started": "4039",
+     "started_pts": 16.5
+    },
+    {
+     "bench": "4036",
+     "bench_pts": 22.8,
+     "slot": "FLEX",
+     "started": "6059",
+     "started_pts": 16.8
+    }
+   ],
+   "efficiency": 0.7741,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 115.56,
+   "points": 89.46,
+   "points_left": 26.1,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5347",
+     "bench_pts": 19.7,
+     "slot": "RB",
+     "started": "3198",
+     "started_pts": 17.2
+    },
+    {
+     "bench": "5347",
+     "bench_pts": 19.7,
+     "slot": "RB",
+     "started": "2320",
+     "started_pts": 7.7
+    },
+    {
+     "bench": "6798",
+     "bench_pts": 11.7,
+     "slot": "WR",
+     "started": "1825",
+     "started_pts": 7.2
+    },
+    {
+     "bench": "5347",
+     "bench_pts": 19.7,
+     "slot": "FLEX",
+     "started": "3200",
+     "started_pts": 11.4
+    }
+   ],
+   "efficiency": 0.8566,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 148.54,
+   "points": 127.24,
+   "points_left": 21.3,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6931",
+     "bench_pts": 20.3,
+     "slot": "RB",
+     "started": "5850",
+     "started_pts": 12.9
+    },
+    {
+     "bench": "6931",
+     "bench_pts": 20.3,
+     "slot": "RB",
+     "started": "6908",
+     "started_pts": 4.3
+    },
+    {
+     "bench": "6931",
+     "bench_pts": 20.3,
+     "slot": "FLEX",
+     "started": "2238",
+     "started_pts": 2.6
+    }
+   ],
+   "efficiency": 0.7547,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 103.16,
+   "points": 77.86,
+   "points_left": 25.3,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "421",
+     "bench_pts": 21.44,
+     "slot": "QB",
+     "started": "4881",
+     "started_pts": 11.82
+    },
+    {
+     "bench": "6801",
+     "bench_pts": 11.4,
+     "slot": "WR",
+     "started": "4131",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "6801",
+     "bench_pts": 11.4,
+     "slot": "FLEX",
+     "started": "6794",
+     "started_pts": 4.1
+    }
+   ],
+   "efficiency": 0.6999,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 88.04,
+   "points": 61.62,
+   "points_left": 26.42,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "4131"
+   ]
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 0.9822,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 73.2,
+   "points": 71.9,
+   "points_left": 1.3,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 0.9946,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 74.56,
+   "points": 74.16,
+   "points_left": 0.4,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4068",
+     "bench_pts": 18.5,
+     "slot": "WR",
+     "started": "4040",
+     "started_pts": 10.2
+    },
+    {
+     "bench": "4068",
+     "bench_pts": 18.5,
+     "slot": "WR",
+     "started": "1144",
+     "started_pts": 3.4
+    },
+    {
+     "bench": "4068",
+     "bench_pts": 18.5,
+     "slot": "FLEX",
+     "started": "515",
+     "started_pts": 12.1
+    }
+   ],
+   "efficiency": 0.8275,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 127.54,
+   "points": 105.54,
+   "points_left": 22.0,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4150",
+     "bench_pts": 12.7,
+     "slot": "RB",
+     "started": "6813",
+     "started_pts": 4.1
+    },
+    {
+     "bench": "4150",
+     "bench_pts": 12.7,
+     "slot": "RB",
+     "started": "5892",
+     "started_pts": 11.5
+    },
+    {
+     "bench": "4150",
+     "bench_pts": 12.7,
+     "slot": "FLEX",
+     "started": "6806",
+     "started_pts": 12.6
+    }
+   ],
+   "efficiency": 0.9376,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 137.82,
+   "points": 129.22,
+   "points_left": 8.6,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "7090",
+     "bench_pts": 15.4,
+     "slot": "WR",
+     "started": "2216",
+     "started_pts": 14.0
+    },
+    {
+     "bench": "7090",
+     "bench_pts": 15.4,
+     "slot": "FLEX",
+     "started": "6790",
+     "started_pts": 3.8
+    }
+   ],
+   "efficiency": 0.9212,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 147.12,
+   "points": 135.52,
+   "points_left": 11.6,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "24",
+     "bench_pts": 17.94,
+     "slot": "QB",
+     "started": "1049",
+     "started_pts": 17.32
+    },
+    {
+     "bench": "5122",
+     "bench_pts": 7.9,
+     "slot": "RB",
+     "started": "5916",
+     "started_pts": 6.3
+    },
+    {
+     "bench": "PIT",
+     "bench_pts": 16.0,
+     "slot": "DEF",
+     "started": "GB",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.8264,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 113.04,
+   "points": 93.42,
+   "points_left": 19.62,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "GB"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4187",
+     "bench_pts": 7.4,
+     "slot": "RB",
+     "started": "2588",
+     "started_pts": 6.7
+    },
+    {
+     "bench": "4187",
+     "bench_pts": 7.4,
+     "slot": "FLEX",
+     "started": "6786",
+     "started_pts": 6.6
+    }
+   ],
+   "efficiency": 0.9927,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 109.96,
+   "points": 109.16,
+   "points_left": 0.8,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ],
+ "9": [
+  {
+   "bench_misses": [
+    {
+     "bench": "6886",
+     "bench_pts": 11.3,
+     "slot": "WR",
+     "started": "4983",
+     "started_pts": 2.8
+    },
+    {
+     "bench": "616",
+     "bench_pts": 14.5,
+     "slot": "TE",
+     "started": "4602",
+     "started_pts": 1.0
+    }
+   ],
+   "efficiency": 0.8219,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 123.5,
+   "points": 101.5,
+   "points_left": 22.0,
+   "roster_id": 1,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6845",
+     "bench_pts": 11.8,
+     "slot": "RB",
+     "started": "6820",
+     "started_pts": 10.9
+    },
+    {
+     "bench": "6845",
+     "bench_pts": 11.8,
+     "slot": "RB",
+     "started": "5170",
+     "started_pts": 2.3
+    },
+    {
+     "bench": "538",
+     "bench_pts": 11.8,
+     "slot": "WR",
+     "started": "4036",
+     "started_pts": 0.0
+    },
+    {
+     "bench": "538",
+     "bench_pts": 11.8,
+     "slot": "FLEX",
+     "started": "5131",
+     "started_pts": 0.0
+    }
+   ],
+   "efficiency": 0.699,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 94.34,
+   "points": 65.94,
+   "points_left": 28.4,
+   "roster_id": 2,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "4036",
+    "5131",
+    "TB"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "5248",
+     "bench_pts": 7.4,
+     "slot": "RB",
+     "started": "3198",
+     "started_pts": 6.8
+    },
+    {
+     "bench": "5248",
+     "bench_pts": 7.4,
+     "slot": "RB",
+     "started": "2320",
+     "started_pts": 3.2
+    },
+    {
+     "bench": "5248",
+     "bench_pts": 7.4,
+     "slot": "FLEX",
+     "started": "5890",
+     "started_pts": 7.1
+    }
+   ],
+   "efficiency": 0.9591,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 102.8,
+   "points": 98.6,
+   "points_left": 4.2,
+   "roster_id": 3,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2161",
+     "bench_pts": 14.3,
+     "slot": "RB",
+     "started": "5850",
+     "started_pts": 13.3
+    },
+    {
+     "bench": "2161",
+     "bench_pts": 14.3,
+     "slot": "FLEX",
+     "started": "6908",
+     "started_pts": 4.8
+    }
+   ],
+   "efficiency": 0.9344,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 144.8,
+   "points": 135.3,
+   "points_left": 9.5,
+   "roster_id": 4,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4881",
+     "bench_pts": 18.6,
+     "slot": "QB",
+     "started": "2229",
+     "started_pts": 14.52
+    },
+    {
+     "bench": "4066",
+     "bench_pts": 13.3,
+     "slot": "TE",
+     "started": "5844",
+     "started_pts": 12.4
+    },
+    {
+     "bench": "4066",
+     "bench_pts": 13.3,
+     "slot": "FLEX",
+     "started": "6814",
+     "started_pts": 0.4
+    }
+   ],
+   "efficiency": 0.8627,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 123.7,
+   "points": 106.72,
+   "points_left": 16.98,
+   "roster_id": 5,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "2325",
+     "bench_pts": 12.5,
+     "slot": "WR",
+     "started": "2309",
+     "started_pts": 10.0
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 12.5,
+     "slot": "WR",
+     "started": "3423",
+     "started_pts": 10.8
+    },
+    {
+     "bench": "2325",
+     "bench_pts": 12.5,
+     "slot": "FLEX",
+     "started": "3199",
+     "started_pts": 7.6
+    }
+   ],
+   "efficiency": 0.9365,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 77.18,
+   "points": 72.28,
+   "points_left": 4.9,
+   "roster_id": 6,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "1476",
+     "bench_pts": 5.2,
+     "slot": "RB",
+     "started": "6130",
+     "started_pts": 4.9
+    },
+    {
+     "bench": "5848",
+     "bench_pts": 5.3,
+     "slot": "WR",
+     "started": "1689",
+     "started_pts": 4.8
+    }
+   ],
+   "efficiency": 0.985,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 53.16,
+   "points": 52.36,
+   "points_left": 0.8,
+   "roster_id": 7,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [],
+   "efficiency": 1.0,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 101.18,
+   "points": 101.18,
+   "points_left": 0.0,
+   "roster_id": 8,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "4150",
+     "bench_pts": 14.2,
+     "slot": "RB",
+     "started": "6813",
+     "started_pts": 7.4
+    },
+    {
+     "bench": "4150",
+     "bench_pts": 14.2,
+     "slot": "RB",
+     "started": "5892",
+     "started_pts": 2.7
+    },
+    {
+     "bench": "4150",
+     "bench_pts": 14.2,
+     "slot": "FLEX",
+     "started": "6806",
+     "started_pts": 4.5
+    }
+   ],
+   "efficiency": 0.8637,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 118.84,
+   "points": 102.64,
+   "points_left": 16.2,
+   "roster_id": 9,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": [
+    "SEA"
+   ]
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "6931",
+     "bench_pts": 10.9,
+     "slot": "RB",
+     "started": "6996",
+     "started_pts": 2.3
+    },
+    {
+     "bench": "2216",
+     "bench_pts": 8.4,
+     "slot": "WR",
+     "started": "1426",
+     "started_pts": 4.5
+    }
+   ],
+   "efficiency": 0.9021,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 127.64,
+   "points": 115.14,
+   "points_left": 12.5,
+   "roster_id": 10,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "24",
+     "bench_pts": 22.36,
+     "slot": "QB",
+     "started": "1049",
+     "started_pts": 14.62
+    }
+   ],
+   "efficiency": 0.9369,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 122.66,
+   "points": 114.92,
+   "points_left": 7.74,
+   "roster_id": 11,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  },
+  {
+   "bench_misses": [
+    {
+     "bench": "3280",
+     "bench_pts": 9.2,
+     "slot": "RB",
+     "started": "2391",
+     "started_pts": 1.6
+    },
+    {
+     "bench": "3280",
+     "bench_pts": 9.2,
+     "slot": "RB",
+     "started": "184",
+     "started_pts": 5.8
+    }
+   ],
+   "efficiency": 0.9392,
+   "empty_slots": 0,
+   "injured_starters": {},
+   "optimal_points": 124.92,
+   "points": 117.32,
+   "points_left": 7.6,
+   "roster_id": 12,
+   "snapshots_available": false,
+   "stale_lineup": false,
+   "zero_point_starters": []
+  }
+ ]
+}

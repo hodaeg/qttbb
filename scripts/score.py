@@ -9,7 +9,9 @@ Outputs (data/processed/):
     python scripts/score.py
 """
 import json
+import re
 import sys
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -57,6 +59,40 @@ def optimal_lineup(slots, pool, pts):
     return lineup
 
 
+SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
+POS_ALIASES = {"PK": "K", "FB": "RB", "HB": "RB"}
+
+
+def norm_name(name):
+    s = unicodedata.normalize("NFKD", name or "").encode("ascii", "ignore").decode().lower()
+    parts = [w for w in re.sub(r"[^a-z ]", "", s.replace("-", " ")).split() if w not in SUFFIXES]
+    return " ".join(parts)
+
+
+def norm_pos(pos):
+    return POS_ALIASES.get(pos, pos)
+
+
+def nfl_report_for(season, week):
+    """Official NFL injury report for that week, indexed by normalised player name."""
+    f = RAW / "nfl_injuries" / str(season) / f"reg{int(week):02d}.json"
+    rows = load(f)
+    if rows is None:
+        return None
+    index = defaultdict(list)
+    for r in rows:
+        index[norm_name(r["name"])].append(r)
+    return index
+
+
+def report_flag(index, player):
+    """Out/Doubtful designation for this player on that week's report, or None."""
+    for r in index.get(norm_name(player.get("name")), []):
+        if r["game"] in ("Out", "Doubtful") and norm_pos(r["pos"]) == norm_pos(player.get("pos")):
+            return r
+    return None
+
+
 def snapshots_for(season, week):
     d = RAW / "snapshots" / season / f"wk{int(week):02d}"
     return [load(f) for f in sorted(d.glob("*.json"))] if d.exists() else []
@@ -99,15 +135,24 @@ def analyse_season(bundle, players, cfg):
                     b = max(better, key=lambda x: pts.get(x, 0))
                     bench_misses.append({"slot": slots[i], "started": p, "started_pts": pts.get(p, 0), "bench": b, "bench_pts": pts.get(b, 0)})
 
-            # injury flags from game-day snapshots: still in the final lineup despite being Out/Doubtful
+            # Injury flags, two sources:
+            #  1. official NFL injury report: game status Out/Doubtful AND scored 0 as a starter (retroactive rule)
+            #  2. game-day snapshots: Out/Doubtful at snapshot time and still in the final lineup
             flags = {}
+            report = nfl_report_for(season, wk)
+            if report is not None:
+                for p in starters:
+                    if p and p != "0" and pts.get(p, 0) == 0 and p in players:
+                        hit = report_flag(report, players[p])
+                        if hit:
+                            flags[p] = {"status": hit["game"], "source": "nfl_report", "injury": hit["injury"], "practice": hit["practice"]}
             for s in snaps:
                 for r in s["rosters"]:
                     if r["roster_id"] != rid:
                         continue
                     for p, st in r["statuses"].items():
                         if p in starters and (st in out_set or st in doubt_set):
-                            flags.setdefault(p, {"status": st, "first_seen": s["taken_at"]})
+                            flags.setdefault(p, {"status": st, "source": "snapshot", "first_seen": s["taken_at"]})
 
             stale = prev_starters.get(rid) == starters
             prev_starters[rid] = starters
@@ -128,7 +173,12 @@ def analyse_season(bundle, players, cfg):
             ev("empty_slot", w["empty_slot"] * empty, f"{empty} empty starting slot(s)")
             for p, f in flags.items():
                 key = "injured_starter_out" if f["status"] in out_set else "injured_starter_doubtful"
-                ev(key, w[key], f'{players.get(p, {}).get("name", p)} was {f["status"]} at {f["first_seen"]} and stayed in the lineup')
+                pname = players.get(p, {}).get("name", p)
+                if f["source"] == "nfl_report":
+                    detail = f'{pname} was listed {f["status"]} ({f["injury"] or "no injury listed"}) on the official NFL injury report and scored 0 in the starting lineup'
+                else:
+                    detail = f'{pname} was {f["status"]} at {f["first_seen"]} and stayed in the lineup'
+                ev(key, w[key], detail)
             lost = max(round(left / 10 * w["points_left_per_10"], 2), w["points_left_cap_per_week"])
             ev("points_left", lost, f"{left} pts left on the bench vs. best lineup")
             if stale:
@@ -219,16 +269,38 @@ def main():
     owners = owners_directory(bundles)
     dump(OUT / "owners.json", owners)
 
-    current = bundles[-1]
-    weeks, scores = analyse_season(current, players, cfg)
-    season = current["league"]["season"]
-    dump(OUT / season / "weeks.json", weeks)
-    dump(OUT / season / "integrity.json", scores)
+    injury_starts = []
+    for b in bundles:
+        season = b["league"]["season"]
+        weeks, scores = analyse_season(b, players, cfg)
+        dump(OUT / season / "weeks.json", weeks)
+        dump(OUT / season / "integrity.json", scores)
+        owner_of = {r["roster_id"]: r["owner_id"] for r in b["rosters"]}
+        for wk, rows in weeks.items():
+            for row in rows:
+                for pid, f in row["injured_starters"].items():
+                    injury_starts.append({
+                        "season": season, "week": int(wk), "roster_id": row["roster_id"],
+                        "owner_id": owner_of.get(row["roster_id"]), "player_id": pid,
+                        "player": players.get(pid, {}).get("name", pid), "pos": players.get(pid, {}).get("pos"),
+                        "status": f["status"], "source": f["source"], "injury": f.get("injury"),
+                    })
+        print(f"season {season}: {len(weeks)} scored week(s), top integrity "
+              f'{owners.get(scores[0]["owner_id"], {}).get("display_name", "?")} {scores[0]["score"]}')
+
+    injury_starts.sort(key=lambda r: (r["season"], r["week"]))
+    by_owner = defaultdict(lambda: {"out": 0, "doubtful": 0})
+    for r in injury_starts:
+        by_owner[r["owner_id"]]["out" if r["status"] in cfg["integrity"]["out_statuses"] else "doubtful"] += 1
+    dump(OUT / "injury_starts.json", {
+        "rule": "Official NFL injury report game status Out/Doubtful AND 0 points as a starter (plus game-day snapshot flags)",
+        "by_owner": by_owner, "instances": injury_starts,
+    })
     dump(OUT / "rivalries.json", head_to_head(bundles, owners, cfg))
 
-    print(f"season {season}: {len(weeks)} scored week(s)")
-    for s in scores:
-        print(f'  {owners.get(s["owner_id"], {}).get("display_name", s["owner_id"]):<18}{s["score"]:>6}  ({len(s["events"])} events)')
+    print("\nStarted an Out/Doubtful player (all seasons):")
+    for uid, c in sorted(by_owner.items(), key=lambda kv: -(kv[1]["out"] + kv[1]["doubtful"])):
+        print(f'  {owners.get(uid, {}).get("display_name", uid):<18} out={c["out"]:<3} doubtful={c["doubtful"]}')
 
 
 if __name__ == "__main__":

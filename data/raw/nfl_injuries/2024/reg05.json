@@ -1,0 +1,1738 @@
+[
+ {
+  "game": "Out",
+  "injury": "Concussion",
+  "name": "Luke Goedeke",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Buccaneers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Kameron Johnson",
+  "pos": "WR",
+  "practice": "Full Participation in Practice",
+  "team": "Buccaneers"
+ },
+ {
+  "game": "Out",
+  "injury": "Calf",
+  "name": "Calijah Kancey",
+  "pos": "DT",
+  "practice": "Did Not Participate In Practice",
+  "team": "Buccaneers"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Jalen McMillan",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Buccaneers"
+ },
+ {
+  "game": "Out",
+  "injury": "Concussion",
+  "name": "Trey Palmer",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Buccaneers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "gameday concussion protocol evaluation",
+  "name": "Tykee Smith",
+  "pos": "S",
+  "practice": "",
+  "team": "Buccaneers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Groin",
+  "name": "Jordan Whitehead",
+  "pos": "S",
+  "practice": "",
+  "team": "Buccaneers"
+ },
+ {
+  "game": "Out",
+  "injury": "Foot",
+  "name": "Antoine Winfield Jr.",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Buccaneers"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Troy Andersen",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Falcons"
+ },
+ {
+  "game": "Out",
+  "injury": "Concussion",
+  "name": "Dee Alford",
+  "pos": "CB",
+  "practice": "",
+  "team": "Falcons"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Illness",
+  "name": "Jase McClellan",
+  "pos": "RB",
+  "practice": "Limited Participation in Practice",
+  "team": "Falcons"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Hamstring",
+  "name": "Michael Carter II",
+  "pos": "CB",
+  "practice": "",
+  "team": "Jets"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Hamstring",
+  "name": "Leki Fotu",
+  "pos": "DT",
+  "practice": "Limited Participation in Practice",
+  "team": "Jets"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Morgan Moses",
+  "pos": "T",
+  "practice": "Did Not Participate In Practice",
+  "team": "Jets"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Toe",
+  "name": "C.J. Mosley",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Jets"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "T.J. Hockenson",
+  "pos": "TE",
+  "practice": "Limited Participation in Practice",
+  "team": "Vikings"
+ },
+ {
+  "game": "Out",
+  "injury": "Hip",
+  "name": "Aaron Jones",
+  "pos": "RB",
+  "practice": "",
+  "team": "Vikings"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Nick Chubb",
+  "pos": "RB",
+  "practice": "Limited Participation in Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Jack Conklin",
+  "pos": "T",
+  "practice": "Limited Participation in Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "gameday concussion protocol evaluation",
+  "name": "Grant Delpit",
+  "pos": "S",
+  "practice": "",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Illness",
+  "name": "Michael Dunn",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shin",
+  "name": "Ronnie Hickman Jr.",
+  "pos": "S",
+  "practice": "",
+  "team": "Browns"
+ },
+ {
+  "game": "Out",
+  "injury": "Ribs, Elbow",
+  "name": "Jordan Hicks",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Nyheim Hines",
+  "pos": "RB",
+  "practice": "Limited Participation in Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Out",
+  "injury": "Shoulder",
+  "name": "James Hudson",
+  "pos": "T",
+  "practice": "Did Not Participate In Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Out",
+  "injury": "Ribs",
+  "name": "Charley Hughlett",
+  "pos": "LS",
+  "practice": "",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "face",
+  "name": "Rodney McLeod Jr.",
+  "pos": "S",
+  "practice": "",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "David Njoku",
+  "pos": "TE",
+  "practice": "Limited Participation in Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Illness",
+  "name": "Ogbo Okoronkwo",
+  "pos": "DE",
+  "practice": "Full Participation in Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Cramps",
+  "name": "Jeremiah Owusu-Koramoah",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Pierre Strong",
+  "pos": "RB",
+  "practice": "Limited Participation in Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Denzel Ward",
+  "pos": "CB",
+  "practice": "",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Jedrick Wills",
+  "pos": "T",
+  "practice": "Limited Participation in Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Out",
+  "injury": "Triceps",
+  "name": "Alex Wright",
+  "pos": "DE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Browns"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Nick Allegretti",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Out",
+  "injury": "Groin",
+  "name": "Noah Brown",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Groin",
+  "name": "Percy Butler",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Clelin Ferrell",
+  "pos": "DE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Knee",
+  "name": "Jordan Magee",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Pectoral",
+  "name": "Marcus Mariota",
+  "pos": "QB",
+  "practice": "Full Participation in Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder, gameday concussion protocol evaluation",
+  "name": "Quan Martin",
+  "pos": "S",
+  "practice": "Full Participation in Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Tibia, Fibula",
+  "name": "Efe Obada",
+  "pos": "DE",
+  "practice": "Full Participation in Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shin",
+  "name": "Tyler Owens",
+  "pos": "S",
+  "practice": "Did Not Participate In Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Brian Robinson",
+  "pos": "RB",
+  "practice": "Limited Participation in Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Out",
+  "injury": "Shoulder",
+  "name": "Jadeveon Clowney",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Foot",
+  "name": "Jalen Coker",
+  "pos": "WR",
+  "practice": "Full Participation in Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Biceps",
+  "name": "Austin Corbett",
+  "pos": "C",
+  "practice": "",
+  "team": "Panthers"
+ },
+ {
+  "game": "Out",
+  "injury": "Achilles",
+  "name": "Shaq Thompson",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "Charles Harris",
+  "pos": "DE",
+  "practice": "Full Participation in Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hip",
+  "name": "Robert Hunt",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Dane Jackson",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring, Groin",
+  "name": "Josey Jewell",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "Xavier Legette",
+  "pos": "WR",
+  "practice": "",
+  "team": "Panthers"
+ },
+ {
+  "game": "Out",
+  "injury": "Elbow",
+  "name": "Taylor Moton",
+  "pos": "T",
+  "practice": "Full Participation in Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Out",
+  "injury": "Concussion",
+  "name": "Andrew Raym",
+  "pos": "C",
+  "practice": "Did Not Participate In Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Calf",
+  "name": "Ian Thomas",
+  "pos": "TE",
+  "practice": "Limited Participation in Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Out",
+  "injury": "gameday concussion protocol evaluation",
+  "name": "Tommy Tremble",
+  "pos": "TE",
+  "practice": "Limited Participation in Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Foot",
+  "name": "Shy Tuttle",
+  "pos": "DT",
+  "practice": "Limited Participation in Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ribs",
+  "name": "DeAndre Carter",
+  "pos": "WR",
+  "practice": "Limited Participation in Practice",
+  "team": "Bears"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ribs",
+  "name": "Teven Jenkins",
+  "pos": "T",
+  "practice": "Limited Participation in Practice",
+  "team": "Bears"
+ },
+ {
+  "game": "Out",
+  "injury": "Groin",
+  "name": "Zacch Pickens",
+  "pos": "DT",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bears"
+ },
+ {
+  "game": "Out",
+  "injury": "Hip",
+  "name": "Terell Smith",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bears"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Neck",
+  "name": "Rasheen Ali",
+  "pos": "RB",
+  "practice": "Full Participation in Practice",
+  "team": "Ravens"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Deonte Harty",
+  "pos": "WR",
+  "practice": "Full Participation in Practice",
+  "team": "Ravens"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee, Hamstring",
+  "name": "Arthur Maulet",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Ravens"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Roger Rosengarten",
+  "pos": "T",
+  "practice": "",
+  "team": "Ravens"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Andrew Vorhees",
+  "pos": "G",
+  "practice": "Full Participation in Practice",
+  "team": "Ravens"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Daxton Hill",
+  "pos": "CB",
+  "practice": "",
+  "team": "Bengals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Mike Hilton",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bengals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "McKinnley Jackson",
+  "pos": "DT",
+  "practice": "Full Participation in Practice",
+  "team": "Bengals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Amarius Mims",
+  "pos": "T",
+  "practice": "",
+  "team": "Bengals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Myles Murphy",
+  "pos": "DE",
+  "practice": "Full Participation in Practice",
+  "team": "Bengals"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Hamstring",
+  "name": "Sheldon Rankins",
+  "pos": "DT",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bengals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "gameday concussion protocol evaluation",
+  "name": "Josh Allen",
+  "pos": "QB",
+  "practice": "Full Participation in Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Pectoral",
+  "name": "Terrel Bernard",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Out",
+  "injury": "Oblique",
+  "name": "Austin Johnson",
+  "pos": "DT",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Forearm",
+  "name": "Taron Johnson",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Ed Oliver",
+  "pos": "DT",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Out",
+  "injury": "Concussion",
+  "name": "Taylor Rapp",
+  "pos": "S",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Khalil Shakir",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Illness",
+  "name": "Azeez Al-Shaair",
+  "pos": "LB",
+  "practice": "",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Shoulder",
+  "name": "Derek Barnett",
+  "pos": "DE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "British Brooks",
+  "pos": "RB",
+  "practice": "",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Nico Collins",
+  "pos": "WR",
+  "practice": "",
+  "team": "Texans"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Back",
+  "name": "Jake Hansen",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Calf",
+  "name": "Kurt Hinish",
+  "pos": "DT",
+  "practice": "Full Participation in Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Illness",
+  "name": "Dylan Horton",
+  "pos": "DE",
+  "practice": "Full Participation in Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Tytus Howard",
+  "pos": "T",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Hip",
+  "name": "Jerry Hughes",
+  "pos": "DE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Joe Mixon",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Dameon Pierce",
+  "pos": "RB",
+  "practice": "Limited Participation in Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Groin",
+  "name": "Jimmie Ward",
+  "pos": "S",
+  "practice": "Full Participation in Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Foot",
+  "name": "Robert Woods",
+  "pos": "WR",
+  "practice": "Limited Participation in Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Shin",
+  "name": "Will Fries",
+  "pos": "G",
+  "practice": "",
+  "team": "Colts"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Neck",
+  "name": "Ryan Kelly",
+  "pos": "C",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Out",
+  "injury": "Hip",
+  "name": "Kenny Moore II",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Out",
+  "injury": "Quadricep",
+  "name": "Kwity Paye",
+  "pos": "DE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Oblique",
+  "name": "Anthony Richardson",
+  "pos": "QB",
+  "practice": "Limited Participation in Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Braden Smith",
+  "pos": "T",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Jonathan Taylor",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Illness",
+  "name": "Samuel Womack",
+  "pos": "CB",
+  "practice": "",
+  "team": "Colts"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Neck",
+  "name": "Yasir Abdullah",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Jaguars"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Devin Duvernay",
+  "pos": "WR",
+  "practice": "",
+  "team": "Jaguars"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Evan Engram",
+  "pos": "TE",
+  "practice": "Limited Participation in Practice",
+  "team": "Jaguars"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Cramps",
+  "name": "Antonio Johnson",
+  "pos": "S",
+  "practice": "",
+  "team": "Jaguars"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Devin Lloyd",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Jaguars"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Quadricep",
+  "name": "Darnell Savage",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Jaguars"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Daniel Thomas",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Jaguars"
+ },
+ {
+  "game": "Out",
+  "injury": "gameday concussion protocol evaluation",
+  "name": "De'Von Achane",
+  "pos": "RB",
+  "practice": "",
+  "team": "Dolphins"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Odell Beckham Jr.",
+  "pos": "WR",
+  "practice": "Full Participation in Practice",
+  "team": "Dolphins"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hand",
+  "name": "Jevon Holland",
+  "pos": "S",
+  "practice": "",
+  "team": "Dolphins"
+ },
+ {
+  "game": "Out",
+  "injury": "Shin",
+  "name": "Jordan Poyer",
+  "pos": "S",
+  "practice": "Did Not Participate In Practice",
+  "team": "Dolphins"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Cam Smith",
+  "pos": "CB",
+  "practice": "Full Participation in Practice",
+  "team": "Dolphins"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ribs",
+  "name": "Skylar Thompson",
+  "pos": "QB",
+  "practice": "Limited Participation in Practice",
+  "team": "Dolphins"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Kendrick Bourne",
+  "pos": "WR",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Kyle Dugger",
+  "pos": "S",
+  "practice": "Did Not Participate In Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "Anfernee Jennings",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "Jonathan Jones",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Groin",
+  "name": "Marcus Jones",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Mike Jordan",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Nick Leverett",
+  "pos": "C",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Vederian Lowe",
+  "pos": "T",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Calf",
+  "name": "Marte Mapu",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "K.J. Osborn",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "Jabrill Peppers",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle, Wrist",
+  "name": "Layden Robinson",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Knee",
+  "name": "Sione Takitaki",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Out",
+  "injury": "Thumb",
+  "name": "Isaiah Adams",
+  "pos": "G",
+  "practice": "Did Not Participate In Practice",
+  "team": "Cardinals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Kelvin Beachum",
+  "pos": "T",
+  "practice": "Limited Participation in Practice",
+  "team": "Cardinals"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Will Hernandez",
+  "pos": "G",
+  "practice": "",
+  "team": "Cardinals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Christian Jones",
+  "pos": "T",
+  "practice": "Limited Participation in Practice",
+  "team": "Cardinals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ribs",
+  "name": "Trey McBride",
+  "pos": "TE",
+  "practice": "Full Participation in Practice",
+  "team": "Cardinals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Stinger",
+  "name": "Bilal Nichols",
+  "pos": "DT",
+  "practice": "",
+  "team": "Cardinals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Left Knee",
+  "name": "Matt Prater",
+  "pos": "K",
+  "practice": "Limited Participation in Practice",
+  "team": "Cardinals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Khyiris Tonga",
+  "pos": "DT",
+  "practice": "Limited Participation in Practice",
+  "team": "Cardinals"
+ },
+ {
+  "game": "Out",
+  "injury": "Groin",
+  "name": "Garrett Williams",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Cardinals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Ji'Ayir Brown",
+  "pos": "S",
+  "practice": "",
+  "team": "49ers"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Oblique",
+  "name": "Chris Conley",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "49ers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "Jacob Cowing",
+  "pos": "WR",
+  "practice": "Limited Participation in Practice",
+  "team": "49ers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Kalia Davis",
+  "pos": "DT",
+  "practice": "Full Participation in Practice",
+  "team": "49ers"
+ },
+ {
+  "game": "Out",
+  "injury": "Calf",
+  "name": "Demetrius Flannigan-Fowles",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "49ers"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Yetur Gross-Matos",
+  "pos": "DE",
+  "practice": "Did Not Participate In Practice",
+  "team": "49ers"
+ },
+ {
+  "game": "Out",
+  "injury": "Wrist",
+  "name": "Talanoa Hufanga",
+  "pos": "S",
+  "practice": "Full Participation in Practice",
+  "team": "49ers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ribs",
+  "name": "George Kittle",
+  "pos": "TE",
+  "practice": "Limited Participation in Practice",
+  "team": "49ers"
+ },
+ {
+  "game": "Out",
+  "injury": "Right Ankle",
+  "name": "Jake Moody",
+  "pos": "K",
+  "practice": "",
+  "team": "49ers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Fred Warner",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "49ers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Thigh",
+  "name": "Isaac Yiadom",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "49ers"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Davante Adams",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Maxx Crosby",
+  "pos": "DE",
+  "practice": "Limited Participation in Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Oblique",
+  "name": "Divine Deablo",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Luke Masterson",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Calf",
+  "name": "Kana'i Mauga",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Out",
+  "injury": "Not injury related - personal matter",
+  "name": "Michael Mayer",
+  "pos": "TE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "Tyreik McAllister",
+  "pos": "RB",
+  "practice": "Limited Participation in Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee, Ankle",
+  "name": "Thayer Munford Jr.",
+  "pos": "T",
+  "practice": "Did Not Participate In Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Achilles",
+  "name": "Dylan Parham",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Decamerion Richardson",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Trey Taylor",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Out",
+  "injury": "Groin",
+  "name": "Zamir White",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Raiders"
+ },
+ {
+  "game": "Out",
+  "injury": "Foot",
+  "name": "Christian Wilkins",
+  "pos": "DT",
+  "practice": "",
+  "team": "Raiders"
+ },
+ {
+  "game": "Out",
+  "injury": "Back",
+  "name": "Tyler Badie",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Broncos"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Alex Palczewski",
+  "pos": "T",
+  "practice": "",
+  "team": "Broncos"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Luke Wattenberg",
+  "pos": "C",
+  "practice": "",
+  "team": "Broncos"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Quadricep",
+  "name": "Matthew Adams",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Giants"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Calf",
+  "name": "Adoree' Jackson",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Giants"
+ },
+ {
+  "game": "Out",
+  "injury": "Concussion",
+  "name": "Malik Nabers",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Giants"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Calf",
+  "name": "Andru Phillips",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Giants"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Groin",
+  "name": "Devin Singletary",
+  "pos": "RB",
+  "practice": "Limited Participation in Practice",
+  "team": "Giants"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Foot",
+  "name": "Derick Hall",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Thigh",
+  "name": "Julian Love",
+  "pos": "S",
+  "practice": "Full Participation in Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Boye Mafe",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Byron Murphy II",
+  "pos": "DT",
+  "practice": "Did Not Participate In Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Out",
+  "injury": "Thigh",
+  "name": "Uchenna Nwosu",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Riq Woolen",
+  "pos": "CB",
+  "practice": "",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Cameron Young",
+  "pos": "DT",
+  "practice": "Limited Participation in Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Groin",
+  "name": "Jaire Alexander",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hip",
+  "name": "Edgerrin Cooper",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Not injury related - personal matter",
+  "name": "Romeo Doubs",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Calf",
+  "name": "Jonathan Ford",
+  "pos": "DT",
+  "practice": "Limited Participation in Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Elgton Jenkins",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "Jordan Morgan",
+  "pos": "T",
+  "practice": "Limited Participation in Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Luke Musgrave",
+  "pos": "TE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Neck",
+  "name": "Robert Rochell",
+  "pos": "CB",
+  "practice": "",
+  "team": "Packers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Carrington Valentine",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Ankle",
+  "name": "Christian Watson",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Devonte Wyatt",
+  "pos": "DT",
+  "practice": "Did Not Participate In Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Cooper Kupp",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Rams"
+ },
+ {
+  "game": "Out",
+  "injury": "Forearm, Foot",
+  "name": "Larrell Murchison",
+  "pos": "DT",
+  "practice": "Did Not Participate In Practice",
+  "team": "Rams"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "Caelen Carson",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Cowboys"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Brandin Cooks",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Cowboys"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Trevon Diggs",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Cowboys"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Tyler Guyton",
+  "pos": "T",
+  "practice": "Full Participation in Practice",
+  "team": "Cowboys"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Marshawn Kneeland",
+  "pos": "DE",
+  "practice": "",
+  "team": "Cowboys"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Quadricep",
+  "name": "Marist Liufau",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Cowboys"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Cramps",
+  "name": "Zack Martin",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Cowboys"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Micah Parsons",
+  "pos": "DE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Cowboys"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Nick Herbig",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Out",
+  "injury": "Groin",
+  "name": "Alex Highsmith",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Stinger",
+  "name": "DeMarvin Leal",
+  "pos": "DE",
+  "practice": "",
+  "team": "Steelers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Jeremiah Moon",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Groin",
+  "name": "Larry Ogunjobi",
+  "pos": "DT",
+  "practice": "Limited Participation in Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Cordarrelle Patterson",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "MyCole Pruitt",
+  "pos": "TE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Jaylen Warren",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Calf",
+  "name": "Russell Wilson",
+  "pos": "QB",
+  "practice": "Limited Participation in Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Oblique",
+  "name": "Derek Carr",
+  "pos": "QB",
+  "practice": "",
+  "team": "Saints"
+ },
+ {
+  "game": "Out",
+  "injury": "Hand",
+  "name": "Willie Gay Jr.",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Saints"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Will Harris",
+  "pos": "S",
+  "practice": "",
+  "team": "Saints"
+ },
+ {
+  "game": "Out",
+  "injury": "Rib",
+  "name": "Taysom Hill",
+  "pos": "TE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Saints"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Shane Lemieux",
+  "pos": "G",
+  "practice": "Did Not Participate In Practice",
+  "team": "Saints"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Hamstring",
+  "name": "Kendre Miller",
+  "pos": "RB",
+  "practice": "Full Participation in Practice",
+  "team": "Saints"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Groin",
+  "name": "Lucas Patrick",
+  "pos": "G",
+  "practice": "Did Not Participate In Practice",
+  "team": "Saints"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Cesar Ruiz",
+  "pos": "C",
+  "practice": "Did Not Participate In Practice",
+  "team": "Saints"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Payton Turner",
+  "pos": "DE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Saints"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Pete Werner",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Saints"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Illness",
+  "name": "Clyde Edwards-Helaire",
+  "pos": "RB",
+  "practice": "Limited Participation in Practice",
+  "team": "Chiefs"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Mecole Hardman",
+  "pos": "WR",
+  "practice": "Full Participation in Practice",
+  "team": "Chiefs"
+ }
+]

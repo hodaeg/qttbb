@@ -7,6 +7,7 @@ No dependencies beyond Python 3.10+ (stdlib only). The Sleeper API is public, fr
 
 ```
 python scripts/fetch.py      # league data for every Sleeper season -> data/raw/
+python scripts/nfl_injuries.py  # official NFL injury reports, every season -> data/raw/nfl_injuries/
 python scripts/score.py      # -> data/processed/
 python scripts/snapshot.py   # game-day lineup + injury snapshot -> data/raw/snapshots/
 ```
@@ -30,6 +31,8 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 
 **`<season>/integrity.json`** — `[ { roster_id, owner_id, score, events: [ { week, kind, delta, detail } ] } ]`, sorted best-first. Every deduction carries a plain-English `detail`.
 
+**`injury_starts.json`** — every instance of starting an Out/Doubtful player across all seasons: `{ rule, by_owner: { "<owner_id>": { out, doubtful } }, instances: [ { season, week, roster_id, owner_id, player_id, player, pos, status, source, injury } ] }`. `source` is `nfl_report` (retroactive) or `snapshot` (live).
+
 **`rivalries.json`** — one entry per owner pair: `{ a, b, protected_rivalry, a_wins, b_wins, ties, games_played, a_points, b_points, biggest_a_win, biggest_b_win, games[] }`. `protected_rivalry` is the rivalry name when the pair is listed in `config/league.json`, otherwise `null`.
 
 ## Integrity score
@@ -39,15 +42,19 @@ Starts at 100. Weights live in `config/league.json` and can be changed without t
 | Signal | Source |
 |---|---|
 | Empty starting slot | Matchups |
-| Starter who was Out/IR/Doubtful and stayed in | **Game-day snapshots only** |
+| Starter listed Out/Doubtful on the official NFL injury report who scored 0 | NFL injury report (all seasons) |
+| Starter who was Out/IR/Doubtful at a game-day snapshot and stayed in | Game-day snapshots (live weeks) |
 | Points left on the bench vs. the best possible lineup | Matchups |
 | Identical lineup to last week | Matchups (weight 0 by default) |
 | High lineup efficiency (bonus) | Matchups |
 
 Optimal-lineup math is verified against Sleeper's own `ppts` field.
 
+See [`docs/DECISIONS.md`](docs/DECISIONS.md) for why each choice was made and what's still open.
+
 ### Known limits
 
+- The NFL report is the Friday/Saturday version, so a Questionable player who is ruled out on Sunday isn't flagged. Retroactive counts are a floor, not a ceiling.
 - Sleeper stores no injury history. Injury flags exist only for weeks where a snapshot was taken.
 - Snapshots run on a schedule and GitHub cron can be late, so a flag means "Out at snapshot time and still in the final lineup", not an exact kickoff comparison.
 - `/players/nfl` is a multi-MB endpoint Sleeper asks to be called about once a day. The scripts cache it locally for 24h.

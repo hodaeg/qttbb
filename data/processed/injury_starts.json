@@ -1,0 +1,263 @@
+{
+ "by_owner": {
+  "383681356686950400": {
+   "doubtful": 0,
+   "out": 2
+  },
+  "422102738889867264": {
+   "doubtful": 1,
+   "out": 1
+  },
+  "423560331814510592": {
+   "doubtful": 0,
+   "out": 2
+  },
+  "471083964757438464": {
+   "doubtful": 0,
+   "out": 4
+  },
+  "471345530597797888": {
+   "doubtful": 0,
+   "out": 2
+  },
+  "471360899853053952": {
+   "doubtful": 0,
+   "out": 2
+  },
+  "471368473092550656": {
+   "doubtful": 2,
+   "out": 3
+  }
+ },
+ "instances": [
+  {
+   "injury": "Knee, Ankle",
+   "owner_id": "471368473092550656",
+   "player": "George Kittle",
+   "player_id": "4217",
+   "pos": "TE",
+   "roster_id": 12,
+   "season": "2019",
+   "source": "nfl_report",
+   "status": "Doubtful",
+   "week": 11
+  },
+  {
+   "injury": "Neck",
+   "owner_id": "471368473092550656",
+   "player": "Duke Johnson",
+   "player_id": "2382",
+   "pos": "RB",
+   "roster_id": 12,
+   "season": "2020",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 16
+  },
+  {
+   "injury": "Foot",
+   "owner_id": "471360899853053952",
+   "player": "Michael Thomas",
+   "player_id": "3199",
+   "pos": "WR",
+   "roster_id": 9,
+   "season": "2022",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 4
+  },
+  {
+   "injury": "Hamstring",
+   "owner_id": "471368473092550656",
+   "player": "Darren Waller",
+   "player_id": "2505",
+   "pos": "TE",
+   "roster_id": 12,
+   "season": "2022",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 7
+  },
+  {
+   "injury": "Ankle",
+   "owner_id": "471083964757438464",
+   "player": "Dameon Pierce",
+   "player_id": "8129",
+   "pos": "RB",
+   "roster_id": 5,
+   "season": "2022",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 15
+  },
+  {
+   "injury": "Ankle, Knee",
+   "owner_id": "471083964757438464",
+   "player": "Deebo Samuel",
+   "player_id": "5872",
+   "pos": "WR",
+   "roster_id": 5,
+   "season": "2022",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 15
+  },
+  {
+   "injury": "Forearm",
+   "owner_id": "471368473092550656",
+   "player": "Dallas Goedert",
+   "player_id": "5022",
+   "pos": "TE",
+   "roster_id": 12,
+   "season": "2023",
+   "source": "nfl_report",
+   "status": "Doubtful",
+   "week": 13
+  },
+  {
+   "injury": "right Shoulder",
+   "owner_id": "383681356686950400",
+   "player": "Trevor Lawrence",
+   "player_id": "7523",
+   "pos": "QB",
+   "roster_id": 1,
+   "season": "2023",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 17
+  },
+  {
+   "injury": "Concussion",
+   "owner_id": "422102738889867264",
+   "player": "Courtland Sutton",
+   "player_id": "5045",
+   "pos": "WR",
+   "roster_id": 7,
+   "season": "2023",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 17
+  },
+  {
+   "injury": "Hamstring",
+   "owner_id": "471345530597797888",
+   "player": "Evan Engram",
+   "player_id": "4066",
+   "pos": "TE",
+   "roster_id": 6,
+   "season": "2024",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 2
+  },
+  {
+   "injury": "Ankle",
+   "owner_id": "383681356686950400",
+   "player": "Christian Watson",
+   "player_id": "8167",
+   "pos": "WR",
+   "roster_id": 1,
+   "season": "2024",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 4
+  },
+  {
+   "injury": "Knee",
+   "owner_id": "471345530597797888",
+   "player": "Rashee Rice",
+   "player_id": "10229",
+   "pos": "WR",
+   "roster_id": 6,
+   "season": "2024",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 4
+  },
+  {
+   "injury": "Hamstring",
+   "owner_id": "423560331814510592",
+   "player": "Dallas Goedert",
+   "player_id": "5022",
+   "pos": "TE",
+   "roster_id": 2,
+   "season": "2024",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 6
+  },
+  {
+   "injury": "gameday concussion protocol evaluation",
+   "owner_id": "471083964757438464",
+   "player": "Marvin Harrison",
+   "player_id": "11628",
+   "pos": "WR",
+   "roster_id": 5,
+   "season": "2024",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 6
+  },
+  {
+   "injury": "Illness",
+   "owner_id": "423560331814510592",
+   "player": "Deebo Samuel",
+   "player_id": "5872",
+   "pos": "WR",
+   "roster_id": 2,
+   "season": "2024",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 7
+  },
+  {
+   "injury": "Shoulder",
+   "owner_id": "471368473092550656",
+   "player": "Sam LaPorta",
+   "player_id": "10859",
+   "pos": "TE",
+   "roster_id": 12,
+   "season": "2024",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 11
+  },
+  {
+   "injury": "Calf",
+   "owner_id": "471360899853053952",
+   "player": "Chuba Hubbard",
+   "player_id": "7594",
+   "pos": "RB",
+   "roster_id": 9,
+   "season": "2025",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 5
+  },
+  {
+   "injury": "Hamstring",
+   "owner_id": "471083964757438464",
+   "player": "Jayden Daniels",
+   "player_id": "11566",
+   "pos": "QB",
+   "roster_id": 5,
+   "season": "2025",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 8
+  },
+  {
+   "injury": "Quadricep",
+   "owner_id": "422102738889867264",
+   "player": "Brandon McManus",
+   "player_id": "1433",
+   "pos": "K",
+   "roster_id": 7,
+   "season": "2025",
+   "source": "nfl_report",
+   "status": "Doubtful",
+   "week": 11
+  }
+ ],
+ "rule": "Official NFL injury report game status Out/Doubtful AND 0 points as a starter (plus game-day snapshot flags)"
+}

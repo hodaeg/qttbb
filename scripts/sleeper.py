@@ -27,11 +27,17 @@ def get(path, retries=3):
 def nfl_players():
     """Full NFL player DB, cached locally for 24h (it is several MB)."""
     CACHE.mkdir(exist_ok=True)
-    f = CACHE / "players.json"
-    if f.exists() and time.time() - f.stat().st_mtime < PLAYERS_TTL:
-        return json.loads(f.read_text(encoding="utf-8"))
+    f, meta = CACHE / "players.json", CACHE / "players.fetched_at"
+    # Age comes from a sidecar timestamp, not file mtime, so it survives a CI cache restore.
+    if f.exists() and meta.exists():
+        try:
+            if time.time() - float(meta.read_text()) < PLAYERS_TTL:
+                return json.loads(f.read_text(encoding="utf-8"))
+        except ValueError:
+            pass
     data = get("/players/nfl")
     f.write_text(json.dumps(data), encoding="utf-8")
+    meta.write_text(str(time.time()))
     return data
 
 
