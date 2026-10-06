@@ -72,6 +72,12 @@ For past seasons there is no injury history in Sleeper, so the owner defined a r
 Sleeper keeps no injury history, so `snapshot.py` records every starting lineup and each starter's injury status at set times (Thu night, Sunday windows, Monday night). Flag = "Out/Doubtful at snapshot time and still in the final lineup". This cannot be backfilled, so it needs to run from the start of a season.
 **Caveat:** GitHub cron can run 5–30 minutes late, so snapshots are scheduled well before kickoff and aren't exact-to-kickoff.
 
+### D14 — Ignore rosters with no matchup that week — Accepted
+Found when the owner checked BigDogsRevenge, 2022 Week 15: a playoff bye. Sleeper returns `matchup_id: null` for byes and eliminated teams, but still includes a `starters` list that is a stale carry-over of the last real lineup (here, identical to Week 14). Scoring it produced false flags (Pierce and Deebo Samuel "started" when the real roster had them on the bench).
+Rule: if `matchup_id` is null, the roster is skipped entirely for that week (no flags, no deductions, no bonus, no row in `weeks.json`). No game means no lineup consequences.
+Effect: 19 → 15 instances; removed 2020 wk16 Duke Johnson, 2022 wk15 Pierce + Samuel, 2023 wk17 Courtland Sutton.
+**Lesson:** validate flags against what the manager actually saw in the app before treating them as findings. Spot-check any instance that will be shown to the league.
+
 ---
 
 ## Infrastructure

@@ -6,7 +6,7 @@
   },
   "422102738889867264": {
    "doubtful": 1,
-   "out": 1
+   "out": 0
   },
   "423560331814510592": {
    "doubtful": 0,
@@ -14,7 +14,7 @@
   },
   "471083964757438464": {
    "doubtful": 0,
-   "out": 4
+   "out": 2
   },
   "471345530597797888": {
    "doubtful": 0,
@@ -26,7 +26,7 @@
   },
   "471368473092550656": {
    "doubtful": 2,
-   "out": 3
+   "out": 2
   }
  },
  "instances": [
@@ -41,18 +41,6 @@
    "source": "nfl_report",
    "status": "Doubtful",
    "week": 11
-  },
-  {
-   "injury": "Neck",
-   "owner_id": "471368473092550656",
-   "player": "Duke Johnson",
-   "player_id": "2382",
-   "pos": "RB",
-   "roster_id": 12,
-   "season": "2020",
-   "source": "nfl_report",
-   "status": "Out",
-   "week": 16
   },
   {
    "injury": "Foot",
@@ -79,30 +67,6 @@
    "week": 7
   },
   {
-   "injury": "Ankle",
-   "owner_id": "471083964757438464",
-   "player": "Dameon Pierce",
-   "player_id": "8129",
-   "pos": "RB",
-   "roster_id": 5,
-   "season": "2022",
-   "source": "nfl_report",
-   "status": "Out",
-   "week": 15
-  },
-  {
-   "injury": "Ankle, Knee",
-   "owner_id": "471083964757438464",
-   "player": "Deebo Samuel",
-   "player_id": "5872",
-   "pos": "WR",
-   "roster_id": 5,
-   "season": "2022",
-   "source": "nfl_report",
-   "status": "Out",
-   "week": 15
-  },
-  {
    "injury": "Forearm",
    "owner_id": "471368473092550656",
    "player": "Dallas Goedert",
@@ -121,18 +85,6 @@
    "player_id": "7523",
    "pos": "QB",
    "roster_id": 1,
-   "season": "2023",
-   "source": "nfl_report",
-   "status": "Out",
-   "week": 17
-  },
-  {
-   "injury": "Concussion",
-   "owner_id": "422102738889867264",
-   "player": "Courtland Sutton",
-   "player_id": "5045",
-   "pos": "WR",
-   "roster_id": 7,
    "season": "2023",
    "source": "nfl_report",
    "status": "Out",

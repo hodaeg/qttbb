@@ -115,6 +115,10 @@ def analyse_season(bundle, players, cfg):
         snaps = snapshots_for(season, wk)
         weeks[wk] = []
         for m in bundle["matchups"][wk]:
+            # No matchup = bye or eliminated. Sleeper still returns a stale carried-over `starters`
+            # list for these, but no game was played, so it has no bearing on integrity.
+            if m.get("matchup_id") is None:
+                continue
             rid = m["roster_id"]
             pts = m.get("players_points") or {}
             starters = m.get("starters") or []

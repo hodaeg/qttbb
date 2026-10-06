@@ -247,17 +247,132 @@
     "detail": "15.0 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 16
-   },
-   {
-    "delta": -3.53,
-    "detail": "35.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 17
    }
   ],
   "owner_id": "471359444949659648",
   "roster_id": 10,
-  "score": 86.6
+  "score": 90.1
+ },
+ {
+  "events": [
+   {
+    "delta": -0.5,
+    "detail": "5.0 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 1
+   },
+   {
+    "delta": 1,
+    "detail": "96% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 1
+   },
+   {
+    "delta": -1.61,
+    "detail": "16.1 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 2
+   },
+   {
+    "delta": -0.75,
+    "detail": "7.48 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 3
+   },
+   {
+    "delta": -1.84,
+    "detail": "18.4 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 4
+   },
+   {
+    "delta": -1.38,
+    "detail": "13.8 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 5
+   },
+   {
+    "delta": -0.9,
+    "detail": "9.0 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 6
+   },
+   {
+    "delta": -2.21,
+    "detail": "22.1 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 7
+   },
+   {
+    "delta": -3.14,
+    "detail": "31.4 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 8
+   },
+   {
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 9
+   },
+   {
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 10
+   },
+   {
+    "delta": -0.76,
+    "detail": "7.6 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 11
+   },
+   {
+    "delta": -0.45,
+    "detail": "4.5 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 12
+   },
+   {
+    "delta": 1,
+    "detail": "97% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 12
+   },
+   {
+    "delta": -0.49,
+    "detail": "4.9 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 13
+   },
+   {
+    "delta": 1,
+    "detail": "96% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 13
+   },
+   {
+    "delta": -2.24,
+    "detail": "22.4 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 14
+   },
+   {
+    "delta": -2.1,
+    "detail": "21.0 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 16
+   },
+   {
+    "delta": -0.61,
+    "detail": "6.1 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 17
+   }
+  ],
+  "owner_id": "79761560662589440",
+  "roster_id": 4,
+  "score": 86.0
  },
  {
   "events": [
@@ -389,129 +504,123 @@
  {
   "events": [
    {
-    "delta": -0.5,
-    "detail": "5.0 pts left on the bench vs. best lineup",
+    "delta": -1.53,
+    "detail": "15.3 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 1
    },
    {
-    "delta": 1,
-    "detail": "96% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 1
-   },
-   {
-    "delta": -1.61,
-    "detail": "16.1 pts left on the bench vs. best lineup",
+    "delta": -0.6,
+    "detail": "6.0 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 2
    },
    {
-    "delta": -0.75,
-    "detail": "7.48 pts left on the bench vs. best lineup",
-    "kind": "points_left",
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
     "week": 3
    },
    {
-    "delta": -1.84,
-    "detail": "18.4 pts left on the bench vs. best lineup",
+    "delta": -0.05,
+    "detail": "0.5 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 4
    },
    {
-    "delta": -1.38,
-    "detail": "13.8 pts left on the bench vs. best lineup",
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 4
+   },
+   {
+    "delta": -1.3,
+    "detail": "13.0 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 5
    },
    {
-    "delta": -0.9,
-    "detail": "9.0 pts left on the bench vs. best lineup",
+    "delta": -0.44,
+    "detail": "4.44 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 6
    },
    {
-    "delta": -2.21,
-    "detail": "22.1 pts left on the bench vs. best lineup",
+    "delta": -1.86,
+    "detail": "18.6 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 7
    },
    {
-    "delta": -3.14,
-    "detail": "31.4 pts left on the bench vs. best lineup",
+    "delta": -0.51,
+    "detail": "5.1 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 8
    },
    {
     "delta": 1,
-    "detail": "100% lineup efficiency",
+    "detail": "96% lineup efficiency",
     "kind": "efficiency_bonus",
+    "week": 8
+   },
+   {
+    "delta": -0.79,
+    "detail": "7.9 pts left on the bench vs. best lineup",
+    "kind": "points_left",
     "week": 9
    },
    {
-    "delta": 1,
-    "detail": "100% lineup efficiency",
-    "kind": "efficiency_bonus",
+    "delta": -1.31,
+    "detail": "13.1 pts left on the bench vs. best lineup",
+    "kind": "points_left",
     "week": 10
    },
    {
-    "delta": -0.76,
-    "detail": "7.6 pts left on the bench vs. best lineup",
+    "delta": -1.63,
+    "detail": "16.3 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 11
    },
    {
-    "delta": -0.45,
-    "detail": "4.5 pts left on the bench vs. best lineup",
+    "delta": -1.22,
+    "detail": "12.2 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 12
    },
    {
-    "delta": 1,
-    "detail": "97% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 12
-   },
-   {
-    "delta": -0.49,
-    "detail": "4.9 pts left on the bench vs. best lineup",
+    "delta": -2.56,
+    "detail": "25.6 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 13
    },
    {
-    "delta": 1,
-    "detail": "96% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 13
-   },
-   {
-    "delta": -2.24,
-    "detail": "22.4 pts left on the bench vs. best lineup",
+    "delta": -0.29,
+    "detail": "2.9 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 14
    },
    {
-    "delta": -1.12,
-    "detail": "11.2 pts left on the bench vs. best lineup",
+    "delta": 1,
+    "detail": "98% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 14
+   },
+   {
+    "delta": -2.7,
+    "detail": "27.0 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 15
    },
    {
-    "delta": -2.1,
-    "detail": "21.0 pts left on the bench vs. best lineup",
+    "delta": -3.04,
+    "detail": "30.4 pts left on the bench vs. best lineup",
     "kind": "points_left",
     "week": 16
-   },
-   {
-    "delta": -0.61,
-    "detail": "6.1 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 17
    }
   ],
-  "owner_id": "79761560662589440",
-  "roster_id": 4,
-  "score": 84.9
+  "owner_id": "423560331814510592",
+  "roster_id": 2,
+  "score": 84.2
  },
  {
   "events": [
@@ -643,387 +752,6 @@
  {
   "events": [
    {
-    "delta": -1.53,
-    "detail": "15.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 1
-   },
-   {
-    "delta": -0.6,
-    "detail": "6.0 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 2
-   },
-   {
-    "delta": 1,
-    "detail": "100% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 3
-   },
-   {
-    "delta": -0.05,
-    "detail": "0.5 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 4
-   },
-   {
-    "delta": 1,
-    "detail": "100% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 4
-   },
-   {
-    "delta": -1.3,
-    "detail": "13.0 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 5
-   },
-   {
-    "delta": -0.44,
-    "detail": "4.44 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 6
-   },
-   {
-    "delta": -1.86,
-    "detail": "18.6 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 7
-   },
-   {
-    "delta": -0.51,
-    "detail": "5.1 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 8
-   },
-   {
-    "delta": 1,
-    "detail": "96% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 8
-   },
-   {
-    "delta": -0.79,
-    "detail": "7.9 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 9
-   },
-   {
-    "delta": -1.31,
-    "detail": "13.1 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 10
-   },
-   {
-    "delta": -1.63,
-    "detail": "16.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 11
-   },
-   {
-    "delta": -1.22,
-    "detail": "12.2 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 12
-   },
-   {
-    "delta": -2.56,
-    "detail": "25.6 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 13
-   },
-   {
-    "delta": -0.29,
-    "detail": "2.9 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 14
-   },
-   {
-    "delta": 1,
-    "detail": "98% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 14
-   },
-   {
-    "delta": -2.7,
-    "detail": "27.0 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 15
-   },
-   {
-    "delta": -3.04,
-    "detail": "30.4 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 16
-   },
-   {
-    "delta": -1.85,
-    "detail": "18.5 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 17
-   }
-  ],
-  "owner_id": "423560331814510592",
-  "roster_id": 2,
-  "score": 82.3
- },
- {
-  "events": [
-   {
-    "delta": -2.38,
-    "detail": "23.8 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 1
-   },
-   {
-    "delta": -1.12,
-    "detail": "11.2 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 2
-   },
-   {
-    "delta": -2.15,
-    "detail": "21.5 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 3
-   },
-   {
-    "delta": -3.75,
-    "detail": "37.5 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 4
-   },
-   {
-    "delta": 1,
-    "detail": "100% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 5
-   },
-   {
-    "delta": -1.07,
-    "detail": "10.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 6
-   },
-   {
-    "delta": -1.43,
-    "detail": "14.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 7
-   },
-   {
-    "delta": -2.88,
-    "detail": "28.8 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 8
-   },
-   {
-    "delta": -0.19,
-    "detail": "1.9 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 9
-   },
-   {
-    "delta": 1,
-    "detail": "98% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 9
-   },
-   {
-    "delta": -0.87,
-    "detail": "8.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 10
-   },
-   {
-    "delta": -0.95,
-    "detail": "9.5 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 11
-   },
-   {
-    "delta": -1.54,
-    "detail": "15.4 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 12
-   },
-   {
-    "delta": -0.85,
-    "detail": "8.5 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 13
-   },
-   {
-    "delta": -0.5,
-    "detail": "5.0 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 14
-   },
-   {
-    "delta": -1.72,
-    "detail": "17.24 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 15
-   },
-   {
-    "delta": -1.16,
-    "detail": "11.62 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 16
-   },
-   {
-    "delta": -0.09,
-    "detail": "0.88 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 17
-   },
-   {
-    "delta": 1,
-    "detail": "99% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 17
-   }
-  ],
-  "owner_id": "422102738889867264",
-  "roster_id": 7,
-  "score": 80.3
- },
- {
-  "events": [
-   {
-    "delta": -2.61,
-    "detail": "26.1 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 1
-   },
-   {
-    "delta": -0.16,
-    "detail": "1.6 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 2
-   },
-   {
-    "delta": 1,
-    "detail": "98% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 2
-   },
-   {
-    "delta": -2.62,
-    "detail": "26.2 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 3
-   },
-   {
-    "delta": -3.22,
-    "detail": "32.2 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 4
-   },
-   {
-    "delta": -1.74,
-    "detail": "17.38 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 5
-   },
-   {
-    "delta": -0.49,
-    "detail": "4.86 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 6
-   },
-   {
-    "delta": 1,
-    "detail": "96% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 6
-   },
-   {
-    "delta": 1,
-    "detail": "100% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 7
-   },
-   {
-    "delta": -1.32,
-    "detail": "13.22 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 8
-   },
-   {
-    "delta": -1.92,
-    "detail": "19.18 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 9
-   },
-   {
-    "delta": -0.14,
-    "detail": "1.4 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 10
-   },
-   {
-    "delta": 1,
-    "detail": "99% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 10
-   },
-   {
-    "delta": -0.47,
-    "detail": "4.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 11
-   },
-   {
-    "delta": 1,
-    "detail": "96% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 11
-   },
-   {
-    "delta": -2.73,
-    "detail": "27.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 12
-   },
-   {
-    "delta": -1.34,
-    "detail": "13.4 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 13
-   },
-   {
-    "delta": -1.07,
-    "detail": "10.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 14
-   },
-   {
-    "delta": -2.03,
-    "detail": "20.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 15
-   },
-   {
-    "delta": -2.62,
-    "detail": "26.2 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 16
-   },
-   {
-    "delta": -1.0,
-    "detail": "10.0 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 17
-   }
-  ],
-  "owner_id": "383681356686950400",
-  "roster_id": 1,
-  "score": 79.5
- },
- {
-  "events": [
-   {
     "delta": -0.38,
     "detail": "3.8 pts left on the bench vs. best lineup",
     "kind": "points_left",
@@ -1150,12 +878,6 @@
     "week": 14
    },
    {
-    "delta": -3.23,
-    "detail": "32.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 15
-   },
-   {
     "delta": -3.26,
     "detail": "32.58 pts left on the bench vs. best lineup",
     "kind": "points_left",
@@ -1170,7 +892,370 @@
   ],
   "owner_id": "471360899853053952",
   "roster_id": 9,
-  "score": 77.6
+  "score": 80.8
+ },
+ {
+  "events": [
+   {
+    "delta": -2.61,
+    "detail": "26.1 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 1
+   },
+   {
+    "delta": -0.16,
+    "detail": "1.6 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 2
+   },
+   {
+    "delta": 1,
+    "detail": "98% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 2
+   },
+   {
+    "delta": -2.62,
+    "detail": "26.2 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 3
+   },
+   {
+    "delta": -3.22,
+    "detail": "32.2 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 4
+   },
+   {
+    "delta": -1.74,
+    "detail": "17.38 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 5
+   },
+   {
+    "delta": -0.49,
+    "detail": "4.86 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 6
+   },
+   {
+    "delta": 1,
+    "detail": "96% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 6
+   },
+   {
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 7
+   },
+   {
+    "delta": -1.32,
+    "detail": "13.22 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 8
+   },
+   {
+    "delta": -1.92,
+    "detail": "19.18 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 9
+   },
+   {
+    "delta": -0.14,
+    "detail": "1.4 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 10
+   },
+   {
+    "delta": 1,
+    "detail": "99% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 10
+   },
+   {
+    "delta": -0.47,
+    "detail": "4.7 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 11
+   },
+   {
+    "delta": 1,
+    "detail": "96% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 11
+   },
+   {
+    "delta": -2.73,
+    "detail": "27.3 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 12
+   },
+   {
+    "delta": -1.34,
+    "detail": "13.4 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 13
+   },
+   {
+    "delta": -1.07,
+    "detail": "10.7 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 14
+   },
+   {
+    "delta": -2.03,
+    "detail": "20.3 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 15
+   },
+   {
+    "delta": -2.62,
+    "detail": "26.2 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 16
+   }
+  ],
+  "owner_id": "383681356686950400",
+  "roster_id": 1,
+  "score": 80.5
+ },
+ {
+  "events": [
+   {
+    "delta": -2.38,
+    "detail": "23.8 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 1
+   },
+   {
+    "delta": -1.12,
+    "detail": "11.2 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 2
+   },
+   {
+    "delta": -2.15,
+    "detail": "21.5 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 3
+   },
+   {
+    "delta": -3.75,
+    "detail": "37.5 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 4
+   },
+   {
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 5
+   },
+   {
+    "delta": -1.07,
+    "detail": "10.7 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 6
+   },
+   {
+    "delta": -1.43,
+    "detail": "14.3 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 7
+   },
+   {
+    "delta": -2.88,
+    "detail": "28.8 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 8
+   },
+   {
+    "delta": -0.19,
+    "detail": "1.9 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 9
+   },
+   {
+    "delta": 1,
+    "detail": "98% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 9
+   },
+   {
+    "delta": -0.87,
+    "detail": "8.7 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 10
+   },
+   {
+    "delta": -0.95,
+    "detail": "9.5 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 11
+   },
+   {
+    "delta": -1.54,
+    "detail": "15.4 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 12
+   },
+   {
+    "delta": -0.85,
+    "detail": "8.5 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 13
+   },
+   {
+    "delta": -0.5,
+    "detail": "5.0 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 14
+   },
+   {
+    "delta": -1.72,
+    "detail": "17.24 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 15
+   },
+   {
+    "delta": -1.16,
+    "detail": "11.62 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 16
+   },
+   {
+    "delta": -0.09,
+    "detail": "0.88 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 17
+   },
+   {
+    "delta": 1,
+    "detail": "99% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 17
+   }
+  ],
+  "owner_id": "422102738889867264",
+  "roster_id": 7,
+  "score": 80.3
+ },
+ {
+  "events": [
+   {
+    "delta": -3.39,
+    "detail": "33.9 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 1
+   },
+   {
+    "delta": -3.08,
+    "detail": "30.8 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 2
+   },
+   {
+    "delta": -2.16,
+    "detail": "21.6 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 3
+   },
+   {
+    "delta": -3.25,
+    "detail": "32.5 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 4
+   },
+   {
+    "delta": -1.75,
+    "detail": "17.5 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 5
+   },
+   {
+    "delta": -0.83,
+    "detail": "8.3 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 6
+   },
+   {
+    "delta": -0.23,
+    "detail": "2.3 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 7
+   },
+   {
+    "delta": 1,
+    "detail": "97% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 7
+   },
+   {
+    "delta": -0.92,
+    "detail": "9.24 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 8
+   },
+   {
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 9
+   },
+   {
+    "delta": -0.64,
+    "detail": "6.4 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 10
+   },
+   {
+    "delta": -2.29,
+    "detail": "22.9 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 11
+   },
+   {
+    "delta": -0.67,
+    "detail": "6.7 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 12
+   },
+   {
+    "delta": -1.73,
+    "detail": "17.3 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 13
+   },
+   {
+    "delta": -1.49,
+    "detail": "14.9 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 14
+   },
+   {
+    "delta": -0.5,
+    "detail": "5.0 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 16
+   },
+   {
+    "delta": 1,
+    "detail": "97% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 16
+   },
+   {
+    "delta": -1.2,
+    "detail": "12.0 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 17
+   }
+  ],
+  "owner_id": "471083964757438464",
+  "roster_id": 5,
+  "score": 78.9
  },
  {
   "events": [
@@ -1305,17 +1390,11 @@
     "detail": "99% lineup efficiency",
     "kind": "efficiency_bonus",
     "week": 16
-   },
-   {
-    "delta": -2.07,
-    "detail": "20.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 17
    }
   ],
   "owner_id": "471368473092550656",
   "roster_id": 12,
-  "score": 76.7
+  "score": 78.8
  },
  {
   "events": [
@@ -1428,12 +1507,6 @@
     "week": 14
    },
    {
-    "delta": -1.28,
-    "detail": "12.8 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 15
-   },
-   {
     "delta": -10,
     "detail": "2 empty starting slot(s)",
     "kind": "empty_slot",
@@ -1454,139 +1527,6 @@
   ],
   "owner_id": "471359672478068736",
   "roster_id": 8,
-  "score": 73.1
- },
- {
-  "events": [
-   {
-    "delta": -3.39,
-    "detail": "33.9 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 1
-   },
-   {
-    "delta": -3.08,
-    "detail": "30.8 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 2
-   },
-   {
-    "delta": -2.16,
-    "detail": "21.6 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 3
-   },
-   {
-    "delta": -3.25,
-    "detail": "32.5 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 4
-   },
-   {
-    "delta": -1.75,
-    "detail": "17.5 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 5
-   },
-   {
-    "delta": -0.83,
-    "detail": "8.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 6
-   },
-   {
-    "delta": -0.23,
-    "detail": "2.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 7
-   },
-   {
-    "delta": 1,
-    "detail": "97% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 7
-   },
-   {
-    "delta": -0.92,
-    "detail": "9.24 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 8
-   },
-   {
-    "delta": 1,
-    "detail": "100% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 9
-   },
-   {
-    "delta": -0.64,
-    "detail": "6.4 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 10
-   },
-   {
-    "delta": -2.29,
-    "detail": "22.9 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 11
-   },
-   {
-    "delta": -0.67,
-    "detail": "6.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 12
-   },
-   {
-    "delta": -1.73,
-    "detail": "17.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 13
-   },
-   {
-    "delta": -1.49,
-    "detail": "14.9 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 14
-   },
-   {
-    "delta": -8,
-    "detail": "Dameon Pierce was listed Out (Ankle) on the official NFL injury report and scored 0 in the starting lineup",
-    "kind": "injured_starter_out",
-    "week": 15
-   },
-   {
-    "delta": -8,
-    "detail": "Deebo Samuel was listed Out (Ankle, Knee) on the official NFL injury report and scored 0 in the starting lineup",
-    "kind": "injured_starter_out",
-    "week": 15
-   },
-   {
-    "delta": -2.68,
-    "detail": "26.8 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 15
-   },
-   {
-    "delta": -0.5,
-    "detail": "5.0 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 16
-   },
-   {
-    "delta": 1,
-    "detail": "97% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 16
-   },
-   {
-    "delta": -1.2,
-    "detail": "12.0 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 17
-   }
-  ],
-  "owner_id": "471083964757438464",
-  "roster_id": 5,
-  "score": 60.2
+  "score": 74.3
  }
 ]

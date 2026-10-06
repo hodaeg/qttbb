@@ -54,6 +54,7 @@ See [`docs/DECISIONS.md`](docs/DECISIONS.md) for why each choice was made and wh
 
 ### Known limits
 
+- Rosters with no matchup in a week (playoff byes, eliminated teams) are skipped entirely: Sleeper returns a stale carried-over lineup for them. They have no row in `weeks.json` for that week.
 - The NFL report is the Friday/Saturday version, so a Questionable player who is ruled out on Sunday isn't flagged. Retroactive counts are a floor, not a ceiling.
 - Sleeper stores no injury history. Injury flags exist only for weeks where a snapshot was taken.
 - Snapshots run on a schedule and GitHub cron can be late, so a flag means "Out at snapshot time and still in the final lineup", not an exact kickoff comparison.
