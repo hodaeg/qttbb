@@ -1432,7 +1432,14 @@
    "efficiency": 0.885,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {},
+   "injured_starters": {
+    "5927": {
+     "injury": "Hamstring",
+     "practice": "Limited Participation in Practice",
+     "source": "nfl_report_dnp",
+     "status": "Questionable"
+    }
+   },
    "optimal_points": 121.72,
    "points": 107.72,
    "points_left": 14.0,

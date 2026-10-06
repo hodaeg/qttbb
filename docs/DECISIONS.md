@@ -108,6 +108,20 @@ Owner's rule: the league only cares about first place and last place. So after a
 **Effect:** exactly one penalty changed: Hodaeg's 2023 week 17 (Trevor Lawrence, Out), a third-place game after losing the semifinal. Hodaeg's all-time total 16 → 8. Injury starts 15 → 14.
 Assumptions: one game per bracket round (true in all 8 seasons); a tied game doesn't end relevance (none exist).
 
+### D18 — "Questionable, then didn't play" counts, at 6 points — Accepted
+Motivating case: TheBoarHouse started Terry McLaurin in 2026 week 4. The Friday NFL report listed him Questionable, he was ruled out Sunday, and he scored 0. D11's Out/Doubtful-only rule missed it (the known Questionable gap).
+Rule: a starter who is listed **Questionable** on the official report, **has no Sleeper stats row that week** (did not play), and **scored 0** counts as a penalty of **6** (`questionable_did_not_play`; lighter than Out = 8 because the status was less certain at the time of the report).
+Retroactive result: **6 instances** across 2019-2026, all confirmed valid by the owner: Hodaeg 2022 wk4 (Kamara), ChinaKing 2023 wk16 (Reed), Gingivitis 2024 wk6 (Cook), JSusee 2024 wk9 (Cooper), TheBoarHouse 2025 wk5 (Bowers) and 2026 wk4 (McLaurin).
+Not counted: 23 Questionable starters who played and scored 0.
+**Known limit:** "didn't play" also covers a player who was active but never got in the game, which can't be told apart from a true inactive with this data. Going forward, game-day snapshots (D12) record the actual status live. First scheduled run: Thursday 2026-10-08.
+Playoff relevance (D17) still applies; excluded games don't count.
+
+### D19 — Departed members stay as they are for now — Accepted
+Sleeper only removes members in the offseason, and TheBoarHouse (who left in 2026) still appears as a member with a roster. Their history stays in all leaderboards and rivalries unchanged. Revisit after the season: options are a "former member" flag or hiding them.
+
+### D20 — Sleeper's app can show wrong bye information for old weeks — Noted
+The owner saw JSusee's 2024 week 9 Michael Pittman marked as on a bye. He wasn't: he scored 1.9, and weekly stats put him on IND (the 2024 week 9 byes were PIT and SF). Sleeper's player record now lists him on PIT, so the app appears to show his *current* team's bye on an old week. The pipeline uses the team **as of that week**. Treat Sleeper's app as unreliable for historical bye/team labels when spot-checking; check `data/raw/player_teams/` and the schedule instead.
+
 ---
 
 ## Infrastructure
@@ -121,5 +135,5 @@ Assumptions: one game per bracket round (true in all 8 seasons); a tied game doe
 
 1. Which protected rivalry pairs, and do they carry stakes? (D7)
 2. Final Tegridy weights, whether empty slots count, and does the score have consequences? (D9, D16)
-3. Do we want a Sunday-inactives source to close the Questionable→Out gap? (D11)
+3. ~~Sunday-inactives source for the Questionable→Out gap~~ — mostly closed by D18; revisit only if the active-but-didn't-play ambiguity becomes a problem.
 4. Front-end contract: does the Figma design need any fields the JSON doesn't have yet?

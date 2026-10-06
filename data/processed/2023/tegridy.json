@@ -43,12 +43,6 @@
  },
  {
   "events": [],
-  "owner_id": "471360899853053952",
-  "roster_id": 9,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
   "owner_id": "471359444949659648",
   "roster_id": 10,
   "tegridy_factor": 0
@@ -71,6 +65,19 @@
   "owner_id": "471368473092550656",
   "roster_id": 12,
   "tegridy_factor": 3
+ },
+ {
+  "events": [
+   {
+    "detail": "Jayden Reed was listed Questionable (Toe, Chest) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
+    "kind": "questionable_did_not_play",
+    "penalty": 6,
+    "week": 16
+   }
+  ],
+  "owner_id": "471360899853053952",
+  "roster_id": 9,
+  "tegridy_factor": 6
  },
  {
   "events": [

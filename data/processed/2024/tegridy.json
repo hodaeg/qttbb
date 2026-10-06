@@ -1,12 +1,6 @@
 [
  {
   "events": [],
-  "owner_id": "471074114505797632",
-  "roster_id": 3,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
   "owner_id": "79761560662589440",
   "roster_id": 4,
   "tegridy_factor": 0
@@ -47,6 +41,19 @@
   "owner_id": "471359444949659648",
   "roster_id": 10,
   "tegridy_factor": 5
+ },
+ {
+  "events": [
+   {
+    "detail": "Amari Cooper was listed Questionable (Wrist) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
+    "kind": "questionable_did_not_play",
+    "penalty": 6,
+    "week": 9
+   }
+  ],
+  "owner_id": "471074114505797632",
+  "roster_id": 3,
+  "tegridy_factor": 6
  },
  {
   "events": [
@@ -119,10 +126,16 @@
     "kind": "injured_starter_out",
     "penalty": 8,
     "week": 4
+   },
+   {
+    "detail": "James Cook was listed Questionable (Toe) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
+    "kind": "questionable_did_not_play",
+    "penalty": 6,
+    "week": 6
    }
   ],
   "owner_id": "471345530597797888",
   "roster_id": 6,
-  "tegridy_factor": 16
+  "tegridy_factor": 22
  }
 ]

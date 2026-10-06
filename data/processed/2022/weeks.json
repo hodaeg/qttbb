@@ -4069,7 +4069,14 @@
    "efficiency": 0.7458,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {},
+   "injured_starters": {
+    "4035": {
+     "injury": "Rib",
+     "practice": "Limited Participation in Practice",
+     "source": "nfl_report_dnp",
+     "status": "Questionable"
+    }
+   },
    "optimal_points": 126.66,
    "points": 94.46,
    "points_left": 32.2,

@@ -2975,7 +2975,14 @@
    "efficiency": 0.7424,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {},
+   "injured_starters": {
+    "10222": {
+     "injury": "Toe, Chest",
+     "practice": "Did Not Participate In Practice",
+     "source": "nfl_report_dnp",
+     "status": "Questionable"
+    }
+   },
    "optimal_points": 133.16,
    "points": 98.86,
    "points_left": 34.3,
@@ -3127,6 +3134,12 @@
    "empty_slots": 0,
    "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
    "injured_starters": {
+    "2749": {
+     "injury": "Knee, Ankle",
+     "practice": "Limited Participation in Practice",
+     "source": "nfl_report_dnp",
+     "status": "Questionable"
+    },
     "7523": {
      "injury": "right Shoulder",
      "practice": "Did Not Participate In Practice",

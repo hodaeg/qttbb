@@ -2950,7 +2950,14 @@
    "efficiency": 0.7084,
    "empty_slots": 0,
    "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
-   "injured_starters": {},
+   "injured_starters": {
+    "4137": {
+     "injury": "Heel",
+     "practice": "Did Not Participate In Practice",
+     "source": "nfl_report_dnp",
+     "status": "Questionable"
+    }
+   },
    "optimal_points": 108.38,
    "points": 76.78,
    "points_left": 31.6,

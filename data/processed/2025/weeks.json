@@ -4848,7 +4848,14 @@
    "efficiency": 0.7904,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {},
+   "injured_starters": {
+    "11604": {
+     "injury": "Knee",
+     "practice": "Did Not Participate In Practice",
+     "source": "nfl_report_dnp",
+     "status": "Questionable"
+    }
+   },
    "optimal_points": 87.3,
    "points": 69.0,
    "points_left": 18.3,

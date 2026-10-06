@@ -2,34 +2,64 @@
  "by_owner": {
   "383681356686950400": {
    "doubtful": 0,
-   "out": 1
+   "out": 1,
+   "questionable_dnp": 1
   },
   "422102738889867264": {
    "doubtful": 1,
-   "out": 0
+   "out": 0,
+   "questionable_dnp": 0
   },
   "423560331814510592": {
    "doubtful": 0,
-   "out": 2
+   "out": 2,
+   "questionable_dnp": 0
+  },
+  "471074114505797632": {
+   "doubtful": 0,
+   "out": 0,
+   "questionable_dnp": 1
   },
   "471083964757438464": {
    "doubtful": 0,
-   "out": 2
+   "out": 2,
+   "questionable_dnp": 0
   },
   "471345530597797888": {
    "doubtful": 0,
-   "out": 2
+   "out": 2,
+   "questionable_dnp": 1
+  },
+  "471359672478068736": {
+   "doubtful": 0,
+   "out": 0,
+   "questionable_dnp": 2
   },
   "471360899853053952": {
    "doubtful": 0,
-   "out": 2
+   "out": 2,
+   "questionable_dnp": 1
   },
   "471368473092550656": {
    "doubtful": 2,
-   "out": 2
+   "out": 2,
+   "questionable_dnp": 0
   }
  },
  "excluded": [
+  {
+   "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
+   "injury": "Heel",
+   "owner_id": "471359444949659648",
+   "player": "James Conner",
+   "player_id": "4137",
+   "pos": "RB",
+   "roster_id": 10,
+   "season": "2021",
+   "source": "nfl_report_dnp",
+   "status": "Questionable",
+   "week": 16
+  },
   {
    "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
    "injury": "right Shoulder",
@@ -41,6 +71,19 @@
    "season": "2023",
    "source": "nfl_report",
    "status": "Out",
+   "week": 17
+  },
+  {
+   "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
+   "injury": "Knee, Ankle",
+   "owner_id": "383681356686950400",
+   "player": "Raheem Mostert",
+   "player_id": "2749",
+   "pos": "RB",
+   "roster_id": 1,
+   "season": "2023",
+   "source": "nfl_report_dnp",
+   "status": "Questionable",
    "week": 17
   }
  ],
@@ -56,6 +99,18 @@
    "source": "nfl_report",
    "status": "Doubtful",
    "week": 11
+  },
+  {
+   "injury": "Rib",
+   "owner_id": "383681356686950400",
+   "player": "Alvin Kamara",
+   "player_id": "4035",
+   "pos": "RB",
+   "roster_id": 1,
+   "season": "2022",
+   "source": "nfl_report_dnp",
+   "status": "Questionable",
+   "week": 4
   },
   {
    "injury": "Foot",
@@ -92,6 +147,18 @@
    "source": "nfl_report",
    "status": "Doubtful",
    "week": 13
+  },
+  {
+   "injury": "Toe, Chest",
+   "owner_id": "471360899853053952",
+   "player": "Jayden Reed",
+   "player_id": "10222",
+   "pos": "WR",
+   "roster_id": 9,
+   "season": "2023",
+   "source": "nfl_report_dnp",
+   "status": "Questionable",
+   "week": 16
   },
   {
    "injury": "Hamstring",
@@ -154,6 +221,18 @@
    "week": 6
   },
   {
+   "injury": "Toe",
+   "owner_id": "471345530597797888",
+   "player": "James Cook",
+   "player_id": "8138",
+   "pos": "RB",
+   "roster_id": 6,
+   "season": "2024",
+   "source": "nfl_report_dnp",
+   "status": "Questionable",
+   "week": 6
+  },
+  {
    "injury": "Illness",
    "owner_id": "423560331814510592",
    "player": "Deebo Samuel",
@@ -166,6 +245,18 @@
    "week": 7
   },
   {
+   "injury": "Wrist",
+   "owner_id": "471074114505797632",
+   "player": "Amari Cooper",
+   "player_id": "2309",
+   "pos": "WR",
+   "roster_id": 3,
+   "season": "2024",
+   "source": "nfl_report_dnp",
+   "status": "Questionable",
+   "week": 9
+  },
+  {
    "injury": "Shoulder",
    "owner_id": "471368473092550656",
    "player": "Sam LaPorta",
@@ -176,6 +267,18 @@
    "source": "nfl_report",
    "status": "Out",
    "week": 11
+  },
+  {
+   "injury": "Knee",
+   "owner_id": "471359672478068736",
+   "player": "Brock Bowers",
+   "player_id": "11604",
+   "pos": "TE",
+   "roster_id": 8,
+   "season": "2025",
+   "source": "nfl_report_dnp",
+   "status": "Questionable",
+   "week": 5
   },
   {
    "injury": "Calf",
@@ -212,7 +315,19 @@
    "source": "nfl_report",
    "status": "Doubtful",
    "week": 11
+  },
+  {
+   "injury": "Hamstring",
+   "owner_id": "471359672478068736",
+   "player": "Terry McLaurin",
+   "player_id": "5927",
+   "pos": "WR",
+   "roster_id": 8,
+   "season": "2026",
+   "source": "nfl_report_dnp",
+   "status": "Questionable",
+   "week": 4
   }
  ],
- "rule": "Official NFL injury report game status Out/Doubtful AND 0 points as a starter (plus game-day snapshot flags)"
+ "rule": "Official NFL injury report: Out/Doubtful, or Questionable who did not play, AND 0 points as a starter (plus game-day snapshot flags)"
 }

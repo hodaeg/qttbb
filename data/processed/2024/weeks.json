@@ -5191,7 +5191,14 @@
    "efficiency": 0.8314,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {},
+   "injured_starters": {
+    "8138": {
+     "injury": "Toe",
+     "practice": "Limited Participation in Practice",
+     "source": "nfl_report_dnp",
+     "status": "Questionable"
+    }
+   },
    "optimal_points": 94.2,
    "points": 78.32,
    "points_left": 15.88,
@@ -6364,7 +6371,14 @@
    "efficiency": 0.8175,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {},
+   "injured_starters": {
+    "2309": {
+     "injury": "Wrist",
+     "practice": "Limited Participation in Practice",
+     "source": "nfl_report_dnp",
+     "status": "Questionable"
+    }
+   },
    "optimal_points": 103.56,
    "points": 84.66,
    "points_left": 18.9,

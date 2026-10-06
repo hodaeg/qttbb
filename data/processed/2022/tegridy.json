@@ -1,12 +1,6 @@
 [
  {
   "events": [],
-  "owner_id": "383681356686950400",
-  "roster_id": 1,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
   "owner_id": "423560331814510592",
   "roster_id": 2,
   "tegridy_factor": 0
@@ -52,6 +46,19 @@
   "owner_id": "471366618241298432",
   "roster_id": 11,
   "tegridy_factor": 0
+ },
+ {
+  "events": [
+   {
+    "detail": "Alvin Kamara was listed Questionable (Rib) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
+    "kind": "questionable_did_not_play",
+    "penalty": 6,
+    "week": 4
+   }
+  ],
+  "owner_id": "383681356686950400",
+  "roster_id": 1,
+  "tegridy_factor": 6
  },
  {
   "events": [

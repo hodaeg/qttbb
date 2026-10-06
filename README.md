@@ -38,7 +38,7 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 
 **`<season>/efficiency.json`** — `[ { roster_id, owner_id, weeks, points, optimal_points, efficiency } ]`. A *skill* stat (how well a manager sets lineups), deliberately **not** part of Tegridy Factor.
 
-**`injury_starts.json`** — every instance of starting an Out/Doubtful player across all seasons: `{ rule, by_owner: { "<owner_id>": { out, doubtful } }, instances: [ { season, week, roster_id, owner_id, player_id, player, pos, status, source, injury } ] }`. `source` is `nfl_report` (retroactive) or `snapshot` (live).
+**`injury_starts.json`** — every instance of starting an Out/Doubtful player across all seasons: `{ rule, by_owner: { "<owner_id>": { out, doubtful } }, instances: [ { season, week, roster_id, owner_id, player_id, player, pos, status, source, injury } ] }`. `source` is `nfl_report`, `nfl_report_dnp` (Questionable who didn't play) or `snapshot` (live).
 
 **`bye_starts.json`** — every instance of starting a player whose NFL team was on bye (and who scored 0): `{ rule, by_owner, instances: [ { season, week, roster_id, owner_id, player_id, player, pos } ] }`. Also exposed per week as `bye_starters` in `weeks.json`.
 
@@ -53,6 +53,7 @@ A running total of fair-play penalties. **Starts at 0, only goes up, lower is be
 | Started a player on their NFL team's bye (and they scored 0) | 10 each | NFL schedule + weekly player teams |
 | Started a player listed **Out** on the official NFL injury report (and they scored 0) | 8 each | NFL injury report (all seasons) |
 | Empty starting slot | 5 each | Matchups |
+| Started a player listed **Questionable** who then didn't play and scored 0 | 6 each | NFL report + Sleeper weekly stats |
 | Started a player listed **Doubtful** on the report (and they scored 0) | 3 each | NFL injury report (all seasons) |
 | Out/Doubtful at a game-day snapshot and still in the final lineup | same as above | Game-day snapshots (live weeks) |
 | Identical lineup to last week | 0 (tracked only) | Matchups |
@@ -66,7 +67,8 @@ See [`docs/DECISIONS.md`](docs/DECISIONS.md) for why each choice was made and wh
 ### Known limits
 
 - Rosters with no matchup in a week (playoff byes, eliminated teams) are skipped entirely: Sleeper returns a stale carried-over lineup for them. They have no row in `weeks.json` for that week.
-- The NFL report is the Friday/Saturday version, so a Questionable player who is ruled out on Sunday isn't flagged. Retroactive counts are a floor, not a ceiling.
+- The NFL report is the Friday/Saturday version. A Questionable player who is ruled out on Sunday is caught only if they also had no stats row that week (D18); that can't distinguish a true inactive from an active player who never got in. Retroactive counts are a floor, not a ceiling.
+- Don't spot-check old weeks against Sleeper's app for bye/team labels: it appears to show a player's *current* team (D20).
 - Sleeper stores no injury history. Injury flags exist only for weeks where a snapshot was taken.
 - Snapshots run on a schedule and GitHub cron can be late, so a flag means "Out at snapshot time and still in the final lineup", not an exact kickoff comparison.
 - `/players/nfl` is a multi-MB endpoint Sleeper asks to be called about once a day. The scripts cache it locally for 24h.
