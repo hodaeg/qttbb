@@ -26,6 +26,8 @@ jobs:
           key: players-${{ steps.day.outputs.d }}
           restore-keys: players-
       - run: python scripts/fetch.py
+      - run: python scripts/nfl_injuries.py
+      - run: python scripts/nfl_context.py
       - run: python scripts/score.py
       - name: Commit changes
         run: |
