@@ -93,6 +93,21 @@ Players on bye have no stats row that week, so their team is taken from the near
 Result: 4 instances across 2019-2026 (TheBoarHouse 3, BigDogsRevenge 1). All 249 zero-point starter slots could be classified, none unknown. Spot-checked against known bye weeks, and none was a stale lineup.
 **Weight: -10 per bye starter** (owner's call: heavier than an injury flag). An Out starter is -8 and a Doubtful starter -3. Reasoning: a bye is known weeks in advance with no ambiguity, so unlike late injury news it can't be blamed on information arriving late.
 
+### D17 — Only games that decide the title or last place count in the playoffs — Accepted
+Owner's rule: the league only cares about first place and last place. So after a manager's fate is decided, their remaining playoff games (third-place, consolation) are ignored for Tegridy Factor.
+- **Winners bracket:** games count up to and including the first one you **lose**.
+- **Losers bracket** (toilet bowl): games count up to and including the first one you **win** (that saves you from last place).
+- **Regular season:** always counts. Byes already produce no penalties (D14).
+- Computed from `winners_bracket` / `losers_bracket` (now fetched per season) and the actual matchups. Output: `<season>/playoff_relevance.json`; each `weeks.json` row carries `counts_toward_tegridy` and `excluded_reason`.
+- Excluded penalties are removed from the totals and from `instances`, but listed under `excluded` in `injury_starts.json` / `bye_starts.json` so they can be reviewed.
+
+**Two things found while building this:**
+1. In Sleeper's losers bracket, `w` is the **lower** scorer (the team that keeps advancing toward last place), the opposite of the winners bracket. Verified: winners bracket `w` = higher scorer in 49/49 past games; losers bracket `w` = lower scorer in 49/49 once adjusted points are used. Because of this, results are decided from actual points, never from `w`/`l` labels.
+2. Sleeper's `custom_points` (a commissioner adjustment) overrides `points` when set. It appears on exactly one matchup in 8 seasons: TheBoarHouse, 2025 week 17 (138.5 pts adjusted to 121.9, a -16.6 deduction), which flipped the bracket result. Results use the adjusted figure (`effective_points`).
+
+**Effect:** exactly one penalty changed: Hodaeg's 2023 week 17 (Trevor Lawrence, Out), a third-place game after losing the semifinal. Hodaeg's all-time total 16 → 8. Injury starts 15 → 14.
+Assumptions: one game per bracket round (true in all 8 seasons); a tied game doesn't end relevance (none exist).
+
 ---
 
 ## Infrastructure

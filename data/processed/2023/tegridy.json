@@ -1,6 +1,12 @@
 [
  {
   "events": [],
+  "owner_id": "383681356686950400",
+  "roster_id": 1,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
   "owner_id": "423560331814510592",
   "roster_id": 2,
   "tegridy_factor": 0
@@ -65,19 +71,6 @@
   "owner_id": "471368473092550656",
   "roster_id": 12,
   "tegridy_factor": 3
- },
- {
-  "events": [
-   {
-    "detail": "Trevor Lawrence was listed Out (right Shoulder) on the official NFL injury report and scored 0 in the starting lineup",
-    "kind": "injured_starter_out",
-    "penalty": 8,
-    "week": 17
-   }
-  ],
-  "owner_id": "383681356686950400",
-  "roster_id": 1,
-  "tegridy_factor": 8
  },
  {
   "events": [

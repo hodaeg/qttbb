@@ -2,7 +2,7 @@
  "by_owner": {
   "383681356686950400": {
    "doubtful": 0,
-   "out": 2
+   "out": 1
   },
   "422102738889867264": {
    "doubtful": 1,
@@ -29,6 +29,21 @@
    "out": 2
   }
  },
+ "excluded": [
+  {
+   "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
+   "injury": "right Shoulder",
+   "owner_id": "383681356686950400",
+   "player": "Trevor Lawrence",
+   "player_id": "7523",
+   "pos": "QB",
+   "roster_id": 1,
+   "season": "2023",
+   "source": "nfl_report",
+   "status": "Out",
+   "week": 17
+  }
+ ],
  "instances": [
   {
    "injury": "Knee, Ankle",
@@ -77,18 +92,6 @@
    "source": "nfl_report",
    "status": "Doubtful",
    "week": 13
-  },
-  {
-   "injury": "right Shoulder",
-   "owner_id": "383681356686950400",
-   "player": "Trevor Lawrence",
-   "player_id": "7523",
-   "pos": "QB",
-   "roster_id": 1,
-   "season": "2023",
-   "source": "nfl_report",
-   "status": "Out",
-   "week": 17
   },
   {
    "injury": "Hamstring",

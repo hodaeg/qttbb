@@ -1,0 +1,62 @@
+{
+ "1": {
+  "bracket": "winners",
+  "last_week": 17,
+  "reason": "eliminated from the title race (lost in the winners bracket)"
+ },
+ "2": {
+  "bracket": "winners",
+  "last_week": 15,
+  "reason": "eliminated from the title race (lost in the winners bracket)"
+ },
+ "3": {
+  "bracket": "losers",
+  "last_week": 17,
+  "reason": "safe from last place (won in the losers bracket)"
+ },
+ "4": {
+  "bracket": "losers",
+  "last_week": 15,
+  "reason": "safe from last place (won in the losers bracket)"
+ },
+ "5": {
+  "bracket": "losers",
+  "last_week": 16,
+  "reason": "safe from last place (won in the losers bracket)"
+ },
+ "6": {
+  "bracket": "losers",
+  "last_week": null,
+  "reason": "lost every losers-bracket game (finished last)"
+ },
+ "7": {
+  "bracket": "winners",
+  "last_week": null,
+  "reason": "won the title (never lost in the winners bracket)"
+ },
+ "8": {
+  "bracket": "winners",
+  "last_week": 16,
+  "reason": "eliminated from the title race (lost in the winners bracket)"
+ },
+ "9": {
+  "bracket": "losers",
+  "last_week": 16,
+  "reason": "safe from last place (won in the losers bracket)"
+ },
+ "10": {
+  "bracket": "winners",
+  "last_week": 15,
+  "reason": "eliminated from the title race (lost in the winners bracket)"
+ },
+ "11": {
+  "bracket": "winners",
+  "last_week": 16,
+  "reason": "eliminated from the title race (lost in the winners bracket)"
+ },
+ "12": {
+  "bracket": "losers",
+  "last_week": 15,
+  "reason": "safe from last place (won in the losers bracket)"
+ }
+}

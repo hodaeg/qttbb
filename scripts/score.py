@@ -136,6 +136,58 @@ class ByeDetector:
         return team not in playing
 
 
+def effective_points(m):
+    """Sleeper uses custom_points (commissioner adjustment) when set, otherwise points."""
+    return m["custom_points"] if m.get("custom_points") is not None else m["points"]
+
+
+def playoff_relevance(bundle):
+    """Which playoff games still mattered to each roster?
+
+    League rule: only the title (winners bracket) and last place (losers bracket) matter.
+      - Winners bracket: a game counts up to and including the first one you LOSE; later games
+        (third-place, consolation) don't matter.
+      - Losers bracket (toilet bowl): a game counts up to and including the first one you WIN,
+        since that saves you from last place.
+    Results come from actual points, not the bracket's w/l labels: in Sleeper's losers bracket
+    `w` is the LOWER scorer (the one who keeps advancing). Verified against every past playoff game.
+
+    -> { roster_id: { "bracket": "winners"|"losers", "last_week": int|None, "reason": str } }
+    last_week None means every playoff week counts (a champion, or a team still alive).
+    """
+    start = bundle["league"]["settings"]["playoff_week_start"]
+    last_scored = bundle["league"]["settings"].get("last_scored_leg", 0)
+    brackets = {
+        "winners": {t for m in bundle.get("winners_bracket") or [] for t in (m.get("t1"), m.get("t2")) if t},
+        "losers": {t for m in bundle.get("losers_bracket") or [] for t in (m.get("t1"), m.get("t2")) if t},
+    }
+    out = {}
+    for name, rosters in brackets.items():
+        for rid in rosters:
+            done = bundle["league"]["status"] == "complete"
+            info = {"bracket": name, "last_week": None, "reason": (
+                "still in contention" if not done else
+                "won the title (never lost in the winners bracket)" if name == "winners" else
+                "lost every losers-bracket game (finished last)")}
+            for wk in range(start, last_scored + 1):
+                rows = {m["roster_id"]: m for m in bundle["matchups"].get(str(wk), [])}
+                me = rows.get(rid)
+                if not me or me.get("matchup_id") is None:
+                    continue  # bye
+                opp = next((m for m in rows.values() if m["roster_id"] != rid and m["matchup_id"] == me["matchup_id"]), None)
+                if opp is None:
+                    continue
+                mine, theirs = effective_points(me), effective_points(opp)
+                if name == "winners" and mine < theirs:
+                    info = {"bracket": name, "last_week": wk, "reason": "eliminated from the title race (lost in the winners bracket)"}
+                    break
+                if name == "losers" and mine > theirs:
+                    info = {"bracket": name, "last_week": wk, "reason": "safe from last place (won in the losers bracket)"}
+                    break
+            out[rid] = info
+    return out
+
+
 def snapshots_for(season, week):
     d = RAW / "snapshots" / season / f"wk{int(week):02d}"
     return [load(f) for f in sorted(d.glob("*.json"))] if d.exists() else []
@@ -148,6 +200,8 @@ def analyse_season(bundle, players, cfg):
     last_scored = league["settings"].get("last_scored_leg", 0)
     w = cfg["tegridy"]["weights"]
     bye = ByeDetector()
+    relevance = playoff_relevance(bundle)
+    playoff_start = league["settings"].get("playoff_week_start") or 99
     out_set = set(cfg["tegridy"]["out_statuses"])
     doubt_set = set(cfg["tegridy"]["doubtful_statuses"])
 
@@ -164,6 +218,9 @@ def analyse_season(bundle, players, cfg):
             if m.get("matchup_id") is None:
                 continue
             rid = m["roster_id"]
+            rel = relevance.get(rid)
+            counts = not (int(wk) >= playoff_start and (rel is None or (rel["last_week"] is not None and int(wk) > rel["last_week"])))
+            reason = None if counts else (rel["reason"] if rel else "not in either playoff bracket")
             pts = m.get("players_points") or {}
             starters = m.get("starters") or []
             pool = {p: (players.get(p, {}).get("pos") or "?") for p in (m.get("players") or [])}
@@ -212,12 +269,12 @@ def analyse_season(bundle, players, cfg):
                 "roster_id": rid, "points": round(actual, 2), "optimal_points": round(best, 2),
                 "efficiency": eff, "points_left": left, "empty_slots": empty,
                 "zero_point_starters": zero, "bye_starters": bye_starters, "bench_misses": bench_misses,
-                "injured_starters": flags, "stale_lineup": stale, "snapshots_available": bool(snaps),
+                "injured_starters": flags, "stale_lineup": stale, "counts_toward_tegridy": counts, "excluded_reason": reason, "snapshots_available": bool(snaps),
             }
             weeks[wk].append(row)
 
             def ev(kind, penalty, detail):
-                if penalty:
+                if penalty and counts:
                     events[rid].append({"week": int(wk), "kind": kind, "penalty": penalty, "detail": detail})
 
             ev("empty_slot", w["empty_slot"] * empty, f"{empty} empty starting slot(s)")
@@ -252,7 +309,7 @@ def analyse_season(bundle, players, cfg):
         })
     scores.sort(key=lambda s: s["tegridy_factor"])  # lower = better
     efficiency.sort(key=lambda e: -(e["efficiency"] or 0))
-    return weeks, scores, efficiency
+    return weeks, scores, efficiency, relevance
 
 
 def owners_directory(bundles):
@@ -325,9 +382,11 @@ def main():
     dump(OUT / "owners.json", owners)
 
     injury_starts, bye_starts, season_totals = [], [], {}
+    injury_excluded, bye_excluded = [], []
     for b in bundles:
         season = b["league"]["season"]
-        weeks, scores, efficiency = analyse_season(b, players, cfg)
+        weeks, scores, efficiency, relevance = analyse_season(b, players, cfg)
+        dump(OUT / season / "playoff_relevance.json", relevance)
         dump(OUT / season / "weeks.json", weeks)
         dump(OUT / season / "tegridy.json", scores)
         dump(OUT / season / "efficiency.json", efficiency)
@@ -336,18 +395,26 @@ def main():
         for wk, rows in weeks.items():
             for row in rows:
                 for pid in row["bye_starters"]:
-                    bye_starts.append({
+                    rec = {
                         "season": season, "week": int(wk), "roster_id": row["roster_id"],
                         "owner_id": owner_of.get(row["roster_id"]), "player_id": pid,
                         "player": players.get(pid, {}).get("name", pid), "pos": players.get(pid, {}).get("pos"),
-                    })
+                    }
+                    if row["counts_toward_tegridy"]:
+                        bye_starts.append(rec)
+                    else:
+                        bye_excluded.append({**rec, "excluded_reason": row["excluded_reason"]})
                 for pid, f in row["injured_starters"].items():
-                    injury_starts.append({
+                    rec = {
                         "season": season, "week": int(wk), "roster_id": row["roster_id"],
                         "owner_id": owner_of.get(row["roster_id"]), "player_id": pid,
                         "player": players.get(pid, {}).get("name", pid), "pos": players.get(pid, {}).get("pos"),
                         "status": f["status"], "source": f["source"], "injury": f.get("injury"),
-                    })
+                    }
+                    if row["counts_toward_tegridy"]:
+                        injury_starts.append(rec)
+                    else:
+                        injury_excluded.append({**rec, "excluded_reason": row["excluded_reason"]})
         print(f"season {season}: {len(weeks)} scored week(s), best Tegridy Factor "
               f'{owners.get(scores[0]["owner_id"], {}).get("display_name", "?")} {scores[0]["tegridy_factor"]}')
 
@@ -357,7 +424,7 @@ def main():
         by_owner[r["owner_id"]]["out" if r["status"] in cfg["tegridy"]["out_statuses"] else "doubtful"] += 1
     dump(OUT / "injury_starts.json", {
         "rule": "Official NFL injury report game status Out/Doubtful AND 0 points as a starter (plus game-day snapshot flags)",
-        "by_owner": by_owner, "instances": injury_starts,
+        "by_owner": by_owner, "instances": injury_starts, "excluded": injury_excluded,
     })
     bye_starts.sort(key=lambda r: (r["season"], r["week"]))
     bye_by_owner = defaultdict(int)
@@ -365,7 +432,7 @@ def main():
         bye_by_owner[r["owner_id"]] += 1
     dump(OUT / "bye_starts.json", {
         "rule": "Starter scored 0 and their NFL team had no game that week (rosters with no matchup are excluded)",
-        "by_owner": bye_by_owner, "instances": bye_starts,
+        "by_owner": bye_by_owner, "instances": bye_starts, "excluded": bye_excluded,
     })
     alltime = defaultdict(lambda: {"total": 0, "by_season": {}})
     for season, totals in season_totals.items():

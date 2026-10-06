@@ -1704,10 +1704,10 @@
   "team": "CLE"
  },
  "4018": {
-  "injury_status": "Active",
+  "injury_status": "",
   "name": "Joe Mixon",
   "pos": "RB",
-  "team": "SEA"
+  "team": null
  },
  "4029": {
   "injury_status": null,
@@ -2871,7 +2871,7 @@
   "injury_status": null,
   "name": "Scotty Miller",
   "pos": "WR",
-  "team": null
+  "team": "CHI"
  },
  "6311": {
   "injury_status": null,
@@ -2922,7 +2922,7 @@
   "team": null
  },
  "6650": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Chase McLaughlin",
   "pos": "K",
   "team": "TB"

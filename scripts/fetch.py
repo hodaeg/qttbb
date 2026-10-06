@@ -29,7 +29,7 @@ def fetch_season(league_id, force=False):
     out = RAW / "seasons" / f"{season}.json"
     if out.exists() and not force:
         prev = json.loads(out.read_text(encoding="utf-8"))
-        if prev["league"]["status"] == "complete":
+        if prev["league"]["status"] == "complete" and "winners_bracket" in prev:
             print(f"{season}: complete, skipping")
             return prev
     print(f"{season}: fetching ({league['status']})")
@@ -37,6 +37,8 @@ def fetch_season(league_id, force=False):
         "league": league,
         "users": sleeper.get(f"/league/{league_id}/users"),
         "rosters": sleeper.get(f"/league/{league_id}/rosters"),
+        "winners_bracket": sleeper.get(f"/league/{league_id}/winners_bracket"),
+        "losers_bracket": sleeper.get(f"/league/{league_id}/losers_bracket"),
         "matchups": {},
         "transactions": {},
     }

@@ -28,7 +28,9 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 
 **`owners.json`** — `{ "<user_id>": { user_id, display_name, team_name, avatar } }`. Join key everywhere is `owner_id`/`user_id`, not `roster_id` (roster ids can change between seasons).
 
-**`<season>/weeks.json`** — `{ "<week>": [ { roster_id, points, optimal_points, efficiency, points_left, empty_slots, zero_point_starters[], bench_misses[], injured_starters{}, stale_lineup, snapshots_available } ] }`
+**`<season>/weeks.json`** — `{ "<week>": [ { roster_id, points, optimal_points, efficiency, points_left, empty_slots, zero_point_starters[], bench_misses[], injured_starters{}, stale_lineup, counts_toward_tegridy, excluded_reason, snapshots_available } ] }`. Rows with `counts_toward_tegridy: false` are playoff games that no longer mattered to that manager (see below); they stay in the file but produce no penalties.
+
+**`<season>/playoff_relevance.json`** — `{ "<roster_id>": { bracket: "winners"|"losers", last_week, reason } }`. `last_week` is the last playoff week that counted for that roster (`null` = all of them).
 
 **`<season>/tegridy.json`** — `[ { roster_id, owner_id, tegridy_factor, events: [ { week, kind, penalty, detail } ] } ]`, sorted lowest (best) first. Every penalty carries a plain-English `detail`.
 
@@ -54,6 +56,8 @@ A running total of fair-play penalties. **Starts at 0, only goes up, lower is be
 | Started a player listed **Doubtful** on the report (and they scored 0) | 3 each | NFL injury report (all seasons) |
 | Out/Doubtful at a game-day snapshot and still in the final lineup | same as above | Game-day snapshots (live weeks) |
 | Identical lineup to last week | 0 (tracked only) | Matchups |
+
+**Playoffs:** only first place and last place matter. In the winners bracket, games count up to and including your first loss; in the losers bracket, up to and including your first win. Later games (third-place, consolation) are ignored. Excluded penalties are listed under `excluded` in `injury_starts.json` and `bye_starts.json`.
 
 Lineup efficiency and points left on the bench are **not** penalised: they measure how good a manager is, not whether they play fair. They're published separately in `efficiency.json`. Optimal-lineup math is verified against Sleeper's own `ppts` field.
 
