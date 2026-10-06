@@ -57,10 +57,11 @@
   "events": [
    {
     "base_penalty": 3,
-    "detail": "Dallas Goedert was listed Doubtful (Forearm) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Dallas Goedert was listed Doubtful (Forearm) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_doubtful",
     "multiplier": 1.75,
     "penalty": 5.25,
+    "penalty_id": "2023-w13-r12-injured_starter_doubtful-5022",
     "week": 13
    }
   ],
@@ -72,10 +73,11 @@
   "events": [
    {
     "base_penalty": 6,
-    "detail": "Jayden Reed was listed Questionable (Toe, Chest) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
+    "detail": "Jayden Reed was listed Questionable (Toe, Chest), did not play, and scored 0 in the starting lineup.",
     "kind": "questionable_did_not_play",
     "multiplier": 2.0,
     "penalty": 12.0,
+    "penalty_id": "2023-w16-r9-questionable_did_not_play-10222",
     "week": 16
    }
   ],
@@ -87,10 +89,11 @@
   "events": [
    {
     "base_penalty": 10,
-    "detail": "started Baltimore Ravens on their NFL team's bye week",
+    "detail": "Baltimore Ravens (BAL) was on a bye in week 13 but was started and scored 0.",
     "kind": "bye_week_starter",
     "multiplier": 1.75,
     "penalty": 17.5,
+    "penalty_id": "2023-w13-r5-bye_week_starter-BAL",
     "week": 13
    }
   ],

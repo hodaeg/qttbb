@@ -143,6 +143,14 @@ Owner's ruling: leaving a slot empty is a **tactic**, not a fair-play violation.
 Effect: removed 8 penalties (all-time before -> after, with timing multipliers): TheBoarHouse 82 -> 57, BigDogsRevenge 53.5 -> 33.5, gabroni 17.5 -> 0, ToadLicker 7.5 -> 0, MrSeeYou 21 -> 16, therealGandB 34.75 -> 29.75.
 Note: this makes the score cleaner: every remaining penalty is "played someone who wasn't playing" (injured, inactive, or on bye).
 
+### D23 — Every penalty carries its own evidence — Accepted
+The front end must show not just *what* a penalty cost but *why*. New file `data/processed/penalties.json` holds one rich record per penalty (counting ones, plus excluded ones listed with `counts: false` and an `excluded_reason`, so the UI can explain "this didn't count because...").
+Each record contains: stable `id`; `headline` (one display-ready sentence); `label`; `penalty` {base, multiplier, total}; `manager`; `player` (name, position, NFL team *as of that week*, lineup slot); `nfl_game` (opponent, home/away, date; null on a bye); `evidence` (report status, injury, practice status, "did not play", rule text, or bye details); `bench_option` (the best bench player who could have filled the slot, with his points); `matchup` (opponent, score, result, margin, and whether the bench option would have changed the result); `timing` (phase, weeks before playoffs, playoff round and bracket, multiplier reason); `sources` (link to the official NFL injury report page).
+Per-season `tegridy.json` events link to these via `penalty_id`. Bye starters are now one penalty per player (previously grouped); totals unchanged.
+Needed one new data set: `data/raw/nfl_games/<season>.json` (full schedule with opponent and date).
+Neutral by design: `bench_option_would_have_changed_result` is information for the UI. It does not affect points.
+Totals verified unchanged after the change (sum 210.75 across all managers).
+
 ---
 
 ## Infrastructure

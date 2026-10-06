@@ -114,6 +114,17 @@ class ByeDetector:
             self.teams[key] = load(RAW / "player_teams" / str(season) / f"wk{week:02d}.json") or {}
         return self.teams[key]
 
+    def game(self, season, week, team):
+        """The NFL game this team played that week, or None (bye / unknown)."""
+        key = ("games", season)
+        if key not in self.schedule:
+            self.schedule[key] = load(RAW / "nfl_games" / f"{season}.json") or {}
+        for g in self.schedule[key].get(str(week), []):
+            if team in (g["home"], g["away"]):
+                return {"nfl_team": team, "opponent": g["away"] if team == g["home"] else g["home"],
+                        "home": team == g["home"], "date": g.get("date")}
+        return None
+
     def played(self, season, week, pid):
         """True/False = player did/didn't have a stats row that week; None = no stats data for that week."""
         teams = self._teams(season, int(week))
@@ -210,7 +221,93 @@ def snapshots_for(season, week):
     return [load(f) for f in sorted(d.glob("*.json"))] if d.exists() else []
 
 
-def analyse_season(bundle, players, cfg):
+def multiplier_reason(week, playoff_start):
+    if week >= playoff_start:
+        return f"Playoff game (week {week}); penalties are doubled"
+    until = playoff_start - week
+    return f"{until} week{'s' if until != 1 else ''} before the playoffs (playoffs start week {playoff_start})"
+
+
+PENALTY_LABELS = {
+    "injured_starter_out": "Started a player listed Out",
+    "injured_starter_doubtful": "Started a player listed Doubtful",
+    "questionable_did_not_play": "Started a Questionable player who didn't play",
+    "bye_week_starter": "Started a player on a bye week",
+}
+RULES = {
+    "injured_starter_out": "Listed Out on the official NFL injury report, started, and scored 0.",
+    "injured_starter_doubtful": "Listed Doubtful on the official NFL injury report, started, and scored 0.",
+    "questionable_did_not_play": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0.",
+    "bye_week_starter": "Started a player whose NFL team had no game that week, and scored 0.",
+}
+
+
+def build_penalty(*, kind, base, mult, counts, excluded_reason, season, wk, rid, pid, flag, slot, m, opp, owner_of, owners,
+                  players, bye, relevance_row, playoff_start, bench_option):
+    """One penalty with everything a UI needs to show what happened and why."""
+    pl = players.get(pid, {})
+    name, pos = pl.get("name", pid), pl.get("pos")
+    team = bye.team_at(season, int(wk), pid, pos)
+    game = bye.game(season, wk, team) if team else None
+    owner = owners.get(owner_of.get(rid), {})
+    mine = effective_points(m)
+    manager = {"owner_id": owner_of.get(rid), "roster_id": rid, "display_name": owner.get("display_name"), "team_name": owner.get("team_name")}
+
+    # kind-specific evidence
+    if kind == "bye_week_starter":
+        evidence = {"nfl_team": team, "team_played_that_week": False, "points_scored": 0, "rule": RULES[kind]}
+        headline = f"{name} ({team}) was on a bye in week {wk} but was started and scored 0."
+        sources = [{"name": "NFL schedule (via Sleeper)", "url": f"https://www.nfl.com/schedules/{season}/REG{wk}"}]
+    elif flag["source"] == "snapshot":
+        evidence = {"status": flag["status"], "observed_at": flag.get("first_seen"), "source": "game-day snapshot",
+                    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup."}
+        headline = f"{name} was {flag['status']} at {flag.get('first_seen')} but stayed in the lineup."
+        sources = [{"name": "Sleeper game-day snapshot", "url": None}]
+    else:
+        evidence = {"report_status": flag["status"], "injury": flag.get("injury") or None, "practice_status": flag.get("practice") or None,
+                    "points_scored": 0, "rule": RULES[kind]}
+        inj = f" ({flag['injury']})" if flag.get("injury") else ""
+        if kind == "questionable_did_not_play":
+            evidence["played"] = False
+            evidence["note"] = "Sleeper recorded no stats for him that week, so he was ruled out after the Friday report."
+            headline = f"{name} was listed Questionable{inj}, did not play, and scored 0 in the starting lineup."
+        else:
+            headline = f"{name} was listed {flag['status']}{inj} on the official NFL injury report and scored 0 in the starting lineup."
+        sources = [{"name": "Official NFL injury report", "url": f"https://www.nfl.com/injuries/league/{season}/reg{wk}"}]
+
+    # matchup, and would the bench option have changed the result?
+    matchup = None
+    if opp is not None:
+        theirs = effective_points(opp)
+        res = "won" if mine > theirs else "lost" if mine < theirs else "tied"
+        opp_owner = owners.get(owner_of.get(opp["roster_id"]), {})
+        changed = None
+        if bench_option is not None:
+            changed = res == "lost" and (mine - m["players_points"].get(pid, 0) + bench_option["points"]) > theirs
+        matchup = {"opponent_roster_id": opp["roster_id"], "opponent_owner_id": owner_of.get(opp["roster_id"]),
+                   "opponent_display_name": opp_owner.get("display_name"), "points_for": round(mine, 2),
+                   "points_against": round(theirs, 2), "result": res, "margin": round(abs(mine - theirs), 2),
+                   "bench_option_would_have_changed_result": changed}
+
+    in_playoffs = int(wk) >= playoff_start
+    timing = {"phase": "playoffs" if in_playoffs else "regular_season", "week": int(wk), "playoff_start_week": playoff_start,
+              "weeks_before_playoffs": None if in_playoffs else playoff_start - int(wk),
+              "playoff_round": int(wk) - playoff_start + 1 if in_playoffs else None,
+              "playoff_bracket": relevance_row["bracket"] if in_playoffs and relevance_row else None,
+              "multiplier_reason": multiplier_reason(int(wk), playoff_start)}
+    return {
+        "id": f"{season}-w{int(wk):02d}-r{rid}-{kind}-{pid}",
+        "season": season, "week": int(wk), "kind": kind, "label": PENALTY_LABELS[kind], "headline": headline,
+        "counts": counts, "excluded_reason": excluded_reason,
+        "penalty": {"base": base, "multiplier": mult, "total": round(base * mult, 2) if counts else 0},
+        "manager": manager,
+        "player": {"player_id": pid, "name": name, "pos": pos, "nfl_team": team, "lineup_slot": slot},
+        "nfl_game": game, "evidence": evidence, "bench_option": bench_option,
+        "matchup": matchup, "timing": timing, "sources": sources,
+    }
+
+
+def analyse_season(bundle, players, cfg, owners):
     league = bundle["league"]
     season = league["season"]
     slots = [s for s in league["roster_positions"] if s not in ("BN", "IR", "TAXI")]
@@ -222,7 +319,8 @@ def analyse_season(bundle, players, cfg):
     out_set = set(cfg["tegridy"]["out_statuses"])
     doubt_set = set(cfg["tegridy"]["doubtful_statuses"])
 
-    weeks, events = {}, defaultdict(list)
+    owner_of = {r["roster_id"]: r["owner_id"] for r in bundle["rosters"]}
+    weeks, events, penalties = {}, defaultdict(list), []
     prev_starters = {}
     for wk in sorted(bundle["matchups"], key=int):
         if int(wk) > last_scored:
@@ -299,6 +397,24 @@ def analyse_season(bundle, players, cfg):
             mult = week_multiplier(int(wk), playoff_start, cfg)
             row["multiplier"] = mult
 
+            opp = next((x for x in bundle["matchups"][wk] if x["roster_id"] != rid and x["matchup_id"] == m["matchup_id"]), None)
+            bench_by_starter = {x["started"]: {"player_id": x["bench"], "name": players.get(x["bench"], {}).get("name", x["bench"]),
+                                               "pos": players.get(x["bench"], {}).get("pos"), "points": x["bench_pts"], "slot": x["slot"]}
+                                for x in bench_misses}
+
+            def emit(kind, base, pid, flag):
+                if not base:
+                    return
+                idx = starters.index(pid) if pid in starters else None
+                pen = build_penalty(kind=kind, base=base, mult=mult, counts=counts, excluded_reason=reason, season=season, wk=wk, rid=rid,
+                                    pid=pid, flag=flag, slot=slots[idx] if idx is not None and idx < len(slots) else None, m=m, opp=opp,
+                                    owner_of=owner_of, owners=owners, players=players, bye=bye, relevance_row=rel,
+                                    playoff_start=playoff_start, bench_option=bench_by_starter.get(pid))
+                penalties.append(pen)
+                if counts:
+                    events[rid].append({"week": int(wk), "kind": kind, "base_penalty": base, "multiplier": mult,
+                                        "penalty": pen["penalty"]["total"], "detail": pen["headline"], "penalty_id": pen["id"]})
+
             def ev(kind, base, detail):
                 if base and counts:
                     events[rid].append({"week": int(wk), "kind": kind, "base_penalty": base, "multiplier": mult,
@@ -310,17 +426,9 @@ def analyse_season(bundle, players, cfg):
                     key = "questionable_did_not_play"
                 else:
                     key = "injured_starter_out" if f["status"] in out_set else "injured_starter_doubtful"
-                pname = players.get(p, {}).get("name", p)
-                if f["source"] == "nfl_report_dnp":
-                    detail = f'{pname} was listed Questionable ({f["injury"] or "no injury listed"}) on the official NFL injury report, did not play, and scored 0 in the starting lineup'
-                elif f["source"] == "nfl_report":
-                    detail = f'{pname} was listed {f["status"]} ({f["injury"] or "no injury listed"}) on the official NFL injury report and scored 0 in the starting lineup'
-                else:
-                    detail = f'{pname} was {f["status"]} at {f["first_seen"]} and stayed in the lineup'
-                ev(key, w[key], detail)
-            if bye_starters:
-                names = ", ".join(players.get(p, {}).get("name", p) for p in bye_starters)
-                ev("bye_week_starter", w.get("bye_week_starter", 0) * len(bye_starters), f"started {names} on their NFL team's bye week")
+                emit(key, w[key], p, f)
+            for p in bye_starters:
+                emit("bye_week_starter", w.get("bye_week_starter", 0), p, None)
             if stale:
                 ev("stale_lineup", w["stale_lineup"], "identical lineup to previous week")
 
@@ -341,7 +449,7 @@ def analyse_season(bundle, players, cfg):
         })
     scores.sort(key=lambda s: s["tegridy_factor"])  # lower = better
     efficiency.sort(key=lambda e: -(e["efficiency"] or 0))
-    return weeks, scores, efficiency, relevance
+    return weeks, scores, efficiency, relevance, penalties
 
 
 def owners_directory(bundles):
@@ -413,11 +521,12 @@ def main():
     owners = owners_directory(bundles)
     dump(OUT / "owners.json", owners)
 
-    injury_starts, bye_starts, season_totals = [], [], {}
+    injury_starts, bye_starts, season_totals, all_penalties = [], [], {}, []
     injury_excluded, bye_excluded = [], []
     for b in bundles:
         season = b["league"]["season"]
-        weeks, scores, efficiency, relevance = analyse_season(b, players, cfg)
+        weeks, scores, efficiency, relevance, penalties = analyse_season(b, players, cfg, owners)
+        all_penalties.extend(penalties)
         dump(OUT / season / "playoff_relevance.json", relevance)
         dump(OUT / season / "weeks.json", weeks)
         dump(OUT / season / "tegridy.json", scores)
@@ -475,6 +584,11 @@ def main():
             alltime[uid]["total"] = round(alltime[uid]["total"] + t, 2)
             alltime[uid]["by_season"][season] = t
     dump(OUT / "tegridy_alltime.json", dict(sorted(alltime.items(), key=lambda kv: kv[1]["total"])))
+    all_penalties.sort(key=lambda x: (x["season"], x["week"], x["manager"]["roster_id"]))
+    dump(OUT / "penalties.json", {
+        "note": "Every penalty with its evidence. counts=false entries are listed for transparency but carry 0 points (see excluded_reason).",
+        "penalties": all_penalties,
+    })
     dump(OUT / "rivalries.json", head_to_head(bundles, owners, cfg))
 
     print("\nTegridy Factor, all-time (lower is better):")

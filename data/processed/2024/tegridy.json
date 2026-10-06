@@ -39,10 +39,11 @@
   "events": [
    {
     "base_penalty": 6,
-    "detail": "Amari Cooper was listed Questionable (Wrist) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
+    "detail": "Amari Cooper was listed Questionable (Wrist), did not play, and scored 0 in the starting lineup.",
     "kind": "questionable_did_not_play",
     "multiplier": 1.0,
     "penalty": 6.0,
+    "penalty_id": "2024-w09-r3-questionable_did_not_play-2309",
     "week": 9
    }
   ],
@@ -54,10 +55,11 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Christian Watson was listed Out (Ankle) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Christian Watson was listed Out (Ankle) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
+    "penalty_id": "2024-w04-r1-injured_starter_out-8167",
     "week": 4
    }
   ],
@@ -69,10 +71,11 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Marvin Harrison was listed Out (gameday concussion protocol evaluation) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Marvin Harrison was listed Out (gameday concussion protocol evaluation) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
+    "penalty_id": "2024-w06-r5-injured_starter_out-11628",
     "week": 6
    }
   ],
@@ -84,10 +87,11 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Sam LaPorta was listed Out (Shoulder) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Sam LaPorta was listed Out (Shoulder) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.5,
     "penalty": 12.0,
+    "penalty_id": "2024-w11-r12-injured_starter_out-10859",
     "week": 11
    }
   ],
@@ -99,18 +103,20 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Dallas Goedert was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Dallas Goedert was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
+    "penalty_id": "2024-w06-r2-injured_starter_out-5022",
     "week": 6
    },
    {
     "base_penalty": 8,
-    "detail": "Deebo Samuel was listed Out (Illness) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Deebo Samuel was listed Out (Illness) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
+    "penalty_id": "2024-w07-r2-injured_starter_out-5872",
     "week": 7
    }
   ],
@@ -122,26 +128,29 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Evan Engram was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Evan Engram was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
+    "penalty_id": "2024-w02-r6-injured_starter_out-4066",
     "week": 2
    },
    {
     "base_penalty": 8,
-    "detail": "Rashee Rice was listed Out (Knee) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Rashee Rice was listed Out (Knee) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
+    "penalty_id": "2024-w04-r6-injured_starter_out-10229",
     "week": 4
    },
    {
     "base_penalty": 6,
-    "detail": "James Cook was listed Questionable (Toe) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
+    "detail": "James Cook was listed Questionable (Toe), did not play, and scored 0 in the starting lineup.",
     "kind": "questionable_did_not_play",
     "multiplier": 1.0,
     "penalty": 6.0,
+    "penalty_id": "2024-w06-r6-questionable_did_not_play-8138",
     "week": 6
    }
   ],

@@ -1,0 +1,1914 @@
+{
+ "note": "Every penalty with its evidence. counts=false entries are listed for transparency but carry 0 points (see excluded_reason).",
+ "penalties": [
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "injury": "Knee, Ankle",
+    "points_scored": 0,
+    "practice_status": "Did Not Participate In Practice",
+    "report_status": "Doubtful",
+    "rule": "Listed Doubtful on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "George Kittle was listed Doubtful (Knee, Ankle) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2019-w11-r12-injured_starter_doubtful-4217",
+   "kind": "injured_starter_doubtful",
+   "label": "Started a player listed Doubtful",
+   "manager": {
+    "display_name": "therealGandB",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 28.4,
+    "opponent_display_name": "DangerDave678",
+    "opponent_owner_id": "471366618241298432",
+    "opponent_roster_id": 11,
+    "points_against": 97.46,
+    "points_for": 69.06,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2019-11-17",
+    "home": true,
+    "nfl_team": "SF",
+    "opponent": "ARI"
+   },
+   "penalty": {
+    "base": 3,
+    "multiplier": 1.5,
+    "total": 4.5
+   },
+   "player": {
+    "lineup_slot": "TE",
+    "name": "George Kittle",
+    "nfl_team": "SF",
+    "player_id": "4217",
+    "pos": "TE"
+   },
+   "season": "2019",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2019/reg11"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "3 weeks before the playoffs (playoffs start week 14)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 14,
+    "week": 11,
+    "weeks_before_playoffs": 3
+   },
+   "week": 11
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "nfl_team": "LAC",
+    "points_scored": 0,
+    "rule": "Started a player whose NFL team had no game that week, and scored 0.",
+    "team_played_that_week": false
+   },
+   "excluded_reason": null,
+   "headline": "Austin Ekeler (LAC) was on a bye in week 7 but was started and scored 0.",
+   "id": "2021-w07-r8-bye_week_starter-4663",
+   "kind": "bye_week_starter",
+   "label": "Started a player on a bye week",
+   "manager": {
+    "display_name": "TheBoarHouse",
+    "owner_id": "471359672478068736",
+    "roster_id": 8,
+    "team_name": "Lil Kings"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 29.92,
+    "opponent_display_name": "ToadLicker",
+    "opponent_owner_id": "471359444949659648",
+    "opponent_roster_id": 10,
+    "points_against": 118.04,
+    "points_for": 88.12,
+    "result": "lost"
+   },
+   "nfl_game": null,
+   "penalty": {
+    "base": 10,
+    "multiplier": 1.0,
+    "total": 10.0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "Austin Ekeler",
+    "nfl_team": "LAC",
+    "player_id": "4663",
+    "pos": "RB"
+   },
+   "season": "2021",
+   "sources": [
+    {
+     "name": "NFL schedule (via Sleeper)",
+     "url": "https://www.nfl.com/schedules/2021/REG7"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "8 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 7,
+    "weeks_before_playoffs": 8
+   },
+   "week": 7
+  },
+  {
+   "bench_option": {
+    "name": "Damien Harris",
+    "player_id": "5890",
+    "points": 28.3,
+    "pos": "RB",
+    "slot": "RB"
+   },
+   "counts": false,
+   "evidence": {
+    "injury": "Heel",
+    "note": "Sleeper recorded no stats for him that week, so he was ruled out after the Friday report.",
+    "played": false,
+    "points_scored": 0,
+    "practice_status": "Did Not Participate In Practice",
+    "report_status": "Questionable",
+    "rule": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0."
+   },
+   "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
+   "headline": "James Conner was listed Questionable (Heel), did not play, and scored 0 in the starting lineup.",
+   "id": "2021-w16-r10-questionable_did_not_play-4137",
+   "kind": "questionable_did_not_play",
+   "label": "Started a Questionable player who didn't play",
+   "manager": {
+    "display_name": "ToadLicker",
+    "owner_id": "471359444949659648",
+    "roster_id": 10,
+    "team_name": "Grin & Bear It"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": true,
+    "margin": 18.58,
+    "opponent_display_name": "gabroni",
+    "opponent_owner_id": "79761560662589440",
+    "opponent_roster_id": 4,
+    "points_against": 95.36,
+    "points_for": 76.78,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2021-12-25",
+    "home": true,
+    "nfl_team": "ARI",
+    "opponent": "IND"
+   },
+   "penalty": {
+    "base": 6,
+    "multiplier": 2.0,
+    "total": 0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "James Conner",
+    "nfl_team": "ARI",
+    "player_id": "4137",
+    "pos": "RB"
+   },
+   "season": "2021",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2021/reg16"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Playoff game (week 16); penalties are doubled",
+    "phase": "playoffs",
+    "playoff_bracket": "winners",
+    "playoff_round": 2,
+    "playoff_start_week": 15,
+    "week": 16,
+    "weeks_before_playoffs": null
+   },
+   "week": 16
+  },
+  {
+   "bench_option": {
+    "name": "Devin Singletary",
+    "player_id": "6130",
+    "points": 8.6,
+    "pos": "RB",
+    "slot": "RB"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Rib",
+    "note": "Sleeper recorded no stats for him that week, so he was ruled out after the Friday report.",
+    "played": false,
+    "points_scored": 0,
+    "practice_status": "Limited Participation in Practice",
+    "report_status": "Questionable",
+    "rule": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Alvin Kamara was listed Questionable (Rib), did not play, and scored 0 in the starting lineup.",
+   "id": "2022-w04-r1-questionable_did_not_play-4035",
+   "kind": "questionable_did_not_play",
+   "label": "Started a Questionable player who didn't play",
+   "manager": {
+    "display_name": "Hodaeg",
+    "owner_id": "383681356686950400",
+    "roster_id": 1,
+    "team_name": "Hodag Forest Lurkers"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 18.76,
+    "opponent_display_name": "ToadLicker",
+    "opponent_owner_id": "471359444949659648",
+    "opponent_roster_id": 10,
+    "points_against": 113.22,
+    "points_for": 94.46,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2022-10-02",
+    "home": true,
+    "nfl_team": "NO",
+    "opponent": "MIN"
+   },
+   "penalty": {
+    "base": 6,
+    "multiplier": 1.0,
+    "total": 6.0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "Alvin Kamara",
+    "nfl_team": "NO",
+    "player_id": "4035",
+    "pos": "RB"
+   },
+   "season": "2022",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2022/reg4"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "11 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 4,
+    "weeks_before_playoffs": 11
+   },
+   "week": 4
+  },
+  {
+   "bench_option": {
+    "name": "Nico Collins",
+    "player_id": "7569",
+    "points": 9.7,
+    "pos": "WR",
+    "slot": "WR"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Foot",
+    "points_scored": 0,
+    "practice_status": "Did Not Participate In Practice",
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Michael Thomas was listed Out (Foot) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2022-w04-r9-injured_starter_out-3199",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "ChinaKing",
+    "owner_id": "471360899853053952",
+    "roster_id": 9,
+    "team_name": "China King"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 39.16,
+    "opponent_display_name": "BigDogsRevenge",
+    "opponent_owner_id": "471083964757438464",
+    "opponent_roster_id": 5,
+    "points_against": 125.92,
+    "points_for": 86.76,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2022-10-02",
+    "home": true,
+    "nfl_team": "NO",
+    "opponent": "MIN"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "WR",
+    "name": "Michael Thomas",
+    "nfl_team": "NO",
+    "player_id": "3199",
+    "pos": "WR"
+   },
+   "season": "2022",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2022/reg4"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "11 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 4,
+    "weeks_before_playoffs": 11
+   },
+   "week": 4
+  },
+  {
+   "bench_option": {
+    "name": "Mike Gesicki",
+    "player_id": "4993",
+    "points": 4.2,
+    "pos": "TE",
+    "slot": "TE"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Hamstring",
+    "points_scored": 0,
+    "practice_status": "Did Not Participate In Practice",
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Darren Waller was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2022-w07-r12-injured_starter_out-2505",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "therealGandB",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 4.52,
+    "opponent_display_name": "DangerDave678",
+    "opponent_owner_id": "471366618241298432",
+    "opponent_roster_id": 11,
+    "points_against": 93.34,
+    "points_for": 88.82,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2022-10-23",
+    "home": true,
+    "nfl_team": "LV",
+    "opponent": "HOU"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "TE",
+    "name": "Darren Waller",
+    "nfl_team": "LV",
+    "player_id": "2505",
+    "pos": "TE"
+   },
+   "season": "2022",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2022/reg7"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "8 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 7,
+    "weeks_before_playoffs": 8
+   },
+   "week": 7
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "nfl_team": "BAL",
+    "points_scored": 0,
+    "rule": "Started a player whose NFL team had no game that week, and scored 0.",
+    "team_played_that_week": false
+   },
+   "excluded_reason": null,
+   "headline": "Baltimore Ravens (BAL) was on a bye in week 13 but was started and scored 0.",
+   "id": "2023-w13-r5-bye_week_starter-BAL",
+   "kind": "bye_week_starter",
+   "label": "Started a player on a bye week",
+   "manager": {
+    "display_name": "BigDogsRevenge",
+    "owner_id": "471083964757438464",
+    "roster_id": 5,
+    "team_name": "Big Dog\u2019s Revenge"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 30.14,
+    "opponent_display_name": "ChinaKing",
+    "opponent_owner_id": "471360899853053952",
+    "opponent_roster_id": 9,
+    "points_against": 88.68,
+    "points_for": 118.82,
+    "result": "won"
+   },
+   "nfl_game": null,
+   "penalty": {
+    "base": 10,
+    "multiplier": 1.75,
+    "total": 17.5
+   },
+   "player": {
+    "lineup_slot": "DEF",
+    "name": "Baltimore Ravens",
+    "nfl_team": "BAL",
+    "player_id": "BAL",
+    "pos": "DEF"
+   },
+   "season": "2023",
+   "sources": [
+    {
+     "name": "NFL schedule (via Sleeper)",
+     "url": "https://www.nfl.com/schedules/2023/REG13"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "2 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 13,
+    "weeks_before_playoffs": 2
+   },
+   "week": 13
+  },
+  {
+   "bench_option": {
+    "name": "Gerald Everett",
+    "player_id": "4089",
+    "points": 6.4,
+    "pos": "TE",
+    "slot": "TE"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Forearm",
+    "points_scored": 0,
+    "practice_status": "Limited Participation in Practice",
+    "report_status": "Doubtful",
+    "rule": "Listed Doubtful on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Dallas Goedert was listed Doubtful (Forearm) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2023-w13-r12-injured_starter_doubtful-5022",
+   "kind": "injured_starter_doubtful",
+   "label": "Started a player listed Doubtful",
+   "manager": {
+    "display_name": "therealGandB",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 71.42,
+    "opponent_display_name": "MrSeeYou",
+    "opponent_owner_id": "423560331814510592",
+    "opponent_roster_id": 2,
+    "points_against": 113.0,
+    "points_for": 41.58,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2023-12-03",
+    "home": true,
+    "nfl_team": "PHI",
+    "opponent": "SF"
+   },
+   "penalty": {
+    "base": 3,
+    "multiplier": 1.75,
+    "total": 5.25
+   },
+   "player": {
+    "lineup_slot": "TE",
+    "name": "Dallas Goedert",
+    "nfl_team": "PHI",
+    "player_id": "5022",
+    "pos": "TE"
+   },
+   "season": "2023",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2023/reg13"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "2 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 13,
+    "weeks_before_playoffs": 2
+   },
+   "week": 13
+  },
+  {
+   "bench_option": {
+    "name": "George Pickens",
+    "player_id": "8137",
+    "points": 32.5,
+    "pos": "WR",
+    "slot": "WR"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Toe, Chest",
+    "note": "Sleeper recorded no stats for him that week, so he was ruled out after the Friday report.",
+    "played": false,
+    "points_scored": 0,
+    "practice_status": "Did Not Participate In Practice",
+    "report_status": "Questionable",
+    "rule": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Jayden Reed was listed Questionable (Toe, Chest), did not play, and scored 0 in the starting lineup.",
+   "id": "2023-w16-r9-questionable_did_not_play-10222",
+   "kind": "questionable_did_not_play",
+   "label": "Started a Questionable player who didn't play",
+   "manager": {
+    "display_name": "ChinaKing",
+    "owner_id": "471360899853053952",
+    "roster_id": 9,
+    "team_name": "China King"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 7.32,
+    "opponent_display_name": "DangerDave678",
+    "opponent_owner_id": "471366618241298432",
+    "opponent_roster_id": 11,
+    "points_against": 91.54,
+    "points_for": 98.86,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2023-12-24",
+    "home": false,
+    "nfl_team": "GB",
+    "opponent": "CAR"
+   },
+   "penalty": {
+    "base": 6,
+    "multiplier": 2.0,
+    "total": 12.0
+   },
+   "player": {
+    "lineup_slot": "WR",
+    "name": "Jayden Reed",
+    "nfl_team": "GB",
+    "player_id": "10222",
+    "pos": "WR"
+   },
+   "season": "2023",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2023/reg16"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Playoff game (week 16); penalties are doubled",
+    "phase": "playoffs",
+    "playoff_bracket": "losers",
+    "playoff_round": 2,
+    "playoff_start_week": 15,
+    "week": 16,
+    "weeks_before_playoffs": null
+   },
+   "week": 16
+  },
+  {
+   "bench_option": {
+    "name": "C.J. Stroud",
+    "player_id": "9758",
+    "points": 12.92,
+    "pos": "QB",
+    "slot": "QB"
+   },
+   "counts": false,
+   "evidence": {
+    "injury": "right Shoulder",
+    "points_scored": 0,
+    "practice_status": "Did Not Participate In Practice",
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
+   "headline": "Trevor Lawrence was listed Out (right Shoulder) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2023-w17-r1-injured_starter_out-7523",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "Hodaeg",
+    "owner_id": "383681356686950400",
+    "roster_id": 1,
+    "team_name": "Hodag Forest Lurkers"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 16.44,
+    "opponent_display_name": "Gingivitis",
+    "opponent_owner_id": "471345530597797888",
+    "opponent_roster_id": 6,
+    "points_against": 95.64,
+    "points_for": 79.2,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2023-12-31",
+    "home": true,
+    "nfl_team": "JAX",
+    "opponent": "CAR"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 2.0,
+    "total": 0
+   },
+   "player": {
+    "lineup_slot": "QB",
+    "name": "Trevor Lawrence",
+    "nfl_team": "JAX",
+    "player_id": "7523",
+    "pos": "QB"
+   },
+   "season": "2023",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2023/reg17"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Playoff game (week 17); penalties are doubled",
+    "phase": "playoffs",
+    "playoff_bracket": "winners",
+    "playoff_round": 3,
+    "playoff_start_week": 15,
+    "week": 17,
+    "weeks_before_playoffs": null
+   },
+   "week": 17
+  },
+  {
+   "bench_option": {
+    "name": "De'Von Achane",
+    "player_id": "9226",
+    "points": 21.7,
+    "pos": "RB",
+    "slot": "RB"
+   },
+   "counts": false,
+   "evidence": {
+    "injury": "Knee, Ankle",
+    "note": "Sleeper recorded no stats for him that week, so he was ruled out after the Friday report.",
+    "played": false,
+    "points_scored": 0,
+    "practice_status": "Limited Participation in Practice",
+    "report_status": "Questionable",
+    "rule": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0."
+   },
+   "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
+   "headline": "Raheem Mostert was listed Questionable (Knee, Ankle), did not play, and scored 0 in the starting lineup.",
+   "id": "2023-w17-r1-questionable_did_not_play-2749",
+   "kind": "questionable_did_not_play",
+   "label": "Started a Questionable player who didn't play",
+   "manager": {
+    "display_name": "Hodaeg",
+    "owner_id": "383681356686950400",
+    "roster_id": 1,
+    "team_name": "Hodag Forest Lurkers"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": true,
+    "margin": 16.44,
+    "opponent_display_name": "Gingivitis",
+    "opponent_owner_id": "471345530597797888",
+    "opponent_roster_id": 6,
+    "points_against": 95.64,
+    "points_for": 79.2,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2023-12-31",
+    "home": false,
+    "nfl_team": "MIA",
+    "opponent": "BAL"
+   },
+   "penalty": {
+    "base": 6,
+    "multiplier": 2.0,
+    "total": 0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "Raheem Mostert",
+    "nfl_team": "MIA",
+    "player_id": "2749",
+    "pos": "RB"
+   },
+   "season": "2023",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2023/reg17"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Playoff game (week 17); penalties are doubled",
+    "phase": "playoffs",
+    "playoff_bracket": "winners",
+    "playoff_round": 3,
+    "playoff_start_week": 15,
+    "week": 17,
+    "weeks_before_playoffs": null
+   },
+   "week": 17
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "injury": "Hamstring",
+    "points_scored": 0,
+    "practice_status": null,
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Evan Engram was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2024-w02-r6-injured_starter_out-4066",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "Gingivitis",
+    "owner_id": "471345530597797888",
+    "roster_id": 6,
+    "team_name": "Angry Beavers"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 1.08,
+    "opponent_display_name": "WhiskeyDicknCo",
+    "opponent_owner_id": "422102738889867264",
+    "opponent_roster_id": 7,
+    "points_against": 108.36,
+    "points_for": 107.28,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2024-09-15",
+    "home": true,
+    "nfl_team": "JAX",
+    "opponent": "CLE"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "TE",
+    "name": "Evan Engram",
+    "nfl_team": "JAX",
+    "player_id": "4066",
+    "pos": "TE"
+   },
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2024/reg2"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "13 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 2,
+    "weeks_before_playoffs": 13
+   },
+   "week": 2
+  },
+  {
+   "bench_option": {
+    "name": "Courtland Sutton",
+    "player_id": "5045",
+    "points": 13.5,
+    "pos": "WR",
+    "slot": "FLEX"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Ankle",
+    "points_scored": 0,
+    "practice_status": null,
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Christian Watson was listed Out (Ankle) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2024-w04-r1-injured_starter_out-8167",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "Hodaeg",
+    "owner_id": "383681356686950400",
+    "roster_id": 1,
+    "team_name": "Hodag Forest Lurkers"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 16.64,
+    "opponent_display_name": "Gingivitis",
+    "opponent_owner_id": "471345530597797888",
+    "opponent_roster_id": 6,
+    "points_against": 76.76,
+    "points_for": 93.4,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2024-09-29",
+    "home": true,
+    "nfl_team": "GB",
+    "opponent": "MIN"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "FLEX",
+    "name": "Christian Watson",
+    "nfl_team": "GB",
+    "player_id": "8167",
+    "pos": "WR"
+   },
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2024/reg4"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "11 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 4,
+    "weeks_before_playoffs": 11
+   },
+   "week": 4
+  },
+  {
+   "bench_option": {
+    "name": "Brandin Cooks",
+    "player_id": "2197",
+    "points": 2.1,
+    "pos": "WR",
+    "slot": "FLEX"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Knee",
+    "points_scored": 0,
+    "practice_status": "Full Participation in Practice",
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Rashee Rice was listed Out (Knee) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2024-w04-r6-injured_starter_out-10229",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "Gingivitis",
+    "owner_id": "471345530597797888",
+    "roster_id": 6,
+    "team_name": "Angry Beavers"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 16.64,
+    "opponent_display_name": "Hodaeg",
+    "opponent_owner_id": "383681356686950400",
+    "opponent_roster_id": 1,
+    "points_against": 93.4,
+    "points_for": 76.76,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2024-09-29",
+    "home": false,
+    "nfl_team": "KC",
+    "opponent": "LAC"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "FLEX",
+    "name": "Rashee Rice",
+    "nfl_team": "KC",
+    "player_id": "10229",
+    "pos": "WR"
+   },
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2024/reg4"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "11 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 4,
+    "weeks_before_playoffs": 11
+   },
+   "week": 4
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "injury": "Hamstring",
+    "points_scored": 0,
+    "practice_status": null,
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Dallas Goedert was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2024-w06-r2-injured_starter_out-5022",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "MrSeeYou",
+    "owner_id": "423560331814510592",
+    "roster_id": 2,
+    "team_name": "Gotham Rogues"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 2.14,
+    "opponent_display_name": "DangerDave678",
+    "opponent_owner_id": "471366618241298432",
+    "opponent_roster_id": 11,
+    "points_against": 110.96,
+    "points_for": 113.1,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2024-10-13",
+    "home": true,
+    "nfl_team": "PHI",
+    "opponent": "CLE"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "TE",
+    "name": "Dallas Goedert",
+    "nfl_team": "PHI",
+    "player_id": "5022",
+    "pos": "TE"
+   },
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2024/reg6"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "9 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 6,
+    "weeks_before_playoffs": 9
+   },
+   "week": 6
+  },
+  {
+   "bench_option": {
+    "name": "Khalil Shakir",
+    "player_id": "8134",
+    "points": 2.9,
+    "pos": "WR",
+    "slot": "WR"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "gameday concussion protocol evaluation",
+    "points_scored": 0,
+    "practice_status": null,
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Marvin Harrison was listed Out (gameday concussion protocol evaluation) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2024-w06-r5-injured_starter_out-11628",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "BigDogsRevenge",
+    "owner_id": "471083964757438464",
+    "roster_id": 5,
+    "team_name": "Big Dog\u2019s Revenge"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 17.28,
+    "opponent_display_name": "TheBoarHouse",
+    "opponent_owner_id": "471359672478068736",
+    "opponent_roster_id": 8,
+    "points_against": 102.48,
+    "points_for": 85.2,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2024-10-13",
+    "home": false,
+    "nfl_team": "ARI",
+    "opponent": "GB"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "WR",
+    "name": "Marvin Harrison",
+    "nfl_team": "ARI",
+    "player_id": "11628",
+    "pos": "WR"
+   },
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2024/reg6"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "9 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 6,
+    "weeks_before_playoffs": 9
+   },
+   "week": 6
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "injury": "Toe",
+    "note": "Sleeper recorded no stats for him that week, so he was ruled out after the Friday report.",
+    "played": false,
+    "points_scored": 0,
+    "practice_status": "Limited Participation in Practice",
+    "report_status": "Questionable",
+    "rule": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "James Cook was listed Questionable (Toe), did not play, and scored 0 in the starting lineup.",
+   "id": "2024-w06-r6-questionable_did_not_play-8138",
+   "kind": "questionable_did_not_play",
+   "label": "Started a Questionable player who didn't play",
+   "manager": {
+    "display_name": "Gingivitis",
+    "owner_id": "471345530597797888",
+    "roster_id": 6,
+    "team_name": "Angry Beavers"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 19.16,
+    "opponent_display_name": "JSusee",
+    "opponent_owner_id": "471074114505797632",
+    "opponent_roster_id": 3,
+    "points_against": 59.16,
+    "points_for": 78.32,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2024-10-14",
+    "home": false,
+    "nfl_team": "BUF",
+    "opponent": "NYJ"
+   },
+   "penalty": {
+    "base": 6,
+    "multiplier": 1.0,
+    "total": 6.0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "James Cook",
+    "nfl_team": "BUF",
+    "player_id": "8138",
+    "pos": "RB"
+   },
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2024/reg6"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "9 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 6,
+    "weeks_before_playoffs": 9
+   },
+   "week": 6
+  },
+  {
+   "bench_option": {
+    "name": "Jaylen Waddle",
+    "player_id": "7526",
+    "points": 1.6,
+    "pos": "WR",
+    "slot": "WR"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Illness",
+    "points_scored": 0,
+    "practice_status": "Full Participation in Practice",
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Deebo Samuel was listed Out (Illness) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2024-w07-r2-injured_starter_out-5872",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "MrSeeYou",
+    "owner_id": "423560331814510592",
+    "roster_id": 2,
+    "team_name": "Gotham Rogues"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 31.8,
+    "opponent_display_name": "JSusee",
+    "opponent_owner_id": "471074114505797632",
+    "opponent_roster_id": 3,
+    "points_against": 92.5,
+    "points_for": 124.3,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2024-10-20",
+    "home": true,
+    "nfl_team": "SF",
+    "opponent": "KC"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "WR",
+    "name": "Deebo Samuel",
+    "nfl_team": "SF",
+    "player_id": "5872",
+    "pos": "WR"
+   },
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2024/reg7"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "8 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 7,
+    "weeks_before_playoffs": 8
+   },
+   "week": 7
+  },
+  {
+   "bench_option": {
+    "name": "Tyler Lockett",
+    "player_id": "2374",
+    "points": 13.8,
+    "pos": "WR",
+    "slot": "WR"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Wrist",
+    "note": "Sleeper recorded no stats for him that week, so he was ruled out after the Friday report.",
+    "played": false,
+    "points_scored": 0,
+    "practice_status": "Limited Participation in Practice",
+    "report_status": "Questionable",
+    "rule": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Amari Cooper was listed Questionable (Wrist), did not play, and scored 0 in the starting lineup.",
+   "id": "2024-w09-r3-questionable_did_not_play-2309",
+   "kind": "questionable_did_not_play",
+   "label": "Started a Questionable player who didn't play",
+   "manager": {
+    "display_name": "JSusee",
+    "owner_id": "471074114505797632",
+    "roster_id": 3,
+    "team_name": "Amazing Fantasy #15"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 32.02,
+    "opponent_display_name": "BigDogsRevenge",
+    "opponent_owner_id": "471083964757438464",
+    "opponent_roster_id": 5,
+    "points_against": 116.68,
+    "points_for": 84.66,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2024-11-03",
+    "home": true,
+    "nfl_team": "BUF",
+    "opponent": "MIA"
+   },
+   "penalty": {
+    "base": 6,
+    "multiplier": 1.0,
+    "total": 6.0
+   },
+   "player": {
+    "lineup_slot": "WR",
+    "name": "Amari Cooper",
+    "nfl_team": "BUF",
+    "player_id": "2309",
+    "pos": "WR"
+   },
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2024/reg9"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "6 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 9,
+    "weeks_before_playoffs": 6
+   },
+   "week": 9
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "injury": "Shoulder",
+    "points_scored": 0,
+    "practice_status": "Did Not Participate In Practice",
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Sam LaPorta was listed Out (Shoulder) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2024-w11-r12-injured_starter_out-10859",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "therealGandB",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 24.4,
+    "opponent_display_name": "Hodaeg",
+    "opponent_owner_id": "383681356686950400",
+    "opponent_roster_id": 1,
+    "points_against": 118.68,
+    "points_for": 94.28,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2024-11-17",
+    "home": true,
+    "nfl_team": "DET",
+    "opponent": "JAX"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.5,
+    "total": 12.0
+   },
+   "player": {
+    "lineup_slot": "TE",
+    "name": "Sam LaPorta",
+    "nfl_team": "DET",
+    "player_id": "10859",
+    "pos": "TE"
+   },
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2024/reg11"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "4 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 11,
+    "weeks_before_playoffs": 4
+   },
+   "week": 11
+  },
+  {
+   "bench_option": {
+    "name": "Darren Waller",
+    "player_id": "2505",
+    "points": 16.3,
+    "pos": "TE",
+    "slot": "TE"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Knee",
+    "note": "Sleeper recorded no stats for him that week, so he was ruled out after the Friday report.",
+    "played": false,
+    "points_scored": 0,
+    "practice_status": "Did Not Participate In Practice",
+    "report_status": "Questionable",
+    "rule": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Brock Bowers was listed Questionable (Knee), did not play, and scored 0 in the starting lineup.",
+   "id": "2025-w05-r8-questionable_did_not_play-11604",
+   "kind": "questionable_did_not_play",
+   "label": "Started a Questionable player who didn't play",
+   "manager": {
+    "display_name": "TheBoarHouse",
+    "owner_id": "471359672478068736",
+    "roster_id": 8,
+    "team_name": "Lil Kings"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": true,
+    "margin": 8.28,
+    "opponent_display_name": "DangerDave678",
+    "opponent_owner_id": "471366618241298432",
+    "opponent_roster_id": 11,
+    "points_against": 77.28,
+    "points_for": 69.0,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2025-10-05",
+    "home": false,
+    "nfl_team": "LV",
+    "opponent": "IND"
+   },
+   "penalty": {
+    "base": 6,
+    "multiplier": 1.0,
+    "total": 6.0
+   },
+   "player": {
+    "lineup_slot": "TE",
+    "name": "Brock Bowers",
+    "nfl_team": "LV",
+    "player_id": "11604",
+    "pos": "TE"
+   },
+   "season": "2025",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2025/reg5"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "10 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 5,
+    "weeks_before_playoffs": 10
+   },
+   "week": 5
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "injury": "Calf",
+    "points_scored": 0,
+    "practice_status": "Did Not Participate In Practice",
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Chuba Hubbard was listed Out (Calf) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2025-w05-r9-injured_starter_out-7594",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "ChinaKing",
+    "owner_id": "471360899853053952",
+    "roster_id": 9,
+    "team_name": "China King"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 25.0,
+    "opponent_display_name": "BigDogsRevenge",
+    "opponent_owner_id": "471083964757438464",
+    "opponent_roster_id": 5,
+    "points_against": 73.14,
+    "points_for": 98.14,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2025-10-05",
+    "home": true,
+    "nfl_team": "CAR",
+    "opponent": "MIA"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "Chuba Hubbard",
+    "nfl_team": "CAR",
+    "player_id": "7594",
+    "pos": "RB"
+   },
+   "season": "2025",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2025/reg5"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "10 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 5,
+    "weeks_before_playoffs": 10
+   },
+   "week": 5
+  },
+  {
+   "bench_option": {
+    "name": "Caleb Williams",
+    "player_id": "11560",
+    "points": 11.8,
+    "pos": "QB",
+    "slot": "QB"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Hamstring",
+    "points_scored": 0,
+    "practice_status": "Did Not Participate In Practice",
+    "report_status": "Out",
+    "rule": "Listed Out on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Jayden Daniels was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2025-w08-r5-injured_starter_out-11566",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "BigDogsRevenge",
+    "owner_id": "471083964757438464",
+    "roster_id": 5,
+    "team_name": "Big Dog\u2019s Revenge"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 67.98,
+    "opponent_display_name": "gabroni",
+    "opponent_owner_id": "79761560662589440",
+    "opponent_roster_id": 4,
+    "points_against": 113.58,
+    "points_for": 45.6,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2025-10-27",
+    "home": false,
+    "nfl_team": "WAS",
+    "opponent": "KC"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "QB",
+    "name": "Jayden Daniels",
+    "nfl_team": "WAS",
+    "player_id": "11566",
+    "pos": "QB"
+   },
+   "season": "2025",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2025/reg8"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "7 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 8,
+    "weeks_before_playoffs": 7
+   },
+   "week": 8
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "injury": "Quadricep",
+    "points_scored": 0,
+    "practice_status": null,
+    "report_status": "Doubtful",
+    "rule": "Listed Doubtful on the official NFL injury report, started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Brandon McManus was listed Doubtful (Quadricep) on the official NFL injury report and scored 0 in the starting lineup.",
+   "id": "2025-w11-r7-injured_starter_doubtful-1433",
+   "kind": "injured_starter_doubtful",
+   "label": "Started a player listed Doubtful",
+   "manager": {
+    "display_name": "WhiskeyDicknCo",
+    "owner_id": "422102738889867264",
+    "roster_id": 7,
+    "team_name": "Whiskey Dick & Co"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 55.7,
+    "opponent_display_name": "Hodaeg",
+    "opponent_owner_id": "383681356686950400",
+    "opponent_roster_id": 1,
+    "points_against": 148.62,
+    "points_for": 92.92,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2025-11-16",
+    "home": false,
+    "nfl_team": "GB",
+    "opponent": "NYG"
+   },
+   "penalty": {
+    "base": 3,
+    "multiplier": 1.5,
+    "total": 4.5
+   },
+   "player": {
+    "lineup_slot": "K",
+    "name": "Brandon McManus",
+    "nfl_team": "GB",
+    "player_id": "1433",
+    "pos": "K"
+   },
+   "season": "2025",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2025/reg11"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "4 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 11,
+    "weeks_before_playoffs": 4
+   },
+   "week": 11
+  },
+  {
+   "bench_option": {
+    "name": "Brock Bowers",
+    "player_id": "11604",
+    "points": 12.6,
+    "pos": "TE",
+    "slot": "TE"
+   },
+   "counts": true,
+   "evidence": {
+    "nfl_team": "NE",
+    "points_scored": 0,
+    "rule": "Started a player whose NFL team had no game that week, and scored 0.",
+    "team_played_that_week": false
+   },
+   "excluded_reason": null,
+   "headline": "Hunter Henry (NE) was on a bye in week 14 but was started and scored 0.",
+   "id": "2025-w14-r8-bye_week_starter-3214",
+   "kind": "bye_week_starter",
+   "label": "Started a player on a bye week",
+   "manager": {
+    "display_name": "TheBoarHouse",
+    "owner_id": "471359672478068736",
+    "roster_id": 8,
+    "team_name": "Lil Kings"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 100.96,
+    "opponent_display_name": "Gingivitis",
+    "opponent_owner_id": "471345530597797888",
+    "opponent_roster_id": 6,
+    "points_against": 156.06,
+    "points_for": 55.1,
+    "result": "lost"
+   },
+   "nfl_game": null,
+   "penalty": {
+    "base": 10,
+    "multiplier": 1.75,
+    "total": 17.5
+   },
+   "player": {
+    "lineup_slot": "TE",
+    "name": "Hunter Henry",
+    "nfl_team": "NE",
+    "player_id": "3214",
+    "pos": "TE"
+   },
+   "season": "2025",
+   "sources": [
+    {
+     "name": "NFL schedule (via Sleeper)",
+     "url": "https://www.nfl.com/schedules/2025/REG14"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "1 week before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 14,
+    "weeks_before_playoffs": 1
+   },
+   "week": 14
+  },
+  {
+   "bench_option": {
+    "name": "Green Bay Packers",
+    "player_id": "GB",
+    "points": 4.0,
+    "pos": "DEF",
+    "slot": "DEF"
+   },
+   "counts": true,
+   "evidence": {
+    "nfl_team": "NE",
+    "points_scored": 0,
+    "rule": "Started a player whose NFL team had no game that week, and scored 0.",
+    "team_played_that_week": false
+   },
+   "excluded_reason": null,
+   "headline": "New England Patriots (NE) was on a bye in week 14 but was started and scored 0.",
+   "id": "2025-w14-r8-bye_week_starter-NE",
+   "kind": "bye_week_starter",
+   "label": "Started a player on a bye week",
+   "manager": {
+    "display_name": "TheBoarHouse",
+    "owner_id": "471359672478068736",
+    "roster_id": 8,
+    "team_name": "Lil Kings"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 100.96,
+    "opponent_display_name": "Gingivitis",
+    "opponent_owner_id": "471345530597797888",
+    "opponent_roster_id": 6,
+    "points_against": 156.06,
+    "points_for": 55.1,
+    "result": "lost"
+   },
+   "nfl_game": null,
+   "penalty": {
+    "base": 10,
+    "multiplier": 1.75,
+    "total": 17.5
+   },
+   "player": {
+    "lineup_slot": "DEF",
+    "name": "New England Patriots",
+    "nfl_team": "NE",
+    "player_id": "NE",
+    "pos": "DEF"
+   },
+   "season": "2025",
+   "sources": [
+    {
+     "name": "NFL schedule (via Sleeper)",
+     "url": "https://www.nfl.com/schedules/2025/REG14"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "1 week before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 14,
+    "weeks_before_playoffs": 1
+   },
+   "week": 14
+  },
+  {
+   "bench_option": {
+    "name": "DK Metcalf",
+    "player_id": "5846",
+    "points": 14.0,
+    "pos": "WR",
+    "slot": "WR"
+   },
+   "counts": true,
+   "evidence": {
+    "injury": "Hamstring",
+    "note": "Sleeper recorded no stats for him that week, so he was ruled out after the Friday report.",
+    "played": false,
+    "points_scored": 0,
+    "practice_status": "Limited Participation in Practice",
+    "report_status": "Questionable",
+    "rule": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Terry McLaurin was listed Questionable (Hamstring), did not play, and scored 0 in the starting lineup.",
+   "id": "2026-w04-r8-questionable_did_not_play-5927",
+   "kind": "questionable_did_not_play",
+   "label": "Started a Questionable player who didn't play",
+   "manager": {
+    "display_name": "TheBoarHouse",
+    "owner_id": "471359672478068736",
+    "roster_id": 8,
+    "team_name": "Lil Kings"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 58.48,
+    "opponent_display_name": "WhiskeyDicknCo",
+    "opponent_owner_id": "422102738889867264",
+    "opponent_roster_id": 7,
+    "points_against": 166.2,
+    "points_for": 107.72,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2026-10-04",
+    "home": true,
+    "nfl_team": "WAS",
+    "opponent": "IND"
+   },
+   "penalty": {
+    "base": 6,
+    "multiplier": 1.0,
+    "total": 6.0
+   },
+   "player": {
+    "lineup_slot": "WR",
+    "name": "Terry McLaurin",
+    "nfl_team": "WAS",
+    "player_id": "5927",
+    "pos": "WR"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2026/reg4"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "11 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 4,
+    "weeks_before_playoffs": 11
+   },
+   "week": 4
+  }
+ ]
+}

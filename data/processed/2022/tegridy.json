@@ -57,10 +57,11 @@
   "events": [
    {
     "base_penalty": 6,
-    "detail": "Alvin Kamara was listed Questionable (Rib) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
+    "detail": "Alvin Kamara was listed Questionable (Rib), did not play, and scored 0 in the starting lineup.",
     "kind": "questionable_did_not_play",
     "multiplier": 1.0,
     "penalty": 6.0,
+    "penalty_id": "2022-w04-r1-questionable_did_not_play-4035",
     "week": 4
    }
   ],
@@ -72,10 +73,11 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Michael Thomas was listed Out (Foot) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Michael Thomas was listed Out (Foot) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
+    "penalty_id": "2022-w04-r9-injured_starter_out-3199",
     "week": 4
    }
   ],
@@ -87,10 +89,11 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Darren Waller was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Darren Waller was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
+    "penalty_id": "2022-w07-r12-injured_starter_out-2505",
     "week": 7
    }
   ],

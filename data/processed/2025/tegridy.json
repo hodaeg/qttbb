@@ -51,10 +51,11 @@
   "events": [
    {
     "base_penalty": 3,
-    "detail": "Brandon McManus was listed Doubtful (Quadricep) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Brandon McManus was listed Doubtful (Quadricep) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_doubtful",
     "multiplier": 1.5,
     "penalty": 4.5,
+    "penalty_id": "2025-w11-r7-injured_starter_doubtful-1433",
     "week": 11
    }
   ],
@@ -66,10 +67,11 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Jayden Daniels was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Jayden Daniels was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
+    "penalty_id": "2025-w08-r5-injured_starter_out-11566",
     "week": 8
    }
   ],
@@ -81,10 +83,11 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Chuba Hubbard was listed Out (Calf) on the official NFL injury report and scored 0 in the starting lineup",
+    "detail": "Chuba Hubbard was listed Out (Calf) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
+    "penalty_id": "2025-w05-r9-injured_starter_out-7594",
     "week": 5
    }
   ],
@@ -96,18 +99,29 @@
   "events": [
    {
     "base_penalty": 6,
-    "detail": "Brock Bowers was listed Questionable (Knee) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
+    "detail": "Brock Bowers was listed Questionable (Knee), did not play, and scored 0 in the starting lineup.",
     "kind": "questionable_did_not_play",
     "multiplier": 1.0,
     "penalty": 6.0,
+    "penalty_id": "2025-w05-r8-questionable_did_not_play-11604",
     "week": 5
    },
    {
-    "base_penalty": 20,
-    "detail": "started Hunter Henry, New England Patriots on their NFL team's bye week",
+    "base_penalty": 10,
+    "detail": "Hunter Henry (NE) was on a bye in week 14 but was started and scored 0.",
     "kind": "bye_week_starter",
     "multiplier": 1.75,
-    "penalty": 35.0,
+    "penalty": 17.5,
+    "penalty_id": "2025-w14-r8-bye_week_starter-3214",
+    "week": 14
+   },
+   {
+    "base_penalty": 10,
+    "detail": "New England Patriots (NE) was on a bye in week 14 but was started and scored 0.",
+    "kind": "bye_week_starter",
+    "multiplier": 1.75,
+    "penalty": 17.5,
+    "penalty_id": "2025-w14-r8-bye_week_starter-NE",
     "week": 14
    }
   ],

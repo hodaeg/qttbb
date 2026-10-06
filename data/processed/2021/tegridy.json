@@ -69,10 +69,11 @@
   "events": [
    {
     "base_penalty": 10,
-    "detail": "started Austin Ekeler on their NFL team's bye week",
+    "detail": "Austin Ekeler (LAC) was on a bye in week 7 but was started and scored 0.",
     "kind": "bye_week_starter",
     "multiplier": 1.0,
     "penalty": 10.0,
+    "penalty_id": "2021-w07-r8-bye_week_starter-4663",
     "week": 7
    }
   ],

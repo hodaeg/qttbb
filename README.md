@@ -38,6 +38,21 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 
 **`<season>/efficiency.json`** — `[ { roster_id, owner_id, weeks, points, optimal_points, efficiency } ]`. A *skill* stat (how well a manager sets lineups), deliberately **not** part of Tegridy Factor.
 
+**`penalties.json`** — `{ penalties: [ ... ] }`, the main file for the Tegridy UI: one record per penalty with the data behind it. Includes penalties that did not count (`counts: false`, with `excluded_reason`).
+```
+{ id, season, week, kind, label, headline, counts, excluded_reason,
+  penalty:  { base, multiplier, total },
+  manager:  { owner_id, roster_id, display_name, team_name },
+  player:   { player_id, name, pos, nfl_team, lineup_slot },
+  nfl_game: { nfl_team, opponent, home, date } | null,        // null on a bye
+  evidence: { ... },  // kind-specific: report_status, injury, practice_status, played, rule | nfl_team, team_played_that_week, rule
+  bench_option: { player_id, name, pos, points, slot } | null, // best bench player who could have filled the slot
+  matchup:  { opponent_display_name, points_for, points_against, result, margin, bench_option_would_have_changed_result },
+  timing:   { phase, week, playoff_start_week, weeks_before_playoffs, playoff_round, playoff_bracket, multiplier_reason },
+  sources:  [ { name, url } ] }
+```
+`kind` is one of `injured_starter_out`, `injured_starter_doubtful`, `questionable_did_not_play`, `bye_week_starter`. Events in `<season>/tegridy.json` link here through `penalty_id`.
+
 **`injury_starts.json`** — every instance of starting an Out/Doubtful player across all seasons: `{ rule, by_owner: { "<owner_id>": { out, doubtful } }, instances: [ { season, week, roster_id, owner_id, player_id, player, pos, status, source, injury } ] }`. `source` is `nfl_report`, `nfl_report_dnp` (Questionable who didn't play) or `snapshot` (live).
 
 **`bye_starts.json`** — every instance of starting a player whose NFL team was on bye (and who scored 0): `{ rule, by_owner, instances: [ { season, week, roster_id, owner_id, player_id, player, pos } ] }`. Also exposed per week as `bye_starters` in `weeks.json`.

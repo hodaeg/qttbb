@@ -4,6 +4,7 @@ Both come from Sleeper's undocumented api.sleeper.com endpoints (the documented 
 so they could change. Finished weeks are fetched once and cached; the current season refreshes.
 
   data/raw/nfl_schedule/<season>.json      { "<week>": ["ARI", "KC", ...] }   teams that PLAYED that week
+  data/raw/nfl_games/<season>.json         { "<week>": [ {home, away, date, game_id} ] }  the games themselves
   data/raw/player_teams/<season>/wkNN.json { "<player_id>": "TEAM" }          only players in players_slim.json
 
     python scripts/nfl_context.py
@@ -31,15 +32,17 @@ def write(path, obj):
 
 
 def fetch_schedule(season, current):
-    f = RAW / "nfl_schedule" / f"{season}.json"
-    if f.exists() and not current:
+    f, g = RAW / "nfl_schedule" / f"{season}.json", RAW / "nfl_games" / f"{season}.json"
+    if f.exists() and g.exists() and not current:
         return
     games = sleeper.get_site(f"https://api.sleeper.com/schedule/nfl/regular/{season}")
-    playing = defaultdict(set)
-    for g in games:
-        playing[str(g["week"])].update([g["home"], g["away"]])
+    playing, by_week = defaultdict(set), defaultdict(list)
+    for x in games:
+        playing[str(x["week"])].update([x["home"], x["away"]])
+        by_week[str(x["week"])].append({"home": x["home"], "away": x["away"], "date": x.get("date"), "game_id": x.get("game_id")})
     write(f, {w: sorted(t) for w, t in playing.items()})
-    print(f"schedule {season}: {len(playing)} weeks")
+    write(g, dict(by_week))
+    print(f"schedule {season}: {len(playing)} weeks, {len(games)} games")
 
 
 def fetch_player_teams(season, current_season, current_week, wanted):
