@@ -27,6 +27,20 @@
     ],
     "doubtful_statuses": [
       "Doubtful"
-    ]
+    ],
+    "multipliers": {
+      "in_playoffs": 2.0,
+      "weeks_before_playoffs": [
+        {
+          "max_weeks": 2,
+          "multiplier": 1.75
+        },
+        {
+          "max_weeks": 4,
+          "multiplier": 1.5
+        }
+      ],
+      "default": 1.0
+    }
   }
 }

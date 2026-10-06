@@ -122,6 +122,21 @@ Sleeper only removes members in the offseason, and TheBoarHouse (who left in 202
 ### D20 — Sleeper's app can show wrong bye information for old weeks — Noted
 The owner saw JSusee's 2024 week 9 Michael Pittman marked as on a bye. He wasn't: he scored 1.9, and weekly stats put him on IND (the 2024 week 9 byes were PIT and SF). Sleeper's player record now lists him on PIT, so the app appears to show his *current* team's bye on an old week. The pipeline uses the team **as of that week**. Treat Sleeper's app as unreliable for historical bye/team labels when spot-checking; check `data/raw/player_teams/` and the schedule instead.
 
+### D21 — Penalties weigh more the closer to the playoffs — Accepted
+Owner's rule: a violation matters more when more is at stake. The multiplier depends on how many weeks before **that season's** playoff start the game is:
+
+| When | Multiplier |
+|---|---|
+| In the playoffs (a game that still counts, per D17) | **2.0x** |
+| 1-2 weeks before the playoffs | **1.75x** |
+| 3-4 weeks before the playoffs | **1.5x** |
+| 5+ weeks before | 1.0x |
+
+Applied to each penalty: `penalty = base_penalty x multiplier`. Events record `base_penalty`, `multiplier` and `penalty`; `weeks.json` rows and the injury/bye instance lists carry `multiplier`. Tiers live in `config/league.json` (`tegridy.multipliers`).
+**Schedule change is handled per season.** The playoff start comes from each season's own Sleeper settings: week **14** in 2019-2020, week **15** from 2021 onward (the regular season gained a week in **2021**, not two years ago as remembered; 2019-2020 had 13 regular-season weeks, 2021+ have 14). Nothing is hard-coded.
+Effect on all-time totals (before -> after): TheBoarHouse 57 -> 82, BigDogsRevenge 36 -> 53.5, therealGandB 27 -> 34.75, ChinaKing 22 -> 28, gabroni 10 -> 17.5, Hodaeg 14 (unchanged), others small.
+Interpretation note: "2 or less" was read as 1-2 weeks out and "4-3" as 3-4 weeks out, so the last regular-season week counts as 1 week out.
+
 ---
 
 ## Infrastructure

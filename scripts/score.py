@@ -141,6 +141,18 @@ class ByeDetector:
         return team not in playing
 
 
+def week_multiplier(week, playoff_start, cfg):
+    """Penalties weigh more the closer to (and during) the playoffs. Uses this season's own playoff start."""
+    m = cfg["tegridy"]["multipliers"]
+    if week >= playoff_start:
+        return m["in_playoffs"]
+    until = playoff_start - week  # 1 = last regular-season week
+    for tier in sorted(m["weeks_before_playoffs"], key=lambda t: t["max_weeks"]):
+        if until <= tier["max_weeks"]:
+            return tier["multiplier"]
+    return m["default"]
+
+
 def effective_points(m):
     """Sleeper uses custom_points (commissioner adjustment) when set, otherwise points."""
     return m["custom_points"] if m.get("custom_points") is not None else m["points"]
@@ -284,9 +296,13 @@ def analyse_season(bundle, players, cfg):
             }
             weeks[wk].append(row)
 
-            def ev(kind, penalty, detail):
-                if penalty and counts:
-                    events[rid].append({"week": int(wk), "kind": kind, "penalty": penalty, "detail": detail})
+            mult = week_multiplier(int(wk), playoff_start, cfg)
+            row["multiplier"] = mult
+
+            def ev(kind, base, detail):
+                if base and counts:
+                    events[rid].append({"week": int(wk), "kind": kind, "base_penalty": base, "multiplier": mult,
+                                        "penalty": round(base * mult, 2), "detail": detail})
 
             ev("empty_slot", w["empty_slot"] * empty, f"{empty} empty starting slot(s)")
             for p, f in flags.items():
@@ -415,6 +431,7 @@ def main():
                         "season": season, "week": int(wk), "roster_id": row["roster_id"],
                         "owner_id": owner_of.get(row["roster_id"]), "player_id": pid,
                         "player": players.get(pid, {}).get("name", pid), "pos": players.get(pid, {}).get("pos"),
+                        "multiplier": row["multiplier"],
                     }
                     if row["counts_toward_tegridy"]:
                         bye_starts.append(rec)
@@ -426,6 +443,7 @@ def main():
                         "owner_id": owner_of.get(row["roster_id"]), "player_id": pid,
                         "player": players.get(pid, {}).get("name", pid), "pos": players.get(pid, {}).get("pos"),
                         "status": f["status"], "source": f["source"], "injury": f.get("injury"),
+                        "multiplier": row["multiplier"],
                     }
                     if row["counts_toward_tegridy"]:
                         injury_starts.append(rec)

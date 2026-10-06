@@ -32,7 +32,7 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 
 **`<season>/playoff_relevance.json`** — `{ "<roster_id>": { bracket: "winners"|"losers", last_week, reason } }`. `last_week` is the last playoff week that counted for that roster (`null` = all of them).
 
-**`<season>/tegridy.json`** — `[ { roster_id, owner_id, tegridy_factor, events: [ { week, kind, penalty, detail } ] } ]`, sorted lowest (best) first. Every penalty carries a plain-English `detail`.
+**`<season>/tegridy.json`** — `[ { roster_id, owner_id, tegridy_factor, events: [ { week, kind, base_penalty, multiplier, penalty, detail } ] } ]`, sorted lowest (best) first. Every penalty carries a plain-English `detail`.
 
 **`tegridy_alltime.json`** — `{ "<owner_id>": { total, by_season: { "<season>": n } } }`, sorted lowest first.
 
@@ -48,7 +48,7 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 
 A running total of fair-play penalties. **Starts at 0, only goes up, lower is better.** There is no 100-point scale to erode. Weights live in `config/league.json` and can be changed without touching code.
 
-| Penalty | Points | Source |
+| Penalty | Base points | Source |
 |---|---|---|
 | Started a player on their NFL team's bye (and they scored 0) | 10 each | NFL schedule + weekly player teams |
 | Started a player listed **Out** on the official NFL injury report (and they scored 0) | 8 each | NFL injury report (all seasons) |
@@ -57,6 +57,8 @@ A running total of fair-play penalties. **Starts at 0, only goes up, lower is be
 | Started a player listed **Doubtful** on the report (and they scored 0) | 3 each | NFL injury report (all seasons) |
 | Out/Doubtful at a game-day snapshot and still in the final lineup | same as above | Game-day snapshots (live weeks) |
 | Identical lineup to last week | 0 (tracked only) | Matchups |
+
+**Timing multiplier** (D21), applied to every penalty: in the playoffs 2.0x, 1-2 weeks before 1.75x, 3-4 weeks before 1.5x, otherwise 1.0x. Measured from each season's own playoff start (week 14 in 2019-2020, week 15 since 2021). Configurable in `tegridy.multipliers`.
 
 **Playoffs:** only first place and last place matter. In the winners bracket, games count up to and including your first loss; in the losers bracket, up to and including your first win. Later games (third-place, consolation) are ignored. Excluded penalties are listed under `excluded` in `injury_starts.json` and `bye_starts.json`.
 

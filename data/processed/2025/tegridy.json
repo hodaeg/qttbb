@@ -38,85 +38,99 @@
  {
   "events": [
    {
+    "base_penalty": 3,
     "detail": "Brandon McManus was listed Doubtful (Quadricep) on the official NFL injury report and scored 0 in the starting lineup",
     "kind": "injured_starter_doubtful",
-    "penalty": 3,
+    "multiplier": 1.5,
+    "penalty": 4.5,
     "week": 11
    }
   ],
   "owner_id": "422102738889867264",
   "roster_id": 7,
-  "tegridy_factor": 3
+  "tegridy_factor": 4.5
  },
  {
   "events": [
    {
+    "base_penalty": 5,
     "detail": "1 empty starting slot(s)",
     "kind": "empty_slot",
-    "penalty": 5,
+    "multiplier": 1.0,
+    "penalty": 5.0,
     "week": 1
    }
   ],
   "owner_id": "471368473092550656",
   "roster_id": 12,
-  "tegridy_factor": 5
+  "tegridy_factor": 5.0
  },
  {
   "events": [
    {
+    "base_penalty": 8,
     "detail": "Jayden Daniels was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup",
     "kind": "injured_starter_out",
-    "penalty": 8,
+    "multiplier": 1.0,
+    "penalty": 8.0,
     "week": 8
    }
   ],
   "owner_id": "471083964757438464",
   "roster_id": 5,
-  "tegridy_factor": 8
+  "tegridy_factor": 8.0
  },
  {
   "events": [
    {
+    "base_penalty": 8,
     "detail": "Chuba Hubbard was listed Out (Calf) on the official NFL injury report and scored 0 in the starting lineup",
     "kind": "injured_starter_out",
-    "penalty": 8,
+    "multiplier": 1.0,
+    "penalty": 8.0,
     "week": 5
    }
   ],
   "owner_id": "471360899853053952",
   "roster_id": 9,
-  "tegridy_factor": 8
+  "tegridy_factor": 8.0
  },
  {
   "events": [
    {
+    "base_penalty": 10,
     "detail": "2 empty starting slot(s)",
     "kind": "empty_slot",
-    "penalty": 10,
+    "multiplier": 1.75,
+    "penalty": 17.5,
     "week": 14
    }
   ],
   "owner_id": "79761560662589440",
   "roster_id": 4,
-  "tegridy_factor": 10
+  "tegridy_factor": 17.5
  },
  {
   "events": [
    {
+    "base_penalty": 6,
     "detail": "Brock Bowers was listed Questionable (Knee) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
     "kind": "questionable_did_not_play",
-    "penalty": 6,
+    "multiplier": 1.0,
+    "penalty": 6.0,
     "week": 5
    },
    {
+    "base_penalty": 20,
     "detail": "started Hunter Henry, New England Patriots on their NFL team's bye week",
     "kind": "bye_week_starter",
-    "penalty": 20,
+    "multiplier": 1.75,
+    "penalty": 35.0,
     "week": 14
    }
   ],
   "owner_id": "471359672478068736",
   "roster_id": 8,
-  "tegridy_factor": 26
+  "tegridy_factor": 41.0
  }
 ]

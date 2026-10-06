@@ -56,52 +56,62 @@
  {
   "events": [
    {
+    "base_penalty": 3,
     "detail": "Dallas Goedert was listed Doubtful (Forearm) on the official NFL injury report and scored 0 in the starting lineup",
     "kind": "injured_starter_doubtful",
-    "penalty": 3,
+    "multiplier": 1.75,
+    "penalty": 5.25,
     "week": 13
    }
   ],
   "owner_id": "471368473092550656",
   "roster_id": 12,
-  "tegridy_factor": 3
+  "tegridy_factor": 5.25
  },
  {
   "events": [
    {
+    "base_penalty": 6,
     "detail": "Jayden Reed was listed Questionable (Toe, Chest) on the official NFL injury report, did not play, and scored 0 in the starting lineup",
     "kind": "questionable_did_not_play",
-    "penalty": 6,
+    "multiplier": 2.0,
+    "penalty": 12.0,
     "week": 16
    }
   ],
   "owner_id": "471360899853053952",
   "roster_id": 9,
-  "tegridy_factor": 6
+  "tegridy_factor": 12.0
  },
  {
   "events": [
    {
+    "base_penalty": 10,
     "detail": "started Baltimore Ravens on their NFL team's bye week",
     "kind": "bye_week_starter",
-    "penalty": 10,
+    "multiplier": 1.75,
+    "penalty": 17.5,
     "week": 13
    },
    {
+    "base_penalty": 5,
     "detail": "1 empty starting slot(s)",
     "kind": "empty_slot",
-    "penalty": 5,
+    "multiplier": 2.0,
+    "penalty": 10.0,
     "week": 16
    },
    {
+    "base_penalty": 5,
     "detail": "1 empty starting slot(s)",
     "kind": "empty_slot",
-    "penalty": 5,
+    "multiplier": 2.0,
+    "penalty": 10.0,
     "week": 17
    }
   ],
   "owner_id": "471083964757438464",
   "roster_id": 5,
-  "tegridy_factor": 20
+  "tegridy_factor": 37.5
  }
 ]

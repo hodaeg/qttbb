@@ -68,14 +68,16 @@
  {
   "events": [
    {
+    "base_penalty": 3,
     "detail": "George Kittle was listed Doubtful (Knee, Ankle) on the official NFL injury report and scored 0 in the starting lineup",
     "kind": "injured_starter_doubtful",
-    "penalty": 3,
+    "multiplier": 1.5,
+    "penalty": 4.5,
     "week": 11
    }
   ],
   "owner_id": "471368473092550656",
   "roster_id": 12,
-  "tegridy_factor": 3
+  "tegridy_factor": 4.5
  }
 ]

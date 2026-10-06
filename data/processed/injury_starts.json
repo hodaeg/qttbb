@@ -50,6 +50,7 @@
   {
    "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
    "injury": "Heel",
+   "multiplier": 2.0,
    "owner_id": "471359444949659648",
    "player": "James Conner",
    "player_id": "4137",
@@ -63,6 +64,7 @@
   {
    "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
    "injury": "right Shoulder",
+   "multiplier": 2.0,
    "owner_id": "383681356686950400",
    "player": "Trevor Lawrence",
    "player_id": "7523",
@@ -76,6 +78,7 @@
   {
    "excluded_reason": "eliminated from the title race (lost in the winners bracket)",
    "injury": "Knee, Ankle",
+   "multiplier": 2.0,
    "owner_id": "383681356686950400",
    "player": "Raheem Mostert",
    "player_id": "2749",
@@ -90,6 +93,7 @@
  "instances": [
   {
    "injury": "Knee, Ankle",
+   "multiplier": 1.5,
    "owner_id": "471368473092550656",
    "player": "George Kittle",
    "player_id": "4217",
@@ -102,6 +106,7 @@
   },
   {
    "injury": "Rib",
+   "multiplier": 1.0,
    "owner_id": "383681356686950400",
    "player": "Alvin Kamara",
    "player_id": "4035",
@@ -114,6 +119,7 @@
   },
   {
    "injury": "Foot",
+   "multiplier": 1.0,
    "owner_id": "471360899853053952",
    "player": "Michael Thomas",
    "player_id": "3199",
@@ -126,6 +132,7 @@
   },
   {
    "injury": "Hamstring",
+   "multiplier": 1.0,
    "owner_id": "471368473092550656",
    "player": "Darren Waller",
    "player_id": "2505",
@@ -138,6 +145,7 @@
   },
   {
    "injury": "Forearm",
+   "multiplier": 1.75,
    "owner_id": "471368473092550656",
    "player": "Dallas Goedert",
    "player_id": "5022",
@@ -150,6 +158,7 @@
   },
   {
    "injury": "Toe, Chest",
+   "multiplier": 2.0,
    "owner_id": "471360899853053952",
    "player": "Jayden Reed",
    "player_id": "10222",
@@ -162,6 +171,7 @@
   },
   {
    "injury": "Hamstring",
+   "multiplier": 1.0,
    "owner_id": "471345530597797888",
    "player": "Evan Engram",
    "player_id": "4066",
@@ -174,6 +184,7 @@
   },
   {
    "injury": "Ankle",
+   "multiplier": 1.0,
    "owner_id": "383681356686950400",
    "player": "Christian Watson",
    "player_id": "8167",
@@ -186,6 +197,7 @@
   },
   {
    "injury": "Knee",
+   "multiplier": 1.0,
    "owner_id": "471345530597797888",
    "player": "Rashee Rice",
    "player_id": "10229",
@@ -198,6 +210,7 @@
   },
   {
    "injury": "Hamstring",
+   "multiplier": 1.0,
    "owner_id": "423560331814510592",
    "player": "Dallas Goedert",
    "player_id": "5022",
@@ -210,6 +223,7 @@
   },
   {
    "injury": "gameday concussion protocol evaluation",
+   "multiplier": 1.0,
    "owner_id": "471083964757438464",
    "player": "Marvin Harrison",
    "player_id": "11628",
@@ -222,6 +236,7 @@
   },
   {
    "injury": "Toe",
+   "multiplier": 1.0,
    "owner_id": "471345530597797888",
    "player": "James Cook",
    "player_id": "8138",
@@ -234,6 +249,7 @@
   },
   {
    "injury": "Illness",
+   "multiplier": 1.0,
    "owner_id": "423560331814510592",
    "player": "Deebo Samuel",
    "player_id": "5872",
@@ -246,6 +262,7 @@
   },
   {
    "injury": "Wrist",
+   "multiplier": 1.0,
    "owner_id": "471074114505797632",
    "player": "Amari Cooper",
    "player_id": "2309",
@@ -258,6 +275,7 @@
   },
   {
    "injury": "Shoulder",
+   "multiplier": 1.5,
    "owner_id": "471368473092550656",
    "player": "Sam LaPorta",
    "player_id": "10859",
@@ -270,6 +288,7 @@
   },
   {
    "injury": "Knee",
+   "multiplier": 1.0,
    "owner_id": "471359672478068736",
    "player": "Brock Bowers",
    "player_id": "11604",
@@ -282,6 +301,7 @@
   },
   {
    "injury": "Calf",
+   "multiplier": 1.0,
    "owner_id": "471360899853053952",
    "player": "Chuba Hubbard",
    "player_id": "7594",
@@ -294,6 +314,7 @@
   },
   {
    "injury": "Hamstring",
+   "multiplier": 1.0,
    "owner_id": "471083964757438464",
    "player": "Jayden Daniels",
    "player_id": "11566",
@@ -306,6 +327,7 @@
   },
   {
    "injury": "Quadricep",
+   "multiplier": 1.5,
    "owner_id": "422102738889867264",
    "player": "Brandon McManus",
    "player_id": "1433",
@@ -318,6 +340,7 @@
   },
   {
    "injury": "Hamstring",
+   "multiplier": 1.0,
    "owner_id": "471359672478068736",
    "player": "Terry McLaurin",
    "player_id": "5927",

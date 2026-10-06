@@ -6,6 +6,7 @@
  "excluded": [],
  "instances": [
   {
+   "multiplier": 1.0,
    "owner_id": "471359672478068736",
    "player": "Austin Ekeler",
    "player_id": "4663",
@@ -15,6 +16,7 @@
    "week": 7
   },
   {
+   "multiplier": 1.75,
    "owner_id": "471083964757438464",
    "player": "Baltimore Ravens",
    "player_id": "BAL",
@@ -24,6 +26,7 @@
    "week": 13
   },
   {
+   "multiplier": 1.75,
    "owner_id": "471359672478068736",
    "player": "Hunter Henry",
    "player_id": "3214",
@@ -33,6 +36,7 @@
    "week": 14
   },
   {
+   "multiplier": 1.75,
    "owner_id": "471359672478068736",
    "player": "New England Patriots",
    "player_id": "NE",
