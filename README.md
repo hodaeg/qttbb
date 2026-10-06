@@ -10,6 +10,7 @@ python scripts/fetch.py      # league data for every Sleeper season -> data/raw/
 python scripts/nfl_injuries.py  # official NFL injury reports, every season -> data/raw/nfl_injuries/
 python scripts/nfl_context.py  # NFL schedule + each player's team by week (for bye detection)
 python scripts/score.py      # -> data/processed/
+python scripts/profiles.py   # per-owner profiles -> data/processed/owner_profiles/
 python scripts/snapshot.py   # game-day lineup + injury snapshot -> data/raw/snapshots/
 ```
 
@@ -52,6 +53,8 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
   sources:  [ { name, url } ] }
 ```
 `kind` is one of `injured_starter_out`, `injured_starter_doubtful`, `questionable_did_not_play`, `bye_week_starter`. Events in `<season>/tegridy.json` link here through `penalty_id`.
+
+**`owner_profiles/<owner_id>.json`** — one rich object per owner (`owner_profiles/index.json` has a summary row each, for league tables). Sections: `tegridy_factor` (total, rank, by_season, by_kind, penalty_ids), `record` (regular_season / postseason / total), `trophies` (championships, runner_up, third_place, sackos, playoff_appearances, first_round_byes, regular_season_titles; each `{count, seasons}`), `scoring` (highest/lowest score, biggest win, worst loss, close games, streaks), `luck`, `efficiency`, `faab_and_transactions` (spent, traded in/out, claims won/lost, adds/drops, trades, biggest bid, trade partner), `head_to_head` (by opponent, nemesis, favorite victim) and `seasons` (the same, per season). Join key is `owner_id`. See D24 for definitions and known differences from Sleeper's own totals.
 
 **`injury_starts.json`** — every instance of starting an Out/Doubtful player across all seasons: `{ rule, by_owner: { "<owner_id>": { out, doubtful } }, instances: [ { season, week, roster_id, owner_id, player_id, player, pos, status, source, injury } ] }`. `source` is `nfl_report`, `nfl_report_dnp` (Questionable who didn't play) or `snapshot` (live).
 

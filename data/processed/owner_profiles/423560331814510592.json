@@ -1,0 +1,774 @@
+{
+ "avatar": "06a0ff516d5c7334cad96ba4b3a65edd",
+ "current_division": "The Graveyard",
+ "current_team_name": "Gotham Rogues",
+ "display_name": "MrSeeYou",
+ "efficiency": {
+  "efficiency": 0.9014,
+  "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
+  "optimal_points": 12930.76,
+  "points": 11655.4,
+  "points_left_on_bench": 1275.36,
+  "weeks": 115
+ },
+ "faab_and_transactions": {
+  "adds": 235,
+  "biggest_bid": {
+   "amount": 45,
+   "player": "Chuba Hubbard",
+   "season": "2021",
+   "week": 3
+  },
+  "budget_per_season": 100,
+  "drops": 231,
+  "free_agent_adds": 139,
+  "most_frequent_trade_partner": {
+   "owner_id": "471368473092550656",
+   "trades": 1
+  },
+  "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains).",
+  "sleeper_reported_used": 609,
+  "spent": 621,
+  "spent_per_season": {
+   "2019": 94,
+   "2020": 100,
+   "2021": 117,
+   "2022": 96,
+   "2023": 73,
+   "2024": 60,
+   "2025": 63,
+   "2026": 18
+  },
+  "traded_in": 0,
+  "traded_out": 0,
+  "trades": 3,
+  "unexplained_difference": -12,
+  "waiver_claims_lost": 71,
+  "waiver_claims_won": 96
+ },
+ "first_season": "2019",
+ "head_to_head": {
+  "by_opponent": {
+   "383681356686950400": {
+    "games": 10,
+    "losses": 5,
+    "points_against": 987.96,
+    "points_for": 1024.12,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "422102738889867264": {
+    "games": 11,
+    "losses": 7,
+    "points_against": 1153.72,
+    "points_for": 1000.88,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "471074114505797632": {
+    "games": 11,
+    "losses": 6,
+    "points_against": 1183.6,
+    "points_for": 1079.68,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471083964757438464": {
+    "games": 11,
+    "losses": 4,
+    "points_against": 1176.66,
+    "points_for": 1272.4,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 7
+   },
+   "471345530597797888": {
+    "games": 11,
+    "losses": 6,
+    "points_against": 1036.96,
+    "points_for": 1026.08,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471359444949659648": {
+    "games": 9,
+    "losses": 7,
+    "points_against": 1050.72,
+    "points_for": 922.3,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 2
+   },
+   "471359672478068736": {
+    "games": 13,
+    "losses": 6,
+    "points_against": 1268.42,
+    "points_for": 1314.18,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 7
+   },
+   "471360899853053952": {
+    "games": 9,
+    "losses": 4,
+    "points_against": 922.38,
+    "points_for": 1001.14,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471366618241298432": {
+    "games": 10,
+    "losses": 5,
+    "points_against": 1087.06,
+    "points_for": 1034.1,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471368473092550656": {
+    "games": 9,
+    "losses": 6,
+    "points_against": 943.36,
+    "points_for": 924.12,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 3
+   },
+   "79761560662589440": {
+    "games": 11,
+    "losses": 8,
+    "points_against": 1168.88,
+    "points_for": 1056.4,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 3
+   }
+  },
+  "favorite_victim_owner_id": "471083964757438464",
+  "nemesis_owner_id": "471359444949659648"
+ },
+ "in_current_league": true,
+ "luck": {
+  "expected_wins": 45.41,
+  "luck": -0.41,
+  "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
+  "wins": 45
+ },
+ "owner_id": "423560331814510592",
+ "record": {
+  "note": "Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly.",
+  "postseason": {
+   "avg_points_against": 109.93,
+   "avg_points_for": 103.42,
+   "games": 15,
+   "losses": 8,
+   "points_against": 1648.92,
+   "points_for": 1551.28,
+   "ties": 0,
+   "win_pct": 0.4667,
+   "wins": 7
+  },
+  "regular_season": {
+   "avg_points_against": 103.14,
+   "avg_points_for": 101.04,
+   "games": 100,
+   "losses": 55,
+   "points_against": 10314.2,
+   "points_for": 10104.12,
+   "ties": 0,
+   "win_pct": 0.45,
+   "wins": 45
+  },
+  "total": {
+   "avg_points_against": 104.03,
+   "avg_points_for": 101.35,
+   "games": 115,
+   "losses": 63,
+   "points_against": 11963.12,
+   "points_for": 11655.4,
+   "ties": 0,
+   "win_pct": 0.4522,
+   "wins": 52
+  }
+ },
+ "scoring": {
+  "biggest_win": {
+   "opponent_owner_id": "471083964757438464",
+   "points_against": 84.08,
+   "points_for": 169.82,
+   "season": "2024",
+   "week": 3
+  },
+  "close_games": {
+   "definition": "decided by less than 5 points",
+   "losses": 3,
+   "wins": 9
+  },
+  "highest_score": {
+   "opponent_owner_id": "471083964757438464",
+   "points_against": 84.08,
+   "points_for": 169.82,
+   "season": "2024",
+   "week": 3
+  },
+  "longest_losing_streak": 8,
+  "longest_win_streak": 5,
+  "lowest_score": {
+   "opponent_owner_id": "383681356686950400",
+   "points_against": 90.48,
+   "points_for": 56.2,
+   "season": "2019",
+   "week": 4
+  },
+  "worst_loss": {
+   "opponent_owner_id": "471359672478068736",
+   "points_against": 138.76,
+   "points_for": 66.44,
+   "season": "2021",
+   "week": 16
+  }
+ },
+ "seasons": {
+  "2019": {
+   "complete": true,
+   "division": "Studs and Duds",
+   "efficiency": 0.9136,
+   "faab": {
+    "adds": 35,
+    "budget": 100,
+    "drops": 35,
+    "free_agent_adds": 18,
+    "sleeper_reported_used": 100,
+    "spent": 94,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 6,
+    "waiver_claims_lost": 13,
+    "waiver_claims_won": 17
+   },
+   "final_place": 8,
+   "luck": {
+    "all_play_record": "65-78",
+    "expected_wins": 5.91,
+    "luck": -1.91,
+    "wins": 4
+   },
+   "made_playoffs": false,
+   "playoff_result": "8th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 119.56,
+    "avg_points_for": 106.2,
+    "games": 2,
+    "losses": 1,
+    "points_against": 239.12,
+    "points_for": 212.4,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 109.13,
+    "avg_points_for": 97.61,
+    "games": 13,
+    "losses": 9,
+    "points_against": 1418.7,
+    "points_for": 1268.9,
+    "ties": 0,
+    "win_pct": 0.3077,
+    "wins": 4
+   },
+   "regular_season_rank": 10,
+   "season": "2019",
+   "sleeper_standings_reported": {
+    "points_against": 1416.4,
+    "points_for": 1266.0
+   },
+   "team_name": "Double Tap"
+  },
+  "2020": {
+   "complete": true,
+   "division": "Champions Buffet",
+   "efficiency": 0.8815,
+   "faab": {
+    "adds": 28,
+    "budget": 100,
+    "drops": 29,
+    "free_agent_adds": 16,
+    "sleeper_reported_used": 100,
+    "spent": 100,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 8,
+    "waiver_claims_won": 12
+   },
+   "final_place": 7,
+   "luck": {
+    "all_play_record": "55-88",
+    "expected_wins": 5.0,
+    "luck": 1.0,
+    "wins": 6
+   },
+   "made_playoffs": false,
+   "playoff_result": "7th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 93.17,
+    "avg_points_for": 112.39,
+    "games": 2,
+    "losses": 0,
+    "points_against": 186.34,
+    "points_for": 224.78,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 98.68,
+    "avg_points_for": 97.16,
+    "games": 13,
+    "losses": 7,
+    "points_against": 1282.8,
+    "points_for": 1263.12,
+    "ties": 0,
+    "win_pct": 0.4615,
+    "wins": 6
+   },
+   "regular_season_rank": 10,
+   "season": "2020",
+   "sleeper_standings_reported": {
+    "points_against": 1282.8,
+    "points_for": 1263.12
+   },
+   "team_name": "Gotham Rogues"
+  },
+  "2021": {
+   "complete": true,
+   "division": "The Sinister Six",
+   "efficiency": 0.9293,
+   "faab": {
+    "adds": 54,
+    "budget": 100,
+    "drops": 54,
+    "free_agent_adds": 31,
+    "sleeper_reported_used": 99,
+    "spent": 117,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": -18,
+    "waiver_claims_lost": 23,
+    "waiver_claims_won": 23
+   },
+   "final_place": 12,
+   "luck": {
+    "all_play_record": "52-102",
+    "expected_wins": 4.73,
+    "luck": -1.73,
+    "wins": 3
+   },
+   "made_playoffs": false,
+   "playoff_result": "Last place (Sacko)",
+   "postseason": {
+    "avg_points_against": 118.69,
+    "avg_points_for": 76.89,
+    "games": 2,
+    "losses": 2,
+    "points_against": 237.38,
+    "points_for": 153.78,
+    "ties": 0,
+    "win_pct": 0.0,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 114.41,
+    "avg_points_for": 96.14,
+    "games": 14,
+    "losses": 11,
+    "points_against": 1601.7,
+    "points_for": 1346.0,
+    "ties": 0,
+    "win_pct": 0.2143,
+    "wins": 3
+   },
+   "regular_season_rank": 11,
+   "season": "2021",
+   "sleeper_standings_reported": {
+    "points_against": 1601.8,
+    "points_for": 1345.99
+   },
+   "team_name": "Gotham Rogues"
+  },
+  "2022": {
+   "complete": true,
+   "division": "Kirkland Till I Die",
+   "efficiency": 0.893,
+   "faab": {
+    "adds": 30,
+    "budget": 100,
+    "drops": 29,
+    "free_agent_adds": 17,
+    "sleeper_reported_used": 96,
+    "spent": 96,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 5,
+    "waiver_claims_won": 13
+   },
+   "final_place": 7,
+   "luck": {
+    "all_play_record": "80.5-73.5",
+    "expected_wins": 7.32,
+    "luck": -0.32,
+    "wins": 7
+   },
+   "made_playoffs": false,
+   "playoff_result": "7th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 66.3,
+    "avg_points_for": 106.6,
+    "games": 2,
+    "losses": 0,
+    "points_against": 132.6,
+    "points_for": 213.2,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 106.46,
+    "avg_points_for": 103.0,
+    "games": 14,
+    "losses": 7,
+    "points_against": 1490.44,
+    "points_for": 1442.06,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 7
+   },
+   "regular_season_rank": 7,
+   "season": "2022",
+   "sleeper_standings_reported": {
+    "points_against": 1490.44,
+    "points_for": 1442.06
+   },
+   "team_name": "Gotham Rogues"
+  },
+  "2023": {
+   "complete": true,
+   "division": "Heavyweights",
+   "efficiency": 0.8705,
+   "faab": {
+    "adds": 34,
+    "budget": 100,
+    "drops": 33,
+    "free_agent_adds": 26,
+    "sleeper_reported_used": 73,
+    "spent": 73,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 13,
+    "waiver_claims_won": 8
+   },
+   "final_place": 8,
+   "luck": {
+    "all_play_record": "54-100",
+    "expected_wins": 4.91,
+    "luck": 2.09,
+    "wins": 7
+   },
+   "made_playoffs": false,
+   "playoff_result": "8th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 116.65,
+    "avg_points_for": 107.56,
+    "games": 2,
+    "losses": 1,
+    "points_against": 233.3,
+    "points_for": 215.12,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 99.74,
+    "avg_points_for": 94.36,
+    "games": 14,
+    "losses": 7,
+    "points_against": 1396.4,
+    "points_for": 1321.0,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 7
+   },
+   "regular_season_rank": 7,
+   "season": "2023",
+   "sleeper_standings_reported": {
+    "points_against": 1396.4,
+    "points_for": 1321.0
+   },
+   "team_name": "Gotham Rogues"
+  },
+  "2024": {
+   "complete": true,
+   "division": "THE KENNEL",
+   "efficiency": 0.9164,
+   "faab": {
+    "adds": 21,
+    "budget": 100,
+    "drops": 20,
+    "free_agent_adds": 12,
+    "sleeper_reported_used": 60,
+    "spent": 60,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 7,
+    "waiver_claims_won": 9
+   },
+   "final_place": 6,
+   "luck": {
+    "all_play_record": "89-65",
+    "expected_wins": 8.09,
+    "luck": 0.91,
+    "wins": 9
+   },
+   "made_playoffs": true,
+   "playoff_result": "Sixth place",
+   "postseason": {
+    "avg_points_against": 124.47,
+    "avg_points_for": 105.93,
+    "games": 2,
+    "losses": 2,
+    "points_against": 248.94,
+    "points_for": 211.86,
+    "ties": 0,
+    "win_pct": 0.0,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 96.6,
+    "avg_points_for": 110.04,
+    "games": 14,
+    "losses": 5,
+    "points_against": 1352.34,
+    "points_for": 1540.52,
+    "ties": 0,
+    "win_pct": 0.6429,
+    "wins": 9
+   },
+   "regular_season_rank": 2,
+   "season": "2024",
+   "sleeper_standings_reported": {
+    "points_against": 1352.34,
+    "points_for": 1540.52
+   },
+   "team_name": "Gotham Rogues"
+  },
+  "2025": {
+   "complete": true,
+   "division": "The Bridal Party",
+   "efficiency": 0.8954,
+   "faab": {
+    "adds": 28,
+    "budget": 100,
+    "drops": 28,
+    "free_agent_adds": 16,
+    "sleeper_reported_used": 63,
+    "spent": 63,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 1,
+    "waiver_claims_won": 12
+   },
+   "final_place": 11,
+   "luck": {
+    "all_play_record": "71-83",
+    "expected_wins": 6.45,
+    "luck": -1.45,
+    "wins": 5
+   },
+   "made_playoffs": false,
+   "playoff_result": "11th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 123.75,
+    "avg_points_for": 106.71,
+    "games": 3,
+    "losses": 2,
+    "points_against": 371.24,
+    "points_for": 320.14,
+    "ties": 0,
+    "win_pct": 0.3333,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 100.68,
+    "avg_points_for": 102.15,
+    "games": 14,
+    "losses": 9,
+    "points_against": 1409.58,
+    "points_for": 1430.16,
+    "ties": 0,
+    "win_pct": 0.3571,
+    "wins": 5
+   },
+   "regular_season_rank": 10,
+   "season": "2025",
+   "sleeper_standings_reported": {
+    "points_against": 1409.58,
+    "points_for": 1430.16
+   },
+   "team_name": "Gotham Rogues"
+  },
+  "2026": {
+   "complete": false,
+   "division": "The Graveyard",
+   "efficiency": 0.9426,
+   "faab": {
+    "adds": 5,
+    "budget": 100,
+    "drops": 3,
+    "free_agent_adds": 3,
+    "sleeper_reported_used": 18,
+    "spent": 18,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 1,
+    "waiver_claims_won": 2
+   },
+   "final_place": null,
+   "luck": {
+    "all_play_record": "33-11",
+    "expected_wins": 3.0,
+    "luck": 1.0,
+    "wins": 4
+   },
+   "made_playoffs": true,
+   "playoff_result": null,
+   "postseason": {
+    "avg_points_against": null,
+    "avg_points_for": null,
+    "games": 0,
+    "losses": 0,
+    "points_against": 0.0,
+    "points_for": 0.0,
+    "ties": 0,
+    "win_pct": null,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 90.56,
+    "avg_points_for": 123.09,
+    "games": 4,
+    "losses": 0,
+    "points_against": 362.24,
+    "points_for": 492.36,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 4
+   },
+   "regular_season_rank": 1,
+   "season": "2026",
+   "sleeper_standings_reported": {
+    "points_against": 362.24,
+    "points_for": 492.36
+   },
+   "team_name": "Gotham Rogues"
+  }
+ },
+ "seasons_played": [
+  "2019",
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "tegridy_factor": {
+  "by_kind": {
+   "injured_starter_out": 2
+  },
+  "by_season": {
+   "2019": 0,
+   "2020": 0,
+   "2021": 0,
+   "2022": 0,
+   "2023": 0,
+   "2024": 16.0,
+   "2025": 0,
+   "2026": 0
+  },
+  "clean_seasons": [
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2025"
+  ],
+  "excluded_penalty_ids": [],
+  "penalty_count": 2,
+  "penalty_ids": [
+   "2024-w06-r2-injured_starter_out-5022",
+   "2024-w07-r2-injured_starter_out-5872"
+  ],
+  "points_by_kind": {
+   "injured_starter_out": 16.0
+  },
+  "rank": 7,
+  "rank_note": "1 = best (lowest). Ties share a rank.",
+  "total": 16.0,
+  "worst_penalty_id": "2024-w06-r2-injured_starter_out-5022"
+ },
+ "trophies": {
+  "championships": {
+   "count": 0,
+   "seasons": []
+  },
+  "first_round_byes": {
+   "count": 0,
+   "seasons": []
+  },
+  "playoff_appearances": {
+   "count": 1,
+   "seasons": [
+    "2024"
+   ]
+  },
+  "regular_season_titles": {
+   "count": 0,
+   "seasons": []
+  },
+  "runner_up": {
+   "count": 0,
+   "seasons": []
+  },
+  "sackos": {
+   "count": 1,
+   "seasons": [
+    "2021"
+   ]
+  },
+  "third_place": {
+   "count": 0,
+   "seasons": []
+  }
+ }
+}

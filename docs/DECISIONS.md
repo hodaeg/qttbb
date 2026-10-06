@@ -151,6 +151,20 @@ Needed one new data set: `data/raw/nfl_games/<season>.json` (full schedule with 
 Neutral by design: `bench_option_would_have_changed_result` is information for the UI. It does not affect points.
 Totals verified unchanged after the change (sum 210.75 across all managers).
 
+### D24 — Per-owner profile objects — Accepted
+`scripts/profiles.py` (runs after `score.py`) writes `data/processed/owner_profiles/<owner_id>.json` plus `index.json` (one summary row per owner for league tables). Each profile has: Tegridy Factor (total, rank, by season, by penalty kind, links to every penalty), record (regular season / postseason / total, PF, PA, averages), trophies, scoring highs/lows and streaks, luck, efficiency, FAAB and transactions, head-to-head with nemesis and favorite victim, and a per-season breakdown.
+**Definitions:**
+- *Championship* = winner of the winners-bracket final. *Sacko* = last place (12th), the loser of the losers-bracket final. In Sleeper's losers bracket the `w` team is the *lower* scorer (see D17), so within each losers-bracket pair the higher scorer places better.
+- *Postseason* record includes every playoff-week game (third-place and consolation too). Regular season is separate.
+- *Luck* = regular-season wins minus the wins expected from your weekly scores against everyone (all-play).
+- *Efficiency* is a skill stat and not part of Tegridy Factor (D16).
+- Points come from weekly matchups, commissioner-adjusted where set (D17).
+**Validated against Sleeper:** win-loss-tie records match exactly for all 96 roster-seasons; champions match Sleeper's own `latest_league_winner_roster_id` in every season it exists (2022-2025); sackos match the independent last-place logic in every season; 7 completed seasons produce 7 champions and 7 sackos.
+**Known differences (shown, not hidden):**
+1. *Season points*: weekly matchup totals differ slightly from Sleeper's season standings in some seasons (up to 14 points, mostly 2019; small in later years), which is probably stat corrections after the fact. Each season carries `sleeper_standings_reported` for comparison. The all-time PF uses the weekly matchup numbers.
+2. *FAAB*: the transaction log's winning bids are reported as `spent`. Sleeper's own `waiver_budget_used` equals `spent + traded out - traded in` for 81 of 96 roster-seasons; the other 15 are reported as `unexplained_difference`. Largest by owner (all-time): therealGandB +145, BigDogsRevenge +62, TheBoarHouse +50. Likely commissioner FAAB edits or refunds that aren't in the log; cause not confirmed.
+**Open:** what explains the unexplained FAAB differences (commissioner edits?), and whether they should be shown or hidden.
+
 ---
 
 ## Infrastructure

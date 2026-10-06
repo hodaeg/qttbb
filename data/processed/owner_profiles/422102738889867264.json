@@ -1,0 +1,780 @@
+{
+ "avatar": "7b1654047ce1cc9c108ec0e520b593b7",
+ "current_division": "The Graveyard",
+ "current_team_name": "Whiskey Dick & Co",
+ "display_name": "WhiskeyDicknCo",
+ "efficiency": {
+  "efficiency": 0.8959,
+  "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
+  "optimal_points": 13826.92,
+  "points": 12386.94,
+  "points_left_on_bench": 1439.98,
+  "weeks": 116
+ },
+ "faab_and_transactions": {
+  "adds": 336,
+  "biggest_bid": {
+   "amount": 48,
+   "player": "Devonta Freeman",
+   "season": "2020",
+   "week": 2
+  },
+  "budget_per_season": 100,
+  "drops": 328,
+  "free_agent_adds": 186,
+  "most_frequent_trade_partner": {
+   "owner_id": "471366618241298432",
+   "trades": 3
+  },
+  "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains).",
+  "sleeper_reported_used": 633,
+  "spent": 620,
+  "spent_per_season": {
+   "2019": 110,
+   "2020": 95,
+   "2021": 97,
+   "2022": 89,
+   "2023": 66,
+   "2024": 100,
+   "2025": 54,
+   "2026": 9
+  },
+  "traded_in": 17,
+  "traded_out": 5,
+  "trades": 9,
+  "unexplained_difference": 25,
+  "waiver_claims_lost": 156,
+  "waiver_claims_won": 150
+ },
+ "first_season": "2019",
+ "head_to_head": {
+  "by_opponent": {
+   "383681356686950400": {
+    "games": 10,
+    "losses": 7,
+    "points_against": 1177.38,
+    "points_for": 1035.04,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 3
+   },
+   "423560331814510592": {
+    "games": 11,
+    "losses": 4,
+    "points_against": 1000.88,
+    "points_for": 1153.72,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 7
+   },
+   "471074114505797632": {
+    "games": 9,
+    "losses": 7,
+    "points_against": 989.58,
+    "points_for": 864.6,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 2
+   },
+   "471083964757438464": {
+    "games": 9,
+    "losses": 4,
+    "points_against": 908.78,
+    "points_for": 943.34,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471345530597797888": {
+    "games": 11,
+    "losses": 3,
+    "points_against": 996.84,
+    "points_for": 1170.34,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 8
+   },
+   "471359444949659648": {
+    "games": 10,
+    "losses": 4,
+    "points_against": 1161.96,
+    "points_for": 1238.66,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 6
+   },
+   "471359672478068736": {
+    "games": 9,
+    "losses": 5,
+    "points_against": 960.32,
+    "points_for": 962.4,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "471360899853053952": {
+    "games": 14,
+    "losses": 5,
+    "points_against": 1350.9,
+    "points_for": 1412.76,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 9
+   },
+   "471366618241298432": {
+    "games": 10,
+    "losses": 4,
+    "points_against": 1041.28,
+    "points_for": 1058.96,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 6
+   },
+   "471368473092550656": {
+    "games": 11,
+    "losses": 4,
+    "points_against": 1110.78,
+    "points_for": 1255.2,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 7
+   },
+   "79761560662589440": {
+    "games": 12,
+    "losses": 7,
+    "points_against": 1364.54,
+    "points_for": 1291.92,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   }
+  },
+  "favorite_victim_owner_id": "471345530597797888",
+  "nemesis_owner_id": "471074114505797632"
+ },
+ "in_current_league": true,
+ "luck": {
+  "expected_wins": 53.41,
+  "luck": -3.41,
+  "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
+  "wins": 50
+ },
+ "owner_id": "422102738889867264",
+ "record": {
+  "note": "Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly.",
+  "postseason": {
+   "avg_points_against": 97.72,
+   "avg_points_for": 107.92,
+   "games": 16,
+   "losses": 4,
+   "points_against": 1563.48,
+   "points_for": 1726.66,
+   "ties": 0,
+   "win_pct": 0.75,
+   "wins": 12
+  },
+  "regular_season": {
+   "avg_points_against": 105.0,
+   "avg_points_for": 106.6,
+   "games": 100,
+   "losses": 50,
+   "points_against": 10499.76,
+   "points_for": 10660.28,
+   "ties": 0,
+   "win_pct": 0.5,
+   "wins": 50
+  },
+  "total": {
+   "avg_points_against": 103.99,
+   "avg_points_for": 106.78,
+   "games": 116,
+   "losses": 54,
+   "points_against": 12063.24,
+   "points_for": 12386.94,
+   "ties": 0,
+   "win_pct": 0.5345,
+   "wins": 62
+  }
+ },
+ "scoring": {
+  "biggest_win": {
+   "opponent_owner_id": "471345530597797888",
+   "points_against": 52.74,
+   "points_for": 119.9,
+   "season": "2025",
+   "week": 13
+  },
+  "close_games": {
+   "definition": "decided by less than 5 points",
+   "losses": 9,
+   "wins": 6
+  },
+  "highest_score": {
+   "opponent_owner_id": "471359444949659648",
+   "points_against": 130.16,
+   "points_for": 178.52,
+   "season": "2019",
+   "week": 1
+  },
+  "longest_losing_streak": 6,
+  "longest_win_streak": 6,
+  "lowest_score": {
+   "opponent_owner_id": "423560331814510592",
+   "points_against": 65.94,
+   "points_for": 52.36,
+   "season": "2020",
+   "week": 9
+  },
+  "worst_loss": {
+   "opponent_owner_id": "383681356686950400",
+   "points_against": 148.62,
+   "points_for": 92.92,
+   "season": "2025",
+   "week": 11
+  }
+ },
+ "seasons": {
+  "2019": {
+   "complete": true,
+   "division": "Champions Buffet",
+   "efficiency": 0.9068,
+   "faab": {
+    "adds": 60,
+    "budget": 100,
+    "drops": 60,
+    "free_agent_adds": 33,
+    "sleeper_reported_used": 100,
+    "spent": 110,
+    "traded_in": 10,
+    "traded_out": 0,
+    "trades": 2,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 29,
+    "waiver_claims_won": 27
+   },
+   "final_place": 1,
+   "luck": {
+    "all_play_record": "116-27",
+    "expected_wins": 10.55,
+    "luck": -0.55,
+    "wins": 10
+   },
+   "made_playoffs": true,
+   "playoff_result": "Champion",
+   "postseason": {
+    "avg_points_against": 137.36,
+    "avg_points_for": 148.5,
+    "games": 2,
+    "losses": 0,
+    "points_against": 274.72,
+    "points_for": 297.0,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 104.01,
+    "avg_points_for": 126.82,
+    "games": 13,
+    "losses": 3,
+    "points_against": 1352.18,
+    "points_for": 1648.62,
+    "ties": 0,
+    "win_pct": 0.7692,
+    "wins": 10
+   },
+   "regular_season_rank": 1,
+   "season": "2019",
+   "sleeper_standings_reported": {
+    "points_against": 1348.18,
+    "points_for": 1647.32
+   },
+   "team_name": "Whiskey Dick & Co"
+  },
+  "2020": {
+   "complete": true,
+   "division": "Mike",
+   "efficiency": 0.9383,
+   "faab": {
+    "adds": 57,
+    "budget": 100,
+    "drops": 56,
+    "free_agent_adds": 36,
+    "sleeper_reported_used": 100,
+    "spent": 95,
+    "traded_in": 0,
+    "traded_out": 5,
+    "trades": 2,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 26,
+    "waiver_claims_won": 21
+   },
+   "final_place": 5,
+   "luck": {
+    "all_play_record": "71-72",
+    "expected_wins": 6.45,
+    "luck": 0.55,
+    "wins": 7
+   },
+   "made_playoffs": true,
+   "playoff_result": "Fifth place",
+   "postseason": {
+    "avg_points_against": 98.93,
+    "avg_points_for": 100.67,
+    "games": 2,
+    "losses": 1,
+    "points_against": 197.86,
+    "points_for": 201.34,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 100.78,
+    "avg_points_for": 105.56,
+    "games": 13,
+    "losses": 6,
+    "points_against": 1310.08,
+    "points_for": 1372.34,
+    "ties": 0,
+    "win_pct": 0.5385,
+    "wins": 7
+   },
+   "regular_season_rank": 4,
+   "season": "2020",
+   "sleeper_standings_reported": {
+    "points_against": 1310.08,
+    "points_for": 1372.34
+   },
+   "team_name": "Whiskey Dick & Co"
+  },
+  "2021": {
+   "complete": true,
+   "division": "probably some hippie shit",
+   "efficiency": 0.9024,
+   "faab": {
+    "adds": 58,
+    "budget": 100,
+    "drops": 56,
+    "free_agent_adds": 37,
+    "sleeper_reported_used": 90,
+    "spent": 97,
+    "traded_in": 7,
+    "traded_out": 0,
+    "trades": 3,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 17,
+    "waiver_claims_won": 21
+   },
+   "final_place": 8,
+   "luck": {
+    "all_play_record": "70-84",
+    "expected_wins": 6.36,
+    "luck": -0.36,
+    "wins": 6
+   },
+   "made_playoffs": false,
+   "playoff_result": "8th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 90.43,
+    "avg_points_for": 103.63,
+    "games": 2,
+    "losses": 1,
+    "points_against": 180.86,
+    "points_for": 207.26,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 106.73,
+    "avg_points_for": 102.88,
+    "games": 14,
+    "losses": 8,
+    "points_against": 1494.22,
+    "points_for": 1440.26,
+    "ties": 0,
+    "win_pct": 0.4286,
+    "wins": 6
+   },
+   "regular_season_rank": 9,
+   "season": "2021",
+   "sleeper_standings_reported": {
+    "points_against": 1492.22,
+    "points_for": 1440.26
+   },
+   "team_name": "Whiskey Dick & Co"
+  },
+  "2022": {
+   "complete": true,
+   "division": "Kirkland Till I Die",
+   "efficiency": 0.8788,
+   "faab": {
+    "adds": 49,
+    "budget": 100,
+    "drops": 49,
+    "free_agent_adds": 25,
+    "sleeper_reported_used": 89,
+    "spent": 89,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 22,
+    "waiver_claims_won": 24
+   },
+   "final_place": 9,
+   "luck": {
+    "all_play_record": "71.5-82.5",
+    "expected_wins": 6.5,
+    "luck": -0.5,
+    "wins": 6
+   },
+   "made_playoffs": false,
+   "playoff_result": "9th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 86.71,
+    "avg_points_for": 85.88,
+    "games": 3,
+    "losses": 1,
+    "points_against": 260.12,
+    "points_for": 257.64,
+    "ties": 0,
+    "win_pct": 0.6667,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 99.93,
+    "avg_points_for": 98.97,
+    "games": 14,
+    "losses": 8,
+    "points_against": 1399.0,
+    "points_for": 1385.52,
+    "ties": 0,
+    "win_pct": 0.4286,
+    "wins": 6
+   },
+   "regular_season_rank": 10,
+   "season": "2022",
+   "sleeper_standings_reported": {
+    "points_against": 1399.0,
+    "points_for": 1385.52
+   },
+   "team_name": "Whiskey Dick & Co"
+  },
+  "2023": {
+   "complete": true,
+   "division": "Heavyweights",
+   "efficiency": 0.9336,
+   "faab": {
+    "adds": 22,
+    "budget": 100,
+    "drops": 21,
+    "free_agent_adds": 8,
+    "sleeper_reported_used": 66,
+    "spent": 66,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 17,
+    "waiver_claims_won": 14
+   },
+   "final_place": 7,
+   "luck": {
+    "all_play_record": "85-69",
+    "expected_wins": 7.73,
+    "luck": -1.73,
+    "wins": 6
+   },
+   "made_playoffs": false,
+   "playoff_result": "7th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 95.87,
+    "avg_points_for": 132.73,
+    "games": 2,
+    "losses": 0,
+    "points_against": 191.74,
+    "points_for": 265.46,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 109.73,
+    "avg_points_for": 106.55,
+    "games": 14,
+    "losses": 8,
+    "points_against": 1536.24,
+    "points_for": 1491.7,
+    "ties": 0,
+    "win_pct": 0.4286,
+    "wins": 6
+   },
+   "regular_season_rank": 8,
+   "season": "2023",
+   "sleeper_standings_reported": {
+    "points_against": 1536.24,
+    "points_for": 1491.7
+   },
+   "team_name": "Whiskey Dick & Co"
+  },
+  "2024": {
+   "complete": true,
+   "division": "THE KENNEL",
+   "efficiency": 0.8588,
+   "faab": {
+    "adds": 55,
+    "budget": 100,
+    "drops": 54,
+    "free_agent_adds": 27,
+    "sleeper_reported_used": 100,
+    "spent": 100,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 36,
+    "waiver_claims_won": 28
+   },
+   "final_place": 1,
+   "luck": {
+    "all_play_record": "79-75",
+    "expected_wins": 7.18,
+    "luck": 0.82,
+    "wins": 8
+   },
+   "made_playoffs": true,
+   "playoff_result": "Champion",
+   "postseason": {
+    "avg_points_against": 86.42,
+    "avg_points_for": 103.01,
+    "games": 3,
+    "losses": 0,
+    "points_against": 259.26,
+    "points_for": 309.02,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 3
+   },
+   "regular_season": {
+    "avg_points_against": 109.18,
+    "avg_points_for": 104.19,
+    "games": 14,
+    "losses": 6,
+    "points_against": 1528.5,
+    "points_for": 1458.7,
+    "ties": 0,
+    "win_pct": 0.5714,
+    "wins": 8
+   },
+   "regular_season_rank": 6,
+   "season": "2024",
+   "sleeper_standings_reported": {
+    "points_against": 1528.5,
+    "points_for": 1458.7
+   },
+   "team_name": "Whiskey Dick & Co"
+  },
+  "2025": {
+   "complete": true,
+   "division": "The Bridal Party",
+   "efficiency": 0.8686,
+   "faab": {
+    "adds": 27,
+    "budget": 100,
+    "drops": 25,
+    "free_agent_adds": 15,
+    "sleeper_reported_used": 79,
+    "spent": 54,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 25,
+    "waiver_claims_lost": 5,
+    "waiver_claims_won": 12
+   },
+   "final_place": 10,
+   "luck": {
+    "all_play_record": "61-93",
+    "expected_wins": 5.55,
+    "luck": -1.55,
+    "wins": 4
+   },
+   "made_playoffs": false,
+   "playoff_result": "10th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 99.46,
+    "avg_points_for": 94.47,
+    "games": 2,
+    "losses": 1,
+    "points_against": 198.92,
+    "points_for": 188.94,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 103.06,
+    "avg_points_for": 96.07,
+    "games": 14,
+    "losses": 10,
+    "points_against": 1442.82,
+    "points_for": 1344.98,
+    "ties": 0,
+    "win_pct": 0.2857,
+    "wins": 4
+   },
+   "regular_season_rank": 11,
+   "season": "2025",
+   "sleeper_standings_reported": {
+    "points_against": 1442.82,
+    "points_for": 1344.98
+   },
+   "team_name": "Whiskey Dick & Co"
+  },
+  "2026": {
+   "complete": false,
+   "division": "The Graveyard",
+   "efficiency": 0.8601,
+   "faab": {
+    "adds": 8,
+    "budget": 100,
+    "drops": 7,
+    "free_agent_adds": 5,
+    "sleeper_reported_used": 9,
+    "spent": 9,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 4,
+    "waiver_claims_won": 3
+   },
+   "final_place": null,
+   "luck": {
+    "all_play_record": "34-10",
+    "expected_wins": 3.09,
+    "luck": -0.09,
+    "wins": 3
+   },
+   "made_playoffs": true,
+   "playoff_result": null,
+   "postseason": {
+    "avg_points_against": null,
+    "avg_points_for": null,
+    "games": 0,
+    "losses": 0,
+    "points_against": 0.0,
+    "points_for": 0.0,
+    "ties": 0,
+    "win_pct": null,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 109.18,
+    "avg_points_for": 129.54,
+    "games": 4,
+    "losses": 1,
+    "points_against": 436.72,
+    "points_for": 518.16,
+    "ties": 0,
+    "win_pct": 0.75,
+    "wins": 3
+   },
+   "regular_season_rank": 2,
+   "season": "2026",
+   "sleeper_standings_reported": {
+    "points_against": 436.72,
+    "points_for": 518.16
+   },
+   "team_name": "Whiskey Dick & Co"
+  }
+ },
+ "seasons_played": [
+  "2019",
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "tegridy_factor": {
+  "by_kind": {
+   "injured_starter_doubtful": 1
+  },
+  "by_season": {
+   "2019": 0,
+   "2020": 0,
+   "2021": 0,
+   "2022": 0,
+   "2023": 0,
+   "2024": 0,
+   "2025": 4.5,
+   "2026": 0
+  },
+  "clean_seasons": [
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024"
+  ],
+  "excluded_penalty_ids": [],
+  "penalty_count": 1,
+  "penalty_ids": [
+   "2025-w11-r7-injured_starter_doubtful-1433"
+  ],
+  "points_by_kind": {
+   "injured_starter_doubtful": 4.5
+  },
+  "rank": 4,
+  "rank_note": "1 = best (lowest). Ties share a rank.",
+  "total": 4.5,
+  "worst_penalty_id": "2025-w11-r7-injured_starter_doubtful-1433"
+ },
+ "trophies": {
+  "championships": {
+   "count": 2,
+   "seasons": [
+    "2019",
+    "2024"
+   ]
+  },
+  "first_round_byes": {
+   "count": 1,
+   "seasons": [
+    "2019"
+   ]
+  },
+  "playoff_appearances": {
+   "count": 3,
+   "seasons": [
+    "2019",
+    "2020",
+    "2024"
+   ]
+  },
+  "regular_season_titles": {
+   "count": 1,
+   "seasons": [
+    "2019"
+   ]
+  },
+  "runner_up": {
+   "count": 0,
+   "seasons": []
+  },
+  "sackos": {
+   "count": 0,
+   "seasons": []
+  },
+  "third_place": {
+   "count": 0,
+   "seasons": []
+  }
+ }
+}

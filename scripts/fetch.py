@@ -61,6 +61,10 @@ def update_players(bundles):
         for week in b["matchups"].values():
             for m in week:
                 ids.update(m.get("players") or [])
+        for week in b.get("transactions", {}).values():
+            for t in week:
+                ids.update((t.get("adds") or {}).keys())
+                ids.update((t.get("drops") or {}).keys())
     path = RAW / "players_slim.json"
     slim = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
     db = sleeper.nfl_players()

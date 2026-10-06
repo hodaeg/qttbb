@@ -1,0 +1,775 @@
+{
+ "avatar": "bd42f4bce4f0c577f5e6ab531b1063cd",
+ "current_division": "Hodag\u2019s Harem",
+ "current_team_name": "China King",
+ "display_name": "ChinaKing",
+ "efficiency": {
+  "efficiency": 0.8789,
+  "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
+  "optimal_points": 12975.64,
+  "points": 11403.78,
+  "points_left_on_bench": 1571.86,
+  "weeks": 116
+ },
+ "faab_and_transactions": {
+  "adds": 284,
+  "biggest_bid": {
+   "amount": 89,
+   "player": "Jerome Ford",
+   "season": "2023",
+   "week": 2
+  },
+  "budget_per_season": 100,
+  "drops": 292,
+  "free_agent_adds": 173,
+  "most_frequent_trade_partner": {
+   "owner_id": "422102738889867264",
+   "trades": 1
+  },
+  "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains).",
+  "sleeper_reported_used": 676,
+  "spent": 676,
+  "spent_per_season": {
+   "2019": 100,
+   "2020": 100,
+   "2021": 94,
+   "2022": 66,
+   "2023": 100,
+   "2024": 91,
+   "2025": 100,
+   "2026": 25
+  },
+  "traded_in": 0,
+  "traded_out": 0,
+  "trades": 2,
+  "unexplained_difference": 0,
+  "waiver_claims_lost": 74,
+  "waiver_claims_won": 111
+ },
+ "first_season": "2019",
+ "head_to_head": {
+  "by_opponent": {
+   "383681356686950400": {
+    "games": 8,
+    "losses": 7,
+    "points_against": 916.72,
+    "points_for": 662.12,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 1
+   },
+   "422102738889867264": {
+    "games": 14,
+    "losses": 9,
+    "points_against": 1412.76,
+    "points_for": 1350.9,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "423560331814510592": {
+    "games": 9,
+    "losses": 5,
+    "points_against": 1001.14,
+    "points_for": 922.38,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "471074114505797632": {
+    "games": 11,
+    "losses": 7,
+    "points_against": 1159.94,
+    "points_for": 1080.02,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "471083964757438464": {
+    "games": 13,
+    "losses": 7,
+    "points_against": 1321.28,
+    "points_for": 1321.1,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 6
+   },
+   "471345530597797888": {
+    "games": 11,
+    "losses": 5,
+    "points_against": 1082.6,
+    "points_for": 1087.74,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 6
+   },
+   "471359444949659648": {
+    "games": 9,
+    "losses": 5,
+    "points_against": 1011.44,
+    "points_for": 882.92,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "471359672478068736": {
+    "games": 10,
+    "losses": 6,
+    "points_against": 1019.68,
+    "points_for": 940.98,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "471366618241298432": {
+    "games": 11,
+    "losses": 6,
+    "points_against": 1205.14,
+    "points_for": 1170.46,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471368473092550656": {
+    "games": 11,
+    "losses": 7,
+    "points_against": 1160.72,
+    "points_for": 1056.94,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "79761560662589440": {
+    "games": 9,
+    "losses": 5,
+    "points_against": 927.72,
+    "points_for": 928.22,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   }
+  },
+  "favorite_victim_owner_id": "471345530597797888",
+  "nemesis_owner_id": "383681356686950400"
+ },
+ "in_current_league": true,
+ "luck": {
+  "expected_wins": 40.43,
+  "luck": -1.43,
+  "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
+  "wins": 39
+ },
+ "owner_id": "471360899853053952",
+ "record": {
+  "note": "Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly.",
+  "postseason": {
+   "avg_points_against": 105.42,
+   "avg_points_for": 106.36,
+   "games": 16,
+   "losses": 8,
+   "points_against": 1686.7,
+   "points_for": 1701.76,
+   "ties": 0,
+   "win_pct": 0.5,
+   "wins": 8
+  },
+  "regular_season": {
+   "avg_points_against": 105.32,
+   "avg_points_for": 97.02,
+   "games": 100,
+   "losses": 61,
+   "points_against": 10532.44,
+   "points_for": 9702.02,
+   "ties": 0,
+   "win_pct": 0.39,
+   "wins": 39
+  },
+  "total": {
+   "avg_points_against": 105.34,
+   "avg_points_for": 98.31,
+   "games": 116,
+   "losses": 69,
+   "points_against": 12219.14,
+   "points_for": 11403.78,
+   "ties": 0,
+   "win_pct": 0.4052,
+   "wins": 47
+  }
+ },
+ "scoring": {
+  "biggest_win": {
+   "opponent_owner_id": "471345530597797888",
+   "points_against": 66.22,
+   "points_for": 126.4,
+   "season": "2021",
+   "week": 12
+  },
+  "close_games": {
+   "definition": "decided by less than 5 points",
+   "losses": 9,
+   "wins": 4
+  },
+  "highest_score": {
+   "opponent_owner_id": "471366618241298432",
+   "points_against": 139.8,
+   "points_for": 158.62,
+   "season": "2022",
+   "week": 2
+  },
+  "longest_losing_streak": 12,
+  "longest_win_streak": 3,
+  "lowest_score": {
+   "opponent_owner_id": "471359444949659648",
+   "points_against": 112.68,
+   "points_for": 53.44,
+   "season": "2024",
+   "week": 7
+  },
+  "worst_loss": {
+   "opponent_owner_id": "471366618241298432",
+   "points_against": 139.1,
+   "points_for": 56.94,
+   "season": "2022",
+   "week": 13
+  }
+ },
+ "seasons": {
+  "2019": {
+   "complete": true,
+   "division": "Champions Buffet",
+   "efficiency": 0.9067,
+   "faab": {
+    "adds": 39,
+    "budget": 100,
+    "drops": 42,
+    "free_agent_adds": 18,
+    "sleeper_reported_used": 100,
+    "spent": 100,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 17,
+    "waiver_claims_won": 21
+   },
+   "final_place": 4,
+   "luck": {
+    "all_play_record": "80-63",
+    "expected_wins": 7.27,
+    "luck": -0.27,
+    "wins": 7
+   },
+   "made_playoffs": true,
+   "playoff_result": "Fourth place",
+   "postseason": {
+    "avg_points_against": 114.07,
+    "avg_points_for": 114.55,
+    "games": 3,
+    "losses": 2,
+    "points_against": 342.2,
+    "points_for": 343.64,
+    "ties": 0,
+    "win_pct": 0.3333,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 107.58,
+    "avg_points_for": 106.7,
+    "games": 13,
+    "losses": 6,
+    "points_against": 1398.52,
+    "points_for": 1387.06,
+    "ties": 0,
+    "win_pct": 0.5385,
+    "wins": 7
+   },
+   "regular_season_rank": 5,
+   "season": "2019",
+   "sleeper_standings_reported": {
+    "points_against": 1395.52,
+    "points_for": 1396.06
+   },
+   "team_name": "China King"
+  },
+  "2020": {
+   "complete": true,
+   "division": "Mike",
+   "efficiency": 0.8988,
+   "faab": {
+    "adds": 45,
+    "budget": 100,
+    "drops": 44,
+    "free_agent_adds": 25,
+    "sleeper_reported_used": 100,
+    "spent": 100,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 9,
+    "waiver_claims_won": 20
+   },
+   "final_place": 9,
+   "luck": {
+    "all_play_record": "65-78",
+    "expected_wins": 5.91,
+    "luck": -0.91,
+    "wins": 5
+   },
+   "made_playoffs": false,
+   "playoff_result": "9th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 100.17,
+    "avg_points_for": 122.77,
+    "games": 2,
+    "losses": 0,
+    "points_against": 200.34,
+    "points_for": 245.54,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 101.85,
+    "avg_points_for": 104.38,
+    "games": 13,
+    "losses": 8,
+    "points_against": 1324.04,
+    "points_for": 1356.88,
+    "ties": 0,
+    "win_pct": 0.3846,
+    "wins": 5
+   },
+   "regular_season_rank": 12,
+   "season": "2020",
+   "sleeper_standings_reported": {
+    "points_against": 1324.04,
+    "points_for": 1356.88
+   },
+   "team_name": "China King"
+  },
+  "2021": {
+   "complete": true,
+   "division": "probably some hippie shit",
+   "efficiency": 0.897,
+   "faab": {
+    "adds": 63,
+    "budget": 100,
+    "drops": 69,
+    "free_agent_adds": 44,
+    "sleeper_reported_used": 94,
+    "spent": 94,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 12,
+    "waiver_claims_won": 19
+   },
+   "final_place": 7,
+   "luck": {
+    "all_play_record": "61-93",
+    "expected_wins": 5.55,
+    "luck": -0.55,
+    "wins": 5
+   },
+   "made_playoffs": false,
+   "playoff_result": "7th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 86.31,
+    "avg_points_for": 96.02,
+    "games": 2,
+    "losses": 0,
+    "points_against": 172.62,
+    "points_for": 192.04,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 107.24,
+    "avg_points_for": 98.61,
+    "games": 14,
+    "losses": 9,
+    "points_against": 1501.34,
+    "points_for": 1380.52,
+    "ties": 0,
+    "win_pct": 0.3571,
+    "wins": 5
+   },
+   "regular_season_rank": 10,
+   "season": "2021",
+   "sleeper_standings_reported": {
+    "points_against": 1501.34,
+    "points_for": 1380.52
+   },
+   "team_name": "China King"
+  },
+  "2022": {
+   "complete": true,
+   "division": "Kirkland Till I Die",
+   "efficiency": 0.8909,
+   "faab": {
+    "adds": 54,
+    "budget": 100,
+    "drops": 55,
+    "free_agent_adds": 34,
+    "sleeper_reported_used": 66,
+    "spent": 66,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 16,
+    "waiver_claims_won": 20
+   },
+   "final_place": 12,
+   "luck": {
+    "all_play_record": "56.5-97.5",
+    "expected_wins": 5.14,
+    "luck": -0.14,
+    "wins": 5
+   },
+   "made_playoffs": false,
+   "playoff_result": "Last place (Sacko)",
+   "postseason": {
+    "avg_points_against": 109.76,
+    "avg_points_for": 89.36,
+    "games": 2,
+    "losses": 2,
+    "points_against": 219.52,
+    "points_for": 178.72,
+    "ties": 0,
+    "win_pct": 0.0,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 107.62,
+    "avg_points_for": 93.26,
+    "games": 14,
+    "losses": 9,
+    "points_against": 1506.68,
+    "points_for": 1305.68,
+    "ties": 0,
+    "win_pct": 0.3571,
+    "wins": 5
+   },
+   "regular_season_rank": 11,
+   "season": "2022",
+   "sleeper_standings_reported": {
+    "points_against": 1506.68,
+    "points_for": 1305.68
+   },
+   "team_name": "China King"
+  },
+  "2023": {
+   "complete": true,
+   "division": "Not My Champion",
+   "efficiency": 0.8403,
+   "faab": {
+    "adds": 24,
+    "budget": 100,
+    "drops": 23,
+    "free_agent_adds": 16,
+    "sleeper_reported_used": 100,
+    "spent": 100,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 7,
+    "waiver_claims_won": 8
+   },
+   "final_place": 10,
+   "luck": {
+    "all_play_record": "51-103",
+    "expected_wins": 4.64,
+    "luck": 1.36,
+    "wins": 6
+   },
+   "made_playoffs": false,
+   "playoff_result": "10th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 111.89,
+    "avg_points_for": 97.7,
+    "games": 2,
+    "losses": 1,
+    "points_against": 223.78,
+    "points_for": 195.4,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 98.54,
+    "avg_points_for": 92.53,
+    "games": 14,
+    "losses": 8,
+    "points_against": 1379.5,
+    "points_for": 1295.36,
+    "ties": 0,
+    "win_pct": 0.4286,
+    "wins": 6
+   },
+   "regular_season_rank": 11,
+   "season": "2023",
+   "sleeper_standings_reported": {
+    "points_against": 1378.5,
+    "points_for": 1295.36
+   },
+   "team_name": "China King"
+  },
+  "2024": {
+   "complete": true,
+   "division": "THE KENNEL",
+   "efficiency": 0.8887,
+   "faab": {
+    "adds": 31,
+    "budget": 100,
+    "drops": 32,
+    "free_agent_adds": 20,
+    "sleeper_reported_used": 91,
+    "spent": 91,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 6,
+    "waiver_claims_won": 11
+   },
+   "final_place": 10,
+   "luck": {
+    "all_play_record": "61-93",
+    "expected_wins": 5.55,
+    "luck": -1.55,
+    "wins": 4
+   },
+   "made_playoffs": false,
+   "playoff_result": "10th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 114.88,
+    "avg_points_for": 111.08,
+    "games": 3,
+    "losses": 2,
+    "points_against": 344.64,
+    "points_for": 333.24,
+    "ties": 0,
+    "win_pct": 0.3333,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 107.19,
+    "avg_points_for": 95.7,
+    "games": 14,
+    "losses": 10,
+    "points_against": 1500.6,
+    "points_for": 1339.84,
+    "ties": 0,
+    "win_pct": 0.2857,
+    "wins": 4
+   },
+   "regular_season_rank": 10,
+   "season": "2024",
+   "sleeper_standings_reported": {
+    "points_against": 1500.6,
+    "points_for": 1338.84
+   },
+   "team_name": "China King"
+  },
+  "2025": {
+   "complete": true,
+   "division": "Forest Friends",
+   "efficiency": 0.8447,
+   "faab": {
+    "adds": 25,
+    "budget": 100,
+    "drops": 25,
+    "free_agent_adds": 15,
+    "sleeper_reported_used": 100,
+    "spent": 100,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 5,
+    "waiver_claims_won": 10
+   },
+   "final_place": 8,
+   "luck": {
+    "all_play_record": "62-92",
+    "expected_wins": 5.64,
+    "luck": 0.36,
+    "wins": 6
+   },
+   "made_playoffs": false,
+   "playoff_result": "8th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 91.8,
+    "avg_points_for": 106.59,
+    "games": 2,
+    "losses": 1,
+    "points_against": 183.6,
+    "points_for": 213.18,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 108.86,
+    "avg_points_for": 93.13,
+    "games": 14,
+    "losses": 8,
+    "points_against": 1524.02,
+    "points_for": 1303.82,
+    "ties": 0,
+    "win_pct": 0.4286,
+    "wins": 6
+   },
+   "regular_season_rank": 9,
+   "season": "2025",
+   "sleeper_standings_reported": {
+    "points_against": 1524.02,
+    "points_for": 1303.82
+   },
+   "team_name": "China King"
+  },
+  "2026": {
+   "complete": false,
+   "division": "Hodag\u2019s Harem",
+   "efficiency": 0.8074,
+   "faab": {
+    "adds": 3,
+    "budget": 100,
+    "drops": 2,
+    "free_agent_adds": 1,
+    "sleeper_reported_used": 25,
+    "spent": 25,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 2,
+    "waiver_claims_won": 2
+   },
+   "final_place": null,
+   "luck": {
+    "all_play_record": "8-36",
+    "expected_wins": 0.73,
+    "luck": 0.27,
+    "wins": 1
+   },
+   "made_playoffs": false,
+   "playoff_result": null,
+   "postseason": {
+    "avg_points_against": null,
+    "avg_points_for": null,
+    "games": 0,
+    "losses": 0,
+    "points_against": 0.0,
+    "points_for": 0.0,
+    "ties": 0,
+    "win_pct": null,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 99.44,
+    "avg_points_for": 83.22,
+    "games": 4,
+    "losses": 3,
+    "points_against": 397.74,
+    "points_for": 332.86,
+    "ties": 0,
+    "win_pct": 0.25,
+    "wins": 1
+   },
+   "regular_season_rank": 12,
+   "season": "2026",
+   "sleeper_standings_reported": {
+    "points_against": 397.74,
+    "points_for": 332.86
+   },
+   "team_name": "China King"
+  }
+ },
+ "seasons_played": [
+  "2019",
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "tegridy_factor": {
+  "by_kind": {
+   "injured_starter_out": 2,
+   "questionable_did_not_play": 1
+  },
+  "by_season": {
+   "2019": 0,
+   "2020": 0,
+   "2021": 0,
+   "2022": 8.0,
+   "2023": 12.0,
+   "2024": 0,
+   "2025": 8.0,
+   "2026": 0
+  },
+  "clean_seasons": [
+   "2019",
+   "2020",
+   "2021",
+   "2024"
+  ],
+  "excluded_penalty_ids": [],
+  "penalty_count": 3,
+  "penalty_ids": [
+   "2022-w04-r9-injured_starter_out-3199",
+   "2023-w16-r9-questionable_did_not_play-10222",
+   "2025-w05-r9-injured_starter_out-7594"
+  ],
+  "points_by_kind": {
+   "injured_starter_out": 16.0,
+   "questionable_did_not_play": 12.0
+  },
+  "rank": 9,
+  "rank_note": "1 = best (lowest). Ties share a rank.",
+  "total": 28.0,
+  "worst_penalty_id": "2023-w16-r9-questionable_did_not_play-10222"
+ },
+ "trophies": {
+  "championships": {
+   "count": 0,
+   "seasons": []
+  },
+  "first_round_byes": {
+   "count": 0,
+   "seasons": []
+  },
+  "playoff_appearances": {
+   "count": 1,
+   "seasons": [
+    "2019"
+   ]
+  },
+  "regular_season_titles": {
+   "count": 0,
+   "seasons": []
+  },
+  "runner_up": {
+   "count": 0,
+   "seasons": []
+  },
+  "sackos": {
+   "count": 1,
+   "seasons": [
+    "2022"
+   ]
+  },
+  "third_place": {
+   "count": 0,
+   "seasons": []
+  }
+ }
+}

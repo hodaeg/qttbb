@@ -1,0 +1,774 @@
+{
+ "avatar": "44ecf7c72bb5605feb4e796290ca7ee8",
+ "current_division": "The Graveyard",
+ "current_team_name": "G H O S T\u2122",
+ "display_name": "gabroni",
+ "efficiency": {
+  "efficiency": 0.8916,
+  "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
+  "optimal_points": 13872.44,
+  "points": 12368.84,
+  "points_left_on_bench": 1503.6,
+  "weeks": 116
+ },
+ "faab_and_transactions": {
+  "adds": 278,
+  "biggest_bid": {
+   "amount": 64,
+   "player": "Kenneth Walker",
+   "season": "2022",
+   "week": 5
+  },
+  "budget_per_season": 100,
+  "drops": 268,
+  "free_agent_adds": 187,
+  "most_frequent_trade_partner": {
+   "owner_id": "471366618241298432",
+   "trades": 2
+  },
+  "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains).",
+  "sleeper_reported_used": 621,
+  "spent": 610,
+  "spent_per_season": {
+   "2019": 78,
+   "2020": 100,
+   "2021": 100,
+   "2022": 88,
+   "2023": 82,
+   "2024": 67,
+   "2025": 80,
+   "2026": 15
+  },
+  "traded_in": 0,
+  "traded_out": 0,
+  "trades": 5,
+  "unexplained_difference": 11,
+  "waiver_claims_lost": 52,
+  "waiver_claims_won": 91
+ },
+ "first_season": "2019",
+ "head_to_head": {
+  "by_opponent": {
+   "383681356686950400": {
+    "games": 8,
+    "losses": 5,
+    "points_against": 885.56,
+    "points_for": 827.34,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 3
+   },
+   "422102738889867264": {
+    "games": 12,
+    "losses": 5,
+    "points_against": 1291.92,
+    "points_for": 1364.54,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 7
+   },
+   "423560331814510592": {
+    "games": 11,
+    "losses": 3,
+    "points_against": 1056.4,
+    "points_for": 1168.88,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 8
+   },
+   "471074114505797632": {
+    "games": 9,
+    "losses": 4,
+    "points_against": 1009.98,
+    "points_for": 1047.58,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471083964757438464": {
+    "games": 12,
+    "losses": 5,
+    "points_against": 1176.84,
+    "points_for": 1290.62,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 7
+   },
+   "471345530597797888": {
+    "games": 9,
+    "losses": 5,
+    "points_against": 990.42,
+    "points_for": 1032.16,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "471359444949659648": {
+    "games": 12,
+    "losses": 8,
+    "points_against": 1240.96,
+    "points_for": 1113.08,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "471359672478068736": {
+    "games": 12,
+    "losses": 5,
+    "points_against": 1240.0,
+    "points_for": 1261.92,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 7
+   },
+   "471360899853053952": {
+    "games": 9,
+    "losses": 4,
+    "points_against": 928.22,
+    "points_for": 927.72,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471366618241298432": {
+    "games": 12,
+    "losses": 8,
+    "points_against": 1304.3,
+    "points_for": 1244.56,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "471368473092550656": {
+    "games": 10,
+    "losses": 6,
+    "points_against": 1068.78,
+    "points_for": 1090.44,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   }
+  },
+  "favorite_victim_owner_id": "423560331814510592",
+  "nemesis_owner_id": "471359444949659648"
+ },
+ "in_current_league": true,
+ "luck": {
+  "expected_wins": 52.64,
+  "luck": -3.64,
+  "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
+  "wins": 49
+ },
+ "owner_id": "79761560662589440",
+ "record": {
+  "note": "Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly.",
+  "postseason": {
+   "avg_points_against": 103.13,
+   "avg_points_for": 110.77,
+   "games": 16,
+   "losses": 7,
+   "points_against": 1650.02,
+   "points_for": 1772.28,
+   "ties": 0,
+   "win_pct": 0.5625,
+   "wins": 9
+  },
+  "regular_season": {
+   "avg_points_against": 105.43,
+   "avg_points_for": 105.97,
+   "games": 100,
+   "losses": 51,
+   "points_against": 10543.36,
+   "points_for": 10596.56,
+   "ties": 0,
+   "win_pct": 0.49,
+   "wins": 49
+  },
+  "total": {
+   "avg_points_against": 105.12,
+   "avg_points_for": 106.63,
+   "games": 116,
+   "losses": 58,
+   "points_against": 12193.38,
+   "points_for": 12368.84,
+   "ties": 0,
+   "win_pct": 0.5,
+   "wins": 58
+  }
+ },
+ "scoring": {
+  "biggest_win": {
+   "opponent_owner_id": "471083964757438464",
+   "points_against": 45.6,
+   "points_for": 113.58,
+   "season": "2025",
+   "week": 8
+  },
+  "close_games": {
+   "definition": "decided by less than 5 points",
+   "losses": 4,
+   "wins": 6
+  },
+  "highest_score": {
+   "opponent_owner_id": "471074114505797632",
+   "points_against": 117.9,
+   "points_for": 167.64,
+   "season": "2020",
+   "week": 3
+  },
+  "longest_losing_streak": 5,
+  "longest_win_streak": 6,
+  "lowest_score": {
+   "opponent_owner_id": "471359444949659648",
+   "points_against": 62.34,
+   "points_for": 47.46,
+   "season": "2021",
+   "week": 12
+  },
+  "worst_loss": {
+   "opponent_owner_id": "471360899853053952",
+   "points_against": 129.22,
+   "points_for": 77.86,
+   "season": "2020",
+   "week": 8
+  }
+ },
+ "seasons": {
+  "2019": {
+   "complete": true,
+   "division": "Champions Buffet",
+   "efficiency": 0.872,
+   "faab": {
+    "adds": 29,
+    "budget": 100,
+    "drops": 29,
+    "free_agent_adds": 18,
+    "sleeper_reported_used": 78,
+    "spent": 78,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 3,
+    "waiver_claims_won": 11
+   },
+   "final_place": 7,
+   "luck": {
+    "all_play_record": "72-71",
+    "expected_wins": 6.55,
+    "luck": -1.55,
+    "wins": 5
+   },
+   "made_playoffs": false,
+   "playoff_result": "7th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 104.07,
+    "avg_points_for": 130.23,
+    "games": 2,
+    "losses": 0,
+    "points_against": 208.14,
+    "points_for": 260.46,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 102.38,
+    "avg_points_for": 104.43,
+    "games": 13,
+    "losses": 8,
+    "points_against": 1330.9,
+    "points_for": 1357.54,
+    "ties": 0,
+    "win_pct": 0.3846,
+    "wins": 5
+   },
+   "regular_season_rank": 8,
+   "season": "2019",
+   "sleeper_standings_reported": {
+    "points_against": 1334.9,
+    "points_for": 1355.74
+   },
+   "team_name": "Catch a Fade"
+  },
+  "2020": {
+   "complete": true,
+   "division": "Champions Buffet",
+   "efficiency": 0.9002,
+   "faab": {
+    "adds": 42,
+    "budget": 100,
+    "drops": 39,
+    "free_agent_adds": 26,
+    "sleeper_reported_used": 100,
+    "spent": 100,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 3,
+    "waiver_claims_won": 16
+   },
+   "final_place": 2,
+   "luck": {
+    "all_play_record": "87-56",
+    "expected_wins": 7.91,
+    "luck": -1.91,
+    "wins": 6
+   },
+   "made_playoffs": true,
+   "playoff_result": "Runner-up",
+   "postseason": {
+    "avg_points_against": 113.79,
+    "avg_points_for": 121.69,
+    "games": 3,
+    "losses": 1,
+    "points_against": 341.38,
+    "points_for": 365.08,
+    "ties": 0,
+    "win_pct": 0.6667,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 117.12,
+    "avg_points_for": 114.92,
+    "games": 13,
+    "losses": 7,
+    "points_against": 1522.56,
+    "points_for": 1493.92,
+    "ties": 0,
+    "win_pct": 0.4615,
+    "wins": 6
+   },
+   "regular_season_rank": 5,
+   "season": "2020",
+   "sleeper_standings_reported": {
+    "points_against": 1522.56,
+    "points_for": 1493.92
+   },
+   "team_name": "Catch a Fade"
+  },
+  "2021": {
+   "complete": true,
+   "division": "probably some hippie shit",
+   "efficiency": 0.8748,
+   "faab": {
+    "adds": 36,
+    "budget": 100,
+    "drops": 35,
+    "free_agent_adds": 23,
+    "sleeper_reported_used": 100,
+    "spent": 100,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 18,
+    "waiver_claims_won": 13
+   },
+   "final_place": 5,
+   "luck": {
+    "all_play_record": "86-68",
+    "expected_wins": 7.82,
+    "luck": 0.18,
+    "wins": 8
+   },
+   "made_playoffs": true,
+   "playoff_result": "Fifth place",
+   "postseason": {
+    "avg_points_against": 76.72,
+    "avg_points_for": 81.76,
+    "games": 2,
+    "losses": 1,
+    "points_against": 153.44,
+    "points_for": 163.52,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 108.19,
+    "avg_points_for": 108.49,
+    "games": 14,
+    "losses": 6,
+    "points_against": 1514.7,
+    "points_for": 1518.88,
+    "ties": 0,
+    "win_pct": 0.5714,
+    "wins": 8
+   },
+   "regular_season_rank": 4,
+   "season": "2021",
+   "sleeper_standings_reported": {
+    "points_against": 1514.7,
+    "points_for": 1518.88
+   },
+   "team_name": "Catch a Fade"
+  },
+  "2022": {
+   "complete": true,
+   "division": "Kirkland Till I Die",
+   "efficiency": 0.9001,
+   "faab": {
+    "adds": 36,
+    "budget": 100,
+    "drops": 36,
+    "free_agent_adds": 26,
+    "sleeper_reported_used": 99,
+    "spent": 88,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 11,
+    "waiver_claims_lost": 8,
+    "waiver_claims_won": 10
+   },
+   "final_place": 4,
+   "luck": {
+    "all_play_record": "89-65",
+    "expected_wins": 8.09,
+    "luck": -0.09,
+    "wins": 8
+   },
+   "made_playoffs": true,
+   "playoff_result": "Fourth place",
+   "postseason": {
+    "avg_points_against": 99.76,
+    "avg_points_for": 89.19,
+    "games": 2,
+    "losses": 2,
+    "points_against": 199.52,
+    "points_for": 178.38,
+    "ties": 0,
+    "win_pct": 0.0,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 101.16,
+    "avg_points_for": 109.42,
+    "games": 14,
+    "losses": 6,
+    "points_against": 1416.24,
+    "points_for": 1531.88,
+    "ties": 0,
+    "win_pct": 0.5714,
+    "wins": 8
+   },
+   "regular_season_rank": 3,
+   "season": "2022",
+   "sleeper_standings_reported": {
+    "points_against": 1416.24,
+    "points_for": 1531.88
+   },
+   "team_name": "The Beauties\u2122"
+  },
+  "2023": {
+   "complete": true,
+   "division": "Heavyweights",
+   "efficiency": 0.9041,
+   "faab": {
+    "adds": 40,
+    "budget": 100,
+    "drops": 38,
+    "free_agent_adds": 26,
+    "sleeper_reported_used": 82,
+    "spent": 82,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 6,
+    "waiver_claims_won": 14
+   },
+   "final_place": 9,
+   "luck": {
+    "all_play_record": "71-83",
+    "expected_wins": 6.45,
+    "luck": -0.45,
+    "wins": 6
+   },
+   "made_playoffs": false,
+   "playoff_result": "9th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 96.83,
+    "avg_points_for": 107.69,
+    "games": 3,
+    "losses": 1,
+    "points_against": 290.48,
+    "points_for": 323.06,
+    "ties": 0,
+    "win_pct": 0.6667,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 106.36,
+    "avg_points_for": 102.02,
+    "games": 14,
+    "losses": 8,
+    "points_against": 1489.06,
+    "points_for": 1428.3,
+    "ties": 0,
+    "win_pct": 0.4286,
+    "wins": 6
+   },
+   "regular_season_rank": 9,
+   "season": "2023",
+   "sleeper_standings_reported": {
+    "points_against": 1489.06,
+    "points_for": 1427.3
+   },
+   "team_name": "The Beauties\u2122"
+  },
+  "2024": {
+   "complete": true,
+   "division": "NAACP",
+   "efficiency": 0.8788,
+   "faab": {
+    "adds": 39,
+    "budget": 100,
+    "drops": 38,
+    "free_agent_adds": 28,
+    "sleeper_reported_used": 67,
+    "spent": 67,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 2,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 3,
+    "waiver_claims_won": 11
+   },
+   "final_place": 7,
+   "luck": {
+    "all_play_record": "76-78",
+    "expected_wins": 6.91,
+    "luck": -1.91,
+    "wins": 5
+   },
+   "made_playoffs": false,
+   "playoff_result": "7th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 122.11,
+    "avg_points_for": 143.83,
+    "games": 2,
+    "losses": 0,
+    "points_against": 244.22,
+    "points_for": 287.66,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 109.46,
+    "avg_points_for": 100.88,
+    "games": 14,
+    "losses": 9,
+    "points_against": 1532.5,
+    "points_for": 1412.26,
+    "ties": 0,
+    "win_pct": 0.3571,
+    "wins": 5
+   },
+   "regular_season_rank": 9,
+   "season": "2024",
+   "sleeper_standings_reported": {
+    "points_against": 1532.5,
+    "points_for": 1412.26
+   },
+   "team_name": "The Beauties\u2122"
+  },
+  "2025": {
+   "complete": true,
+   "division": "The Bridal Party",
+   "efficiency": 0.9015,
+   "faab": {
+    "adds": 43,
+    "budget": 100,
+    "drops": 41,
+    "free_agent_adds": 30,
+    "sleeper_reported_used": 80,
+    "spent": 80,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 9,
+    "waiver_claims_won": 13
+   },
+   "final_place": 4,
+   "luck": {
+    "all_play_record": "84-70",
+    "expected_wins": 7.64,
+    "luck": 2.36,
+    "wins": 10
+   },
+   "made_playoffs": true,
+   "playoff_result": "Fourth place",
+   "postseason": {
+    "avg_points_against": 106.42,
+    "avg_points_for": 97.06,
+    "games": 2,
+    "losses": 2,
+    "points_against": 212.84,
+    "points_for": 194.12,
+    "ties": 0,
+    "win_pct": 0.0,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 92.75,
+    "avg_points_for": 105.28,
+    "games": 14,
+    "losses": 4,
+    "points_against": 1298.54,
+    "points_for": 1473.9,
+    "ties": 0,
+    "win_pct": 0.7143,
+    "wins": 10
+   },
+   "regular_season_rank": 2,
+   "season": "2025",
+   "sleeper_standings_reported": {
+    "points_against": 1298.54,
+    "points_for": 1473.9
+   },
+   "team_name": "G H O S T\u2122"
+  },
+  "2026": {
+   "complete": false,
+   "division": "The Graveyard",
+   "efficiency": 0.9335,
+   "faab": {
+    "adds": 13,
+    "budget": 100,
+    "drops": 12,
+    "free_agent_adds": 10,
+    "sleeper_reported_used": 15,
+    "spent": 15,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 2,
+    "waiver_claims_won": 3
+   },
+   "final_place": null,
+   "luck": {
+    "all_play_record": "14-30",
+    "expected_wins": 1.27,
+    "luck": -0.27,
+    "wins": 1
+   },
+   "made_playoffs": false,
+   "playoff_result": null,
+   "postseason": {
+    "avg_points_against": null,
+    "avg_points_for": null,
+    "games": 0,
+    "losses": 0,
+    "points_against": 0.0,
+    "points_for": 0.0,
+    "ties": 0,
+    "win_pct": null,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 109.72,
+    "avg_points_for": 94.97,
+    "games": 4,
+    "losses": 3,
+    "points_against": 438.86,
+    "points_for": 379.88,
+    "ties": 0,
+    "win_pct": 0.25,
+    "wins": 1
+   },
+   "regular_season_rank": 11,
+   "season": "2026",
+   "sleeper_standings_reported": {
+    "points_against": 438.86,
+    "points_for": 379.88
+   },
+   "team_name": "G H O S T\u2122"
+  }
+ },
+ "seasons_played": [
+  "2019",
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "tegridy_factor": {
+  "by_kind": {},
+  "by_season": {
+   "2019": 0,
+   "2020": 0,
+   "2021": 0,
+   "2022": 0,
+   "2023": 0,
+   "2024": 0,
+   "2025": 0,
+   "2026": 0
+  },
+  "clean_seasons": [
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "excluded_penalty_ids": [],
+  "penalty_count": 0,
+  "penalty_ids": [],
+  "points_by_kind": {},
+  "rank": 1,
+  "rank_note": "1 = best (lowest). Ties share a rank.",
+  "total": 0,
+  "worst_penalty_id": null
+ },
+ "trophies": {
+  "championships": {
+   "count": 0,
+   "seasons": []
+  },
+  "first_round_byes": {
+   "count": 2,
+   "seasons": [
+    "2022",
+    "2025"
+   ]
+  },
+  "playoff_appearances": {
+   "count": 4,
+   "seasons": [
+    "2020",
+    "2021",
+    "2022",
+    "2025"
+   ]
+  },
+  "regular_season_titles": {
+   "count": 0,
+   "seasons": []
+  },
+  "runner_up": {
+   "count": 1,
+   "seasons": [
+    "2020"
+   ]
+  },
+  "sackos": {
+   "count": 0,
+   "seasons": []
+  },
+  "third_place": {
+   "count": 0,
+   "seasons": []
+  }
+ }
+}

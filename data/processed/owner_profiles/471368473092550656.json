@@ -1,0 +1,784 @@
+{
+ "avatar": "351d12306d177b0dcfa7ae0b3b3cca97",
+ "current_division": "The Graveyard",
+ "current_team_name": "Green and Bowled",
+ "display_name": "therealGandB",
+ "efficiency": {
+  "efficiency": 0.9029,
+  "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
+  "optimal_points": 13671.22,
+  "points": 12343.52,
+  "points_left_on_bench": 1327.7,
+  "weeks": 116
+ },
+ "faab_and_transactions": {
+  "adds": 177,
+  "biggest_bid": {
+   "amount": 26,
+   "player": "Daniel Jones",
+   "season": "2019",
+   "week": 3
+  },
+  "budget_per_season": 100,
+  "drops": 172,
+  "free_agent_adds": 127,
+  "most_frequent_trade_partner": {
+   "owner_id": "423560331814510592",
+   "trades": 1
+  },
+  "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains).",
+  "sleeper_reported_used": 463,
+  "spent": 318,
+  "spent_per_season": {
+   "2019": 94,
+   "2020": 75,
+   "2021": 47,
+   "2022": 35,
+   "2023": 47,
+   "2024": 2,
+   "2025": 18,
+   "2026": 0
+  },
+  "traded_in": 0,
+  "traded_out": 0,
+  "trades": 4,
+  "unexplained_difference": 145,
+  "waiver_claims_lost": 27,
+  "waiver_claims_won": 50
+ },
+ "first_season": "2019",
+ "head_to_head": {
+  "by_opponent": {
+   "383681356686950400": {
+    "games": 11,
+    "losses": 6,
+    "points_against": 1181.78,
+    "points_for": 1161.98,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "422102738889867264": {
+    "games": 11,
+    "losses": 7,
+    "points_against": 1255.2,
+    "points_for": 1110.78,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "423560331814510592": {
+    "games": 9,
+    "losses": 3,
+    "points_against": 924.12,
+    "points_for": 943.36,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 6
+   },
+   "471074114505797632": {
+    "games": 8,
+    "losses": 5,
+    "points_against": 838.78,
+    "points_for": 834.66,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 3
+   },
+   "471083964757438464": {
+    "games": 11,
+    "losses": 8,
+    "points_against": 1271.5,
+    "points_for": 1219.68,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 3
+   },
+   "471345530597797888": {
+    "games": 11,
+    "losses": 5,
+    "points_against": 1154.54,
+    "points_for": 1174.6,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 6
+   },
+   "471359444949659648": {
+    "games": 13,
+    "losses": 5,
+    "points_against": 1515.06,
+    "points_for": 1508.14,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 8
+   },
+   "471359672478068736": {
+    "games": 11,
+    "losses": 6,
+    "points_against": 1167.5,
+    "points_for": 1113.04,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471360899853053952": {
+    "games": 11,
+    "losses": 4,
+    "points_against": 1056.94,
+    "points_for": 1160.72,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 7
+   },
+   "471366618241298432": {
+    "games": 10,
+    "losses": 6,
+    "points_against": 1027.04,
+    "points_for": 1047.78,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "79761560662589440": {
+    "games": 10,
+    "losses": 4,
+    "points_against": 1090.44,
+    "points_for": 1068.78,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 6
+   }
+  },
+  "favorite_victim_owner_id": "423560331814510592",
+  "nemesis_owner_id": "471083964757438464"
+ },
+ "in_current_league": true,
+ "luck": {
+  "expected_wins": 54.09,
+  "luck": -5.09,
+  "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
+  "wins": 49
+ },
+ "owner_id": "471368473092550656",
+ "record": {
+  "note": "Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly.",
+  "postseason": {
+   "avg_points_against": 111.7,
+   "avg_points_for": 112.35,
+   "games": 16,
+   "losses": 8,
+   "points_against": 1787.26,
+   "points_for": 1797.56,
+   "ties": 0,
+   "win_pct": 0.5,
+   "wins": 8
+  },
+  "regular_season": {
+   "avg_points_against": 106.96,
+   "avg_points_for": 105.46,
+   "games": 100,
+   "losses": 51,
+   "points_against": 10695.64,
+   "points_for": 10545.96,
+   "ties": 0,
+   "win_pct": 0.49,
+   "wins": 49
+  },
+  "total": {
+   "avg_points_against": 107.61,
+   "avg_points_for": 106.41,
+   "games": 116,
+   "losses": 59,
+   "points_against": 12482.9,
+   "points_for": 12343.52,
+   "ties": 0,
+   "win_pct": 0.4914,
+   "wins": 57
+  }
+ },
+ "scoring": {
+  "biggest_win": {
+   "opponent_owner_id": "79761560662589440",
+   "points_against": 90.38,
+   "points_for": 139.56,
+   "season": "2025",
+   "week": 7
+  },
+  "close_games": {
+   "definition": "decided by less than 5 points",
+   "losses": 8,
+   "wins": 8
+  },
+  "highest_score": {
+   "opponent_owner_id": "471359444949659648",
+   "points_against": 131.86,
+   "points_for": 145.5,
+   "season": "2020",
+   "week": 1
+  },
+  "longest_losing_streak": 9,
+  "longest_win_streak": 5,
+  "lowest_score": {
+   "opponent_owner_id": "423560331814510592",
+   "points_against": 113.0,
+   "points_for": 41.58,
+   "season": "2023",
+   "week": 13
+  },
+  "worst_loss": {
+   "opponent_owner_id": "423560331814510592",
+   "points_against": 113.0,
+   "points_for": 41.58,
+   "season": "2023",
+   "week": 13
+  }
+ },
+ "seasons": {
+  "2019": {
+   "complete": true,
+   "division": "Champions Buffet",
+   "efficiency": 0.8507,
+   "faab": {
+    "adds": 30,
+    "budget": 100,
+    "drops": 30,
+    "free_agent_adds": 19,
+    "sleeper_reported_used": 94,
+    "spent": 94,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 4,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 3,
+    "waiver_claims_won": 11
+   },
+   "final_place": 11,
+   "luck": {
+    "all_play_record": "46-97",
+    "expected_wins": 4.18,
+    "luck": -1.18,
+    "wins": 3
+   },
+   "made_playoffs": false,
+   "playoff_result": "11th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 110.02,
+    "avg_points_for": 118.76,
+    "games": 2,
+    "losses": 1,
+    "points_against": 220.04,
+    "points_for": 237.52,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 109.98,
+    "avg_points_for": 94.49,
+    "games": 13,
+    "losses": 10,
+    "points_against": 1429.74,
+    "points_for": 1228.36,
+    "ties": 0,
+    "win_pct": 0.2308,
+    "wins": 3
+   },
+   "regular_season_rank": 12,
+   "season": "2019",
+   "sleeper_standings_reported": {
+    "points_against": 1425.94,
+    "points_for": 1226.36
+   },
+   "team_name": "Green and Bowled"
+  },
+  "2020": {
+   "complete": true,
+   "division": "Mike",
+   "efficiency": 0.9241,
+   "faab": {
+    "adds": 40,
+    "budget": 100,
+    "drops": 39,
+    "free_agent_adds": 27,
+    "sleeper_reported_used": 100,
+    "spent": 75,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 25,
+    "waiver_claims_lost": 11,
+    "waiver_claims_won": 13
+   },
+   "final_place": 6,
+   "luck": {
+    "all_play_record": "77-66",
+    "expected_wins": 7.0,
+    "luck": -1.0,
+    "wins": 6
+   },
+   "made_playoffs": true,
+   "playoff_result": "Sixth place",
+   "postseason": {
+    "avg_points_against": 127.85,
+    "avg_points_for": 99.65,
+    "games": 2,
+    "losses": 2,
+    "points_against": 255.7,
+    "points_for": 199.3,
+    "ties": 0,
+    "win_pct": 0.0,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 108.35,
+    "avg_points_for": 108.1,
+    "games": 13,
+    "losses": 7,
+    "points_against": 1408.5,
+    "points_for": 1405.24,
+    "ties": 0,
+    "win_pct": 0.4615,
+    "wins": 6
+   },
+   "regular_season_rank": 6,
+   "season": "2020",
+   "sleeper_standings_reported": {
+    "points_against": 1408.5,
+    "points_for": 1405.24
+   },
+   "team_name": "Green and Bowled"
+  },
+  "2021": {
+   "complete": true,
+   "division": "The Sinister Six",
+   "efficiency": 0.9169,
+   "faab": {
+    "adds": 17,
+    "budget": 100,
+    "drops": 17,
+    "free_agent_adds": 9,
+    "sleeper_reported_used": 47,
+    "spent": 47,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 3,
+    "waiver_claims_won": 8
+   },
+   "final_place": 10,
+   "luck": {
+    "all_play_record": "88-66",
+    "expected_wins": 8.0,
+    "luck": -1.0,
+    "wins": 7
+   },
+   "made_playoffs": false,
+   "playoff_result": "10th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 111.28,
+    "avg_points_for": 94.31,
+    "games": 3,
+    "losses": 2,
+    "points_against": 333.84,
+    "points_for": 282.92,
+    "ties": 0,
+    "win_pct": 0.3333,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 111.19,
+    "avg_points_for": 109.07,
+    "games": 14,
+    "losses": 7,
+    "points_against": 1556.64,
+    "points_for": 1527.04,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 7
+   },
+   "regular_season_rank": 8,
+   "season": "2021",
+   "sleeper_standings_reported": {
+    "points_against": 1556.64,
+    "points_for": 1527.04
+   },
+   "team_name": "Green and Bowled"
+  },
+  "2022": {
+   "complete": true,
+   "division": "The Sinister Six",
+   "efficiency": 0.8978,
+   "faab": {
+    "adds": 31,
+    "budget": 100,
+    "drops": 30,
+    "free_agent_adds": 26,
+    "sleeper_reported_used": 55,
+    "spent": 35,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 20,
+    "waiver_claims_lost": 2,
+    "waiver_claims_won": 5
+   },
+   "final_place": 5,
+   "luck": {
+    "all_play_record": "90-64",
+    "expected_wins": 8.18,
+    "luck": -0.18,
+    "wins": 8
+   },
+   "made_playoffs": true,
+   "playoff_result": "Fifth place",
+   "postseason": {
+    "avg_points_against": 97.87,
+    "avg_points_for": 109.25,
+    "games": 2,
+    "losses": 1,
+    "points_against": 195.74,
+    "points_for": 218.5,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 106.19,
+    "avg_points_for": 105.01,
+    "games": 14,
+    "losses": 6,
+    "points_against": 1486.7,
+    "points_for": 1470.08,
+    "ties": 0,
+    "win_pct": 0.5714,
+    "wins": 8
+   },
+   "regular_season_rank": 5,
+   "season": "2022",
+   "sleeper_standings_reported": {
+    "points_against": 1486.7,
+    "points_for": 1470.08
+   },
+   "team_name": "Green and Bowled"
+  },
+  "2023": {
+   "complete": true,
+   "division": "Heavyweights",
+   "efficiency": 0.936,
+   "faab": {
+    "adds": 18,
+    "budget": 100,
+    "drops": 18,
+    "free_agent_adds": 13,
+    "sleeper_reported_used": 72,
+    "spent": 47,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 25,
+    "waiver_claims_lost": 3,
+    "waiver_claims_won": 5
+   },
+   "final_place": 2,
+   "luck": {
+    "all_play_record": "90-64",
+    "expected_wins": 8.18,
+    "luck": 1.82,
+    "wins": 10
+   },
+   "made_playoffs": true,
+   "playoff_result": "Runner-up",
+   "postseason": {
+    "avg_points_against": 110.18,
+    "avg_points_for": 123.37,
+    "games": 2,
+    "losses": 1,
+    "points_against": 220.36,
+    "points_for": 246.74,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 101.44,
+    "avg_points_for": 105.88,
+    "games": 14,
+    "losses": 4,
+    "points_against": 1420.12,
+    "points_for": 1482.26,
+    "ties": 0,
+    "win_pct": 0.7143,
+    "wins": 10
+   },
+   "regular_season_rank": 1,
+   "season": "2023",
+   "sleeper_standings_reported": {
+    "points_against": 1420.12,
+    "points_for": 1482.26
+   },
+   "team_name": "Green and Bowled"
+  },
+  "2024": {
+   "complete": true,
+   "division": "NAACP",
+   "efficiency": 0.9023,
+   "faab": {
+    "adds": 18,
+    "budget": 100,
+    "drops": 18,
+    "free_agent_adds": 16,
+    "sleeper_reported_used": 77,
+    "spent": 2,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 75,
+    "waiver_claims_lost": 3,
+    "waiver_claims_won": 2
+   },
+   "final_place": 8,
+   "luck": {
+    "all_play_record": "83-71",
+    "expected_wins": 7.55,
+    "luck": -0.55,
+    "wins": 7
+   },
+   "made_playoffs": false,
+   "playoff_result": "8th place (losers bracket)",
+   "postseason": {
+    "avg_points_against": 121.4,
+    "avg_points_for": 124.34,
+    "games": 2,
+    "losses": 1,
+    "points_against": 242.8,
+    "points_for": 248.68,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 102.0,
+    "avg_points_for": 105.76,
+    "games": 14,
+    "losses": 7,
+    "points_against": 1428.06,
+    "points_for": 1480.58,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 7
+   },
+   "regular_season_rank": 7,
+   "season": "2024",
+   "sleeper_standings_reported": {
+    "points_against": 1428.06,
+    "points_for": 1480.58
+   },
+   "team_name": "Green and Bowled"
+  },
+  "2025": {
+   "complete": true,
+   "division": "Forest Friends",
+   "efficiency": 0.886,
+   "faab": {
+    "adds": 20,
+    "budget": 100,
+    "drops": 19,
+    "free_agent_adds": 14,
+    "sleeper_reported_used": 18,
+    "spent": 18,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 2,
+    "waiver_claims_won": 6
+   },
+   "final_place": 1,
+   "luck": {
+    "all_play_record": "98-56",
+    "expected_wins": 8.91,
+    "luck": -1.91,
+    "wins": 7
+   },
+   "made_playoffs": true,
+   "playoff_result": "Champion",
+   "postseason": {
+    "avg_points_against": 106.26,
+    "avg_points_for": 121.3,
+    "games": 3,
+    "losses": 0,
+    "points_against": 318.78,
+    "points_for": 363.9,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 3
+   },
+   "regular_season": {
+    "avg_points_against": 109.37,
+    "avg_points_for": 109.26,
+    "games": 14,
+    "losses": 7,
+    "points_against": 1531.12,
+    "points_for": 1529.58,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 7
+   },
+   "regular_season_rank": 6,
+   "season": "2025",
+   "sleeper_standings_reported": {
+    "points_against": 1531.12,
+    "points_for": 1529.58
+   },
+   "team_name": "Green and Bowled"
+  },
+  "2026": {
+   "complete": false,
+   "division": "The Graveyard",
+   "efficiency": 0.9274,
+   "faab": {
+    "adds": 3,
+    "budget": 100,
+    "drops": 1,
+    "free_agent_adds": 3,
+    "sleeper_reported_used": 0,
+    "spent": 0,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 0,
+    "waiver_claims_won": 0
+   },
+   "final_place": null,
+   "luck": {
+    "all_play_record": "23-21",
+    "expected_wins": 2.09,
+    "luck": -1.09,
+    "wins": 1
+   },
+   "made_playoffs": false,
+   "playoff_result": null,
+   "postseason": {
+    "avg_points_against": null,
+    "avg_points_for": null,
+    "games": 0,
+    "losses": 0,
+    "points_against": 0.0,
+    "points_for": 0.0,
+    "ties": 0,
+    "win_pct": null,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 108.69,
+    "avg_points_for": 105.7,
+    "games": 4,
+    "losses": 3,
+    "points_against": 434.76,
+    "points_for": 422.82,
+    "ties": 0,
+    "win_pct": 0.25,
+    "wins": 1
+   },
+   "regular_season_rank": 10,
+   "season": "2026",
+   "sleeper_standings_reported": {
+    "points_against": 434.76,
+    "points_for": 422.82
+   },
+   "team_name": "Green and Bowled"
+  }
+ },
+ "seasons_played": [
+  "2019",
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "tegridy_factor": {
+  "by_kind": {
+   "injured_starter_doubtful": 2,
+   "injured_starter_out": 2
+  },
+  "by_season": {
+   "2019": 4.5,
+   "2020": 0,
+   "2021": 0,
+   "2022": 8.0,
+   "2023": 5.25,
+   "2024": 12.0,
+   "2025": 0,
+   "2026": 0
+  },
+  "clean_seasons": [
+   "2020",
+   "2021",
+   "2025"
+  ],
+  "excluded_penalty_ids": [],
+  "penalty_count": 4,
+  "penalty_ids": [
+   "2019-w11-r12-injured_starter_doubtful-4217",
+   "2022-w07-r12-injured_starter_out-2505",
+   "2023-w13-r12-injured_starter_doubtful-5022",
+   "2024-w11-r12-injured_starter_out-10859"
+  ],
+  "points_by_kind": {
+   "injured_starter_doubtful": 9.75,
+   "injured_starter_out": 20.0
+  },
+  "rank": 10,
+  "rank_note": "1 = best (lowest). Ties share a rank.",
+  "total": 29.75,
+  "worst_penalty_id": "2024-w11-r12-injured_starter_out-10859"
+ },
+ "trophies": {
+  "championships": {
+   "count": 1,
+   "seasons": [
+    "2025"
+   ]
+  },
+  "first_round_byes": {
+   "count": 1,
+   "seasons": [
+    "2023"
+   ]
+  },
+  "playoff_appearances": {
+   "count": 4,
+   "seasons": [
+    "2020",
+    "2022",
+    "2023",
+    "2025"
+   ]
+  },
+  "regular_season_titles": {
+   "count": 1,
+   "seasons": [
+    "2023"
+   ]
+  },
+  "runner_up": {
+   "count": 1,
+   "seasons": [
+    "2023"
+   ]
+  },
+  "sackos": {
+   "count": 0,
+   "seasons": []
+  },
+  "third_place": {
+   "count": 0,
+   "seasons": []
+  }
+ }
+}

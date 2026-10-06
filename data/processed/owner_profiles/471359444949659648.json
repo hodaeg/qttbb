@@ -1,0 +1,780 @@
+{
+ "avatar": "4a1a61368058bd6b7aab97976a9d2b34",
+ "current_division": "Hodag\u2019s Harem",
+ "current_team_name": "Grin & Bear It",
+ "display_name": "ToadLicker",
+ "efficiency": {
+  "efficiency": 0.9011,
+  "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
+  "optimal_points": 14112.18,
+  "points": 12716.68,
+  "points_left_on_bench": 1395.5,
+  "weeks": 115
+ },
+ "faab_and_transactions": {
+  "adds": 280,
+  "biggest_bid": {
+   "amount": 45,
+   "player": "Christian Watson",
+   "season": "2022",
+   "week": 10
+  },
+  "budget_per_season": 100,
+  "drops": 274,
+  "free_agent_adds": 166,
+  "most_frequent_trade_partner": {
+   "owner_id": "383681356686950400",
+   "trades": 1
+  },
+  "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains).",
+  "sleeper_reported_used": 676,
+  "spent": 669,
+  "spent_per_season": {
+   "2019": 78,
+   "2020": 99,
+   "2021": 124,
+   "2022": 100,
+   "2023": 80,
+   "2024": 59,
+   "2025": 96,
+   "2026": 33
+  },
+  "traded_in": 0,
+  "traded_out": 0,
+  "trades": 3,
+  "unexplained_difference": 7,
+  "waiver_claims_lost": 85,
+  "waiver_claims_won": 114
+ },
+ "first_season": "2019",
+ "head_to_head": {
+  "by_opponent": {
+   "383681356686950400": {
+    "games": 10,
+    "losses": 5,
+    "points_against": 1115.6,
+    "points_for": 1148.9,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "422102738889867264": {
+    "games": 10,
+    "losses": 6,
+    "points_against": 1238.66,
+    "points_for": 1161.96,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 4
+   },
+   "423560331814510592": {
+    "games": 9,
+    "losses": 2,
+    "points_against": 922.3,
+    "points_for": 1050.72,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 7
+   },
+   "471074114505797632": {
+    "games": 13,
+    "losses": 5,
+    "points_against": 1373.66,
+    "points_for": 1429.0,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 8
+   },
+   "471083964757438464": {
+    "games": 8,
+    "losses": 3,
+    "points_against": 775.62,
+    "points_for": 826.92,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471345530597797888": {
+    "games": 12,
+    "losses": 5,
+    "points_against": 1266.28,
+    "points_for": 1244.54,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 7
+   },
+   "471359672478068736": {
+    "games": 9,
+    "losses": 3,
+    "points_against": 914.66,
+    "points_for": 996.68,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 6
+   },
+   "471360899853053952": {
+    "games": 9,
+    "losses": 4,
+    "points_against": 882.92,
+    "points_for": 1011.44,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "471366618241298432": {
+    "games": 10,
+    "losses": 4,
+    "points_against": 994.78,
+    "points_for": 1090.5,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 6
+   },
+   "471368473092550656": {
+    "games": 13,
+    "losses": 8,
+    "points_against": 1508.14,
+    "points_for": 1515.06,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 5
+   },
+   "79761560662589440": {
+    "games": 12,
+    "losses": 4,
+    "points_against": 1113.08,
+    "points_for": 1240.96,
+    "protected_rivalry": null,
+    "ties": 0,
+    "wins": 8
+   }
+  },
+  "favorite_victim_owner_id": "423560331814510592",
+  "nemesis_owner_id": "471368473092550656"
+ },
+ "in_current_league": true,
+ "luck": {
+  "expected_wins": 61.2,
+  "luck": -0.2,
+  "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
+  "wins": 61
+ },
+ "owner_id": "471359444949659648",
+ "record": {
+  "note": "Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly.",
+  "postseason": {
+   "avg_points_against": 113.03,
+   "avg_points_for": 108.65,
+   "games": 15,
+   "losses": 10,
+   "points_against": 1695.48,
+   "points_for": 1629.76,
+   "ties": 0,
+   "win_pct": 0.3333,
+   "wins": 5
+  },
+  "regular_season": {
+   "avg_points_against": 104.1,
+   "avg_points_for": 110.87,
+   "games": 100,
+   "losses": 39,
+   "points_against": 10410.22,
+   "points_for": 11086.92,
+   "ties": 0,
+   "win_pct": 0.61,
+   "wins": 61
+  },
+  "total": {
+   "avg_points_against": 105.27,
+   "avg_points_for": 110.58,
+   "games": 115,
+   "losses": 49,
+   "points_against": 12105.7,
+   "points_for": 12716.68,
+   "ties": 0,
+   "win_pct": 0.5739,
+   "wins": 66
+  }
+ },
+ "scoring": {
+  "biggest_win": {
+   "opponent_owner_id": "471083964757438464",
+   "points_against": 70.76,
+   "points_for": 137.32,
+   "season": "2025",
+   "week": 13
+  },
+  "close_games": {
+   "definition": "decided by less than 5 points",
+   "losses": 7,
+   "wins": 3
+  },
+  "highest_score": {
+   "opponent_owner_id": "471359672478068736",
+   "points_against": 96.28,
+   "points_for": 160.76,
+   "season": "2022",
+   "week": 5
+  },
+  "longest_losing_streak": 4,
+  "longest_win_streak": 9,
+  "lowest_score": {
+   "opponent_owner_id": "79761560662589440",
+   "points_against": 47.46,
+   "points_for": 62.34,
+   "season": "2021",
+   "week": 12
+  },
+  "worst_loss": {
+   "opponent_owner_id": "471074114505797632",
+   "points_against": 146.8,
+   "points_for": 74.88,
+   "season": "2021",
+   "week": 6
+  }
+ },
+ "seasons": {
+  "2019": {
+   "complete": true,
+   "division": "Champions Buffet",
+   "efficiency": 0.8776,
+   "faab": {
+    "adds": 52,
+    "budget": 100,
+    "drops": 52,
+    "free_agent_adds": 34,
+    "sleeper_reported_used": 100,
+    "spent": 78,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 22,
+    "waiver_claims_lost": 18,
+    "waiver_claims_won": 18
+   },
+   "final_place": 2,
+   "luck": {
+    "all_play_record": "85-58",
+    "expected_wins": 7.73,
+    "luck": 2.27,
+    "wins": 10
+   },
+   "made_playoffs": true,
+   "playoff_result": "Runner-up",
+   "postseason": {
+    "avg_points_against": 110.25,
+    "avg_points_for": 118.97,
+    "games": 3,
+    "losses": 1,
+    "points_against": 330.74,
+    "points_for": 356.9,
+    "ties": 0,
+    "win_pct": 0.6667,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 106.9,
+    "avg_points_for": 113.64,
+    "games": 13,
+    "losses": 3,
+    "points_against": 1389.64,
+    "points_for": 1477.34,
+    "ties": 0,
+    "win_pct": 0.7692,
+    "wins": 10
+   },
+   "regular_season_rank": 2,
+   "season": "2019",
+   "sleeper_standings_reported": {
+    "points_against": 1382.64,
+    "points_for": 1476.34
+   },
+   "team_name": "Grin and Bear It"
+  },
+  "2020": {
+   "complete": true,
+   "division": "Mike",
+   "efficiency": 0.9255,
+   "faab": {
+    "adds": 55,
+    "budget": 100,
+    "drops": 55,
+    "free_agent_adds": 35,
+    "sleeper_reported_used": 99,
+    "spent": 99,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 20,
+    "waiver_claims_won": 20
+   },
+   "final_place": 1,
+   "luck": {
+    "all_play_record": "86-57",
+    "expected_wins": 7.82,
+    "luck": -0.82,
+    "wins": 7
+   },
+   "made_playoffs": true,
+   "playoff_result": "Champion",
+   "postseason": {
+    "avg_points_against": 102.06,
+    "avg_points_for": 122.96,
+    "games": 2,
+    "losses": 0,
+    "points_against": 204.12,
+    "points_for": 245.92,
+    "ties": 0,
+    "win_pct": 1.0,
+    "wins": 2
+   },
+   "regular_season": {
+    "avg_points_against": 104.34,
+    "avg_points_for": 111.55,
+    "games": 13,
+    "losses": 6,
+    "points_against": 1356.46,
+    "points_for": 1450.2,
+    "ties": 0,
+    "win_pct": 0.5385,
+    "wins": 7
+   },
+   "regular_season_rank": 2,
+   "season": "2020",
+   "sleeper_standings_reported": {
+    "points_against": 1356.46,
+    "points_for": 1450.2
+   },
+   "team_name": "Grin & Bear It"
+  },
+  "2021": {
+   "complete": true,
+   "division": "probably some hippie shit",
+   "efficiency": 0.9098,
+   "faab": {
+    "adds": 48,
+    "budget": 100,
+    "drops": 44,
+    "free_agent_adds": 21,
+    "sleeper_reported_used": 96,
+    "spent": 124,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": -28,
+    "waiver_claims_lost": 16,
+    "waiver_claims_won": 27
+   },
+   "final_place": 6,
+   "luck": {
+    "all_play_record": "77-77",
+    "expected_wins": 7.0,
+    "luck": 1.0,
+    "wins": 8
+   },
+   "made_playoffs": true,
+   "playoff_result": "Sixth place",
+   "postseason": {
+    "avg_points_against": 109.84,
+    "avg_points_for": 88.47,
+    "games": 2,
+    "losses": 2,
+    "points_against": 219.68,
+    "points_for": 176.94,
+    "ties": 0,
+    "win_pct": 0.0,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 102.15,
+    "avg_points_for": 104.37,
+    "games": 14,
+    "losses": 6,
+    "points_against": 1430.12,
+    "points_for": 1461.18,
+    "ties": 0,
+    "win_pct": 0.5714,
+    "wins": 8
+   },
+   "regular_season_rank": 6,
+   "season": "2021",
+   "sleeper_standings_reported": {
+    "points_against": 1430.12,
+    "points_for": 1461.18
+   },
+   "team_name": "Grin & Bear It"
+  },
+  "2022": {
+   "complete": true,
+   "division": "The Sinister Six",
+   "efficiency": 0.9113,
+   "faab": {
+    "adds": 30,
+    "budget": 100,
+    "drops": 30,
+    "free_agent_adds": 19,
+    "sleeper_reported_used": 100,
+    "spent": 100,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 4,
+    "waiver_claims_won": 11
+   },
+   "final_place": 6,
+   "luck": {
+    "all_play_record": "97-57",
+    "expected_wins": 8.82,
+    "luck": -0.82,
+    "wins": 8
+   },
+   "made_playoffs": true,
+   "playoff_result": "Sixth place",
+   "postseason": {
+    "avg_points_against": 106.22,
+    "avg_points_for": 91.37,
+    "games": 2,
+    "losses": 2,
+    "points_against": 212.44,
+    "points_for": 182.74,
+    "ties": 0,
+    "win_pct": 0.0,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 100.55,
+    "avg_points_for": 110.82,
+    "games": 14,
+    "losses": 6,
+    "points_against": 1407.66,
+    "points_for": 1551.54,
+    "ties": 0,
+    "win_pct": 0.5714,
+    "wins": 8
+   },
+   "regular_season_rank": 2,
+   "season": "2022",
+   "sleeper_standings_reported": {
+    "points_against": 1407.66,
+    "points_for": 1551.54
+   },
+   "team_name": "Grin & Bear It"
+  },
+  "2023": {
+   "complete": true,
+   "division": "Heavyweights",
+   "efficiency": 0.8756,
+   "faab": {
+    "adds": 16,
+    "budget": 100,
+    "drops": 16,
+    "free_agent_adds": 7,
+    "sleeper_reported_used": 80,
+    "spent": 80,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 1,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 2,
+    "waiver_claims_won": 9
+   },
+   "final_place": 6,
+   "luck": {
+    "all_play_record": "105-49",
+    "expected_wins": 9.55,
+    "luck": -0.55,
+    "wins": 9
+   },
+   "made_playoffs": true,
+   "playoff_result": "Sixth place",
+   "postseason": {
+    "avg_points_against": 118.24,
+    "avg_points_for": 105.55,
+    "games": 2,
+    "losses": 2,
+    "points_against": 236.48,
+    "points_for": 211.1,
+    "ties": 0,
+    "win_pct": 0.0,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 105.33,
+    "avg_points_for": 116.69,
+    "games": 14,
+    "losses": 5,
+    "points_against": 1474.66,
+    "points_for": 1633.6,
+    "ties": 0,
+    "win_pct": 0.6429,
+    "wins": 9
+   },
+   "regular_season_rank": 2,
+   "season": "2023",
+   "sleeper_standings_reported": {
+    "points_against": 1474.66,
+    "points_for": 1633.6
+   },
+   "team_name": "Grin & Bear It"
+  },
+  "2024": {
+   "complete": true,
+   "division": "NAACP",
+   "efficiency": 0.8968,
+   "faab": {
+    "adds": 41,
+    "budget": 100,
+    "drops": 41,
+    "free_agent_adds": 26,
+    "sleeper_reported_used": 72,
+    "spent": 59,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 13,
+    "waiver_claims_lost": 9,
+    "waiver_claims_won": 15
+   },
+   "final_place": 5,
+   "luck": {
+    "all_play_record": "105-49",
+    "expected_wins": 9.55,
+    "luck": -1.55,
+    "wins": 8
+   },
+   "made_playoffs": true,
+   "playoff_result": "Fifth place",
+   "postseason": {
+    "avg_points_against": 116.39,
+    "avg_points_for": 116.73,
+    "games": 2,
+    "losses": 1,
+    "points_against": 232.78,
+    "points_for": 233.46,
+    "ties": 0,
+    "win_pct": 0.5,
+    "wins": 1
+   },
+   "regular_season": {
+    "avg_points_against": 106.26,
+    "avg_points_for": 114.17,
+    "games": 14,
+    "losses": 6,
+    "points_against": 1487.68,
+    "points_for": 1598.42,
+    "ties": 0,
+    "win_pct": 0.5714,
+    "wins": 8
+   },
+   "regular_season_rank": 5,
+   "season": "2024",
+   "sleeper_standings_reported": {
+    "points_against": 1487.68,
+    "points_for": 1598.42
+   },
+   "team_name": "Grin & Bear It"
+  },
+  "2025": {
+   "complete": true,
+   "division": "Forest Friends",
+   "efficiency": 0.9155,
+   "faab": {
+    "adds": 25,
+    "budget": 100,
+    "drops": 25,
+    "free_agent_adds": 15,
+    "sleeper_reported_used": 96,
+    "spent": 96,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 7,
+    "waiver_claims_won": 10
+   },
+   "final_place": 6,
+   "luck": {
+    "all_play_record": "86-68",
+    "expected_wins": 7.82,
+    "luck": 0.18,
+    "wins": 8
+   },
+   "made_playoffs": true,
+   "playoff_result": "Sixth place",
+   "postseason": {
+    "avg_points_against": 129.62,
+    "avg_points_for": 111.35,
+    "games": 2,
+    "losses": 2,
+    "points_against": 259.24,
+    "points_for": 222.7,
+    "ties": 0,
+    "win_pct": 0.0,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 101.52,
+    "avg_points_for": 104.95,
+    "games": 14,
+    "losses": 6,
+    "points_against": 1421.32,
+    "points_for": 1469.36,
+    "ties": 0,
+    "win_pct": 0.5714,
+    "wins": 8
+   },
+   "regular_season_rank": 5,
+   "season": "2025",
+   "sleeper_standings_reported": {
+    "points_against": 1421.32,
+    "points_for": 1469.36
+   },
+   "team_name": "Grin & Bear It"
+  },
+  "2026": {
+   "complete": false,
+   "division": "Hodag\u2019s Harem",
+   "efficiency": 0.9121,
+   "faab": {
+    "adds": 13,
+    "budget": 100,
+    "drops": 11,
+    "free_agent_adds": 9,
+    "sleeper_reported_used": 33,
+    "spent": 33,
+    "traded_in": 0,
+    "traded_out": 0,
+    "trades": 0,
+    "unexplained_difference": 0,
+    "waiver_claims_lost": 9,
+    "waiver_claims_won": 4
+   },
+   "final_place": null,
+   "luck": {
+    "all_play_record": "32-12",
+    "expected_wins": 2.91,
+    "luck": 0.09,
+    "wins": 3
+   },
+   "made_playoffs": true,
+   "playoff_result": null,
+   "postseason": {
+    "avg_points_against": null,
+    "avg_points_for": null,
+    "games": 0,
+    "losses": 0,
+    "points_against": 0.0,
+    "points_for": 0.0,
+    "ties": 0,
+    "win_pct": null,
+    "wins": 0
+   },
+   "regular_season": {
+    "avg_points_against": 110.67,
+    "avg_points_for": 111.32,
+    "games": 4,
+    "losses": 1,
+    "points_against": 442.68,
+    "points_for": 445.28,
+    "ties": 0,
+    "win_pct": 0.75,
+    "wins": 3
+   },
+   "regular_season_rank": 3,
+   "season": "2026",
+   "sleeper_standings_reported": {
+    "points_against": 442.68,
+    "points_for": 445.28
+   },
+   "team_name": "Grin & Bear It"
+  }
+ },
+ "seasons_played": [
+  "2019",
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "tegridy_factor": {
+  "by_kind": {},
+  "by_season": {
+   "2019": 0,
+   "2020": 0,
+   "2021": 0,
+   "2022": 0,
+   "2023": 0,
+   "2024": 0,
+   "2025": 0,
+   "2026": 0
+  },
+  "clean_seasons": [
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "excluded_penalty_ids": [
+   "2021-w16-r10-questionable_did_not_play-4137"
+  ],
+  "penalty_count": 0,
+  "penalty_ids": [],
+  "points_by_kind": {},
+  "rank": 1,
+  "rank_note": "1 = best (lowest). Ties share a rank.",
+  "total": 0,
+  "worst_penalty_id": null
+ },
+ "trophies": {
+  "championships": {
+   "count": 1,
+   "seasons": [
+    "2020"
+   ]
+  },
+  "first_round_byes": {
+   "count": 1,
+   "seasons": [
+    "2020"
+   ]
+  },
+  "playoff_appearances": {
+   "count": 7,
+   "seasons": [
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ]
+  },
+  "regular_season_titles": {
+   "count": 0,
+   "seasons": []
+  },
+  "runner_up": {
+   "count": 1,
+   "seasons": [
+    "2019"
+   ]
+  },
+  "sackos": {
+   "count": 0,
+   "seasons": []
+  },
+  "third_place": {
+   "count": 0,
+   "seasons": []
+  }
+ }
+}
