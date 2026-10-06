@@ -1,6 +1,6 @@
 # QTTBB — Quest to the Bria Bowl
 
-Data pipeline for our Sleeper league: rivalry tracking and an Integrity score.
+Data pipeline for our Sleeper league: rivalry tracking and the **Tegridy Factor** (a fair-play penalty count: higher means less tegridy).
 No dependencies beyond Python 3.10+ (stdlib only). The Sleeper API is public, free and read-only.
 
 ## Run it
@@ -19,7 +19,7 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 
 | Path | What |
 |---|---|
-| `config/league.json` | League ID, protected rivalries, integrity weights |
+| `config/league.json` | League ID, protected rivalries, Tegridy Factor weights |
 | `scripts/` | Fetch, snapshot and scoring code |
 | `data/raw/` | Untouched API data. `snapshots/` is the only injury history that exists; it can't be backfilled |
 | `data/processed/` | JSON for the front end (shapes below) |
@@ -30,7 +30,11 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 
 **`<season>/weeks.json`** — `{ "<week>": [ { roster_id, points, optimal_points, efficiency, points_left, empty_slots, zero_point_starters[], bench_misses[], injured_starters{}, stale_lineup, snapshots_available } ] }`
 
-**`<season>/integrity.json`** — `[ { roster_id, owner_id, score, events: [ { week, kind, delta, detail } ] } ]`, sorted best-first. Every deduction carries a plain-English `detail`.
+**`<season>/tegridy.json`** — `[ { roster_id, owner_id, tegridy_factor, events: [ { week, kind, penalty, detail } ] } ]`, sorted lowest (best) first. Every penalty carries a plain-English `detail`.
+
+**`tegridy_alltime.json`** — `{ "<owner_id>": { total, by_season: { "<season>": n } } }`, sorted lowest first.
+
+**`<season>/efficiency.json`** — `[ { roster_id, owner_id, weeks, points, optimal_points, efficiency } ]`. A *skill* stat (how well a manager sets lineups), deliberately **not** part of Tegridy Factor.
 
 **`injury_starts.json`** — every instance of starting an Out/Doubtful player across all seasons: `{ rule, by_owner: { "<owner_id>": { out, doubtful } }, instances: [ { season, week, roster_id, owner_id, player_id, player, pos, status, source, injury } ] }`. `source` is `nfl_report` (retroactive) or `snapshot` (live).
 
@@ -38,21 +42,20 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 
 **`rivalries.json`** — one entry per owner pair: `{ a, b, protected_rivalry, a_wins, b_wins, ties, games_played, a_points, b_points, biggest_a_win, biggest_b_win, games[] }`. `protected_rivalry` is the rivalry name when the pair is listed in `config/league.json`, otherwise `null`.
 
-## Integrity score
+## Tegridy Factor
 
-Starts at 100. Weights live in `config/league.json` and can be changed without touching code.
+A running total of fair-play penalties. **Starts at 0, only goes up, lower is better.** There is no 100-point scale to erode. Weights live in `config/league.json` and can be changed without touching code.
 
-| Signal | Source |
-|---|---|
-| Empty starting slot | Matchups |
-| Starter listed Out/Doubtful on the official NFL injury report who scored 0 | NFL injury report (all seasons) |
-| Starter who was Out/IR/Doubtful at a game-day snapshot and stayed in | Game-day snapshots (live weeks) |
-| Points left on the bench vs. the best possible lineup | Matchups |
-| Started a player on their NFL team's bye (-10 each, heavier than an injured starter) | NFL schedule + weekly player teams |
-| Identical lineup to last week | Matchups (weight 0 by default) |
-| High lineup efficiency (bonus) | Matchups |
+| Penalty | Points | Source |
+|---|---|---|
+| Started a player on their NFL team's bye (and they scored 0) | 10 each | NFL schedule + weekly player teams |
+| Started a player listed **Out** on the official NFL injury report (and they scored 0) | 8 each | NFL injury report (all seasons) |
+| Empty starting slot | 5 each | Matchups |
+| Started a player listed **Doubtful** on the report (and they scored 0) | 3 each | NFL injury report (all seasons) |
+| Out/Doubtful at a game-day snapshot and still in the final lineup | same as above | Game-day snapshots (live weeks) |
+| Identical lineup to last week | 0 (tracked only) | Matchups |
 
-Optimal-lineup math is verified against Sleeper's own `ppts` field.
+Lineup efficiency and points left on the bench are **not** penalised: they measure how good a manager is, not whether they play fair. They're published separately in `efficiency.json`. Optimal-lineup math is verified against Sleeper's own `ppts` field.
 
 See [`docs/DECISIONS.md`](docs/DECISIONS.md) for why each choice was made and what's still open.
 

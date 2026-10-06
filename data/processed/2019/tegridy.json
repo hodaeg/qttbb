@@ -1,0 +1,81 @@
+[
+ {
+  "events": [],
+  "owner_id": "383681356686950400",
+  "roster_id": 1,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "423560331814510592",
+  "roster_id": 2,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471074114505797632",
+  "roster_id": 3,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "79761560662589440",
+  "roster_id": 4,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471083964757438464",
+  "roster_id": 5,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471345530597797888",
+  "roster_id": 6,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "422102738889867264",
+  "roster_id": 7,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471359672478068736",
+  "roster_id": 8,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471360899853053952",
+  "roster_id": 9,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471359444949659648",
+  "roster_id": 10,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471366618241298432",
+  "roster_id": 11,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [
+   {
+    "detail": "George Kittle was listed Doubtful (Knee, Ankle) on the official NFL injury report and scored 0 in the starting lineup",
+    "kind": "injured_starter_doubtful",
+    "penalty": 3,
+    "week": 11
+   }
+  ],
+  "owner_id": "471368473092550656",
+  "roster_id": 12,
+  "tegridy_factor": 3
+ }
+]

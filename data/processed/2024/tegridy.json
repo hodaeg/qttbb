@@ -1,0 +1,128 @@
+[
+ {
+  "events": [],
+  "owner_id": "471074114505797632",
+  "roster_id": 3,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "79761560662589440",
+  "roster_id": 4,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "422102738889867264",
+  "roster_id": 7,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471359672478068736",
+  "roster_id": 8,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471360899853053952",
+  "roster_id": 9,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471366618241298432",
+  "roster_id": 11,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [
+   {
+    "detail": "1 empty starting slot(s)",
+    "kind": "empty_slot",
+    "penalty": 5,
+    "week": 11
+   }
+  ],
+  "owner_id": "471359444949659648",
+  "roster_id": 10,
+  "tegridy_factor": 5
+ },
+ {
+  "events": [
+   {
+    "detail": "Christian Watson was listed Out (Ankle) on the official NFL injury report and scored 0 in the starting lineup",
+    "kind": "injured_starter_out",
+    "penalty": 8,
+    "week": 4
+   }
+  ],
+  "owner_id": "383681356686950400",
+  "roster_id": 1,
+  "tegridy_factor": 8
+ },
+ {
+  "events": [
+   {
+    "detail": "Marvin Harrison was listed Out (gameday concussion protocol evaluation) on the official NFL injury report and scored 0 in the starting lineup",
+    "kind": "injured_starter_out",
+    "penalty": 8,
+    "week": 6
+   }
+  ],
+  "owner_id": "471083964757438464",
+  "roster_id": 5,
+  "tegridy_factor": 8
+ },
+ {
+  "events": [
+   {
+    "detail": "Sam LaPorta was listed Out (Shoulder) on the official NFL injury report and scored 0 in the starting lineup",
+    "kind": "injured_starter_out",
+    "penalty": 8,
+    "week": 11
+   }
+  ],
+  "owner_id": "471368473092550656",
+  "roster_id": 12,
+  "tegridy_factor": 8
+ },
+ {
+  "events": [
+   {
+    "detail": "Dallas Goedert was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup",
+    "kind": "injured_starter_out",
+    "penalty": 8,
+    "week": 6
+   },
+   {
+    "detail": "Deebo Samuel was listed Out (Illness) on the official NFL injury report and scored 0 in the starting lineup",
+    "kind": "injured_starter_out",
+    "penalty": 8,
+    "week": 7
+   }
+  ],
+  "owner_id": "423560331814510592",
+  "roster_id": 2,
+  "tegridy_factor": 16
+ },
+ {
+  "events": [
+   {
+    "detail": "Evan Engram was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup",
+    "kind": "injured_starter_out",
+    "penalty": 8,
+    "week": 2
+   },
+   {
+    "detail": "Rashee Rice was listed Out (Knee) on the official NFL injury report and scored 0 in the starting lineup",
+    "kind": "injured_starter_out",
+    "penalty": 8,
+    "week": 4
+   }
+  ],
+  "owner_id": "471345530597797888",
+  "roster_id": 6,
+  "tegridy_factor": 16
+ }
+]

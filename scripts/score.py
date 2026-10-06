@@ -2,7 +2,9 @@
 
 Outputs (data/processed/):
   <season>/weeks.json      per-week, per-roster lineup analysis
-  <season>/integrity.json  per-roster integrity score + itemised deductions
+  <season>/tegridy.json    per-roster Tegridy Factor (penalty total, lower is better) + itemised penalties
+  <season>/efficiency.json per-roster lineup efficiency (a skill stat, deliberately NOT part of Tegridy Factor)
+  tegridy_alltime.json     Tegridy Factor summed across seasons
   rivalries.json           all-time head-to-head for every pair of owners
   owners.json              owner directory (id, display name, team name, avatar)
 
@@ -144,10 +146,10 @@ def analyse_season(bundle, players, cfg):
     season = league["season"]
     slots = [s for s in league["roster_positions"] if s not in ("BN", "IR", "TAXI")]
     last_scored = league["settings"].get("last_scored_leg", 0)
-    w = cfg["integrity"]["weights"]
+    w = cfg["tegridy"]["weights"]
     bye = ByeDetector()
-    out_set = set(cfg["integrity"]["out_statuses"])
-    doubt_set = set(cfg["integrity"]["doubtful_statuses"])
+    out_set = set(cfg["tegridy"]["out_statuses"])
+    doubt_set = set(cfg["tegridy"]["doubtful_statuses"])
 
     weeks, events = {}, defaultdict(list)
     prev_starters = {}
@@ -214,9 +216,9 @@ def analyse_season(bundle, players, cfg):
             }
             weeks[wk].append(row)
 
-            def ev(kind, delta, detail):
-                if delta:
-                    events[rid].append({"week": int(wk), "kind": kind, "delta": delta, "detail": detail})
+            def ev(kind, penalty, detail):
+                if penalty:
+                    events[rid].append({"week": int(wk), "kind": kind, "penalty": penalty, "detail": detail})
 
             ev("empty_slot", w["empty_slot"] * empty, f"{empty} empty starting slot(s)")
             for p, f in flags.items():
@@ -227,28 +229,30 @@ def analyse_season(bundle, players, cfg):
                 else:
                     detail = f'{pname} was {f["status"]} at {f["first_seen"]} and stayed in the lineup'
                 ev(key, w[key], detail)
-            lost = max(round(left / 10 * w["points_left_per_10"], 2), w["points_left_cap_per_week"])
-            ev("points_left", lost, f"{left} pts left on the bench vs. best lineup")
             if bye_starters:
                 names = ", ".join(players.get(p, {}).get("name", p) for p in bye_starters)
                 ev("bye_week_starter", w.get("bye_week_starter", 0) * len(bye_starters), f"started {names} on their NFL team's bye week")
             if stale:
                 ev("stale_lineup", w["stale_lineup"], "identical lineup to previous week")
-            if eff is not None and eff >= w["efficiency_bonus_threshold"]:
-                ev("efficiency_bonus", w["efficiency_bonus"], f"{eff:.0%} lineup efficiency")
 
-    cfgi = cfg["integrity"]
-    scores = []
+    scores, efficiency = [], []
     for r in bundle["rosters"]:
         rid = r["roster_id"]
-        total = cfgi["start_score"] + sum(e["delta"] for e in events[rid])
+        rows = [row for wk in weeks.values() for row in wk if row["roster_id"] == rid]
         scores.append({
             "roster_id": rid, "owner_id": r["owner_id"],
-            "score": round(max(cfgi["min_score"], min(cfgi["max_score"], total)), 1),
+            "tegridy_factor": round(sum(e["penalty"] for e in events[rid]), 2),
             "events": events[rid],
         })
-    scores.sort(key=lambda s: -s["score"])
-    return weeks, scores
+        pts, best = sum(x["points"] for x in rows), sum(x["optimal_points"] for x in rows)
+        efficiency.append({
+            "roster_id": rid, "owner_id": r["owner_id"], "weeks": len(rows),
+            "points": round(pts, 2), "optimal_points": round(best, 2),
+            "efficiency": round(pts / best, 4) if best else None,
+        })
+    scores.sort(key=lambda s: s["tegridy_factor"])  # lower = better
+    efficiency.sort(key=lambda e: -(e["efficiency"] or 0))
+    return weeks, scores, efficiency
 
 
 def owners_directory(bundles):
@@ -320,12 +324,14 @@ def main():
     owners = owners_directory(bundles)
     dump(OUT / "owners.json", owners)
 
-    injury_starts, bye_starts = [], []
+    injury_starts, bye_starts, season_totals = [], [], {}
     for b in bundles:
         season = b["league"]["season"]
-        weeks, scores = analyse_season(b, players, cfg)
+        weeks, scores, efficiency = analyse_season(b, players, cfg)
         dump(OUT / season / "weeks.json", weeks)
-        dump(OUT / season / "integrity.json", scores)
+        dump(OUT / season / "tegridy.json", scores)
+        dump(OUT / season / "efficiency.json", efficiency)
+        season_totals[season] = {x["owner_id"]: x["tegridy_factor"] for x in scores}
         owner_of = {r["roster_id"]: r["owner_id"] for r in b["rosters"]}
         for wk, rows in weeks.items():
             for row in rows:
@@ -342,13 +348,13 @@ def main():
                         "player": players.get(pid, {}).get("name", pid), "pos": players.get(pid, {}).get("pos"),
                         "status": f["status"], "source": f["source"], "injury": f.get("injury"),
                     })
-        print(f"season {season}: {len(weeks)} scored week(s), top integrity "
-              f'{owners.get(scores[0]["owner_id"], {}).get("display_name", "?")} {scores[0]["score"]}')
+        print(f"season {season}: {len(weeks)} scored week(s), best Tegridy Factor "
+              f'{owners.get(scores[0]["owner_id"], {}).get("display_name", "?")} {scores[0]["tegridy_factor"]}')
 
     injury_starts.sort(key=lambda r: (r["season"], r["week"]))
     by_owner = defaultdict(lambda: {"out": 0, "doubtful": 0})
     for r in injury_starts:
-        by_owner[r["owner_id"]]["out" if r["status"] in cfg["integrity"]["out_statuses"] else "doubtful"] += 1
+        by_owner[r["owner_id"]]["out" if r["status"] in cfg["tegridy"]["out_statuses"] else "doubtful"] += 1
     dump(OUT / "injury_starts.json", {
         "rule": "Official NFL injury report game status Out/Doubtful AND 0 points as a starter (plus game-day snapshot flags)",
         "by_owner": by_owner, "instances": injury_starts,
@@ -361,7 +367,17 @@ def main():
         "rule": "Starter scored 0 and their NFL team had no game that week (rosters with no matchup are excluded)",
         "by_owner": bye_by_owner, "instances": bye_starts,
     })
+    alltime = defaultdict(lambda: {"total": 0, "by_season": {}})
+    for season, totals in season_totals.items():
+        for uid, t in totals.items():
+            alltime[uid]["total"] = round(alltime[uid]["total"] + t, 2)
+            alltime[uid]["by_season"][season] = t
+    dump(OUT / "tegridy_alltime.json", dict(sorted(alltime.items(), key=lambda kv: kv[1]["total"])))
     dump(OUT / "rivalries.json", head_to_head(bundles, owners, cfg))
+
+    print("\nTegridy Factor, all-time (lower is better):")
+    for uid, a in sorted(alltime.items(), key=lambda kv: kv[1]["total"]):
+        print(f'  {owners.get(uid, {}).get("display_name", uid):<18}{a["total"]:>6}   {a["by_season"]}')
 
     print("\nStarted a bye-week player (all seasons):")
     for uid, n in sorted(bye_by_owner.items(), key=lambda kv: -kv[1]):

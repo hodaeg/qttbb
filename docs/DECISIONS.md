@@ -41,14 +41,22 @@ New "protected" rivalries for this year go in `config/league.json` (`protected_r
 
 ## Integrity score
 
-### D8 — Score design: start at 100, itemised deductions — Proposed
-Starts at 100; weights are in `config/league.json` so they change without code changes. Every deduction carries a plain-English `detail` so the score is an audit trail rather than an opinion. Clamped to 0–100.
-Signals: empty starting slot, Out/Doubtful starter, points left on the bench, stale lineup (weight 0 for now), high lineup efficiency (small bonus).
-**Open:** the actual weights are first guesses. Early-season scores are tightly bunched (91–99) and need tuning once more data is in.
+### D8 — Integrity score as a 100-point scale with deductions — Superseded by D16
+First proposal: start at 100 and subtract weighted penalties, with a bench-points deduction and an efficiency bonus. Replaced because the 100-point baseline is arbitrary and full seasons drifted into the 60s from bench-points deductions alone.
 
 ### D9 — Keep the objective score separate from "drama" — Proposed
 The score is computed automatically from data only. Subjective things (drama, conduct) should not be folded into it, or arguments about the score become arguments about people.
 **Open:** whether the score has consequences (draft position, playoff penalty) or is bragging-rights only. Get the league's buy-in on the rules first.
+
+### D16 — Tegridy Factor: a penalty count, not a score to erode — Accepted
+Named by the owner (a South Park reference). **Starts at 0, only goes up; higher = less tegridy.**
+- Only **fair-play** violations count. Lineup *skill* does not: bench points left and lineup efficiency are excluded, since they measure how good an owner is, not whether they play fairly. They are published separately (`efficiency.json`) as a stat, not a penalty or bonus.
+- No 100-point baseline: "erode from 100" was arbitrary.
+- Penalties stay weighted (not a plain count), because the owner ranked bye starts above injury flags (D15). Current weights: bye 10, Out 8, empty slot 5, Doubtful 3, stale lineup 0. They live in `config/league.json` (`tegridy.weights`).
+- Output renamed: `<season>/tegridy.json` (lowest first), plus `tegridy_alltime.json`.
+- Replaced `integrity.json`; removed the `points_left` penalty and `efficiency_bonus` entirely.
+**Observation:** results are heavily skewed toward few penalties: all-time, 2 of 12 managers have 0, and the max is 45 (TheBoarHouse). Of 195 total penalty points: Out 96, empty slot 50, bye 40, Doubtful 9.
+**Open:** whether *empty slots* belong here. They're a new category (8 instances), not discussed with the owner, and may be a lineup-skill issue rather than a fairness one.
 
 ### D10 — Optimal-lineup math validated against Sleeper — Accepted
 Our "best possible lineup" matches Sleeper's own `ppts` field exactly for all 12 rosters (2026, weeks 1–4). Dedicated slots are filled first, then flex slots.
@@ -97,6 +105,6 @@ Result: 4 instances across 2019-2026 (TheBoarHouse 3, BigDogsRevenge 1). All 249
 ## Open questions
 
 1. Which protected rivalry pairs, and do they carry stakes? (D7)
-2. Final integrity weights, and does the score have consequences? (D8, D9)
+2. Final Tegridy weights, whether empty slots count, and does the score have consequences? (D9, D16)
 3. Do we want a Sunday-inactives source to close the Questionable→Out gap? (D11)
 4. Front-end contract: does the Figma design need any fields the JSON doesn't have yet?
