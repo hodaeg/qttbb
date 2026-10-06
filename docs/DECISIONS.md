@@ -78,13 +78,12 @@ Rule: if `matchup_id` is null, the roster is skipped entirely for that week (no 
 Effect: 19 → 15 instances; removed 2020 wk16 Duke Johnson, 2022 wk15 Pierce + Samuel, 2023 wk17 Courtland Sutton.
 **Lesson:** validate flags against what the manager actually saw in the app before treating them as findings. Spot-check any instance that will be shown to the league.
 
-### D15 — Bye-week starters are tracked as data; weight is 0 for now — Accepted (weight open)
+### D15 — Bye-week starters are tracked and penalised more heavily than injured starters — Accepted
 A starter counts as a bye-week start if they scored 0 **and** their NFL team had no game that week. Rosters with no matchup are excluded first (D14).
 Sources, both Sleeper's *undocumented* `api.sleeper.com` endpoints, so they could change: the NFL schedule (a bye = a team absent from that week's games) and weekly stats (the player's team **that week**, since Sleeper only stores a player's current team).
 Players on bye have no stats row that week, so their team is taken from the nearest week with a row (8 back, then 4 forward). Team defenses are keyed by team abbreviation, so they resolve directly.
 Result: 4 instances across 2019-2026 (TheBoarHouse 3, BigDogsRevenge 1). All 249 zero-point starter slots could be classified, none unknown. Spot-checked against known bye weeks, and none was a stale lineup.
-`bye_week_starter` weight is **0** until the owner decides what it should cost; it shows in `weeks.json` and `bye_starts.json` regardless.
-Note: a bye starter is a different failure from an injured starter. Both mean "didn't check the lineup", but a bye is visible in advance with no ambiguity, so it may deserve a heavier weight than Questionable-type cases.
+**Weight: -10 per bye starter** (owner's call: heavier than an injury flag). An Out starter is -8 and a Doubtful starter -3. Reasoning: a bye is known weeks in advance with no ambiguity, so unlike late injury news it can't be blamed on information arriving late.
 
 ---
 

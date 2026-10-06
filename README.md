@@ -48,7 +48,7 @@ Starts at 100. Weights live in `config/league.json` and can be changed without t
 | Starter listed Out/Doubtful on the official NFL injury report who scored 0 | NFL injury report (all seasons) |
 | Starter who was Out/IR/Doubtful at a game-day snapshot and stayed in | Game-day snapshots (live weeks) |
 | Points left on the bench vs. the best possible lineup | Matchups |
-| Started a player on their NFL team's bye (weight 0 for now) | NFL schedule + weekly player teams |
+| Started a player on their NFL team's bye (-10 each, heavier than an injured starter) | NFL schedule + weekly player teams |
 | Identical lineup to last week | Matchups (weight 0 by default) |
 | High lineup efficiency (bonus) | Matchups |
 

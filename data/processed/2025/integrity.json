@@ -286,139 +286,6 @@
  {
   "events": [
    {
-    "delta": -1.29,
-    "detail": "12.9 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 1
-   },
-   {
-    "delta": 1,
-    "detail": "100% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 2
-   },
-   {
-    "delta": -0.09,
-    "detail": "0.9 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 3
-   },
-   {
-    "delta": 1,
-    "detail": "99% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 3
-   },
-   {
-    "delta": -1.36,
-    "detail": "13.6 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 4
-   },
-   {
-    "delta": -1.83,
-    "detail": "18.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 5
-   },
-   {
-    "delta": -0.67,
-    "detail": "6.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 6
-   },
-   {
-    "delta": -0.33,
-    "detail": "3.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 7
-   },
-   {
-    "delta": 1,
-    "detail": "97% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 7
-   },
-   {
-    "delta": -0.29,
-    "detail": "2.9 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 8
-   },
-   {
-    "delta": 1,
-    "detail": "98% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 8
-   },
-   {
-    "delta": 1,
-    "detail": "100% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 9
-   },
-   {
-    "delta": -0.34,
-    "detail": "3.4 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 10
-   },
-   {
-    "delta": 1,
-    "detail": "97% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 10
-   },
-   {
-    "delta": -1.02,
-    "detail": "10.22 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 11
-   },
-   {
-    "delta": -2.5,
-    "detail": "25.0 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 12
-   },
-   {
-    "delta": -0.97,
-    "detail": "9.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 13
-   },
-   {
-    "delta": -2.52,
-    "detail": "25.2 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 14
-   },
-   {
-    "delta": -1.63,
-    "detail": "16.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 15
-   },
-   {
-    "delta": -1.37,
-    "detail": "13.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 16
-   },
-   {
-    "delta": -1.74,
-    "detail": "17.4 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 17
-   }
-  ],
-  "owner_id": "471359672478068736",
-  "roster_id": 8,
-  "score": 88.0
- },
- {
-  "events": [
-   {
     "delta": -1.2,
     "detail": "12.0 pts left on the bench vs. best lineup",
     "kind": "points_left",
@@ -1564,5 +1431,144 @@
   "owner_id": "471360899853053952",
   "roster_id": 9,
   "score": 70.1
+ },
+ {
+  "events": [
+   {
+    "delta": -1.29,
+    "detail": "12.9 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 1
+   },
+   {
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 2
+   },
+   {
+    "delta": -0.09,
+    "detail": "0.9 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 3
+   },
+   {
+    "delta": 1,
+    "detail": "99% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 3
+   },
+   {
+    "delta": -1.36,
+    "detail": "13.6 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 4
+   },
+   {
+    "delta": -1.83,
+    "detail": "18.3 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 5
+   },
+   {
+    "delta": -0.67,
+    "detail": "6.7 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 6
+   },
+   {
+    "delta": -0.33,
+    "detail": "3.3 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 7
+   },
+   {
+    "delta": 1,
+    "detail": "97% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 7
+   },
+   {
+    "delta": -0.29,
+    "detail": "2.9 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 8
+   },
+   {
+    "delta": 1,
+    "detail": "98% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 8
+   },
+   {
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 9
+   },
+   {
+    "delta": -0.34,
+    "detail": "3.4 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 10
+   },
+   {
+    "delta": 1,
+    "detail": "97% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 10
+   },
+   {
+    "delta": -1.02,
+    "detail": "10.22 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 11
+   },
+   {
+    "delta": -2.5,
+    "detail": "25.0 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 12
+   },
+   {
+    "delta": -0.97,
+    "detail": "9.7 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 13
+   },
+   {
+    "delta": -2.52,
+    "detail": "25.2 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 14
+   },
+   {
+    "delta": -20,
+    "detail": "started Hunter Henry, New England Patriots on their NFL team's bye week",
+    "kind": "bye_week_starter",
+    "week": 14
+   },
+   {
+    "delta": -1.63,
+    "detail": "16.3 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 15
+   },
+   {
+    "delta": -1.37,
+    "detail": "13.7 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 16
+   },
+   {
+    "delta": -1.74,
+    "detail": "17.4 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 17
+   }
+  ],
+  "owner_id": "471359672478068736",
+  "roster_id": 8,
+  "score": 68.0
  }
 ]

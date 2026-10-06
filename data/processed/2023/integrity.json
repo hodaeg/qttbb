@@ -1109,139 +1109,6 @@
  {
   "events": [
    {
-    "delta": -0.23,
-    "detail": "2.3 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 1
-   },
-   {
-    "delta": 1,
-    "detail": "98% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 1
-   },
-   {
-    "delta": -1.44,
-    "detail": "14.4 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 2
-   },
-   {
-    "delta": 1,
-    "detail": "100% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 3
-   },
-   {
-    "delta": -0.22,
-    "detail": "2.2 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 4
-   },
-   {
-    "delta": 1,
-    "detail": "98% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 4
-   },
-   {
-    "delta": -0.98,
-    "detail": "9.8 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 5
-   },
-   {
-    "delta": -0.87,
-    "detail": "8.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 6
-   },
-   {
-    "delta": -1.01,
-    "detail": "10.1 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 7
-   },
-   {
-    "delta": -3.97,
-    "detail": "39.7 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 8
-   },
-   {
-    "delta": -2.3,
-    "detail": "23.0 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 9
-   },
-   {
-    "delta": -0.4,
-    "detail": "4.0 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 10
-   },
-   {
-    "delta": 1,
-    "detail": "97% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 10
-   },
-   {
-    "delta": -1.25,
-    "detail": "12.5 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 11
-   },
-   {
-    "delta": -1.32,
-    "detail": "13.2 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 12
-   },
-   {
-    "delta": -0.92,
-    "detail": "9.24 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 13
-   },
-   {
-    "delta": 1,
-    "detail": "100% lineup efficiency",
-    "kind": "efficiency_bonus",
-    "week": 14
-   },
-   {
-    "delta": -5,
-    "detail": "1 empty starting slot(s)",
-    "kind": "empty_slot",
-    "week": 16
-   },
-   {
-    "delta": -1.59,
-    "detail": "15.9 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 16
-   },
-   {
-    "delta": -5,
-    "detail": "1 empty starting slot(s)",
-    "kind": "empty_slot",
-    "week": 17
-   },
-   {
-    "delta": -2.08,
-    "detail": "20.8 pts left on the bench vs. best lineup",
-    "kind": "points_left",
-    "week": 17
-   }
-  ],
-  "owner_id": "471083964757438464",
-  "roster_id": 5,
-  "score": 76.4
- },
- {
-  "events": [
-   {
     "delta": -0.71,
     "detail": "7.1 pts left on the bench vs. best lineup",
     "kind": "points_left",
@@ -1347,6 +1214,145 @@
   "owner_id": "471360899853053952",
   "roster_id": 9,
   "score": 72.7
+ },
+ {
+  "events": [
+   {
+    "delta": -0.23,
+    "detail": "2.3 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 1
+   },
+   {
+    "delta": 1,
+    "detail": "98% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 1
+   },
+   {
+    "delta": -1.44,
+    "detail": "14.4 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 2
+   },
+   {
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 3
+   },
+   {
+    "delta": -0.22,
+    "detail": "2.2 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 4
+   },
+   {
+    "delta": 1,
+    "detail": "98% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 4
+   },
+   {
+    "delta": -0.98,
+    "detail": "9.8 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 5
+   },
+   {
+    "delta": -0.87,
+    "detail": "8.7 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 6
+   },
+   {
+    "delta": -1.01,
+    "detail": "10.1 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 7
+   },
+   {
+    "delta": -3.97,
+    "detail": "39.7 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 8
+   },
+   {
+    "delta": -2.3,
+    "detail": "23.0 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 9
+   },
+   {
+    "delta": -0.4,
+    "detail": "4.0 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 10
+   },
+   {
+    "delta": 1,
+    "detail": "97% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 10
+   },
+   {
+    "delta": -1.25,
+    "detail": "12.5 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 11
+   },
+   {
+    "delta": -1.32,
+    "detail": "13.2 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 12
+   },
+   {
+    "delta": -0.92,
+    "detail": "9.24 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 13
+   },
+   {
+    "delta": -10,
+    "detail": "started Baltimore Ravens on their NFL team's bye week",
+    "kind": "bye_week_starter",
+    "week": 13
+   },
+   {
+    "delta": 1,
+    "detail": "100% lineup efficiency",
+    "kind": "efficiency_bonus",
+    "week": 14
+   },
+   {
+    "delta": -5,
+    "detail": "1 empty starting slot(s)",
+    "kind": "empty_slot",
+    "week": 16
+   },
+   {
+    "delta": -1.59,
+    "detail": "15.9 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 16
+   },
+   {
+    "delta": -5,
+    "detail": "1 empty starting slot(s)",
+    "kind": "empty_slot",
+    "week": 17
+   },
+   {
+    "delta": -2.08,
+    "detail": "20.8 pts left on the bench vs. best lineup",
+    "kind": "points_left",
+    "week": 17
+   }
+  ],
+  "owner_id": "471083964757438464",
+  "roster_id": 5,
+  "score": 66.4
  },
  {
   "events": [
