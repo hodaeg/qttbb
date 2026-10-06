@@ -24,6 +24,7 @@
      "started_pts": 4.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8671,
    "empty_slots": 0,
    "injured_starters": {},
@@ -66,6 +67,7 @@
      "started_pts": 4.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7529,
    "empty_slots": 0,
    "injured_starters": {},
@@ -79,6 +81,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 0.9931,
    "empty_slots": 0,
    "injured_starters": {},
@@ -121,6 +124,7 @@
      "started_pts": 15.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7397,
    "empty_slots": 0,
    "injured_starters": {},
@@ -149,6 +153,7 @@
      "started_pts": 0.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8613,
    "empty_slots": 0,
    "injured_starters": {},
@@ -200,6 +205,7 @@
      "started_pts": 5.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8489,
    "empty_slots": 0,
    "injured_starters": {},
@@ -235,6 +241,7 @@
      "started_pts": 9.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9016,
    "empty_slots": 0,
    "injured_starters": {},
@@ -270,6 +277,7 @@
      "started_pts": 2.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.893,
    "empty_slots": 0,
    "injured_starters": {},
@@ -283,6 +291,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -311,6 +320,7 @@
      "started_pts": 6.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.893,
    "empty_slots": 0,
    "injured_starters": {},
@@ -339,6 +349,7 @@
      "started_pts": 4.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.816,
    "empty_slots": 0,
    "injured_starters": {},
@@ -381,6 +392,7 @@
      "started_pts": 4.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.6708,
    "empty_slots": 1,
    "injured_starters": {},
@@ -411,6 +423,7 @@
      "started_pts": 8.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9773,
    "empty_slots": 0,
    "injured_starters": {},
@@ -432,6 +445,7 @@
      "started_pts": 18.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9568,
    "empty_slots": 0,
    "injured_starters": {},
@@ -453,6 +467,7 @@
      "started_pts": 0.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9353,
    "empty_slots": 0,
    "injured_starters": {},
@@ -468,6 +483,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 0.9917,
    "empty_slots": 0,
    "injured_starters": {},
@@ -481,6 +497,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -494,6 +511,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 0.9813,
    "empty_slots": 0,
    "injured_starters": {},
@@ -522,6 +540,7 @@
      "started_pts": 9.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9181,
    "empty_slots": 0,
    "injured_starters": {},
@@ -546,6 +565,7 @@
      "started_pts": 5.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9662,
    "empty_slots": 0,
    "injured_starters": {},
@@ -567,6 +587,7 @@
      "started_pts": 2.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9667,
    "empty_slots": 0,
    "injured_starters": {},
@@ -595,6 +616,7 @@
      "started_pts": 4.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.893,
    "empty_slots": 0,
    "injured_starters": {},
@@ -630,6 +652,7 @@
      "started_pts": 6.7
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8111,
    "empty_slots": 0,
    "injured_starters": {},
@@ -658,6 +681,7 @@
      "started_pts": 9.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8745,
    "empty_slots": 0,
    "injured_starters": {},
@@ -695,6 +719,7 @@
      "started_pts": 24.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8685,
    "empty_slots": 0,
    "injured_starters": {},
@@ -730,6 +755,7 @@
      "started_pts": 1.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8024,
    "empty_slots": 0,
    "injured_starters": {},
@@ -751,6 +777,7 @@
      "started_pts": 7.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9309,
    "empty_slots": 0,
    "injured_starters": {},
@@ -786,6 +813,7 @@
      "started_pts": 6.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9076,
    "empty_slots": 0,
    "injured_starters": {},
@@ -814,6 +842,7 @@
      "started_pts": 0.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8957,
    "empty_slots": 0,
    "injured_starters": {},
@@ -849,6 +878,7 @@
      "started_pts": 8.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8922,
    "empty_slots": 0,
    "injured_starters": {},
@@ -870,6 +900,7 @@
      "started_pts": 2.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9617,
    "empty_slots": 0,
    "injured_starters": {
@@ -907,6 +938,7 @@
      "started_pts": 6.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8897,
    "empty_slots": 0,
    "injured_starters": {},
@@ -949,6 +981,7 @@
      "started_pts": 5.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7427,
    "empty_slots": 0,
    "injured_starters": {},
@@ -984,6 +1017,7 @@
      "started_pts": 8.4
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.924,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1005,6 +1039,7 @@
      "started_pts": 5.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9722,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1056,6 +1091,7 @@
      "started_pts": 1.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7492,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1086,6 +1122,7 @@
      "started_pts": 3.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9813,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1107,6 +1144,7 @@
      "started_pts": 15.96
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9857,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1135,6 +1173,7 @@
      "started_pts": 17.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9017,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1156,6 +1195,7 @@
      "started_pts": 5.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9364,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1177,6 +1217,7 @@
      "started_pts": 1.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9958,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1219,6 +1260,7 @@
      "started_pts": 8.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8011,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1254,6 +1296,7 @@
      "started_pts": 16.7
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8484,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1289,6 +1332,7 @@
      "started_pts": 11.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8214,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1304,6 +1348,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1334,6 +1379,7 @@
      "started_pts": 8.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9292,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1347,6 +1393,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1368,6 +1415,7 @@
      "started_pts": 3.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9419,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1398,6 +1446,7 @@
      "started_pts": 6.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9242,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1433,6 +1482,7 @@
      "started_pts": 3.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8602,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1482,6 +1532,7 @@
      "started_pts": 8.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.73,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1510,6 +1561,7 @@
      "started_pts": 9.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8924,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1533,6 +1585,7 @@
      "started_pts": 3.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9255,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1582,6 +1635,7 @@
      "started_pts": 4.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.6059,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1617,6 +1671,7 @@
      "started_pts": 11.4
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9316,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1638,6 +1693,7 @@
      "started_pts": -0.4
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9255,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1673,6 +1729,7 @@
      "started_pts": 4.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8364,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1708,6 +1765,7 @@
      "started_pts": 1.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9002,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1743,6 +1801,7 @@
      "started_pts": 3.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8334,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1771,6 +1830,7 @@
      "started_pts": 3.7
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9107,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1794,6 +1854,7 @@
      "started_pts": 1.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9892,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1807,6 +1868,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 0.972,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1842,6 +1904,7 @@
      "started_pts": 4.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7968,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1884,6 +1947,7 @@
      "started_pts": 5.4
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8117,
    "empty_slots": 2,
    "injured_starters": {},
@@ -1919,6 +1983,7 @@
      "started_pts": 7.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8678,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1940,6 +2005,7 @@
      "started_pts": 19.36
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9892,
    "empty_slots": 0,
    "injured_starters": {},
@@ -1975,6 +2041,7 @@
      "started_pts": 6.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9203,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2016,6 +2083,10 @@
      "started": "NE",
      "started_pts": 0.0
     }
+   ],
+   "bye_starters": [
+    "3214",
+    "NE"
    ],
    "efficiency": 0.6862,
    "empty_slots": 0,
@@ -2069,6 +2140,7 @@
      "started_pts": 4.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.6579,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2097,6 +2169,7 @@
      "started_pts": 9.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.975,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2118,6 +2191,7 @@
      "started_pts": 1.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9514,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2153,6 +2227,7 @@
      "started_pts": 1.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8839,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2190,6 +2265,7 @@
      "started_pts": 8.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8081,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2211,6 +2287,7 @@
      "started_pts": 18.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9756,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2239,6 +2316,7 @@
      "started_pts": 3.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7573,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2267,6 +2345,7 @@
      "started_pts": 14.4
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8581,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2290,6 +2369,7 @@
      "started_pts": 4.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.986,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2311,6 +2391,7 @@
      "started_pts": 2.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9618,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2332,6 +2413,7 @@
      "started_pts": 10.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9694,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2360,6 +2442,7 @@
      "started_pts": 10.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9029,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2390,6 +2473,7 @@
      "started_pts": 7.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9145,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2432,6 +2516,7 @@
      "started_pts": 5.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9126,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2474,6 +2559,7 @@
      "started_pts": 4.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.832,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2516,6 +2602,7 @@
      "started_pts": 12.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.84,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2544,6 +2631,7 @@
      "started_pts": 2.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.932,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2579,6 +2667,7 @@
      "started_pts": 6.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8733,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2614,6 +2703,7 @@
      "started_pts": 7.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8854,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2649,6 +2739,7 @@
      "started_pts": -3.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8972,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2691,6 +2782,7 @@
      "started_pts": 3.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.6196,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2726,6 +2818,7 @@
      "started_pts": 0.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8309,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2754,6 +2847,7 @@
      "started_pts": 4.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9477,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2789,6 +2883,7 @@
      "started_pts": 8.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9009,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2819,6 +2914,7 @@
      "started_pts": 7.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9598,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2832,6 +2928,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 0.9938,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2860,6 +2957,7 @@
      "started_pts": 5.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9092,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2902,6 +3000,7 @@
      "started_pts": 4.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7699,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2930,6 +3029,7 @@
      "started_pts": 4.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8602,
    "empty_slots": 0,
    "injured_starters": {},
@@ -2967,6 +3067,7 @@
      "started_pts": 8.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8884,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3009,6 +3110,7 @@
      "started_pts": 6.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7267,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3030,6 +3132,7 @@
      "started_pts": 3.5
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9662,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3067,6 +3170,7 @@
      "started_pts": 10.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9605,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3088,6 +3192,7 @@
      "started_pts": 8.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9705,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3137,6 +3242,7 @@
      "started_pts": 9.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8338,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3179,6 +3285,7 @@
      "started_pts": 9.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9066,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3221,6 +3328,7 @@
      "started_pts": 7.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7991,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3265,6 +3373,7 @@
      "started_pts": 15.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8177,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3307,6 +3416,7 @@
      "started_pts": 7.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7751,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3320,6 +3430,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3341,6 +3452,7 @@
      "started_pts": 5.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9614,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3376,6 +3488,7 @@
      "started_pts": 1.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8307,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3404,6 +3517,7 @@
      "started_pts": 1.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8686,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3417,6 +3531,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3440,6 +3555,7 @@
      "started_pts": 6.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9345,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3475,6 +3591,7 @@
      "started_pts": 13.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7859,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3496,6 +3613,7 @@
      "started_pts": 5.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9667,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3524,6 +3642,7 @@
      "started_pts": 2.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9292,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3552,6 +3671,7 @@
      "started_pts": 3.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9665,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3601,6 +3721,7 @@
      "started_pts": 11.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8327,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3636,6 +3757,7 @@
      "started_pts": 14.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8967,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3666,6 +3788,7 @@
      "started_pts": 6.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9894,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3708,6 +3831,7 @@
      "started_pts": 2.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7317,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3721,6 +3845,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3756,6 +3881,7 @@
      "started_pts": 11.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9346,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3791,6 +3917,7 @@
      "started_pts": 9.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9005,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3828,6 +3955,7 @@
      "started_pts": 7.7
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8564,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3856,6 +3984,7 @@
      "started_pts": 3.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8809,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3884,6 +4013,7 @@
      "started_pts": 8.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8834,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3912,6 +4042,7 @@
      "started_pts": 5.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9141,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3925,6 +4056,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -3953,6 +4085,7 @@
      "started_pts": 6.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9872,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4009,6 +4142,7 @@
      "started_pts": 11.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.5901,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4044,6 +4178,7 @@
      "started_pts": 2.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8835,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4086,6 +4221,7 @@
      "started_pts": 3.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.864,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4107,6 +4243,7 @@
      "started_pts": 1.7
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9534,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4149,6 +4286,7 @@
      "started_pts": 9.7
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7926,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4191,6 +4329,7 @@
      "started_pts": 14.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7261,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4206,6 +4345,7 @@
  "5": [
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4234,6 +4374,7 @@
      "started_pts": 0.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9186,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4271,6 +4412,7 @@
      "started_pts": 7.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8814,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4292,6 +4434,7 @@
      "started_pts": 5.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9561,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4327,6 +4470,7 @@
      "started_pts": 5.7
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8521,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4348,6 +4492,7 @@
      "started_pts": 7.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9314,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4376,6 +4521,7 @@
      "started_pts": 13.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.879,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4411,6 +4557,7 @@
      "started_pts": 4.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7904,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4434,6 +4581,7 @@
      "started_pts": 14.64
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9905,
    "empty_slots": 0,
    "injured_starters": {
@@ -4464,6 +4612,7 @@
      "started_pts": 6.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9772,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4499,6 +4648,7 @@
      "started_pts": -5.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8504,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4527,6 +4677,7 @@
      "started_pts": 8.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9429,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4550,6 +4701,7 @@
      "started_pts": 3.4
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9228,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4578,6 +4730,7 @@
      "started_pts": 1.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8861,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4613,6 +4766,7 @@
      "started_pts": 7.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9088,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4641,6 +4795,7 @@
      "started_pts": 8.7
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9405,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4662,6 +4817,7 @@
      "started_pts": 1.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9778,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4685,6 +4841,7 @@
      "started_pts": 12.82
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.923,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4727,6 +4884,7 @@
      "started_pts": 7.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8351,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4755,6 +4913,7 @@
      "started_pts": 8.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9322,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4804,6 +4963,7 @@
      "started_pts": 6.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7906,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4846,6 +5006,7 @@
      "started_pts": 4.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8523,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4902,6 +5063,7 @@
      "started_pts": 10.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7415,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4923,6 +5085,7 @@
      "started_pts": 6.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9474,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4938,6 +5101,7 @@
  "7": [
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 0.9896,
    "empty_slots": 0,
    "injured_starters": {},
@@ -4980,6 +5144,7 @@
      "started_pts": 10.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8832,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5010,6 +5175,7 @@
      "started_pts": 6.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9456,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5023,6 +5189,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 0.9784,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5038,6 +5205,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 0.9983,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5080,6 +5248,7 @@
      "started_pts": 2.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7528,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5108,6 +5277,7 @@
      "started_pts": 4.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8848,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5131,6 +5301,7 @@
      "started_pts": 2.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9742,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5175,6 +5346,7 @@
      "started_pts": 1.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7656,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5205,6 +5377,7 @@
      "started_pts": 4.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.985,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5261,6 +5434,7 @@
      "started_pts": 17.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.6272,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5284,6 +5458,7 @@
      "started_pts": 3.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9749,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5321,6 +5496,7 @@
      "started_pts": 1.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8265,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5342,6 +5518,7 @@
      "started_pts": -8.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9377,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5363,6 +5540,7 @@
      "started_pts": 0.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9415,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5393,6 +5571,7 @@
      "started_pts": 6.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9001,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5435,6 +5614,7 @@
      "started_pts": 0.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.725,
    "empty_slots": 0,
    "injured_starters": {
@@ -5466,6 +5646,7 @@
      "started_pts": 6.4
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9992,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5487,6 +5668,7 @@
      "started_pts": 3.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9447,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5515,6 +5697,7 @@
      "started_pts": 10.1
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9751,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5550,6 +5733,7 @@
      "started_pts": 0.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.6324,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5574,6 +5758,7 @@
      "started_pts": -3.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9596,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5609,6 +5794,7 @@
      "started_pts": 15.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8313,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5660,6 +5846,7 @@
      "started_pts": -10.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8599,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5690,6 +5877,7 @@
      "started_pts": 6.6
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9638,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5732,6 +5920,7 @@
      "started_pts": 10.8
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8336,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5745,6 +5934,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5758,6 +5948,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5788,6 +5979,7 @@
      "started_pts": 4.3
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7744,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5823,6 +6015,7 @@
      "started_pts": 11.2
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.896,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5865,6 +6058,7 @@
      "started_pts": 15.9
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.8101,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5878,6 +6072,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5913,6 +6108,7 @@
      "started_pts": 3.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.9297,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5941,6 +6137,7 @@
      "started_pts": 0.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.7635,
    "empty_slots": 0,
    "injured_starters": {},
@@ -5985,6 +6182,7 @@
      "started_pts": 0.0
     }
    ],
+   "bye_starters": [],
    "efficiency": 0.749,
    "empty_slots": 0,
    "injured_starters": {},
@@ -6000,6 +6198,7 @@
   },
   {
    "bench_misses": [],
+   "bye_starters": [],
    "efficiency": 1.0,
    "empty_slots": 0,
    "injured_starters": {},

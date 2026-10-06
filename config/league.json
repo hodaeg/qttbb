@@ -14,6 +14,7 @@
       "empty_slot": -5,
       "injured_starter_out": -8,
       "injured_starter_doubtful": -3,
+      "bye_week_starter": 0,
       "points_left_per_10": -1,
       "points_left_cap_per_week": -6,
       "stale_lineup": 0,

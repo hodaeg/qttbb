@@ -24,6 +24,20 @@ def get(path, retries=3):
             time.sleep(2 ** attempt)
 
 
+def get_site(url, retries=3):
+    """Undocumented api.sleeper.com endpoints (schedule, weekly stats). They reject the default urllib UA."""
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; qttbb-league-research)"})
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                time.sleep(0.5)
+                return json.load(r)
+        except (urllib.error.URLError, TimeoutError):
+            if attempt == retries - 1:
+                raise
+            time.sleep(2 ** attempt)
+
+
 def nfl_players():
     """Full NFL player DB, cached locally for 24h (it is several MB)."""
     CACHE.mkdir(exist_ok=True)

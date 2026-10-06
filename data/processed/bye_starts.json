@@ -1,0 +1,45 @@
+{
+ "by_owner": {
+  "471083964757438464": 1,
+  "471359672478068736": 3
+ },
+ "instances": [
+  {
+   "owner_id": "471359672478068736",
+   "player": "Austin Ekeler",
+   "player_id": "4663",
+   "pos": "RB",
+   "roster_id": 8,
+   "season": "2021",
+   "week": 7
+  },
+  {
+   "owner_id": "471083964757438464",
+   "player": "Baltimore Ravens",
+   "player_id": "BAL",
+   "pos": "DEF",
+   "roster_id": 5,
+   "season": "2023",
+   "week": 13
+  },
+  {
+   "owner_id": "471359672478068736",
+   "player": "Hunter Henry",
+   "player_id": "3214",
+   "pos": "TE",
+   "roster_id": 8,
+   "season": "2025",
+   "week": 14
+  },
+  {
+   "owner_id": "471359672478068736",
+   "player": "New England Patriots",
+   "player_id": "NE",
+   "pos": "DEF",
+   "roster_id": 8,
+   "season": "2025",
+   "week": 14
+  }
+ ],
+ "rule": "Starter scored 0 and their NFL team had no game that week (rosters with no matchup are excluded)"
+}

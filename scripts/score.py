@@ -93,6 +93,47 @@ def report_flag(index, player):
     return None
 
 
+class ByeDetector:
+    """Was this player's NFL team off that week? Needs data/raw/nfl_schedule and data/raw/player_teams
+    (scripts/nfl_context.py). Players on bye have no stats row that week, so the team is taken from the
+    nearest week with a row: up to 8 weeks back, then up to 4 forward."""
+
+    def __init__(self):
+        self.schedule, self.teams = {}, {}
+
+    def _schedule(self, season):
+        if season not in self.schedule:
+            self.schedule[season] = load(RAW / "nfl_schedule" / f"{season}.json")
+        return self.schedule[season]
+
+    def _teams(self, season, week):
+        key = (season, week)
+        if key not in self.teams:
+            self.teams[key] = load(RAW / "player_teams" / str(season) / f"wk{week:02d}.json") or {}
+        return self.teams[key]
+
+    def team_at(self, season, week, pid, pos):
+        if pos == "DEF":
+            return pid  # team defenses are keyed by team abbreviation
+        for wk in [week] + list(range(week - 1, max(week - 9, 0), -1)) + list(range(week + 1, week + 5)):
+            t = self._teams(season, wk).get(pid)
+            if t:
+                return t
+        return None
+
+    def is_bye(self, season, week, pid, pos):
+        sched = self._schedule(season)
+        if not sched or str(week) not in sched:
+            return None  # unknown, no schedule data
+        team = self.team_at(season, int(week), pid, pos)
+        if team is None:
+            return None
+        playing = sched[str(week)]
+        if team not in {t for teams in sched.values() for t in teams}:
+            return None  # abbreviation we can't reconcile with the schedule
+        return team not in playing
+
+
 def snapshots_for(season, week):
     d = RAW / "snapshots" / season / f"wk{int(week):02d}"
     return [load(f) for f in sorted(d.glob("*.json"))] if d.exists() else []
@@ -104,6 +145,7 @@ def analyse_season(bundle, players, cfg):
     slots = [s for s in league["roster_positions"] if s not in ("BN", "IR", "TAXI")]
     last_scored = league["settings"].get("last_scored_leg", 0)
     w = cfg["integrity"]["weights"]
+    bye = ByeDetector()
     out_set = set(cfg["integrity"]["out_statuses"])
     doubt_set = set(cfg["integrity"]["doubtful_statuses"])
 
@@ -158,6 +200,8 @@ def analyse_season(bundle, players, cfg):
                         if p in starters and (st in out_set or st in doubt_set):
                             flags.setdefault(p, {"status": st, "source": "snapshot", "first_seen": s["taken_at"]})
 
+            bye_starters = [p for p in zero if bye.is_bye(season, int(wk), p, players.get(p, {}).get("pos")) is True]
+
             stale = prev_starters.get(rid) == starters
             prev_starters[rid] = starters
             eff = round(actual / best, 4) if best else None
@@ -165,7 +209,7 @@ def analyse_season(bundle, players, cfg):
             row = {
                 "roster_id": rid, "points": round(actual, 2), "optimal_points": round(best, 2),
                 "efficiency": eff, "points_left": left, "empty_slots": empty,
-                "zero_point_starters": zero, "bench_misses": bench_misses,
+                "zero_point_starters": zero, "bye_starters": bye_starters, "bench_misses": bench_misses,
                 "injured_starters": flags, "stale_lineup": stale, "snapshots_available": bool(snaps),
             }
             weeks[wk].append(row)
@@ -185,6 +229,9 @@ def analyse_season(bundle, players, cfg):
                 ev(key, w[key], detail)
             lost = max(round(left / 10 * w["points_left_per_10"], 2), w["points_left_cap_per_week"])
             ev("points_left", lost, f"{left} pts left on the bench vs. best lineup")
+            if bye_starters:
+                names = ", ".join(players.get(p, {}).get("name", p) for p in bye_starters)
+                ev("bye_week_starter", w.get("bye_week_starter", 0) * len(bye_starters), f"started {names} on their NFL team's bye week")
             if stale:
                 ev("stale_lineup", w["stale_lineup"], "identical lineup to previous week")
             if eff is not None and eff >= w["efficiency_bonus_threshold"]:
@@ -273,7 +320,7 @@ def main():
     owners = owners_directory(bundles)
     dump(OUT / "owners.json", owners)
 
-    injury_starts = []
+    injury_starts, bye_starts = [], []
     for b in bundles:
         season = b["league"]["season"]
         weeks, scores = analyse_season(b, players, cfg)
@@ -282,6 +329,12 @@ def main():
         owner_of = {r["roster_id"]: r["owner_id"] for r in b["rosters"]}
         for wk, rows in weeks.items():
             for row in rows:
+                for pid in row["bye_starters"]:
+                    bye_starts.append({
+                        "season": season, "week": int(wk), "roster_id": row["roster_id"],
+                        "owner_id": owner_of.get(row["roster_id"]), "player_id": pid,
+                        "player": players.get(pid, {}).get("name", pid), "pos": players.get(pid, {}).get("pos"),
+                    })
                 for pid, f in row["injured_starters"].items():
                     injury_starts.append({
                         "season": season, "week": int(wk), "roster_id": row["roster_id"],
@@ -300,8 +353,19 @@ def main():
         "rule": "Official NFL injury report game status Out/Doubtful AND 0 points as a starter (plus game-day snapshot flags)",
         "by_owner": by_owner, "instances": injury_starts,
     })
+    bye_starts.sort(key=lambda r: (r["season"], r["week"]))
+    bye_by_owner = defaultdict(int)
+    for r in bye_starts:
+        bye_by_owner[r["owner_id"]] += 1
+    dump(OUT / "bye_starts.json", {
+        "rule": "Starter scored 0 and their NFL team had no game that week (rosters with no matchup are excluded)",
+        "by_owner": bye_by_owner, "instances": bye_starts,
+    })
     dump(OUT / "rivalries.json", head_to_head(bundles, owners, cfg))
 
+    print("\nStarted a bye-week player (all seasons):")
+    for uid, n in sorted(bye_by_owner.items(), key=lambda kv: -kv[1]):
+        print(f'  {owners.get(uid, {}).get("display_name", uid):<18} {n}')
     print("\nStarted an Out/Doubtful player (all seasons):")
     for uid, c in sorted(by_owner.items(), key=lambda kv: -(kv[1]["out"] + kv[1]["doubtful"])):
         print(f'  {owners.get(uid, {}).get("display_name", uid):<18} out={c["out"]:<3} doubtful={c["doubtful"]}')

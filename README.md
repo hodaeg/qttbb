@@ -8,6 +8,7 @@ No dependencies beyond Python 3.10+ (stdlib only). The Sleeper API is public, fr
 ```
 python scripts/fetch.py      # league data for every Sleeper season -> data/raw/
 python scripts/nfl_injuries.py  # official NFL injury reports, every season -> data/raw/nfl_injuries/
+python scripts/nfl_context.py  # NFL schedule + each player's team by week (for bye detection)
 python scripts/score.py      # -> data/processed/
 python scripts/snapshot.py   # game-day lineup + injury snapshot -> data/raw/snapshots/
 ```
@@ -33,6 +34,8 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 
 **`injury_starts.json`** — every instance of starting an Out/Doubtful player across all seasons: `{ rule, by_owner: { "<owner_id>": { out, doubtful } }, instances: [ { season, week, roster_id, owner_id, player_id, player, pos, status, source, injury } ] }`. `source` is `nfl_report` (retroactive) or `snapshot` (live).
 
+**`bye_starts.json`** — every instance of starting a player whose NFL team was on bye (and who scored 0): `{ rule, by_owner, instances: [ { season, week, roster_id, owner_id, player_id, player, pos } ] }`. Also exposed per week as `bye_starters` in `weeks.json`.
+
 **`rivalries.json`** — one entry per owner pair: `{ a, b, protected_rivalry, a_wins, b_wins, ties, games_played, a_points, b_points, biggest_a_win, biggest_b_win, games[] }`. `protected_rivalry` is the rivalry name when the pair is listed in `config/league.json`, otherwise `null`.
 
 ## Integrity score
@@ -45,6 +48,7 @@ Starts at 100. Weights live in `config/league.json` and can be changed without t
 | Starter listed Out/Doubtful on the official NFL injury report who scored 0 | NFL injury report (all seasons) |
 | Starter who was Out/IR/Doubtful at a game-day snapshot and stayed in | Game-day snapshots (live weeks) |
 | Points left on the bench vs. the best possible lineup | Matchups |
+| Started a player on their NFL team's bye (weight 0 for now) | NFL schedule + weekly player teams |
 | Identical lineup to last week | Matchups (weight 0 by default) |
 | High lineup efficiency (bonus) | Matchups |
 
