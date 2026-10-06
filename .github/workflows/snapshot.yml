@@ -1,0 +1,35 @@
+name: Game-day snapshot
+
+# Record each lineup and its injury statuses shortly before kickoff windows.
+# Times are UTC and cover both EST and EDT. GitHub cron can run 5-30 minutes late,
+# so these are scheduled well ahead of kickoff. Tune as needed.
+on:
+  schedule:
+    - cron: "0 22 * * 4"        # Thu ~6pm ET   (Thursday night game)
+    - cron: "30 15 * * 0"       # Sun ~11:30am ET (early window)
+    - cron: "30 16 * * 0"       # Sun ~12:30pm ET (just before 1pm kickoffs)
+    - cron: "30 19 * * 0"       # Sun ~3:30pm ET  (late window)
+    - cron: "15 23 * * 0"       # Sun ~7:15pm ET  (Sunday night)
+    - cron: "15 23 * * 1"       # Mon ~7:15pm ET  (Monday night)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/snapshot.py
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add -A data/raw/snapshots
+          git diff --cached --quiet || git commit -m "snapshot: $(date -u +%FT%TZ)"
+          git push

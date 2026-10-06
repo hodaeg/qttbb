@@ -1,0 +1,26 @@
+{
+  "league_id": "1387848854157664256",
+  "league_name": "Quest to the Bria Bowl",
+
+  "protected_rivalries": [
+    { "name": "Example Rivalry", "a": "Hodaeg", "b": "gabroni", "active": false }
+  ],
+
+  "integrity": {
+    "start_score": 100,
+    "min_score": 0,
+    "max_score": 100,
+    "weights": {
+      "empty_slot": -5,
+      "injured_starter_out": -8,
+      "injured_starter_doubtful": -3,
+      "points_left_per_10": -1,
+      "points_left_cap_per_week": -6,
+      "stale_lineup": 0,
+      "efficiency_bonus_threshold": 0.95,
+      "efficiency_bonus": 1
+    },
+    "out_statuses": ["Out", "IR", "PUP", "Sus", "NFI"],
+    "doubtful_statuses": ["Doubtful"]
+  }
+}
