@@ -21,6 +21,7 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 | Path | What |
 |---|---|
 | `config/league.json` | League ID, protected rivalries, Tegridy Factor weights |
+| `config/members.json` | First name for each Sleeper username (shown in the app) |
 | `config/commissioner_penalties.json` | Penalties the commissioner applies outside games (missed league notes); Sleeper doesn't log them |
 | `scripts/` | Fetch, snapshot and scoring code |
 | `data/raw/` | Untouched API data. `snapshots/` is the only injury history that exists; it can't be backfilled |

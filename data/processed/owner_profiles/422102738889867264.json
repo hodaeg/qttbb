@@ -12,7 +12,7 @@
   "weeks": 116
  },
  "faab_and_transactions": {
-  "adds": 336,
+  "adds": 335,
   "biggest_bid": {
    "amount": 48,
    "player": "Devonta Freeman",
@@ -20,14 +20,15 @@
    "week": 2
   },
   "budget_per_season": 100,
-  "drops": 328,
+  "drops": 327,
   "faab_taken_as_penalty": 25,
   "free_agent_adds": 186,
   "most_frequent_trade_partner": {
    "owner_id": "471366618241298432",
    "trades": 3
   },
-  "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
+  "note": "spent = winning bids in the transaction log, net of claims the commissioner later undid (refunded; e.g. the Sep 2021 week-1 corrections). Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
+  "refunded": 0,
   "remaining_unexplained": 0,
   "sleeper_reported_used": 633,
   "spent": 620,
@@ -46,8 +47,9 @@
   "trades": 9,
   "unexplained_difference": 25,
   "waiver_claims_lost": 156,
-  "waiver_claims_won": 150
+  "waiver_claims_won": 149
  },
+ "first_name": "Mike",
  "first_season": "2019",
  "head_to_head": {
   "by_opponent": {
@@ -246,6 +248,7 @@
     "drops": 60,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 33,
+    "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 100,
     "spent": 110,
@@ -305,6 +308,7 @@
     "drops": 56,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 36,
+    "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 100,
     "spent": 95,
@@ -359,11 +363,12 @@
    "division": "probably some hippie shit",
    "efficiency": 0.9024,
    "faab": {
-    "adds": 58,
+    "adds": 57,
     "budget": 100,
-    "drops": 56,
+    "drops": 55,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 37,
+    "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 90,
     "spent": 97,
@@ -372,7 +377,7 @@
     "trades": 3,
     "unexplained_difference": 0,
     "waiver_claims_lost": 17,
-    "waiver_claims_won": 21
+    "waiver_claims_won": 20
    },
    "final_place": 8,
    "luck": {
@@ -423,6 +428,7 @@
     "drops": 49,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 25,
+    "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 89,
     "spent": 89,
@@ -482,6 +488,7 @@
     "drops": 21,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 8,
+    "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 66,
     "spent": 66,
@@ -541,6 +548,7 @@
     "drops": 54,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 27,
+    "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 100,
     "spent": 100,
@@ -600,6 +608,7 @@
     "drops": 25,
     "faab_taken_as_penalty": 25,
     "free_agent_adds": 15,
+    "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 79,
     "spent": 54,
@@ -659,6 +668,7 @@
     "drops": 7,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 5,
+    "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 9,
     "spent": 9,

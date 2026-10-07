@@ -253,7 +253,8 @@ def build_penalty(*, kind, base, mult, counts, excluded_reason, season, wk, rid,
     game = bye.game(season, wk, team) if team else None
     owner = owners.get(owner_of.get(rid), {})
     mine = effective_points(m)
-    manager = {"owner_id": owner_of.get(rid), "roster_id": rid, "display_name": owner.get("display_name"), "team_name": owner.get("team_name")}
+    manager = {"owner_id": owner_of.get(rid), "roster_id": rid, "display_name": owner.get("display_name"),
+               "first_name": owner.get("first_name"), "team_name": owner.get("team_name")}
 
     # kind-specific evidence
     if kind == "bye_week_starter":
@@ -455,7 +456,7 @@ def analyse_season(bundle, players, cfg, owners):
                 "description": e.get("description") or e.get("note"),
                 "counts": True, "excluded_reason": None,
                 "penalty": {"base": base_note, "multiplier": 1.0, "total": base_note},
-                "manager": {"owner_id": owner_of[rid], "roster_id": rid, "display_name": owner.get("display_name"), "team_name": owner.get("team_name")},
+                "manager": {"owner_id": owner_of[rid], "roster_id": rid, "display_name": owner.get("display_name"), "first_name": owner.get("first_name"), "team_name": owner.get("team_name")},
                 "player": None, "nfl_game": None, "bench_option": None, "matchup": None,
                 "evidence": {"rule": RULES[e["reason"]], "faab_taken": e["faab_taken"], "instance": n, "of_instances_that_season": e["instances"],
                              "lifetime_instance": before + n, "lifetime_total": lifetime_total, "repeat_offender": lifetime_total > 1,
@@ -488,12 +489,14 @@ def analyse_season(bundle, players, cfg, owners):
 
 
 def owners_directory(bundles):
+    first_names = (load(ROOT / "config" / "members.json", {}) or {}).get("members", {})
     owners = {}
     for b in bundles:  # oldest first, so the newest display name wins
         for u in b["users"]:
             owners[u["user_id"]] = {
                 "user_id": u["user_id"], "display_name": u["display_name"],
                 "team_name": (u.get("metadata") or {}).get("team_name"), "avatar": u.get("avatar"),
+                "first_name": first_names.get(u["display_name"]),
             }
     return owners
 

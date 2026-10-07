@@ -104,7 +104,7 @@ def main():
         taken[(e["owner"], e["season"])] += e["faab_taken"] * e["instances"]
 
     P = {uid: {
-        "owner_id": uid, "display_name": o["display_name"], "avatar": o.get("avatar"),
+        "owner_id": uid, "display_name": o["display_name"], "first_name": o.get("first_name"), "avatar": o.get("avatar"),
         "team_names": {}, "divisions": {}, "seasons_played": [],
         "seasons": {}, "_all_reg": blank_record(), "_all_post": blank_record(),
         "_games": [], "_weekly": [],
@@ -159,10 +159,24 @@ def main():
         standing = sorted(per, key=lambda u: (-per[u]["reg"]["wins"], -per[u]["reg"]["points_for"]))
         rank = {u: i + 1 for i, u in enumerate(standing)}
 
+        # Waiver claims the commissioner later undid: if the commissioner drops a player a roster won by waiver
+        # (most recent such claim before the drop), Sleeper refunds that bid.
+        all_tx = sorted((t | {"_wk": wk} for wk, txs in b["transactions"].items() for t in txs), key=lambda t: t["created"])
+        reversed_ids = {}
+        for ct in (t for t in all_tx if t["type"] == "commissioner" and t.get("drops")):
+            for pid in ct["drops"]:
+                cands = [t for t in all_tx if t["type"] == "waiver" and t["status"] == "complete" and t["roster_ids"] == ct["roster_ids"]
+                         and pid in (t.get("adds") or {}) and t["created"] < ct["created"] and t["transaction_id"] not in reversed_ids]
+                if cands:
+                    reversed_ids[max(cands, key=lambda t: t["created"])["transaction_id"]] = ct
+
         # transactions
         for wk, txs in b["transactions"].items():
             for t in txs:
                 rids = t.get("roster_ids") or []
+                if t["transaction_id"] in reversed_ids:
+                    P[owner_of[rids[0]]]["_tx"][season]["faab_refunded"] += (t.get("settings") or {}).get("waiver_bid") or 0
+                    continue
                 if t["type"] == "trade" and t["status"] == "complete":
                     for x in t.get("waiver_budget") or []:
                         P[owner_of[x["sender"]]]["_tx"][season]["faab_traded_out"] += x["amount"]
@@ -212,7 +226,7 @@ def main():
                 "luck": {"expected_wins": round(lk["expected_wins"], 2), "wins": reg["wins"],
                          "luck": round(reg["wins"] - lk["expected_wins"], 2),
                          "all_play_record": f'{lk["all_play_wins"]:g}-{lk["all_play_games"] - lk["all_play_wins"]:g}'},
-                "faab": {"budget": st.get("waiver_budget"), "spent": tx["faab_spent"],
+                "faab": {"budget": st.get("waiver_budget"), "spent": tx["faab_spent"], "refunded": tx["faab_refunded"],
                          "traded_in": tx["faab_traded_in"], "traded_out": tx["faab_traded_out"],
                          "sleeper_reported_used": used,
                          "unexplained_difference": used - (tx["faab_spent"] + tx["faab_traded_out"] - tx["faab_traded_in"]),
@@ -293,13 +307,14 @@ def main():
 
         txs = p["_tx"]
         faab = {"spent": sum(t["faab_spent"] for t in txs.values()),
+                "refunded": sum(t["faab_refunded"] for t in txs.values()),
                 "traded_in": sum(t["faab_traded_in"] for t in txs.values()),
                 "traded_out": sum(t["faab_traded_out"] for t in txs.values()),
                 "sleeper_reported_used": sum(v["faab"]["sleeper_reported_used"] for v in p["seasons"].values()),
                 "unexplained_difference": sum(v["faab"]["unexplained_difference"] for v in p["seasons"].values()),
                 "faab_taken_as_penalty": sum(v["faab"]["faab_taken_as_penalty"] for v in p["seasons"].values()),
                 "remaining_unexplained": sum(v["faab"]["remaining_unexplained"] for v in p["seasons"].values()),
-                "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
+                "note": "spent = winning bids in the transaction log, net of claims the commissioner later undid (refunded; e.g. the Sep 2021 week-1 corrections). Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
                 "budget_per_season": 100,
                 "waiver_claims_won": sum(t["waiver_claims_won"] for t in txs.values()),
                 "waiver_claims_lost": sum(t["waiver_claims_lost"] for t in txs.values()),
@@ -335,7 +350,7 @@ def main():
                     ("championships", "runner_up", "third_place", "sackos", "playoff_appearances", "first_round_byes", "regular_season_titles")}
 
         profile = {
-            "owner_id": uid, "display_name": p["display_name"], "avatar": p["avatar"],
+            "owner_id": uid, "display_name": p["display_name"], "first_name": p["first_name"], "avatar": p["avatar"],
             "current_team_name": p["team_names"].get(max(p["seasons_played"])),
             "current_division": p["divisions"].get(max(p["seasons_played"])),
             "in_current_league": current in p["seasons_played"], "seasons_played": p["seasons_played"],
@@ -359,7 +374,7 @@ def main():
         }
         dump(PROFILES / f"{uid}.json", profile)
         index.append({
-            "owner_id": uid, "display_name": p["display_name"], "avatar": p["avatar"], "in_current_league": profile["in_current_league"],
+            "owner_id": uid, "display_name": p["display_name"], "first_name": p["first_name"], "avatar": p["avatar"], "in_current_league": profile["in_current_league"],
             "seasons": len(p["seasons_played"]), "wins": total["wins"], "losses": total["losses"], "ties": total["ties"],
             "win_pct": total["win_pct"], "points_for": total["points_for"], "points_against": total["points_against"],
             "championships": trophies["championships"]["count"], "runner_ups": trophies["runner_up"]["count"], "sackos": trophies["sackos"]["count"],
