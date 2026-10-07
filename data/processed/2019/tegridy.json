@@ -7,12 +7,6 @@
  },
  {
   "events": [],
-  "owner_id": "423560331814510592",
-  "roster_id": 2,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
   "owner_id": "471074114505797632",
   "roster_id": 3,
   "tegridy_factor": 0
@@ -49,12 +43,6 @@
  },
  {
   "events": [],
-  "owner_id": "471359444949659648",
-  "roster_id": 10,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
   "owner_id": "471366618241298432",
   "roster_id": 11,
   "tegridy_factor": 0
@@ -79,6 +67,22 @@
   "events": [
    {
     "base_penalty": 5,
+    "detail": "MrSeeYou did not post the annual league note, so $6 of FAAB was taken.",
+    "kind": "missed_league_note",
+    "multiplier": 1.0,
+    "penalty": 5,
+    "penalty_id": "2019-note-r2-1",
+    "week": null
+   }
+  ],
+  "owner_id": "423560331814510592",
+  "roster_id": 2,
+  "tegridy_factor": 5
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 5,
     "detail": "BigDogsRevenge did not post the annual league note, so $12 of FAAB was taken.",
     "kind": "missed_league_note",
     "multiplier": 1.0,
@@ -89,6 +93,22 @@
   ],
   "owner_id": "471083964757438464",
   "roster_id": 5,
+  "tegridy_factor": 5
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 5,
+    "detail": "ToadLicker did not post the annual league note, so $22 of FAAB was taken.",
+    "kind": "missed_league_note",
+    "multiplier": 1.0,
+    "penalty": 5,
+    "penalty_id": "2019-note-r10-1",
+    "week": null
+   }
+  ],
+  "owner_id": "471359444949659648",
+  "roster_id": 10,
   "tegridy_factor": 5
  }
 ]

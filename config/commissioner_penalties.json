@@ -82,6 +82,30 @@
       "faab_taken": 11,
       "instances": 1,
       "status": "confirmed"
+    },
+    {
+      "owner": "ToadLicker",
+      "season": "2019",
+      "reason": "missed_league_note",
+      "faab_taken": 22,
+      "instances": 1,
+      "status": "confirmed"
+    },
+    {
+      "owner": "ToadLicker",
+      "season": "2024",
+      "reason": "missed_league_note",
+      "faab_taken": 13,
+      "instances": 1,
+      "status": "confirmed"
+    },
+    {
+      "owner": "MrSeeYou",
+      "season": "2019",
+      "reason": "missed_league_note",
+      "faab_taken": 6,
+      "instances": 1,
+      "status": "confirmed"
     }
   ]
 }

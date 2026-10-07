@@ -73,6 +73,53 @@
    "counts": true,
    "description": null,
    "evidence": {
+    "faab_taken": 6,
+    "instance": 1,
+    "lifetime_instance": 1,
+    "lifetime_total": 1,
+    "of_instances_that_season": 1,
+    "recorded_by": "commissioner",
+    "repeat_offender": false,
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "MrSeeYou did not post the annual league note, so $6 of FAAB was taken.",
+   "id": "2019-note-r2-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "MrSeeYou",
+    "owner_id": "423560331814510592",
+    "roster_id": 2,
+    "team_name": "Gotham Rogues"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2019",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "description": null,
+   "evidence": {
     "faab_taken": 12,
     "instance": 1,
     "lifetime_instance": 1,
@@ -92,6 +139,53 @@
     "owner_id": "471083964757438464",
     "roster_id": 5,
     "team_name": "Big Dog\u2019s Revenge"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2019",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "description": null,
+   "evidence": {
+    "faab_taken": 22,
+    "instance": 1,
+    "lifetime_instance": 1,
+    "lifetime_total": 2,
+    "of_instances_that_season": 1,
+    "recorded_by": "commissioner",
+    "repeat_offender": true,
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "ToadLicker did not post the annual league note, so $22 of FAAB was taken.",
+   "id": "2019-note-r10-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "ToadLicker",
+    "owner_id": "471359444949659648",
+    "roster_id": 10,
+    "team_name": "Grin & Bear It"
    },
    "matchup": null,
    "nfl_game": null,
@@ -1700,6 +1794,53 @@
     "weeks_before_playoffs": 4
    },
    "week": 11
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "description": null,
+   "evidence": {
+    "faab_taken": 13,
+    "instance": 1,
+    "lifetime_instance": 2,
+    "lifetime_total": 2,
+    "of_instances_that_season": 1,
+    "recorded_by": "commissioner",
+    "repeat_offender": true,
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "ToadLicker did not post the annual league note, so $13 of FAAB was taken.",
+   "id": "2024-note-r10-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "ToadLicker",
+    "owner_id": "471359444949659648",
+    "roster_id": 10,
+    "team_name": "Grin & Bear It"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
   },
   {
    "bench_option": null,

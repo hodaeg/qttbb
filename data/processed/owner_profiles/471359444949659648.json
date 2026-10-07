@@ -21,14 +21,14 @@
   },
   "budget_per_season": 100,
   "drops": 274,
-  "faab_taken_as_penalty": 0,
+  "faab_taken_as_penalty": 35,
   "free_agent_adds": 166,
   "most_frequent_trade_partner": {
    "owner_id": "383681356686950400",
    "trades": 1
   },
   "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
-  "remaining_unexplained": 7,
+  "remaining_unexplained": -28,
   "sleeper_reported_used": 676,
   "spent": 669,
   "spent_per_season": {
@@ -244,9 +244,9 @@
     "adds": 52,
     "budget": 100,
     "drops": 52,
-    "faab_taken_as_penalty": 0,
+    "faab_taken_as_penalty": 22,
     "free_agent_adds": 34,
-    "remaining_unexplained": 22,
+    "remaining_unexplained": 0,
     "sleeper_reported_used": 100,
     "spent": 78,
     "traded_in": 0,
@@ -539,9 +539,9 @@
     "adds": 41,
     "budget": 100,
     "drops": 41,
-    "faab_taken_as_penalty": 0,
+    "faab_taken_as_penalty": 13,
     "free_agent_adds": 26,
-    "remaining_unexplained": 13,
+    "remaining_unexplained": 0,
     "sleeper_reported_used": 72,
     "spent": 59,
     "traded_in": 0,
@@ -720,36 +720,41 @@
   "2026"
  ],
  "tegridy_factor": {
-  "by_kind": {},
+  "by_kind": {
+   "missed_league_note": 2
+  },
   "by_season": {
-   "2019": 0,
+   "2019": 5,
    "2020": 0,
    "2021": 0,
    "2022": 0,
    "2023": 0,
-   "2024": 0,
+   "2024": 5,
    "2025": 0,
    "2026": 0
   },
   "clean_seasons": [
-   "2019",
    "2020",
    "2021",
    "2022",
    "2023",
-   "2024",
    "2025"
   ],
   "excluded_penalty_ids": [
    "2021-w16-r10-questionable_did_not_play-4137"
   ],
-  "penalty_count": 0,
-  "penalty_ids": [],
-  "points_by_kind": {},
-  "rank": 1,
+  "penalty_count": 2,
+  "penalty_ids": [
+   "2019-note-r10-1",
+   "2024-note-r10-1"
+  ],
+  "points_by_kind": {
+   "missed_league_note": 10
+  },
+  "rank": 5,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 0,
-  "worst_penalty_id": null
+  "total": 10,
+  "worst_penalty_id": "2019-note-r10-1"
  },
  "trophies": {
   "championships": {
