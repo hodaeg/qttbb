@@ -376,6 +376,7 @@ def main():
             "championships": trophies["championships"]["count"], "runner_ups": trophies["runner_up"]["count"], "sackos": trophies["sackos"]["count"],
             "playoff_appearances": trophies["playoff_appearances"]["count"], "faab_spent": faab_block["spent"], "trades": faab_block["trades"],
             "faab_points_per_dollar": (fe.get("owners", {}).get(uid) or {}).get("points_per_dollar"), "faab_efficiency_rank": (fe.get("owners", {}).get(uid) or {}).get("rank"),
+            "faab_par_per_dollar": (fe.get("owners", {}).get(uid) or {}).get("par_per_dollar"), "faab_par_rank": (fe.get("owners", {}).get(uid) or {}).get("par_rank"),
             "luck": profile["luck"]["luck"], "efficiency": profile["efficiency"]["efficiency"],
             "tegridy_factor": tegridy["total"], "tegridy_rank": tegridy["rank"],
         })

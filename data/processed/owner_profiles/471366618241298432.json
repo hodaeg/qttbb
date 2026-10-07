@@ -50,9 +50,23 @@
   "waiver_claims_won": 125
  },
  "faab_efficiency": {
+  "best_par_claim": {
+   "bid": 33,
+   "par_per_dollar": 1.72,
+   "player": "Dak Prescott",
+   "points_above_replacement": 56.7,
+   "points_per_dollar": 7.62,
+   "points_started": 251.58,
+   "pos": "QB",
+   "season": "2019",
+   "week": 1,
+   "weeks_started": 12
+  },
   "best_value": {
    "bid": 5,
+   "par_per_dollar": 7.6,
    "player": "Ryan Tannehill",
+   "points_above_replacement": 38.02,
    "points_per_dollar": 45.62,
    "points_started": 228.1,
    "pos": "QB",
@@ -62,7 +76,9 @@
   },
   "biggest_bust": {
    "bid": 15,
+   "par_per_dollar": 0.0,
    "player": "Dion Lewis",
+   "points_above_replacement": 0.0,
    "points_per_dollar": 0.0,
    "points_started": 0.0,
    "pos": "RB",
@@ -72,9 +88,23 @@
   },
   "by_season": {
    "2019": {
+    "best_par_claim": {
+     "bid": 33,
+     "par_per_dollar": 1.72,
+     "player": "Dak Prescott",
+     "points_above_replacement": 56.7,
+     "points_per_dollar": 7.62,
+     "points_started": 251.58,
+     "pos": "QB",
+     "season": "2019",
+     "week": 1,
+     "weeks_started": 12
+    },
     "best_value": {
      "bid": 33,
+     "par_per_dollar": 1.72,
      "player": "Dak Prescott",
+     "points_above_replacement": 56.7,
      "points_per_dollar": 7.62,
      "points_started": 251.58,
      "pos": "QB",
@@ -84,7 +114,9 @@
     },
     "biggest_bust": {
      "bid": 12,
+     "par_per_dollar": 0.0,
      "player": "Terry McLaurin",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
@@ -99,7 +131,9 @@
     "hit_rate": 0.778,
     "most_points": {
      "bid": 33,
+     "par_per_dollar": 1.72,
      "player": "Dak Prescott",
+     "points_above_replacement": 56.7,
      "points_per_dollar": 7.62,
      "points_started": 251.58,
      "pos": "QB",
@@ -108,14 +142,42 @@
      "weeks_started": 12
     },
     "paid_claims": 18,
+    "par_per_dollar": 0.52,
+    "points_above_replacement": 51.91,
     "points_from_free_claims": 17.1,
     "points_from_paid_claims": 434.98,
-    "points_per_dollar": 4.35
+    "points_per_dollar": 4.35,
+    "worst_par_claim": {
+     "bid": 15,
+     "par_per_dollar": -1.06,
+     "player": "John Ross",
+     "points_above_replacement": -15.84,
+     "points_per_dollar": 0.35,
+     "points_started": 5.3,
+     "pos": "WR",
+     "season": "2019",
+     "week": 1,
+     "weeks_started": 2
+    }
    },
    "2020": {
+    "best_par_claim": {
+     "bid": 5,
+     "par_per_dollar": 7.6,
+     "player": "Ryan Tannehill",
+     "points_above_replacement": 38.02,
+     "points_per_dollar": 45.62,
+     "points_started": 228.1,
+     "pos": "QB",
+     "season": "2020",
+     "week": 2,
+     "weeks_started": 11
+    },
     "best_value": {
      "bid": 5,
+     "par_per_dollar": 7.6,
      "player": "Ryan Tannehill",
+     "points_above_replacement": 38.02,
      "points_per_dollar": 45.62,
      "points_started": 228.1,
      "pos": "QB",
@@ -125,7 +187,9 @@
     },
     "biggest_bust": {
      "bid": 15,
+     "par_per_dollar": 0.0,
      "player": "Dion Lewis",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "RB",
@@ -140,7 +204,9 @@
     "hit_rate": 0.8,
     "most_points": {
      "bid": 5,
+     "par_per_dollar": 7.6,
      "player": "Ryan Tannehill",
+     "points_above_replacement": 38.02,
      "points_per_dollar": 45.62,
      "points_started": 228.1,
      "pos": "QB",
@@ -149,14 +215,42 @@
      "weeks_started": 11
     },
     "paid_claims": 10,
+    "par_per_dollar": 0.25,
+    "points_above_replacement": 21.32,
     "points_from_free_claims": 0.0,
     "points_from_paid_claims": 456.56,
-    "points_per_dollar": 5.31
+    "points_per_dollar": 5.31,
+    "worst_par_claim": {
+     "bid": 34,
+     "par_per_dollar": -0.3,
+     "player": "Darrell Henderson",
+     "points_above_replacement": -10.29,
+     "points_per_dollar": 2.37,
+     "points_started": 80.7,
+     "pos": "RB",
+     "season": "2020",
+     "week": 2,
+     "weeks_started": 9
+    }
    },
    "2021": {
+    "best_par_claim": {
+     "bid": 24,
+     "par_per_dollar": 1.26,
+     "player": "Cordarrelle Patterson",
+     "points_above_replacement": 30.2,
+     "points_per_dollar": 5.34,
+     "points_started": 128.2,
+     "pos": "RB",
+     "season": "2021",
+     "week": 2,
+     "weeks_started": 10
+    },
     "best_value": {
      "bid": 24,
+     "par_per_dollar": 1.26,
      "player": "Cordarrelle Patterson",
+     "points_above_replacement": 30.2,
      "points_per_dollar": 5.34,
      "points_started": 128.2,
      "pos": "RB",
@@ -166,7 +260,9 @@
     },
     "biggest_bust": {
      "bid": 1,
+     "par_per_dollar": 0.0,
      "player": "Jack Doyle",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "TE",
@@ -181,7 +277,9 @@
     "hit_rate": 0.812,
     "most_points": {
      "bid": 24,
+     "par_per_dollar": 1.26,
      "player": "Cordarrelle Patterson",
+     "points_above_replacement": 30.2,
      "points_per_dollar": 5.34,
      "points_started": 128.2,
      "pos": "RB",
@@ -190,14 +288,42 @@
      "weeks_started": 10
     },
     "paid_claims": 16,
+    "par_per_dollar": 0.29,
+    "points_above_replacement": 26.58,
     "points_from_free_claims": 118.4,
     "points_from_paid_claims": 264.62,
-    "points_per_dollar": 2.85
+    "points_per_dollar": 2.85,
+    "worst_par_claim": {
+     "bid": 4,
+     "par_per_dollar": -1.71,
+     "player": "Los Angeles Chargers",
+     "points_above_replacement": -6.82,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "DEF",
+     "season": "2021",
+     "week": 10,
+     "weeks_started": 1
+    }
    },
    "2022": {
+    "best_par_claim": {
+     "bid": 6,
+     "par_per_dollar": 5.76,
+     "player": "T.J. Hockenson",
+     "points_above_replacement": 34.56,
+     "points_per_dollar": 18.85,
+     "points_started": 113.1,
+     "pos": "TE",
+     "season": "2022",
+     "week": 6,
+     "weeks_started": 11
+    },
     "best_value": {
      "bid": 6,
+     "par_per_dollar": 5.76,
      "player": "T.J. Hockenson",
+     "points_above_replacement": 34.56,
      "points_per_dollar": 18.85,
      "points_started": 113.1,
      "pos": "TE",
@@ -207,7 +333,9 @@
     },
     "biggest_bust": {
      "bid": 5,
+     "par_per_dollar": 0.0,
      "player": "Jakobi Meyers",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
@@ -222,7 +350,9 @@
     "hit_rate": 0.667,
     "most_points": {
      "bid": 35,
+     "par_per_dollar": 0.2,
      "player": "Tua Tagovailoa",
+     "points_above_replacement": 7.06,
      "points_per_dollar": 4.85,
      "points_started": 169.86,
      "pos": "QB",
@@ -231,14 +361,42 @@
      "weeks_started": 10
     },
     "paid_claims": 18,
+    "par_per_dollar": 0.86,
+    "points_above_replacement": 81.98,
     "points_from_free_claims": 17.0,
     "points_from_paid_claims": 516.8,
-    "points_per_dollar": 5.44
+    "points_per_dollar": 5.44,
+    "worst_par_claim": {
+     "bid": 8,
+     "par_per_dollar": -0.95,
+     "player": "Tyler Conklin",
+     "points_above_replacement": -7.58,
+     "points_per_dollar": 0.84,
+     "points_started": 6.7,
+     "pos": "TE",
+     "season": "2022",
+     "week": 3,
+     "weeks_started": 2
+    }
    },
    "2023": {
+    "best_par_claim": {
+     "bid": 7,
+     "par_per_dollar": 2.71,
+     "player": "Michael Pittman",
+     "points_above_replacement": 18.98,
+     "points_per_dollar": 22.1,
+     "points_started": 154.7,
+     "pos": "WR",
+     "season": "2023",
+     "week": 1,
+     "weeks_started": 13
+    },
     "best_value": {
      "bid": 7,
+     "par_per_dollar": 2.71,
      "player": "Michael Pittman",
+     "points_above_replacement": 18.98,
      "points_per_dollar": 22.1,
      "points_started": 154.7,
      "pos": "WR",
@@ -248,7 +406,9 @@
     },
     "biggest_bust": {
      "bid": 11,
+     "par_per_dollar": 0.0,
      "player": "Matt Breida",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "RB",
@@ -263,7 +423,9 @@
     "hit_rate": 0.583,
     "most_points": {
      "bid": 7,
+     "par_per_dollar": 2.71,
      "player": "Michael Pittman",
+     "points_above_replacement": 18.98,
      "points_per_dollar": 22.1,
      "points_started": 154.7,
      "pos": "WR",
@@ -272,14 +434,42 @@
      "weeks_started": 13
     },
     "paid_claims": 12,
+    "par_per_dollar": 0.02,
+    "points_above_replacement": 2.3,
     "points_from_free_claims": 88.1,
     "points_from_paid_claims": 257.3,
-    "points_per_dollar": 2.57
+    "points_per_dollar": 2.57,
+    "worst_par_claim": {
+     "bid": 20,
+     "par_per_dollar": -0.42,
+     "player": "Emari Demercado",
+     "points_above_replacement": -8.39,
+     "points_per_dollar": 0.11,
+     "points_started": 2.2,
+     "pos": "RB",
+     "season": "2023",
+     "week": 5,
+     "weeks_started": 1
+    }
    },
    "2024": {
+    "best_par_claim": {
+     "bid": 27,
+     "par_per_dollar": 0.62,
+     "player": "Jauan Jennings",
+     "points_above_replacement": 16.81,
+     "points_per_dollar": 3.23,
+     "points_started": 87.3,
+     "pos": "WR",
+     "season": "2024",
+     "week": 7,
+     "weeks_started": 7
+    },
     "best_value": {
      "bid": 5,
+     "par_per_dollar": 2.73,
      "player": "Tucker Kraft",
+     "points_above_replacement": 13.64,
      "points_per_dollar": 12.16,
      "points_started": 60.8,
      "pos": "TE",
@@ -289,7 +479,9 @@
     },
     "biggest_bust": {
      "bid": 7,
+     "par_per_dollar": 0.0,
      "player": "Ray Davis",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "RB",
@@ -304,7 +496,9 @@
     "hit_rate": 0.667,
     "most_points": {
      "bid": 27,
+     "par_per_dollar": 0.62,
      "player": "Jauan Jennings",
+     "points_above_replacement": 16.81,
      "points_per_dollar": 3.23,
      "points_started": 87.3,
      "pos": "WR",
@@ -313,14 +507,42 @@
      "weeks_started": 7
     },
     "paid_claims": 12,
+    "par_per_dollar": 0.27,
+    "points_above_replacement": 21.51,
     "points_from_free_claims": 114.0,
     "points_from_paid_claims": 217.56,
-    "points_per_dollar": 2.75
+    "points_per_dollar": 2.75,
+    "worst_par_claim": {
+     "bid": 19,
+     "par_per_dollar": -1.05,
+     "player": "Tank Bigsby",
+     "points_above_replacement": -19.9,
+     "points_per_dollar": 0.64,
+     "points_started": 12.2,
+     "pos": "RB",
+     "season": "2024",
+     "week": 5,
+     "weeks_started": 3
+    }
    },
    "2025": {
+    "best_par_claim": {
+     "bid": 2,
+     "par_per_dollar": 8.91,
+     "player": "Tampa Bay Buccaneers",
+     "points_above_replacement": 17.82,
+     "points_per_dollar": 12.5,
+     "points_started": 25.0,
+     "pos": "DEF",
+     "season": "2025",
+     "week": 8,
+     "weeks_started": 1
+    },
     "best_value": {
      "bid": 12,
+     "par_per_dollar": -0.83,
      "player": "Daniel Jones",
+     "points_above_replacement": -9.9,
      "points_per_dollar": 6.43,
      "points_started": 77.2,
      "pos": "QB",
@@ -336,7 +558,9 @@
     "hit_rate": 1.0,
     "most_points": {
      "bid": 73,
+     "par_per_dollar": 0.04,
      "player": "Tyrone Tracy",
+     "points_above_replacement": 2.64,
      "points_per_dollar": 1.17,
      "points_started": 85.2,
      "pos": "RB",
@@ -345,15 +569,43 @@
      "weeks_started": 8
     },
     "paid_claims": 5,
+    "par_per_dollar": -0.12,
+    "points_above_replacement": -12.43,
     "points_from_free_claims": 244.8,
     "points_from_paid_claims": 223.2,
-    "points_per_dollar": 2.23
+    "points_per_dollar": 2.23,
+    "worst_par_claim": {
+     "bid": 12,
+     "par_per_dollar": -1.11,
+     "player": "Oronde Gadsden",
+     "points_above_replacement": -13.32,
+     "points_per_dollar": 3.15,
+     "points_started": 37.8,
+     "pos": "TE",
+     "season": "2025",
+     "week": 7,
+     "weeks_started": 6
+    }
    },
    "2026": {
+    "best_par_claim": {
+     "bid": 4,
+     "par_per_dollar": 0.0,
+     "player": "Dontayvion Wicks",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 2,
+     "weeks_started": 0
+    },
     "best_value": null,
     "biggest_bust": {
      "bid": 4,
+     "par_per_dollar": 0.0,
      "player": "Dontayvion Wicks",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
@@ -368,7 +620,9 @@
     "hit_rate": 0.0,
     "most_points": {
      "bid": 4,
+     "par_per_dollar": 0.0,
      "player": "Dontayvion Wicks",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
@@ -377,21 +631,37 @@
      "weeks_started": 0
     },
     "paid_claims": 1,
+    "par_per_dollar": 0.0,
+    "points_above_replacement": 0.0,
     "points_from_free_claims": 0,
     "points_from_paid_claims": 0.0,
-    "points_per_dollar": 0.0
+    "points_per_dollar": 0.0,
+    "worst_par_claim": {
+     "bid": 4,
+     "par_per_dollar": 0.0,
+     "player": "Dontayvion Wicks",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 2,
+     "weeks_started": 0
+    }
    }
   },
   "claims_benched_only": 20,
   "claims_dropped_before_playing": 5,
-  "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). Does not account for what the owner would have had without the claim, or for bench stashes bought on purpose (handcuffs, injury stashes).",
+  "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 657,
   "free_claims": 33,
   "hit_rate": 0.728,
   "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 33,
+   "par_per_dollar": 1.72,
    "player": "Dak Prescott",
+   "points_above_replacement": 56.7,
    "points_per_dollar": 7.62,
    "points_started": 251.58,
    "pos": "QB",
@@ -401,10 +671,25 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 92,
+  "par_per_dollar": 0.29,
+  "par_rank": 3,
+  "points_above_replacement": 193.17,
   "points_from_free_claims": 599.4,
   "points_from_paid_claims": 2371.02,
   "points_per_dollar": 3.61,
-  "rank": 1
+  "rank": 1,
+  "worst_par_claim": {
+   "bid": 19,
+   "par_per_dollar": -1.05,
+   "player": "Tank Bigsby",
+   "points_above_replacement": -19.9,
+   "points_per_dollar": 0.64,
+   "points_started": 12.2,
+   "pos": "RB",
+   "season": "2024",
+   "week": 5,
+   "weeks_started": 3
+  }
  },
  "first_name": "Dave",
  "first_season": "2019",
@@ -617,9 +902,23 @@
     "waiver_claims_won": 20
    },
    "faab_efficiency": {
+    "best_par_claim": {
+     "bid": 33,
+     "par_per_dollar": 1.72,
+     "player": "Dak Prescott",
+     "points_above_replacement": 56.7,
+     "points_per_dollar": 7.62,
+     "points_started": 251.58,
+     "pos": "QB",
+     "season": "2019",
+     "week": 1,
+     "weeks_started": 12
+    },
     "best_value": {
      "bid": 33,
+     "par_per_dollar": 1.72,
      "player": "Dak Prescott",
+     "points_above_replacement": 56.7,
      "points_per_dollar": 7.62,
      "points_started": 251.58,
      "pos": "QB",
@@ -629,7 +928,9 @@
     },
     "biggest_bust": {
      "bid": 12,
+     "par_per_dollar": 0.0,
      "player": "Terry McLaurin",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
@@ -644,7 +945,9 @@
     "hit_rate": 0.778,
     "most_points": {
      "bid": 33,
+     "par_per_dollar": 1.72,
      "player": "Dak Prescott",
+     "points_above_replacement": 56.7,
      "points_per_dollar": 7.62,
      "points_started": 251.58,
      "pos": "QB",
@@ -653,9 +956,23 @@
      "weeks_started": 12
     },
     "paid_claims": 18,
+    "par_per_dollar": 0.52,
+    "points_above_replacement": 51.91,
     "points_from_free_claims": 17.1,
     "points_from_paid_claims": 434.98,
-    "points_per_dollar": 4.35
+    "points_per_dollar": 4.35,
+    "worst_par_claim": {
+     "bid": 15,
+     "par_per_dollar": -1.06,
+     "player": "John Ross",
+     "points_above_replacement": -15.84,
+     "points_per_dollar": 0.35,
+     "points_started": 5.3,
+     "pos": "WR",
+     "season": "2019",
+     "week": 1,
+     "weeks_started": 2
+    }
    },
    "final_place": 5,
    "luck": {
@@ -718,9 +1035,23 @@
     "waiver_claims_won": 11
    },
    "faab_efficiency": {
+    "best_par_claim": {
+     "bid": 5,
+     "par_per_dollar": 7.6,
+     "player": "Ryan Tannehill",
+     "points_above_replacement": 38.02,
+     "points_per_dollar": 45.62,
+     "points_started": 228.1,
+     "pos": "QB",
+     "season": "2020",
+     "week": 2,
+     "weeks_started": 11
+    },
     "best_value": {
      "bid": 5,
+     "par_per_dollar": 7.6,
      "player": "Ryan Tannehill",
+     "points_above_replacement": 38.02,
      "points_per_dollar": 45.62,
      "points_started": 228.1,
      "pos": "QB",
@@ -730,7 +1061,9 @@
     },
     "biggest_bust": {
      "bid": 15,
+     "par_per_dollar": 0.0,
      "player": "Dion Lewis",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "RB",
@@ -745,7 +1078,9 @@
     "hit_rate": 0.8,
     "most_points": {
      "bid": 5,
+     "par_per_dollar": 7.6,
      "player": "Ryan Tannehill",
+     "points_above_replacement": 38.02,
      "points_per_dollar": 45.62,
      "points_started": 228.1,
      "pos": "QB",
@@ -754,9 +1089,23 @@
      "weeks_started": 11
     },
     "paid_claims": 10,
+    "par_per_dollar": 0.25,
+    "points_above_replacement": 21.32,
     "points_from_free_claims": 0.0,
     "points_from_paid_claims": 456.56,
-    "points_per_dollar": 5.31
+    "points_per_dollar": 5.31,
+    "worst_par_claim": {
+     "bid": 34,
+     "par_per_dollar": -0.3,
+     "player": "Darrell Henderson",
+     "points_above_replacement": -10.29,
+     "points_per_dollar": 2.37,
+     "points_started": 80.7,
+     "pos": "RB",
+     "season": "2020",
+     "week": 2,
+     "weeks_started": 9
+    }
    },
    "final_place": 8,
    "luck": {
@@ -819,9 +1168,23 @@
     "waiver_claims_won": 19
    },
    "faab_efficiency": {
+    "best_par_claim": {
+     "bid": 24,
+     "par_per_dollar": 1.26,
+     "player": "Cordarrelle Patterson",
+     "points_above_replacement": 30.2,
+     "points_per_dollar": 5.34,
+     "points_started": 128.2,
+     "pos": "RB",
+     "season": "2021",
+     "week": 2,
+     "weeks_started": 10
+    },
     "best_value": {
      "bid": 24,
+     "par_per_dollar": 1.26,
      "player": "Cordarrelle Patterson",
+     "points_above_replacement": 30.2,
      "points_per_dollar": 5.34,
      "points_started": 128.2,
      "pos": "RB",
@@ -831,7 +1194,9 @@
     },
     "biggest_bust": {
      "bid": 1,
+     "par_per_dollar": 0.0,
      "player": "Jack Doyle",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "TE",
@@ -846,7 +1211,9 @@
     "hit_rate": 0.812,
     "most_points": {
      "bid": 24,
+     "par_per_dollar": 1.26,
      "player": "Cordarrelle Patterson",
+     "points_above_replacement": 30.2,
      "points_per_dollar": 5.34,
      "points_started": 128.2,
      "pos": "RB",
@@ -855,9 +1222,23 @@
      "weeks_started": 10
     },
     "paid_claims": 16,
+    "par_per_dollar": 0.29,
+    "points_above_replacement": 26.58,
     "points_from_free_claims": 118.4,
     "points_from_paid_claims": 264.62,
-    "points_per_dollar": 2.85
+    "points_per_dollar": 2.85,
+    "worst_par_claim": {
+     "bid": 4,
+     "par_per_dollar": -1.71,
+     "player": "Los Angeles Chargers",
+     "points_above_replacement": -6.82,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "DEF",
+     "season": "2021",
+     "week": 10,
+     "weeks_started": 1
+    }
    },
    "final_place": 3,
    "luck": {
@@ -920,9 +1301,23 @@
     "waiver_claims_won": 21
    },
    "faab_efficiency": {
+    "best_par_claim": {
+     "bid": 6,
+     "par_per_dollar": 5.76,
+     "player": "T.J. Hockenson",
+     "points_above_replacement": 34.56,
+     "points_per_dollar": 18.85,
+     "points_started": 113.1,
+     "pos": "TE",
+     "season": "2022",
+     "week": 6,
+     "weeks_started": 11
+    },
     "best_value": {
      "bid": 6,
+     "par_per_dollar": 5.76,
      "player": "T.J. Hockenson",
+     "points_above_replacement": 34.56,
      "points_per_dollar": 18.85,
      "points_started": 113.1,
      "pos": "TE",
@@ -932,7 +1327,9 @@
     },
     "biggest_bust": {
      "bid": 5,
+     "par_per_dollar": 0.0,
      "player": "Jakobi Meyers",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
@@ -947,7 +1344,9 @@
     "hit_rate": 0.667,
     "most_points": {
      "bid": 35,
+     "par_per_dollar": 0.2,
      "player": "Tua Tagovailoa",
+     "points_above_replacement": 7.06,
      "points_per_dollar": 4.85,
      "points_started": 169.86,
      "pos": "QB",
@@ -956,9 +1355,23 @@
      "weeks_started": 10
     },
     "paid_claims": 18,
+    "par_per_dollar": 0.86,
+    "points_above_replacement": 81.98,
     "points_from_free_claims": 17.0,
     "points_from_paid_claims": 516.8,
-    "points_per_dollar": 5.44
+    "points_per_dollar": 5.44,
+    "worst_par_claim": {
+     "bid": 8,
+     "par_per_dollar": -0.95,
+     "player": "Tyler Conklin",
+     "points_above_replacement": -7.58,
+     "points_per_dollar": 0.84,
+     "points_started": 6.7,
+     "pos": "TE",
+     "season": "2022",
+     "week": 3,
+     "weeks_started": 2
+    }
    },
    "final_place": 3,
    "luck": {
@@ -1021,9 +1434,23 @@
     "waiver_claims_won": 21
    },
    "faab_efficiency": {
+    "best_par_claim": {
+     "bid": 7,
+     "par_per_dollar": 2.71,
+     "player": "Michael Pittman",
+     "points_above_replacement": 18.98,
+     "points_per_dollar": 22.1,
+     "points_started": 154.7,
+     "pos": "WR",
+     "season": "2023",
+     "week": 1,
+     "weeks_started": 13
+    },
     "best_value": {
      "bid": 7,
+     "par_per_dollar": 2.71,
      "player": "Michael Pittman",
+     "points_above_replacement": 18.98,
      "points_per_dollar": 22.1,
      "points_started": 154.7,
      "pos": "WR",
@@ -1033,7 +1460,9 @@
     },
     "biggest_bust": {
      "bid": 11,
+     "par_per_dollar": 0.0,
      "player": "Matt Breida",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "RB",
@@ -1048,7 +1477,9 @@
     "hit_rate": 0.583,
     "most_points": {
      "bid": 7,
+     "par_per_dollar": 2.71,
      "player": "Michael Pittman",
+     "points_above_replacement": 18.98,
      "points_per_dollar": 22.1,
      "points_started": 154.7,
      "pos": "WR",
@@ -1057,9 +1488,23 @@
      "weeks_started": 13
     },
     "paid_claims": 12,
+    "par_per_dollar": 0.02,
+    "points_above_replacement": 2.3,
     "points_from_free_claims": 88.1,
     "points_from_paid_claims": 257.3,
-    "points_per_dollar": 2.57
+    "points_per_dollar": 2.57,
+    "worst_par_claim": {
+     "bid": 20,
+     "par_per_dollar": -0.42,
+     "player": "Emari Demercado",
+     "points_above_replacement": -8.39,
+     "points_per_dollar": 0.11,
+     "points_started": 2.2,
+     "pos": "RB",
+     "season": "2023",
+     "week": 5,
+     "weeks_started": 1
+    }
    },
    "final_place": 12,
    "luck": {
@@ -1122,9 +1567,23 @@
     "waiver_claims_won": 18
    },
    "faab_efficiency": {
+    "best_par_claim": {
+     "bid": 27,
+     "par_per_dollar": 0.62,
+     "player": "Jauan Jennings",
+     "points_above_replacement": 16.81,
+     "points_per_dollar": 3.23,
+     "points_started": 87.3,
+     "pos": "WR",
+     "season": "2024",
+     "week": 7,
+     "weeks_started": 7
+    },
     "best_value": {
      "bid": 5,
+     "par_per_dollar": 2.73,
      "player": "Tucker Kraft",
+     "points_above_replacement": 13.64,
      "points_per_dollar": 12.16,
      "points_started": 60.8,
      "pos": "TE",
@@ -1134,7 +1593,9 @@
     },
     "biggest_bust": {
      "bid": 7,
+     "par_per_dollar": 0.0,
      "player": "Ray Davis",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "RB",
@@ -1149,7 +1610,9 @@
     "hit_rate": 0.667,
     "most_points": {
      "bid": 27,
+     "par_per_dollar": 0.62,
      "player": "Jauan Jennings",
+     "points_above_replacement": 16.81,
      "points_per_dollar": 3.23,
      "points_started": 87.3,
      "pos": "WR",
@@ -1158,9 +1621,23 @@
      "weeks_started": 7
     },
     "paid_claims": 12,
+    "par_per_dollar": 0.27,
+    "points_above_replacement": 21.51,
     "points_from_free_claims": 114.0,
     "points_from_paid_claims": 217.56,
-    "points_per_dollar": 2.75
+    "points_per_dollar": 2.75,
+    "worst_par_claim": {
+     "bid": 19,
+     "par_per_dollar": -1.05,
+     "player": "Tank Bigsby",
+     "points_above_replacement": -19.9,
+     "points_per_dollar": 0.64,
+     "points_started": 12.2,
+     "pos": "RB",
+     "season": "2024",
+     "week": 5,
+     "weeks_started": 3
+    }
    },
    "final_place": 3,
    "luck": {
@@ -1223,9 +1700,23 @@
     "waiver_claims_won": 14
    },
    "faab_efficiency": {
+    "best_par_claim": {
+     "bid": 2,
+     "par_per_dollar": 8.91,
+     "player": "Tampa Bay Buccaneers",
+     "points_above_replacement": 17.82,
+     "points_per_dollar": 12.5,
+     "points_started": 25.0,
+     "pos": "DEF",
+     "season": "2025",
+     "week": 8,
+     "weeks_started": 1
+    },
     "best_value": {
      "bid": 12,
+     "par_per_dollar": -0.83,
      "player": "Daniel Jones",
+     "points_above_replacement": -9.9,
      "points_per_dollar": 6.43,
      "points_started": 77.2,
      "pos": "QB",
@@ -1241,7 +1732,9 @@
     "hit_rate": 1.0,
     "most_points": {
      "bid": 73,
+     "par_per_dollar": 0.04,
      "player": "Tyrone Tracy",
+     "points_above_replacement": 2.64,
      "points_per_dollar": 1.17,
      "points_started": 85.2,
      "pos": "RB",
@@ -1250,9 +1743,23 @@
      "weeks_started": 8
     },
     "paid_claims": 5,
+    "par_per_dollar": -0.12,
+    "points_above_replacement": -12.43,
     "points_from_free_claims": 244.8,
     "points_from_paid_claims": 223.2,
-    "points_per_dollar": 2.23
+    "points_per_dollar": 2.23,
+    "worst_par_claim": {
+     "bid": 12,
+     "par_per_dollar": -1.11,
+     "player": "Oronde Gadsden",
+     "points_above_replacement": -13.32,
+     "points_per_dollar": 3.15,
+     "points_started": 37.8,
+     "pos": "TE",
+     "season": "2025",
+     "week": 7,
+     "weeks_started": 6
+    }
    },
    "final_place": 2,
    "luck": {
@@ -1315,10 +1822,24 @@
     "waiver_claims_won": 1
    },
    "faab_efficiency": {
+    "best_par_claim": {
+     "bid": 4,
+     "par_per_dollar": 0.0,
+     "player": "Dontayvion Wicks",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 2,
+     "weeks_started": 0
+    },
     "best_value": null,
     "biggest_bust": {
      "bid": 4,
+     "par_per_dollar": 0.0,
      "player": "Dontayvion Wicks",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
@@ -1333,7 +1854,9 @@
     "hit_rate": 0.0,
     "most_points": {
      "bid": 4,
+     "par_per_dollar": 0.0,
      "player": "Dontayvion Wicks",
+     "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
@@ -1342,9 +1865,23 @@
      "weeks_started": 0
     },
     "paid_claims": 1,
+    "par_per_dollar": 0.0,
+    "points_above_replacement": 0.0,
     "points_from_free_claims": 0,
     "points_from_paid_claims": 0.0,
-    "points_per_dollar": 0.0
+    "points_per_dollar": 0.0,
+    "worst_par_claim": {
+     "bid": 4,
+     "par_per_dollar": 0.0,
+     "player": "Dontayvion Wicks",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 2,
+     "weeks_started": 0
+    }
    },
    "final_place": null,
    "luck": {

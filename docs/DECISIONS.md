@@ -194,8 +194,20 @@ Derived from the data: every winning waiver claim names the player and the bid; 
 - Each claim has an outcome: `started`, `never_started` (benched), or `dropped_before_playing` (gone before he showed on a roster for a game week: 46 paid claims, $252, 3.8% of dollars, counted as spent with no return; 194 more were benched the whole time).
 - Output: `data/processed/faab_efficiency.json` (league, per-owner with per-season, and every claim), and a `faab_efficiency` block on each owner profile plus `faab_points_per_dollar` and rank in the index.
 **League result:** 797 paid claims, $6,686 -> 15,996 points = **2.39 points per $1**; 70% of paid claims got a start. Best: DangerDave678 3.61, Gingivitis 3.31, gabroni 3.15. Worst: TheBoarHouse 1.20, therealGandB 1.24, Hodaeg 1.30.
-**Limits:** it ignores what the owner would have started without the claim (a true "points above replacement"), and bench stashes bought on purpose (handcuffs, injury stashes) look like busts. Treat it as a spending-value stat, not a skill verdict. It is not part of Tegridy Factor.
-**Open:** whether to add a replacement-level version ("points over what the next-best bench option would have scored").
+**Limits:** raw points ignore what the owner would have started without the claim (D28 adds points above replacement), and bench stashes bought on purpose (handcuffs, injury stashes) look like busts. Treat it as a spending-value stat, not a skill verdict. It is not part of Tegridy Factor.
+### D28 — Points above replacement (PAR) for FAAB claims — Accepted
+Added to D27 at the commissioner's request: a claim's value is how far above a replacement-level player he scored, not raw points.
+**Definition:** for each week a claimed player started, PAR = his points minus the **position replacement level for that season**. Replacement level = the season points per game of the **(N+1)th best player at the position** among ALL NFL players (league scoring, minimum half the scored weeks played), where N = the average number started at that position across the league per week. Same for every owner. `par_per_dollar` = PAR / bid; owners are ranked on it (`par_rank`) alongside the raw "Bang for Buck" rank. Each claim carries a week-by-week breakdown.
+**Data:** `data/raw/player_points/<season>/wkNN.json`, league-scored points for every QB/RB/WR/TE/K/DEF who played, computed from Sleeper's raw weekly stats and the league's own `scoring_settings`. Validated: it reproduces Sleeper's recorded points for 151 of 151 rostered players in a test week.
+**Typical replacement levels (points per game):** QB 16-18, RB ~10, WR ~10, TE 7-9, K ~7.5, DEF 6-8.
+**Method history (two approaches rejected, kept here so we don't repeat them):**
+1. *Best eligible bench player that week.* Rejected: 42% of started weeks had no bench alternative (91% for kickers, 66% for defenses), counted as 0 points, which inflated K/DEF/QB claims; it also blamed claims for the owner's lineup mistakes (a week-8 Walker start was scored -21.5 because the owner benched a 33-point player).
+2. *Weekly (N+1)th best of all players.* Rejected: an oracle that picks each week's best non-starters after the fact; produced a negative league PAR (-734), i.e. the average claim looked worse than replacement.
+3. *Season points-per-game ranking, (N+1)th* (final): an achievable level. League result: 797 paid claims, $6,686, **+848 points above replacement = $0.13 per $1**.
+**Results (PAR per $1):** gabroni 0.49, JSusee (Suze) 0.31, DangerDave678 0.29, TheBoarHouse 0.20, ToadLicker 0.19, BigDogsRevenge 0.19, Gingivitis 0.16, WhiskeyDicknCo 0.08, ChinaKing -0.01, Hodaeg -0.08, therealGandB -0.14, MrSeeYou -0.18. Compared with raw points per dollar, MrSeeYou drops from 5th to last, and TheBoarHouse rises from last to 4th.
+**What it shows:** only 248 of 797 paid claims (31%) beat replacement. By position of the claimed player: defenses are the best buy (+$0.84 per $1 over 199 claims), QBs +0.28, TEs +0.11, RBs ~0 (211 claims, $2,978, 45% of all dollars), WRs negative (-0.18), kickers negative (-0.51).
+**Limits:** it still can't tell a deliberate bench stash (handcuff, injury stash) from a bust; replacement level is season-wide, not tied to what was actually available that week; a thin bye-week roster can force a below-replacement start through no fault of the claim.
+**Open:** none.
 
 ---
 

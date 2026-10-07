@@ -6,6 +6,9 @@ so they could change. Finished weeks are fetched once and cached; the current se
   data/raw/nfl_schedule/<season>.json      { "<week>": ["ARI", "KC", ...] }   teams that PLAYED that week
   data/raw/nfl_games/<season>.json         { "<week>": [ {home, away, date, game_id} ] }  the games themselves
   data/raw/player_teams/<season>/wkNN.json { "<player_id>": "TEAM" }          only players in players_slim.json
+  data/raw/player_points/<season>/wkNN.json { "<player_id>": ["POS", pts] }    EVERY QB/RB/WR/TE/K/DEF who played, scored
+                                                                              with the league's own scoring settings (used
+                                                                              for FAAB replacement level)
 
     python scripts/nfl_context.py
 """
@@ -58,6 +61,32 @@ def fetch_player_teams(season, current_season, current_week, wanted):
         print(f"player_teams {season} wk{week}: {len(teams)}/{len(rows)} rows kept")
 
 
+FANTASY_POS = {"QB", "RB", "WR", "TE", "K", "DEF"}
+
+
+def fetch_player_points(season, current_season, current_week, scoring):
+    """League-scored points for every fantasy-relevant player, from raw weekly stats (matches Sleeper's own
+    recorded points for rostered players exactly)."""
+    top = min(season_weeks(season), current_week) if str(season) == current_season else season_weeks(season)
+    for week in range(1, top + 1):
+        f = RAW / "player_points" / str(season) / f"wk{week:02d}.json"
+        recent = str(season) == current_season and week >= top - 1
+        if f.exists() and not recent:
+            continue
+        rows = sleeper.get_site(f"https://api.sleeper.com/stats/nfl/{season}/{week}?season_type=regular")
+        out = {}
+        for r in rows:
+            pos = (r.get("player") or {}).get("position")
+            st = r.get("stats") or {}
+            if pos not in FANTASY_POS or not st:
+                continue
+            pts = round(sum(st[k] * v for k, v in scoring.items() if k in st), 2)
+            if st.get("gp", 0) >= 1 or pts != 0:
+                out[r["player_id"]] = [pos, pts]
+        write(f, out)
+        print(f"player_points {season} wk{week}: {len(out)} players")
+
+
 def main():
     argparse.ArgumentParser().parse_args()
     state = json.loads((RAW / "state.json").read_text(encoding="utf-8"))
@@ -66,6 +95,8 @@ def main():
         season = int(p.stem)
         fetch_schedule(season, str(season) == state["season"])
         fetch_player_teams(season, state["season"], state["week"], wanted)
+        scoring = json.loads(p.read_text(encoding="utf-8"))["league"]["scoring_settings"]
+        fetch_player_points(season, state["season"], state["week"], scoring)
 
 
 if __name__ == "__main__":
