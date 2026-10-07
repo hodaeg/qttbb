@@ -21,14 +21,14 @@
   },
   "budget_per_season": 100,
   "drops": 172,
-  "faab_taken_as_penalty": 125,
+  "faab_taken_as_penalty": 145,
   "free_agent_adds": 127,
   "most_frequent_trade_partner": {
    "owner_id": "423560331814510592",
    "trades": 1
   },
   "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
-  "remaining_unexplained": 20,
+  "remaining_unexplained": 0,
   "sleeper_reported_used": 463,
   "spent": 318,
   "spent_per_season": {
@@ -421,9 +421,9 @@
     "adds": 31,
     "budget": 100,
     "drops": 30,
-    "faab_taken_as_penalty": 0,
+    "faab_taken_as_penalty": 20,
     "free_agent_adds": 26,
-    "remaining_unexplained": 20,
+    "remaining_unexplained": 0,
     "sleeper_reported_used": 55,
     "spent": 35,
     "traded_in": 0,
@@ -723,13 +723,13 @@
   "by_kind": {
    "injured_starter_doubtful": 2,
    "injured_starter_out": 2,
-   "missed_league_note": 5
+   "missed_league_note": 6
   },
   "by_season": {
    "2019": 4.5,
    "2020": 5,
    "2021": 0,
-   "2022": 8.0,
+   "2022": 13.0,
    "2023": 10.25,
    "2024": 27.0,
    "2025": 0,
@@ -740,11 +740,12 @@
    "2025"
   ],
   "excluded_penalty_ids": [],
-  "penalty_count": 9,
+  "penalty_count": 10,
   "penalty_ids": [
    "2019-w11-r12-injured_starter_doubtful-4217",
    "2020-note-r12-1",
    "2022-w07-r12-injured_starter_out-2505",
+   "2022-note-r12-1",
    "2023-w13-r12-injured_starter_doubtful-5022",
    "2023-note-r12-1",
    "2024-w11-r12-injured_starter_out-10859",
@@ -755,11 +756,11 @@
   "points_by_kind": {
    "injured_starter_doubtful": 9.75,
    "injured_starter_out": 20.0,
-   "missed_league_note": 25
+   "missed_league_note": 30
   },
   "rank": 11,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 54.75,
+  "total": 59.75,
   "worst_penalty_id": "2024-w11-r12-injured_starter_out-10859"
  },
  "trophies": {

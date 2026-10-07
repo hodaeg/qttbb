@@ -444,16 +444,21 @@ def analyse_season(bundle, players, cfg, owners):
             continue
         rid = roster_of[e["owner"]]
         owner = owners.get(owner_of[rid], {})
+        mine = sorted((x for x in cfg["_ledger"] if x["owner"] == e["owner"] and x["status"] == "confirmed"), key=lambda x: x["season"])
+        before = sum(x["instances"] for x in mine if x["season"] < season)
+        lifetime_total = sum(x["instances"] for x in mine)
         for n in range(1, e["instances"] + 1):
             pid = f"{season}-note-r{rid}-{n}"
             pen = {
                 "id": pid, "season": season, "week": None, "kind": e["reason"], "label": PENALTY_LABELS[e["reason"]],
                 "headline": f'{owner.get("display_name")} did not post the annual league note, so ${e["faab_taken"]} of FAAB was taken.',
+                "description": e.get("description") or e.get("note"),
                 "counts": True, "excluded_reason": None,
                 "penalty": {"base": base_note, "multiplier": 1.0, "total": base_note},
                 "manager": {"owner_id": owner_of[rid], "roster_id": rid, "display_name": owner.get("display_name"), "team_name": owner.get("team_name")},
                 "player": None, "nfl_game": None, "bench_option": None, "matchup": None,
                 "evidence": {"rule": RULES[e["reason"]], "faab_taken": e["faab_taken"], "instance": n, "of_instances_that_season": e["instances"],
+                             "lifetime_instance": before + n, "lifetime_total": lifetime_total, "repeat_offender": lifetime_total > 1,
                              "recorded_by": "commissioner"},
                 "timing": {"phase": "season_long", "week": None, "multiplier_reason": "Not tied to a game week, so no timing multiplier."},
                 "sources": [{"name": "Commissioner record", "url": None}],

@@ -71,11 +71,15 @@
   {
    "bench_option": null,
    "counts": true,
+   "description": null,
    "evidence": {
     "faab_taken": 25,
     "instance": 1,
+    "lifetime_instance": 1,
+    "lifetime_total": 6,
     "of_instances_that_season": 1,
     "recorded_by": "commissioner",
+    "repeat_offender": true,
     "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
    },
    "excluded_reason": null,
@@ -250,11 +254,15 @@
   {
    "bench_option": null,
    "counts": true,
+   "description": null,
    "evidence": {
     "faab_taken": 25,
     "instance": 1,
+    "lifetime_instance": 1,
+    "lifetime_total": 2,
     "of_instances_that_season": 1,
     "recorded_by": "commissioner",
+    "repeat_offender": true,
     "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
    },
    "excluded_reason": null,
@@ -510,6 +518,53 @@
     "weeks_before_playoffs": 8
    },
    "week": 7
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "description": null,
+   "evidence": {
+    "faab_taken": 20,
+    "instance": 1,
+    "lifetime_instance": 2,
+    "lifetime_total": 6,
+    "of_instances_that_season": 1,
+    "recorded_by": "commissioner",
+    "repeat_offender": true,
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "therealGandB did not post the annual league note, so $20 of FAAB was taken.",
+   "id": "2022-note-r12-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "therealGandB",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2022",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
   },
   {
    "bench_option": null,
@@ -871,11 +926,15 @@
   {
    "bench_option": null,
    "counts": true,
+   "description": null,
    "evidence": {
     "faab_taken": 25,
     "instance": 1,
+    "lifetime_instance": 3,
+    "lifetime_total": 6,
     "of_instances_that_season": 1,
     "recorded_by": "commissioner",
+    "repeat_offender": true,
     "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
    },
    "excluded_reason": null,
@@ -1551,11 +1610,15 @@
   {
    "bench_option": null,
    "counts": true,
+   "description": "Repeat offender: missed the league note multiple times in 2024 (Green and Bowled has a missed note in 2020, 2022, 2023 and 2024).",
    "evidence": {
     "faab_taken": 25,
     "instance": 1,
+    "lifetime_instance": 4,
+    "lifetime_total": 6,
     "of_instances_that_season": 3,
     "recorded_by": "commissioner",
+    "repeat_offender": true,
     "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
    },
    "excluded_reason": null,
@@ -1594,11 +1657,15 @@
   {
    "bench_option": null,
    "counts": true,
+   "description": "Repeat offender: missed the league note multiple times in 2024 (Green and Bowled has a missed note in 2020, 2022, 2023 and 2024).",
    "evidence": {
     "faab_taken": 25,
     "instance": 2,
+    "lifetime_instance": 5,
+    "lifetime_total": 6,
     "of_instances_that_season": 3,
     "recorded_by": "commissioner",
+    "repeat_offender": true,
     "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
    },
    "excluded_reason": null,
@@ -1637,11 +1704,15 @@
   {
    "bench_option": null,
    "counts": true,
+   "description": "Repeat offender: missed the league note multiple times in 2024 (Green and Bowled has a missed note in 2020, 2022, 2023 and 2024).",
    "evidence": {
     "faab_taken": 25,
     "instance": 3,
+    "lifetime_instance": 6,
+    "lifetime_total": 6,
     "of_instances_that_season": 3,
     "recorded_by": "commissioner",
+    "repeat_offender": true,
     "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
    },
    "excluded_reason": null,
@@ -2096,15 +2167,19 @@
   {
    "bench_option": null,
    "counts": true,
+   "description": "One penalty for missing the note; the amount of FAAB taken was increased to $50 (not two separate penalties).",
    "evidence": {
-    "faab_taken": 25,
+    "faab_taken": 50,
     "instance": 1,
-    "of_instances_that_season": 2,
+    "lifetime_instance": 1,
+    "lifetime_total": 1,
+    "of_instances_that_season": 1,
     "recorded_by": "commissioner",
+    "repeat_offender": false,
     "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
    },
    "excluded_reason": null,
-   "headline": "BigDogsRevenge did not post the annual league note, so $25 of FAAB was taken.",
+   "headline": "BigDogsRevenge did not post the annual league note, so $50 of FAAB was taken.",
    "id": "2025-note-r5-1",
    "kind": "missed_league_note",
    "label": "Missed the annual league note",
@@ -2139,23 +2214,27 @@
   {
    "bench_option": null,
    "counts": true,
+   "description": null,
    "evidence": {
     "faab_taken": 25,
-    "instance": 2,
-    "of_instances_that_season": 2,
+    "instance": 1,
+    "lifetime_instance": 1,
+    "lifetime_total": 1,
+    "of_instances_that_season": 1,
     "recorded_by": "commissioner",
+    "repeat_offender": false,
     "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
    },
    "excluded_reason": null,
-   "headline": "BigDogsRevenge did not post the annual league note, so $25 of FAAB was taken.",
-   "id": "2025-note-r5-2",
+   "headline": "WhiskeyDicknCo did not post the annual league note, so $25 of FAAB was taken.",
+   "id": "2025-note-r7-1",
    "kind": "missed_league_note",
    "label": "Missed the annual league note",
    "manager": {
-    "display_name": "BigDogsRevenge",
-    "owner_id": "471083964757438464",
-    "roster_id": 5,
-    "team_name": "Big Dog\u2019s Revenge"
+    "display_name": "WhiskeyDicknCo",
+    "owner_id": "422102738889867264",
+    "roster_id": 7,
+    "team_name": "Whiskey Dick & Co"
    },
    "matchup": null,
    "nfl_game": null,
@@ -2182,11 +2261,15 @@
   {
    "bench_option": null,
    "counts": true,
+   "description": null,
    "evidence": {
     "faab_taken": 25,
     "instance": 1,
+    "lifetime_instance": 2,
+    "lifetime_total": 2,
     "of_instances_that_season": 1,
     "recorded_by": "commissioner",
+    "repeat_offender": true,
     "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
    },
    "excluded_reason": null,

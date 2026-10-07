@@ -168,8 +168,13 @@ Totals verified unchanged after the change (sum 210.75 across all managers).
 ### D25 — Missed league note: FAAB the commissioner takes counts as a penalty, 5 each — Accepted
 League rule: every member must post a league note once a year. If they don't, the commissioner takes FAAB. Each instance is one Tegridy penalty of **5 points** (kind `missed_league_note`, weight `tegridy.weights.missed_league_note`), lighter than starting an Out player (8) or a bye player (10).
 Sleeper doesn't log these deductions. They were discovered as FAAB that Sleeper counts as used but the transaction log doesn't explain (D24), always in **$25 units**. They now live in a ledger the commissioner owns: `config/commissioner_penalties.json` (owner, season, `faab_taken` per instance, `instances`, `status`). Only `confirmed` entries count.
-**Confirmed (9 instances, $225):** therealGandB 2020 x1, 2023 x1, 2024 x3; BigDogsRevenge 2025 x2; TheBoarHouse 2021 x1, 2025 x1. Effect on all-time Tegridy Factor: therealGandB 29.75 -> 54.75, BigDogsRevenge 33.5 -> 43.5, TheBoarHouse 57 -> 67.
-**Unconfirmed, not counted:** WhiskeyDicknCo 2025 ($25, same size and pattern but the owner wasn't named) and therealGandB 2022 ($20, not a $25 multiple). Commissioner to confirm or discard.
+**Ledger as of the commissioner's confirmation (10 instances, $270):** therealGandB 2020 x1 ($25), 2022 x1 ($20), 2023 x1 ($25), 2024 x3 ($25 each); BigDogsRevenge 2025 x1 ($50); TheBoarHouse 2021 x1, 2025 x1 ($25 each); WhiskeyDicknCo 2025 x1 ($25).
+**Amendments after review:**
+- WhiskeyDicknCo 2025 and therealGandB 2022 (the $20 one) were confirmed as real penalties.
+- BigDogsRevenge 2025 is **one** penalty with $50 taken (the amount was increased), not two separate $25 penalties.
+- Repeat offender: every penalty record now has `evidence.lifetime_instance`, `lifetime_total` and `repeat_offender`, and the ledger supports an optional `description` shown with the penalty. The three 2024 penalties for therealGandB ("Green and Bowled") carry a repeat-offender description.
+Effect on all-time Tegridy Factor: therealGandB 59.75 (6 instances), TheBoarHouse 67 (2), BigDogsRevenge 38.5 (1), WhiskeyDicknCo 9.5 (1).
+After the ledger, the remaining FAAB differences are small and old: BigDogsRevenge +12 (2019), gabroni +11 (2022), ToadLicker +7 (net of 2019/2021/2024), MrSeeYou -12 (2019/2021). Not penalties; likely corrections and refunds.
 **No timing multiplier** (D21): these aren't tied to a game week, so they carry `week: null`, `multiplier: 1.0` and `timing.phase: "season_long"`. The playoff relevance rule (D17) doesn't apply either.
 **Reconciliation:** after the ledger, TheBoarHouse's FAAB gap is exactly $0. What remains is small and old (e.g. 2019 +6 to +22, 2021 refunds of -18 and -28 from the week-1 commissioner corrections, plus a few others), left as `remaining_unexplained`.
 Penalty records for these have `player`, `nfl_game`, `matchup` and `bench_option` as null; the evidence is the rule, the FAAB taken, and the instance number.

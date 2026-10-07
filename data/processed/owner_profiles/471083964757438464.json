@@ -723,7 +723,7 @@
   "by_kind": {
    "bye_week_starter": 1,
    "injured_starter_out": 2,
-   "missed_league_note": 2
+   "missed_league_note": 1
   },
   "by_season": {
    "2019": 0,
@@ -732,7 +732,7 @@
    "2022": 0,
    "2023": 17.5,
    "2024": 8.0,
-   "2025": 18.0,
+   "2025": 13.0,
    "2026": 0
   },
   "clean_seasons": [
@@ -742,22 +742,21 @@
    "2022"
   ],
   "excluded_penalty_ids": [],
-  "penalty_count": 5,
+  "penalty_count": 4,
   "penalty_ids": [
    "2023-w13-r5-bye_week_starter-BAL",
    "2024-w06-r5-injured_starter_out-11628",
    "2025-w08-r5-injured_starter_out-11566",
-   "2025-note-r5-1",
-   "2025-note-r5-2"
+   "2025-note-r5-1"
   ],
   "points_by_kind": {
    "bye_week_starter": 17.5,
    "injured_starter_out": 16.0,
-   "missed_league_note": 10
+   "missed_league_note": 5
   },
   "rank": 10,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 43.5,
+  "total": 38.5,
   "worst_penalty_id": "2023-w13-r5-bye_week_starter-BAL"
  },
  "trophies": {
