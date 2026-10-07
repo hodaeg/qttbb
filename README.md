@@ -21,6 +21,7 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 | Path | What |
 |---|---|
 | `config/league.json` | League ID, protected rivalries, Tegridy Factor weights |
+| `config/commissioner_penalties.json` | Penalties the commissioner applies outside games (missed league notes); Sleeper doesn't log them |
 | `scripts/` | Fetch, snapshot and scoring code |
 | `data/raw/` | Untouched API data. `snapshots/` is the only injury history that exists; it can't be backfilled |
 | `data/processed/` | JSON for the front end (shapes below) |
@@ -52,7 +53,7 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
   timing:   { phase, week, playoff_start_week, weeks_before_playoffs, playoff_round, playoff_bracket, multiplier_reason },
   sources:  [ { name, url } ] }
 ```
-`kind` is one of `injured_starter_out`, `injured_starter_doubtful`, `questionable_did_not_play`, `bye_week_starter`. Events in `<season>/tegridy.json` link here through `penalty_id`.
+`kind` is one of `injured_starter_out`, `injured_starter_doubtful`, `questionable_did_not_play`, `bye_week_starter`, `missed_league_note`. For `missed_league_note` (commissioner-applied, not tied to a game) `week`, `player`, `nfl_game`, `matchup` and `bench_option` are null. Events in `<season>/tegridy.json` link here through `penalty_id`.
 
 **`owner_profiles/<owner_id>.json`** — one rich object per owner (`owner_profiles/index.json` has a summary row each, for league tables). Sections: `tegridy_factor` (total, rank, by_season, by_kind, penalty_ids), `record` (regular_season / postseason / total), `trophies` (championships, runner_up, third_place, sackos, playoff_appearances, first_round_byes, regular_season_titles; each `{count, seasons}`), `scoring` (highest/lowest score, biggest win, worst loss, close games, streaks), `luck`, `efficiency`, `faab_and_transactions` (spent, traded in/out, claims won/lost, adds/drops, trades, biggest bid, trade partner), `head_to_head` (by opponent, nemesis, favorite victim) and `seasons` (the same, per season). Join key is `owner_id`. See D24 for definitions and known differences from Sleeper's own totals.
 
@@ -74,6 +75,7 @@ A running total of fair-play penalties. **Starts at 0, only goes up, lower is be
 | Started a player listed **Questionable** who then didn't play and scored 0 | 6 each | NFL report + Sleeper weekly stats |
 | Started a player listed **Doubtful** on the report (and they scored 0) | 3 each | NFL injury report (all seasons) |
 | Out/Doubtful at a game-day snapshot and still in the final lineup | same as above | Game-day snapshots (live weeks) |
+| Missed the annual league note (FAAB taken by the commissioner) | 5 each, no timing multiplier | `config/commissioner_penalties.json` |
 | Identical lineup to last week | 0 (tracked only) | Matchups |
 
 **Timing multiplier** (D21), applied to every penalty: in the playoffs 2.0x, 1-2 weeks before 1.75x, 3-4 weeks before 1.5x, otherwise 1.0x. Measured from each season's own playoff start (week 14 in 2019-2020, week 15 since 2021). Configurable in `tegridy.multipliers`.

@@ -98,6 +98,10 @@ def main():
     rivalries = load(OUT / "rivalries.json", [])
     bundles = sorted((load(f) for f in (RAW / "seasons").glob("*.json")), key=lambda b: b["league"]["season"])
     current = bundles[-1]["league"]["season"]
+    ledger = [e for e in (load(ROOT / "config" / "commissioner_penalties.json", {}) or {}).get("entries", []) if e["status"] == "confirmed"]
+    taken = Counter()
+    for e in ledger:
+        taken[(e["owner"], e["season"])] += e["faab_taken"] * e["instances"]
 
     P = {uid: {
         "owner_id": uid, "display_name": o["display_name"], "avatar": o.get("avatar"),
@@ -212,6 +216,8 @@ def main():
                          "traded_in": tx["faab_traded_in"], "traded_out": tx["faab_traded_out"],
                          "sleeper_reported_used": used,
                          "unexplained_difference": used - (tx["faab_spent"] + tx["faab_traded_out"] - tx["faab_traded_in"]),
+                         "faab_taken_as_penalty": taken[(p["display_name"], season)],
+                         "remaining_unexplained": used - (tx["faab_spent"] + tx["faab_traded_out"] - tx["faab_traded_in"]) - taken[(p["display_name"], season)],
                          "waiver_claims_won": tx["waiver_claims_won"], "waiver_claims_lost": tx["waiver_claims_lost"],
                          "free_agent_adds": tx["free_agent_adds"], "adds": tx["adds"], "drops": tx["drops"], "trades": tx["trades"]},
                 "sleeper_standings_reported": {"points_for": round(r["settings"]["fpts"] + r["settings"]["fpts_decimal"] / 100, 2),
@@ -291,7 +297,9 @@ def main():
                 "traded_out": sum(t["faab_traded_out"] for t in txs.values()),
                 "sleeper_reported_used": sum(v["faab"]["sleeper_reported_used"] for v in p["seasons"].values()),
                 "unexplained_difference": sum(v["faab"]["unexplained_difference"] for v in p["seasons"].values()),
-                "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains).",
+                "faab_taken_as_penalty": sum(v["faab"]["faab_taken_as_penalty"] for v in p["seasons"].values()),
+                "remaining_unexplained": sum(v["faab"]["remaining_unexplained"] for v in p["seasons"].values()),
+                "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
                 "budget_per_season": 100,
                 "waiver_claims_won": sum(t["waiver_claims_won"] for t in txs.values()),
                 "waiver_claims_lost": sum(t["waiver_claims_lost"] for t in txs.values()),
@@ -318,7 +326,7 @@ def main():
             "points_by_kind": {k: round(sum(x["penalty"]["total"] for x in counted if x["kind"] == k), 2) for k in sorted({x["kind"] for x in counted})},
             "clean_seasons": [s for s, v in tg["by_season"].items() if v == 0 and s != current],
             "worst_penalty_id": max(counted, key=lambda x: x["penalty"]["total"])["id"] if counted else None,
-            "penalty_ids": [x["id"] for x in sorted(counted, key=lambda x: (x["season"], x["week"]))],
+            "penalty_ids": [x["id"] for x in sorted(counted, key=lambda x: (x["season"], x["week"] or 99, x["id"]))],
             "excluded_penalty_ids": [x["id"] for x in pens if not x["counts"]],
         }
 

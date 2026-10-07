@@ -66,9 +66,19 @@
   "tegridy_factor": 0
  },
  {
-  "events": [],
+  "events": [
+   {
+    "base_penalty": 5,
+    "detail": "therealGandB did not post the annual league note, so $25 of FAAB was taken.",
+    "kind": "missed_league_note",
+    "multiplier": 1.0,
+    "penalty": 5,
+    "penalty_id": "2020-note-r12-1",
+    "week": null
+   }
+  ],
   "owner_id": "471368473092550656",
   "roster_id": 12,
-  "tegridy_factor": 0
+  "tegridy_factor": 5
  }
 ]

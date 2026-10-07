@@ -163,7 +163,16 @@ Totals verified unchanged after the change (sum 210.75 across all managers).
 **Known differences (shown, not hidden):**
 1. *Season points*: weekly matchup totals differ slightly from Sleeper's season standings in some seasons (up to 14 points, mostly 2019; small in later years), which is probably stat corrections after the fact. Each season carries `sleeper_standings_reported` for comparison. The all-time PF uses the weekly matchup numbers.
 2. *FAAB*: the transaction log's winning bids are reported as `spent`. Sleeper's own `waiver_budget_used` equals `spent + traded out - traded in` for 81 of 96 roster-seasons; the other 15 are reported as `unexplained_difference`. Largest by owner (all-time): therealGandB +145, BigDogsRevenge +62, TheBoarHouse +50. Likely commissioner FAAB edits or refunds that aren't in the log; cause not confirmed.
-**Open:** what explains the unexplained FAAB differences (commissioner edits?), and whether they should be shown or hidden.
+**Resolved by D25:** the FAAB differences are commissioner penalties for missed league notes.
+
+### D25 — Missed league note: FAAB the commissioner takes counts as a penalty, 5 each — Accepted
+League rule: every member must post a league note once a year. If they don't, the commissioner takes FAAB. Each instance is one Tegridy penalty of **5 points** (kind `missed_league_note`, weight `tegridy.weights.missed_league_note`), lighter than starting an Out player (8) or a bye player (10).
+Sleeper doesn't log these deductions. They were discovered as FAAB that Sleeper counts as used but the transaction log doesn't explain (D24), always in **$25 units**. They now live in a ledger the commissioner owns: `config/commissioner_penalties.json` (owner, season, `faab_taken` per instance, `instances`, `status`). Only `confirmed` entries count.
+**Confirmed (9 instances, $225):** therealGandB 2020 x1, 2023 x1, 2024 x3; BigDogsRevenge 2025 x2; TheBoarHouse 2021 x1, 2025 x1. Effect on all-time Tegridy Factor: therealGandB 29.75 -> 54.75, BigDogsRevenge 33.5 -> 43.5, TheBoarHouse 57 -> 67.
+**Unconfirmed, not counted:** WhiskeyDicknCo 2025 ($25, same size and pattern but the owner wasn't named) and therealGandB 2022 ($20, not a $25 multiple). Commissioner to confirm or discard.
+**No timing multiplier** (D21): these aren't tied to a game week, so they carry `week: null`, `multiplier: 1.0` and `timing.phase: "season_long"`. The playoff relevance rule (D17) doesn't apply either.
+**Reconciliation:** after the ledger, TheBoarHouse's FAAB gap is exactly $0. What remains is small and old (e.g. 2019 +6 to +22, 2021 refunds of -18 and -28 from the week-1 commissioner corrections, plus a few others), left as `remaining_unexplained`.
+Penalty records for these have `player`, `nfl_game`, `matchup` and `bench_option` as null; the evidence is the rule, the FAAB taken, and the instance number.
 
 ---
 

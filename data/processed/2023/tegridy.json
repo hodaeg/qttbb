@@ -63,11 +63,20 @@
     "penalty": 5.25,
     "penalty_id": "2023-w13-r12-injured_starter_doubtful-5022",
     "week": 13
+   },
+   {
+    "base_penalty": 5,
+    "detail": "therealGandB did not post the annual league note, so $25 of FAAB was taken.",
+    "kind": "missed_league_note",
+    "multiplier": 1.0,
+    "penalty": 5,
+    "penalty_id": "2023-note-r12-1",
+    "week": null
    }
   ],
   "owner_id": "471368473092550656",
   "roster_id": 12,
-  "tegridy_factor": 5.25
+  "tegridy_factor": 10.25
  },
  {
   "events": [

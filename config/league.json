@@ -16,7 +16,8 @@
       "injured_starter_doubtful": 3,
       "bye_week_starter": 10,
       "stale_lineup": 0,
-      "questionable_did_not_play": 6
+      "questionable_did_not_play": 6,
+      "missed_league_note": 5
     },
     "out_statuses": [
       "Out",

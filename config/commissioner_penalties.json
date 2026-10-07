@@ -1,0 +1,16 @@
+{
+  "_about": "Penalties the commissioner applies outside of games. Sleeper does not log them, so they live here. Rule: every member must post a league note once a year; if you don't, the commissioner takes FAAB. Each instance is one penalty (config tegridy.weights.missed_league_note). These were first spotted as FAAB that Sleeper counts as used but the transaction log doesn't explain; faab_taken is per instance. Only status 'confirmed' entries count toward Tegridy Factor.",
+  "entries": [
+    { "owner": "therealGandB",   "season": "2020", "reason": "missed_league_note", "faab_taken": 25, "instances": 1, "status": "confirmed" },
+    { "owner": "therealGandB",   "season": "2023", "reason": "missed_league_note", "faab_taken": 25, "instances": 1, "status": "confirmed" },
+    { "owner": "therealGandB",   "season": "2024", "reason": "missed_league_note", "faab_taken": 25, "instances": 3, "status": "confirmed" },
+    { "owner": "BigDogsRevenge", "season": "2025", "reason": "missed_league_note", "faab_taken": 25, "instances": 2, "status": "confirmed" },
+    { "owner": "TheBoarHouse",   "season": "2021", "reason": "missed_league_note", "faab_taken": 25, "instances": 1, "status": "confirmed" },
+    { "owner": "TheBoarHouse",   "season": "2025", "reason": "missed_league_note", "faab_taken": 25, "instances": 1, "status": "confirmed" },
+
+    { "owner": "WhiskeyDicknCo", "season": "2025", "reason": "missed_league_note", "faab_taken": 25, "instances": 1, "status": "unconfirmed",
+      "note": "Sleeper shows $25 more FAAB used than the log explains, the same size as the confirmed penalties, but this owner was not named. Not counted until confirmed." },
+    { "owner": "therealGandB",   "season": "2022", "reason": "missed_league_note", "faab_taken": 20, "instances": 1, "status": "unconfirmed",
+      "note": "Sleeper shows $20 more FAAB used than the log explains, not a $25 multiple. Not counted until confirmed." }
+  ]
+}

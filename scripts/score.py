@@ -233,12 +233,14 @@ PENALTY_LABELS = {
     "injured_starter_doubtful": "Started a player listed Doubtful",
     "questionable_did_not_play": "Started a Questionable player who didn't play",
     "bye_week_starter": "Started a player on a bye week",
+    "missed_league_note": "Missed the annual league note",
 }
 RULES = {
     "injured_starter_out": "Listed Out on the official NFL injury report, started, and scored 0.",
     "injured_starter_doubtful": "Listed Doubtful on the official NFL injury report, started, and scored 0.",
     "questionable_did_not_play": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0.",
     "bye_week_starter": "Started a player whose NFL team had no game that week, and scored 0.",
+    "missed_league_note": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner.",
 }
 
 
@@ -432,6 +434,34 @@ def analyse_season(bundle, players, cfg, owners):
             if stale:
                 ev("stale_lineup", w["stale_lineup"], "identical lineup to previous week")
 
+    # Commissioner-applied penalties (config/commissioner_penalties.json). Not tied to a game week, so no timing multiplier.
+    roster_of = {}
+    for r in bundle["rosters"]:
+        roster_of[owners.get(r["owner_id"], {}).get("display_name")] = r["roster_id"]
+    base_note = w.get("missed_league_note", 0)
+    for e in cfg.get("_ledger", []):
+        if e["season"] != season or e["status"] != "confirmed" or e["owner"] not in roster_of or not base_note:
+            continue
+        rid = roster_of[e["owner"]]
+        owner = owners.get(owner_of[rid], {})
+        for n in range(1, e["instances"] + 1):
+            pid = f"{season}-note-r{rid}-{n}"
+            pen = {
+                "id": pid, "season": season, "week": None, "kind": e["reason"], "label": PENALTY_LABELS[e["reason"]],
+                "headline": f'{owner.get("display_name")} did not post the annual league note, so ${e["faab_taken"]} of FAAB was taken.',
+                "counts": True, "excluded_reason": None,
+                "penalty": {"base": base_note, "multiplier": 1.0, "total": base_note},
+                "manager": {"owner_id": owner_of[rid], "roster_id": rid, "display_name": owner.get("display_name"), "team_name": owner.get("team_name")},
+                "player": None, "nfl_game": None, "bench_option": None, "matchup": None,
+                "evidence": {"rule": RULES[e["reason"]], "faab_taken": e["faab_taken"], "instance": n, "of_instances_that_season": e["instances"],
+                             "recorded_by": "commissioner"},
+                "timing": {"phase": "season_long", "week": None, "multiplier_reason": "Not tied to a game week, so no timing multiplier."},
+                "sources": [{"name": "Commissioner record", "url": None}],
+            }
+            penalties.append(pen)
+            events[rid].append({"week": None, "kind": e["reason"], "base_penalty": base_note, "multiplier": 1.0,
+                                "penalty": base_note, "detail": pen["headline"], "penalty_id": pid})
+
     scores, efficiency = [], []
     for r in bundle["rosters"]:
         rid = r["roster_id"]
@@ -516,6 +546,7 @@ def head_to_head(bundles, owners, cfg):
 
 def main():
     cfg = load(ROOT / "config" / "league.json")
+    cfg["_ledger"] = (load(ROOT / "config" / "commissioner_penalties.json", {}) or {}).get("entries", [])
     players = load(RAW / "players_slim.json", {})
     bundles = sorted((load(f) for f in (RAW / "seasons").glob("*.json")), key=lambda b: b["league"]["season"])
     owners = owners_directory(bundles)
@@ -584,7 +615,7 @@ def main():
             alltime[uid]["total"] = round(alltime[uid]["total"] + t, 2)
             alltime[uid]["by_season"][season] = t
     dump(OUT / "tegridy_alltime.json", dict(sorted(alltime.items(), key=lambda kv: kv[1]["total"])))
-    all_penalties.sort(key=lambda x: (x["season"], x["week"], x["manager"]["roster_id"]))
+    all_penalties.sort(key=lambda x: (x["season"], x["week"] or 99, x["manager"]["roster_id"]))
     dump(OUT / "penalties.json", {
         "note": "Every penalty with its evidence. counts=false entries are listed for transparency but carry 0 points (see excluded_reason).",
         "penalties": all_penalties,

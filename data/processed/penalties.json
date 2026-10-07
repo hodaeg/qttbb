@@ -72,6 +72,49 @@
    "bench_option": null,
    "counts": true,
    "evidence": {
+    "faab_taken": 25,
+    "instance": 1,
+    "of_instances_that_season": 1,
+    "recorded_by": "commissioner",
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "therealGandB did not post the annual league note, so $25 of FAAB was taken.",
+   "id": "2020-note-r12-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "therealGandB",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2020",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
     "nfl_team": "LAC",
     "points_scored": 0,
     "rule": "Started a player whose NFL team had no game that week, and scored 0.",
@@ -203,6 +246,49 @@
     "weeks_before_playoffs": null
    },
    "week": 16
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "faab_taken": 25,
+    "instance": 1,
+    "of_instances_that_season": 1,
+    "recorded_by": "commissioner",
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "TheBoarHouse did not post the annual league note, so $25 of FAAB was taken.",
+   "id": "2021-note-r8-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "TheBoarHouse",
+    "owner_id": "471359672478068736",
+    "roster_id": 8,
+    "team_name": "Lil Kings"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2021",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
   },
   {
    "bench_option": {
@@ -781,6 +867,49 @@
     "weeks_before_playoffs": null
    },
    "week": 17
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "faab_taken": 25,
+    "instance": 1,
+    "of_instances_that_season": 1,
+    "recorded_by": "commissioner",
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "therealGandB did not post the annual league note, so $25 of FAAB was taken.",
+   "id": "2023-note-r12-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "therealGandB",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2023",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
   },
   {
    "bench_option": null,
@@ -1420,6 +1549,135 @@
    "week": 11
   },
   {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "faab_taken": 25,
+    "instance": 1,
+    "of_instances_that_season": 3,
+    "recorded_by": "commissioner",
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "therealGandB did not post the annual league note, so $25 of FAAB was taken.",
+   "id": "2024-note-r12-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "therealGandB",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "faab_taken": 25,
+    "instance": 2,
+    "of_instances_that_season": 3,
+    "recorded_by": "commissioner",
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "therealGandB did not post the annual league note, so $25 of FAAB was taken.",
+   "id": "2024-note-r12-2",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "therealGandB",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "faab_taken": 25,
+    "instance": 3,
+    "of_instances_that_season": 3,
+    "recorded_by": "commissioner",
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "therealGandB did not post the annual league note, so $25 of FAAB was taken.",
+   "id": "2024-note-r12-3",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "therealGandB",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2024",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
+  },
+  {
    "bench_option": {
     "name": "Darren Waller",
     "player_id": "2505",
@@ -1834,6 +2092,135 @@
     "weeks_before_playoffs": 1
    },
    "week": 14
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "faab_taken": 25,
+    "instance": 1,
+    "of_instances_that_season": 2,
+    "recorded_by": "commissioner",
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "BigDogsRevenge did not post the annual league note, so $25 of FAAB was taken.",
+   "id": "2025-note-r5-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "BigDogsRevenge",
+    "owner_id": "471083964757438464",
+    "roster_id": 5,
+    "team_name": "Big Dog\u2019s Revenge"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2025",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "faab_taken": 25,
+    "instance": 2,
+    "of_instances_that_season": 2,
+    "recorded_by": "commissioner",
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "BigDogsRevenge did not post the annual league note, so $25 of FAAB was taken.",
+   "id": "2025-note-r5-2",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "BigDogsRevenge",
+    "owner_id": "471083964757438464",
+    "roster_id": 5,
+    "team_name": "Big Dog\u2019s Revenge"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2025",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "faab_taken": 25,
+    "instance": 1,
+    "of_instances_that_season": 1,
+    "recorded_by": "commissioner",
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "TheBoarHouse did not post the annual league note, so $25 of FAAB was taken.",
+   "id": "2025-note-r8-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "TheBoarHouse",
+    "owner_id": "471359672478068736",
+    "roster_id": 8,
+    "team_name": "Lil Kings"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2025",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
   },
   {
    "bench_option": {

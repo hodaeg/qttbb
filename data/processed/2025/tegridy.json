@@ -67,22 +67,6 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Jayden Daniels was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2025-w08-r5-injured_starter_out-11566",
-    "week": 8
-   }
-  ],
-  "owner_id": "471083964757438464",
-  "roster_id": 5,
-  "tegridy_factor": 8.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 8,
     "detail": "Chuba Hubbard was listed Out (Calf) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
@@ -94,6 +78,40 @@
   "owner_id": "471360899853053952",
   "roster_id": 9,
   "tegridy_factor": 8.0
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 8,
+    "detail": "Jayden Daniels was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
+    "kind": "injured_starter_out",
+    "multiplier": 1.0,
+    "penalty": 8.0,
+    "penalty_id": "2025-w08-r5-injured_starter_out-11566",
+    "week": 8
+   },
+   {
+    "base_penalty": 5,
+    "detail": "BigDogsRevenge did not post the annual league note, so $25 of FAAB was taken.",
+    "kind": "missed_league_note",
+    "multiplier": 1.0,
+    "penalty": 5,
+    "penalty_id": "2025-note-r5-1",
+    "week": null
+   },
+   {
+    "base_penalty": 5,
+    "detail": "BigDogsRevenge did not post the annual league note, so $25 of FAAB was taken.",
+    "kind": "missed_league_note",
+    "multiplier": 1.0,
+    "penalty": 5,
+    "penalty_id": "2025-note-r5-2",
+    "week": null
+   }
+  ],
+  "owner_id": "471083964757438464",
+  "roster_id": 5,
+  "tegridy_factor": 18.0
  },
  {
   "events": [
@@ -123,10 +141,19 @@
     "penalty": 17.5,
     "penalty_id": "2025-w14-r8-bye_week_starter-NE",
     "week": 14
+   },
+   {
+    "base_penalty": 5,
+    "detail": "TheBoarHouse did not post the annual league note, so $25 of FAAB was taken.",
+    "kind": "missed_league_note",
+    "multiplier": 1.0,
+    "penalty": 5,
+    "penalty_id": "2025-note-r8-1",
+    "week": null
    }
   ],
   "owner_id": "471359672478068736",
   "roster_id": 8,
-  "tegridy_factor": 41.0
+  "tegridy_factor": 46.0
  }
 ]
