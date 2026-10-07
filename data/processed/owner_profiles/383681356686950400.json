@@ -1,4 +1,50 @@
 {
+ "all_time": {
+  "bria_bowl": {
+   "appearances": null,
+   "known": false,
+   "losses": null,
+   "note": "Finals losses before 2019 aren't in the post, so total appearances aren't known.",
+   "wins": 0
+  },
+  "championships": 0,
+  "division_titles": 2,
+  "perfect_seasons": 0,
+  "playoff_appearances": 10,
+  "playoff_record": {
+   "losses": 10,
+   "ties": 0,
+   "wins": 6
+  },
+  "record": {
+   "losses": 91,
+   "ties": 0,
+   "wins": 110
+  },
+  "sackos": 0,
+  "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
+  "scoring_bonuses": [
+   15,
+   15,
+   15
+  ],
+  "win_pct": 0.5473
+ },
+ "asterisk_legend": {
+  "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
+ },
+ "asterisk_sections": [
+  "tegridy_factor",
+  "record",
+  "trophies",
+  "scoring",
+  "luck",
+  "efficiency",
+  "faab_and_transactions",
+  "faab_efficiency",
+  "head_to_head",
+  "seasons"
+ ],
  "avatar": "1e455017ce4dcc3ea8d32e55fdb2349b",
  "current_division": "Hodag\u2019s Harem",
  "current_team_name": "Hodag Forest Lurkers",
@@ -799,6 +845,229 @@
   "nemesis_owner_id": "471074114505797632"
  },
  "in_current_league": true,
+ "legacy": {
+  "adjustment": 10,
+  "adjustment_note": "Mike's published total minus what his stated formula gives for his published numbers. Frozen; shown so Mike can check it.",
+  "era_split": {
+   "pre_2019_derived": {
+    "championships": 0,
+    "division_titles": 0,
+    "note": "Derived: Mike's published numbers minus the Sleeper-era numbers. Approximate.",
+    "playoff_appearances": 5,
+    "playoff_record": {
+     "losses": 5,
+     "ties": 0,
+     "wins": 1
+    },
+    "record": {
+     "losses": 46,
+     "ties": 0,
+     "wins": 43
+    },
+    "sackos": 0
+   },
+   "since_published_snapshot": {
+    "asterisk": "*",
+    "asterisk_note": "2019 and later only (Sleeper-era data). There is no ESPN-era data for this stat.",
+    "bria_bowl": {
+     "appearances": 0,
+     "losses": 0,
+     "wins": 0
+    },
+    "championships": 0,
+    "division_titles": 0,
+    "perfect_seasons": 0,
+    "playoff_appearances": 0,
+    "playoff_record": {
+     "losses": 0,
+     "ties": 0,
+     "wins": 0
+    },
+    "record": {
+     "losses": 2,
+     "ties": 0,
+     "wins": 2
+    },
+    "sackos": 0,
+    "scoring_bonuses": []
+   },
+   "sleeper_2019_to_2025": {
+    "asterisk": "*",
+    "asterisk_note": "2019 and later only (Sleeper-era data). There is no ESPN-era data for this stat.",
+    "bria_bowl": {
+     "appearances": 2,
+     "losses": 2,
+     "wins": 0
+    },
+    "championships": 0,
+    "division_titles": 2,
+    "perfect_seasons": 0,
+    "playoff_appearances": 5,
+    "playoff_record": {
+     "losses": 5,
+     "ties": 0,
+     "wins": 5
+    },
+    "record": {
+     "losses": 43,
+     "ties": 0,
+     "wins": 65
+    },
+    "sackos": 0,
+    "scoring_bonuses": [
+     15,
+     15
+    ]
+   }
+  },
+  "point_breakdown": {
+   "adjustment": 10,
+   "championships": 0,
+   "division_titles": 30,
+   "perfect_seasons": 0,
+   "playoff_appearances": 50,
+   "playoff_wins": 60,
+   "record_bonus": 20,
+   "sackos": 0,
+   "scoring_bonuses": 45
+  },
+  "points": 215,
+  "points_ahead_of_next_rank_down": {
+   "first_name": "Dave",
+   "owner_id": "471366618241298432",
+   "points": 10
+  },
+  "points_since_snapshot": 0,
+  "points_to_next_rank_up": {
+   "first_name": "Suze",
+   "owner_id": "471074114505797632",
+   "points": 65
+  },
+  "published_points": 215,
+  "published_rank_change": 0,
+  "rank": 4,
+  "rank_change_since_snapshot": 0,
+  "rank_change_week": 0,
+  "sleeper_era_by_season": {
+   "asterisk": "*",
+   "asterisk_note": "2019 and later only (Sleeper-era data). There is no ESPN-era data for this stat.",
+   "seasons": {
+    "2019": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "5-9",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 0,
+     "playoff_appearance": false,
+     "playoff_wins": 0,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2020": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "8-7",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 15,
+     "playoff_appearance": true,
+     "playoff_wins": 1,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2021": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": true,
+     "championship": false,
+     "counted_record": "11-6",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 25,
+     "playoff_appearance": true,
+     "playoff_wins": 2,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2022": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "8-7",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 0,
+     "playoff_appearance": false,
+     "playoff_wins": 0,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2023": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "8-8",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 15,
+     "playoff_appearance": true,
+     "playoff_wins": 1,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2024": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": true,
+     "championship": false,
+     "counted_record": "15-1",
+     "division_title": true,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": true,
+     "legacy_points_from_events": 45,
+     "playoff_appearance": true,
+     "playoff_wins": 1,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2025": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "10-5",
+     "division_title": true,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": true,
+     "legacy_points_from_events": 35,
+     "playoff_appearance": true,
+     "playoff_wins": 0,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2026": {
+     "after_published_snapshot": true,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "2-2",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 0,
+     "playoff_appearance": false,
+     "playoff_wins": 0,
+     "sacko": false,
+     "season_complete": false
+    }
+   }
+  },
+  "snapshot_rank": 4
+ },
  "luck": {
   "expected_wins": 52.18,
   "luck": 7.82,
@@ -807,7 +1076,8 @@
  },
  "owner_id": "383681356686950400",
  "record": {
-  "note": "Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly.",
+  "asterisk": "*",
+  "note": "2019 and later only; the legacy-inclusive all-time record is in `all_time`. Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly.",
   "postseason": {
    "avg_points_against": 112.13,
    "avg_points_for": 103.93,

@@ -90,12 +90,22 @@ def playoff_label(bundle, rid, place):
     return names.get(p, f"{p}th place") + (" (losers bracket)" if p != 12 else "")
 
 
+def since2019_record(lg, total):
+    """2019+ record under the legacy rule (only games played while still in contention); falls back to all games."""
+    if not lg:
+        return {"wins": total["wins"], "losses": total["losses"], "ties": total["ties"], "win_pct": total["win_pct"]}
+    a, b = lg["era_split"]["sleeper_2019_to_2025"]["record"], lg["era_split"]["since_published_snapshot"]["record"]
+    w, l, t = (a[k] + b[k] for k in ("wins", "losses", "ties"))
+    return {"wins": w, "losses": l, "ties": t, "win_pct": round((w + t / 2) / (w + l + t), 4) if w + l + t else None}
+
+
 def main():
     cfg = load(ROOT / "config" / "league.json")
     owners = load(OUT / "owners.json")
     players = load(RAW / "players_slim.json", {})
     tegridy_all = load(OUT / "tegridy_alltime.json", {})
     fe = load(OUT / "faab_efficiency.json", {}) or {}
+    legacy = {r["owner_id"]: r for r in (load(OUT / "legacy_rankings.json", {}) or {}).get("rankings", [])}
     penalties = (load(OUT / "penalties.json", {}) or {}).get("penalties", [])
     rivalries = load(OUT / "rivalries.json", [])
     bundles = sorted((load(f) for f in (RAW / "seasons").glob("*.json")), key=lambda b: b["league"]["season"])
@@ -349,9 +359,14 @@ def main():
             "current_division": p["divisions"].get(max(p["seasons_played"])),
             "in_current_league": current in p["seasons_played"], "seasons_played": p["seasons_played"],
             "first_season": min(p["seasons_played"]),
+            "asterisk_legend": {"*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."},
+            "asterisk_sections": ["tegridy_factor", "record", "trophies", "scoring", "luck", "efficiency", "faab_and_transactions",
+                                  "faab_efficiency", "head_to_head", "seasons"],
+            "all_time": (legacy.get(uid) or {}).get("all_time"),
+            "legacy": ({k: v for k, v in legacy[uid].items() if k not in ("all_time", "owner_id", "display_name", "first_name")} if uid in legacy else None),
             "tegridy_factor": tegridy,
             "record": {"regular_season": reg, "postseason": post, "total": total,
-                       "note": "Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly."},
+                       "asterisk": "*", "note": "2019 and later only; the legacy-inclusive all-time record is in `all_time`. Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly."},
             "trophies": trophies,
             "scoring": {"highest_score": tag(hi), "lowest_score": tag(lo), "biggest_win": tag(blow), "worst_loss": tag(worst),
                         "close_games": {"definition": "decided by less than 5 points", "wins": sum(g["pf"] > g["pa"] for g in close), "losses": sum(g["pf"] < g["pa"] for g in close)},
@@ -371,21 +386,31 @@ def main():
         dump(PROFILES / f"{uid}.json", profile)
         index.append({
             "owner_id": uid, "display_name": p["display_name"], "first_name": p["first_name"], "avatar": p["avatar"], "in_current_league": profile["in_current_league"],
-            "seasons": len(p["seasons_played"]), "wins": total["wins"], "losses": total["losses"], "ties": total["ties"],
-            "win_pct": total["win_pct"], "points_for": total["points_for"], "points_against": total["points_against"],
-            "championships": trophies["championships"]["count"], "runner_ups": trophies["runner_up"]["count"], "sackos": trophies["sackos"]["count"],
-            "playoff_appearances": trophies["playoff_appearances"]["count"], "faab_spent": faab_block["spent"], "trades": faab_block["trades"],
+            "seasons": len(p["seasons_played"]),
+            "legacy_rank": (legacy.get(uid) or {}).get("rank"), "legacy_points": (legacy.get(uid) or {}).get("points"),
+            "legacy_rank_change_week": (legacy.get(uid) or {}).get("rank_change_week"),
+            "legacy_rank_change_since_snapshot": (legacy.get(uid) or {}).get("rank_change_since_snapshot"),
+            "all_time": ({k: v for k, v in (legacy.get(uid) or {}).get("all_time", {}).items() if k != "scope"} or None),
+            "since_2019": {"asterisk": "*", "record_basis": "games played while still in contention (same as the all-time record)",
+                           **since2019_record(legacy.get(uid), total),
+                           "championships": trophies["championships"]["count"], "runner_ups": trophies["runner_up"]["count"], "sackos": trophies["sackos"]["count"],
+                           "playoff_appearances": trophies["playoff_appearances"]["count"]},
+            "points_for": total["points_for"], "points_against": total["points_against"],
+            "asterisk_fields": ["since_2019", "points_for", "points_against", "faab_spent", "trades", "luck", "efficiency", "tegridy_factor", "tegridy_rank",
+                                "faab_points_per_dollar", "faab_efficiency_rank", "faab_par_per_dollar", "faab_par_rank"],
+            "faab_spent": faab_block["spent"], "trades": faab_block["trades"],
             "faab_points_per_dollar": (fe.get("owners", {}).get(uid) or {}).get("points_per_dollar"), "faab_efficiency_rank": (fe.get("owners", {}).get(uid) or {}).get("rank"),
             "faab_par_per_dollar": (fe.get("owners", {}).get(uid) or {}).get("par_per_dollar"), "faab_par_rank": (fe.get("owners", {}).get(uid) or {}).get("par_rank"),
             "luck": profile["luck"]["luck"], "efficiency": profile["efficiency"]["efficiency"],
             "tegridy_factor": tegridy["total"], "tegridy_rank": tegridy["rank"],
         })
-    index.sort(key=lambda r: (r["tegridy_factor"], r["display_name"].lower()))
-    dump(PROFILES / "index.json", {"as_of_season": current, "owners": index})
+    index.sort(key=lambda r: (r.get("legacy_rank") or 99, r["display_name"].lower()))
+    dump(PROFILES / "index.json", {"as_of_season": current, "asterisk_legend": {"*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."}, "sorted_by": "legacy_rank", "owners": index})
 
     print(f"{'owner':<16}{'W-L-T':<10}{'PF':>9}  {'titles':>6} {'sacko':>5} {'FAAB$':>6} {'trades':>6} {'tegridy':>8}")
     for r in sorted(index, key=lambda r: -r["points_for"]):
-        print(f"{r['display_name']:<16}{r['wins']}-{r['losses']}-{r['ties']:<5}{r['points_for']:>9.1f}  {r['championships']:>6} {r['sackos']:>5} {r['faab_spent']:>6} {r['trades']:>6} {r['tegridy_factor']:>8}")
+        w = r["since_2019"]
+        print(f"{r['display_name']:<16}{w['wins']}-{w['losses']}-{w['ties']:<5}{r['points_for']:>9.1f}  {w['championships']:>6} {w['sackos']:>5} {r['faab_spent']:>6} {r['trades']:>6} {r['tegridy_factor']:>8}")
 
 
 if __name__ == "__main__":

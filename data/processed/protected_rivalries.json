@@ -1,4 +1,5 @@
 {
+ "asterisk": "*",
  "note": "a is the first-listed owner in config/league.json. Records are from a's point of view unless marked. Playoff games include every playoff-week meeting.",
  "rivalries": [
   {
@@ -2314,5 +2315,6 @@
    ],
    "upcoming_note": "Regular-season weeks only. Playoff pairings are not set until the bracket is."
   }
- ]
+ ],
+ "scope": "2019 and later only (Sleeper-era data). There is no ESPN-era head-to-head data."
 }

@@ -1,0 +1,342 @@
+{
+  "_about": "Mike's Legacy Rankings as published after the 2025 playoffs (he runs them; this config freezes that list as the starting point). The app adds everything since (2026 onward) from Sleeper data, so the rankings update on their own. Keyed by Sleeper display name. Full surnames from the post are deliberately not stored.",
+  "snapshot": {
+    "season": "2025",
+    "description": "Post-playoff Legacy Rankings after the 2025 season, as posted by Mike"
+  },
+  "formula": {
+    "championship": 100,
+    "sacko": -80,
+    "division_title": 15,
+    "playoff_appearance": 5,
+    "playoff_win": 10,
+    "led_league_in_scoring": 15,
+    "last_in_league_in_scoring": -15,
+    "perfect_season": 100,
+    "record_bonus_per_step": 20,
+    "record_bonus_step_win_pct": 0.025,
+    "record_bonus_note": "The post says \"every .25%\". Read as every .025 of win% above/below .500, truncated toward zero. With that, 5 of the 12 published totals reproduce exactly and the rest are within 20 points; a literal .0025 step would be off by hundreds."
+  },
+  "owners": {
+    "WhiskeyDicknCo": {
+      "first_name": "Mike",
+      "published_rank": 1,
+      "published_rank_change": 0,
+      "published_points": 650,
+      "championships": 4,
+      "sackos": 0,
+      "record": {
+        "wins": 106,
+        "losses": 89,
+        "ties": 0
+      },
+      "division_titles": 3,
+      "playoff_appearances": 8,
+      "playoff_record": {
+        "wins": 10,
+        "losses": 4,
+        "ties": 0
+      },
+      "scoring_bonuses": [
+        15,
+        15,
+        15
+      ],
+      "bria_bowl": {
+        "appearances": 4,
+        "wins": 4,
+        "losses": 0
+      }
+    },
+    "ToadLicker": {
+      "first_name": "Kyle",
+      "published_rank": 2,
+      "published_rank_change": 0,
+      "published_points": 505,
+      "championships": 3,
+      "sackos": 0,
+      "record": {
+        "wins": 104,
+        "losses": 95,
+        "ties": 0
+      },
+      "division_titles": 1,
+      "playoff_appearances": 11,
+      "playoff_record": {
+        "wins": 10,
+        "losses": 8,
+        "ties": 0
+      },
+      "scoring_bonuses": [
+        15,
+        -15,
+        15,
+        15
+      ],
+      "bria_bowl": {
+        "appearances": 4,
+        "wins": 3,
+        "losses": 1
+      }
+    },
+    "JSusee": {
+      "first_name": "Suze",
+      "published_rank": 3,
+      "published_rank_change": 0,
+      "published_points": 280,
+      "championships": 2,
+      "sackos": 1,
+      "record": {
+        "wins": 83,
+        "losses": 84,
+        "ties": 0
+      },
+      "division_titles": 4,
+      "playoff_appearances": 6,
+      "playoff_record": {
+        "wins": 6,
+        "losses": 4,
+        "ties": 0
+      },
+      "scoring_bonuses": [
+        15,
+        15,
+        -15
+      ],
+      "bria_bowl": null
+    },
+    "Hodaeg": {
+      "first_name": "Levi",
+      "published_rank": 4,
+      "published_rank_change": 0,
+      "published_points": 215,
+      "championships": 0,
+      "sackos": 0,
+      "record": {
+        "wins": 108,
+        "losses": 89,
+        "ties": 0
+      },
+      "division_titles": 2,
+      "playoff_appearances": 10,
+      "playoff_record": {
+        "wins": 6,
+        "losses": 10,
+        "ties": 0
+      },
+      "scoring_bonuses": [
+        15,
+        15,
+        15
+      ],
+      "bria_bowl": null
+    },
+    "DangerDave678": {
+      "first_name": "Dave",
+      "published_rank": 5,
+      "published_rank_change": -1,
+      "published_points": 205,
+      "championships": 0,
+      "sackos": 1,
+      "record": {
+        "wins": 115,
+        "losses": 82,
+        "ties": 0
+      },
+      "division_titles": 6,
+      "playoff_appearances": 10,
+      "playoff_record": {
+        "wins": 7,
+        "losses": 10,
+        "ties": 0
+      },
+      "scoring_bonuses": [
+        15
+      ],
+      "bria_bowl": {
+        "appearances": 5,
+        "wins": 0,
+        "losses": 5
+      }
+    },
+    "MrSeeYou": {
+      "first_name": "Max",
+      "published_rank": 6,
+      "published_rank_change": 0,
+      "published_points": 145,
+      "championships": 2,
+      "sackos": 2,
+      "record": {
+        "wins": 96,
+        "losses": 98,
+        "ties": 1
+      },
+      "division_titles": 2,
+      "playoff_appearances": 6,
+      "playoff_record": {
+        "wins": 6,
+        "losses": 4,
+        "ties": 1
+      },
+      "scoring_bonuses": [
+        -15
+      ],
+      "bria_bowl": null
+    },
+    "therealGandB": {
+      "first_name": "Jordan",
+      "published_rank": 7,
+      "published_rank_change": 3,
+      "published_points": 130,
+      "championships": 1,
+      "sackos": 0,
+      "record": {
+        "wins": 76,
+        "losses": 88,
+        "ties": 0
+      },
+      "division_titles": 1,
+      "playoff_appearances": 5,
+      "playoff_record": {
+        "wins": 4,
+        "losses": 4,
+        "ties": 0
+      },
+      "scoring_bonuses": [
+        -15,
+        -15
+      ],
+      "bria_bowl": null
+    },
+    "gabroni": {
+      "first_name": "Gabe",
+      "published_rank": 8,
+      "published_rank_change": -1,
+      "published_points": 30,
+      "championships": 0,
+      "sackos": 1,
+      "record": {
+        "wins": 72,
+        "losses": 69,
+        "ties": 0
+      },
+      "division_titles": 2,
+      "playoff_appearances": 5,
+      "playoff_record": {
+        "wins": 3,
+        "losses": 5,
+        "ties": 0
+      },
+      "scoring_bonuses": [
+        15
+      ],
+      "bria_bowl": null
+    },
+    "BigDogsRevenge": {
+      "first_name": "Jon",
+      "published_rank": 9,
+      "published_rank_change": -1,
+      "published_points": -15,
+      "championships": 1,
+      "sackos": 2,
+      "record": {
+        "wins": 81,
+        "losses": 94,
+        "ties": 0
+      },
+      "division_titles": 3,
+      "playoff_appearances": 5,
+      "playoff_record": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0
+      },
+      "scoring_bonuses": [
+        -15
+      ],
+      "bria_bowl": null
+    },
+    "Gingivitis": {
+      "first_name": "Ging",
+      "published_rank": 10,
+      "published_rank_change": 1,
+      "published_points": -65,
+      "championships": 0,
+      "sackos": 1,
+      "record": {
+        "wins": 70,
+        "losses": 68,
+        "ties": 0
+      },
+      "division_titles": 1,
+      "playoff_appearances": 5,
+      "playoff_record": {
+        "wins": 1,
+        "losses": 5,
+        "ties": 0
+      },
+      "scoring_bonuses": [
+        -15,
+        -15,
+        -15
+      ],
+      "bria_bowl": {
+        "appearances": 0,
+        "wins": 0,
+        "losses": 0
+      }
+    },
+    "TheBoarHouse": {
+      "first_name": "Zaid",
+      "published_rank": 11,
+      "published_rank_change": -2,
+      "published_points": -195,
+      "championships": 0,
+      "sackos": 3,
+      "record": {
+        "wins": 89,
+        "losses": 107,
+        "ties": 1
+      },
+      "division_titles": 1,
+      "playoff_appearances": 5,
+      "playoff_record": {
+        "wins": 5,
+        "losses": 5,
+        "ties": 0
+      },
+      "scoring_bonuses": [
+        -15,
+        -15,
+        -15
+      ],
+      "bria_bowl": null
+    },
+    "ChinaKing": {
+      "first_name": "Adam",
+      "published_rank": 12,
+      "published_rank_change": 0,
+      "published_points": -225,
+      "championships": 0,
+      "sackos": 3,
+      "record": {
+        "wins": 81,
+        "losses": 105,
+        "ties": 0
+      },
+      "division_titles": 1,
+      "playoff_appearances": 4,
+      "playoff_record": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 1
+      },
+      "scoring_bonuses": [],
+      "bria_bowl": {
+        "appearances": 0,
+        "wins": 0,
+        "losses": 0
+      }
+    }
+  }
+}

@@ -30,6 +30,7 @@ jobs:
       - run: python scripts/nfl_context.py
       - run: python scripts/score.py
       - run: python scripts/faab.py
+      - run: python scripts/legacy.py
       - run: python scripts/profiles.py
       - run: python scripts/rivalries.py
       - name: Commit changes

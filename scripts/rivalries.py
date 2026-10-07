@@ -190,6 +190,7 @@ def main():
 
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "protected_rivalries.json").write_text(json.dumps({
+        "asterisk": "*", "scope": "2019 and later only (Sleeper-era data). There is no ESPN-era head-to-head data.",
         "note": "a is the first-listed owner in config/league.json. Records are from a's point of view unless marked. Playoff games include every playoff-week meeting.",
         "rivalries": out}, indent=1, sort_keys=True), encoding="utf-8")
 

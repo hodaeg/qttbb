@@ -1,4 +1,45 @@
 {
+ "all_time": {
+  "bria_bowl": {
+   "appearances": 0,
+   "known": true,
+   "losses": 0,
+   "wins": 0
+  },
+  "championships": 0,
+  "division_titles": 1,
+  "perfect_seasons": 0,
+  "playoff_appearances": 4,
+  "playoff_record": {
+   "losses": 3,
+   "ties": 1,
+   "wins": 2
+  },
+  "record": {
+   "losses": 108,
+   "ties": 0,
+   "wins": 82
+  },
+  "sackos": 3,
+  "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
+  "scoring_bonuses": [],
+  "win_pct": 0.4316
+ },
+ "asterisk_legend": {
+  "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
+ },
+ "asterisk_sections": [
+  "tegridy_factor",
+  "record",
+  "trophies",
+  "scoring",
+  "luck",
+  "efficiency",
+  "faab_and_transactions",
+  "faab_efficiency",
+  "head_to_head",
+  "seasons"
+ ],
  "avatar": "bd42f4bce4f0c577f5e6ab531b1063cd",
  "current_division": "Hodag\u2019s Harem",
  "current_team_name": "China King",
@@ -821,6 +862,224 @@
   "nemesis_owner_id": "383681356686950400"
  },
  "in_current_league": true,
+ "legacy": {
+  "adjustment": 0,
+  "adjustment_note": null,
+  "era_split": {
+   "pre_2019_derived": {
+    "championships": 0,
+    "division_titles": 1,
+    "note": "Derived: Mike's published numbers minus the Sleeper-era numbers. Approximate.",
+    "playoff_appearances": 3,
+    "playoff_record": {
+     "losses": 2,
+     "ties": 1,
+     "wins": 1
+    },
+    "record": {
+     "losses": 43,
+     "ties": 0,
+     "wins": 37
+    },
+    "sackos": 2
+   },
+   "since_published_snapshot": {
+    "asterisk": "*",
+    "asterisk_note": "2019 and later only (Sleeper-era data). There is no ESPN-era data for this stat.",
+    "bria_bowl": {
+     "appearances": 0,
+     "losses": 0,
+     "wins": 0
+    },
+    "championships": 0,
+    "division_titles": 0,
+    "perfect_seasons": 0,
+    "playoff_appearances": 0,
+    "playoff_record": {
+     "losses": 0,
+     "ties": 0,
+     "wins": 0
+    },
+    "record": {
+     "losses": 3,
+     "ties": 0,
+     "wins": 1
+    },
+    "sackos": 0,
+    "scoring_bonuses": []
+   },
+   "sleeper_2019_to_2025": {
+    "asterisk": "*",
+    "asterisk_note": "2019 and later only (Sleeper-era data). There is no ESPN-era data for this stat.",
+    "bria_bowl": {
+     "appearances": 0,
+     "losses": 0,
+     "wins": 0
+    },
+    "championships": 0,
+    "division_titles": 0,
+    "perfect_seasons": 0,
+    "playoff_appearances": 1,
+    "playoff_record": {
+     "losses": 1,
+     "ties": 0,
+     "wins": 1
+    },
+    "record": {
+     "losses": 62,
+     "ties": 0,
+     "wins": 44
+    },
+    "sackos": 1,
+    "scoring_bonuses": [
+     -15
+    ]
+   }
+  },
+  "point_breakdown": {
+   "adjustment": 0,
+   "championships": 0,
+   "division_titles": 15,
+   "perfect_seasons": 0,
+   "playoff_appearances": 20,
+   "playoff_wins": 20,
+   "record_bonus": -40,
+   "sackos": -240,
+   "scoring_bonuses": 0
+  },
+  "points": -225,
+  "points_ahead_of_next_rank_down": null,
+  "points_since_snapshot": 0,
+  "points_to_next_rank_up": {
+   "first_name": "Zaid",
+   "owner_id": "471359672478068736",
+   "points": 30
+  },
+  "published_points": -225,
+  "published_rank_change": 0,
+  "rank": 12,
+  "rank_change_since_snapshot": 0,
+  "rank_change_week": 0,
+  "sleeper_era_by_season": {
+   "asterisk": "*",
+   "asterisk_note": "2019 and later only (Sleeper-era data). There is no ESPN-era data for this stat.",
+   "seasons": {
+    "2019": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "8-7",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 15,
+     "playoff_appearance": true,
+     "playoff_wins": 1,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2020": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "6-8",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 0,
+     "playoff_appearance": false,
+     "playoff_wins": 0,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2021": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "6-9",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 0,
+     "playoff_appearance": false,
+     "playoff_wins": 0,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2022": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "5-11",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": -80,
+     "playoff_appearance": false,
+     "playoff_wins": 0,
+     "sacko": true,
+     "season_complete": true
+    },
+    "2023": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "7-8",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 0,
+     "playoff_appearance": false,
+     "playoff_wins": 0,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2024": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "5-11",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 0,
+     "playoff_appearance": false,
+     "playoff_wins": 0,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2025": {
+     "after_published_snapshot": false,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "7-8",
+     "division_title": false,
+     "last_in_league_in_scoring": true,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": -15,
+     "playoff_appearance": false,
+     "playoff_wins": 0,
+     "sacko": false,
+     "season_complete": true
+    },
+    "2026": {
+     "after_published_snapshot": true,
+     "bria_bowl_appearance": false,
+     "championship": false,
+     "counted_record": "1-3",
+     "division_title": false,
+     "last_in_league_in_scoring": false,
+     "led_league_in_scoring": false,
+     "legacy_points_from_events": 0,
+     "playoff_appearance": false,
+     "playoff_wins": 0,
+     "sacko": false,
+     "season_complete": false
+    }
+   }
+  },
+  "snapshot_rank": 12
+ },
  "luck": {
   "expected_wins": 40.43,
   "luck": -1.43,
@@ -829,7 +1088,8 @@
  },
  "owner_id": "471360899853053952",
  "record": {
-  "note": "Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly.",
+  "asterisk": "*",
+  "note": "2019 and later only; the legacy-inclusive all-time record is in `all_time`. Postseason includes every playoff-week game (consolation and third-place included). Points come from the weekly matchups (commissioner-adjusted where set). Sleeper's own season standings totals differ slightly in a few seasons; each season object carries sleeper_standings_reported for comparison. Win-loss records match Sleeper exactly.",
   "postseason": {
    "avg_points_against": 105.42,
    "avg_points_for": 106.36,

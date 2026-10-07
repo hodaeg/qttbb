@@ -1,0 +1,60 @@
+{
+ "about": "The league was on ESPN before 2019 and that data can't be pulled. Anything derived from Sleeper data starts in 2019, so the UI should show an asterisk next to it. Stats that include the ESPN years come only from Mike's published Legacy Rankings baseline.",
+ "asterisk_2019_plus": {
+  "files": [
+   "tegridy_alltime.json",
+   "<season>/tegridy.json",
+   "penalties.json",
+   "injury_starts.json",
+   "bye_starts.json",
+   "faab_efficiency.json",
+   "rivalries.json",
+   "protected_rivalries.json",
+   "<season>/weeks.json",
+   "<season>/efficiency.json"
+  ],
+  "index_fields": [
+   "since_2019",
+   "faab_spent",
+   "trades",
+   "luck",
+   "efficiency",
+   "tegridy_factor",
+   "tegridy_rank",
+   "faab_points_per_dollar",
+   "faab_efficiency_rank",
+   "faab_par_per_dollar",
+   "faab_par_rank",
+   "points_for",
+   "points_against"
+  ],
+  "note": "Points for/against, runner-ups, luck, efficiency, FAAB, trades, head-to-head and the Tegridy Factor have no ESPN-era data at all. The 2019+ versions of record, titles, sackos, playoff stats are also kept (as `since_2019`) next to the legacy-inclusive all-time numbers.",
+  "owner_profile_sections": [
+   "tegridy_factor",
+   "record",
+   "trophies",
+   "scoring",
+   "luck",
+   "efficiency",
+   "faab_and_transactions",
+   "faab_efficiency",
+   "head_to_head",
+   "seasons"
+  ]
+ },
+ "legacy_inclusive": {
+  "stats": [
+   "legacy points and rank",
+   "all-time record and win%",
+   "championships",
+   "sackos",
+   "division titles",
+   "playoff appearances",
+   "playoff record",
+   "Bria Bowl appearances/record (where Mike's post gives them)"
+  ],
+  "where": "owner_profiles/<id>.json -> all_time and legacy; legacy_rankings.json; owner_profiles/index.json -> all_time, legacy_*"
+ },
+ "meaning": "2019 and later only (Sleeper-era data). There is no ESPN-era data for this stat.",
+ "symbol": "*"
+}

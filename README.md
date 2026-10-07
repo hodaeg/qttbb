@@ -11,6 +11,7 @@ python scripts/nfl_injuries.py  # official NFL injury reports, every season -> d
 python scripts/nfl_context.py  # NFL schedule + each player's team by week (for bye detection)
 python scripts/score.py      # -> data/processed/
 python scripts/faab.py       # FAAB efficiency ("Bang for Buck") -> data/processed/faab_efficiency.json
+python scripts/legacy.py     # Legacy Rankings (Mike's list + Sleeper since) -> data/processed/legacy_rankings.json
 python scripts/profiles.py   # per-owner profiles -> data/processed/owner_profiles/
 python scripts/rivalries.py  # protected rivalries -> data/processed/protected_rivalries.json
 python scripts/snapshot.py   # game-day lineup + injury snapshot -> data/raw/snapshots/
@@ -23,6 +24,7 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 | Path | What |
 |---|---|
 | `config/league.json` | League ID, protected rivalries, Tegridy Factor weights |
+| `config/legacy_baseline.json` | Mike's published Legacy Rankings (through the 2025 playoffs, ESPN years included) and the scoring formula |
 | `config/members.json` | First name for each Sleeper username (shown in the app) |
 | `config/commissioner_penalties.json` | Penalties the commissioner applies outside games (missed league notes); Sleeper doesn't log them |
 | `scripts/` | Fetch, snapshot and scoring code |
@@ -57,6 +59,10 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
   sources:  [ { name, url } ] }
 ```
 `kind` is one of `injured_starter_out`, `injured_starter_doubtful`, `questionable_did_not_play`, `bye_week_starter`, `missed_league_note`. For `missed_league_note` (commissioner-applied, not tied to a game) `week`, `player`, `nfl_game`, `matchup` and `bench_option` are null. Events in `<season>/tegridy.json` link here through `penalty_id`.
+
+**`legacy_rankings.json`** — the Legacy Rankings, updated automatically (D30). `{ name, as_of, snapshot, formula, asterisk_legend, assumptions, review_notes_for_mike, rankings: [ { rank, points, published_points, points_since_snapshot, adjustment, snapshot_rank, rank_change_since_snapshot, rank_change_week, all_time (legacy-inclusive record, titles, sackos, division titles, playoff apps/record, scoring bonuses, Bria Bowl), point_breakdown, points_to_next_rank_up, points_ahead_of_next_rank_down, era_split (pre_2019_derived, sleeper_2019_to_2025*, since_published_snapshot*), sleeper_era_by_season* } ] }`. Weekly snapshots in `legacy/history/`.
+
+**`asterisks.json`** — which stats are 2019+ only (Sleeper era) and need an asterisk, and which include the ESPN years. Everything Sleeper-derived starts in 2019.
 
 **`faab_efficiency.json`** — "Bang for Buck": starting-lineup points per FAAB dollar (D27). `{ name, definition, league, owners: { "<owner_id>": { paid_claims, dollars_spent, points_from_paid_claims, points_per_dollar, hit_rate, best_value, most_points, biggest_bust, by_season, rank, points_above_replacement, par_per_dollar, par_rank, best_par_claim, worst_par_claim } }, replacement_levels: { "<season>": { "<pos>": points per game } }, claims: [ { season, week, owner_id, player, pos, bid, weeks_rostered, weeks_started, points_started, points_per_dollar, points_above_replacement, par_per_dollar, weekly: [ { week, points, replacement_level, above_replacement } ], outcome } ] }`. Replacement level = the (N+1)th best player at the position by season points per game (D28). Also on each owner profile as `faab_efficiency`.
 
