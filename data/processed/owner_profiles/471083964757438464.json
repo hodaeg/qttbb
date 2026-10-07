@@ -21,14 +21,14 @@
   },
   "budget_per_season": 100,
   "drops": 133,
-  "faab_taken_as_penalty": 50,
+  "faab_taken_as_penalty": 62,
   "free_agent_adds": 80,
   "most_frequent_trade_partner": {
    "owner_id": "471345530597797888",
    "trades": 1
   },
   "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
-  "remaining_unexplained": 12,
+  "remaining_unexplained": 0,
   "sleeper_reported_used": 555,
   "spent": 466,
   "spent_per_season": {
@@ -244,9 +244,9 @@
     "adds": 16,
     "budget": 100,
     "drops": 16,
-    "faab_taken_as_penalty": 0,
+    "faab_taken_as_penalty": 12,
     "free_agent_adds": 12,
-    "remaining_unexplained": 12,
+    "remaining_unexplained": 0,
     "sleeper_reported_used": 74,
     "spent": 62,
     "traded_in": 0,
@@ -723,10 +723,10 @@
   "by_kind": {
    "bye_week_starter": 1,
    "injured_starter_out": 2,
-   "missed_league_note": 1
+   "missed_league_note": 2
   },
   "by_season": {
-   "2019": 0,
+   "2019": 5,
    "2020": 0,
    "2021": 0,
    "2022": 0,
@@ -736,14 +736,14 @@
    "2026": 0
   },
   "clean_seasons": [
-   "2019",
    "2020",
    "2021",
    "2022"
   ],
   "excluded_penalty_ids": [],
-  "penalty_count": 4,
+  "penalty_count": 5,
   "penalty_ids": [
+   "2019-note-r5-1",
    "2023-w13-r5-bye_week_starter-BAL",
    "2024-w06-r5-injured_starter_out-11628",
    "2025-w08-r5-injured_starter_out-11566",
@@ -752,11 +752,11 @@
   "points_by_kind": {
    "bye_week_starter": 17.5,
    "injured_starter_out": 16.0,
-   "missed_league_note": 5
+   "missed_league_note": 10
   },
   "rank": 10,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 38.5,
+  "total": 43.5,
   "worst_penalty_id": "2023-w13-r5-bye_week_starter-BAL"
  },
  "trophies": {

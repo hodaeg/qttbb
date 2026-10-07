@@ -66,6 +66,22 @@
       "faab_taken": 20,
       "instances": 1,
       "status": "confirmed"
+    },
+    {
+      "owner": "BigDogsRevenge",
+      "season": "2019",
+      "reason": "missed_league_note",
+      "faab_taken": 12,
+      "instances": 1,
+      "status": "confirmed"
+    },
+    {
+      "owner": "gabroni",
+      "season": "2022",
+      "reason": "missed_league_note",
+      "faab_taken": 11,
+      "instances": 1,
+      "status": "confirmed"
     }
   ]
 }

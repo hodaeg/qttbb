@@ -25,12 +25,6 @@
  },
  {
   "events": [],
-  "owner_id": "471083964757438464",
-  "roster_id": 5,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
   "owner_id": "471345530597797888",
   "roster_id": 6,
   "tegridy_factor": 0
@@ -80,5 +74,21 @@
   "owner_id": "471368473092550656",
   "roster_id": 12,
   "tegridy_factor": 4.5
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 5,
+    "detail": "BigDogsRevenge did not post the annual league note, so $12 of FAAB was taken.",
+    "kind": "missed_league_note",
+    "multiplier": 1.0,
+    "penalty": 5,
+    "penalty_id": "2019-note-r5-1",
+    "week": null
+   }
+  ],
+  "owner_id": "471083964757438464",
+  "roster_id": 5,
+  "tegridy_factor": 5
  }
 ]

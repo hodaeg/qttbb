@@ -21,14 +21,14 @@
   },
   "budget_per_season": 100,
   "drops": 268,
-  "faab_taken_as_penalty": 0,
+  "faab_taken_as_penalty": 11,
   "free_agent_adds": 187,
   "most_frequent_trade_partner": {
    "owner_id": "471366618241298432",
    "trades": 2
   },
   "note": "spent = winning bids in the transaction log. Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
-  "remaining_unexplained": 11,
+  "remaining_unexplained": 0,
   "sleeper_reported_used": 621,
   "spent": 610,
   "spent_per_season": {
@@ -421,9 +421,9 @@
     "adds": 36,
     "budget": 100,
     "drops": 36,
-    "faab_taken_as_penalty": 0,
+    "faab_taken_as_penalty": 11,
     "free_agent_adds": 26,
-    "remaining_unexplained": 11,
+    "remaining_unexplained": 0,
     "sleeper_reported_used": 99,
     "spent": 88,
     "traded_in": 0,
@@ -720,12 +720,14 @@
   "2026"
  ],
  "tegridy_factor": {
-  "by_kind": {},
+  "by_kind": {
+   "missed_league_note": 1
+  },
   "by_season": {
    "2019": 0,
    "2020": 0,
    "2021": 0,
-   "2022": 0,
+   "2022": 5,
    "2023": 0,
    "2024": 0,
    "2025": 0,
@@ -735,19 +737,22 @@
    "2019",
    "2020",
    "2021",
-   "2022",
    "2023",
    "2024",
    "2025"
   ],
   "excluded_penalty_ids": [],
-  "penalty_count": 0,
-  "penalty_ids": [],
-  "points_by_kind": {},
-  "rank": 1,
+  "penalty_count": 1,
+  "penalty_ids": [
+   "2022-note-r4-1"
+  ],
+  "points_by_kind": {
+   "missed_league_note": 5
+  },
+  "rank": 3,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 0,
-  "worst_penalty_id": null
+  "total": 5,
+  "worst_penalty_id": "2022-note-r4-1"
  },
  "trophies": {
   "championships": {

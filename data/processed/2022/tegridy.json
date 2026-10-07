@@ -13,12 +13,6 @@
  },
  {
   "events": [],
-  "owner_id": "79761560662589440",
-  "roster_id": 4,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
   "owner_id": "471083964757438464",
   "roster_id": 5,
   "tegridy_factor": 0
@@ -52,6 +46,22 @@
   "owner_id": "471366618241298432",
   "roster_id": 11,
   "tegridy_factor": 0
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 5,
+    "detail": "gabroni did not post the annual league note, so $11 of FAAB was taken.",
+    "kind": "missed_league_note",
+    "multiplier": 1.0,
+    "penalty": 5,
+    "penalty_id": "2022-note-r4-1",
+    "week": null
+   }
+  ],
+  "owner_id": "79761560662589440",
+  "roster_id": 4,
+  "tegridy_factor": 5
  },
  {
   "events": [
