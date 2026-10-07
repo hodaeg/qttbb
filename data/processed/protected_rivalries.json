@@ -1,0 +1,2318 @@
+{
+ "note": "a is the first-listed owner in config/league.json. Records are from a's point of view unless marked. Playoff games include every playoff-week meeting.",
+ "rivalries": [
+  {
+   "a": {
+    "display_name": "Hodaeg",
+    "first_name": "Levi",
+    "owner_id": "383681356686950400"
+   },
+   "b": {
+    "display_name": "gabroni",
+    "first_name": "Gabe",
+    "owner_id": "79761560662589440"
+   },
+   "biggest_wins": {
+    "a": {
+     "a_points": 128.6,
+     "b_points": 82.72,
+     "bracket_game": null,
+     "margin": 45.88,
+     "playoff": false,
+     "season": "2024",
+     "week": 6,
+     "winner": "383681356686950400"
+    },
+    "b": {
+     "a_points": 125.2,
+     "b_points": 156.04,
+     "bracket_game": null,
+     "margin": 30.84,
+     "playoff": false,
+     "season": "2025",
+     "week": 9,
+     "winner": "79761560662589440"
+    }
+   },
+   "by_season": {
+    "2019": {
+     "a_avg": 91.24,
+     "a_points": 91.24,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 97.54,
+     "b_points": 97.54,
+     "b_wins": 1,
+     "games": 1,
+     "series_winner": "79761560662589440",
+     "ties": 0
+    },
+    "2020": {
+     "a_avg": 140.58,
+     "a_points": 140.58,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 104.22,
+     "b_points": 104.22,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "383681356686950400",
+     "ties": 0
+    },
+    "2021": {
+     "a_avg": 79.08,
+     "a_points": 79.08,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 72.32,
+     "b_points": 72.32,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "383681356686950400",
+     "ties": 0
+    },
+    "2022": {
+     "a_avg": 110.72,
+     "a_points": 110.72,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 117.8,
+     "b_points": 117.8,
+     "b_wins": 1,
+     "games": 1,
+     "series_winner": "79761560662589440",
+     "ties": 0
+    },
+    "2023": {
+     "a_avg": 102.7,
+     "a_points": 102.7,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 99.68,
+     "b_points": 99.68,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "383681356686950400",
+     "ties": 0
+    },
+    "2024": {
+     "a_avg": 128.6,
+     "a_points": 128.6,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 82.72,
+     "b_points": 82.72,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "383681356686950400",
+     "ties": 0
+    },
+    "2025": {
+     "a_avg": 116.32,
+     "a_points": 232.64,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 126.53,
+     "b_points": 253.06,
+     "b_wins": 1,
+     "games": 2,
+     "series_winner": null,
+     "ties": 0
+    }
+   },
+   "closest_game": {
+    "a_points": 102.7,
+    "b_points": 99.68,
+    "bracket_game": null,
+    "margin": 3.02,
+    "playoff": false,
+    "season": "2023",
+    "week": 9,
+    "winner": "383681356686950400"
+   },
+   "current_streak": {
+    "display_name": "Hodaeg",
+    "first_name": "Levi",
+    "length": 1,
+    "owner_id": "383681356686950400",
+    "since": {
+     "season": "2025",
+     "week": 17
+    }
+   },
+   "games": [
+    {
+     "a_points": 91.24,
+     "b_points": 97.54,
+     "bracket_game": null,
+     "margin": 6.3,
+     "playoff": false,
+     "season": "2019",
+     "week": 11,
+     "winner": "79761560662589440"
+    },
+    {
+     "a_points": 140.58,
+     "b_points": 104.22,
+     "bracket_game": null,
+     "margin": 36.36,
+     "playoff": false,
+     "season": "2020",
+     "week": 4,
+     "winner": "383681356686950400"
+    },
+    {
+     "a_points": 79.08,
+     "b_points": 72.32,
+     "bracket_game": null,
+     "margin": 6.76,
+     "playoff": false,
+     "season": "2021",
+     "week": 10,
+     "winner": "383681356686950400"
+    },
+    {
+     "a_points": 110.72,
+     "b_points": 117.8,
+     "bracket_game": null,
+     "margin": 7.08,
+     "playoff": false,
+     "season": "2022",
+     "week": 11,
+     "winner": "79761560662589440"
+    },
+    {
+     "a_points": 102.7,
+     "b_points": 99.68,
+     "bracket_game": null,
+     "margin": 3.02,
+     "playoff": false,
+     "season": "2023",
+     "week": 9,
+     "winner": "383681356686950400"
+    },
+    {
+     "a_points": 128.6,
+     "b_points": 82.72,
+     "bracket_game": null,
+     "margin": 45.88,
+     "playoff": false,
+     "season": "2024",
+     "week": 6,
+     "winner": "383681356686950400"
+    },
+    {
+     "a_points": 125.2,
+     "b_points": 156.04,
+     "bracket_game": null,
+     "margin": 30.84,
+     "playoff": false,
+     "season": "2025",
+     "week": 9,
+     "winner": "79761560662589440"
+    },
+    {
+     "a_points": 107.44,
+     "b_points": 97.02,
+     "bracket_game": "Third-place game",
+     "margin": 10.42,
+     "playoff": true,
+     "season": "2025",
+     "week": 17,
+     "winner": "383681356686950400"
+    }
+   ],
+   "headline": "Levi leads the series 5-3",
+   "highest_scoring_game": {
+    "a_points": 125.2,
+    "b_points": 156.04,
+    "bracket_game": null,
+    "margin": 30.84,
+    "playoff": false,
+    "season": "2025",
+    "week": 9,
+    "winner": "79761560662589440"
+   },
+   "last_5": [
+    "L",
+    "W",
+    "W",
+    "L",
+    "W"
+   ],
+   "last_5_note": "From the first-listed owner's point of view (oldest to newest).",
+   "last_meeting": {
+    "a_points": 107.44,
+    "b_points": 97.02,
+    "bracket_game": "Third-place game",
+    "margin": 10.42,
+    "playoff": true,
+    "season": "2025",
+    "week": 17,
+    "winner": "383681356686950400"
+   },
+   "longest_streaks": {
+    "a": 2,
+    "b": 1
+   },
+   "name": "Levi vs Gabe",
+   "playoff_meetings": [
+    {
+     "a_points": 107.44,
+     "b_points": 97.02,
+     "bracket_game": "Third-place game",
+     "margin": 10.42,
+     "playoff": true,
+     "playoff_round": 3,
+     "season": "2025",
+     "week": 17,
+     "winner": "383681356686950400"
+    }
+   ],
+   "seasons_won": {
+    "a": 4,
+    "b": 2,
+    "split": 1
+   },
+   "series": {
+    "all_time": {
+     "a_avg": 110.69,
+     "a_points": 885.56,
+     "a_win_pct": 0.625,
+     "a_wins": 5,
+     "b_avg": 103.42,
+     "b_points": 827.34,
+     "b_wins": 3,
+     "games": 8,
+     "ties": 0
+    },
+    "leader_owner_id": "383681356686950400",
+    "playoffs": {
+     "a_avg": 107.44,
+     "a_points": 107.44,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 97.02,
+     "b_points": 97.02,
+     "b_wins": 0,
+     "games": 1,
+     "ties": 0
+    },
+    "regular_season": {
+     "a_avg": 111.16,
+     "a_points": 778.12,
+     "a_win_pct": 0.571,
+     "a_wins": 4,
+     "b_avg": 104.33,
+     "b_points": 730.32,
+     "b_wins": 3,
+     "games": 7,
+     "ties": 0
+    }
+   },
+   "side_by_side": {
+    "a": {
+     "all_time_record": "68-49",
+     "championships": 0,
+     "display_name": "Hodaeg",
+     "faab_par_per_dollar": -0.08,
+     "first_name": "Levi",
+     "luck": 7.82,
+     "owner_id": "383681356686950400",
+     "points_for": 12316.48,
+     "sackos": 0,
+     "team_name": "Hodag Forest Lurkers",
+     "tegridy_factor": 14.0,
+     "tegridy_rank": 6,
+     "win_pct": 0.5812
+    },
+    "b": {
+     "all_time_record": "58-58",
+     "championships": 0,
+     "display_name": "gabroni",
+     "faab_par_per_dollar": 0.49,
+     "first_name": "Gabe",
+     "luck": -3.64,
+     "owner_id": "79761560662589440",
+     "points_for": 12368.84,
+     "sackos": 0,
+     "team_name": "G H O S T\u2122",
+     "tegridy_factor": 5,
+     "tegridy_rank": 2,
+     "win_pct": 0.5
+    }
+   },
+   "trades": [],
+   "upcoming_meetings": [
+    {
+     "playoff": false,
+     "season": "2026",
+     "week": 14
+    }
+   ],
+   "upcoming_note": "Regular-season weeks only. Playoff pairings are not set until the bracket is."
+  },
+  {
+   "a": {
+    "display_name": "MrSeeYou",
+    "first_name": "Max",
+    "owner_id": "423560331814510592"
+   },
+   "b": {
+    "display_name": "BigDogsRevenge",
+    "first_name": "Jon",
+    "owner_id": "471083964757438464"
+   },
+   "biggest_wins": {
+    "a": {
+     "a_points": 169.82,
+     "b_points": 84.08,
+     "bracket_game": null,
+     "margin": 85.74,
+     "playoff": false,
+     "season": "2024",
+     "week": 3,
+     "winner": "423560331814510592"
+    },
+    "b": {
+     "a_points": 75.2,
+     "b_points": 115.1,
+     "bracket_game": null,
+     "margin": 39.9,
+     "playoff": false,
+     "season": "2022",
+     "week": 3,
+     "winner": "471083964757438464"
+    }
+   },
+   "by_season": {
+    "2019": {
+     "a_avg": 124.44,
+     "a_points": 124.44,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 118.36,
+     "b_points": 118.36,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "423560331814510592",
+     "ties": 0
+    },
+    "2020": {
+     "a_avg": 114.04,
+     "a_points": 228.08,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 117.35,
+     "b_points": 234.7,
+     "b_wins": 1,
+     "games": 2,
+     "series_winner": null,
+     "ties": 0
+    },
+    "2021": {
+     "a_avg": 119.78,
+     "a_points": 119.78,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 129.9,
+     "b_points": 129.9,
+     "b_wins": 1,
+     "games": 1,
+     "series_winner": "471083964757438464",
+     "ties": 0
+    },
+    "2022": {
+     "a_avg": 102.79,
+     "a_points": 205.58,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 101.25,
+     "b_points": 202.5,
+     "b_wins": 1,
+     "games": 2,
+     "series_winner": null,
+     "ties": 0
+    },
+    "2023": {
+     "a_avg": 106.96,
+     "a_points": 106.96,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 106.56,
+     "b_points": 106.56,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "423560331814510592",
+     "ties": 0
+    },
+    "2024": {
+     "a_avg": 155.3,
+     "a_points": 310.6,
+     "a_win_pct": 1.0,
+     "a_wins": 2,
+     "b_avg": 87.82,
+     "b_points": 175.64,
+     "b_wins": 0,
+     "games": 2,
+     "series_winner": "423560331814510592",
+     "ties": 0
+    },
+    "2025": {
+     "a_avg": 88.48,
+     "a_points": 176.96,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 104.5,
+     "b_points": 209.0,
+     "b_wins": 1,
+     "games": 2,
+     "series_winner": null,
+     "ties": 0
+    }
+   },
+   "closest_game": {
+    "a_points": 106.96,
+    "b_points": 106.56,
+    "bracket_game": null,
+    "margin": 0.4,
+    "playoff": false,
+    "season": "2023",
+    "week": 8,
+    "winner": "423560331814510592"
+   },
+   "current_streak": {
+    "display_name": "BigDogsRevenge",
+    "first_name": "Jon",
+    "length": 1,
+    "owner_id": "471083964757438464",
+    "since": {
+     "season": "2025",
+     "week": 15
+    }
+   },
+   "games": [
+    {
+     "a_points": 124.44,
+     "b_points": 118.36,
+     "bracket_game": null,
+     "margin": 6.08,
+     "playoff": false,
+     "season": "2019",
+     "week": 3,
+     "winner": "423560331814510592"
+    },
+    {
+     "a_points": 139.04,
+     "b_points": 110.16,
+     "bracket_game": null,
+     "margin": 28.88,
+     "playoff": false,
+     "season": "2020",
+     "week": 2,
+     "winner": "423560331814510592"
+    },
+    {
+     "a_points": 89.04,
+     "b_points": 124.54,
+     "bracket_game": null,
+     "margin": 35.5,
+     "playoff": false,
+     "season": "2020",
+     "week": 13,
+     "winner": "471083964757438464"
+    },
+    {
+     "a_points": 119.78,
+     "b_points": 129.9,
+     "bracket_game": null,
+     "margin": 10.12,
+     "playoff": false,
+     "season": "2021",
+     "week": 5,
+     "winner": "471083964757438464"
+    },
+    {
+     "a_points": 75.2,
+     "b_points": 115.1,
+     "bracket_game": null,
+     "margin": 39.9,
+     "playoff": false,
+     "season": "2022",
+     "week": 3,
+     "winner": "471083964757438464"
+    },
+    {
+     "a_points": 130.38,
+     "b_points": 87.4,
+     "bracket_game": null,
+     "margin": 42.98,
+     "playoff": false,
+     "season": "2022",
+     "week": 14,
+     "winner": "423560331814510592"
+    },
+    {
+     "a_points": 106.96,
+     "b_points": 106.56,
+     "bracket_game": null,
+     "margin": 0.4,
+     "playoff": false,
+     "season": "2023",
+     "week": 8,
+     "winner": "423560331814510592"
+    },
+    {
+     "a_points": 169.82,
+     "b_points": 84.08,
+     "bracket_game": null,
+     "margin": 85.74,
+     "playoff": false,
+     "season": "2024",
+     "week": 3,
+     "winner": "423560331814510592"
+    },
+    {
+     "a_points": 140.78,
+     "b_points": 91.56,
+     "bracket_game": null,
+     "margin": 49.22,
+     "playoff": false,
+     "season": "2024",
+     "week": 14,
+     "winner": "423560331814510592"
+    },
+    {
+     "a_points": 84.66,
+     "b_points": 80.92,
+     "bracket_game": null,
+     "margin": 3.74,
+     "playoff": false,
+     "season": "2025",
+     "week": 9,
+     "winner": "423560331814510592"
+    },
+    {
+     "a_points": 92.3,
+     "b_points": 128.08,
+     "bracket_game": "Losers bracket, round 1",
+     "margin": 35.78,
+     "playoff": true,
+     "season": "2025",
+     "week": 15,
+     "winner": "471083964757438464"
+    }
+   ],
+   "headline": "Max leads the series 7-4",
+   "highest_scoring_game": {
+    "a_points": 169.82,
+    "b_points": 84.08,
+    "bracket_game": null,
+    "margin": 85.74,
+    "playoff": false,
+    "season": "2024",
+    "week": 3,
+    "winner": "423560331814510592"
+   },
+   "last_5": [
+    "W",
+    "W",
+    "W",
+    "W",
+    "L"
+   ],
+   "last_5_note": "From the first-listed owner's point of view (oldest to newest).",
+   "last_meeting": {
+    "a_points": 92.3,
+    "b_points": 128.08,
+    "bracket_game": "Losers bracket, round 1",
+    "margin": 35.78,
+    "playoff": true,
+    "season": "2025",
+    "week": 15,
+    "winner": "471083964757438464"
+   },
+   "longest_streaks": {
+    "a": 5,
+    "b": 3
+   },
+   "name": "Max vs Jon",
+   "playoff_meetings": [
+    {
+     "a_points": 92.3,
+     "b_points": 128.08,
+     "bracket_game": "Losers bracket, round 1",
+     "margin": 35.78,
+     "playoff": true,
+     "playoff_round": 1,
+     "season": "2025",
+     "week": 15,
+     "winner": "471083964757438464"
+    }
+   ],
+   "seasons_won": {
+    "a": 3,
+    "b": 1,
+    "split": 3
+   },
+   "series": {
+    "all_time": {
+     "a_avg": 115.67,
+     "a_points": 1272.4,
+     "a_win_pct": 0.636,
+     "a_wins": 7,
+     "b_avg": 106.97,
+     "b_points": 1176.66,
+     "b_wins": 4,
+     "games": 11,
+     "ties": 0
+    },
+    "leader_owner_id": "423560331814510592",
+    "playoffs": {
+     "a_avg": 92.3,
+     "a_points": 92.3,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 128.08,
+     "b_points": 128.08,
+     "b_wins": 1,
+     "games": 1,
+     "ties": 0
+    },
+    "regular_season": {
+     "a_avg": 118.01,
+     "a_points": 1180.1,
+     "a_win_pct": 0.7,
+     "a_wins": 7,
+     "b_avg": 104.86,
+     "b_points": 1048.58,
+     "b_wins": 3,
+     "games": 10,
+     "ties": 0
+    }
+   },
+   "side_by_side": {
+    "a": {
+     "all_time_record": "52-63",
+     "championships": 0,
+     "display_name": "MrSeeYou",
+     "faab_par_per_dollar": -0.18,
+     "first_name": "Max",
+     "luck": -0.41,
+     "owner_id": "423560331814510592",
+     "points_for": 11655.4,
+     "sackos": 1,
+     "team_name": "Gotham Rogues",
+     "tegridy_factor": 21.0,
+     "tegridy_rank": 7,
+     "win_pct": 0.4522
+    },
+    "b": {
+     "all_time_record": "53-64",
+     "championships": 1,
+     "display_name": "BigDogsRevenge",
+     "faab_par_per_dollar": 0.19,
+     "first_name": "Jon",
+     "luck": -4.5,
+     "owner_id": "471083964757438464",
+     "points_for": 12104.38,
+     "sackos": 1,
+     "team_name": "Big Dog\u2019s Revenge",
+     "tegridy_factor": 43.5,
+     "tegridy_rank": 10,
+     "win_pct": 0.453
+    }
+   },
+   "trades": [],
+   "upcoming_meetings": [
+    {
+     "playoff": false,
+     "season": "2026",
+     "week": 14
+    }
+   ],
+   "upcoming_note": "Regular-season weeks only. Playoff pairings are not set until the bracket is."
+  },
+  {
+   "a": {
+    "display_name": "JSusee",
+    "first_name": "Suze",
+    "owner_id": "471074114505797632"
+   },
+   "b": {
+    "display_name": "TheBoarHouse",
+    "first_name": "Zaid",
+    "owner_id": "471359672478068736"
+   },
+   "biggest_wins": {
+    "a": {
+     "a_points": 149.58,
+     "b_points": 106.5,
+     "bracket_game": null,
+     "margin": 43.08,
+     "playoff": false,
+     "season": "2021",
+     "week": 1,
+     "winner": "471074114505797632"
+    },
+    "b": {
+     "a_points": 73.24,
+     "b_points": 117.5,
+     "bracket_game": null,
+     "margin": 44.26,
+     "playoff": false,
+     "season": "2023",
+     "week": 2,
+     "winner": "471359672478068736"
+    }
+   },
+   "by_season": {
+    "2019": {
+     "a_avg": 117.18,
+     "a_points": 117.18,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 97.6,
+     "b_points": 97.6,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "471074114505797632",
+     "ties": 0
+    },
+    "2020": {
+     "a_avg": 136.0,
+     "a_points": 136.0,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 125.4,
+     "b_points": 125.4,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "471074114505797632",
+     "ties": 0
+    },
+    "2021": {
+     "a_avg": 144.15,
+     "a_points": 288.3,
+     "a_win_pct": 1.0,
+     "a_wins": 2,
+     "b_avg": 110.15,
+     "b_points": 220.3,
+     "b_wins": 0,
+     "games": 2,
+     "series_winner": "471074114505797632",
+     "ties": 0
+    },
+    "2022": {
+     "a_avg": 99.44,
+     "a_points": 298.32,
+     "a_win_pct": 0.333,
+     "a_wins": 1,
+     "b_avg": 105.38,
+     "b_points": 316.14,
+     "b_wins": 2,
+     "games": 3,
+     "series_winner": "471359672478068736",
+     "ties": 0
+    },
+    "2023": {
+     "a_avg": 96.75,
+     "a_points": 193.5,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 99.55,
+     "b_points": 199.1,
+     "b_wins": 1,
+     "games": 2,
+     "series_winner": null,
+     "ties": 0
+    },
+    "2024": {
+     "a_avg": 110.5,
+     "a_points": 110.5,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 119.54,
+     "b_points": 119.54,
+     "b_wins": 1,
+     "games": 1,
+     "series_winner": "471359672478068736",
+     "ties": 0
+    },
+    "2025": {
+     "a_avg": 119.19,
+     "a_points": 238.38,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 122.02,
+     "b_points": 244.04,
+     "b_wins": 1,
+     "games": 2,
+     "series_winner": null,
+     "ties": 0
+    }
+   },
+   "closest_game": {
+    "a_points": 121.84,
+    "b_points": 119.6,
+    "bracket_game": "Losers bracket, round 2",
+    "margin": 2.24,
+    "playoff": true,
+    "season": "2025",
+    "week": 16,
+    "winner": "471074114505797632"
+   },
+   "current_streak": {
+    "display_name": "JSusee",
+    "first_name": "Suze",
+    "length": 1,
+    "owner_id": "471074114505797632",
+    "since": {
+     "season": "2025",
+     "week": 16
+    }
+   },
+   "games": [
+    {
+     "a_points": 117.18,
+     "b_points": 97.6,
+     "bracket_game": null,
+     "margin": 19.58,
+     "playoff": false,
+     "season": "2019",
+     "week": 11,
+     "winner": "471074114505797632"
+    },
+    {
+     "a_points": 136.0,
+     "b_points": 125.4,
+     "bracket_game": null,
+     "margin": 10.6,
+     "playoff": false,
+     "season": "2020",
+     "week": 5,
+     "winner": "471074114505797632"
+    },
+    {
+     "a_points": 149.58,
+     "b_points": 106.5,
+     "bracket_game": null,
+     "margin": 43.08,
+     "playoff": false,
+     "season": "2021",
+     "week": 1,
+     "winner": "471074114505797632"
+    },
+    {
+     "a_points": 138.72,
+     "b_points": 113.8,
+     "bracket_game": null,
+     "margin": 24.92,
+     "playoff": false,
+     "season": "2021",
+     "week": 12,
+     "winner": "471074114505797632"
+    },
+    {
+     "a_points": 111.5,
+     "b_points": 127.6,
+     "bracket_game": null,
+     "margin": 16.1,
+     "playoff": false,
+     "season": "2022",
+     "week": 3,
+     "winner": "471359672478068736"
+    },
+    {
+     "a_points": 91.62,
+     "b_points": 103.06,
+     "bracket_game": null,
+     "margin": 11.44,
+     "playoff": false,
+     "season": "2022",
+     "week": 14,
+     "winner": "471359672478068736"
+    },
+    {
+     "a_points": 95.2,
+     "b_points": 85.48,
+     "bracket_game": "Championship",
+     "margin": 9.72,
+     "playoff": true,
+     "season": "2022",
+     "week": 17,
+     "winner": "471074114505797632"
+    },
+    {
+     "a_points": 73.24,
+     "b_points": 117.5,
+     "bracket_game": null,
+     "margin": 44.26,
+     "playoff": false,
+     "season": "2023",
+     "week": 2,
+     "winner": "471359672478068736"
+    },
+    {
+     "a_points": 120.26,
+     "b_points": 81.6,
+     "bracket_game": null,
+     "margin": 38.66,
+     "playoff": false,
+     "season": "2023",
+     "week": 13,
+     "winner": "471074114505797632"
+    },
+    {
+     "a_points": 110.5,
+     "b_points": 119.54,
+     "bracket_game": null,
+     "margin": 9.04,
+     "playoff": false,
+     "season": "2024",
+     "week": 5,
+     "winner": "471359672478068736"
+    },
+    {
+     "a_points": 116.54,
+     "b_points": 124.44,
+     "bracket_game": null,
+     "margin": 7.9,
+     "playoff": false,
+     "season": "2025",
+     "week": 7,
+     "winner": "471359672478068736"
+    },
+    {
+     "a_points": 121.84,
+     "b_points": 119.6,
+     "bracket_game": "Losers bracket, round 2",
+     "margin": 2.24,
+     "playoff": true,
+     "season": "2025",
+     "week": 16,
+     "winner": "471074114505797632"
+    }
+   ],
+   "headline": "Suze leads the series 7-5",
+   "highest_scoring_game": {
+    "a_points": 136.0,
+    "b_points": 125.4,
+    "bracket_game": null,
+    "margin": 10.6,
+    "playoff": false,
+    "season": "2020",
+    "week": 5,
+    "winner": "471074114505797632"
+   },
+   "last_5": [
+    "L",
+    "W",
+    "L",
+    "L",
+    "W"
+   ],
+   "last_5_note": "From the first-listed owner's point of view (oldest to newest).",
+   "last_meeting": {
+    "a_points": 121.84,
+    "b_points": 119.6,
+    "bracket_game": "Losers bracket, round 2",
+    "margin": 2.24,
+    "playoff": true,
+    "season": "2025",
+    "week": 16,
+    "winner": "471074114505797632"
+   },
+   "longest_streaks": {
+    "a": 4,
+    "b": 2
+   },
+   "name": "Suze vs Zaid",
+   "playoff_meetings": [
+    {
+     "a_points": 95.2,
+     "b_points": 85.48,
+     "bracket_game": "Championship",
+     "margin": 9.72,
+     "playoff": true,
+     "playoff_round": 3,
+     "season": "2022",
+     "week": 17,
+     "winner": "471074114505797632"
+    },
+    {
+     "a_points": 121.84,
+     "b_points": 119.6,
+     "bracket_game": "Losers bracket, round 2",
+     "margin": 2.24,
+     "playoff": true,
+     "playoff_round": 2,
+     "season": "2025",
+     "week": 16,
+     "winner": "471074114505797632"
+    }
+   ],
+   "seasons_won": {
+    "a": 3,
+    "b": 2,
+    "split": 2
+   },
+   "series": {
+    "all_time": {
+     "a_avg": 115.18,
+     "a_points": 1382.18,
+     "a_win_pct": 0.583,
+     "a_wins": 7,
+     "b_avg": 110.18,
+     "b_points": 1322.12,
+     "b_wins": 5,
+     "games": 12,
+     "ties": 0
+    },
+    "leader_owner_id": "471074114505797632",
+    "playoffs": {
+     "a_avg": 108.52,
+     "a_points": 217.04,
+     "a_win_pct": 1.0,
+     "a_wins": 2,
+     "b_avg": 102.54,
+     "b_points": 205.08,
+     "b_wins": 0,
+     "games": 2,
+     "ties": 0
+    },
+    "regular_season": {
+     "a_avg": 116.51,
+     "a_points": 1165.14,
+     "a_win_pct": 0.5,
+     "a_wins": 5,
+     "b_avg": 111.7,
+     "b_points": 1117.04,
+     "b_wins": 5,
+     "games": 10,
+     "ties": 0
+    }
+   },
+   "side_by_side": {
+    "a": {
+     "all_time_record": "63-52",
+     "championships": 2,
+     "display_name": "JSusee",
+     "faab_par_per_dollar": 0.31,
+     "first_name": "Suze",
+     "luck": -2.1,
+     "owner_id": "471074114505797632",
+     "points_for": 12363.5,
+     "sackos": 0,
+     "team_name": "Amazing Fantasy #15",
+     "tegridy_factor": 6.0,
+     "tegridy_rank": 3,
+     "win_pct": 0.5478
+    },
+    "b": {
+     "all_time_record": "53-66",
+     "championships": 0,
+     "display_name": "TheBoarHouse",
+     "faab_par_per_dollar": 0.2,
+     "first_name": "Zaid",
+     "luck": 1.93,
+     "owner_id": "471359672478068736",
+     "points_for": 11955.94,
+     "sackos": 2,
+     "team_name": "Lil Kings",
+     "tegridy_factor": 67.0,
+     "tegridy_rank": 12,
+     "win_pct": 0.4454
+    }
+   },
+   "trades": [],
+   "upcoming_meetings": [
+    {
+     "playoff": false,
+     "season": "2026",
+     "week": 14
+    }
+   ],
+   "upcoming_note": "Regular-season weeks only. Playoff pairings are not set until the bracket is."
+  },
+  {
+   "a": {
+    "display_name": "Gingivitis",
+    "first_name": "Ging",
+    "owner_id": "471345530597797888"
+   },
+   "b": {
+    "display_name": "ChinaKing",
+    "first_name": "Adam",
+    "owner_id": "471360899853053952"
+   },
+   "biggest_wins": {
+    "a": {
+     "a_points": 128.32,
+     "b_points": 67.08,
+     "bracket_game": null,
+     "margin": 61.24,
+     "playoff": false,
+     "season": "2025",
+     "week": 8,
+     "winner": "471345530597797888"
+    },
+    "b": {
+     "a_points": 66.22,
+     "b_points": 126.4,
+     "bracket_game": null,
+     "margin": 60.18,
+     "playoff": false,
+     "season": "2021",
+     "week": 12,
+     "winner": "471360899853053952"
+    }
+   },
+   "by_season": {
+    "2019": {
+     "a_avg": 92.19,
+     "a_points": 184.38,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 114.13,
+     "b_points": 228.26,
+     "b_wins": 2,
+     "games": 2,
+     "series_winner": "471360899853053952",
+     "ties": 0
+    },
+    "2020": {
+     "a_avg": 79.9,
+     "a_points": 79.9,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 118.66,
+     "b_points": 118.66,
+     "b_wins": 1,
+     "games": 1,
+     "series_winner": "471360899853053952",
+     "ties": 0
+    },
+    "2021": {
+     "a_avg": 93.69,
+     "a_points": 187.38,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 109.84,
+     "b_points": 219.68,
+     "b_wins": 1,
+     "games": 2,
+     "series_winner": null,
+     "ties": 0
+    },
+    "2022": {
+     "a_avg": 98.18,
+     "a_points": 196.36,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 87.45,
+     "b_points": 174.9,
+     "b_wins": 1,
+     "games": 2,
+     "series_winner": null,
+     "ties": 0
+    },
+    "2023": {
+     "a_avg": 91.34,
+     "a_points": 91.34,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 113.68,
+     "b_points": 113.68,
+     "b_wins": 1,
+     "games": 1,
+     "series_winner": "471360899853053952",
+     "ties": 0
+    },
+    "2024": {
+     "a_avg": 107.46,
+     "a_points": 214.92,
+     "a_win_pct": 1.0,
+     "a_wins": 2,
+     "b_avg": 82.74,
+     "b_points": 165.48,
+     "b_wins": 0,
+     "games": 2,
+     "series_winner": "471345530597797888",
+     "ties": 0
+    },
+    "2025": {
+     "a_avg": 128.32,
+     "a_points": 128.32,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 67.08,
+     "b_points": 67.08,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "471345530597797888",
+     "ties": 0
+    }
+   },
+   "closest_game": {
+    "a_points": 112.76,
+    "b_points": 108.48,
+    "bracket_game": null,
+    "margin": 4.28,
+    "playoff": false,
+    "season": "2024",
+    "week": 3,
+    "winner": "471345530597797888"
+   },
+   "current_streak": {
+    "display_name": "Gingivitis",
+    "first_name": "Ging",
+    "length": 3,
+    "owner_id": "471345530597797888",
+    "since": {
+     "season": "2024",
+     "week": 3
+    }
+   },
+   "games": [
+    {
+     "a_points": 83.68,
+     "b_points": 102.3,
+     "bracket_game": null,
+     "margin": 18.62,
+     "playoff": false,
+     "season": "2019",
+     "week": 8,
+     "winner": "471360899853053952"
+    },
+    {
+     "a_points": 100.7,
+     "b_points": 125.96,
+     "bracket_game": "Winners bracket, round 1",
+     "margin": 25.26,
+     "playoff": true,
+     "season": "2019",
+     "week": 14,
+     "winner": "471360899853053952"
+    },
+    {
+     "a_points": 79.9,
+     "b_points": 118.66,
+     "bracket_game": null,
+     "margin": 38.76,
+     "playoff": false,
+     "season": "2020",
+     "week": 5,
+     "winner": "471360899853053952"
+    },
+    {
+     "a_points": 121.16,
+     "b_points": 93.28,
+     "bracket_game": null,
+     "margin": 27.88,
+     "playoff": false,
+     "season": "2021",
+     "week": 1,
+     "winner": "471345530597797888"
+    },
+    {
+     "a_points": 66.22,
+     "b_points": 126.4,
+     "bracket_game": null,
+     "margin": 60.18,
+     "playoff": false,
+     "season": "2021",
+     "week": 12,
+     "winner": "471360899853053952"
+    },
+    {
+     "a_points": 77.98,
+     "b_points": 85.9,
+     "bracket_game": null,
+     "margin": 7.92,
+     "playoff": false,
+     "season": "2022",
+     "week": 7,
+     "winner": "471360899853053952"
+    },
+    {
+     "a_points": 118.38,
+     "b_points": 89.0,
+     "bracket_game": "Toilet bowl final (decides last place)",
+     "margin": 29.38,
+     "playoff": true,
+     "season": "2022",
+     "week": 17,
+     "winner": "471345530597797888"
+    },
+    {
+     "a_points": 91.34,
+     "b_points": 113.68,
+     "bracket_game": null,
+     "margin": 22.34,
+     "playoff": false,
+     "season": "2023",
+     "week": 11,
+     "winner": "471360899853053952"
+    },
+    {
+     "a_points": 112.76,
+     "b_points": 108.48,
+     "bracket_game": null,
+     "margin": 4.28,
+     "playoff": false,
+     "season": "2024",
+     "week": 3,
+     "winner": "471345530597797888"
+    },
+    {
+     "a_points": 102.16,
+     "b_points": 57.0,
+     "bracket_game": null,
+     "margin": 45.16,
+     "playoff": false,
+     "season": "2024",
+     "week": 14,
+     "winner": "471345530597797888"
+    },
+    {
+     "a_points": 128.32,
+     "b_points": 67.08,
+     "bracket_game": null,
+     "margin": 61.24,
+     "playoff": false,
+     "season": "2025",
+     "week": 8,
+     "winner": "471345530597797888"
+    }
+   ],
+   "headline": "Adam leads the series 6-5",
+   "highest_scoring_game": {
+    "a_points": 100.7,
+    "b_points": 125.96,
+    "bracket_game": "Winners bracket, round 1",
+    "margin": 25.26,
+    "playoff": true,
+    "season": "2019",
+    "week": 14,
+    "winner": "471360899853053952"
+   },
+   "last_5": [
+    "W",
+    "L",
+    "W",
+    "W",
+    "W"
+   ],
+   "last_5_note": "From the first-listed owner's point of view (oldest to newest).",
+   "last_meeting": {
+    "a_points": 128.32,
+    "b_points": 67.08,
+    "bracket_game": null,
+    "margin": 61.24,
+    "playoff": false,
+    "season": "2025",
+    "week": 8,
+    "winner": "471345530597797888"
+   },
+   "longest_streaks": {
+    "a": 3,
+    "b": 3
+   },
+   "name": "Ging vs Adam",
+   "playoff_meetings": [
+    {
+     "a_points": 100.7,
+     "b_points": 125.96,
+     "bracket_game": "Winners bracket, round 1",
+     "margin": 25.26,
+     "playoff": true,
+     "playoff_round": 1,
+     "season": "2019",
+     "week": 14,
+     "winner": "471360899853053952"
+    },
+    {
+     "a_points": 118.38,
+     "b_points": 89.0,
+     "bracket_game": "Toilet bowl final (decides last place)",
+     "margin": 29.38,
+     "playoff": true,
+     "playoff_round": 3,
+     "season": "2022",
+     "week": 17,
+     "winner": "471345530597797888"
+    }
+   ],
+   "seasons_won": {
+    "a": 2,
+    "b": 3,
+    "split": 2
+   },
+   "series": {
+    "all_time": {
+     "a_avg": 98.42,
+     "a_points": 1082.6,
+     "a_win_pct": 0.455,
+     "a_wins": 5,
+     "b_avg": 98.89,
+     "b_points": 1087.74,
+     "b_wins": 6,
+     "games": 11,
+     "ties": 0
+    },
+    "leader_owner_id": "471360899853053952",
+    "playoffs": {
+     "a_avg": 109.54,
+     "a_points": 219.08,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 107.48,
+     "b_points": 214.96,
+     "b_wins": 1,
+     "games": 2,
+     "ties": 0
+    },
+    "regular_season": {
+     "a_avg": 95.95,
+     "a_points": 863.52,
+     "a_win_pct": 0.444,
+     "a_wins": 4,
+     "b_avg": 96.98,
+     "b_points": 872.78,
+     "b_wins": 5,
+     "games": 9,
+     "ties": 0
+    }
+   },
+   "side_by_side": {
+    "a": {
+     "all_time_record": "54-63",
+     "championships": 0,
+     "display_name": "Gingivitis",
+     "faab_par_per_dollar": 0.16,
+     "first_name": "Ging",
+     "luck": 4.92,
+     "owner_id": "471345530597797888",
+     "points_for": 11683.6,
+     "sackos": 1,
+     "team_name": "Angry Beavers",
+     "tegridy_factor": 22.0,
+     "tegridy_rank": 8,
+     "win_pct": 0.4615
+    },
+    "b": {
+     "all_time_record": "47-69",
+     "championships": 0,
+     "display_name": "ChinaKing",
+     "faab_par_per_dollar": -0.01,
+     "first_name": "Adam",
+     "luck": -1.43,
+     "owner_id": "471360899853053952",
+     "points_for": 11403.78,
+     "sackos": 1,
+     "team_name": "China King",
+     "tegridy_factor": 28.0,
+     "tegridy_rank": 9,
+     "win_pct": 0.4052
+    }
+   },
+   "trades": [],
+   "upcoming_meetings": [
+    {
+     "playoff": false,
+     "season": "2026",
+     "week": 5
+    },
+    {
+     "playoff": false,
+     "season": "2026",
+     "week": 14
+    }
+   ],
+   "upcoming_note": "Regular-season weeks only. Playoff pairings are not set until the bracket is."
+  },
+  {
+   "a": {
+    "display_name": "WhiskeyDicknCo",
+    "first_name": "Mike",
+    "owner_id": "422102738889867264"
+   },
+   "b": {
+    "display_name": "ToadLicker",
+    "first_name": "Kyle",
+    "owner_id": "471359444949659648"
+   },
+   "biggest_wins": {
+    "a": {
+     "a_points": 144.62,
+     "b_points": 88.1,
+     "bracket_game": null,
+     "margin": 56.52,
+     "playoff": false,
+     "season": "2024",
+     "week": 6,
+     "winner": "422102738889867264"
+    },
+    "b": {
+     "a_points": 79.36,
+     "b_points": 122.5,
+     "bracket_game": null,
+     "margin": 43.14,
+     "playoff": false,
+     "season": "2019",
+     "week": 12,
+     "winner": "471359444949659648"
+    }
+   },
+   "by_season": {
+    "2019": {
+     "a_avg": 141.1,
+     "a_points": 423.3,
+     "a_win_pct": 0.667,
+     "a_wins": 2,
+     "b_avg": 132.13,
+     "b_points": 396.38,
+     "b_wins": 1,
+     "games": 3,
+     "series_winner": "422102738889867264",
+     "ties": 0
+    },
+    "2020": {
+     "a_avg": 86.6,
+     "a_points": 86.6,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 126.98,
+     "b_points": 126.98,
+     "b_wins": 1,
+     "games": 1,
+     "series_winner": "471359444949659648",
+     "ties": 0
+    },
+    "2021": {
+     "a_avg": 150.34,
+     "a_points": 150.34,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 134.58,
+     "b_points": 134.58,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "422102738889867264",
+     "ties": 0
+    },
+    "2022": {
+     "a_avg": 101.24,
+     "a_points": 101.24,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 91.2,
+     "b_points": 91.2,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "422102738889867264",
+     "ties": 0
+    },
+    "2023": {
+     "a_avg": 111.62,
+     "a_points": 223.24,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 126.76,
+     "b_points": 253.52,
+     "b_wins": 2,
+     "games": 2,
+     "series_winner": "471359444949659648",
+     "ties": 0
+    },
+    "2024": {
+     "a_avg": 144.62,
+     "a_points": 144.62,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 88.1,
+     "b_points": 88.1,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "422102738889867264",
+     "ties": 0
+    },
+    "2025": {
+     "a_avg": 109.32,
+     "a_points": 109.32,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 71.2,
+     "b_points": 71.2,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "422102738889867264",
+     "ties": 0
+    }
+   },
+   "closest_game": {
+    "a_points": 129.2,
+    "b_points": 136.58,
+    "bracket_game": null,
+    "margin": 7.38,
+    "playoff": false,
+    "season": "2023",
+    "week": 3,
+    "winner": "471359444949659648"
+   },
+   "current_streak": {
+    "display_name": "WhiskeyDicknCo",
+    "first_name": "Mike",
+    "length": 2,
+    "owner_id": "422102738889867264",
+    "since": {
+     "season": "2024",
+     "week": 6
+    }
+   },
+   "games": [
+    {
+     "a_points": 178.52,
+     "b_points": 130.16,
+     "bracket_game": null,
+     "margin": 48.36,
+     "playoff": false,
+     "season": "2019",
+     "week": 1,
+     "winner": "422102738889867264"
+    },
+    {
+     "a_points": 79.36,
+     "b_points": 122.5,
+     "bracket_game": null,
+     "margin": 43.14,
+     "playoff": false,
+     "season": "2019",
+     "week": 12,
+     "winner": "471359444949659648"
+    },
+    {
+     "a_points": 165.42,
+     "b_points": 143.72,
+     "bracket_game": "Championship",
+     "margin": 21.7,
+     "playoff": true,
+     "season": "2019",
+     "week": 16,
+     "winner": "422102738889867264"
+    },
+    {
+     "a_points": 86.6,
+     "b_points": 126.98,
+     "bracket_game": null,
+     "margin": 40.38,
+     "playoff": false,
+     "season": "2020",
+     "week": 4,
+     "winner": "471359444949659648"
+    },
+    {
+     "a_points": 150.34,
+     "b_points": 134.58,
+     "bracket_game": null,
+     "margin": 15.76,
+     "playoff": false,
+     "season": "2021",
+     "week": 5,
+     "winner": "422102738889867264"
+    },
+    {
+     "a_points": 101.24,
+     "b_points": 91.2,
+     "bracket_game": null,
+     "margin": 10.04,
+     "playoff": false,
+     "season": "2022",
+     "week": 10,
+     "winner": "422102738889867264"
+    },
+    {
+     "a_points": 129.2,
+     "b_points": 136.58,
+     "bracket_game": null,
+     "margin": 7.38,
+     "playoff": false,
+     "season": "2023",
+     "week": 3,
+     "winner": "471359444949659648"
+    },
+    {
+     "a_points": 94.04,
+     "b_points": 116.94,
+     "bracket_game": null,
+     "margin": 22.9,
+     "playoff": false,
+     "season": "2023",
+     "week": 14,
+     "winner": "471359444949659648"
+    },
+    {
+     "a_points": 144.62,
+     "b_points": 88.1,
+     "bracket_game": null,
+     "margin": 56.52,
+     "playoff": false,
+     "season": "2024",
+     "week": 6,
+     "winner": "422102738889867264"
+    },
+    {
+     "a_points": 109.32,
+     "b_points": 71.2,
+     "bracket_game": null,
+     "margin": 38.12,
+     "playoff": false,
+     "season": "2025",
+     "week": 8,
+     "winner": "422102738889867264"
+    }
+   ],
+   "headline": "Mike leads the series 6-4",
+   "highest_scoring_game": {
+    "a_points": 165.42,
+    "b_points": 143.72,
+    "bracket_game": "Championship",
+    "margin": 21.7,
+    "playoff": true,
+    "season": "2019",
+    "week": 16,
+    "winner": "422102738889867264"
+   },
+   "last_5": [
+    "W",
+    "L",
+    "L",
+    "W",
+    "W"
+   ],
+   "last_5_note": "From the first-listed owner's point of view (oldest to newest).",
+   "last_meeting": {
+    "a_points": 109.32,
+    "b_points": 71.2,
+    "bracket_game": null,
+    "margin": 38.12,
+    "playoff": false,
+    "season": "2025",
+    "week": 8,
+    "winner": "422102738889867264"
+   },
+   "longest_streaks": {
+    "a": 2,
+    "b": 2
+   },
+   "name": "Mike vs Kyle",
+   "playoff_meetings": [
+    {
+     "a_points": 165.42,
+     "b_points": 143.72,
+     "bracket_game": "Championship",
+     "margin": 21.7,
+     "playoff": true,
+     "playoff_round": 3,
+     "season": "2019",
+     "week": 16,
+     "winner": "422102738889867264"
+    }
+   ],
+   "seasons_won": {
+    "a": 5,
+    "b": 2,
+    "split": 0
+   },
+   "series": {
+    "all_time": {
+     "a_avg": 123.87,
+     "a_points": 1238.66,
+     "a_win_pct": 0.6,
+     "a_wins": 6,
+     "b_avg": 116.2,
+     "b_points": 1161.96,
+     "b_wins": 4,
+     "games": 10,
+     "ties": 0
+    },
+    "leader_owner_id": "422102738889867264",
+    "playoffs": {
+     "a_avg": 165.42,
+     "a_points": 165.42,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 143.72,
+     "b_points": 143.72,
+     "b_wins": 0,
+     "games": 1,
+     "ties": 0
+    },
+    "regular_season": {
+     "a_avg": 119.25,
+     "a_points": 1073.24,
+     "a_win_pct": 0.556,
+     "a_wins": 5,
+     "b_avg": 113.14,
+     "b_points": 1018.24,
+     "b_wins": 4,
+     "games": 9,
+     "ties": 0
+    }
+   },
+   "side_by_side": {
+    "a": {
+     "all_time_record": "62-54",
+     "championships": 2,
+     "display_name": "WhiskeyDicknCo",
+     "faab_par_per_dollar": 0.08,
+     "first_name": "Mike",
+     "luck": -3.41,
+     "owner_id": "422102738889867264",
+     "points_for": 12386.94,
+     "sackos": 0,
+     "team_name": "Whiskey Dick & Co",
+     "tegridy_factor": 9.5,
+     "tegridy_rank": 4,
+     "win_pct": 0.5345
+    },
+    "b": {
+     "all_time_record": "66-49",
+     "championships": 1,
+     "display_name": "ToadLicker",
+     "faab_par_per_dollar": 0.19,
+     "first_name": "Kyle",
+     "luck": -0.2,
+     "owner_id": "471359444949659648",
+     "points_for": 12716.68,
+     "sackos": 0,
+     "team_name": "Grin & Bear It",
+     "tegridy_factor": 10,
+     "tegridy_rank": 5,
+     "win_pct": 0.5739
+    }
+   },
+   "trades": [
+    {
+     "a_received": [
+      "Devontae Booker",
+      "Lamar Jackson"
+     ],
+     "b_received": [
+      "Tom Brady",
+      "Damien Harris"
+     ],
+     "draft_picks": 0,
+     "faab": [],
+     "season": "2021",
+     "week": 6
+    }
+   ],
+   "upcoming_meetings": [
+    {
+     "playoff": false,
+     "season": "2026",
+     "week": 14
+    }
+   ],
+   "upcoming_note": "Regular-season weeks only. Playoff pairings are not set until the bracket is."
+  },
+  {
+   "a": {
+    "display_name": "DangerDave678",
+    "first_name": "Dave",
+    "owner_id": "471366618241298432"
+   },
+   "b": {
+    "display_name": "therealGandB",
+    "first_name": "Jordan",
+    "owner_id": "471368473092550656"
+   },
+   "biggest_wins": {
+    "a": {
+     "a_points": 97.46,
+     "b_points": 69.06,
+     "bracket_game": null,
+     "margin": 28.4,
+     "playoff": false,
+     "season": "2019",
+     "week": 11,
+     "winner": "471366618241298432"
+    },
+    "b": {
+     "a_points": 84.36,
+     "b_points": 117.42,
+     "bracket_game": null,
+     "margin": 33.06,
+     "playoff": false,
+     "season": "2020",
+     "week": 13,
+     "winner": "471368473092550656"
+    }
+   },
+   "by_season": {
+    "2019": {
+     "a_avg": 97.46,
+     "a_points": 97.46,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 69.06,
+     "b_points": 69.06,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "471366618241298432",
+     "ties": 0
+    },
+    "2020": {
+     "a_avg": 85.06,
+     "a_points": 170.12,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 96.98,
+     "b_points": 193.96,
+     "b_wins": 1,
+     "games": 2,
+     "series_winner": null,
+     "ties": 0
+    },
+    "2021": {
+     "a_avg": 130.94,
+     "a_points": 130.94,
+     "a_win_pct": 1.0,
+     "a_wins": 1,
+     "b_avg": 119.74,
+     "b_points": 119.74,
+     "b_wins": 0,
+     "games": 1,
+     "series_winner": "471366618241298432",
+     "ties": 0
+    },
+    "2022": {
+     "a_avg": 104.5,
+     "a_points": 209.0,
+     "a_win_pct": 1.0,
+     "a_wins": 2,
+     "b_avg": 102.13,
+     "b_points": 204.26,
+     "b_wins": 0,
+     "games": 2,
+     "series_winner": "471366618241298432",
+     "ties": 0
+    },
+    "2023": {
+     "a_avg": 122.42,
+     "a_points": 122.42,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 129.96,
+     "b_points": 129.96,
+     "b_wins": 1,
+     "games": 1,
+     "series_winner": "471368473092550656",
+     "ties": 0
+    },
+    "2024": {
+     "a_avg": 92.22,
+     "a_points": 92.22,
+     "a_win_pct": 0.0,
+     "a_wins": 0,
+     "b_avg": 115.84,
+     "b_points": 115.84,
+     "b_wins": 1,
+     "games": 1,
+     "series_winner": "471368473092550656",
+     "ties": 0
+    },
+    "2025": {
+     "a_avg": 102.44,
+     "a_points": 204.88,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 107.48,
+     "b_points": 214.96,
+     "b_wins": 1,
+     "games": 2,
+     "series_winner": null,
+     "ties": 0
+    }
+   },
+   "closest_game": {
+    "a_points": 115.66,
+    "b_points": 115.44,
+    "bracket_game": "Winners bracket, round 1",
+    "margin": 0.22,
+    "playoff": true,
+    "season": "2022",
+    "week": 15,
+    "winner": "471366618241298432"
+   },
+   "current_streak": {
+    "display_name": "therealGandB",
+    "first_name": "Jordan",
+    "length": 1,
+    "owner_id": "471368473092550656",
+    "since": {
+     "season": "2025",
+     "week": 17
+    }
+   },
+   "games": [
+    {
+     "a_points": 97.46,
+     "b_points": 69.06,
+     "bracket_game": null,
+     "margin": 28.4,
+     "playoff": false,
+     "season": "2019",
+     "week": 11,
+     "winner": "471366618241298432"
+    },
+    {
+     "a_points": 85.76,
+     "b_points": 76.54,
+     "bracket_game": null,
+     "margin": 9.22,
+     "playoff": false,
+     "season": "2020",
+     "week": 2,
+     "winner": "471366618241298432"
+    },
+    {
+     "a_points": 84.36,
+     "b_points": 117.42,
+     "bracket_game": null,
+     "margin": 33.06,
+     "playoff": false,
+     "season": "2020",
+     "week": 13,
+     "winner": "471368473092550656"
+    },
+    {
+     "a_points": 130.94,
+     "b_points": 119.74,
+     "bracket_game": null,
+     "margin": 11.2,
+     "playoff": false,
+     "season": "2021",
+     "week": 10,
+     "winner": "471366618241298432"
+    },
+    {
+     "a_points": 93.34,
+     "b_points": 88.82,
+     "bracket_game": null,
+     "margin": 4.52,
+     "playoff": false,
+     "season": "2022",
+     "week": 7,
+     "winner": "471366618241298432"
+    },
+    {
+     "a_points": 115.66,
+     "b_points": 115.44,
+     "bracket_game": "Winners bracket, round 1",
+     "margin": 0.22,
+     "playoff": true,
+     "season": "2022",
+     "week": 15,
+     "winner": "471366618241298432"
+    },
+    {
+     "a_points": 122.42,
+     "b_points": 129.96,
+     "bracket_game": null,
+     "margin": 7.54,
+     "playoff": false,
+     "season": "2023",
+     "week": 8,
+     "winner": "471368473092550656"
+    },
+    {
+     "a_points": 92.22,
+     "b_points": 115.84,
+     "bracket_game": null,
+     "margin": 23.62,
+     "playoff": false,
+     "season": "2024",
+     "week": 4,
+     "winner": "471368473092550656"
+    },
+    {
+     "a_points": 104.9,
+     "b_points": 94.98,
+     "bracket_game": null,
+     "margin": 9.92,
+     "playoff": false,
+     "season": "2025",
+     "week": 11,
+     "winner": "471366618241298432"
+    },
+    {
+     "a_points": 99.98,
+     "b_points": 119.98,
+     "bracket_game": "Championship",
+     "margin": 20.0,
+     "playoff": true,
+     "season": "2025",
+     "week": 17,
+     "winner": "471368473092550656"
+    }
+   ],
+   "headline": "Dave leads the series 6-4",
+   "highest_scoring_game": {
+    "a_points": 122.42,
+    "b_points": 129.96,
+    "bracket_game": null,
+    "margin": 7.54,
+    "playoff": false,
+    "season": "2023",
+    "week": 8,
+    "winner": "471368473092550656"
+   },
+   "last_5": [
+    "W",
+    "L",
+    "L",
+    "W",
+    "L"
+   ],
+   "last_5_note": "From the first-listed owner's point of view (oldest to newest).",
+   "last_meeting": {
+    "a_points": 99.98,
+    "b_points": 119.98,
+    "bracket_game": "Championship",
+    "margin": 20.0,
+    "playoff": true,
+    "season": "2025",
+    "week": 17,
+    "winner": "471368473092550656"
+   },
+   "longest_streaks": {
+    "a": 3,
+    "b": 2
+   },
+   "name": "Dave vs Jordan",
+   "playoff_meetings": [
+    {
+     "a_points": 115.66,
+     "b_points": 115.44,
+     "bracket_game": "Winners bracket, round 1",
+     "margin": 0.22,
+     "playoff": true,
+     "playoff_round": 1,
+     "season": "2022",
+     "week": 15,
+     "winner": "471366618241298432"
+    },
+    {
+     "a_points": 99.98,
+     "b_points": 119.98,
+     "bracket_game": "Championship",
+     "margin": 20.0,
+     "playoff": true,
+     "playoff_round": 3,
+     "season": "2025",
+     "week": 17,
+     "winner": "471368473092550656"
+    }
+   ],
+   "seasons_won": {
+    "a": 3,
+    "b": 2,
+    "split": 2
+   },
+   "series": {
+    "all_time": {
+     "a_avg": 102.7,
+     "a_points": 1027.04,
+     "a_win_pct": 0.6,
+     "a_wins": 6,
+     "b_avg": 104.78,
+     "b_points": 1047.78,
+     "b_wins": 4,
+     "games": 10,
+     "ties": 0
+    },
+    "leader_owner_id": "471366618241298432",
+    "playoffs": {
+     "a_avg": 107.82,
+     "a_points": 215.64,
+     "a_win_pct": 0.5,
+     "a_wins": 1,
+     "b_avg": 117.71,
+     "b_points": 235.42,
+     "b_wins": 1,
+     "games": 2,
+     "ties": 0
+    },
+    "regular_season": {
+     "a_avg": 101.42,
+     "a_points": 811.4,
+     "a_win_pct": 0.625,
+     "a_wins": 5,
+     "b_avg": 101.55,
+     "b_points": 812.36,
+     "b_wins": 3,
+     "games": 8,
+     "ties": 0
+    }
+   },
+   "side_by_side": {
+    "a": {
+     "all_time_record": "65-52",
+     "championships": 0,
+     "display_name": "DangerDave678",
+     "faab_par_per_dollar": 0.29,
+     "first_name": "Dave",
+     "luck": 6.1,
+     "owner_id": "471366618241298432",
+     "points_for": 12194.32,
+     "sackos": 1,
+     "team_name": "Always A Bridesmaid",
+     "tegridy_factor": 0,
+     "tegridy_rank": 1,
+     "win_pct": 0.5556
+    },
+    "b": {
+     "all_time_record": "57-59",
+     "championships": 1,
+     "display_name": "therealGandB",
+     "faab_par_per_dollar": -0.14,
+     "first_name": "Jordan",
+     "luck": -5.09,
+     "owner_id": "471368473092550656",
+     "points_for": 12343.52,
+     "sackos": 0,
+     "team_name": "Green and Bowled",
+     "tegridy_factor": 59.75,
+     "tegridy_rank": 11,
+     "win_pct": 0.4914
+    }
+   },
+   "trades": [
+    {
+     "a_received": [
+      "Adam Thielen"
+     ],
+     "b_received": [
+      "Derrick Henry",
+      "Terry McLaurin"
+     ],
+     "draft_picks": 0,
+     "faab": [],
+     "season": "2019",
+     "week": 3
+    }
+   ],
+   "upcoming_meetings": [
+    {
+     "playoff": false,
+     "season": "2026",
+     "week": 14
+    }
+   ],
+   "upcoming_note": "Regular-season weeks only. Playoff pairings are not set until the bracket is."
+  }
+ ]
+}

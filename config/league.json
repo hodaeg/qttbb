@@ -3,10 +3,40 @@
   "league_name": "Quest to the Bria Bowl",
   "protected_rivalries": [
     {
-      "name": "Example Rivalry",
+      "name": "Levi vs Gabe",
       "a": "Hodaeg",
       "b": "gabroni",
-      "active": false
+      "active": true
+    },
+    {
+      "name": "Max vs Jon",
+      "a": "MrSeeYou",
+      "b": "BigDogsRevenge",
+      "active": true
+    },
+    {
+      "name": "Suze vs Zaid",
+      "a": "JSusee",
+      "b": "TheBoarHouse",
+      "active": true
+    },
+    {
+      "name": "Ging vs Adam",
+      "a": "Gingivitis",
+      "b": "ChinaKing",
+      "active": true
+    },
+    {
+      "name": "Mike vs Kyle",
+      "a": "WhiskeyDicknCo",
+      "b": "ToadLicker",
+      "active": true
+    },
+    {
+      "name": "Dave vs Jordan",
+      "a": "DangerDave678",
+      "b": "therealGandB",
+      "active": true
     }
   ],
   "tegridy": {

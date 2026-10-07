@@ -209,6 +209,16 @@ Added to D27 at the commissioner's request: a claim's value is how far above a r
 **Limits:** it still can't tell a deliberate bench stash (handcuff, injury stash) from a bust; replacement level is season-wide, not tied to what was actually available that week; a thin bye-week roster can force a below-replacement start through no fault of the claim.
 **Open:** none.
 
+### D29 — Protected rivalries set up for 2026 — Accepted
+Six rivalries, configured in `config/league.json` (`protected_rivalries`, matched on Sleeper display name): **Levi vs Gabe** (Hodaeg / gabroni), **Max vs Jon** (MrSeeYou / BigDogsRevenge), **Suze vs Zaid** (JSusee / TheBoarHouse), **Ging vs Adam** (Gingivitis / ChinaKing), **Mike vs Kyle** (WhiskeyDicknCo / ToadLicker), **Dave vs Jordan** (DangerDave678 / therealGandB). The first-listed owner is side "a".
+**Names are placeholders** ("Levi vs Gabe", etc.): the commissioner hasn't named them yet. Rename in the config; `rivalries.json` and the rivalry files pick the name up.
+`scripts/rivalries.py` writes `data/processed/protected_rivalries.json`: for each pair, a rich object with the all-time series (also split regular season / playoffs), headline, current streak and longest streaks for each side, last meeting, last 5, upcoming meetings, results by season and seasons won, biggest wins, closest game, highest-scoring game, every playoff meeting (labelled: championship, third-place game, toilet bowl final, etc.), trades between the two, and a side-by-side of both owners (record, titles, sackos, Tegridy Factor, FAAB value, luck). It cross-checks against the all-pairs `rivalries.json`: all six series match exactly.
+**Findings while building it:**
+1. All six rival pairs are scheduled to meet in **week 14**, the last regular-season week of 2026, which looks deliberate. Ging vs Adam also meet in week 5 (next week).
+2. Sleeper lists playoff-week pairings (weeks 15-17) and a phantom week 18 before the playoffs exist. These are placeholders, not real games, so upcoming meetings show **regular-season weeks only**.
+3. Sleeper's matchup data is keyed by text week numbers, so "week 10" sorts before "week 5"; everything that lists weeks must sort numerically.
+Playoff-game kind comes from the brackets. Note the losers-bracket "final" decides last place (the loser keeps advancing, D17): e.g. Ging beat Adam in the 2022 toilet bowl final, which meant Adam finished last.
+
 ---
 
 ## Infrastructure

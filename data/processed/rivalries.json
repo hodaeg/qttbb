@@ -943,7 +943,7 @@
    }
   ],
   "games_played": 12,
-  "protected_rivalry": null,
+  "protected_rivalry": "Suze vs Zaid",
   "ties": 0
  },
  {
@@ -2655,7 +2655,7 @@
    }
   ],
   "games_played": 11,
-  "protected_rivalry": null,
+  "protected_rivalry": "Ging vs Adam",
   "ties": 0
  },
  {
@@ -3115,7 +3115,7 @@
    }
   ],
   "games_played": 11,
-  "protected_rivalry": null,
+  "protected_rivalry": "Max vs Jon",
   "ties": 0
  },
  {
@@ -3568,7 +3568,7 @@
    }
   ],
   "games_played": 10,
-  "protected_rivalry": null,
+  "protected_rivalry": "Mike vs Kyle",
   "ties": 0
  },
  {
@@ -3653,7 +3653,7 @@
    }
   ],
   "games_played": 10,
-  "protected_rivalry": null,
+  "protected_rivalry": "Dave vs Jordan",
   "ties": 0
  },
  {
@@ -5588,7 +5588,7 @@
    }
   ],
   "games_played": 8,
-  "protected_rivalry": null,
+  "protected_rivalry": "Levi vs Gabe",
   "ties": 0
  },
  {

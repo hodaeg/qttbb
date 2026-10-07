@@ -12,6 +12,7 @@ python scripts/nfl_context.py  # NFL schedule + each player's team by week (for 
 python scripts/score.py      # -> data/processed/
 python scripts/faab.py       # FAAB efficiency ("Bang for Buck") -> data/processed/faab_efficiency.json
 python scripts/profiles.py   # per-owner profiles -> data/processed/owner_profiles/
+python scripts/rivalries.py  # protected rivalries -> data/processed/protected_rivalries.json
 python scripts/snapshot.py   # game-day lineup + injury snapshot -> data/raw/snapshots/
 ```
 
@@ -64,6 +65,8 @@ GitHub Actions does this automatically: `refresh.yml` daily, `snapshot.yml` arou
 **`injury_starts.json`** — every instance of starting an Out/Doubtful player across all seasons: `{ rule, by_owner: { "<owner_id>": { out, doubtful } }, instances: [ { season, week, roster_id, owner_id, player_id, player, pos, status, source, injury } ] }`. `source` is `nfl_report`, `nfl_report_dnp` (Questionable who didn't play) or `snapshot` (live).
 
 **`bye_starts.json`** — every instance of starting a player whose NFL team was on bye (and who scored 0): `{ rule, by_owner, instances: [ { season, week, roster_id, owner_id, player_id, player, pos } ] }`. Also exposed per week as `bye_starters` in `weeks.json`.
+
+**`protected_rivalries.json`** — `{ rivalries: [ ... ] }`, one rich object per protected rivalry (D29): `name`, `a`/`b` (owner, first name), `headline`, `series` (`all_time`, `regular_season`, `playoffs`: games, a_wins, b_wins, ties, points, averages), `current_streak` (owner, length, since), `longest_streaks`, `last_meeting`, `last_5` (a's view), `upcoming_meetings` (regular season only), `by_season`, `seasons_won`, `biggest_wins`, `closest_game`, `highest_scoring_game`, `playoff_meetings` (with `bracket_game` label), `trades`, `side_by_side` (both owners' record, titles, sackos, Tegridy Factor, FAAB value, luck) and the full `games` log. `a` is the first-listed owner in the config.
 
 **`rivalries.json`** — one entry per owner pair: `{ a, b, protected_rivalry, a_wins, b_wins, ties, games_played, a_points, b_points, biggest_a_win, biggest_b_win, games[] }`. `protected_rivalry` is the rivalry name when the pair is listed in `config/league.json`, otherwise `null`.
 
