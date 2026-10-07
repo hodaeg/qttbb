@@ -55,7 +55,7 @@
   "weeks": 117
  },
  "faab_and_transactions": {
-  "adds": 230,
+  "adds": 232,
   "biggest_bid": {
    "amount": 73,
    "player": "Tyrone Tracy",
@@ -73,8 +73,8 @@
   "note": "spent = winning bids in the transaction log, net of claims the commissioner later undid (refunded; e.g. the Sep 2021 week-1 corrections). Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
   "refunded": 0,
   "remaining_unexplained": 0,
-  "sleeper_reported_used": 652,
-  "spent": 657,
+  "sleeper_reported_used": 665,
+  "spent": 670,
   "spent_per_season": {
    "2019": 100,
    "2020": 86,
@@ -83,14 +83,14 @@
    "2023": 100,
    "2024": 79,
    "2025": 100,
-   "2026": 4
+   "2026": 17
   },
   "traded_in": 5,
   "traded_out": 0,
   "trades": 9,
   "unexplained_difference": 0,
-  "waiver_claims_lost": 274,
-  "waiver_claims_won": 125
+  "waiver_claims_lost": 275,
+  "waiver_claims_won": 127
  },
  "faab_efficiency": {
   "best_par_claim": {
@@ -643,22 +643,33 @@
      "week": 2,
      "weeks_started": 0
     },
-    "best_value": null,
-    "biggest_bust": {
-     "bid": 4,
+    "best_value": {
+     "bid": 9,
      "par_per_dollar": 0.0,
-     "player": "Dontayvion Wicks",
+     "player": "Romeo Doubs",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
      "season": "2026",
-     "week": 2,
+     "week": 4,
      "weeks_started": 0
     },
-    "claims_benched_only": 1,
+    "biggest_bust": {
+     "bid": 9,
+     "par_per_dollar": 0.0,
+     "player": "Romeo Doubs",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 4,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 3,
     "claims_dropped_before_playing": 0,
-    "dollars_spent": 4,
+    "dollars_spent": 17,
     "free_claims": 0,
     "hit_rate": 0.0,
     "most_points": {
@@ -673,7 +684,7 @@
      "week": 2,
      "weeks_started": 0
     },
-    "paid_claims": 1,
+    "paid_claims": 3,
     "par_per_dollar": 0.0,
     "points_above_replacement": 0.0,
     "points_from_free_claims": 0,
@@ -693,13 +704,13 @@
     }
    }
   },
-  "claims_benched_only": 20,
+  "claims_benched_only": 22,
   "claims_dropped_before_playing": 5,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
-  "dollars_spent": 657,
+  "dollars_spent": 670,
   "free_claims": 33,
-  "hit_rate": 0.728,
-  "league_points_per_dollar": 2.39,
+  "hit_rate": 0.713,
+  "league_points_per_dollar": 2.37,
   "most_points": {
    "bid": 33,
    "par_per_dollar": 1.72,
@@ -713,13 +724,13 @@
    "weeks_started": 12
   },
   "name": "Bang for Buck",
-  "paid_claims": 92,
+  "paid_claims": 94,
   "par_per_dollar": 0.29,
   "par_rank": 3,
   "points_above_replacement": 193.17,
   "points_from_free_claims": 599.4,
   "points_from_paid_claims": 2371.02,
-  "points_per_dollar": 3.61,
+  "points_per_dollar": 3.54,
   "rank": 1,
   "worst_par_claim": {
    "bid": 19,
@@ -2069,21 +2080,21 @@
    "division": "The Graveyard",
    "efficiency": 0.8183,
    "faab": {
-    "adds": 3,
+    "adds": 5,
     "budget": 100,
     "drops": 3,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 2,
     "refunded": 0,
     "remaining_unexplained": 0,
-    "sleeper_reported_used": 4,
-    "spent": 4,
+    "sleeper_reported_used": 17,
+    "spent": 17,
     "traded_in": 0,
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
-    "waiver_claims_lost": 1,
-    "waiver_claims_won": 1
+    "waiver_claims_lost": 2,
+    "waiver_claims_won": 3
    },
    "faab_efficiency": {
     "best_par_claim": {
@@ -2098,22 +2109,33 @@
      "week": 2,
      "weeks_started": 0
     },
-    "best_value": null,
-    "biggest_bust": {
-     "bid": 4,
+    "best_value": {
+     "bid": 9,
      "par_per_dollar": 0.0,
-     "player": "Dontayvion Wicks",
+     "player": "Romeo Doubs",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
      "season": "2026",
-     "week": 2,
+     "week": 4,
      "weeks_started": 0
     },
-    "claims_benched_only": 1,
+    "biggest_bust": {
+     "bid": 9,
+     "par_per_dollar": 0.0,
+     "player": "Romeo Doubs",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 4,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 3,
     "claims_dropped_before_playing": 0,
-    "dollars_spent": 4,
+    "dollars_spent": 17,
     "free_claims": 0,
     "hit_rate": 0.0,
     "most_points": {
@@ -2128,7 +2150,7 @@
      "week": 2,
      "weeks_started": 0
     },
-    "paid_claims": 1,
+    "paid_claims": 3,
     "par_per_dollar": 0.0,
     "points_above_replacement": 0.0,
     "points_from_free_claims": 0,

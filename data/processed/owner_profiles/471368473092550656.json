@@ -65,7 +65,7 @@
    "week": 3
   },
   "budget_per_season": 100,
-  "drops": 172,
+  "drops": 173,
   "faab_taken_as_penalty": 145,
   "free_agent_adds": 127,
   "most_frequent_trade_partner": {
@@ -628,7 +628,7 @@
   "dollars_spent": 318,
   "free_claims": 19,
   "hit_rate": 0.581,
-  "league_points_per_dollar": 2.39,
+  "league_points_per_dollar": 2.37,
   "most_points": {
    "bid": 9,
    "par_per_dollar": 1.23,
@@ -1991,7 +1991,7 @@
    "faab": {
     "adds": 3,
     "budget": 100,
-    "drops": 1,
+    "drops": 2,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 3,
     "refunded": 0,

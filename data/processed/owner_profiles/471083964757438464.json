@@ -56,7 +56,7 @@
   "weeks": 117
  },
  "faab_and_transactions": {
-  "adds": 133,
+  "adds": 134,
   "biggest_bid": {
    "amount": 45,
    "player": "Ty Johnson",
@@ -64,9 +64,9 @@
    "week": 7
   },
   "budget_per_season": 100,
-  "drops": 133,
+  "drops": 134,
   "faab_taken_as_penalty": 62,
-  "free_agent_adds": 80,
+  "free_agent_adds": 81,
   "most_frequent_trade_partner": {
    "owner_id": "471345530597797888",
    "trades": 1
@@ -689,7 +689,7 @@
   "dollars_spent": 466,
   "free_claims": 11,
   "hit_rate": 0.833,
-  "league_points_per_dollar": 2.39,
+  "league_points_per_dollar": 2.37,
   "most_points": {
    "bid": 12,
    "par_per_dollar": 3.68,
@@ -2037,11 +2037,11 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.8646,
    "faab": {
-    "adds": 8,
+    "adds": 9,
     "budget": 100,
-    "drops": 6,
+    "drops": 7,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 5,
+    "free_agent_adds": 6,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 57,
