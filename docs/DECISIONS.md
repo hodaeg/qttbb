@@ -186,6 +186,17 @@ Penalty records for these have `player`, `nfl_game`, `matchup` and `bench_option
 **Result: every owner's FAAB reconciles to the dollar** (logged bids - refunds + traded out - traded in + ledger penalties = Sleeper's `waiver_budget_used`).
 **First names.** `config/members.json` maps Sleeper display name to first name (commissioner's request, for display in the app). `first_name` is now on `owners.json`, each owner profile and the index, and each penalty's `manager`. Penalty headlines still use the Sleeper display name; the UI can choose.
 
+### D27 — FAAB efficiency ("Bang for Buck"): starting-lineup points per FAAB dollar — Accepted
+Derived from the data: every winning waiver claim names the player and the bid; weekly matchups show when he was on the owner's roster and whether he started.
+**Definition:** for each claim, follow the player on that roster from the first week he appears until he leaves; add up the points he scored **while in the starting lineup** (bench points don't help the owner). Owner efficiency = those points / dollars bid. All weeks count (regular season and playoffs).
+- Only claims of **$1 or more** are "paid"; $0 claims are tracked separately so free pickups don't inflate the ratio.
+- Claims the commissioner later undid (and Sleeper refunded) are ignored (D26). Dollars tie to the FAAB `spent` figures exactly.
+- Each claim has an outcome: `started`, `never_started` (benched), or `dropped_before_playing` (gone before he showed on a roster for a game week: 38 paid claims, $252, 3.8% of dollars, counted as spent with no return).
+- Output: `data/processed/faab_efficiency.json` (league, per-owner with per-season, and every claim), and a `faab_efficiency` block on each owner profile plus `faab_points_per_dollar` and rank in the index.
+**League result:** 797 paid claims, $6,686 -> 15,996 points = **2.39 points per $1**; 70% of paid claims got a start. Best: DangerDave678 3.61, Gingivitis 3.31, gabroni 3.15. Worst: TheBoarHouse 1.20, therealGandB 1.24, Hodaeg 1.30.
+**Limits:** it ignores what the owner would have started without the claim (a true "points above replacement"), and bench stashes bought on purpose (handcuffs, injury stashes) look like busts. Treat it as a spending-value stat, not a skill verdict. It is not part of Tegridy Factor.
+**Open:** whether to add a replacement-level version ("points over what the next-best bench option would have scored").
+
 ---
 
 ## Infrastructure

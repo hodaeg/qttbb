@@ -46,6 +46,295 @@
   "waiver_claims_lost": 66,
   "waiver_claims_won": 89
  },
+ "faab_efficiency": {
+  "best_value": {
+   "bid": 6,
+   "player": "Justin Fields",
+   "points_per_dollar": 24.89,
+   "points_started": 149.36,
+   "pos": "QB",
+   "season": "2022",
+   "week": 8,
+   "weeks_started": 6
+  },
+  "biggest_bust": {
+   "bid": 10,
+   "player": "David Montgomery",
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "RB",
+   "season": "2019",
+   "week": 16,
+   "weeks_started": 0
+  },
+  "by_season": {
+   "2019": {
+    "best_value": {
+     "bid": 8,
+     "player": "Derek Carr",
+     "points_per_dollar": 3.0,
+     "points_started": 23.96,
+     "pos": "QB",
+     "season": "2019",
+     "week": 10,
+     "weeks_started": 2
+    },
+    "biggest_bust": {
+     "bid": 10,
+     "player": "David Montgomery",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2019",
+     "week": 16,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 4,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 92,
+    "free_claims": 3,
+    "hit_rate": 0.714,
+    "most_points": {
+     "bid": 4,
+     "player": "Los Angeles Rams",
+     "points_per_dollar": 8.5,
+     "points_started": 34.0,
+     "pos": "DEF",
+     "season": "2019",
+     "week": 9,
+     "weeks_started": 2
+    },
+    "paid_claims": 14,
+    "points_from_free_claims": 32.0,
+    "points_from_paid_claims": 163.18,
+    "points_per_dollar": 1.77
+   },
+   "2020": {
+    "best_value": {
+     "bid": 15,
+     "player": "Marvin Jones",
+     "points_per_dollar": 6.23,
+     "points_started": 93.5,
+     "pos": "WR",
+     "season": "2020",
+     "week": 8,
+     "weeks_started": 7
+    },
+    "biggest_bust": {
+     "bid": 8,
+     "player": "Hunter Renfrow",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2020",
+     "week": 3,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 5,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 69,
+    "free_claims": 0,
+    "hit_rate": 0.583,
+    "most_points": {
+     "bid": 15,
+     "player": "Marvin Jones",
+     "points_per_dollar": 6.23,
+     "points_started": 93.5,
+     "pos": "WR",
+     "season": "2020",
+     "week": 8,
+     "weeks_started": 7
+    },
+    "paid_claims": 12,
+    "points_from_free_claims": 0,
+    "points_from_paid_claims": 159.3,
+    "points_per_dollar": 2.31
+   },
+   "2021": {
+    "best_value": {
+     "bid": 10,
+     "player": "Rashaad Penny",
+     "points_per_dollar": 5.1,
+     "points_started": 51.0,
+     "pos": "RB",
+     "season": "2021",
+     "week": 16,
+     "weeks_started": 2
+    },
+    "biggest_bust": {
+     "bid": 10,
+     "player": "Ameer Abdullah",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2021",
+     "week": 15,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 4,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 81,
+    "free_claims": 1,
+    "hit_rate": 0.692,
+    "most_points": {
+     "bid": 3,
+     "player": "New England Patriots",
+     "points_per_dollar": 30.0,
+     "points_started": 90.0,
+     "pos": "DEF",
+     "season": "2021",
+     "week": 8,
+     "weeks_started": 5
+    },
+    "paid_claims": 13,
+    "points_from_free_claims": 15.0,
+    "points_from_paid_claims": 257.94,
+    "points_per_dollar": 3.18
+   },
+   "2022": {
+    "best_value": {
+     "bid": 6,
+     "player": "Justin Fields",
+     "points_per_dollar": 24.89,
+     "points_started": 149.36,
+     "pos": "QB",
+     "season": "2022",
+     "week": 8,
+     "weeks_started": 6
+    },
+    "biggest_bust": {
+     "bid": 7,
+     "player": "Chuba Hubbard",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2022",
+     "week": 14,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 3,
+    "claims_dropped_before_playing": 1,
+    "dollars_spent": 97,
+    "free_claims": 4,
+    "hit_rate": 0.75,
+    "most_points": {
+     "bid": 6,
+     "player": "Justin Fields",
+     "points_per_dollar": 24.89,
+     "points_started": 149.36,
+     "pos": "QB",
+     "season": "2022",
+     "week": 8,
+     "weeks_started": 6
+    },
+    "paid_claims": 16,
+    "points_from_free_claims": 17.0,
+    "points_from_paid_claims": 427.26,
+    "points_per_dollar": 4.4
+   },
+   "2023": {
+    "best_value": null,
+    "biggest_bust": null,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 6,
+    "free_claims": 6,
+    "hit_rate": 1.0,
+    "most_points": {
+     "bid": 4,
+     "player": "Pittsburgh Steelers",
+     "points_per_dollar": 3.5,
+     "points_started": 14.0,
+     "pos": "DEF",
+     "season": "2023",
+     "week": 8,
+     "weeks_started": 2
+    },
+    "paid_claims": 2,
+    "points_from_free_claims": 285.88,
+    "points_from_paid_claims": 19.1,
+    "points_per_dollar": 3.18
+   },
+   "2024": {
+    "best_value": {
+     "bid": 6,
+     "player": "Isaiah Likely",
+     "points_per_dollar": 1.2,
+     "points_started": 7.2,
+     "pos": "TE",
+     "season": "2024",
+     "week": 1,
+     "weeks_started": 3
+    },
+    "biggest_bust": {
+     "bid": 2,
+     "player": "Isaac Guerendo",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2024",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 2,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 100,
+    "free_claims": 4,
+    "hit_rate": 0.6,
+    "most_points": {
+     "bid": 88,
+     "player": "Isaac Guerendo",
+     "points_per_dollar": 0.43,
+     "points_started": 37.7,
+     "pos": "RB",
+     "season": "2024",
+     "week": 13,
+     "weeks_started": 2
+    },
+    "paid_claims": 5,
+    "points_from_free_claims": 111.4,
+    "points_from_paid_claims": 51.2,
+    "points_per_dollar": 0.51
+   },
+   "2025": {
+    "best_value": null,
+    "biggest_bust": null,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 0,
+    "free_claims": 9,
+    "hit_rate": null,
+    "most_points": null,
+    "paid_claims": 0,
+    "points_from_free_claims": 156.3,
+    "points_from_paid_claims": 0,
+    "points_per_dollar": null
+   }
+  },
+  "claims_benched_only": 18,
+  "claims_dropped_before_playing": 1,
+  "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). Does not account for what the owner would have had without the claim, or for bench stashes bought on purpose (handcuffs, injury stashes).",
+  "dollars_spent": 445,
+  "free_claims": 27,
+  "hit_rate": 0.694,
+  "league_points_per_dollar": 2.39,
+  "most_points": {
+   "bid": 6,
+   "player": "Justin Fields",
+   "points_per_dollar": 24.89,
+   "points_started": 149.36,
+   "pos": "QB",
+   "season": "2022",
+   "week": 8,
+   "weeks_started": 6
+  },
+  "name": "Bang for Buck",
+  "paid_claims": 62,
+  "points_from_free_claims": 617.58,
+  "points_from_paid_claims": 1077.98,
+  "points_per_dollar": 2.42,
+  "rank": 6
+ },
  "first_name": "Suze",
  "first_season": "2019",
  "head_to_head": {
@@ -256,6 +545,47 @@
     "waiver_claims_lost": 14,
     "waiver_claims_won": 17
    },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 8,
+     "player": "Derek Carr",
+     "points_per_dollar": 3.0,
+     "points_started": 23.96,
+     "pos": "QB",
+     "season": "2019",
+     "week": 10,
+     "weeks_started": 2
+    },
+    "biggest_bust": {
+     "bid": 10,
+     "player": "David Montgomery",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2019",
+     "week": 16,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 4,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 92,
+    "free_claims": 3,
+    "hit_rate": 0.714,
+    "most_points": {
+     "bid": 4,
+     "player": "Los Angeles Rams",
+     "points_per_dollar": 8.5,
+     "points_started": 34.0,
+     "pos": "DEF",
+     "season": "2019",
+     "week": 9,
+     "weeks_started": 2
+    },
+    "paid_claims": 14,
+    "points_from_free_claims": 32.0,
+    "points_from_paid_claims": 163.18,
+    "points_per_dollar": 1.77
+   },
    "final_place": 3,
    "luck": {
     "all_play_record": "81-62",
@@ -315,6 +645,47 @@
     "unexplained_difference": 0,
     "waiver_claims_lost": 13,
     "waiver_claims_won": 12
+   },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 15,
+     "player": "Marvin Jones",
+     "points_per_dollar": 6.23,
+     "points_started": 93.5,
+     "pos": "WR",
+     "season": "2020",
+     "week": 8,
+     "weeks_started": 7
+    },
+    "biggest_bust": {
+     "bid": 8,
+     "player": "Hunter Renfrow",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2020",
+     "week": 3,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 5,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 69,
+    "free_claims": 0,
+    "hit_rate": 0.583,
+    "most_points": {
+     "bid": 15,
+     "player": "Marvin Jones",
+     "points_per_dollar": 6.23,
+     "points_started": 93.5,
+     "pos": "WR",
+     "season": "2020",
+     "week": 8,
+     "weeks_started": 7
+    },
+    "paid_claims": 12,
+    "points_from_free_claims": 0,
+    "points_from_paid_claims": 159.3,
+    "points_per_dollar": 2.31
    },
    "final_place": 3,
    "luck": {
@@ -376,6 +747,47 @@
     "waiver_claims_lost": 9,
     "waiver_claims_won": 14
    },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 10,
+     "player": "Rashaad Penny",
+     "points_per_dollar": 5.1,
+     "points_started": 51.0,
+     "pos": "RB",
+     "season": "2021",
+     "week": 16,
+     "weeks_started": 2
+    },
+    "biggest_bust": {
+     "bid": 10,
+     "player": "Ameer Abdullah",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2021",
+     "week": 15,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 4,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 81,
+    "free_claims": 1,
+    "hit_rate": 0.692,
+    "most_points": {
+     "bid": 3,
+     "player": "New England Patriots",
+     "points_per_dollar": 30.0,
+     "points_started": 90.0,
+     "pos": "DEF",
+     "season": "2021",
+     "week": 8,
+     "weeks_started": 5
+    },
+    "paid_claims": 13,
+    "points_from_free_claims": 15.0,
+    "points_from_paid_claims": 257.94,
+    "points_per_dollar": 3.18
+   },
    "final_place": 1,
    "luck": {
     "all_play_record": "120-34",
@@ -435,6 +847,47 @@
     "unexplained_difference": 0,
     "waiver_claims_lost": 15,
     "waiver_claims_won": 20
+   },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 6,
+     "player": "Justin Fields",
+     "points_per_dollar": 24.89,
+     "points_started": 149.36,
+     "pos": "QB",
+     "season": "2022",
+     "week": 8,
+     "weeks_started": 6
+    },
+    "biggest_bust": {
+     "bid": 7,
+     "player": "Chuba Hubbard",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2022",
+     "week": 14,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 3,
+    "claims_dropped_before_playing": 1,
+    "dollars_spent": 97,
+    "free_claims": 4,
+    "hit_rate": 0.75,
+    "most_points": {
+     "bid": 6,
+     "player": "Justin Fields",
+     "points_per_dollar": 24.89,
+     "points_started": 149.36,
+     "pos": "QB",
+     "season": "2022",
+     "week": 8,
+     "weeks_started": 6
+    },
+    "paid_claims": 16,
+    "points_from_free_claims": 17.0,
+    "points_from_paid_claims": 427.26,
+    "points_per_dollar": 4.4
    },
    "final_place": 1,
    "luck": {
@@ -496,6 +949,29 @@
     "waiver_claims_lost": 5,
     "waiver_claims_won": 8
    },
+   "faab_efficiency": {
+    "best_value": null,
+    "biggest_bust": null,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 6,
+    "free_claims": 6,
+    "hit_rate": 1.0,
+    "most_points": {
+     "bid": 4,
+     "player": "Pittsburgh Steelers",
+     "points_per_dollar": 3.5,
+     "points_started": 14.0,
+     "pos": "DEF",
+     "season": "2023",
+     "week": 8,
+     "weeks_started": 2
+    },
+    "paid_claims": 2,
+    "points_from_free_claims": 285.88,
+    "points_from_paid_claims": 19.1,
+    "points_per_dollar": 3.18
+   },
    "final_place": 5,
    "luck": {
     "all_play_record": "84-70",
@@ -555,6 +1031,47 @@
     "unexplained_difference": 0,
     "waiver_claims_lost": 6,
     "waiver_claims_won": 9
+   },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 6,
+     "player": "Isaiah Likely",
+     "points_per_dollar": 1.2,
+     "points_started": 7.2,
+     "pos": "TE",
+     "season": "2024",
+     "week": 1,
+     "weeks_started": 3
+    },
+    "biggest_bust": {
+     "bid": 2,
+     "player": "Isaac Guerendo",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2024",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 2,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 100,
+    "free_claims": 4,
+    "hit_rate": 0.6,
+    "most_points": {
+     "bid": 88,
+     "player": "Isaac Guerendo",
+     "points_per_dollar": 0.43,
+     "points_started": 37.7,
+     "pos": "RB",
+     "season": "2024",
+     "week": 13,
+     "weeks_started": 2
+    },
+    "paid_claims": 5,
+    "points_from_free_claims": 111.4,
+    "points_from_paid_claims": 51.2,
+    "points_per_dollar": 0.51
    },
    "final_place": 11,
    "luck": {
@@ -616,6 +1133,20 @@
     "waiver_claims_lost": 3,
     "waiver_claims_won": 9
    },
+   "faab_efficiency": {
+    "best_value": null,
+    "biggest_bust": null,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 0,
+    "free_claims": 9,
+    "hit_rate": null,
+    "most_points": null,
+    "paid_claims": 0,
+    "points_from_free_claims": 156.3,
+    "points_from_paid_claims": 0,
+    "points_per_dollar": null
+   },
    "final_place": 9,
    "luck": {
     "all_play_record": "66.5-87.5",
@@ -676,6 +1207,7 @@
     "waiver_claims_lost": 1,
     "waiver_claims_won": 0
    },
+   "faab_efficiency": null,
    "final_place": null,
    "luck": {
     "all_play_record": "27-17",

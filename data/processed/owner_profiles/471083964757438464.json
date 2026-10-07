@@ -49,6 +49,354 @@
   "waiver_claims_lost": 20,
   "waiver_claims_won": 53
  },
+ "faab_efficiency": {
+  "best_value": {
+   "bid": 12,
+   "player": "Puka Nacua",
+   "points_per_dollar": 14.12,
+   "points_started": 169.4,
+   "pos": "WR",
+   "season": "2023",
+   "week": 1,
+   "weeks_started": 12
+  },
+  "biggest_bust": {
+   "bid": 42,
+   "player": "Jaylen Wright",
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "RB",
+   "season": "2026",
+   "week": 3,
+   "weeks_started": 0
+  },
+  "by_season": {
+   "2019": {
+    "best_value": {
+     "bid": 45,
+     "player": "Ty Johnson",
+     "points_per_dollar": 0.11,
+     "points_started": 5.1,
+     "pos": "RB",
+     "season": "2019",
+     "week": 7,
+     "weeks_started": 1
+    },
+    "biggest_bust": {
+     "bid": 10,
+     "player": "O.J. Howard",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "TE",
+     "season": "2019",
+     "week": 7,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 62,
+    "free_claims": 0,
+    "hit_rate": 0.75,
+    "most_points": {
+     "bid": 4,
+     "player": "A.J. Brown",
+     "points_per_dollar": 9.6,
+     "points_started": 38.4,
+     "pos": "WR",
+     "season": "2019",
+     "week": 10,
+     "weeks_started": 3
+    },
+    "paid_claims": 4,
+    "points_from_free_claims": 0,
+    "points_from_paid_claims": 67.5,
+    "points_per_dollar": 1.09
+   },
+   "2020": {
+    "best_value": {
+     "bid": 40,
+     "player": "Mike Davis",
+     "points_per_dollar": 2.2,
+     "points_started": 87.9,
+     "pos": "RB",
+     "season": "2020",
+     "week": 2,
+     "weeks_started": 6
+    },
+    "biggest_bust": {
+     "bid": 26,
+     "player": "Benny Snell",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2020",
+     "week": 1,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
+    "claims_dropped_before_playing": 1,
+    "dollars_spent": 80,
+    "free_claims": 2,
+    "hit_rate": 0.714,
+    "most_points": {
+     "bid": 40,
+     "player": "Mike Davis",
+     "points_per_dollar": 2.2,
+     "points_started": 87.9,
+     "pos": "RB",
+     "season": "2020",
+     "week": 2,
+     "weeks_started": 6
+    },
+    "paid_claims": 7,
+    "points_from_free_claims": 52.0,
+    "points_from_paid_claims": 157.56,
+    "points_per_dollar": 1.97
+   },
+   "2021": {
+    "best_value": {
+     "bid": 5,
+     "player": "San Francisco 49ers",
+     "points_per_dollar": 5.0,
+     "points_started": 25.0,
+     "pos": "DEF",
+     "season": "2021",
+     "week": 10,
+     "weeks_started": 2
+    },
+    "biggest_bust": {
+     "bid": 5,
+     "player": "Tyrell Williams",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2021",
+     "week": 1,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 69,
+    "free_claims": 1,
+    "hit_rate": 0.933,
+    "most_points": {
+     "bid": 3,
+     "player": "Kansas City Chiefs",
+     "points_per_dollar": 13.67,
+     "points_started": 41.0,
+     "pos": "DEF",
+     "season": "2021",
+     "week": 14,
+     "weeks_started": 2
+    },
+    "paid_claims": 15,
+    "points_from_free_claims": 0.0,
+    "points_from_paid_claims": 183.9,
+    "points_per_dollar": 2.67
+   },
+   "2022": {
+    "best_value": {
+     "bid": 8,
+     "player": "Tyler Higbee",
+     "points_per_dollar": 11.7,
+     "points_started": 93.6,
+     "pos": "TE",
+     "season": "2022",
+     "week": 1,
+     "weeks_started": 14
+    },
+    "biggest_bust": null,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 32,
+    "free_claims": 1,
+    "hit_rate": 1.0,
+    "most_points": {
+     "bid": 8,
+     "player": "Tyler Higbee",
+     "points_per_dollar": 11.7,
+     "points_started": 93.6,
+     "pos": "TE",
+     "season": "2022",
+     "week": 1,
+     "weeks_started": 14
+    },
+    "paid_claims": 4,
+    "points_from_free_claims": 7.0,
+    "points_from_paid_claims": 125.0,
+    "points_per_dollar": 3.91
+   },
+   "2023": {
+    "best_value": {
+     "bid": 12,
+     "player": "Puka Nacua",
+     "points_per_dollar": 14.12,
+     "points_started": 169.4,
+     "pos": "WR",
+     "season": "2023",
+     "week": 1,
+     "weeks_started": 12
+    },
+    "biggest_bust": {
+     "bid": 7,
+     "player": "Ty Johnson",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2023",
+     "week": 11,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 34,
+    "free_claims": 0,
+    "hit_rate": 0.667,
+    "most_points": {
+     "bid": 12,
+     "player": "Puka Nacua",
+     "points_per_dollar": 14.12,
+     "points_started": 169.4,
+     "pos": "WR",
+     "season": "2023",
+     "week": 1,
+     "weeks_started": 12
+    },
+    "paid_claims": 3,
+    "points_from_free_claims": 0,
+    "points_from_paid_claims": 177.1,
+    "points_per_dollar": 5.21
+   },
+   "2024": {
+    "best_value": {
+     "bid": 30,
+     "player": "Kareem Hunt",
+     "points_per_dollar": 4.3,
+     "points_started": 129.0,
+     "pos": "RB",
+     "season": "2024",
+     "week": 4,
+     "weeks_started": 11
+    },
+    "biggest_bust": null,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 82,
+    "free_claims": 3,
+    "hit_rate": 1.0,
+    "most_points": {
+     "bid": 30,
+     "player": "Kareem Hunt",
+     "points_per_dollar": 4.3,
+     "points_started": 129.0,
+     "pos": "RB",
+     "season": "2024",
+     "week": 4,
+     "weeks_started": 11
+    },
+    "paid_claims": 3,
+    "points_from_free_claims": 117.62,
+    "points_from_paid_claims": 137.0,
+    "points_per_dollar": 1.67
+   },
+   "2025": {
+    "best_value": {
+     "bid": 20,
+     "player": "Wan'Dale Robinson",
+     "points_per_dollar": 5.92,
+     "points_started": 118.5,
+     "pos": "WR",
+     "season": "2025",
+     "week": 2,
+     "weeks_started": 12
+    },
+    "biggest_bust": null,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 50,
+    "free_claims": 3,
+    "hit_rate": 1.0,
+    "most_points": {
+     "bid": 20,
+     "player": "Wan'Dale Robinson",
+     "points_per_dollar": 5.92,
+     "points_started": 118.5,
+     "pos": "WR",
+     "season": "2025",
+     "week": 2,
+     "weeks_started": 12
+    },
+    "paid_claims": 4,
+    "points_from_free_claims": 155.82,
+    "points_from_paid_claims": 160.1,
+    "points_per_dollar": 3.2
+   },
+   "2026": {
+    "best_value": {
+     "bid": 15,
+     "player": "Kenyon Sadiq",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "TE",
+     "season": "2026",
+     "week": 3,
+     "weeks_started": 0
+    },
+    "biggest_bust": {
+     "bid": 42,
+     "player": "Jaylen Wright",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2026",
+     "week": 3,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 2,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 57,
+    "free_claims": 1,
+    "hit_rate": 0.0,
+    "most_points": {
+     "bid": 15,
+     "player": "Kenyon Sadiq",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "TE",
+     "season": "2026",
+     "week": 3,
+     "weeks_started": 0
+    },
+    "paid_claims": 2,
+    "points_from_free_claims": 0.0,
+    "points_from_paid_claims": 0.0,
+    "points_per_dollar": 0.0
+   }
+  },
+  "claims_benched_only": 6,
+  "claims_dropped_before_playing": 1,
+  "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). Does not account for what the owner would have had without the claim, or for bench stashes bought on purpose (handcuffs, injury stashes).",
+  "dollars_spent": 466,
+  "free_claims": 11,
+  "hit_rate": 0.833,
+  "league_points_per_dollar": 2.39,
+  "most_points": {
+   "bid": 12,
+   "player": "Puka Nacua",
+   "points_per_dollar": 14.12,
+   "points_started": 169.4,
+   "pos": "WR",
+   "season": "2023",
+   "week": 1,
+   "weeks_started": 12
+  },
+  "name": "Bang for Buck",
+  "paid_claims": 42,
+  "points_from_free_claims": 332.44,
+  "points_from_paid_claims": 1008.16,
+  "points_per_dollar": 2.16,
+  "rank": 7
+ },
  "first_name": "Jon",
  "first_season": "2019",
  "head_to_head": {
@@ -259,6 +607,47 @@
     "waiver_claims_lost": 3,
     "waiver_claims_won": 4
    },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 45,
+     "player": "Ty Johnson",
+     "points_per_dollar": 0.11,
+     "points_started": 5.1,
+     "pos": "RB",
+     "season": "2019",
+     "week": 7,
+     "weeks_started": 1
+    },
+    "biggest_bust": {
+     "bid": 10,
+     "player": "O.J. Howard",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "TE",
+     "season": "2019",
+     "week": 7,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 62,
+    "free_claims": 0,
+    "hit_rate": 0.75,
+    "most_points": {
+     "bid": 4,
+     "player": "A.J. Brown",
+     "points_per_dollar": 9.6,
+     "points_started": 38.4,
+     "pos": "WR",
+     "season": "2019",
+     "week": 10,
+     "weeks_started": 3
+    },
+    "paid_claims": 4,
+    "points_from_free_claims": 0,
+    "points_from_paid_claims": 67.5,
+    "points_per_dollar": 1.09
+   },
    "final_place": 9,
    "luck": {
     "all_play_record": "61-82",
@@ -318,6 +707,47 @@
     "unexplained_difference": 0,
     "waiver_claims_lost": 3,
     "waiver_claims_won": 9
+   },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 40,
+     "player": "Mike Davis",
+     "points_per_dollar": 2.2,
+     "points_started": 87.9,
+     "pos": "RB",
+     "season": "2020",
+     "week": 2,
+     "weeks_started": 6
+    },
+    "biggest_bust": {
+     "bid": 26,
+     "player": "Benny Snell",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2020",
+     "week": 1,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
+    "claims_dropped_before_playing": 1,
+    "dollars_spent": 80,
+    "free_claims": 2,
+    "hit_rate": 0.714,
+    "most_points": {
+     "bid": 40,
+     "player": "Mike Davis",
+     "points_per_dollar": 2.2,
+     "points_started": 87.9,
+     "pos": "RB",
+     "season": "2020",
+     "week": 2,
+     "weeks_started": 6
+    },
+    "paid_claims": 7,
+    "points_from_free_claims": 52.0,
+    "points_from_paid_claims": 157.56,
+    "points_per_dollar": 1.97
    },
    "final_place": 12,
    "luck": {
@@ -379,6 +809,47 @@
     "waiver_claims_lost": 5,
     "waiver_claims_won": 16
    },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 5,
+     "player": "San Francisco 49ers",
+     "points_per_dollar": 5.0,
+     "points_started": 25.0,
+     "pos": "DEF",
+     "season": "2021",
+     "week": 10,
+     "weeks_started": 2
+    },
+    "biggest_bust": {
+     "bid": 5,
+     "player": "Tyrell Williams",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2021",
+     "week": 1,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 69,
+    "free_claims": 1,
+    "hit_rate": 0.933,
+    "most_points": {
+     "bid": 3,
+     "player": "Kansas City Chiefs",
+     "points_per_dollar": 13.67,
+     "points_started": 41.0,
+     "pos": "DEF",
+     "season": "2021",
+     "week": 14,
+     "weeks_started": 2
+    },
+    "paid_claims": 15,
+    "points_from_free_claims": 0.0,
+    "points_from_paid_claims": 183.9,
+    "points_per_dollar": 2.67
+   },
    "final_place": 4,
    "luck": {
     "all_play_record": "84-70",
@@ -438,6 +909,38 @@
     "unexplained_difference": 0,
     "waiver_claims_lost": 2,
     "waiver_claims_won": 5
+   },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 8,
+     "player": "Tyler Higbee",
+     "points_per_dollar": 11.7,
+     "points_started": 93.6,
+     "pos": "TE",
+     "season": "2022",
+     "week": 1,
+     "weeks_started": 14
+    },
+    "biggest_bust": null,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 32,
+    "free_claims": 1,
+    "hit_rate": 1.0,
+    "most_points": {
+     "bid": 8,
+     "player": "Tyler Higbee",
+     "points_per_dollar": 11.7,
+     "points_started": 93.6,
+     "pos": "TE",
+     "season": "2022",
+     "week": 1,
+     "weeks_started": 14
+    },
+    "paid_claims": 4,
+    "points_from_free_claims": 7.0,
+    "points_from_paid_claims": 125.0,
+    "points_per_dollar": 3.91
    },
    "final_place": 10,
    "luck": {
@@ -499,6 +1002,47 @@
     "waiver_claims_lost": 0,
     "waiver_claims_won": 3
    },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 12,
+     "player": "Puka Nacua",
+     "points_per_dollar": 14.12,
+     "points_started": 169.4,
+     "pos": "WR",
+     "season": "2023",
+     "week": 1,
+     "weeks_started": 12
+    },
+    "biggest_bust": {
+     "bid": 7,
+     "player": "Ty Johnson",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2023",
+     "week": 11,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 34,
+    "free_claims": 0,
+    "hit_rate": 0.667,
+    "most_points": {
+     "bid": 12,
+     "player": "Puka Nacua",
+     "points_per_dollar": 14.12,
+     "points_started": 169.4,
+     "pos": "WR",
+     "season": "2023",
+     "week": 1,
+     "weeks_started": 12
+    },
+    "paid_claims": 3,
+    "points_from_free_claims": 0,
+    "points_from_paid_claims": 177.1,
+    "points_per_dollar": 5.21
+   },
    "final_place": 1,
    "luck": {
     "all_play_record": "110-44",
@@ -558,6 +1102,38 @@
     "unexplained_difference": 0,
     "waiver_claims_lost": 4,
     "waiver_claims_won": 6
+   },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 30,
+     "player": "Kareem Hunt",
+     "points_per_dollar": 4.3,
+     "points_started": 129.0,
+     "pos": "RB",
+     "season": "2024",
+     "week": 4,
+     "weeks_started": 11
+    },
+    "biggest_bust": null,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 82,
+    "free_claims": 3,
+    "hit_rate": 1.0,
+    "most_points": {
+     "bid": 30,
+     "player": "Kareem Hunt",
+     "points_per_dollar": 4.3,
+     "points_started": 129.0,
+     "pos": "RB",
+     "season": "2024",
+     "week": 4,
+     "weeks_started": 11
+    },
+    "paid_claims": 3,
+    "points_from_free_claims": 117.62,
+    "points_from_paid_claims": 137.0,
+    "points_per_dollar": 1.67
    },
    "final_place": 9,
    "luck": {
@@ -619,6 +1195,38 @@
     "waiver_claims_lost": 3,
     "waiver_claims_won": 7
    },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 20,
+     "player": "Wan'Dale Robinson",
+     "points_per_dollar": 5.92,
+     "points_started": 118.5,
+     "pos": "WR",
+     "season": "2025",
+     "week": 2,
+     "weeks_started": 12
+    },
+    "biggest_bust": null,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 50,
+    "free_claims": 3,
+    "hit_rate": 1.0,
+    "most_points": {
+     "bid": 20,
+     "player": "Wan'Dale Robinson",
+     "points_per_dollar": 5.92,
+     "points_started": 118.5,
+     "pos": "WR",
+     "season": "2025",
+     "week": 2,
+     "weeks_started": 12
+    },
+    "paid_claims": 4,
+    "points_from_free_claims": 155.82,
+    "points_from_paid_claims": 160.1,
+    "points_per_dollar": 3.2
+   },
    "final_place": 7,
    "luck": {
     "all_play_record": "62.5-91.5",
@@ -678,6 +1286,47 @@
     "unexplained_difference": 0,
     "waiver_claims_lost": 0,
     "waiver_claims_won": 3
+   },
+   "faab_efficiency": {
+    "best_value": {
+     "bid": 15,
+     "player": "Kenyon Sadiq",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "TE",
+     "season": "2026",
+     "week": 3,
+     "weeks_started": 0
+    },
+    "biggest_bust": {
+     "bid": 42,
+     "player": "Jaylen Wright",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "RB",
+     "season": "2026",
+     "week": 3,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 2,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 57,
+    "free_claims": 1,
+    "hit_rate": 0.0,
+    "most_points": {
+     "bid": 15,
+     "player": "Kenyon Sadiq",
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "TE",
+     "season": "2026",
+     "week": 3,
+     "weeks_started": 0
+    },
+    "paid_claims": 2,
+    "points_from_free_claims": 0.0,
+    "points_from_paid_claims": 0.0,
+    "points_per_dollar": 0.0
    },
    "final_place": null,
    "luck": {

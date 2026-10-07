@@ -29,6 +29,7 @@ jobs:
       - run: python scripts/nfl_injuries.py
       - run: python scripts/nfl_context.py
       - run: python scripts/score.py
+      - run: python scripts/faab.py
       - run: python scripts/profiles.py
       - name: Commit changes
         run: |

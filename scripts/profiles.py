@@ -13,6 +13,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import faab  # noqa: E402
 import sleeper  # noqa: E402
 
 ROOT = sleeper.ROOT
@@ -94,6 +95,7 @@ def main():
     owners = load(OUT / "owners.json")
     players = load(RAW / "players_slim.json", {})
     tegridy_all = load(OUT / "tegridy_alltime.json", {})
+    fe = load(OUT / "faab_efficiency.json", {}) or {}
     penalties = (load(OUT / "penalties.json", {}) or {}).get("penalties", [])
     rivalries = load(OUT / "rivalries.json", [])
     bundles = sorted((load(f) for f in (RAW / "seasons").glob("*.json")), key=lambda b: b["league"]["season"])
@@ -159,16 +161,7 @@ def main():
         standing = sorted(per, key=lambda u: (-per[u]["reg"]["wins"], -per[u]["reg"]["points_for"]))
         rank = {u: i + 1 for i, u in enumerate(standing)}
 
-        # Waiver claims the commissioner later undid: if the commissioner drops a player a roster won by waiver
-        # (most recent such claim before the drop), Sleeper refunds that bid.
-        all_tx = sorted((t | {"_wk": wk} for wk, txs in b["transactions"].items() for t in txs), key=lambda t: t["created"])
-        reversed_ids = {}
-        for ct in (t for t in all_tx if t["type"] == "commissioner" and t.get("drops")):
-            for pid in ct["drops"]:
-                cands = [t for t in all_tx if t["type"] == "waiver" and t["status"] == "complete" and t["roster_ids"] == ct["roster_ids"]
-                         and pid in (t.get("adds") or {}) and t["created"] < ct["created"] and t["transaction_id"] not in reversed_ids]
-                if cands:
-                    reversed_ids[max(cands, key=lambda t: t["created"])["transaction_id"]] = ct
+        reversed_ids = faab.reversed_claims(b)  # claims the commissioner undid; Sleeper refunds the bid
 
         # transactions
         for wk, txs in b["transactions"].items():
@@ -237,6 +230,7 @@ def main():
                 "sleeper_standings_reported": {"points_for": round(r["settings"]["fpts"] + r["settings"]["fpts_decimal"] / 100, 2),
                                                "points_against": round(r["settings"]["fpts_against"] + r["settings"]["fpts_against_decimal"] / 100, 2)},
             }
+            season_obj["faab_efficiency"] = (fe.get("owners", {}).get(uid) or {}).get("by_season", {}).get(season)
             p["seasons"][season] = season_obj
             if complete:
                 pl = place.get(rid)
@@ -306,7 +300,7 @@ def main():
         tag = lambda g: {"season": g["season"], "week": g["week"], "opponent_owner_id": g["opp"], "points_for": round(g["pf"], 2), "points_against": round(g["pa"], 2)}
 
         txs = p["_tx"]
-        faab = {"spent": sum(t["faab_spent"] for t in txs.values()),
+        faab_block = {"spent": sum(t["faab_spent"] for t in txs.values()),
                 "refunded": sum(t["faab_refunded"] for t in txs.values()),
                 "traded_in": sum(t["faab_traded_in"] for t in txs.values()),
                 "traded_out": sum(t["faab_traded_out"] for t in txs.values()),
@@ -323,7 +317,7 @@ def main():
                 "trades": sum(t["trades"] for t in txs.values()),
                 "biggest_bid": max(p["_bids"], key=lambda x: x["amount"]) if p["_bids"] else None,
                 "most_frequent_trade_partner": ({"owner_id": p["_trade_partners"].most_common(1)[0][0], "trades": p["_trade_partners"].most_common(1)[0][1]} if p["_trade_partners"] else None)}
-        faab["spent_per_season"] = {s: txs[s]["faab_spent"] for s in sorted(txs)}
+        faab_block["spent_per_season"] = {s: txs[s]["faab_spent"] for s in sorted(txs)}
 
         ex = eff_by[uid]
         opp_rows = {k: v for k, v in h2h[uid].items() if v["games"]}
@@ -368,7 +362,9 @@ def main():
             "efficiency": {"note": "A skill stat. Deliberately NOT part of Tegridy Factor.", "weeks": ex["weeks"], "points": round(ex["points"], 2),
                            "optimal_points": round(ex["optimal_points"], 2), "efficiency": round(ex["points"] / ex["optimal_points"], 4) if ex["optimal_points"] else None,
                            "points_left_on_bench": round(ex["optimal_points"] - ex["points"], 2)},
-            "faab_and_transactions": faab,
+            "faab_and_transactions": faab_block,
+            "faab_efficiency": {"name": fe.get("name"), "definition": fe.get("definition"), "league_points_per_dollar": (fe.get("league") or {}).get("points_per_dollar"),
+                                **(fe.get("owners", {}).get(uid) or {})},
             "head_to_head": {"by_opponent": h2h[uid], "nemesis_owner_id": nem, "favorite_victim_owner_id": vic},
             "seasons": p["seasons"],
         }
@@ -378,7 +374,8 @@ def main():
             "seasons": len(p["seasons_played"]), "wins": total["wins"], "losses": total["losses"], "ties": total["ties"],
             "win_pct": total["win_pct"], "points_for": total["points_for"], "points_against": total["points_against"],
             "championships": trophies["championships"]["count"], "runner_ups": trophies["runner_up"]["count"], "sackos": trophies["sackos"]["count"],
-            "playoff_appearances": trophies["playoff_appearances"]["count"], "faab_spent": faab["spent"], "trades": faab["trades"],
+            "playoff_appearances": trophies["playoff_appearances"]["count"], "faab_spent": faab_block["spent"], "trades": faab_block["trades"],
+            "faab_points_per_dollar": (fe.get("owners", {}).get(uid) or {}).get("points_per_dollar"), "faab_efficiency_rank": (fe.get("owners", {}).get(uid) or {}).get("rank"),
             "luck": profile["luck"]["luck"], "efficiency": profile["efficiency"]["efficiency"],
             "tegridy_factor": tegridy["total"], "tegridy_rank": tegridy["rank"],
         })
