@@ -66,7 +66,7 @@
    "week": 7
   },
   "budget_per_season": 100,
-  "drops": 315,
+  "drops": 316,
   "faab_taken_as_penalty": 50,
   "free_agent_adds": 245,
   "most_frequent_trade_partner": {
@@ -1999,7 +1999,7 @@
    "faab": {
     "adds": 15,
     "budget": 100,
-    "drops": 14,
+    "drops": 15,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 9,
     "refunded": 0,
