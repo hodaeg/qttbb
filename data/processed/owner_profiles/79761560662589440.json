@@ -56,7 +56,7 @@
   "weeks": 116
  },
  "faab_and_transactions": {
-  "adds": 280,
+  "adds": 281,
   "biggest_bid": {
    "amount": 64,
    "player": "Kenneth Walker",
@@ -64,9 +64,9 @@
    "week": 5
   },
   "budget_per_season": 100,
-  "drops": 270,
+  "drops": 271,
   "faab_taken_as_penalty": 11,
-  "free_agent_adds": 188,
+  "free_agent_adds": 189,
   "most_frequent_trade_partner": {
    "owner_id": "471366618241298432",
    "trades": 2
@@ -668,8 +668,8 @@
      "week": 4,
      "weeks_started": 0
     },
-    "claims_benched_only": 1,
-    "claims_dropped_before_playing": 0,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 1,
     "dollars_spent": 22,
     "free_claims": 1,
     "hit_rate": 0.667,
@@ -705,8 +705,8 @@
     }
    }
   },
-  "claims_benched_only": 17,
-  "claims_dropped_before_playing": 2,
+  "claims_benched_only": 16,
+  "claims_dropped_before_playing": 3,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 617,
   "free_claims": 8,
@@ -2083,11 +2083,11 @@
    "division": "The Graveyard",
    "efficiency": 0.9335,
    "faab": {
-    "adds": 15,
+    "adds": 16,
     "budget": 100,
-    "drops": 14,
+    "drops": 15,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 11,
+    "free_agent_adds": 12,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 22,
@@ -2136,8 +2136,8 @@
      "week": 4,
      "weeks_started": 0
     },
-    "claims_benched_only": 1,
-    "claims_dropped_before_playing": 0,
+    "claims_benched_only": 0,
+    "claims_dropped_before_playing": 1,
     "dollars_spent": 22,
     "free_claims": 1,
     "hit_rate": 0.667,
