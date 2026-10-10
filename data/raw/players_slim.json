@@ -24,7 +24,7 @@
   "team": "GB"
  },
  "10225": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Jonathan Mingo",
   "pos": "WR",
   "team": "DAL"
@@ -159,7 +159,7 @@
   "injury_status": null,
   "name": "Emari Demercado",
   "pos": "RB",
-  "team": "DAL"
+  "team": null
  },
  "11377": {
   "injury_status": "PUP",
@@ -210,7 +210,7 @@
   "team": "ATL"
  },
  "11560": {
-  "injury_status": "Out",
+  "injury_status": "Questionable",
   "name": "Caleb Williams",
   "pos": "QB",
   "team": "CHI"
@@ -318,7 +318,7 @@
   "team": "SEA"
  },
  "11604": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Brock Bowers",
   "pos": "TE",
   "team": "LV"
@@ -360,7 +360,7 @@
   "team": "KC"
  },
  "11625": {
-  "injury_status": "Doubtful",
+  "injury_status": "Out",
   "name": "Adonai Mitchell",
   "pos": "WR",
   "team": "NYJ"
@@ -378,7 +378,7 @@
   "team": "DEN"
  },
  "11628": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Marvin Harrison",
   "pos": "WR",
   "team": "ARI"
@@ -396,7 +396,7 @@
   "team": "JAX"
  },
  "11632": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Malik Nabers",
   "pos": "WR",
   "team": "NYG"
@@ -420,7 +420,7 @@
   "team": "SF"
  },
  "11643": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jaylen Wright",
   "pos": "RB",
   "team": "MIA"
@@ -564,7 +564,7 @@
   "team": null
  },
  "12481": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Cam Skattebo",
   "pos": "RB",
   "team": "NYG"
@@ -600,7 +600,7 @@
   "team": "JAX"
  },
  "12492": {
-  "injury_status": "Doubtful",
+  "injury_status": "IR",
   "name": "Pat Bryant",
   "pos": "WR",
   "team": "DEN"
@@ -708,7 +708,7 @@
   "team": "CAR"
  },
  "12527": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Ashton Jeanty",
   "pos": "RB",
   "team": "LV"
@@ -726,13 +726,13 @@
   "team": "JAX"
  },
  "12533": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Jacory Croskey-Merritt",
   "pos": "RB",
   "team": "WAS"
  },
  "12534": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Kyle Monangai",
   "pos": "RB",
   "team": "CHI"
@@ -750,7 +750,7 @@
   "team": "TEN"
  },
  "12545": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Tyler Shough",
   "pos": "QB",
   "team": "NO"
@@ -804,7 +804,7 @@
   "team": "CIN"
  },
  "13279": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Carnell Tate",
   "pos": "WR",
   "team": "TEN"
@@ -822,7 +822,7 @@
   "team": "SEA"
  },
  "13287": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Jeremiyah Love",
   "pos": "RB",
   "team": "ARI"
@@ -840,7 +840,7 @@
   "team": "PHI"
  },
  "13296": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Caleb Douglas",
   "pos": "WR",
   "team": "MIA"
@@ -858,7 +858,7 @@
   "team": "LV"
  },
  "13311": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Chris Bell",
   "pos": "WR",
   "team": "MIA"
@@ -900,7 +900,7 @@
   "team": "KC"
  },
  "13414": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Kaelon Black",
   "pos": "RB",
   "team": "SF"
@@ -1242,7 +1242,7 @@
   "team": null
  },
  "2216": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Mike Evans",
   "pos": "WR",
   "team": "SF"
@@ -1296,7 +1296,7 @@
   "team": "NYG"
  },
  "2307": {
-  "injury_status": "Doubtful",
+  "injury_status": "Out",
   "name": "Marcus Mariota",
   "pos": "QB",
   "team": "WAS"
@@ -1428,7 +1428,7 @@
   "team": null
  },
  "2449": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Stefon Diggs",
   "pos": "WR",
   "team": "WAS"
@@ -1596,7 +1596,7 @@
   "team": "ARI"
  },
  "3269": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Chris Moore",
   "pos": "WR",
   "team": "BAL"
@@ -2004,7 +2004,7 @@
   "team": null
  },
  "4177": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Mack Hollins",
   "pos": "WR",
   "team": "NE"
@@ -2196,13 +2196,13 @@
   "team": null
  },
  "4866": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Saquon Barkley",
   "pos": "RB",
   "team": "PHI"
  },
  "4881": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Lamar Jackson",
   "pos": "QB",
   "team": "BAL"
@@ -2304,10 +2304,10 @@
   "team": null
  },
  "4992": {
-  "injury_status": "Out",
+  "injury_status": "Questionable",
   "name": "Dante Pettis",
   "pos": "WR",
-  "team": "SF"
+  "team": null
  },
  "4993": {
   "injury_status": null,
@@ -2382,7 +2382,7 @@
   "team": null
  },
  "5022": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Dallas Goedert",
   "pos": "TE",
   "team": "PHI"
@@ -2700,7 +2700,7 @@
   "team": "PIT"
  },
  "5848": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Marquise Brown",
   "pos": "WR",
   "team": "PHI"
@@ -2724,7 +2724,7 @@
   "team": "SEA"
  },
  "5857": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Noah Fant",
   "pos": "TE",
   "team": "NO"
@@ -2826,7 +2826,7 @@
   "team": null
  },
  "5967": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Tony Pollard",
   "pos": "RB",
   "team": "TEN"
@@ -2958,7 +2958,7 @@
   "team": null
  },
  "6149": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Darius Slayton",
   "pos": "WR",
   "team": "IND"
@@ -3150,7 +3150,7 @@
   "team": "CLE"
  },
  "6786": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "CeeDee Lamb",
   "pos": "WR",
   "team": "DAL"
@@ -3162,7 +3162,7 @@
   "team": null
  },
  "6790": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "D'Andre Swift",
   "pos": "RB",
   "team": "CHI"
@@ -3294,13 +3294,13 @@
   "team": "WAS"
  },
  "6865": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Colby Parkinson",
   "pos": "TE",
   "team": "LAR"
  },
  "6869": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Adam Trautman",
   "pos": "TE",
   "team": "DEN"
@@ -3516,7 +3516,7 @@
   "team": "JAX"
  },
  "7525": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "DeVonta Smith",
   "pos": "WR",
   "team": "PHI"
@@ -3624,7 +3624,7 @@
   "team": "HOU"
  },
  "7571": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Rashod Bateman",
   "pos": "WR",
   "team": "BAL"
@@ -3708,7 +3708,7 @@
   "team": null
  },
  "7610": {
-  "injury_status": "Questionable",
+  "injury_status": "Doubtful",
   "name": "Trey Lance",
   "pos": "QB",
   "team": "LAC"
@@ -3726,7 +3726,7 @@
   "team": null
  },
  "7670": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Joshua Palmer",
   "pos": "WR",
   "team": "BUF"
@@ -3822,7 +3822,7 @@
   "team": "ATL"
  },
  "8116": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Pierre Strong",
   "pos": "RB",
   "team": "GB"
@@ -3882,7 +3882,7 @@
   "team": "ARI"
  },
  "8131": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Isaiah Likely",
   "pos": "TE",
   "team": "NYG"
@@ -3906,7 +3906,7 @@
   "team": "WAS"
  },
  "8136": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Rachaad White",
   "pos": "RB",
   "team": "WAS"
@@ -3990,7 +3990,7 @@
   "team": "ATL"
  },
  "8155": {
-  "injury_status": "Doubtful",
+  "injury_status": "Out",
   "name": "Breece Hall",
   "pos": "RB",
   "team": "NYJ"
@@ -4044,7 +4044,7 @@
   "team": null
  },
  "8180": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Jalen Nailor",
   "pos": "WR",
   "team": "LV"
@@ -4074,7 +4074,7 @@
   "team": "DAL"
  },
  "8210": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Chig Okonkwo",
   "pos": "TE",
   "team": "WAS"
@@ -4374,7 +4374,7 @@
   "team": "SEA"
  },
  "9754": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Quentin Johnston",
   "pos": "WR",
   "team": "LAC"
