@@ -1374,5 +1374,53 @@
   "pos": "DE",
   "practice": "Limited Participation in Practice",
   "team": "Falcons"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Dee Alford",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Landon Jackson",
+  "pos": "DE",
+  "practice": "Full Participation in Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "DJ Moore",
+  "pos": "WR",
+  "practice": "Limited Participation in Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Ed Oliver",
+  "pos": "DE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Out",
+  "injury": "Shoulder",
+  "name": "Josh Palmer",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hip",
+  "name": "Quentin Lake",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Rams"
  }
 ]

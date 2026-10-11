@@ -38529,6 +38529,28 @@
   {
    "bid": 0,
    "dropped": [
+    "Baltimore Ravens"
+   ],
+   "first_week": 5,
+   "outcome": "never_started",
+   "owner_id": "422102738889867264",
+   "par_per_dollar": null,
+   "player": "New England Patriots",
+   "player_id": "NE",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": null,
+   "points_started": 0.0,
+   "pos": "DEF",
+   "roster_id": 7,
+   "season": "2026",
+   "week": 5,
+   "weekly": [],
+   "weeks_rostered": 14,
+   "weeks_started": 0
+  },
+  {
+   "bid": 0,
+   "dropped": [
     "Bo Nix"
    ],
    "first_week": 5,
@@ -38612,7 +38634,7 @@
   "claims_benched_only": 202,
   "claims_dropped_before_playing": 47,
   "dollars_spent": 6741,
-  "free_claims": 362,
+  "free_claims": 363,
   "hit_rate": 0.691,
   "most_points": {
    "bid": 33,
@@ -39875,7 +39897,7 @@
      "claims_benched_only": 2,
      "claims_dropped_before_playing": 0,
      "dollars_spent": 11,
-     "free_claims": 2,
+     "free_claims": 3,
      "hit_rate": 0.333,
      "most_points": {
       "bid": 7,
@@ -39912,7 +39934,7 @@
    "claims_benched_only": 20,
    "claims_dropped_before_playing": 17,
    "dollars_spent": 622,
-   "free_claims": 61,
+   "free_claims": 62,
    "hit_rate": 0.589,
    "most_points": {
     "bid": 2,
