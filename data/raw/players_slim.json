@@ -204,7 +204,7 @@
   "team": "DET"
  },
  "11559": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Michael Penix",
   "pos": "QB",
   "team": "ATL"
@@ -381,10 +381,10 @@
   "injury_status": "Out",
   "name": "Marvin Harrison",
   "pos": "WR",
-  "team": "ARI"
+  "team": "HOU"
  },
  "11630": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Roman Wilson",
   "pos": "WR",
   "team": "PIT"
@@ -612,7 +612,7 @@
   "team": "LAC"
  },
  "12495": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Ollie Gordon",
   "pos": "RB",
   "team": "MIA"
@@ -666,13 +666,13 @@
   "team": "NYG"
  },
  "12509": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Tre' Harris",
   "pos": "WR",
   "team": "LAC"
  },
  "12512": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Quinshon Judkins",
   "pos": "RB",
   "team": "CLE"
@@ -720,7 +720,7 @@
   "team": "LV"
  },
  "12529": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "TreVeyon Henderson",
   "pos": "RB",
   "team": "NE"
@@ -852,7 +852,7 @@
   "team": "MIA"
  },
  "13298": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "KC Concepcion",
   "pos": "WR",
   "team": "CLE"
@@ -870,7 +870,7 @@
   "team": "MIA"
  },
  "13330": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Kenyon Sadiq",
   "pos": "TE",
   "team": "NYJ"
@@ -2046,7 +2046,7 @@
   "team": null
  },
  "4199": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Aaron Jones",
   "pos": "RB",
   "team": "MIN"
@@ -2643,7 +2643,7 @@
   "injury_status": null,
   "name": "Justin Watson",
   "pos": "WR",
-  "team": null
+  "team": "KC"
  },
  "538": {
   "injury_status": null,
@@ -2652,7 +2652,7 @@
   "team": null
  },
  "5409": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Tanner Hudson",
   "pos": "TE",
   "team": "CIN"
@@ -2694,7 +2694,7 @@
   "team": null
  },
  "5844": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "T.J. Hockenson",
   "pos": "TE",
   "team": "MIN"
@@ -2748,7 +2748,7 @@
   "team": "IND"
  },
  "5872": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Deebo Samuel",
   "pos": "WR",
   "team": "SF"
@@ -2778,7 +2778,7 @@
   "team": null
  },
  "5892": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "David Montgomery",
   "pos": "RB",
   "team": "HOU"
@@ -4032,7 +4032,7 @@
   "team": "GB"
  },
  "8168": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Skyy Moore",
   "pos": "WR",
   "team": "GB"
@@ -4404,7 +4404,7 @@
   "team": "HOU"
  },
  "9997": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Zay Flowers",
   "pos": "WR",
   "team": "BAL"
