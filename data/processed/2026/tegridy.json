@@ -7,12 +7,6 @@
  },
  {
   "events": [],
-  "owner_id": "423560331814510592",
-  "roster_id": 2,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
   "owner_id": "471074114505797632",
   "roster_id": 3,
   "tegridy_factor": 0
@@ -33,18 +27,6 @@
   "events": [],
   "owner_id": "471345530597797888",
   "roster_id": 6,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
-  "owner_id": "422102738889867264",
-  "roster_id": 7,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
-  "owner_id": "471360899853053952",
-  "roster_id": 9,
   "tegridy_factor": 0
  },
  {
@@ -80,5 +62,53 @@
   "owner_id": "471359672478068736",
   "roster_id": 8,
   "tegridy_factor": 6.0
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 8,
+    "detail": "TreVeyon Henderson was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
+    "kind": "injured_starter_out",
+    "multiplier": 1.0,
+    "penalty": 8.0,
+    "penalty_id": "2026-w05-r2-injured_starter_out-12529",
+    "week": 5
+   }
+  ],
+  "owner_id": "423560331814510592",
+  "roster_id": 2,
+  "tegridy_factor": 8.0
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 8,
+    "detail": "David Montgomery was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
+    "kind": "injured_starter_out",
+    "multiplier": 1.0,
+    "penalty": 8.0,
+    "penalty_id": "2026-w05-r7-injured_starter_out-5892",
+    "week": 5
+   }
+  ],
+  "owner_id": "422102738889867264",
+  "roster_id": 7,
+  "tegridy_factor": 8.0
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 8,
+    "detail": "Deebo Samuel was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
+    "kind": "injured_starter_out",
+    "multiplier": 1.0,
+    "penalty": 8.0,
+    "penalty_id": "2026-w05-r9-injured_starter_out-5872",
+    "week": 5
+   }
+  ],
+  "owner_id": "471360899853053952",
+  "roster_id": 9,
+  "tegridy_factor": 8.0
  }
 ]

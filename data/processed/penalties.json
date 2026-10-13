@@ -2656,6 +2656,219 @@
     "weeks_before_playoffs": 11
    },
    "week": 4
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-10-13T03:30:58+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "TreVeyon Henderson was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
+   "id": "2026-w05-r2-injured_starter_out-12529",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "MrSeeYou",
+    "first_name": "Max",
+    "owner_id": "423560331814510592",
+    "roster_id": 2,
+    "team_name": "Gotham Rogues"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 20.98,
+    "opponent_display_name": "Hodaeg",
+    "opponent_owner_id": "383681356686950400",
+    "opponent_roster_id": 1,
+    "points_against": 123.08,
+    "points_for": 102.1,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2026-10-11",
+    "home": true,
+    "nfl_team": "NE",
+    "opponent": "LV"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "TreVeyon Henderson",
+    "nfl_team": "NE",
+    "player_id": "12529",
+    "pos": "RB"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "10 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 5,
+    "weeks_before_playoffs": 10
+   },
+   "week": 5
+  },
+  {
+   "bench_option": {
+    "name": "Blake Corum",
+    "player_id": "11586",
+    "points": 14.7,
+    "pos": "RB",
+    "slot": "RB"
+   },
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-10-13T03:30:58+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "David Montgomery was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
+   "id": "2026-w05-r7-injured_starter_out-5892",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "WhiskeyDicknCo",
+    "first_name": "Mike",
+    "owner_id": "422102738889867264",
+    "roster_id": 7,
+    "team_name": "Whiskey Dick & Co"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 20.22,
+    "opponent_display_name": "therealGandB",
+    "opponent_owner_id": "471368473092550656",
+    "opponent_roster_id": 12,
+    "points_against": 129.96,
+    "points_for": 109.74,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2026-10-11",
+    "home": false,
+    "nfl_team": "HOU",
+    "opponent": "TEN"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "David Montgomery",
+    "nfl_team": "HOU",
+    "player_id": "5892",
+    "pos": "RB"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "10 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 5,
+    "weeks_before_playoffs": 10
+   },
+   "week": 5
+  },
+  {
+   "bench_option": {
+    "name": "Emeka Egbuka",
+    "player_id": "12514",
+    "points": 14.2,
+    "pos": "WR",
+    "slot": "WR"
+   },
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-10-13T03:30:58+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Deebo Samuel was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
+   "id": "2026-w05-r9-injured_starter_out-5872",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "ChinaKing",
+    "first_name": "Adam",
+    "owner_id": "471360899853053952",
+    "roster_id": 9,
+    "team_name": "China King"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 24.08,
+    "opponent_display_name": "Gingivitis",
+    "opponent_owner_id": "471345530597797888",
+    "opponent_roster_id": 6,
+    "points_against": 127.88,
+    "points_for": 103.8,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2026-10-11",
+    "home": false,
+    "nfl_team": "SF",
+    "opponent": "SEA"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "WR",
+    "name": "Deebo Samuel",
+    "nfl_team": "SF",
+    "player_id": "5872",
+    "pos": "WR"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "10 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 5,
+    "weeks_before_playoffs": 10
+   },
+   "week": 5
   }
  ]
 }

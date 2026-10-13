@@ -7,12 +7,12 @@
   },
   "422102738889867264": {
    "doubtful": 1,
-   "out": 0,
+   "out": 1,
    "questionable_dnp": 0
   },
   "423560331814510592": {
    "doubtful": 0,
-   "out": 2,
+   "out": 3,
    "questionable_dnp": 0
   },
   "471074114505797632": {
@@ -37,7 +37,7 @@
   },
   "471360899853053952": {
    "doubtful": 0,
-   "out": 2,
+   "out": 3,
    "questionable_dnp": 1
   },
   "471368473092550656": {
@@ -350,6 +350,45 @@
    "source": "nfl_report_dnp",
    "status": "Questionable",
    "week": 4
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "423560331814510592",
+   "player": "TreVeyon Henderson",
+   "player_id": "12529",
+   "pos": "RB",
+   "roster_id": 2,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 5
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "422102738889867264",
+   "player": "David Montgomery",
+   "player_id": "5892",
+   "pos": "RB",
+   "roster_id": 7,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 5
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "471360899853053952",
+   "player": "Deebo Samuel",
+   "player_id": "5872",
+   "pos": "WR",
+   "roster_id": 9,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 5
   }
  ],
  "rule": "Official NFL injury report: Out/Doubtful, or Questionable who did not play, AND 0 points as a starter (plus game-day snapshot flags)"

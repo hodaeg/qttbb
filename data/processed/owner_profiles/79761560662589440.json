@@ -19,14 +19,14 @@
   "record": {
    "losses": 72,
    "ties": 0,
-   "wins": 73
+   "wins": 74
   },
   "sackos": 1,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
   "scoring_bonuses": [
    15
   ],
-  "win_pct": 0.5034
+  "win_pct": 0.5068
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -48,12 +48,12 @@
  "current_team_name": "G H O S T\u2122",
  "display_name": "gabroni",
  "efficiency": {
-  "efficiency": 0.8916,
+  "efficiency": 0.8917,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13872.44,
-  "points": 12368.84,
-  "points_left_on_bench": 1503.6,
-  "weeks": 116
+  "optimal_points": 14049.1,
+  "points": 12527.88,
+  "points_left_on_bench": 1521.22,
+  "weeks": 117
  },
  "faab_and_transactions": {
   "adds": 281,
@@ -634,27 +634,27 @@
    "2026": {
     "best_par_claim": {
      "bid": 12,
-     "par_per_dollar": 0.48,
+     "par_per_dollar": 1.34,
      "player": "Jared Goff",
-     "points_above_replacement": 5.72,
-     "points_per_dollar": 3.32,
-     "points_started": 39.84,
+     "points_above_replacement": 16.12,
+     "points_per_dollar": 5.65,
+     "points_started": 67.78,
      "pos": "QB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "best_value": {
      "bid": 12,
-     "par_per_dollar": 0.48,
+     "par_per_dollar": 1.34,
      "player": "Jared Goff",
-     "points_above_replacement": 5.72,
-     "points_per_dollar": 3.32,
-     "points_started": 39.84,
+     "points_above_replacement": 16.12,
+     "points_per_dollar": 5.65,
+     "points_started": 67.78,
      "pos": "QB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "biggest_bust": {
      "bid": 7,
@@ -675,27 +675,27 @@
     "hit_rate": 0.667,
     "most_points": {
      "bid": 12,
-     "par_per_dollar": 0.48,
+     "par_per_dollar": 1.34,
      "player": "Jared Goff",
-     "points_above_replacement": 5.72,
-     "points_per_dollar": 3.32,
-     "points_started": 39.84,
+     "points_above_replacement": 16.12,
+     "points_per_dollar": 5.65,
+     "points_started": 67.78,
      "pos": "QB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "paid_claims": 3,
-    "par_per_dollar": 0.12,
-    "points_above_replacement": 2.72,
+    "par_per_dollar": 0.59,
+    "points_above_replacement": 12.92,
     "points_from_free_claims": 0.0,
-    "points_from_paid_claims": 49.84,
-    "points_per_dollar": 2.27,
+    "points_from_paid_claims": 77.78,
+    "points_per_dollar": 3.54,
     "worst_par_claim": {
      "bid": 3,
-     "par_per_dollar": -1.0,
+     "par_per_dollar": -1.07,
      "player": "San Francisco 49ers",
-     "points_above_replacement": -3.0,
+     "points_above_replacement": -3.2,
      "points_per_dollar": 3.33,
      "points_started": 10.0,
      "pos": "DEF",
@@ -711,7 +711,7 @@
   "dollars_spent": 617,
   "free_claims": 8,
   "hit_rate": 0.774,
-  "league_points_per_dollar": 2.37,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 12,
    "par_per_dollar": 1.48,
@@ -726,12 +726,12 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 84,
-  "par_per_dollar": 0.49,
+  "par_per_dollar": 0.51,
   "par_rank": 1,
-  "points_above_replacement": 301.86,
+  "points_above_replacement": 312.06,
   "points_from_free_claims": 50.1,
-  "points_from_paid_claims": 1923.06,
-  "points_per_dollar": 3.12,
+  "points_from_paid_claims": 1951.0,
+  "points_per_dollar": 3.16,
   "rank": 3,
   "worst_par_claim": {
    "bid": 6,
@@ -814,13 +814,13 @@
     "wins": 4
    },
    "471359672478068736": {
-    "games": 12,
+    "games": 13,
     "losses": 5,
-    "points_against": 1240.0,
-    "points_for": 1261.92,
+    "points_against": 1326.7,
+    "points_for": 1420.96,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 7
+    "wins": 8
    },
    "471360899853053952": {
     "games": 9,
@@ -895,7 +895,7 @@
     "record": {
      "losses": 3,
      "ties": 0,
-     "wins": 1
+     "wins": 2
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1062,7 +1062,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "1-3",
+     "counted_record": "2-3",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1077,10 +1077,10 @@
   "snapshot_rank": 8
  },
  "luck": {
-  "expected_wins": 52.64,
+  "expected_wins": 53.64,
   "luck": -3.64,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 49
+  "wins": 50
  },
  "owner_id": "79761560662589440",
  "record": {
@@ -1098,35 +1098,35 @@
    "wins": 9
   },
   "regular_season": {
-   "avg_points_against": 105.43,
-   "avg_points_for": 105.97,
-   "games": 100,
+   "avg_points_against": 105.25,
+   "avg_points_for": 106.49,
+   "games": 101,
    "losses": 51,
-   "points_against": 10543.36,
-   "points_for": 10596.56,
+   "points_against": 10630.06,
+   "points_for": 10755.6,
    "ties": 0,
-   "win_pct": 0.49,
-   "wins": 49
+   "win_pct": 0.495,
+   "wins": 50
   },
   "total": {
-   "avg_points_against": 105.12,
-   "avg_points_for": 106.63,
-   "games": 116,
+   "avg_points_against": 104.96,
+   "avg_points_for": 107.08,
+   "games": 117,
    "losses": 58,
-   "points_against": 12193.38,
-   "points_for": 12368.84,
+   "points_against": 12280.08,
+   "points_for": 12527.88,
    "ties": 0,
-   "win_pct": 0.5,
-   "wins": 58
+   "win_pct": 0.5043,
+   "wins": 59
   }
  },
  "scoring": {
   "biggest_win": {
-   "opponent_owner_id": "471083964757438464",
-   "points_against": 45.6,
-   "points_for": 113.58,
-   "season": "2025",
-   "week": 8
+   "opponent_owner_id": "471359672478068736",
+   "points_against": 86.7,
+   "points_for": 159.04,
+   "season": "2026",
+   "week": 5
   },
   "close_games": {
    "definition": "decided by less than 5 points",
@@ -2081,7 +2081,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.9335,
+   "efficiency": 0.9234,
    "faab": {
     "adds": 16,
     "budget": 100,
@@ -2102,27 +2102,27 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 12,
-     "par_per_dollar": 0.48,
+     "par_per_dollar": 1.34,
      "player": "Jared Goff",
-     "points_above_replacement": 5.72,
-     "points_per_dollar": 3.32,
-     "points_started": 39.84,
+     "points_above_replacement": 16.12,
+     "points_per_dollar": 5.65,
+     "points_started": 67.78,
      "pos": "QB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "best_value": {
      "bid": 12,
-     "par_per_dollar": 0.48,
+     "par_per_dollar": 1.34,
      "player": "Jared Goff",
-     "points_above_replacement": 5.72,
-     "points_per_dollar": 3.32,
-     "points_started": 39.84,
+     "points_above_replacement": 16.12,
+     "points_per_dollar": 5.65,
+     "points_started": 67.78,
      "pos": "QB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "biggest_bust": {
      "bid": 7,
@@ -2143,27 +2143,27 @@
     "hit_rate": 0.667,
     "most_points": {
      "bid": 12,
-     "par_per_dollar": 0.48,
+     "par_per_dollar": 1.34,
      "player": "Jared Goff",
-     "points_above_replacement": 5.72,
-     "points_per_dollar": 3.32,
-     "points_started": 39.84,
+     "points_above_replacement": 16.12,
+     "points_per_dollar": 5.65,
+     "points_started": 67.78,
      "pos": "QB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "paid_claims": 3,
-    "par_per_dollar": 0.12,
-    "points_above_replacement": 2.72,
+    "par_per_dollar": 0.59,
+    "points_above_replacement": 12.92,
     "points_from_free_claims": 0.0,
-    "points_from_paid_claims": 49.84,
-    "points_per_dollar": 2.27,
+    "points_from_paid_claims": 77.78,
+    "points_per_dollar": 3.54,
     "worst_par_claim": {
      "bid": 3,
-     "par_per_dollar": -1.0,
+     "par_per_dollar": -1.07,
      "player": "San Francisco 49ers",
-     "points_above_replacement": -3.0,
+     "points_above_replacement": -3.2,
      "points_per_dollar": 3.33,
      "points_started": 10.0,
      "pos": "DEF",
@@ -2174,10 +2174,10 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "14-30",
-    "expected_wins": 1.27,
+    "all_play_record": "25-30",
+    "expected_wins": 2.27,
     "luck": -0.27,
-    "wins": 1
+    "wins": 2
    },
    "made_playoffs": false,
    "playoff_result": null,
@@ -2193,21 +2193,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 109.72,
-    "avg_points_for": 94.97,
-    "games": 4,
+    "avg_points_against": 105.11,
+    "avg_points_for": 107.78,
+    "games": 5,
     "losses": 3,
-    "points_against": 438.86,
-    "points_for": 379.88,
+    "points_against": 525.56,
+    "points_for": 538.92,
     "ties": 0,
-    "win_pct": 0.25,
-    "wins": 1
+    "win_pct": 0.4,
+    "wins": 2
    },
-   "regular_season_rank": 11,
+   "regular_season_rank": 9,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 438.86,
-    "points_for": 379.88
+    "points_against": 525.56,
+    "points_for": 538.92
    },
    "team_name": "G H O S T\u2122"
   }

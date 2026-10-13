@@ -18,7 +18,7 @@
   "record": {
    "losses": 71,
    "ties": 0,
-   "wins": 71
+   "wins": 72
   },
   "sackos": 1,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -27,7 +27,7 @@
    -15,
    -15
   ],
-  "win_pct": 0.5
+  "win_pct": 0.5035
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -49,12 +49,12 @@
  "current_team_name": "Angry Beavers",
  "display_name": "Gingivitis",
  "efficiency": {
-  "efficiency": 0.8834,
+  "efficiency": 0.8836,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13226.1,
-  "points": 11683.6,
-  "points_left_on_bench": 1542.5,
-  "weeks": 117
+  "optimal_points": 13368.18,
+  "points": 11811.48,
+  "points_left_on_bench": 1556.7,
+  "weeks": 118
  },
  "faab_and_transactions": {
   "adds": 216,
@@ -634,18 +634,30 @@
    },
    "2026": {
     "best_par_claim": {
-     "bid": 3,
-     "par_per_dollar": 3.23,
-     "player": "Juwan Johnson",
-     "points_above_replacement": 9.7,
-     "points_per_dollar": 9.4,
-     "points_started": 28.2,
-     "pos": "TE",
+     "bid": 2,
+     "par_per_dollar": 3.78,
+     "player": "Jacoby Brissett",
+     "points_above_replacement": 7.56,
+     "points_per_dollar": 12.39,
+     "points_started": 24.78,
+     "pos": "QB",
      "season": "2026",
-     "week": 2,
-     "weeks_started": 2
+     "week": 4,
+     "weeks_started": 1
     },
     "best_value": {
+     "bid": 22,
+     "par_per_dollar": 0.3,
+     "player": "Ollie Gordon",
+     "points_above_replacement": 6.52,
+     "points_per_dollar": 0.67,
+     "points_started": 14.8,
+     "pos": "RB",
+     "season": "2026",
+     "week": 3,
+     "weeks_started": 1
+    },
+    "biggest_bust": {
      "bid": 5,
      "par_per_dollar": 0.0,
      "player": "Kendre Miller",
@@ -657,46 +669,34 @@
      "week": 3,
      "weeks_started": 0
     },
-    "biggest_bust": {
-     "bid": 22,
-     "par_per_dollar": 0.0,
-     "player": "Ollie Gordon",
-     "points_above_replacement": 0.0,
-     "points_per_dollar": 0.0,
-     "points_started": 0.0,
-     "pos": "RB",
-     "season": "2026",
-     "week": 3,
-     "weeks_started": 0
-    },
-    "claims_benched_only": 4,
+    "claims_benched_only": 2,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 37,
     "free_claims": 0,
-    "hit_rate": 0.333,
+    "hit_rate": 0.667,
     "most_points": {
      "bid": 3,
-     "par_per_dollar": 3.23,
+     "par_per_dollar": 2.26,
      "player": "Juwan Johnson",
-     "points_above_replacement": 9.7,
-     "points_per_dollar": 9.4,
-     "points_started": 28.2,
+     "points_above_replacement": 6.78,
+     "points_per_dollar": 10.6,
+     "points_started": 31.8,
      "pos": "TE",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "paid_claims": 6,
-    "par_per_dollar": 0.14,
-    "points_above_replacement": 5.2,
+    "par_per_dollar": 0.44,
+    "points_above_replacement": 16.26,
     "points_from_free_claims": 0,
-    "points_from_paid_claims": 30.2,
-    "points_per_dollar": 0.82,
+    "points_from_paid_claims": 73.38,
+    "points_per_dollar": 1.98,
     "worst_par_claim": {
      "bid": 1,
-     "par_per_dollar": -4.5,
+     "par_per_dollar": -4.6,
      "player": "New Orleans Saints",
-     "points_above_replacement": -4.5,
+     "points_above_replacement": -4.6,
      "points_per_dollar": 2.0,
      "points_started": 2.0,
      "pos": "DEF",
@@ -706,13 +706,13 @@
     }
    }
   },
-  "claims_benched_only": 26,
+  "claims_benched_only": 24,
   "claims_dropped_before_playing": 3,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 641,
   "free_claims": 26,
-  "hit_rate": 0.695,
-  "league_points_per_dollar": 2.37,
+  "hit_rate": 0.716,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 5,
    "par_per_dollar": 2.79,
@@ -727,12 +727,12 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 95,
-  "par_per_dollar": 0.16,
+  "par_per_dollar": 0.17,
   "par_rank": 7,
-  "points_above_replacement": 100.24,
+  "points_above_replacement": 111.3,
   "points_from_free_claims": 191.54,
-  "points_from_paid_claims": 2113.88,
-  "points_per_dollar": 3.3,
+  "points_from_paid_claims": 2157.06,
+  "points_per_dollar": 3.37,
   "rank": 2,
   "worst_par_claim": {
    "bid": 11,
@@ -815,13 +815,13 @@
     "wins": 7
    },
    "471360899853053952": {
-    "games": 11,
+    "games": 12,
     "losses": 6,
-    "points_against": 1087.74,
-    "points_for": 1082.6,
+    "points_against": 1191.54,
+    "points_for": 1210.48,
     "protected_rivalry": "Ging vs Adam",
     "ties": 0,
-    "wins": 5
+    "wins": 6
    },
    "471366618241298432": {
     "games": 11,
@@ -896,7 +896,7 @@
     "record": {
      "losses": 3,
      "ties": 0,
-     "wins": 1
+     "wins": 2
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1065,7 +1065,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "1-3",
+     "counted_record": "2-3",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1080,10 +1080,10 @@
   "snapshot_rank": 10
  },
  "luck": {
-  "expected_wins": 43.08,
-  "luck": 4.92,
+  "expected_wins": 43.9,
+  "luck": 5.1,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 48
+  "wins": 49
  },
  "owner_id": "471345530597797888",
  "record": {
@@ -1101,26 +1101,26 @@
    "wins": 6
   },
   "regular_season": {
-   "avg_points_against": 98.69,
-   "avg_points_for": 98.74,
-   "games": 100,
+   "avg_points_against": 98.74,
+   "avg_points_for": 99.03,
+   "games": 101,
    "losses": 52,
-   "points_against": 9869.34,
-   "points_for": 9874.34,
+   "points_against": 9973.14,
+   "points_for": 10002.22,
    "ties": 0,
-   "win_pct": 0.48,
-   "wins": 48
+   "win_pct": 0.4851,
+   "wins": 49
   },
   "total": {
-   "avg_points_against": 100.88,
-   "avg_points_for": 99.86,
-   "games": 117,
+   "avg_points_against": 100.9,
+   "avg_points_for": 100.1,
+   "games": 118,
    "losses": 63,
-   "points_against": 11802.58,
-   "points_for": 11683.6,
+   "points_against": 11906.38,
+   "points_for": 11811.48,
    "ties": 0,
-   "win_pct": 0.4615,
-   "wins": 54
+   "win_pct": 0.4661,
+   "wins": 55
   }
  },
  "scoring": {
@@ -2084,7 +2084,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.9124,
+   "efficiency": 0.9096,
    "faab": {
     "adds": 10,
     "budget": 100,
@@ -2104,18 +2104,30 @@
    },
    "faab_efficiency": {
     "best_par_claim": {
-     "bid": 3,
-     "par_per_dollar": 3.23,
-     "player": "Juwan Johnson",
-     "points_above_replacement": 9.7,
-     "points_per_dollar": 9.4,
-     "points_started": 28.2,
-     "pos": "TE",
+     "bid": 2,
+     "par_per_dollar": 3.78,
+     "player": "Jacoby Brissett",
+     "points_above_replacement": 7.56,
+     "points_per_dollar": 12.39,
+     "points_started": 24.78,
+     "pos": "QB",
      "season": "2026",
-     "week": 2,
-     "weeks_started": 2
+     "week": 4,
+     "weeks_started": 1
     },
     "best_value": {
+     "bid": 22,
+     "par_per_dollar": 0.3,
+     "player": "Ollie Gordon",
+     "points_above_replacement": 6.52,
+     "points_per_dollar": 0.67,
+     "points_started": 14.8,
+     "pos": "RB",
+     "season": "2026",
+     "week": 3,
+     "weeks_started": 1
+    },
+    "biggest_bust": {
      "bid": 5,
      "par_per_dollar": 0.0,
      "player": "Kendre Miller",
@@ -2127,46 +2139,34 @@
      "week": 3,
      "weeks_started": 0
     },
-    "biggest_bust": {
-     "bid": 22,
-     "par_per_dollar": 0.0,
-     "player": "Ollie Gordon",
-     "points_above_replacement": 0.0,
-     "points_per_dollar": 0.0,
-     "points_started": 0.0,
-     "pos": "RB",
-     "season": "2026",
-     "week": 3,
-     "weeks_started": 0
-    },
-    "claims_benched_only": 4,
+    "claims_benched_only": 2,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 37,
     "free_claims": 0,
-    "hit_rate": 0.333,
+    "hit_rate": 0.667,
     "most_points": {
      "bid": 3,
-     "par_per_dollar": 3.23,
+     "par_per_dollar": 2.26,
      "player": "Juwan Johnson",
-     "points_above_replacement": 9.7,
-     "points_per_dollar": 9.4,
-     "points_started": 28.2,
+     "points_above_replacement": 6.78,
+     "points_per_dollar": 10.6,
+     "points_started": 31.8,
      "pos": "TE",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "paid_claims": 6,
-    "par_per_dollar": 0.14,
-    "points_above_replacement": 5.2,
+    "par_per_dollar": 0.44,
+    "points_above_replacement": 16.26,
     "points_from_free_claims": 0,
-    "points_from_paid_claims": 30.2,
-    "points_per_dollar": 0.82,
+    "points_from_paid_claims": 73.38,
+    "points_per_dollar": 1.98,
     "worst_par_claim": {
      "bid": 1,
-     "par_per_dollar": -4.5,
+     "par_per_dollar": -4.6,
      "player": "New Orleans Saints",
-     "points_above_replacement": -4.5,
+     "points_above_replacement": -4.6,
      "points_per_dollar": 2.0,
      "points_started": 2.0,
      "pos": "DEF",
@@ -2177,10 +2177,10 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "25-19",
-    "expected_wins": 2.27,
-    "luck": -1.27,
-    "wins": 1
+    "all_play_record": "34-21",
+    "expected_wins": 3.09,
+    "luck": -1.09,
+    "wins": 2
    },
    "made_playoffs": false,
    "playoff_result": null,
@@ -2196,21 +2196,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 108.39,
-    "avg_points_for": 109.32,
-    "games": 4,
+    "avg_points_against": 107.47,
+    "avg_points_for": 113.03,
+    "games": 5,
     "losses": 3,
-    "points_against": 433.56,
-    "points_for": 437.28,
+    "points_against": 537.36,
+    "points_for": 565.16,
     "ties": 0,
-    "win_pct": 0.25,
-    "wins": 1
+    "win_pct": 0.4,
+    "wins": 2
    },
-   "regular_season_rank": 9,
+   "regular_season_rank": 7,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 433.56,
-    "points_for": 437.28
+    "points_against": 537.36,
+    "points_for": 565.16
    },
    "team_name": "Angry Beavers"
   }
@@ -2259,7 +2259,7 @@
    "injured_starter_out": 16.0,
    "questionable_did_not_play": 6.0
   },
-  "rank": 8,
+  "rank": 7,
   "rank_note": "1 = best (lowest). Ties share a rank.",
   "total": 22.0,
   "worst_penalty_id": "2024-w02-r6-injured_starter_out-4066"

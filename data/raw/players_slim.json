@@ -2286,7 +2286,7 @@
   "team": "TEN"
  },
  "4983": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "DJ Moore",
   "pos": "WR",
   "team": "BUF"
@@ -2724,7 +2724,7 @@
   "team": "GB"
  },
  "5854": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Drew Lock",
   "pos": "QB",
   "team": "SEA"
@@ -4278,7 +4278,7 @@
   "team": "JAX"
  },
  "9488": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jaxon Smith-Njigba",
   "pos": "WR",
   "team": "SEA"

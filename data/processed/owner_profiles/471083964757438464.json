@@ -19,14 +19,14 @@
   "record": {
    "losses": 96,
    "ties": 0,
-   "wins": 83
+   "wins": 84
   },
   "sackos": 2,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
   "scoring_bonuses": [
    -15
   ],
-  "win_pct": 0.4637
+  "win_pct": 0.4667
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -48,12 +48,12 @@
  "current_team_name": "Big Dog\u2019s Revenge",
  "display_name": "BigDogsRevenge",
  "efficiency": {
-  "efficiency": 0.8978,
+  "efficiency": 0.8979,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13481.72,
-  "points": 12104.38,
-  "points_left_on_bench": 1377.34,
-  "weeks": 117
+  "optimal_points": 13609.22,
+  "points": 12219.88,
+  "points_left_on_bench": 1389.34,
+  "weeks": 118
  },
  "faab_and_transactions": {
   "adds": 135,
@@ -689,7 +689,7 @@
   "dollars_spent": 466,
   "free_claims": 11,
   "hit_rate": 0.833,
-  "league_points_per_dollar": 2.37,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 12,
    "par_per_dollar": 3.68,
@@ -774,13 +774,13 @@
     "wins": 8
    },
    "471359444949659648": {
-    "games": 8,
+    "games": 9,
     "losses": 5,
-    "points_against": 826.92,
-    "points_for": 775.62,
+    "points_against": 914.86,
+    "points_for": 891.12,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 3
+    "wins": 4
    },
    "471359672478068736": {
     "games": 9,
@@ -873,7 +873,7 @@
     "record": {
      "losses": 2,
      "ties": 0,
-     "wins": 2
+     "wins": 3
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1038,7 +1038,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "2-2",
+     "counted_record": "3-2",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1053,10 +1053,10 @@
   "snapshot_rank": 9
  },
  "luck": {
-  "expected_wins": 47.5,
-  "luck": -4.5,
+  "expected_wins": 48.14,
+  "luck": -4.14,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 43
+  "wins": 44
  },
  "owner_id": "471083964757438464",
  "record": {
@@ -1074,26 +1074,26 @@
    "wins": 10
   },
   "regular_season": {
-   "avg_points_against": 104.16,
-   "avg_points_for": 102.15,
-   "games": 100,
+   "avg_points_against": 104.0,
+   "avg_points_for": 102.28,
+   "games": 101,
    "losses": 57,
-   "points_against": 10416.36,
-   "points_for": 10214.72,
+   "points_against": 10504.3,
+   "points_for": 10330.22,
    "ties": 0,
-   "win_pct": 0.43,
-   "wins": 43
+   "win_pct": 0.4356,
+   "wins": 44
   },
   "total": {
-   "avg_points_against": 104.34,
-   "avg_points_for": 103.46,
-   "games": 117,
+   "avg_points_against": 104.2,
+   "avg_points_for": 103.56,
+   "games": 118,
    "losses": 64,
-   "points_against": 12207.46,
-   "points_for": 12104.38,
+   "points_against": 12295.4,
+   "points_for": 12219.88,
    "ties": 0,
-   "win_pct": 0.453,
-   "wins": 53
+   "win_pct": 0.4576,
+   "wins": 54
   }
  },
  "scoring": {
@@ -2035,7 +2035,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.8646,
+   "efficiency": 0.8745,
    "faab": {
     "adds": 10,
     "budget": 100,
@@ -2128,12 +2128,12 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "11-33",
-    "expected_wins": 1.0,
-    "luck": 1.0,
-    "wins": 2
+    "all_play_record": "18-37",
+    "expected_wins": 1.64,
+    "luck": 1.36,
+    "wins": 3
    },
-   "made_playoffs": false,
+   "made_playoffs": true,
    "playoff_result": null,
    "postseason": {
     "avg_points_against": null,
@@ -2147,21 +2147,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 91.01,
-    "avg_points_for": 87.36,
-    "games": 4,
+    "avg_points_against": 90.4,
+    "avg_points_for": 92.98,
+    "games": 5,
     "losses": 2,
-    "points_against": 364.04,
-    "points_for": 349.42,
+    "points_against": 451.98,
+    "points_for": 464.92,
     "ties": 0,
-    "win_pct": 0.5,
-    "wins": 2
+    "win_pct": 0.6,
+    "wins": 3
    },
-   "regular_season_rank": 8,
+   "regular_season_rank": 6,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 364.04,
-    "points_for": 349.42
+    "points_against": 451.98,
+    "points_for": 464.92
    },
    "team_name": "Big Dog\u2019s Revenge"
   }

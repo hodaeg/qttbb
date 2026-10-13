@@ -19,7 +19,7 @@
   "record": {
    "losses": 91,
    "ties": 0,
-   "wins": 77
+   "wins": 78
   },
   "sackos": 0,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -27,7 +27,7 @@
    -15,
    -15
   ],
-  "win_pct": 0.4583
+  "win_pct": 0.4615
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -49,12 +49,12 @@
  "current_team_name": "Green and Bowled",
  "display_name": "therealGandB",
  "efficiency": {
-  "efficiency": 0.9029,
+  "efficiency": 0.9032,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13671.22,
-  "points": 12343.52,
-  "points_left_on_bench": 1327.7,
-  "weeks": 116
+  "optimal_points": 13810.38,
+  "points": 12473.48,
+  "points_left_on_bench": 1336.9,
+  "weeks": 117
  },
  "faab_and_transactions": {
   "adds": 177,
@@ -628,7 +628,7 @@
   "dollars_spent": 318,
   "free_claims": 19,
   "hit_rate": 0.581,
-  "league_points_per_dollar": 2.37,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 9,
    "par_per_dollar": 1.23,
@@ -677,13 +677,13 @@
     "wins": 5
    },
    "422102738889867264": {
-    "games": 11,
+    "games": 12,
     "losses": 7,
-    "points_against": 1255.2,
-    "points_for": 1110.78,
+    "points_against": 1364.94,
+    "points_for": 1240.74,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 4
+    "wins": 5
    },
    "423560331814510592": {
     "games": 9,
@@ -812,7 +812,7 @@
     "record": {
      "losses": 3,
      "ties": 0,
-     "wins": 1
+     "wins": 2
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -979,7 +979,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "1-3",
+     "counted_record": "2-3",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -994,10 +994,10 @@
   "snapshot_rank": 7
  },
  "luck": {
-  "expected_wins": 54.09,
-  "luck": -5.09,
+  "expected_wins": 55.0,
+  "luck": -5.0,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 49
+  "wins": 50
  },
  "owner_id": "471368473092550656",
  "record": {
@@ -1015,26 +1015,26 @@
    "wins": 8
   },
   "regular_season": {
-   "avg_points_against": 106.96,
-   "avg_points_for": 105.46,
-   "games": 100,
+   "avg_points_against": 106.98,
+   "avg_points_for": 105.7,
+   "games": 101,
    "losses": 51,
-   "points_against": 10695.64,
-   "points_for": 10545.96,
+   "points_against": 10805.38,
+   "points_for": 10675.92,
    "ties": 0,
-   "win_pct": 0.49,
-   "wins": 49
+   "win_pct": 0.495,
+   "wins": 50
   },
   "total": {
-   "avg_points_against": 107.61,
-   "avg_points_for": 106.41,
-   "games": 116,
+   "avg_points_against": 107.63,
+   "avg_points_for": 106.61,
+   "games": 117,
    "losses": 59,
-   "points_against": 12482.9,
-   "points_for": 12343.52,
+   "points_against": 12592.64,
+   "points_for": 12473.48,
    "ties": 0,
-   "win_pct": 0.4914,
-   "wins": 57
+   "win_pct": 0.4957,
+   "wins": 58
   }
  },
  "scoring": {
@@ -1987,7 +1987,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.9274,
+   "efficiency": 0.9289,
    "faab": {
     "adds": 3,
     "budget": 100,
@@ -2008,10 +2008,10 @@
    "faab_efficiency": null,
    "final_place": null,
    "luck": {
-    "all_play_record": "23-21",
-    "expected_wins": 2.09,
-    "luck": -1.09,
-    "wins": 1
+    "all_play_record": "33-22",
+    "expected_wins": 3.0,
+    "luck": -1.0,
+    "wins": 2
    },
    "made_playoffs": false,
    "playoff_result": null,
@@ -2027,21 +2027,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 108.69,
-    "avg_points_for": 105.7,
-    "games": 4,
+    "avg_points_against": 108.9,
+    "avg_points_for": 110.56,
+    "games": 5,
     "losses": 3,
-    "points_against": 434.76,
-    "points_for": 422.82,
+    "points_against": 544.5,
+    "points_for": 552.78,
     "ties": 0,
-    "win_pct": 0.25,
-    "wins": 1
+    "win_pct": 0.4,
+    "wins": 2
    },
-   "regular_season_rank": 10,
+   "regular_season_rank": 8,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 434.76,
-    "points_for": 422.82
+    "points_against": 544.5,
+    "points_for": 552.78
    },
    "team_name": "Green and Bowled"
   }

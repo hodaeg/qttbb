@@ -17,7 +17,7 @@
    "wins": 6
   },
   "record": {
-   "losses": 98,
+   "losses": 99,
    "ties": 1,
    "wins": 100
   },
@@ -26,7 +26,7 @@
   "scoring_bonuses": [
    -15
   ],
-  "win_pct": 0.505
+  "win_pct": 0.5025
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -48,12 +48,12 @@
  "current_team_name": "Gotham Rogues",
  "display_name": "MrSeeYou",
  "efficiency": {
-  "efficiency": 0.9014,
+  "efficiency": 0.9017,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 12930.76,
-  "points": 11655.4,
-  "points_left_on_bench": 1275.36,
-  "weeks": 115
+  "optimal_points": 13039.36,
+  "points": 11757.5,
+  "points_left_on_bench": 1281.86,
+  "weeks": 116
  },
  "faab_and_transactions": {
   "adds": 234,
@@ -686,33 +686,33 @@
     "hit_rate": 0.333,
     "most_points": {
      "bid": 1,
-     "par_per_dollar": -3.5,
+     "par_per_dollar": -5.0,
      "player": "Chase McLaughlin",
-     "points_above_replacement": -3.5,
-     "points_per_dollar": 13.0,
-     "points_started": 13.0,
+     "points_above_replacement": -5.0,
+     "points_per_dollar": 19.0,
+     "points_started": 19.0,
      "pos": "K",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "paid_claims": 3,
-    "par_per_dollar": -0.15,
-    "points_above_replacement": -3.5,
+    "par_per_dollar": -0.21,
+    "points_above_replacement": -5.0,
     "points_from_free_claims": 0,
-    "points_from_paid_claims": 13.0,
-    "points_per_dollar": 0.54,
+    "points_from_paid_claims": 19.0,
+    "points_per_dollar": 0.79,
     "worst_par_claim": {
      "bid": 1,
-     "par_per_dollar": -3.5,
+     "par_per_dollar": -5.0,
      "player": "Chase McLaughlin",
-     "points_above_replacement": -3.5,
-     "points_per_dollar": 13.0,
-     "points_started": 13.0,
+     "points_above_replacement": -5.0,
+     "points_per_dollar": 19.0,
+     "points_started": 19.0,
      "pos": "K",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     }
    }
   },
@@ -722,7 +722,7 @@
   "dollars_spent": 609,
   "free_claims": 20,
   "hit_rate": 0.613,
-  "league_points_per_dollar": 2.37,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 7,
    "par_per_dollar": 8.37,
@@ -739,10 +739,10 @@
   "paid_claims": 75,
   "par_per_dollar": -0.18,
   "par_rank": 12,
-  "points_above_replacement": -109.09,
+  "points_above_replacement": -110.59,
   "points_from_free_claims": 409.6,
-  "points_from_paid_claims": 1490.92,
-  "points_per_dollar": 2.45,
+  "points_from_paid_claims": 1496.92,
+  "points_per_dollar": 2.46,
   "rank": 5,
   "worst_par_claim": {
    "bid": 4,
@@ -762,10 +762,10 @@
  "head_to_head": {
   "by_opponent": {
    "383681356686950400": {
-    "games": 10,
-    "losses": 5,
-    "points_against": 987.96,
-    "points_for": 1024.12,
+    "games": 11,
+    "losses": 6,
+    "points_against": 1111.04,
+    "points_for": 1126.22,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 5
@@ -904,7 +904,7 @@
      "wins": 0
     },
     "record": {
-     "losses": 0,
+     "losses": 1,
      "ties": 0,
      "wins": 4
     },
@@ -1071,7 +1071,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "4-0",
+     "counted_record": "4-1",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1086,8 +1086,8 @@
   "snapshot_rank": 6
  },
  "luck": {
-  "expected_wins": 45.41,
-  "luck": -0.41,
+  "expected_wins": 45.68,
+  "luck": -0.68,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
   "wins": 45
  },
@@ -1107,25 +1107,25 @@
    "wins": 7
   },
   "regular_season": {
-   "avg_points_against": 103.14,
-   "avg_points_for": 101.04,
-   "games": 100,
-   "losses": 55,
-   "points_against": 10314.2,
-   "points_for": 10104.12,
+   "avg_points_against": 103.34,
+   "avg_points_for": 101.05,
+   "games": 101,
+   "losses": 56,
+   "points_against": 10437.28,
+   "points_for": 10206.22,
    "ties": 0,
-   "win_pct": 0.45,
+   "win_pct": 0.4455,
    "wins": 45
   },
   "total": {
-   "avg_points_against": 104.03,
-   "avg_points_for": 101.35,
-   "games": 115,
-   "losses": 63,
-   "points_against": 11963.12,
-   "points_for": 11655.4,
+   "avg_points_against": 104.19,
+   "avg_points_for": 101.36,
+   "games": 116,
+   "losses": 64,
+   "points_against": 12086.2,
+   "points_for": 11757.5,
    "ties": 0,
-   "win_pct": 0.4522,
+   "win_pct": 0.4483,
    "wins": 52
   }
  },
@@ -2101,7 +2101,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.9426,
+   "efficiency": 0.9422,
    "faab": {
     "adds": 6,
     "budget": 100,
@@ -2163,40 +2163,40 @@
     "hit_rate": 0.333,
     "most_points": {
      "bid": 1,
-     "par_per_dollar": -3.5,
+     "par_per_dollar": -5.0,
      "player": "Chase McLaughlin",
-     "points_above_replacement": -3.5,
-     "points_per_dollar": 13.0,
-     "points_started": 13.0,
+     "points_above_replacement": -5.0,
+     "points_per_dollar": 19.0,
+     "points_started": 19.0,
      "pos": "K",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "paid_claims": 3,
-    "par_per_dollar": -0.15,
-    "points_above_replacement": -3.5,
+    "par_per_dollar": -0.21,
+    "points_above_replacement": -5.0,
     "points_from_free_claims": 0,
-    "points_from_paid_claims": 13.0,
-    "points_per_dollar": 0.54,
+    "points_from_paid_claims": 19.0,
+    "points_per_dollar": 0.79,
     "worst_par_claim": {
      "bid": 1,
-     "par_per_dollar": -3.5,
+     "par_per_dollar": -5.0,
      "player": "Chase McLaughlin",
-     "points_above_replacement": -3.5,
-     "points_per_dollar": 13.0,
-     "points_started": 13.0,
+     "points_above_replacement": -5.0,
+     "points_per_dollar": 19.0,
+     "points_started": 19.0,
      "pos": "K",
      "season": "2026",
      "week": 2,
-     "weeks_started": 2
+     "weeks_started": 3
     }
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "33-11",
-    "expected_wins": 3.0,
-    "luck": 1.0,
+    "all_play_record": "36-19",
+    "expected_wins": 3.27,
+    "luck": 0.73,
     "wins": 4
    },
    "made_playoffs": true,
@@ -2213,21 +2213,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 90.56,
-    "avg_points_for": 123.09,
-    "games": 4,
-    "losses": 0,
-    "points_against": 362.24,
-    "points_for": 492.36,
+    "avg_points_against": 97.06,
+    "avg_points_for": 118.89,
+    "games": 5,
+    "losses": 1,
+    "points_against": 485.32,
+    "points_for": 594.46,
     "ties": 0,
-    "win_pct": 1.0,
+    "win_pct": 0.8,
     "wins": 4
    },
    "regular_season_rank": 1,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 362.24,
-    "points_for": 492.36
+    "points_against": 485.32,
+    "points_for": 594.46
    },
    "team_name": "Gotham Rogues"
   }
@@ -2244,7 +2244,7 @@
  ],
  "tegridy_factor": {
   "by_kind": {
-   "injured_starter_out": 2,
+   "injured_starter_out": 3,
    "missed_league_note": 1
   },
   "by_season": {
@@ -2255,7 +2255,7 @@
    "2023": 0,
    "2024": 16.0,
    "2025": 0,
-   "2026": 0
+   "2026": 8.0
   },
   "clean_seasons": [
    "2020",
@@ -2265,19 +2265,20 @@
    "2025"
   ],
   "excluded_penalty_ids": [],
-  "penalty_count": 3,
+  "penalty_count": 4,
   "penalty_ids": [
    "2019-note-r2-1",
    "2024-w06-r2-injured_starter_out-5022",
-   "2024-w07-r2-injured_starter_out-5872"
+   "2024-w07-r2-injured_starter_out-5872",
+   "2026-w05-r2-injured_starter_out-12529"
   ],
   "points_by_kind": {
-   "injured_starter_out": 16.0,
+   "injured_starter_out": 24.0,
    "missed_league_note": 5
   },
-  "rank": 7,
+  "rank": 8,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 21.0,
+  "total": 29.0,
   "worst_penalty_id": "2024-w06-r2-injured_starter_out-5022"
  },
  "trophies": {
