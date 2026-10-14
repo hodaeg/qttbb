@@ -58,7 +58,7 @@
   "weeks": 118
  },
  "faab_and_transactions": {
-  "adds": 251,
+  "adds": 252,
   "biggest_bid": {
    "amount": 89,
    "player": "De'Von Achane",
@@ -66,9 +66,9 @@
    "week": 3
   },
   "budget_per_season": 100,
-  "drops": 263,
+  "drops": 264,
   "faab_taken_as_penalty": 0,
-  "free_agent_adds": 161,
+  "free_agent_adds": 162,
   "most_frequent_trade_partner": {
    "owner_id": "422102738889867264",
    "trades": 2
@@ -702,7 +702,7 @@
   "dollars_spent": 691,
   "free_claims": 35,
   "hit_rate": 0.782,
-  "league_points_per_dollar": 2.4,
+  "league_points_per_dollar": 2.38,
   "most_points": {
    "bid": 2,
    "par_per_dollar": 21.95,
@@ -2064,11 +2064,11 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.93,
    "faab": {
-    "adds": 6,
+    "adds": 7,
     "budget": 100,
-    "drops": 5,
+    "drops": 6,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 3,
+    "free_agent_adds": 4,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 41,

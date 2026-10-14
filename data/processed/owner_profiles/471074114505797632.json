@@ -66,7 +66,7 @@
    "week": 13
   },
   "budget_per_season": 100,
-  "drops": 198,
+  "drops": 199,
   "faab_taken_as_penalty": 0,
   "free_agent_adds": 116,
   "most_frequent_trade_partner": null,
@@ -89,7 +89,7 @@
   "traded_out": 0,
   "trades": 0,
   "unexplained_difference": 0,
-  "waiver_claims_lost": 68,
+  "waiver_claims_lost": 69,
   "waiver_claims_won": 90
  },
  "faab_efficiency": {
@@ -589,7 +589,7 @@
   "dollars_spent": 445,
   "free_claims": 28,
   "hit_rate": 0.694,
-  "league_points_per_dollar": 2.4,
+  "league_points_per_dollar": 2.38,
   "most_points": {
    "bid": 6,
    "par_per_dollar": 8.61,
@@ -1898,7 +1898,7 @@
    "faab": {
     "adds": 3,
     "budget": 100,
-    "drops": 2,
+    "drops": 3,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 2,
     "refunded": 0,
@@ -1909,7 +1909,7 @@
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
-    "waiver_claims_lost": 3,
+    "waiver_claims_lost": 4,
     "waiver_claims_won": 1
    },
    "faab_efficiency": {

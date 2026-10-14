@@ -55,7 +55,7 @@
   "weeks": 118
  },
  "faab_and_transactions": {
-  "adds": 232,
+  "adds": 233,
   "biggest_bid": {
    "amount": 73,
    "player": "Tyrone Tracy",
@@ -63,9 +63,9 @@
    "week": 8
   },
   "budget_per_season": 100,
-  "drops": 227,
+  "drops": 228,
   "faab_taken_as_penalty": 0,
-  "free_agent_adds": 105,
+  "free_agent_adds": 106,
   "most_frequent_trade_partner": {
    "owner_id": "422102738889867264",
    "trades": 3
@@ -710,7 +710,7 @@
   "dollars_spent": 670,
   "free_claims": 33,
   "hit_rate": 0.723,
-  "league_points_per_dollar": 2.4,
+  "league_points_per_dollar": 2.38,
   "most_points": {
    "bid": 33,
    "par_per_dollar": 1.72,
@@ -2080,11 +2080,11 @@
    "division": "The Graveyard",
    "efficiency": 0.826,
    "faab": {
-    "adds": 5,
+    "adds": 6,
     "budget": 100,
-    "drops": 3,
+    "drops": 4,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 2,
+    "free_agent_adds": 3,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 17,
