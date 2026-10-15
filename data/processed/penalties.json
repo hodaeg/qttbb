@@ -2680,11 +2680,11 @@
    },
    "matchup": {
     "bench_option_would_have_changed_result": null,
-    "margin": 20.98,
+    "margin": 21.98,
     "opponent_display_name": "Hodaeg",
     "opponent_owner_id": "383681356686950400",
     "opponent_roster_id": 1,
-    "points_against": 123.08,
+    "points_against": 124.08,
     "points_for": 102.1,
     "result": "lost"
    },

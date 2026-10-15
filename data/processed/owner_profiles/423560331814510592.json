@@ -764,7 +764,7 @@
    "383681356686950400": {
     "games": 11,
     "losses": 6,
-    "points_against": 1111.04,
+    "points_against": 1112.04,
     "points_for": 1126.22,
     "protected_rivalry": null,
     "ties": 0,
@@ -1107,22 +1107,22 @@
    "wins": 7
   },
   "regular_season": {
-   "avg_points_against": 103.34,
+   "avg_points_against": 103.35,
    "avg_points_for": 101.05,
    "games": 101,
    "losses": 56,
-   "points_against": 10437.28,
+   "points_against": 10438.28,
    "points_for": 10206.22,
    "ties": 0,
    "win_pct": 0.4455,
    "wins": 45
   },
   "total": {
-   "avg_points_against": 104.19,
+   "avg_points_against": 104.2,
    "avg_points_for": 101.36,
    "games": 116,
    "losses": 64,
-   "points_against": 12086.2,
+   "points_against": 12087.2,
    "points_for": 11757.5,
    "ties": 0,
    "win_pct": 0.4483,
@@ -2213,11 +2213,11 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 97.06,
+    "avg_points_against": 97.26,
     "avg_points_for": 118.89,
     "games": 5,
     "losses": 1,
-    "points_against": 485.32,
+    "points_against": 486.32,
     "points_for": 594.46,
     "ties": 0,
     "win_pct": 0.8,
@@ -2226,7 +2226,7 @@
    "regular_season_rank": 1,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 485.32,
+    "points_against": 486.32,
     "points_for": 594.46
    },
    "team_name": "Gotham Rogues"

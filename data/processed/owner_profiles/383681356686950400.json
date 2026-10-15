@@ -50,10 +50,10 @@
  "current_team_name": "Hodag Forest Lurkers",
  "display_name": "Hodaeg",
  "efficiency": {
-  "efficiency": 0.8764,
+  "efficiency": 0.8765,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14193.14,
-  "points": 12439.56,
+  "optimal_points": 14194.14,
+  "points": 12440.56,
   "points_left_on_bench": 1753.58,
   "weeks": 118
  },
@@ -754,7 +754,7 @@
     "games": 11,
     "losses": 5,
     "points_against": 1126.22,
-    "points_for": 1111.04,
+    "points_for": 1112.04,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 6
@@ -1091,22 +1091,22 @@
   },
   "regular_season": {
    "avg_points_against": 101.51,
-   "avg_points_for": 105.67,
+   "avg_points_for": 105.68,
    "games": 101,
    "losses": 40,
    "points_against": 10252.3,
-   "points_for": 10672.68,
+   "points_for": 10673.68,
    "ties": 0,
    "win_pct": 0.604,
    "wins": 61
   },
   "total": {
    "avg_points_against": 103.04,
-   "avg_points_for": 105.42,
+   "avg_points_for": 105.43,
    "games": 118,
    "losses": 49,
    "points_against": 12158.54,
-   "points_for": 12439.56,
+   "points_for": 12440.56,
    "ties": 0,
    "win_pct": 0.5847,
    "wins": 69
@@ -2062,7 +2062,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.93,
+   "efficiency": 0.9302,
    "faab": {
     "adds": 7,
     "budget": 100,
@@ -2175,11 +2175,11 @@
    },
    "regular_season": {
     "avg_points_against": 104.8,
-    "avg_points_for": 96.12,
+    "avg_points_for": 96.32,
     "games": 5,
     "losses": 2,
     "points_against": 524.02,
-    "points_for": 480.62,
+    "points_for": 481.62,
     "ties": 0,
     "win_pct": 0.6,
     "wins": 3
@@ -2188,7 +2188,7 @@
    "season": "2026",
    "sleeper_standings_reported": {
     "points_against": 524.02,
-    "points_for": 480.62
+    "points_for": 481.62
    },
    "team_name": "Hodag Forest Lurkers"
   }
