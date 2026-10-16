@@ -58,7 +58,7 @@
   "weeks": 116
  },
  "faab_and_transactions": {
-  "adds": 206,
+  "adds": 207,
   "biggest_bid": {
    "amount": 88,
    "player": "Isaac Guerendo",
@@ -90,7 +90,7 @@
   "trades": 0,
   "unexplained_difference": 0,
   "waiver_claims_lost": 69,
-  "waiver_claims_won": 90
+  "waiver_claims_won": 91
  },
  "faab_efficiency": {
   "best_par_claim": {
@@ -571,7 +571,7 @@
     "claims_benched_only": 0,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 0,
-    "free_claims": 1,
+    "free_claims": 2,
     "hit_rate": null,
     "most_points": null,
     "paid_claims": 0,
@@ -587,7 +587,7 @@
   "claims_dropped_before_playing": 1,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 445,
-  "free_claims": 28,
+  "free_claims": 29,
   "hit_rate": 0.694,
   "league_points_per_dollar": 2.38,
   "most_points": {
@@ -1896,7 +1896,7 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.8777,
    "faab": {
-    "adds": 3,
+    "adds": 4,
     "budget": 100,
     "drops": 3,
     "faab_taken_as_penalty": 0,
@@ -1910,7 +1910,7 @@
     "trades": 0,
     "unexplained_difference": 0,
     "waiver_claims_lost": 4,
-    "waiver_claims_won": 1
+    "waiver_claims_won": 2
    },
    "faab_efficiency": {
     "best_par_claim": null,
@@ -1919,7 +1919,7 @@
     "claims_benched_only": 0,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 0,
-    "free_claims": 1,
+    "free_claims": 2,
     "hit_rate": null,
     "most_points": null,
     "paid_claims": 0,
