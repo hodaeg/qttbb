@@ -20,7 +20,7 @@
   "reason": "still in contention"
  },
  "5": {
-  "bracket": "winners",
+  "bracket": "losers",
   "last_week": null,
   "reason": "still in contention"
  },
@@ -55,7 +55,7 @@
   "reason": "still in contention"
  },
  "12": {
-  "bracket": "losers",
+  "bracket": "winners",
   "last_week": null,
   "reason": "still in contention"
  }

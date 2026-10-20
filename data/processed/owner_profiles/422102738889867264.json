@@ -16,7 +16,7 @@
    "wins": 10
   },
   "record": {
-   "losses": 91,
+   "losses": 92,
    "ties": 0,
    "wins": 109
   },
@@ -27,7 +27,7 @@
    15,
    15
   ],
-  "win_pct": 0.545
+  "win_pct": 0.5423
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -49,12 +49,12 @@
  "current_team_name": "Whiskey Dick & Co",
  "display_name": "WhiskeyDicknCo",
  "efficiency": {
-  "efficiency": 0.8958,
+  "efficiency": 0.8959,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13950.26,
-  "points": 12496.68,
-  "points_left_on_bench": 1453.58,
-  "weeks": 117
+  "optimal_points": 14055.18,
+  "points": 12592.0,
+  "points_left_on_bench": 1463.18,
+  "weeks": 118
  },
  "faab_and_transactions": {
   "adds": 344,
@@ -645,28 +645,28 @@
    },
    "2026": {
     "best_par_claim": {
-     "bid": 7,
-     "par_per_dollar": 0.56,
-     "player": "Emanuel Wilson",
-     "points_above_replacement": 3.92,
-     "points_per_dollar": 1.74,
-     "points_started": 12.2,
-     "pos": "RB",
+     "bid": 2,
+     "par_per_dollar": 1.17,
+     "player": "Cincinnati Bengals",
+     "points_above_replacement": 2.33,
+     "points_per_dollar": 4.5,
+     "points_started": 9.0,
+     "pos": "DEF",
      "season": "2026",
-     "week": 2,
+     "week": 4,
      "weeks_started": 1
     },
     "best_value": {
      "bid": 7,
-     "par_per_dollar": 0.56,
+     "par_per_dollar": 0.09,
      "player": "Emanuel Wilson",
-     "points_above_replacement": 3.92,
-     "points_per_dollar": 1.74,
-     "points_started": 12.2,
+     "points_above_replacement": 0.6,
+     "points_per_dollar": 2.49,
+     "points_started": 17.4,
      "pos": "RB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "biggest_bust": {
      "bid": 2,
@@ -687,27 +687,27 @@
     "hit_rate": 0.6,
     "most_points": {
      "bid": 7,
-     "par_per_dollar": 0.56,
+     "par_per_dollar": 0.09,
      "player": "Emanuel Wilson",
-     "points_above_replacement": 3.92,
-     "points_per_dollar": 1.74,
-     "points_started": 12.2,
+     "points_above_replacement": 0.6,
+     "points_per_dollar": 2.49,
+     "points_started": 17.4,
      "pos": "RB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "paid_claims": 5,
-    "par_per_dollar": -0.49,
-    "points_above_replacement": -7.28,
-    "points_from_free_claims": 18.0,
-    "points_from_paid_claims": 14.2,
-    "points_per_dollar": 0.95,
+    "par_per_dollar": -0.72,
+    "points_above_replacement": -10.74,
+    "points_from_free_claims": 32.0,
+    "points_from_paid_claims": 19.4,
+    "points_per_dollar": 1.29,
     "worst_par_claim": {
      "bid": 2,
-     "par_per_dollar": -6.8,
+     "par_per_dollar": -6.83,
      "player": "Green Bay Packers",
-     "points_above_replacement": -13.6,
+     "points_above_replacement": -13.67,
      "points_per_dollar": -3.5,
      "points_started": -7.0,
      "pos": "DEF",
@@ -723,7 +723,7 @@
   "dollars_spent": 626,
   "free_claims": 62,
   "hit_rate": 0.598,
-  "league_points_per_dollar": 2.38,
+  "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 2,
    "par_per_dollar": 6.1,
@@ -740,10 +740,10 @@
   "paid_claims": 92,
   "par_per_dollar": 0.09,
   "par_rank": 8,
-  "points_above_replacement": 57.0,
-  "points_from_free_claims": 405.0,
-  "points_from_paid_claims": 1325.06,
-  "points_per_dollar": 2.12,
+  "points_above_replacement": 53.54,
+  "points_from_free_claims": 419.0,
+  "points_from_paid_claims": 1330.26,
+  "points_per_dollar": 2.13,
   "rank": 8,
   "worst_par_claim": {
    "bid": 2,
@@ -763,10 +763,10 @@
  "head_to_head": {
   "by_opponent": {
    "383681356686950400": {
-    "games": 10,
-    "losses": 7,
-    "points_against": 1177.38,
-    "points_for": 1035.04,
+    "games": 11,
+    "losses": 8,
+    "points_against": 1282.32,
+    "points_for": 1130.36,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 3
@@ -905,7 +905,7 @@
      "wins": 0
     },
     "record": {
-     "losses": 2,
+     "losses": 3,
      "ties": 0,
      "wins": 3
     },
@@ -955,7 +955,7 @@
   "points_ahead_of_next_rank_down": {
    "first_name": "Kyle",
    "owner_id": "471359444949659648",
-   "points": 145
+   "points": 125
   },
   "points_since_snapshot": 0,
   "points_to_next_rank_up": null,
@@ -1070,7 +1070,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "3-2",
+     "counted_record": "3-3",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1085,8 +1085,8 @@
   "snapshot_rank": 1
  },
  "luck": {
-  "expected_wins": 53.87,
-  "luck": -3.87,
+  "expected_wins": 54.32,
+  "luck": -4.32,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
   "wins": 50
  },
@@ -1107,24 +1107,24 @@
   },
   "regular_season": {
    "avg_points_against": 105.24,
-   "avg_points_for": 106.63,
-   "games": 101,
-   "losses": 51,
-   "points_against": 10629.72,
-   "points_for": 10770.02,
+   "avg_points_for": 106.52,
+   "games": 102,
+   "losses": 52,
+   "points_against": 10734.66,
+   "points_for": 10865.34,
    "ties": 0,
-   "win_pct": 0.495,
+   "win_pct": 0.4902,
    "wins": 50
   },
   "total": {
    "avg_points_against": 104.22,
-   "avg_points_for": 106.81,
-   "games": 117,
-   "losses": 55,
-   "points_against": 12193.2,
-   "points_for": 12496.68,
+   "avg_points_for": 106.71,
+   "games": 118,
+   "losses": 56,
+   "points_against": 12298.14,
+   "points_for": 12592.0,
    "ties": 0,
-   "win_pct": 0.5299,
+   "win_pct": 0.5254,
    "wins": 62
   }
  },
@@ -2100,7 +2100,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.8651,
+   "efficiency": 0.8706,
    "faab": {
     "adds": 17,
     "budget": 100,
@@ -2120,28 +2120,28 @@
    },
    "faab_efficiency": {
     "best_par_claim": {
-     "bid": 7,
-     "par_per_dollar": 0.56,
-     "player": "Emanuel Wilson",
-     "points_above_replacement": 3.92,
-     "points_per_dollar": 1.74,
-     "points_started": 12.2,
-     "pos": "RB",
+     "bid": 2,
+     "par_per_dollar": 1.17,
+     "player": "Cincinnati Bengals",
+     "points_above_replacement": 2.33,
+     "points_per_dollar": 4.5,
+     "points_started": 9.0,
+     "pos": "DEF",
      "season": "2026",
-     "week": 2,
+     "week": 4,
      "weeks_started": 1
     },
     "best_value": {
      "bid": 7,
-     "par_per_dollar": 0.56,
+     "par_per_dollar": 0.09,
      "player": "Emanuel Wilson",
-     "points_above_replacement": 3.92,
-     "points_per_dollar": 1.74,
-     "points_started": 12.2,
+     "points_above_replacement": 0.6,
+     "points_per_dollar": 2.49,
+     "points_started": 17.4,
      "pos": "RB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "biggest_bust": {
      "bid": 2,
@@ -2162,27 +2162,27 @@
     "hit_rate": 0.6,
     "most_points": {
      "bid": 7,
-     "par_per_dollar": 0.56,
+     "par_per_dollar": 0.09,
      "player": "Emanuel Wilson",
-     "points_above_replacement": 3.92,
-     "points_per_dollar": 1.74,
-     "points_started": 12.2,
+     "points_above_replacement": 0.6,
+     "points_per_dollar": 2.49,
+     "points_started": 17.4,
      "pos": "RB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "paid_claims": 5,
-    "par_per_dollar": -0.49,
-    "points_above_replacement": -7.28,
-    "points_from_free_claims": 18.0,
-    "points_from_paid_claims": 14.2,
-    "points_per_dollar": 0.95,
+    "par_per_dollar": -0.72,
+    "points_above_replacement": -10.74,
+    "points_from_free_claims": 32.0,
+    "points_from_paid_claims": 19.4,
+    "points_per_dollar": 1.29,
     "worst_par_claim": {
      "bid": 2,
-     "par_per_dollar": -6.8,
+     "par_per_dollar": -6.83,
      "player": "Green Bay Packers",
-     "points_above_replacement": -13.6,
+     "points_above_replacement": -13.67,
      "points_per_dollar": -3.5,
      "points_started": -7.0,
      "pos": "DEF",
@@ -2193,9 +2193,9 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "39-16",
-    "expected_wins": 3.55,
-    "luck": -0.55,
+    "all_play_record": "44-22",
+    "expected_wins": 4.0,
+    "luck": -1.0,
     "wins": 3
    },
    "made_playoffs": true,
@@ -2212,21 +2212,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 113.34,
-    "avg_points_for": 125.58,
-    "games": 5,
-    "losses": 2,
-    "points_against": 566.68,
-    "points_for": 627.9,
+    "avg_points_against": 111.94,
+    "avg_points_for": 120.54,
+    "games": 6,
+    "losses": 3,
+    "points_against": 671.62,
+    "points_for": 723.22,
     "ties": 0,
-    "win_pct": 0.6,
+    "win_pct": 0.5,
     "wins": 3
    },
-   "regular_season_rank": 2,
+   "regular_season_rank": 4,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 566.68,
-    "points_for": 627.9
+    "points_against": 671.62,
+    "points_for": 723.22
    },
    "team_name": "Whiskey Dick & Co"
   }

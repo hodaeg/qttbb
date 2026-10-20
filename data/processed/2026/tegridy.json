@@ -42,12 +42,6 @@
   "tegridy_factor": 0
  },
  {
-  "events": [],
-  "owner_id": "471368473092550656",
-  "roster_id": 12,
-  "tegridy_factor": 0
- },
- {
   "events": [
    {
     "base_penalty": 6,
@@ -109,6 +103,22 @@
   ],
   "owner_id": "471360899853053952",
   "roster_id": 9,
+  "tegridy_factor": 8.0
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 8,
+    "detail": "Davante Adams was Out at 2026-10-20T01:46:13+00:00 but stayed in the lineup.",
+    "kind": "injured_starter_out",
+    "multiplier": 1.0,
+    "penalty": 8.0,
+    "penalty_id": "2026-w06-r12-injured_starter_out-2133",
+    "week": 6
+   }
+  ],
+  "owner_id": "471368473092550656",
+  "roster_id": 12,
   "tegridy_factor": 8.0
  }
 ]

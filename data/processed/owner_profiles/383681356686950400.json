@@ -19,7 +19,7 @@
   "record": {
    "losses": 91,
    "ties": 0,
-   "wins": 111
+   "wins": 112
   },
   "sackos": 0,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -28,7 +28,7 @@
    15,
    15
   ],
-  "win_pct": 0.5495
+  "win_pct": 0.5517
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -50,12 +50,12 @@
  "current_team_name": "Hodag Forest Lurkers",
  "display_name": "Hodaeg",
  "efficiency": {
-  "efficiency": 0.8765,
+  "efficiency": 0.8774,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14194.14,
-  "points": 12440.56,
+  "optimal_points": 14299.08,
+  "points": 12545.5,
   "points_left_on_bench": 1753.58,
-  "weeks": 118
+  "weeks": 119
  },
  "faab_and_transactions": {
   "adds": 254,
@@ -625,21 +625,21 @@
    "2026": {
     "best_par_claim": {
      "bid": 3,
-     "par_per_dollar": 0.88,
+     "par_per_dollar": 0.93,
      "player": "Jordan Love",
-     "points_above_replacement": 2.64,
-     "points_per_dollar": 12.36,
-     "points_started": 37.08,
+     "points_above_replacement": 2.78,
+     "points_per_dollar": 19.11,
+     "points_started": 57.32,
      "pos": "QB",
      "season": "2026",
      "week": 1,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "best_value": {
      "bid": 24,
-     "par_per_dollar": 0.03,
+     "par_per_dollar": -0.05,
      "player": "Bryce Young",
-     "points_above_replacement": 0.66,
+     "points_above_replacement": -1.26,
      "points_per_dollar": 1.46,
      "points_started": 35.1,
      "pos": "QB",
@@ -666,33 +666,33 @@
     "hit_rate": 0.667,
     "most_points": {
      "bid": 3,
-     "par_per_dollar": 0.88,
+     "par_per_dollar": 0.93,
      "player": "Jordan Love",
-     "points_above_replacement": 2.64,
-     "points_per_dollar": 12.36,
-     "points_started": 37.08,
+     "points_above_replacement": 2.78,
+     "points_per_dollar": 19.11,
+     "points_started": 57.32,
      "pos": "QB",
      "season": "2026",
      "week": 1,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "paid_claims": 3,
-    "par_per_dollar": 0.08,
-    "points_above_replacement": 3.3,
+    "par_per_dollar": 0.04,
+    "points_above_replacement": 1.52,
     "points_from_free_claims": 0,
-    "points_from_paid_claims": 72.18,
-    "points_per_dollar": 1.76,
+    "points_from_paid_claims": 92.42,
+    "points_per_dollar": 2.25,
     "worst_par_claim": {
-     "bid": 14,
-     "par_per_dollar": 0.0,
-     "player": "Adonai Mitchell",
-     "points_above_replacement": 0.0,
-     "points_per_dollar": 0.0,
-     "points_started": 0.0,
-     "pos": "WR",
+     "bid": 24,
+     "par_per_dollar": -0.05,
+     "player": "Bryce Young",
+     "points_above_replacement": -1.26,
+     "points_per_dollar": 1.46,
+     "points_started": 35.1,
+     "pos": "QB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 0
+     "weeks_started": 2
     }
    }
   },
@@ -702,7 +702,7 @@
   "dollars_spent": 691,
   "free_claims": 35,
   "hit_rate": 0.782,
-  "league_points_per_dollar": 2.38,
+  "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 2,
    "par_per_dollar": 21.95,
@@ -719,10 +719,10 @@
   "paid_claims": 55,
   "par_per_dollar": -0.07,
   "par_rank": 10,
-  "points_above_replacement": -49.48,
+  "points_above_replacement": -51.26,
   "points_from_free_claims": 450.52,
-  "points_from_paid_claims": 922.44,
-  "points_per_dollar": 1.33,
+  "points_from_paid_claims": 942.68,
+  "points_per_dollar": 1.36,
   "rank": 10,
   "worst_par_claim": {
    "bid": 26,
@@ -742,13 +742,13 @@
  "head_to_head": {
   "by_opponent": {
    "422102738889867264": {
-    "games": 10,
+    "games": 11,
     "losses": 3,
-    "points_against": 1035.04,
-    "points_for": 1177.38,
+    "points_against": 1130.36,
+    "points_for": 1282.32,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 7
+    "wins": 8
    },
    "423560331814510592": {
     "games": 11,
@@ -886,7 +886,7 @@
     "record": {
      "losses": 2,
      "ties": 0,
-     "wins": 3
+     "wins": 4
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -927,21 +927,21 @@
    "perfect_seasons": 0,
    "playoff_appearances": 50,
    "playoff_wins": 60,
-   "record_bonus": 20,
+   "record_bonus": 40,
    "sackos": 0,
    "scoring_bonuses": 45
   },
-  "points": 215,
+  "points": 235,
   "points_ahead_of_next_rank_down": {
    "first_name": "Dave",
    "owner_id": "471366618241298432",
-   "points": 10
+   "points": 30
   },
-  "points_since_snapshot": 0,
+  "points_since_snapshot": 20,
   "points_to_next_rank_up": {
    "first_name": "Suze",
    "owner_id": "471074114505797632",
-   "points": 65
+   "points": 45
   },
   "published_points": 215,
   "published_rank_change": 0,
@@ -1054,7 +1054,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "3-2",
+     "counted_record": "4-2",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1069,10 +1069,10 @@
   "snapshot_rank": 4
  },
  "luck": {
-  "expected_wins": 52.9,
-  "luck": 8.1,
+  "expected_wins": 53.81,
+  "luck": 8.19,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 61
+  "wins": 62
  },
  "owner_id": "383681356686950400",
  "record": {
@@ -1090,26 +1090,26 @@
    "wins": 8
   },
   "regular_season": {
-   "avg_points_against": 101.51,
-   "avg_points_for": 105.68,
-   "games": 101,
+   "avg_points_against": 101.45,
+   "avg_points_for": 105.67,
+   "games": 102,
    "losses": 40,
-   "points_against": 10252.3,
-   "points_for": 10673.68,
+   "points_against": 10347.62,
+   "points_for": 10778.62,
    "ties": 0,
-   "win_pct": 0.604,
-   "wins": 61
+   "win_pct": 0.6078,
+   "wins": 62
   },
   "total": {
-   "avg_points_against": 103.04,
-   "avg_points_for": 105.43,
-   "games": 118,
+   "avg_points_against": 102.97,
+   "avg_points_for": 105.42,
+   "games": 119,
    "losses": 49,
-   "points_against": 12158.54,
-   "points_for": 12440.56,
+   "points_against": 12253.86,
+   "points_for": 12545.5,
    "ties": 0,
-   "win_pct": 0.5847,
-   "wins": 69
+   "win_pct": 0.5882,
+   "wins": 70
   }
  },
  "scoring": {
@@ -2062,7 +2062,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.9302,
+   "efficiency": 0.9419,
    "faab": {
     "adds": 9,
     "budget": 100,
@@ -2083,21 +2083,21 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 3,
-     "par_per_dollar": 0.88,
+     "par_per_dollar": 0.93,
      "player": "Jordan Love",
-     "points_above_replacement": 2.64,
-     "points_per_dollar": 12.36,
-     "points_started": 37.08,
+     "points_above_replacement": 2.78,
+     "points_per_dollar": 19.11,
+     "points_started": 57.32,
      "pos": "QB",
      "season": "2026",
      "week": 1,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "best_value": {
      "bid": 24,
-     "par_per_dollar": 0.03,
+     "par_per_dollar": -0.05,
      "player": "Bryce Young",
-     "points_above_replacement": 0.66,
+     "points_above_replacement": -1.26,
      "points_per_dollar": 1.46,
      "points_started": 35.1,
      "pos": "QB",
@@ -2124,41 +2124,41 @@
     "hit_rate": 0.667,
     "most_points": {
      "bid": 3,
-     "par_per_dollar": 0.88,
+     "par_per_dollar": 0.93,
      "player": "Jordan Love",
-     "points_above_replacement": 2.64,
-     "points_per_dollar": 12.36,
-     "points_started": 37.08,
+     "points_above_replacement": 2.78,
+     "points_per_dollar": 19.11,
+     "points_started": 57.32,
      "pos": "QB",
      "season": "2026",
      "week": 1,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "paid_claims": 3,
-    "par_per_dollar": 0.08,
-    "points_above_replacement": 3.3,
+    "par_per_dollar": 0.04,
+    "points_above_replacement": 1.52,
     "points_from_free_claims": 0,
-    "points_from_paid_claims": 72.18,
-    "points_per_dollar": 1.76,
+    "points_from_paid_claims": 92.42,
+    "points_per_dollar": 2.25,
     "worst_par_claim": {
-     "bid": 14,
-     "par_per_dollar": 0.0,
-     "player": "Adonai Mitchell",
-     "points_above_replacement": 0.0,
-     "points_per_dollar": 0.0,
-     "points_started": 0.0,
-     "pos": "WR",
+     "bid": 24,
+     "par_per_dollar": -0.05,
+     "player": "Bryce Young",
+     "points_above_replacement": -1.26,
+     "points_per_dollar": 1.46,
+     "points_started": 35.1,
+     "pos": "QB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 0
+     "weeks_started": 2
     }
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "25-30",
-    "expected_wins": 2.27,
-    "luck": 0.73,
-    "wins": 3
+    "all_play_record": "35-31",
+    "expected_wins": 3.18,
+    "luck": 0.82,
+    "wins": 4
    },
    "made_playoffs": true,
    "playoff_result": null,
@@ -2174,21 +2174,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 104.8,
-    "avg_points_for": 96.32,
-    "games": 5,
+    "avg_points_against": 103.22,
+    "avg_points_for": 97.76,
+    "games": 6,
     "losses": 2,
-    "points_against": 524.02,
-    "points_for": 481.62,
+    "points_against": 619.34,
+    "points_for": 586.56,
     "ties": 0,
-    "win_pct": 0.6,
-    "wins": 3
+    "win_pct": 0.6667,
+    "wins": 4
    },
-   "regular_season_rank": 5,
+   "regular_season_rank": 3,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 524.02,
-    "points_for": 481.62
+    "points_against": 619.34,
+    "points_for": 586.56
    },
    "team_name": "Hodag Forest Lurkers"
   }

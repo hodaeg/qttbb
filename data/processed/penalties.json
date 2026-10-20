@@ -2869,6 +2869,79 @@
     "weeks_before_playoffs": 10
    },
    "week": 5
+  },
+  {
+   "bench_option": {
+    "name": "Cooper Kupp",
+    "player_id": "4039",
+    "points": 7.5,
+    "pos": "WR",
+    "slot": "WR"
+   },
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-10-20T01:46:13+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Davante Adams was Out at 2026-10-20T01:46:13+00:00 but stayed in the lineup.",
+   "id": "2026-w06-r12-injured_starter_out-2133",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "therealGandB",
+    "first_name": "Jordan",
+    "owner_id": "471368473092550656",
+    "roster_id": 12,
+    "team_name": "Green and Bowled"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 7.44,
+    "opponent_display_name": "TheBoarHouse",
+    "opponent_owner_id": "471359672478068736",
+    "opponent_roster_id": 8,
+    "points_against": 97.26,
+    "points_for": 104.7,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2026-10-18",
+    "home": true,
+    "nfl_team": "LAR",
+    "opponent": "ARI"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "WR",
+    "name": "Davante Adams",
+    "nfl_team": "LAR",
+    "player_id": "2133",
+    "pos": "WR"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "9 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 6,
+    "weeks_before_playoffs": 9
+   },
+   "week": 6
   }
  ]
 }

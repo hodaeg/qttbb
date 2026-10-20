@@ -18,14 +18,14 @@
   "record": {
    "losses": 85,
    "ties": 0,
-   "wins": 117
+   "wins": 118
   },
   "sackos": 1,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
   "scoring_bonuses": [
    15
   ],
-  "win_pct": 0.5792
+  "win_pct": 0.5813
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -47,12 +47,12 @@
  "current_team_name": "Always A Bridesmaid",
  "display_name": "DangerDave678",
  "efficiency": {
-  "efficiency": 0.8862,
+  "efficiency": 0.8855,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13854.14,
-  "points": 12277.26,
-  "points_left_on_bench": 1576.88,
-  "weeks": 118
+  "optimal_points": 13997.98,
+  "points": 12395.1,
+  "points_left_on_bench": 1602.88,
+  "weeks": 119
  },
  "faab_and_transactions": {
   "adds": 234,
@@ -645,9 +645,9 @@
     },
     "best_value": {
      "bid": 9,
-     "par_per_dollar": -0.72,
+     "par_per_dollar": -0.81,
      "player": "Romeo Doubs",
-     "points_above_replacement": -6.46,
+     "points_above_replacement": -7.32,
      "points_per_dollar": 0.23,
      "points_started": 2.1,
      "pos": "WR",
@@ -674,9 +674,9 @@
     "hit_rate": 0.333,
     "most_points": {
      "bid": 9,
-     "par_per_dollar": -0.72,
+     "par_per_dollar": -0.81,
      "player": "Romeo Doubs",
-     "points_above_replacement": -6.46,
+     "points_above_replacement": -7.32,
      "points_per_dollar": 0.23,
      "points_started": 2.1,
      "pos": "WR",
@@ -685,16 +685,16 @@
      "weeks_started": 1
     },
     "paid_claims": 3,
-    "par_per_dollar": -0.38,
-    "points_above_replacement": -6.46,
+    "par_per_dollar": -0.43,
+    "points_above_replacement": -7.32,
     "points_from_free_claims": 0,
     "points_from_paid_claims": 2.1,
     "points_per_dollar": 0.12,
     "worst_par_claim": {
      "bid": 9,
-     "par_per_dollar": -0.72,
+     "par_per_dollar": -0.81,
      "player": "Romeo Doubs",
-     "points_above_replacement": -6.46,
+     "points_above_replacement": -7.32,
      "points_per_dollar": 0.23,
      "points_started": 2.1,
      "pos": "WR",
@@ -710,7 +710,7 @@
   "dollars_spent": 670,
   "free_claims": 33,
   "hit_rate": 0.723,
-  "league_points_per_dollar": 2.38,
+  "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 33,
    "par_per_dollar": 1.72,
@@ -727,7 +727,7 @@
   "paid_claims": 94,
   "par_per_dollar": 0.28,
   "par_rank": 3,
-  "points_above_replacement": 186.71,
+  "points_above_replacement": 185.85,
   "points_from_free_claims": 599.4,
   "points_from_paid_claims": 2373.12,
   "points_per_dollar": 3.54,
@@ -786,13 +786,13 @@
     "wins": 6
    },
    "471083964757438464": {
-    "games": 11,
+    "games": 12,
     "losses": 3,
-    "points_against": 1145.24,
-    "points_for": 1191.08,
+    "points_against": 1211.94,
+    "points_for": 1308.92,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 8
+    "wins": 9
    },
    "471345530597797888": {
     "games": 11,
@@ -894,7 +894,7 @@
     "record": {
      "losses": 3,
      "ties": 0,
-     "wins": 2
+     "wins": 3
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -946,7 +946,7 @@
   "points_to_next_rank_up": {
    "first_name": "Levi",
    "owner_id": "383681356686950400",
-   "points": 10
+   "points": 30
   },
   "published_points": 205,
   "published_rank_change": -1,
@@ -1059,7 +1059,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "2-3",
+     "counted_record": "3-3",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1074,10 +1074,10 @@
   "snapshot_rank": 5
  },
  "luck": {
-  "expected_wins": 50.9,
+  "expected_wins": 51.9,
   "luck": 6.1,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 57
+  "wins": 58
  },
  "owner_id": "471366618241298432",
  "record": {
@@ -1095,26 +1095,26 @@
    "wins": 8
   },
   "regular_season": {
-   "avg_points_against": 102.29,
-   "avg_points_for": 103.5,
-   "games": 101,
+   "avg_points_against": 101.94,
+   "avg_points_for": 103.64,
+   "games": 102,
    "losses": 44,
-   "points_against": 10330.82,
-   "points_for": 10453.08,
+   "points_against": 10397.52,
+   "points_for": 10570.92,
    "ties": 0,
-   "win_pct": 0.5644,
-   "wins": 57
+   "win_pct": 0.5686,
+   "wins": 58
   },
   "total": {
-   "avg_points_against": 103.05,
-   "avg_points_for": 104.04,
-   "games": 118,
+   "avg_points_against": 102.75,
+   "avg_points_for": 104.16,
+   "games": 119,
    "losses": 53,
-   "points_against": 12160.46,
-   "points_for": 12277.26,
+   "points_against": 12227.16,
+   "points_for": 12395.1,
    "ties": 0,
-   "win_pct": 0.5508,
-   "wins": 65
+   "win_pct": 0.5546,
+   "wins": 66
   }
  },
  "scoring": {
@@ -2078,7 +2078,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.826,
+   "efficiency": 0.8246,
    "faab": {
     "adds": 7,
     "budget": 100,
@@ -2111,9 +2111,9 @@
     },
     "best_value": {
      "bid": 9,
-     "par_per_dollar": -0.72,
+     "par_per_dollar": -0.81,
      "player": "Romeo Doubs",
-     "points_above_replacement": -6.46,
+     "points_above_replacement": -7.32,
      "points_per_dollar": 0.23,
      "points_started": 2.1,
      "pos": "WR",
@@ -2140,9 +2140,9 @@
     "hit_rate": 0.333,
     "most_points": {
      "bid": 9,
-     "par_per_dollar": -0.72,
+     "par_per_dollar": -0.81,
      "player": "Romeo Doubs",
-     "points_above_replacement": -6.46,
+     "points_above_replacement": -7.32,
      "points_per_dollar": 0.23,
      "points_started": 2.1,
      "pos": "WR",
@@ -2151,16 +2151,16 @@
      "weeks_started": 1
     },
     "paid_claims": 3,
-    "par_per_dollar": -0.38,
-    "points_above_replacement": -6.46,
+    "par_per_dollar": -0.43,
+    "points_above_replacement": -7.32,
     "points_from_free_claims": 0,
     "points_from_paid_claims": 2.1,
     "points_per_dollar": 0.12,
     "worst_par_claim": {
      "bid": 9,
-     "par_per_dollar": -0.72,
+     "par_per_dollar": -0.81,
      "player": "Romeo Doubs",
-     "points_above_replacement": -6.46,
+     "points_above_replacement": -7.32,
      "points_per_dollar": 0.23,
      "points_started": 2.1,
      "pos": "WR",
@@ -2171,10 +2171,10 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "14-41",
-    "expected_wins": 1.27,
+    "all_play_record": "25-41",
+    "expected_wins": 2.27,
     "luck": 0.73,
-    "wins": 2
+    "wins": 3
    },
    "made_playoffs": false,
    "playoff_result": null,
@@ -2190,21 +2190,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 93.78,
-    "avg_points_for": 89.63,
-    "games": 5,
+    "avg_points_against": 89.26,
+    "avg_points_for": 94.33,
+    "games": 6,
     "losses": 3,
-    "points_against": 468.88,
-    "points_for": 448.16,
+    "points_against": 535.58,
+    "points_for": 566.0,
     "ties": 0,
-    "win_pct": 0.4,
-    "wins": 2
+    "win_pct": 0.5,
+    "wins": 3
    },
-   "regular_season_rank": 11,
+   "regular_season_rank": 7,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 468.88,
-    "points_for": 448.16
+    "points_against": 535.58,
+    "points_for": 565.99
    },
    "team_name": "Always A Bridesmaid"
   }

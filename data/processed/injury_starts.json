@@ -42,7 +42,7 @@
   },
   "471368473092550656": {
    "doubtful": 2,
-   "out": 2,
+   "out": 3,
    "questionable_dnp": 0
   }
  },
@@ -389,6 +389,19 @@
    "source": "snapshot",
    "status": "Out",
    "week": 5
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "471368473092550656",
+   "player": "Davante Adams",
+   "player_id": "2133",
+   "pos": "WR",
+   "roster_id": 12,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 6
   }
  ],
  "rule": "Official NFL injury report: Out/Doubtful, or Questionable who did not play, AND 0 points as a starter (plus game-day snapshot flags)"

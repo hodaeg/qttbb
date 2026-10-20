@@ -19,7 +19,7 @@
   "record": {
    "losses": 91,
    "ties": 0,
-   "wins": 78
+   "wins": 79
   },
   "sackos": 0,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -27,7 +27,7 @@
    -15,
    -15
   ],
-  "win_pct": 0.4615
+  "win_pct": 0.4647
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -51,10 +51,10 @@
  "efficiency": {
   "efficiency": 0.9032,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13810.38,
-  "points": 12473.48,
-  "points_left_on_bench": 1336.9,
-  "weeks": 117
+  "optimal_points": 13926.38,
+  "points": 12578.18,
+  "points_left_on_bench": 1348.2,
+  "weeks": 118
  },
  "faab_and_transactions": {
   "adds": 177,
@@ -628,7 +628,7 @@
   "dollars_spent": 318,
   "free_claims": 19,
   "hit_rate": 0.581,
-  "league_points_per_dollar": 2.38,
+  "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 9,
    "par_per_dollar": 1.23,
@@ -731,13 +731,13 @@
     "wins": 8
    },
    "471359672478068736": {
-    "games": 11,
+    "games": 12,
     "losses": 6,
-    "points_against": 1167.5,
-    "points_for": 1113.04,
+    "points_against": 1264.76,
+    "points_for": 1217.74,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 5
+    "wins": 6
    },
    "471360899853053952": {
     "games": 11,
@@ -812,7 +812,7 @@
     "record": {
      "losses": 3,
      "ties": 0,
-     "wins": 2
+     "wins": 3
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -979,7 +979,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "2-3",
+     "counted_record": "3-3",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -994,10 +994,10 @@
   "snapshot_rank": 7
  },
  "luck": {
-  "expected_wins": 55.0,
-  "luck": -5.0,
+  "expected_wins": 55.82,
+  "luck": -4.82,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 50
+  "wins": 51
  },
  "owner_id": "471368473092550656",
  "record": {
@@ -1015,26 +1015,26 @@
    "wins": 8
   },
   "regular_season": {
-   "avg_points_against": 106.98,
-   "avg_points_for": 105.7,
-   "games": 101,
+   "avg_points_against": 106.89,
+   "avg_points_for": 105.69,
+   "games": 102,
    "losses": 51,
-   "points_against": 10805.38,
-   "points_for": 10675.92,
+   "points_against": 10902.64,
+   "points_for": 10780.62,
    "ties": 0,
-   "win_pct": 0.495,
-   "wins": 50
+   "win_pct": 0.5,
+   "wins": 51
   },
   "total": {
-   "avg_points_against": 107.63,
-   "avg_points_for": 106.61,
-   "games": 117,
+   "avg_points_against": 107.54,
+   "avg_points_for": 106.59,
+   "games": 118,
    "losses": 59,
-   "points_against": 12592.64,
-   "points_for": 12473.48,
+   "points_against": 12689.9,
+   "points_for": 12578.18,
    "ties": 0,
-   "win_pct": 0.4957,
-   "wins": 58
+   "win_pct": 0.5,
+   "wins": 59
   }
  },
  "scoring": {
@@ -1987,7 +1987,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.9289,
+   "efficiency": 0.9246,
    "faab": {
     "adds": 3,
     "budget": 100,
@@ -2008,12 +2008,12 @@
    "faab_efficiency": null,
    "final_place": null,
    "luck": {
-    "all_play_record": "33-22",
-    "expected_wins": 3.0,
-    "luck": -1.0,
-    "wins": 2
+    "all_play_record": "42-24",
+    "expected_wins": 3.82,
+    "luck": -0.82,
+    "wins": 3
    },
-   "made_playoffs": false,
+   "made_playoffs": true,
    "playoff_result": null,
    "postseason": {
     "avg_points_against": null,
@@ -2027,21 +2027,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 108.9,
-    "avg_points_for": 110.56,
-    "games": 5,
+    "avg_points_against": 106.96,
+    "avg_points_for": 109.58,
+    "games": 6,
     "losses": 3,
-    "points_against": 544.5,
-    "points_for": 552.78,
+    "points_against": 641.76,
+    "points_for": 657.48,
     "ties": 0,
-    "win_pct": 0.4,
-    "wins": 2
+    "win_pct": 0.5,
+    "wins": 3
    },
-   "regular_season_rank": 8,
+   "regular_season_rank": 6,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 544.5,
-    "points_for": 552.78
+    "points_against": 641.76,
+    "points_for": 657.48
    },
    "team_name": "Green and Bowled"
   }
@@ -2059,7 +2059,7 @@
  "tegridy_factor": {
   "by_kind": {
    "injured_starter_doubtful": 2,
-   "injured_starter_out": 2,
+   "injured_starter_out": 3,
    "missed_league_note": 6
   },
   "by_season": {
@@ -2070,14 +2070,14 @@
    "2023": 10.25,
    "2024": 27.0,
    "2025": 0,
-   "2026": 0
+   "2026": 8.0
   },
   "clean_seasons": [
    "2021",
    "2025"
   ],
   "excluded_penalty_ids": [],
-  "penalty_count": 10,
+  "penalty_count": 11,
   "penalty_ids": [
    "2019-w11-r12-injured_starter_doubtful-4217",
    "2020-note-r12-1",
@@ -2088,16 +2088,17 @@
    "2024-w11-r12-injured_starter_out-10859",
    "2024-note-r12-1",
    "2024-note-r12-2",
-   "2024-note-r12-3"
+   "2024-note-r12-3",
+   "2026-w06-r12-injured_starter_out-2133"
   ],
   "points_by_kind": {
    "injured_starter_doubtful": 9.75,
-   "injured_starter_out": 20.0,
+   "injured_starter_out": 28.0,
    "missed_league_note": 30
   },
-  "rank": 11,
+  "rank": 12,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 59.75,
+  "total": 67.75,
   "worst_penalty_id": "2024-w11-r12-injured_starter_out-10859"
  },
  "trophies": {

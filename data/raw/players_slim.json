@@ -117,7 +117,7 @@
   "injury_status": null,
   "name": "Jake Moody",
   "pos": "K",
-  "team": null
+  "team": "BAL"
  },
  "10955": {
   "injury_status": null,
@@ -138,7 +138,7 @@
   "team": null
  },
  "11058": {
-  "injury_status": "Questionable",
+  "injury_status": "IR",
   "name": "Blake Grupe",
   "pos": "K",
   "team": "LAR"
@@ -738,7 +738,7 @@
   "team": "JAX"
  },
  "12533": {
-  "injury_status": "Out",
+  "injury_status": "IR",
   "name": "Jacory Croskey-Merritt",
   "pos": "RB",
   "team": "WAS"
@@ -1224,7 +1224,7 @@
   "team": "PIT"
  },
  "2133": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Davante Adams",
   "pos": "WR",
   "team": "LAR"
@@ -1266,7 +1266,7 @@
   "team": null
  },
  "2216": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Mike Evans",
   "pos": "WR",
   "team": "SF"
@@ -1452,7 +1452,7 @@
   "team": null
  },
  "2449": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Stefon Diggs",
   "pos": "WR",
   "team": "WAS"
@@ -2088,7 +2088,7 @@
   "team": null
  },
  "4219": {
-  "injury_status": "IR",
+  "injury_status": null,
   "name": "Jeremy McNichols",
   "pos": "RB",
   "team": "WAS"
@@ -2754,7 +2754,7 @@
   "team": "NO"
  },
  "5859": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "A.J. Brown",
   "pos": "WR",
   "team": "NE"
@@ -2826,7 +2826,7 @@
   "team": null
  },
  "5927": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Terry McLaurin",
   "pos": "WR",
   "team": "WAS"
@@ -3864,7 +3864,7 @@
   "team": "ATL"
  },
  "8121": {
-  "injury_status": "Out",
+  "injury_status": "IR",
   "name": "Romeo Doubs",
   "pos": "WR",
   "team": "NE"

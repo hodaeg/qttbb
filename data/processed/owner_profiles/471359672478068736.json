@@ -17,7 +17,7 @@
    "wins": 5
   },
   "record": {
-   "losses": 110,
+   "losses": 111,
    "ties": 1,
    "wins": 91
   },
@@ -28,7 +28,7 @@
    -15,
    -15
   ],
-  "win_pct": 0.453
+  "win_pct": 0.4507
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -50,12 +50,12 @@
  "current_team_name": "Lil Kings",
  "display_name": "TheBoarHouse",
  "efficiency": {
-  "efficiency": 0.8927,
+  "efficiency": 0.8924,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13508.84,
-  "points": 12059.24,
-  "points_left_on_bench": 1449.6,
-  "weeks": 120
+  "optimal_points": 13622.1,
+  "points": 12156.5,
+  "points_left_on_bench": 1465.6,
+  "weeks": 121
  },
  "faab_and_transactions": {
   "adds": 321,
@@ -592,9 +592,9 @@
    "2026": {
     "best_par_claim": {
      "bid": 5,
-     "par_per_dollar": -0.12,
+     "par_per_dollar": -0.13,
      "player": "Carolina Panthers",
-     "points_above_replacement": -0.6,
+     "points_above_replacement": -0.67,
      "points_per_dollar": 1.2,
      "points_started": 6.0,
      "pos": "DEF",
@@ -604,9 +604,9 @@
     },
     "best_value": {
      "bid": 5,
-     "par_per_dollar": -0.12,
+     "par_per_dollar": -0.13,
      "player": "Carolina Panthers",
-     "points_above_replacement": -0.6,
+     "points_above_replacement": -0.67,
      "points_per_dollar": 1.2,
      "points_started": 6.0,
      "pos": "DEF",
@@ -622,9 +622,9 @@
     "hit_rate": 1.0,
     "most_points": {
      "bid": 5,
-     "par_per_dollar": -0.12,
+     "par_per_dollar": -0.13,
      "player": "Carolina Panthers",
-     "points_above_replacement": -0.6,
+     "points_above_replacement": -0.67,
      "points_per_dollar": 1.2,
      "points_started": 6.0,
      "pos": "DEF",
@@ -633,22 +633,22 @@
      "weeks_started": 1
     },
     "paid_claims": 3,
-    "par_per_dollar": -0.31,
-    "points_above_replacement": -5.8,
-    "points_from_free_claims": 74.76,
-    "points_from_paid_claims": 14.0,
-    "points_per_dollar": 0.74,
+    "par_per_dollar": -0.77,
+    "points_above_replacement": -14.68,
+    "points_from_free_claims": 92.12,
+    "points_from_paid_claims": 12.0,
+    "points_per_dollar": 0.63,
     "worst_par_claim": {
-     "bid": 6,
-     "par_per_dollar": -0.43,
-     "player": "Tampa Bay Buccaneers",
-     "points_above_replacement": -2.6,
-     "points_per_dollar": 0.67,
-     "points_started": 4.0,
+     "bid": 8,
+     "par_per_dollar": -1.42,
+     "player": "Jacksonville Jaguars",
+     "points_above_replacement": -11.34,
+     "points_per_dollar": 0.25,
+     "points_started": 2.0,
      "pos": "DEF",
      "season": "2026",
-     "week": 1,
-     "weeks_started": 1
+     "week": 4,
+     "weeks_started": 2
     }
    }
   },
@@ -658,7 +658,7 @@
   "dollars_spent": 328,
   "free_claims": 39,
   "hit_rate": 0.611,
-  "league_points_per_dollar": 2.38,
+  "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 26,
    "par_per_dollar": 0.56,
@@ -673,12 +673,12 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 36,
-  "par_per_dollar": 0.19,
-  "par_rank": 5,
-  "points_above_replacement": 62.26,
-  "points_from_free_claims": 471.56,
-  "points_from_paid_claims": 386.98,
-  "points_per_dollar": 1.18,
+  "par_per_dollar": 0.16,
+  "par_rank": 7,
+  "points_above_replacement": 53.38,
+  "points_from_free_claims": 488.92,
+  "points_from_paid_claims": 384.98,
+  "points_per_dollar": 1.17,
   "rank": 12,
   "worst_par_claim": {
    "bid": 45,
@@ -779,10 +779,10 @@
     "wins": 6
    },
    "471368473092550656": {
-    "games": 11,
-    "losses": 5,
-    "points_against": 1113.04,
-    "points_for": 1167.5,
+    "games": 12,
+    "losses": 6,
+    "points_against": 1217.74,
+    "points_for": 1264.76,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 6
@@ -840,7 +840,7 @@
      "wins": 0
     },
     "record": {
-     "losses": 3,
+     "losses": 4,
      "ties": 0,
      "wins": 2
     },
@@ -1009,7 +1009,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "2-3",
+     "counted_record": "2-4",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1024,8 +1024,8 @@
   "snapshot_rank": 11
  },
  "luck": {
-  "expected_wins": 45.16,
-  "luck": 1.84,
+  "expected_wins": 45.71,
+  "luck": 1.29,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
   "wins": 47
  },
@@ -1045,25 +1045,25 @@
    "wins": 6
   },
   "regular_season": {
-   "avg_points_against": 103.41,
-   "avg_points_for": 100.12,
-   "games": 101,
-   "losses": 54,
-   "points_against": 10444.68,
-   "points_for": 10112.04,
+   "avg_points_against": 103.43,
+   "avg_points_for": 100.09,
+   "games": 102,
+   "losses": 55,
+   "points_against": 10549.38,
+   "points_for": 10209.3,
    "ties": 0,
-   "win_pct": 0.4653,
+   "win_pct": 0.4608,
    "wins": 47
   },
   "total": {
-   "avg_points_against": 103.88,
-   "avg_points_for": 100.36,
-   "games": 120,
-   "losses": 67,
-   "points_against": 12465.64,
-   "points_for": 12042.64,
+   "avg_points_against": 103.89,
+   "avg_points_for": 100.33,
+   "games": 121,
+   "losses": 68,
+   "points_against": 12570.34,
+   "points_for": 12139.9,
    "ties": 0,
-   "win_pct": 0.4417,
+   "win_pct": 0.438,
    "wins": 53
   }
  },
@@ -1984,7 +1984,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.9226,
+   "efficiency": 0.912,
    "faab": {
     "adds": 16,
     "budget": 100,
@@ -2005,9 +2005,9 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 5,
-     "par_per_dollar": -0.12,
+     "par_per_dollar": -0.13,
      "player": "Carolina Panthers",
-     "points_above_replacement": -0.6,
+     "points_above_replacement": -0.67,
      "points_per_dollar": 1.2,
      "points_started": 6.0,
      "pos": "DEF",
@@ -2017,9 +2017,9 @@
     },
     "best_value": {
      "bid": 5,
-     "par_per_dollar": -0.12,
+     "par_per_dollar": -0.13,
      "player": "Carolina Panthers",
-     "points_above_replacement": -0.6,
+     "points_above_replacement": -0.67,
      "points_per_dollar": 1.2,
      "points_started": 6.0,
      "pos": "DEF",
@@ -2035,9 +2035,9 @@
     "hit_rate": 1.0,
     "most_points": {
      "bid": 5,
-     "par_per_dollar": -0.12,
+     "par_per_dollar": -0.13,
      "player": "Carolina Panthers",
-     "points_above_replacement": -0.6,
+     "points_above_replacement": -0.67,
      "points_per_dollar": 1.2,
      "points_started": 6.0,
      "pos": "DEF",
@@ -2046,29 +2046,29 @@
      "weeks_started": 1
     },
     "paid_claims": 3,
-    "par_per_dollar": -0.31,
-    "points_above_replacement": -5.8,
-    "points_from_free_claims": 74.76,
-    "points_from_paid_claims": 14.0,
-    "points_per_dollar": 0.74,
+    "par_per_dollar": -0.77,
+    "points_above_replacement": -14.68,
+    "points_from_free_claims": 92.12,
+    "points_from_paid_claims": 12.0,
+    "points_per_dollar": 0.63,
     "worst_par_claim": {
-     "bid": 6,
-     "par_per_dollar": -0.43,
-     "player": "Tampa Bay Buccaneers",
-     "points_above_replacement": -2.6,
-     "points_per_dollar": 0.67,
-     "points_started": 4.0,
+     "bid": 8,
+     "par_per_dollar": -1.42,
+     "player": "Jacksonville Jaguars",
+     "points_above_replacement": -11.34,
+     "points_per_dollar": 0.25,
+     "points_started": 2.0,
      "pos": "DEF",
      "season": "2026",
-     "week": 1,
-     "weeks_started": 1
+     "week": 4,
+     "weeks_started": 2
     }
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "27-28",
-    "expected_wins": 2.45,
-    "luck": -0.45,
+    "all_play_record": "33-33",
+    "expected_wins": 3.0,
+    "luck": -1.0,
     "wins": 2
    },
    "made_playoffs": false,
@@ -2085,21 +2085,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 125.78,
-    "avg_points_for": 104.85,
-    "games": 5,
-    "losses": 3,
-    "points_against": 628.9,
-    "points_for": 524.24,
+    "avg_points_against": 122.27,
+    "avg_points_for": 103.58,
+    "games": 6,
+    "losses": 4,
+    "points_against": 733.6,
+    "points_for": 621.5,
     "ties": 0,
-    "win_pct": 0.4,
+    "win_pct": 0.3333,
     "wins": 2
    },
-   "regular_season_rank": 10,
+   "regular_season_rank": 11,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 628.9,
-    "points_for": 524.24
+    "points_against": 733.6,
+    "points_for": 621.5
    },
    "team_name": "Lil Kings"
   }
@@ -2153,7 +2153,7 @@
    "missed_league_note": 10,
    "questionable_did_not_play": 12.0
   },
-  "rank": 12,
+  "rank": 11,
   "rank_note": "1 = best (lowest). Ties share a rank.",
   "total": 67.0,
   "worst_penalty_id": "2025-w14-r8-bye_week_starter-3214"
