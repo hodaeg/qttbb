@@ -57,7 +57,7 @@
   "weeks": 119
  },
  "faab_and_transactions": {
-  "adds": 219,
+  "adds": 220,
   "biggest_bid": {
    "amount": 33,
    "player": "Dontayvion Wicks",
@@ -65,7 +65,7 @@
    "week": 4
   },
   "budget_per_season": 100,
-  "drops": 215,
+  "drops": 216,
   "faab_taken_as_penalty": 0,
   "free_agent_adds": 95,
   "most_frequent_trade_partner": {
@@ -91,8 +91,8 @@
   "traded_out": 0,
   "trades": 1,
   "unexplained_difference": 0,
-  "waiver_claims_lost": 182,
-  "waiver_claims_won": 124
+  "waiver_claims_lost": 183,
+  "waiver_claims_won": 125
  },
  "faab_efficiency": {
   "best_par_claim": {
@@ -672,7 +672,7 @@
     "claims_benched_only": 3,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 48,
-    "free_claims": 0,
+    "free_claims": 1,
     "hit_rate": 0.667,
     "most_points": {
      "bid": 3,
@@ -689,7 +689,7 @@
     "paid_claims": 9,
     "par_per_dollar": 0.29,
     "points_above_replacement": 13.99,
-    "points_from_free_claims": 0,
+    "points_from_free_claims": 0.0,
     "points_from_paid_claims": 104.9,
     "points_per_dollar": 2.19,
     "worst_par_claim": {
@@ -710,9 +710,9 @@
   "claims_dropped_before_playing": 3,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 652,
-  "free_claims": 26,
+  "free_claims": 27,
   "hit_rate": 0.714,
-  "league_points_per_dollar": 2.39,
+  "league_points_per_dollar": 2.38,
   "most_points": {
    "bid": 5,
    "par_per_dollar": 2.79,
@@ -2086,9 +2086,9 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.9189,
    "faab": {
-    "adds": 13,
+    "adds": 14,
     "budget": 100,
-    "drops": 13,
+    "drops": 14,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 4,
     "refunded": 0,
@@ -2099,8 +2099,8 @@
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
-    "waiver_claims_lost": 10,
-    "waiver_claims_won": 9
+    "waiver_claims_lost": 11,
+    "waiver_claims_won": 10
    },
    "faab_efficiency": {
     "best_par_claim": {
@@ -2142,7 +2142,7 @@
     "claims_benched_only": 3,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 48,
-    "free_claims": 0,
+    "free_claims": 1,
     "hit_rate": 0.667,
     "most_points": {
      "bid": 3,
@@ -2159,7 +2159,7 @@
     "paid_claims": 9,
     "par_per_dollar": 0.29,
     "points_above_replacement": 13.99,
-    "points_from_free_claims": 0,
+    "points_from_free_claims": 0.0,
     "points_from_paid_claims": 104.9,
     "points_per_dollar": 2.19,
     "worst_par_claim": {

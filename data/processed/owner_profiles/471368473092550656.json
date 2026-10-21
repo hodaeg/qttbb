@@ -57,7 +57,7 @@
   "weeks": 118
  },
  "faab_and_transactions": {
-  "adds": 177,
+  "adds": 180,
   "biggest_bid": {
    "amount": 26,
    "player": "Daniel Jones",
@@ -65,9 +65,9 @@
    "week": 3
   },
   "budget_per_season": 100,
-  "drops": 173,
+  "drops": 175,
   "faab_taken_as_penalty": 145,
-  "free_agent_adds": 127,
+  "free_agent_adds": 129,
   "most_frequent_trade_partner": {
    "owner_id": "423560331814510592",
    "trades": 1
@@ -75,8 +75,8 @@
   "note": "spent = winning bids in the transaction log, net of claims the commissioner later undid (refunded; e.g. the Sep 2021 week-1 corrections). Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
   "refunded": 0,
   "remaining_unexplained": 0,
-  "sleeper_reported_used": 463,
-  "spent": 318,
+  "sleeper_reported_used": 480,
+  "spent": 335,
   "spent_per_season": {
    "2019": 94,
    "2020": 75,
@@ -85,14 +85,14 @@
    "2023": 47,
    "2024": 2,
    "2025": 18,
-   "2026": 0
+   "2026": 17
   },
   "traded_in": 0,
   "traded_out": 0,
   "trades": 4,
   "unexplained_difference": 145,
   "waiver_claims_lost": 27,
-  "waiver_claims_won": 50
+  "waiver_claims_won": 51
  },
  "faab_efficiency": {
   "best_par_claim": {
@@ -620,15 +620,88 @@
      "week": 2,
      "weeks_started": 3
     }
+   },
+   "2026": {
+    "best_par_claim": {
+     "bid": 17,
+     "par_per_dollar": 0.0,
+     "player": "Omar Cooper",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "best_value": {
+     "bid": 17,
+     "par_per_dollar": 0.0,
+     "player": "Omar Cooper",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "biggest_bust": {
+     "bid": 17,
+     "par_per_dollar": 0.0,
+     "player": "Omar Cooper",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 17,
+    "free_claims": 0,
+    "hit_rate": 0.0,
+    "most_points": {
+     "bid": 17,
+     "par_per_dollar": 0.0,
+     "player": "Omar Cooper",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "paid_claims": 1,
+    "par_per_dollar": 0.0,
+    "points_above_replacement": 0.0,
+    "points_from_free_claims": 0,
+    "points_from_paid_claims": 0.0,
+    "points_per_dollar": 0.0,
+    "worst_par_claim": {
+     "bid": 17,
+     "par_per_dollar": 0.0,
+     "player": "Omar Cooper",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    }
    }
   },
-  "claims_benched_only": 11,
+  "claims_benched_only": 12,
   "claims_dropped_before_playing": 2,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
-  "dollars_spent": 318,
+  "dollars_spent": 335,
   "free_claims": 19,
-  "hit_rate": 0.581,
-  "league_points_per_dollar": 2.39,
+  "hit_rate": 0.562,
+  "league_points_per_dollar": 2.38,
   "most_points": {
    "bid": 9,
    "par_per_dollar": 1.23,
@@ -642,13 +715,13 @@
    "weeks_started": 5
   },
   "name": "Bang for Buck",
-  "paid_claims": 31,
-  "par_per_dollar": -0.14,
+  "paid_claims": 32,
+  "par_per_dollar": -0.13,
   "par_rank": 11,
   "points_above_replacement": -43.37,
   "points_from_free_claims": 211.2,
   "points_from_paid_claims": 395.02,
-  "points_per_dollar": 1.24,
+  "points_per_dollar": 1.18,
   "rank": 11,
   "worst_par_claim": {
    "bid": 26,
@@ -1989,23 +2062,95 @@
    "division": "The Graveyard",
    "efficiency": 0.9246,
    "faab": {
-    "adds": 3,
+    "adds": 6,
     "budget": 100,
-    "drops": 2,
+    "drops": 4,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 3,
+    "free_agent_adds": 5,
     "refunded": 0,
     "remaining_unexplained": 0,
-    "sleeper_reported_used": 0,
-    "spent": 0,
+    "sleeper_reported_used": 17,
+    "spent": 17,
     "traded_in": 0,
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
     "waiver_claims_lost": 0,
-    "waiver_claims_won": 0
+    "waiver_claims_won": 1
    },
-   "faab_efficiency": null,
+   "faab_efficiency": {
+    "best_par_claim": {
+     "bid": 17,
+     "par_per_dollar": 0.0,
+     "player": "Omar Cooper",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "best_value": {
+     "bid": 17,
+     "par_per_dollar": 0.0,
+     "player": "Omar Cooper",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "biggest_bust": {
+     "bid": 17,
+     "par_per_dollar": 0.0,
+     "player": "Omar Cooper",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
+    "claims_dropped_before_playing": 0,
+    "dollars_spent": 17,
+    "free_claims": 0,
+    "hit_rate": 0.0,
+    "most_points": {
+     "bid": 17,
+     "par_per_dollar": 0.0,
+     "player": "Omar Cooper",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "paid_claims": 1,
+    "par_per_dollar": 0.0,
+    "points_above_replacement": 0.0,
+    "points_from_free_claims": 0,
+    "points_from_paid_claims": 0.0,
+    "points_per_dollar": 0.0,
+    "worst_par_claim": {
+     "bid": 17,
+     "par_per_dollar": 0.0,
+     "player": "Omar Cooper",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    }
+   },
    "final_place": null,
    "luck": {
     "all_play_record": "42-24",

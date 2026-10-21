@@ -58,7 +58,7 @@
   "weeks": 121
  },
  "faab_and_transactions": {
-  "adds": 321,
+  "adds": 323,
   "biggest_bid": {
    "amount": 45,
    "player": "Michael Carter",
@@ -66,9 +66,9 @@
    "week": 7
   },
   "budget_per_season": 100,
-  "drops": 317,
+  "drops": 318,
   "faab_taken_as_penalty": 50,
-  "free_agent_adds": 246,
+  "free_agent_adds": 247,
   "most_frequent_trade_partner": {
    "owner_id": "79761560662589440",
    "trades": 2
@@ -76,8 +76,8 @@
   "note": "spent = winning bids in the transaction log, net of claims the commissioner later undid (refunded; e.g. the Sep 2021 week-1 corrections). Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
   "refunded": 0,
   "remaining_unexplained": 0,
-  "sleeper_reported_used": 378,
-  "spent": 328,
+  "sleeper_reported_used": 384,
+  "spent": 334,
   "spent_per_season": {
    "2019": 36,
    "2020": 70,
@@ -86,14 +86,14 @@
    "2023": 0,
    "2024": 12,
    "2025": 16,
-   "2026": 19
+   "2026": 25
   },
   "traded_in": 0,
   "traded_out": 0,
   "trades": 4,
   "unexplained_difference": 50,
   "waiver_claims_lost": 42,
-  "waiver_claims_won": 75
+  "waiver_claims_won": 76
  },
  "faab_efficiency": {
   "best_par_claim": {
@@ -591,16 +591,16 @@
    },
    "2026": {
     "best_par_claim": {
-     "bid": 5,
-     "par_per_dollar": -0.13,
-     "player": "Carolina Panthers",
-     "points_above_replacement": -0.67,
-     "points_per_dollar": 1.2,
-     "points_started": 6.0,
+     "bid": 6,
+     "par_per_dollar": 0.0,
+     "player": "New York Jets",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
      "pos": "DEF",
      "season": "2026",
-     "week": 2,
-     "weeks_started": 1
+     "week": 6,
+     "weeks_started": 0
     },
     "best_value": {
      "bid": 5,
@@ -614,12 +614,23 @@
      "week": 2,
      "weeks_started": 1
     },
-    "biggest_bust": null,
-    "claims_benched_only": 0,
+    "biggest_bust": {
+     "bid": 6,
+     "par_per_dollar": 0.0,
+     "player": "New York Jets",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "DEF",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
     "claims_dropped_before_playing": 0,
-    "dollars_spent": 19,
+    "dollars_spent": 25,
     "free_claims": 3,
-    "hit_rate": 1.0,
+    "hit_rate": 0.75,
     "most_points": {
      "bid": 5,
      "par_per_dollar": -0.13,
@@ -632,12 +643,12 @@
      "week": 2,
      "weeks_started": 1
     },
-    "paid_claims": 3,
-    "par_per_dollar": -0.77,
+    "paid_claims": 4,
+    "par_per_dollar": -0.59,
     "points_above_replacement": -14.68,
     "points_from_free_claims": 92.12,
     "points_from_paid_claims": 12.0,
-    "points_per_dollar": 0.63,
+    "points_per_dollar": 0.48,
     "worst_par_claim": {
      "bid": 8,
      "par_per_dollar": -1.42,
@@ -652,13 +663,13 @@
     }
    }
   },
-  "claims_benched_only": 13,
+  "claims_benched_only": 14,
   "claims_dropped_before_playing": 1,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
-  "dollars_spent": 328,
+  "dollars_spent": 334,
   "free_claims": 39,
-  "hit_rate": 0.611,
-  "league_points_per_dollar": 2.39,
+  "hit_rate": 0.595,
+  "league_points_per_dollar": 2.38,
   "most_points": {
    "bid": 26,
    "par_per_dollar": 0.56,
@@ -672,13 +683,13 @@
    "weeks_started": 8
   },
   "name": "Bang for Buck",
-  "paid_claims": 36,
+  "paid_claims": 37,
   "par_per_dollar": 0.16,
   "par_rank": 7,
   "points_above_replacement": 53.38,
   "points_from_free_claims": 488.92,
   "points_from_paid_claims": 384.98,
-  "points_per_dollar": 1.17,
+  "points_per_dollar": 1.15,
   "rank": 12,
   "worst_par_claim": {
    "bid": 45,
@@ -1986,34 +1997,34 @@
    "division": "The Graveyard",
    "efficiency": 0.912,
    "faab": {
-    "adds": 16,
+    "adds": 18,
     "budget": 100,
-    "drops": 16,
+    "drops": 17,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 10,
+    "free_agent_adds": 11,
     "refunded": 0,
     "remaining_unexplained": 0,
-    "sleeper_reported_used": 19,
-    "spent": 19,
+    "sleeper_reported_used": 25,
+    "spent": 25,
     "traded_in": 0,
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
     "waiver_claims_lost": 1,
-    "waiver_claims_won": 6
+    "waiver_claims_won": 7
    },
    "faab_efficiency": {
     "best_par_claim": {
-     "bid": 5,
-     "par_per_dollar": -0.13,
-     "player": "Carolina Panthers",
-     "points_above_replacement": -0.67,
-     "points_per_dollar": 1.2,
-     "points_started": 6.0,
+     "bid": 6,
+     "par_per_dollar": 0.0,
+     "player": "New York Jets",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
      "pos": "DEF",
      "season": "2026",
-     "week": 2,
-     "weeks_started": 1
+     "week": 6,
+     "weeks_started": 0
     },
     "best_value": {
      "bid": 5,
@@ -2027,12 +2038,23 @@
      "week": 2,
      "weeks_started": 1
     },
-    "biggest_bust": null,
-    "claims_benched_only": 0,
+    "biggest_bust": {
+     "bid": 6,
+     "par_per_dollar": 0.0,
+     "player": "New York Jets",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "DEF",
+     "season": "2026",
+     "week": 6,
+     "weeks_started": 0
+    },
+    "claims_benched_only": 1,
     "claims_dropped_before_playing": 0,
-    "dollars_spent": 19,
+    "dollars_spent": 25,
     "free_claims": 3,
-    "hit_rate": 1.0,
+    "hit_rate": 0.75,
     "most_points": {
      "bid": 5,
      "par_per_dollar": -0.13,
@@ -2045,12 +2067,12 @@
      "week": 2,
      "weeks_started": 1
     },
-    "paid_claims": 3,
-    "par_per_dollar": -0.77,
+    "paid_claims": 4,
+    "par_per_dollar": -0.59,
     "points_above_replacement": -14.68,
     "points_from_free_claims": 92.12,
     "points_from_paid_claims": 12.0,
-    "points_per_dollar": 0.63,
+    "points_per_dollar": 0.48,
     "worst_par_claim": {
      "bid": 8,
      "par_per_dollar": -1.42,
