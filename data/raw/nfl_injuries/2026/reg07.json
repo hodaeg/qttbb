@@ -1,1 +1,106 @@
-[]
+[
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Ben Brown",
+  "pos": "C",
+  "practice": "Did Not Participate In Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Chest",
+  "name": "Kevin Byard",
+  "pos": "S",
+  "practice": "Full Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Channing Canada",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Out",
+  "injury": "Neck",
+  "name": "Carlton Davis III",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Chest",
+  "name": "Christian Elliss",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Foot",
+  "name": "Morgan Moses",
+  "pos": "T",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Karon Prunty",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Alijah Vera-Tucker",
+  "pos": "G",
+  "practice": "Did Not Participate In Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder",
+  "name": "Craig Woodson",
+  "pos": "S",
+  "practice": "Full Participation in Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Hamstring",
+  "name": "T.J. Edwards",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Bears"
+ },
+ {
+  "game": "Out",
+  "injury": "Thumb, Toe",
+  "name": "Kyle Monangai",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bears"
+ },
+ {
+  "game": "Out",
+  "injury": "Concussion",
+  "name": "Jack Sanborn",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bears"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hip",
+  "name": "Tyrique Stevenson",
+  "pos": "CB",
+  "practice": "Full Participation in Practice",
+  "team": "Bears"
+ }
+]
