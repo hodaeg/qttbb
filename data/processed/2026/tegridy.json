@@ -93,7 +93,7 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Deebo Samuel was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
+    "detail": "Deebo Samuel Sr. was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,

@@ -3177,7 +3177,7 @@
    "outcome": "started",
    "owner_id": "471360899853053952",
    "par_per_dollar": -3.49,
-   "player": "Gardner Minshew",
+   "player": "Gardner Minshew II",
    "player_id": "6011",
    "points_above_replacement": -10.48,
    "points_per_dollar": 1.92,
@@ -3742,7 +3742,7 @@
    "outcome": "started",
    "owner_id": "383681356686950400",
    "par_per_dollar": 1.55,
-   "player": "Deebo Samuel",
+   "player": "Deebo Samuel Sr.",
    "player_id": "5872",
    "points_above_replacement": 7.75,
    "points_per_dollar": 12.12,
@@ -4132,7 +4132,7 @@
   {
    "bid": 0,
    "dropped": [
-    "Gardner Minshew"
+    "Gardner Minshew II"
    ],
    "first_week": 10,
    "outcome": "started",
@@ -5767,7 +5767,7 @@
    "outcome": "dropped_before_playing",
    "owner_id": "423560331814510592",
    "par_per_dollar": 0.0,
-   "player": "Gardner Minshew",
+   "player": "Gardner Minshew II",
    "player_id": "6011",
    "points_above_replacement": 0.0,
    "points_per_dollar": 0.0,
@@ -6129,7 +6129,7 @@
   {
    "bid": 39,
    "dropped": [
-    "Michael Pittman"
+    "Michael Pittman Jr."
    ],
    "first_week": 2,
    "outcome": "started",
@@ -6612,7 +6612,7 @@
    "outcome": "started",
    "owner_id": "471359444949659648",
    "par_per_dollar": -1.14,
-   "player": "Gardner Minshew",
+   "player": "Gardner Minshew II",
    "player_id": "6011",
    "points_above_replacement": -9.08,
    "points_per_dollar": 1.02,
@@ -7507,7 +7507,7 @@
   {
    "bid": 6,
    "dropped": [
-    "Gardner Minshew"
+    "Gardner Minshew II"
    ],
    "first_week": 5,
    "outcome": "started",
@@ -7795,7 +7795,7 @@
    "outcome": "started",
    "owner_id": "471345530597797888",
    "par_per_dollar": -0.07,
-   "player": "Gardner Minshew",
+   "player": "Gardner Minshew II",
    "player_id": "6011",
    "points_above_replacement": -0.66,
    "points_per_dollar": 1.66,
@@ -8697,7 +8697,7 @@
   {
    "bid": 6,
    "dropped": [
-    "Gardner Minshew"
+    "Gardner Minshew II"
    ],
    "first_week": 8,
    "outcome": "never_started",
@@ -10607,7 +10607,7 @@
    "outcome": "started",
    "owner_id": "471074114505797632",
    "par_per_dollar": -1.0,
-   "player": "Michael Pittman",
+   "player": "Michael Pittman Jr.",
    "player_id": "6819",
    "points_above_replacement": -4.0,
    "points_per_dollar": 1.77,
@@ -17261,7 +17261,7 @@
   {
    "bid": 7,
    "dropped": [
-    "Gardner Minshew"
+    "Gardner Minshew II"
    ],
    "first_week": 14,
    "outcome": "started",
@@ -18586,7 +18586,7 @@
   {
    "bid": 6,
    "dropped": [
-    "Kenneth Walker"
+    "Kenneth Walker III"
    ],
    "first_week": 3,
    "outcome": "started",
@@ -19874,7 +19874,7 @@
    "outcome": "started",
    "owner_id": "79761560662589440",
    "par_per_dollar": 0.88,
-   "player": "Kenneth Walker",
+   "player": "Kenneth Walker III",
    "player_id": "8151",
    "points_above_replacement": 56.06,
    "points_per_dollar": 2.21,
@@ -21075,7 +21075,7 @@
    "outcome": "never_started",
    "owner_id": "471366618241298432",
    "par_per_dollar": 0.0,
-   "player": "Mecole Hardman",
+   "player": "Mecole Hardman Jr.",
    "player_id": "5917",
    "points_above_replacement": 0.0,
    "points_per_dollar": 0.0,
@@ -22765,7 +22765,7 @@
   {
    "bid": 3,
    "dropped": [
-    "Odell Beckham"
+    "Odell Beckham Jr."
    ],
    "first_week": 13,
    "outcome": "started",
@@ -23290,7 +23290,7 @@
    "outcome": "started",
    "owner_id": "471360899853053952",
    "par_per_dollar": -1.21,
-   "player": "James Cook",
+   "player": "James Cook III",
    "player_id": "8138",
    "points_above_replacement": -7.28,
    "points_per_dollar": 3.52,
@@ -24516,7 +24516,7 @@
    "outcome": "started",
    "owner_id": "471366618241298432",
    "par_per_dollar": 2.71,
-   "player": "Michael Pittman",
+   "player": "Michael Pittman Jr.",
    "player_id": "6819",
    "points_above_replacement": 18.98,
    "points_per_dollar": 22.1,
@@ -25227,7 +25227,7 @@
    "outcome": "never_started",
    "owner_id": "79761560662589440",
    "par_per_dollar": 0.0,
-   "player": "Marvin Mims",
+   "player": "Marvin Mims Jr.",
    "player_id": "9494",
    "points_above_replacement": 0.0,
    "points_per_dollar": 0.0,
@@ -27362,7 +27362,7 @@
    "outcome": "never_started",
    "owner_id": "471366618241298432",
    "par_per_dollar": null,
-   "player": "Odell Beckham",
+   "player": "Odell Beckham Jr.",
    "player_id": "2078",
    "points_above_replacement": 0.0,
    "points_per_dollar": null,
@@ -27820,7 +27820,7 @@
    "outcome": "started",
    "owner_id": "471366618241298432",
    "par_per_dollar": null,
-   "player": "Gardner Minshew",
+   "player": "Gardner Minshew II",
    "player_id": "6011",
    "points_above_replacement": -2.11,
    "points_per_dollar": null,
@@ -28053,7 +28053,7 @@
   {
    "bid": 0,
    "dropped": [
-    "Gardner Minshew"
+    "Gardner Minshew II"
    ],
    "first_week": 15,
    "outcome": "started",
@@ -28891,7 +28891,7 @@
   {
    "bid": 45,
    "dropped": [
-    "Tyrone Tracy"
+    "Tyrone Tracy Jr."
    ],
    "first_week": 3,
    "outcome": "started",
@@ -31666,7 +31666,7 @@
    "outcome": "started",
    "owner_id": "423560331814510592",
    "par_per_dollar": -0.18,
-   "player": "Travis Etienne",
+   "player": "Travis Etienne Jr.",
    "player_id": "7543",
    "points_above_replacement": -6.0,
    "points_per_dollar": 0.14,
@@ -32988,7 +32988,7 @@
    "outcome": "never_started",
    "owner_id": "471345530597797888",
    "par_per_dollar": 0.0,
-   "player": "Harold Fannin",
+   "player": "Harold Fannin Jr.",
    "player_id": "12506",
    "points_above_replacement": 0.0,
    "points_per_dollar": 0.0,
@@ -33010,7 +33010,7 @@
    "outcome": "dropped_before_playing",
    "owner_id": "422102738889867264",
    "par_per_dollar": null,
-   "player": "Calvin Austin",
+   "player": "Calvin Austin III",
    "player_id": "8125",
    "points_above_replacement": 0.0,
    "points_per_dollar": null,
@@ -33738,7 +33738,7 @@
   {
    "bid": 8,
    "dropped": [
-    "Ollie Gordon"
+    "Ollie Gordon II"
    ],
    "first_week": 3,
    "outcome": "never_started",
@@ -34151,7 +34151,7 @@
    "outcome": "never_started",
    "owner_id": "423560331814510592",
    "par_per_dollar": 0.0,
-   "player": "Chris Rodriguez",
+   "player": "Chris Rodriguez Jr.",
    "player_id": "10219",
    "points_above_replacement": 0.0,
    "points_per_dollar": 0.0,
@@ -34598,7 +34598,7 @@
   {
    "bid": 13,
    "dropped": [
-    "Chris Rodriguez"
+    "Chris Rodriguez Jr."
    ],
    "first_week": 6,
    "outcome": "started",
@@ -34913,7 +34913,7 @@
    "outcome": "started",
    "owner_id": "471345530597797888",
    "par_per_dollar": 2.08,
-   "player": "Harold Fannin",
+   "player": "Harold Fannin Jr.",
    "player_id": "12506",
    "points_above_replacement": 18.76,
    "points_per_dollar": 8.71,
@@ -35707,7 +35707,7 @@
    "outcome": "started",
    "owner_id": "471366618241298432",
    "par_per_dollar": 0.04,
-   "player": "Tyrone Tracy",
+   "player": "Tyrone Tracy Jr.",
    "player_id": "11655",
    "points_above_replacement": 2.64,
    "points_per_dollar": 1.17,
@@ -36071,7 +36071,7 @@
    "outcome": "never_started",
    "owner_id": "471366618241298432",
    "par_per_dollar": null,
-   "player": "Chris Rodriguez",
+   "player": "Chris Rodriguez Jr.",
    "player_id": "10219",
    "points_above_replacement": 0.0,
    "points_per_dollar": null,
@@ -36411,7 +36411,7 @@
   {
    "bid": 0,
    "dropped": [
-    "Chris Rodriguez"
+    "Chris Rodriguez Jr."
    ],
    "first_week": 11,
    "outcome": "started",
@@ -36487,7 +36487,7 @@
   {
    "bid": 0,
    "dropped": [
-    "Harold Fannin"
+    "Harold Fannin Jr."
    ],
    "first_week": null,
    "outcome": "dropped_before_playing",
@@ -36920,7 +36920,7 @@
   {
    "bid": 0,
    "dropped": [
-    "John Metchie"
+    "John Metchie III"
    ],
    "first_week": 14,
    "outcome": "never_started",
@@ -37263,7 +37263,7 @@
    "outcome": "dropped_before_playing",
    "owner_id": "422102738889867264",
    "par_per_dollar": null,
-   "player": "John Metchie",
+   "player": "John Metchie III",
    "player_id": "8147",
    "points_above_replacement": 0.0,
    "points_per_dollar": null,
@@ -37420,7 +37420,7 @@
    "outcome": "never_started",
    "owner_id": "471074114505797632",
    "par_per_dollar": null,
-   "player": "Chris Rodriguez",
+   "player": "Chris Rodriguez Jr.",
    "player_id": "10219",
    "points_above_replacement": 0.0,
    "points_per_dollar": null,
@@ -37601,7 +37601,7 @@
   {
    "bid": 0,
    "dropped": [
-    "Tyrone Tracy"
+    "Tyrone Tracy Jr."
    ],
    "first_week": 2,
    "outcome": "started",
@@ -37671,7 +37671,7 @@
   {
    "bid": 5,
    "dropped": [
-    "Mike Washington"
+    "Mike Washington Jr."
    ],
    "first_week": 2,
    "outcome": "started",
@@ -38278,7 +38278,7 @@
    "outcome": "started",
    "owner_id": "471345530597797888",
    "par_per_dollar": 0.29,
-   "player": "Ollie Gordon",
+   "player": "Ollie Gordon II",
    "player_id": "12495",
    "points_above_replacement": 6.4,
    "points_per_dollar": 0.67,
@@ -38431,7 +38431,7 @@
   {
    "bid": 0,
    "dropped": [
-    "Brian Thomas"
+    "Brian Thomas Jr."
    ],
    "first_week": 4,
    "outcome": "never_started",
@@ -38752,7 +38752,7 @@
      "week": 6
     }
    ],
-   "weeks_rostered": 13,
+   "weeks_rostered": 1,
    "weeks_started": 1
   },
   {
@@ -39210,7 +39210,7 @@
    "outcome": "never_started",
    "owner_id": "471359444949659648",
    "par_per_dollar": 0.0,
-   "player": "Tyrone Tracy",
+   "player": "Tyrone Tracy Jr.",
    "player_id": "11655",
    "points_above_replacement": 0.0,
    "points_per_dollar": 0.0,
@@ -39294,7 +39294,7 @@
    "outcome": "never_started",
    "owner_id": "471368473092550656",
    "par_per_dollar": 0.0,
-   "player": "Omar Cooper",
+   "player": "Omar Cooper Jr.",
    "player_id": "13276",
    "points_above_replacement": 0.0,
    "points_per_dollar": 0.0,
@@ -39400,7 +39400,7 @@
    "best_value": {
     "bid": 5,
     "par_per_dollar": 1.55,
-    "player": "Deebo Samuel",
+    "player": "Deebo Samuel Sr.",
     "points_above_replacement": 7.75,
     "points_per_dollar": 12.12,
     "points_started": 60.6,
@@ -39438,7 +39438,7 @@
      "best_value": {
       "bid": 5,
       "par_per_dollar": 1.55,
-      "player": "Deebo Samuel",
+      "player": "Deebo Samuel Sr.",
       "points_above_replacement": 7.75,
       "points_per_dollar": 12.12,
       "points_started": 60.6,
@@ -41103,7 +41103,7 @@
      "best_value": {
       "bid": 34,
       "par_per_dollar": -0.18,
-      "player": "Travis Etienne",
+      "player": "Travis Etienne Jr.",
       "points_above_replacement": -6.0,
       "points_per_dollar": 0.14,
       "points_started": 4.7,
@@ -41150,7 +41150,7 @@
      "worst_par_claim": {
       "bid": 34,
       "par_per_dollar": -0.18,
-      "player": "Travis Etienne",
+      "player": "Travis Etienne Jr.",
       "points_above_replacement": -6.0,
       "points_per_dollar": 0.14,
       "points_started": 4.7,
@@ -41188,7 +41188,7 @@
      "biggest_bust": {
       "bid": 15,
       "par_per_dollar": 0.0,
-      "player": "Chris Rodriguez",
+      "player": "Chris Rodriguez Jr.",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,
@@ -42983,7 +42983,7 @@
      "best_value": {
       "bid": 9,
       "par_per_dollar": 2.08,
-      "player": "Harold Fannin",
+      "player": "Harold Fannin Jr.",
       "points_above_replacement": 18.76,
       "points_per_dollar": 8.71,
       "points_started": 78.4,
@@ -42995,7 +42995,7 @@
      "biggest_bust": {
       "bid": 16,
       "par_per_dollar": 0.0,
-      "player": "Harold Fannin",
+      "player": "Harold Fannin Jr.",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,
@@ -45414,7 +45414,7 @@
      "best_par_claim": {
       "bid": 7,
       "par_per_dollar": 2.71,
-      "player": "Michael Pittman",
+      "player": "Michael Pittman Jr.",
       "points_above_replacement": 18.98,
       "points_per_dollar": 22.1,
       "points_started": 154.7,
@@ -45426,7 +45426,7 @@
      "best_value": {
       "bid": 7,
       "par_per_dollar": 2.71,
-      "player": "Michael Pittman",
+      "player": "Michael Pittman Jr.",
       "points_above_replacement": 18.98,
       "points_per_dollar": 22.1,
       "points_started": 154.7,
@@ -45455,7 +45455,7 @@
      "most_points": {
       "bid": 7,
       "par_per_dollar": 2.71,
-      "player": "Michael Pittman",
+      "player": "Michael Pittman Jr.",
       "points_above_replacement": 18.98,
       "points_per_dollar": 22.1,
       "points_started": 154.7,
@@ -45590,7 +45590,7 @@
      "most_points": {
       "bid": 73,
       "par_per_dollar": 0.04,
-      "player": "Tyrone Tracy",
+      "player": "Tyrone Tracy Jr.",
       "points_above_replacement": 2.64,
       "points_per_dollar": 1.17,
       "points_started": 85.2,
@@ -46261,7 +46261,7 @@
      "best_par_claim": {
       "bid": 17,
       "par_per_dollar": 0.0,
-      "player": "Omar Cooper",
+      "player": "Omar Cooper Jr.",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,
@@ -46273,7 +46273,7 @@
      "best_value": {
       "bid": 17,
       "par_per_dollar": 0.0,
-      "player": "Omar Cooper",
+      "player": "Omar Cooper Jr.",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,
@@ -46285,7 +46285,7 @@
      "biggest_bust": {
       "bid": 17,
       "par_per_dollar": 0.0,
-      "player": "Omar Cooper",
+      "player": "Omar Cooper Jr.",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,
@@ -46302,7 +46302,7 @@
      "most_points": {
       "bid": 17,
       "par_per_dollar": 0.0,
-      "player": "Omar Cooper",
+      "player": "Omar Cooper Jr.",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,
@@ -46320,7 +46320,7 @@
      "worst_par_claim": {
       "bid": 17,
       "par_per_dollar": 0.0,
-      "player": "Omar Cooper",
+      "player": "Omar Cooper Jr.",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,
@@ -46373,7 +46373,7 @@
    "best_par_claim": {
     "bid": 64,
     "par_per_dollar": 0.88,
-    "player": "Kenneth Walker",
+    "player": "Kenneth Walker III",
     "points_above_replacement": 56.06,
     "points_per_dollar": 2.21,
     "points_started": 141.2,
@@ -46619,7 +46619,7 @@
      "best_par_claim": {
       "bid": 64,
       "par_per_dollar": 0.88,
-      "player": "Kenneth Walker",
+      "player": "Kenneth Walker III",
       "points_above_replacement": 56.06,
       "points_per_dollar": 2.21,
       "points_started": 141.2,
@@ -46660,7 +46660,7 @@
      "most_points": {
       "bid": 64,
       "par_per_dollar": 0.88,
-      "player": "Kenneth Walker",
+      "player": "Kenneth Walker III",
       "points_above_replacement": 56.06,
       "points_per_dollar": 2.21,
       "points_started": 141.2,
@@ -46716,7 +46716,7 @@
      "biggest_bust": {
       "bid": 5,
       "par_per_dollar": 0.0,
-      "player": "Marvin Mims",
+      "player": "Marvin Mims Jr.",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,

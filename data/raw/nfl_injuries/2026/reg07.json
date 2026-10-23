@@ -102,5 +102,21 @@
   "pos": "CB",
   "practice": "Full Participation in Practice",
   "team": "Bears"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Brandin Echols",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Out",
+  "injury": "Calf",
+  "name": "Ben Skowronek",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Steelers"
  }
 ]

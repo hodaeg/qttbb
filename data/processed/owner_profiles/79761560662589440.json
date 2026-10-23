@@ -56,17 +56,17 @@
   "weeks": 118
  },
  "faab_and_transactions": {
-  "adds": 285,
+  "adds": 287,
   "biggest_bid": {
    "amount": 64,
-   "player": "Kenneth Walker",
+   "player": "Kenneth Walker III",
    "season": "2022",
    "week": 5
   },
   "budget_per_season": 100,
-  "drops": 274,
+  "drops": 276,
   "faab_taken_as_penalty": 11,
-  "free_agent_adds": 190,
+  "free_agent_adds": 192,
   "most_frequent_trade_partner": {
    "owner_id": "471366618241298432",
    "trades": 2
@@ -97,7 +97,7 @@
   "best_par_claim": {
    "bid": 64,
    "par_per_dollar": 0.88,
-   "player": "Kenneth Walker",
+   "player": "Kenneth Walker III",
    "points_above_replacement": 56.06,
    "points_per_dollar": 2.21,
    "points_started": 141.2,
@@ -343,7 +343,7 @@
     "best_par_claim": {
      "bid": 64,
      "par_per_dollar": 0.88,
-     "player": "Kenneth Walker",
+     "player": "Kenneth Walker III",
      "points_above_replacement": 56.06,
      "points_per_dollar": 2.21,
      "points_started": 141.2,
@@ -384,7 +384,7 @@
     "most_points": {
      "bid": 64,
      "par_per_dollar": 0.88,
-     "player": "Kenneth Walker",
+     "player": "Kenneth Walker III",
      "points_above_replacement": 56.06,
      "points_per_dollar": 2.21,
      "points_started": 141.2,
@@ -440,7 +440,7 @@
     "biggest_bust": {
      "bid": 5,
      "par_per_dollar": 0.0,
-     "player": "Marvin Mims",
+     "player": "Marvin Mims Jr.",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
@@ -1571,7 +1571,7 @@
     "best_par_claim": {
      "bid": 64,
      "par_per_dollar": 0.88,
-     "player": "Kenneth Walker",
+     "player": "Kenneth Walker III",
      "points_above_replacement": 56.06,
      "points_per_dollar": 2.21,
      "points_started": 141.2,
@@ -1612,7 +1612,7 @@
     "most_points": {
      "bid": 64,
      "par_per_dollar": 0.88,
-     "player": "Kenneth Walker",
+     "player": "Kenneth Walker III",
      "points_above_replacement": 56.06,
      "points_per_dollar": 2.21,
      "points_started": 141.2,
@@ -1728,7 +1728,7 @@
     "biggest_bust": {
      "bid": 5,
      "par_per_dollar": 0.0,
-     "player": "Marvin Mims",
+     "player": "Marvin Mims Jr.",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
@@ -2083,11 +2083,11 @@
    "division": "The Graveyard",
    "efficiency": 0.9135,
    "faab": {
-    "adds": 20,
+    "adds": 22,
     "budget": 100,
-    "drops": 18,
+    "drops": 20,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 13,
+    "free_agent_adds": 15,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 37,

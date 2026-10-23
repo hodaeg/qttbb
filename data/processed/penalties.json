@@ -1478,7 +1478,7 @@
     "rule": "Listed Out on the official NFL injury report, started, and scored 0."
    },
    "excluded_reason": null,
-   "headline": "Marvin Harrison was listed Out (gameday concussion protocol evaluation) on the official NFL injury report and scored 0 in the starting lineup.",
+   "headline": "Marvin Harrison Jr. was listed Out (gameday concussion protocol evaluation) on the official NFL injury report and scored 0 in the starting lineup.",
    "id": "2024-w06-r5-injured_starter_out-11628",
    "kind": "injured_starter_out",
    "label": "Started a player listed Out",
@@ -1512,7 +1512,7 @@
    },
    "player": {
     "lineup_slot": "WR",
-    "name": "Marvin Harrison",
+    "name": "Marvin Harrison Jr.",
     "nfl_team": "ARI",
     "player_id": "11628",
     "pos": "WR"
@@ -1548,7 +1548,7 @@
     "rule": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0."
    },
    "excluded_reason": null,
-   "headline": "James Cook was listed Questionable (Toe), did not play, and scored 0 in the starting lineup.",
+   "headline": "James Cook III was listed Questionable (Toe), did not play, and scored 0 in the starting lineup.",
    "id": "2024-w06-r6-questionable_did_not_play-8138",
    "kind": "questionable_did_not_play",
    "label": "Started a Questionable player who didn't play",
@@ -1582,7 +1582,7 @@
    },
    "player": {
     "lineup_slot": "RB",
-    "name": "James Cook",
+    "name": "James Cook III",
     "nfl_team": "BUF",
     "player_id": "8138",
     "pos": "RB"
@@ -1622,7 +1622,7 @@
     "rule": "Listed Out on the official NFL injury report, started, and scored 0."
    },
    "excluded_reason": null,
-   "headline": "Deebo Samuel was listed Out (Illness) on the official NFL injury report and scored 0 in the starting lineup.",
+   "headline": "Deebo Samuel Sr. was listed Out (Illness) on the official NFL injury report and scored 0 in the starting lineup.",
    "id": "2024-w07-r2-injured_starter_out-5872",
    "kind": "injured_starter_out",
    "label": "Started a player listed Out",
@@ -1656,7 +1656,7 @@
    },
    "player": {
     "lineup_slot": "WR",
-    "name": "Deebo Samuel",
+    "name": "Deebo Samuel Sr.",
     "nfl_team": "SF",
     "player_id": "5872",
     "pos": "WR"
@@ -2813,7 +2813,7 @@
     "status": "Out"
    },
    "excluded_reason": null,
-   "headline": "Deebo Samuel was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
+   "headline": "Deebo Samuel Sr. was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
    "id": "2026-w05-r9-injured_starter_out-5872",
    "kind": "injured_starter_out",
    "label": "Started a player listed Out",
@@ -2847,7 +2847,7 @@
    },
    "player": {
     "lineup_slot": "WR",
-    "name": "Deebo Samuel",
+    "name": "Deebo Samuel Sr.",
     "nfl_team": "SF",
     "player_id": "5872",
     "pos": "WR"
