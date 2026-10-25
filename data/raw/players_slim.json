@@ -312,7 +312,7 @@
   "team": "ARI"
  },
  "11597": {
-  "injury_status": "Doubtful",
+  "injury_status": "Out",
   "name": "Theo Johnson",
   "pos": "TE",
   "team": "NYG"
@@ -540,7 +540,7 @@
   "team": null
  },
  "12455": {
-  "injury_status": "Out",
+  "injury_status": "IR",
   "name": "Brashard Smith",
   "pos": "RB",
   "team": "KC"
@@ -552,7 +552,7 @@
   "team": "PHI"
  },
  "12469": {
-  "injury_status": "IR",
+  "injury_status": null,
   "name": "Dylan Sampson",
   "pos": "RB",
   "team": "CLE"
@@ -906,7 +906,7 @@
   "team": "KC"
  },
  "13345": {
-  "injury_status": "IR",
+  "injury_status": "Questionable",
   "name": "Jonah Coleman",
   "pos": "RB",
   "team": "DEN"
@@ -2244,7 +2244,7 @@
   "team": "PHI"
  },
  "4881": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Lamar Jackson",
   "pos": "QB",
   "team": "BAL"
@@ -2280,7 +2280,7 @@
   "team": null
  },
  "4950": {
-  "injury_status": "IR",
+  "injury_status": null,
   "name": "Christian Kirk",
   "pos": "WR",
   "team": "SF"
@@ -2424,7 +2424,7 @@
   "team": null
  },
  "5022": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Dallas Goedert",
   "pos": "TE",
   "team": "PHI"
@@ -3474,7 +3474,7 @@
   "team": "NO"
  },
  "7021": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Rico Dowdle",
   "pos": "RB",
   "team": "PIT"
@@ -3558,7 +3558,7 @@
   "team": "JAX"
  },
  "7525": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "DeVonta Smith",
   "pos": "WR",
   "team": "PHI"
@@ -3588,7 +3588,7 @@
   "team": "CLE"
  },
  "7538": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Zach Wilson",
   "pos": "QB",
   "team": "NO"
@@ -4182,7 +4182,7 @@
   "team": null
  },
  "8408": {
-  "injury_status": "IR",
+  "injury_status": null,
   "name": "Jordan Mason",
   "pos": "RB",
   "team": "MIN"
@@ -4302,7 +4302,7 @@
   "team": "GB"
  },
  "9486": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Dontayvion Wicks",
   "pos": "WR",
   "team": "PHI"
@@ -4350,7 +4350,7 @@
   "team": "NE"
  },
  "9502": {
-  "injury_status": "IR",
+  "injury_status": null,
   "name": "Tank Dell",
   "pos": "WR",
   "team": "HOU"
