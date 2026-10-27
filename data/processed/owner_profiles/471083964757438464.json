@@ -17,7 +17,7 @@
    "wins": 3
   },
   "record": {
-   "losses": 97,
+   "losses": 98,
    "ties": 0,
    "wins": 84
   },
@@ -26,7 +26,7 @@
   "scoring_bonuses": [
    -15
   ],
-  "win_pct": 0.4641
+  "win_pct": 0.4615
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -48,12 +48,12 @@
  "current_team_name": "Big Dog\u2019s Revenge",
  "display_name": "BigDogsRevenge",
  "efficiency": {
-  "efficiency": 0.8984,
+  "efficiency": 0.8985,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13675.92,
-  "points": 12286.58,
-  "points_left_on_bench": 1389.34,
-  "weeks": 119
+  "optimal_points": 13776.04,
+  "points": 12377.4,
+  "points_left_on_bench": 1398.64,
+  "weeks": 120
  },
  "faab_and_transactions": {
   "adds": 141,
@@ -624,15 +624,15 @@
     },
     "best_value": {
      "bid": 15,
-     "par_per_dollar": -0.4,
+     "par_per_dollar": -0.85,
      "player": "Kenyon Sadiq",
-     "points_above_replacement": -6.07,
-     "points_per_dollar": 0.11,
-     "points_started": 1.7,
+     "points_above_replacement": -12.8,
+     "points_per_dollar": 0.19,
+     "points_started": 2.8,
      "pos": "TE",
      "season": "2026",
      "week": 3,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "biggest_bust": {
      "bid": 42,
@@ -653,33 +653,33 @@
     "hit_rate": 0.5,
     "most_points": {
      "bid": 15,
-     "par_per_dollar": -0.4,
+     "par_per_dollar": -0.85,
      "player": "Kenyon Sadiq",
-     "points_above_replacement": -6.07,
-     "points_per_dollar": 0.11,
-     "points_started": 1.7,
+     "points_above_replacement": -12.8,
+     "points_per_dollar": 0.19,
+     "points_started": 2.8,
      "pos": "TE",
      "season": "2026",
      "week": 3,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "paid_claims": 2,
-    "par_per_dollar": -0.11,
-    "points_above_replacement": -6.07,
+    "par_per_dollar": -0.22,
+    "points_above_replacement": -12.8,
     "points_from_free_claims": 0.0,
-    "points_from_paid_claims": 1.7,
-    "points_per_dollar": 0.03,
+    "points_from_paid_claims": 2.8,
+    "points_per_dollar": 0.05,
     "worst_par_claim": {
      "bid": 15,
-     "par_per_dollar": -0.4,
+     "par_per_dollar": -0.85,
      "player": "Kenyon Sadiq",
-     "points_above_replacement": -6.07,
-     "points_per_dollar": 0.11,
-     "points_started": 1.7,
+     "points_above_replacement": -12.8,
+     "points_per_dollar": 0.19,
+     "points_started": 2.8,
      "pos": "TE",
      "season": "2026",
      "week": 3,
-     "weeks_started": 1
+     "weeks_started": 2
     }
    }
   },
@@ -689,7 +689,7 @@
   "dollars_spent": 466,
   "free_claims": 11,
   "hit_rate": 0.857,
-  "league_points_per_dollar": 2.38,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 12,
    "par_per_dollar": 3.68,
@@ -704,11 +704,11 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 42,
-  "par_per_dollar": 0.18,
+  "par_per_dollar": 0.17,
   "par_rank": 5,
-  "points_above_replacement": 83.96,
+  "points_above_replacement": 77.23,
   "points_from_free_claims": 332.44,
-  "points_from_paid_claims": 1009.86,
+  "points_from_paid_claims": 1010.96,
   "points_per_dollar": 2.17,
   "rank": 7,
   "worst_par_claim": {
@@ -810,10 +810,10 @@
     "wins": 3
    },
    "471368473092550656": {
-    "games": 11,
-    "losses": 3,
-    "points_against": 1219.68,
-    "points_for": 1271.5,
+    "games": 12,
+    "losses": 4,
+    "points_against": 1327.36,
+    "points_for": 1362.32,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 8
@@ -828,7 +828,7 @@
     "wins": 5
    }
   },
-  "favorite_victim_owner_id": "471368473092550656",
+  "favorite_victim_owner_id": "471345530597797888",
   "nemesis_owner_id": "471366618241298432"
  },
  "in_current_league": true,
@@ -871,7 +871,7 @@
      "wins": 0
     },
     "record": {
-     "losses": 3,
+     "losses": 4,
      "ties": 0,
      "wins": 3
     },
@@ -1038,7 +1038,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "3-3",
+     "counted_record": "3-4",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1053,8 +1053,8 @@
   "snapshot_rank": 9
  },
  "luck": {
-  "expected_wins": 48.14,
-  "luck": -4.14,
+  "expected_wins": 48.32,
+  "luck": -4.32,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
   "wins": 44
  },
@@ -1074,25 +1074,25 @@
    "wins": 10
   },
   "regular_season": {
-   "avg_points_against": 104.14,
-   "avg_points_for": 101.93,
-   "games": 102,
-   "losses": 58,
-   "points_against": 10622.14,
-   "points_for": 10396.92,
+   "avg_points_against": 104.17,
+   "avg_points_for": 101.82,
+   "games": 103,
+   "losses": 59,
+   "points_against": 10729.82,
+   "points_for": 10487.74,
    "ties": 0,
-   "win_pct": 0.4314,
+   "win_pct": 0.4272,
    "wins": 44
   },
   "total": {
-   "avg_points_against": 104.31,
-   "avg_points_for": 103.25,
-   "games": 119,
-   "losses": 65,
-   "points_against": 12413.24,
-   "points_for": 12286.58,
+   "avg_points_against": 104.34,
+   "avg_points_for": 103.14,
+   "games": 120,
+   "losses": 66,
+   "points_against": 12520.92,
+   "points_for": 12377.4,
    "ties": 0,
-   "win_pct": 0.4538,
+   "win_pct": 0.45,
    "wins": 54
   }
  },
@@ -2035,7 +2035,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.8885,
+   "efficiency": 0.8912,
    "faab": {
     "adds": 16,
     "budget": 100,
@@ -2068,15 +2068,15 @@
     },
     "best_value": {
      "bid": 15,
-     "par_per_dollar": -0.4,
+     "par_per_dollar": -0.85,
      "player": "Kenyon Sadiq",
-     "points_above_replacement": -6.07,
-     "points_per_dollar": 0.11,
-     "points_started": 1.7,
+     "points_above_replacement": -12.8,
+     "points_per_dollar": 0.19,
+     "points_started": 2.8,
      "pos": "TE",
      "season": "2026",
      "week": 3,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "biggest_bust": {
      "bid": 42,
@@ -2097,40 +2097,40 @@
     "hit_rate": 0.5,
     "most_points": {
      "bid": 15,
-     "par_per_dollar": -0.4,
+     "par_per_dollar": -0.85,
      "player": "Kenyon Sadiq",
-     "points_above_replacement": -6.07,
-     "points_per_dollar": 0.11,
-     "points_started": 1.7,
+     "points_above_replacement": -12.8,
+     "points_per_dollar": 0.19,
+     "points_started": 2.8,
      "pos": "TE",
      "season": "2026",
      "week": 3,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "paid_claims": 2,
-    "par_per_dollar": -0.11,
-    "points_above_replacement": -6.07,
+    "par_per_dollar": -0.22,
+    "points_above_replacement": -12.8,
     "points_from_free_claims": 0.0,
-    "points_from_paid_claims": 1.7,
-    "points_per_dollar": 0.03,
+    "points_from_paid_claims": 2.8,
+    "points_per_dollar": 0.05,
     "worst_par_claim": {
      "bid": 15,
-     "par_per_dollar": -0.4,
+     "par_per_dollar": -0.85,
      "player": "Kenyon Sadiq",
-     "points_above_replacement": -6.07,
-     "points_per_dollar": 0.11,
-     "points_started": 1.7,
+     "points_above_replacement": -12.8,
+     "points_per_dollar": 0.19,
+     "points_started": 2.8,
      "pos": "TE",
      "season": "2026",
      "week": 3,
-     "weeks_started": 1
+     "weeks_started": 2
     }
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "18-48",
-    "expected_wins": 1.64,
-    "luck": 1.36,
+    "all_play_record": "20-57",
+    "expected_wins": 1.82,
+    "luck": 1.18,
     "wins": 3
    },
    "made_playoffs": false,
@@ -2147,21 +2147,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 94.97,
-    "avg_points_for": 88.6,
-    "games": 6,
-    "losses": 3,
-    "points_against": 569.82,
-    "points_for": 531.62,
+    "avg_points_against": 96.79,
+    "avg_points_for": 88.92,
+    "games": 7,
+    "losses": 4,
+    "points_against": 677.5,
+    "points_for": 622.44,
     "ties": 0,
-    "win_pct": 0.5,
+    "win_pct": 0.4286,
     "wins": 3
    },
-   "regular_season_rank": 8,
+   "regular_season_rank": 10,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 569.82,
-    "points_for": 531.62
+    "points_against": 677.5,
+    "points_for": 622.44
    },
    "team_name": "Big Dog\u2019s Revenge"
   }

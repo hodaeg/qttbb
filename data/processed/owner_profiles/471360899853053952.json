@@ -16,14 +16,14 @@
    "wins": 2
   },
   "record": {
-   "losses": 109,
+   "losses": 110,
    "ties": 0,
    "wins": 83
   },
   "sackos": 3,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
   "scoring_bonuses": [],
-  "win_pct": 0.4323
+  "win_pct": 0.4301
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -45,12 +45,12 @@
  "current_team_name": "China King",
  "display_name": "ChinaKing",
  "efficiency": {
-  "efficiency": 0.8779,
+  "efficiency": 0.8778,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13222.54,
-  "points": 11607.66,
-  "points_left_on_bench": 1614.88,
-  "weeks": 118
+  "optimal_points": 13296.14,
+  "points": 11671.16,
+  "points_left_on_bench": 1624.98,
+  "weeks": 119
  },
  "faab_and_transactions": {
   "adds": 286,
@@ -61,7 +61,7 @@
    "week": 2
   },
   "budget_per_season": 100,
-  "drops": 293,
+  "drops": 295,
   "faab_taken_as_penalty": 0,
   "free_agent_adds": 174,
   "most_frequent_trade_partner": {
@@ -656,7 +656,7 @@
      "bid": 15,
      "par_per_dollar": -0.15,
      "player": "Keon Coleman",
-     "points_above_replacement": -2.22,
+     "points_above_replacement": -2.32,
      "points_per_dollar": 0.48,
      "points_started": 7.2,
      "pos": "WR",
@@ -685,7 +685,7 @@
      "bid": 15,
      "par_per_dollar": -0.15,
      "player": "Keon Coleman",
-     "points_above_replacement": -2.22,
+     "points_above_replacement": -2.32,
      "points_per_dollar": 0.48,
      "points_started": 7.2,
      "pos": "WR",
@@ -695,15 +695,15 @@
     },
     "paid_claims": 2,
     "par_per_dollar": -0.06,
-    "points_above_replacement": -2.22,
-    "points_from_free_claims": 29.0,
+    "points_above_replacement": -2.32,
+    "points_from_free_claims": 34.0,
     "points_from_paid_claims": 7.2,
     "points_per_dollar": 0.18,
     "worst_par_claim": {
      "bid": 15,
      "par_per_dollar": -0.15,
      "player": "Keon Coleman",
-     "points_above_replacement": -2.22,
+     "points_above_replacement": -2.32,
      "points_per_dollar": 0.48,
      "points_started": 7.2,
      "pos": "WR",
@@ -719,7 +719,7 @@
   "dollars_spent": 691,
   "free_claims": 55,
   "hit_rate": 0.684,
-  "league_points_per_dollar": 2.38,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 7,
    "par_per_dollar": 6.71,
@@ -736,8 +736,8 @@
   "paid_claims": 57,
   "par_per_dollar": -0.01,
   "par_rank": 9,
-  "points_above_replacement": -9.99,
-  "points_from_free_claims": 682.56,
+  "points_above_replacement": -10.09,
+  "points_from_free_claims": 687.56,
   "points_from_paid_claims": 1220.22,
   "points_per_dollar": 1.77,
   "rank": 9,
@@ -831,10 +831,10 @@
     "wins": 4
    },
    "471366618241298432": {
-    "games": 11,
-    "losses": 6,
-    "points_against": 1205.14,
-    "points_for": 1170.46,
+    "games": 12,
+    "losses": 7,
+    "points_against": 1312.06,
+    "points_for": 1233.96,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 5
@@ -901,7 +901,7 @@
      "wins": 0
     },
     "record": {
-     "losses": 4,
+     "losses": 5,
      "ties": 0,
      "wins": 2
     },
@@ -1066,7 +1066,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "2-4",
+     "counted_record": "2-5",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1102,25 +1102,25 @@
    "wins": 8
   },
   "regular_season": {
-   "avg_points_against": 105.49,
-   "avg_points_for": 97.12,
-   "games": 102,
-   "losses": 62,
-   "points_against": 10759.6,
-   "points_for": 9905.9,
+   "avg_points_against": 105.5,
+   "avg_points_for": 96.79,
+   "games": 103,
+   "losses": 63,
+   "points_against": 10866.52,
+   "points_for": 9969.4,
    "ties": 0,
-   "win_pct": 0.3922,
+   "win_pct": 0.3883,
    "wins": 40
   },
   "total": {
-   "avg_points_against": 105.48,
-   "avg_points_for": 98.37,
-   "games": 118,
-   "losses": 70,
-   "points_against": 12446.3,
-   "points_for": 11607.66,
+   "avg_points_against": 105.49,
+   "avg_points_for": 98.08,
+   "games": 119,
+   "losses": 71,
+   "points_against": 12553.22,
+   "points_for": 11671.16,
    "ties": 0,
-   "win_pct": 0.4068,
+   "win_pct": 0.4034,
    "wins": 48
   }
  },
@@ -2096,11 +2096,11 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.8143,
+   "efficiency": 0.8191,
    "faab": {
     "adds": 6,
     "budget": 100,
-    "drops": 4,
+    "drops": 6,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 2,
     "refunded": 0,
@@ -2131,7 +2131,7 @@
      "bid": 15,
      "par_per_dollar": -0.15,
      "player": "Keon Coleman",
-     "points_above_replacement": -2.22,
+     "points_above_replacement": -2.32,
      "points_per_dollar": 0.48,
      "points_started": 7.2,
      "pos": "WR",
@@ -2160,7 +2160,7 @@
      "bid": 15,
      "par_per_dollar": -0.15,
      "player": "Keon Coleman",
-     "points_above_replacement": -2.22,
+     "points_above_replacement": -2.32,
      "points_per_dollar": 0.48,
      "points_started": 7.2,
      "pos": "WR",
@@ -2170,15 +2170,15 @@
     },
     "paid_claims": 2,
     "par_per_dollar": -0.06,
-    "points_above_replacement": -2.22,
-    "points_from_free_claims": 29.0,
+    "points_above_replacement": -2.32,
+    "points_from_free_claims": 34.0,
     "points_from_paid_claims": 7.2,
     "points_per_dollar": 0.18,
     "worst_par_claim": {
      "bid": 15,
      "par_per_dollar": -0.15,
      "player": "Keon Coleman",
-     "points_above_replacement": -2.22,
+     "points_above_replacement": -2.32,
      "points_per_dollar": 0.48,
      "points_started": 7.2,
      "pos": "WR",
@@ -2189,7 +2189,7 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "20-46",
+    "all_play_record": "20-57",
     "expected_wins": 1.82,
     "luck": 0.18,
     "wins": 2
@@ -2208,21 +2208,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 104.15,
-    "avg_points_for": 89.46,
-    "games": 6,
-    "losses": 4,
-    "points_against": 624.9,
-    "points_for": 536.74,
+    "avg_points_against": 104.55,
+    "avg_points_for": 85.75,
+    "games": 7,
+    "losses": 5,
+    "points_against": 731.82,
+    "points_for": 600.24,
     "ties": 0,
-    "win_pct": 0.3333,
+    "win_pct": 0.2857,
     "wins": 2
    },
    "regular_season_rank": 12,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 624.9,
-    "points_for": 536.74
+    "points_against": 731.82,
+    "points_for": 600.24
    },
    "team_name": "China King"
   }

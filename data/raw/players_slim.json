@@ -156,7 +156,7 @@
   "team": null
  },
  "11199": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Emari Demercado",
   "pos": "RB",
   "team": "DAL"
@@ -432,7 +432,7 @@
   "team": "MIA"
  },
  "11646": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jalen Coker",
   "pos": "WR",
   "team": "CAR"
@@ -642,7 +642,7 @@
   "team": "TEN"
  },
  "12501": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Matthew Golden",
   "pos": "WR",
   "team": "GB"
@@ -2244,7 +2244,7 @@
   "team": null
  },
  "4866": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Saquon Barkley",
   "pos": "RB",
   "team": "PHI"
@@ -3612,7 +3612,7 @@
   "team": "NO"
  },
  "7547": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Amon-Ra St. Brown",
   "pos": "WR",
   "team": "DET"

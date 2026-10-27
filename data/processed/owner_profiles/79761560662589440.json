@@ -19,14 +19,14 @@
   "record": {
    "losses": 73,
    "ties": 0,
-   "wins": 74
+   "wins": 75
   },
   "sackos": 1,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
   "scoring_bonuses": [
    15
   ],
-  "win_pct": 0.5034
+  "win_pct": 0.5068
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -48,12 +48,12 @@
  "current_team_name": "G H O S T\u2122",
  "display_name": "gabroni",
  "efficiency": {
-  "efficiency": 0.8915,
+  "efficiency": 0.8924,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14147.9,
-  "points": 12612.38,
-  "points_left_on_bench": 1535.52,
-  "weeks": 118
+  "optimal_points": 14274.44,
+  "points": 12738.12,
+  "points_left_on_bench": 1536.32,
+  "weeks": 119
  },
  "faab_and_transactions": {
   "adds": 287,
@@ -64,7 +64,7 @@
    "week": 5
   },
   "budget_per_season": 100,
-  "drops": 276,
+  "drops": 277,
   "faab_taken_as_penalty": 11,
   "free_agent_adds": 192,
   "most_frequent_trade_partner": {
@@ -634,9 +634,9 @@
    "2026": {
     "best_par_claim": {
      "bid": 12,
-     "par_per_dollar": 1.1,
+     "par_per_dollar": 1.09,
      "player": "Jared Goff",
-     "points_above_replacement": 13.24,
+     "points_above_replacement": 13.06,
      "points_per_dollar": 5.65,
      "points_started": 67.78,
      "pos": "QB",
@@ -646,9 +646,9 @@
     },
     "best_value": {
      "bid": 12,
-     "par_per_dollar": 1.1,
+     "par_per_dollar": 1.09,
      "player": "Jared Goff",
-     "points_above_replacement": 13.24,
+     "points_above_replacement": 13.06,
      "points_per_dollar": 5.65,
      "points_started": 67.78,
      "pos": "QB",
@@ -657,27 +657,27 @@
      "weeks_started": 3
     },
     "biggest_bust": {
-     "bid": 9,
+     "bid": 7,
      "par_per_dollar": 0.0,
-     "player": "Germie Bernard",
+     "player": "Will Shipley",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
-     "pos": "WR",
+     "pos": "RB",
      "season": "2026",
-     "week": 5,
+     "week": 4,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 1,
     "claims_dropped_before_playing": 1,
     "dollars_spent": 37,
     "free_claims": 1,
-    "hit_rate": 0.5,
+    "hit_rate": 0.667,
     "most_points": {
      "bid": 12,
-     "par_per_dollar": 1.1,
+     "par_per_dollar": 1.09,
      "player": "Jared Goff",
-     "points_above_replacement": 13.24,
+     "points_above_replacement": 13.06,
      "points_per_dollar": 5.65,
      "points_started": 67.78,
      "pos": "QB",
@@ -686,32 +686,32 @@
      "weeks_started": 3
     },
     "paid_claims": 6,
-    "par_per_dollar": 0.36,
-    "points_above_replacement": 13.23,
+    "par_per_dollar": 0.25,
+    "points_above_replacement": 9.23,
     "points_from_free_claims": 0.0,
-    "points_from_paid_claims": 87.78,
-    "points_per_dollar": 2.37,
+    "points_from_paid_claims": 91.98,
+    "points_per_dollar": 2.49,
     "worst_par_claim": {
-     "bid": 3,
-     "par_per_dollar": -1.11,
-     "player": "San Francisco 49ers",
-     "points_above_replacement": -3.34,
-     "points_per_dollar": 3.33,
-     "points_started": 10.0,
-     "pos": "DEF",
+     "bid": 9,
+     "par_per_dollar": -0.59,
+     "player": "Germie Bernard",
+     "points_above_replacement": -5.32,
+     "points_per_dollar": 0.47,
+     "points_started": 4.2,
+     "pos": "WR",
      "season": "2026",
-     "week": 1,
-     "weeks_started": 2
+     "week": 5,
+     "weeks_started": 1
     }
    }
   },
-  "claims_benched_only": 18,
+  "claims_benched_only": 17,
   "claims_dropped_before_playing": 3,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 632,
   "free_claims": 8,
-  "hit_rate": 0.759,
-  "league_points_per_dollar": 2.38,
+  "hit_rate": 0.77,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 12,
    "par_per_dollar": 1.48,
@@ -728,10 +728,10 @@
   "paid_claims": 87,
   "par_per_dollar": 0.49,
   "par_rank": 1,
-  "points_above_replacement": 312.37,
+  "points_above_replacement": 308.37,
   "points_from_free_claims": 50.1,
-  "points_from_paid_claims": 1961.0,
-  "points_per_dollar": 3.1,
+  "points_from_paid_claims": 1965.2,
+  "points_per_dollar": 3.11,
   "rank": 3,
   "worst_par_claim": {
    "bid": 6,
@@ -778,13 +778,13 @@
     "wins": 8
    },
    "471074114505797632": {
-    "games": 9,
+    "games": 10,
     "losses": 4,
-    "points_against": 1009.98,
-    "points_for": 1047.58,
+    "points_against": 1118.2,
+    "points_for": 1173.32,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 5
+    "wins": 6
    },
    "471083964757438464": {
     "games": 12,
@@ -895,7 +895,7 @@
     "record": {
      "losses": 4,
      "ties": 0,
-     "wins": 2
+     "wins": 3
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1062,7 +1062,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "2-4",
+     "counted_record": "3-4",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1077,10 +1077,10 @@
   "snapshot_rank": 8
  },
  "luck": {
-  "expected_wins": 53.73,
-  "luck": -3.73,
+  "expected_wins": 54.64,
+  "luck": -3.64,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 50
+  "wins": 51
  },
  "owner_id": "79761560662589440",
  "record": {
@@ -1098,26 +1098,26 @@
    "wins": 9
   },
   "regular_season": {
-   "avg_points_against": 105.06,
-   "avg_points_for": 106.28,
-   "games": 102,
+   "avg_points_against": 105.09,
+   "avg_points_for": 106.46,
+   "games": 103,
    "losses": 52,
-   "points_against": 10715.64,
-   "points_for": 10840.1,
+   "points_against": 10823.86,
+   "points_for": 10965.84,
    "ties": 0,
-   "win_pct": 0.4902,
-   "wins": 50
+   "win_pct": 0.4951,
+   "wins": 51
   },
   "total": {
-   "avg_points_against": 104.79,
-   "avg_points_for": 106.88,
-   "games": 118,
+   "avg_points_against": 104.82,
+   "avg_points_for": 107.04,
+   "games": 119,
    "losses": 59,
-   "points_against": 12365.66,
-   "points_for": 12612.38,
+   "points_against": 12473.88,
+   "points_for": 12738.12,
    "ties": 0,
-   "win_pct": 0.5,
-   "wins": 59
+   "win_pct": 0.5042,
+   "wins": 60
   }
  },
  "scoring": {
@@ -2081,11 +2081,11 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.9135,
+   "efficiency": 0.9261,
    "faab": {
     "adds": 22,
     "budget": 100,
-    "drops": 20,
+    "drops": 21,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 15,
     "refunded": 0,
@@ -2102,9 +2102,9 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 12,
-     "par_per_dollar": 1.1,
+     "par_per_dollar": 1.09,
      "player": "Jared Goff",
-     "points_above_replacement": 13.24,
+     "points_above_replacement": 13.06,
      "points_per_dollar": 5.65,
      "points_started": 67.78,
      "pos": "QB",
@@ -2114,9 +2114,9 @@
     },
     "best_value": {
      "bid": 12,
-     "par_per_dollar": 1.1,
+     "par_per_dollar": 1.09,
      "player": "Jared Goff",
-     "points_above_replacement": 13.24,
+     "points_above_replacement": 13.06,
      "points_per_dollar": 5.65,
      "points_started": 67.78,
      "pos": "QB",
@@ -2125,27 +2125,27 @@
      "weeks_started": 3
     },
     "biggest_bust": {
-     "bid": 9,
+     "bid": 7,
      "par_per_dollar": 0.0,
-     "player": "Germie Bernard",
+     "player": "Will Shipley",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
-     "pos": "WR",
+     "pos": "RB",
      "season": "2026",
-     "week": 5,
+     "week": 4,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 1,
     "claims_dropped_before_playing": 1,
     "dollars_spent": 37,
     "free_claims": 1,
-    "hit_rate": 0.5,
+    "hit_rate": 0.667,
     "most_points": {
      "bid": 12,
-     "par_per_dollar": 1.1,
+     "par_per_dollar": 1.09,
      "player": "Jared Goff",
-     "points_above_replacement": 13.24,
+     "points_above_replacement": 13.06,
      "points_per_dollar": 5.65,
      "points_started": 67.78,
      "pos": "QB",
@@ -2154,30 +2154,30 @@
      "weeks_started": 3
     },
     "paid_claims": 6,
-    "par_per_dollar": 0.36,
-    "points_above_replacement": 13.23,
+    "par_per_dollar": 0.25,
+    "points_above_replacement": 9.23,
     "points_from_free_claims": 0.0,
-    "points_from_paid_claims": 87.78,
-    "points_per_dollar": 2.37,
+    "points_from_paid_claims": 91.98,
+    "points_per_dollar": 2.49,
     "worst_par_claim": {
-     "bid": 3,
-     "par_per_dollar": -1.11,
-     "player": "San Francisco 49ers",
-     "points_above_replacement": -3.34,
-     "points_per_dollar": 3.33,
-     "points_started": 10.0,
-     "pos": "DEF",
+     "bid": 9,
+     "par_per_dollar": -0.59,
+     "player": "Germie Bernard",
+     "points_above_replacement": -5.32,
+     "points_per_dollar": 0.47,
+     "points_started": 4.2,
+     "pos": "WR",
      "season": "2026",
-     "week": 1,
-     "weeks_started": 2
+     "week": 5,
+     "weeks_started": 1
     }
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "26-40",
-    "expected_wins": 2.36,
-    "luck": -0.36,
-    "wins": 2
+    "all_play_record": "36-41",
+    "expected_wins": 3.27,
+    "luck": -0.27,
+    "wins": 3
    },
    "made_playoffs": false,
    "playoff_result": null,
@@ -2193,21 +2193,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 101.86,
-    "avg_points_for": 103.9,
-    "games": 6,
+    "avg_points_against": 102.77,
+    "avg_points_for": 107.02,
+    "games": 7,
     "losses": 4,
-    "points_against": 611.14,
-    "points_for": 623.42,
+    "points_against": 719.36,
+    "points_for": 749.16,
     "ties": 0,
-    "win_pct": 0.3333,
-    "wins": 2
+    "win_pct": 0.4286,
+    "wins": 3
    },
-   "regular_season_rank": 10,
+   "regular_season_rank": 8,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 611.14,
-    "points_for": 623.42
+    "points_against": 719.36,
+    "points_for": 749.16
    },
    "team_name": "G H O S T\u2122"
   }

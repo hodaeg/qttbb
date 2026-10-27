@@ -1,98 +1,98 @@
 [
  {
-  "efficiency": 0.9477,
-  "optimal_points": 723.26,
-  "owner_id": "423560331814510592",
-  "points": 685.46,
-  "roster_id": 2,
-  "weeks": 6
- },
- {
-  "efficiency": 0.9419,
-  "optimal_points": 622.72,
+  "efficiency": 0.9524,
+  "optimal_points": 759.78,
   "owner_id": "383681356686950400",
-  "points": 586.56,
+  "points": 723.62,
   "roster_id": 1,
-  "weeks": 6
+  "weeks": 7
  },
  {
-  "efficiency": 0.9246,
-  "optimal_points": 711.08,
+  "efficiency": 0.945,
+  "optimal_points": 828.96,
+  "owner_id": "423560331814510592",
+  "points": 783.36,
+  "roster_id": 2,
+  "weeks": 7
+ },
+ {
+  "efficiency": 0.9326,
+  "optimal_points": 820.46,
   "owner_id": "471368473092550656",
-  "points": 657.48,
+  "points": 765.16,
   "roster_id": 12,
-  "weeks": 6
+  "weeks": 7
  },
  {
-  "efficiency": 0.921,
-  "optimal_points": 671.9,
-  "owner_id": "471359444949659648",
-  "points": 618.8,
-  "roster_id": 10,
-  "weeks": 6
- },
- {
-  "efficiency": 0.9189,
-  "optimal_points": 712.28,
-  "owner_id": "471345530597797888",
-  "points": 654.48,
-  "roster_id": 6,
-  "weeks": 6
- },
- {
-  "efficiency": 0.9135,
-  "optimal_points": 682.42,
+  "efficiency": 0.9261,
+  "optimal_points": 808.96,
   "owner_id": "79761560662589440",
-  "points": 623.42,
+  "points": 749.16,
   "roster_id": 4,
-  "weeks": 6
+  "weeks": 7
  },
  {
-  "efficiency": 0.912,
-  "optimal_points": 681.5,
+  "efficiency": 0.926,
+  "optimal_points": 832.06,
+  "owner_id": "471345530597797888",
+  "points": 770.46,
+  "roster_id": 6,
+  "weeks": 7
+ },
+ {
+  "efficiency": 0.9155,
+  "optimal_points": 749.9,
+  "owner_id": "471359444949659648",
+  "points": 686.5,
+  "roster_id": 10,
+  "weeks": 7
+ },
+ {
+  "efficiency": 0.903,
+  "optimal_points": 814.78,
   "owner_id": "471359672478068736",
-  "points": 621.5,
+  "points": 735.78,
   "roster_id": 8,
-  "weeks": 6
+  "weeks": 7
  },
  {
-  "efficiency": 0.8885,
-  "optimal_points": 598.32,
+  "efficiency": 0.8912,
+  "optimal_points": 698.44,
   "owner_id": "471083964757438464",
-  "points": 531.62,
+  "points": 622.44,
   "roster_id": 5,
-  "weeks": 6
+  "weeks": 7
  },
  {
-  "efficiency": 0.883,
-  "optimal_points": 766.6,
+  "efficiency": 0.8747,
+  "optimal_points": 897.62,
   "owner_id": "471074114505797632",
-  "points": 676.9,
+  "points": 785.12,
   "roster_id": 3,
-  "weeks": 6
+  "weeks": 7
  },
  {
-  "efficiency": 0.8706,
-  "optimal_points": 830.72,
+  "efficiency": 0.8647,
+  "optimal_points": 947.1,
   "owner_id": "422102738889867264",
-  "points": 723.22,
+  "points": 819.0,
   "roster_id": 7,
-  "weeks": 6
+  "weeks": 7
  },
  {
-  "efficiency": 0.8246,
-  "optimal_points": 686.4,
+  "efficiency": 0.8329,
+  "optimal_points": 807.92,
   "owner_id": "471366618241298432",
-  "points": 566.0,
+  "points": 672.92,
   "roster_id": 11,
-  "weeks": 6
+  "weeks": 7
  },
  {
-  "efficiency": 0.8143,
-  "optimal_points": 659.16,
+  "efficiency": 0.8191,
+  "optimal_points": 732.76,
   "owner_id": "471360899853053952",
-  "points": 536.74,
+  "points": 600.24,
   "roster_id": 9,
-  "weeks": 6
+  "weeks": 7
  }
 ]
