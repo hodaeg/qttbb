@@ -58,7 +58,7 @@
   "weeks": 118
  },
  "faab_and_transactions": {
-  "adds": 209,
+  "adds": 210,
   "biggest_bid": {
    "amount": 88,
    "player": "Isaac Guerendo",
@@ -66,7 +66,7 @@
    "week": 13
   },
   "budget_per_season": 100,
-  "drops": 201,
+  "drops": 202,
   "faab_taken_as_penalty": 0,
   "free_agent_adds": 118,
   "most_frequent_trade_partner": null,
@@ -89,8 +89,8 @@
   "traded_out": 0,
   "trades": 0,
   "unexplained_difference": 0,
-  "waiver_claims_lost": 69,
-  "waiver_claims_won": 91
+  "waiver_claims_lost": 71,
+  "waiver_claims_won": 92
  },
  "faab_efficiency": {
   "best_par_claim": {
@@ -571,7 +571,7 @@
     "claims_benched_only": 0,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 0,
-    "free_claims": 2,
+    "free_claims": 3,
     "hit_rate": null,
     "most_points": null,
     "paid_claims": 0,
@@ -587,9 +587,9 @@
   "claims_dropped_before_playing": 1,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 445,
-  "free_claims": 29,
+  "free_claims": 30,
   "hit_rate": 0.694,
-  "league_points_per_dollar": 2.4,
+  "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 6,
    "par_per_dollar": 8.61,
@@ -1896,9 +1896,9 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.8747,
    "faab": {
-    "adds": 6,
+    "adds": 7,
     "budget": 100,
-    "drops": 5,
+    "drops": 6,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 4,
     "refunded": 0,
@@ -1909,8 +1909,8 @@
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
-    "waiver_claims_lost": 4,
-    "waiver_claims_won": 2
+    "waiver_claims_lost": 6,
+    "waiver_claims_won": 3
    },
    "faab_efficiency": {
     "best_par_claim": null,
@@ -1919,7 +1919,7 @@
     "claims_benched_only": 0,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 0,
-    "free_claims": 2,
+    "free_claims": 3,
     "hit_rate": null,
     "most_points": null,
     "paid_claims": 0,

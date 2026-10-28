@@ -3200,7 +3200,7 @@
   "a_points": 1056.96,
   "a_wins": 6,
   "b": "471345530597797888",
-  "b_points": 1127.96,
+  "b_points": 1127.86,
   "b_wins": 5,
   "biggest_a_win": 35.52,
   "biggest_b_win": 43.94,
@@ -3277,7 +3277,7 @@
    },
    {
     "a_points": 137.06,
-    "b_points": 115.98,
+    "b_points": 115.88,
     "playoff": false,
     "season": "2026",
     "week": 7

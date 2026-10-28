@@ -37878,7 +37878,7 @@
      "week": 5
     }
    ],
-   "weeks_rostered": 16,
+   "weeks_rostered": 5,
    "weeks_started": 3
   },
   {
@@ -37980,7 +37980,7 @@
      "week": 7
     }
    ],
-   "weeks_rostered": 16,
+   "weeks_rostered": 5,
    "weeks_started": 5
   },
   {
@@ -39226,22 +39226,22 @@
    "par_per_dollar": null,
    "player": "Bo Nix",
    "player_id": "11563",
-   "points_above_replacement": 7.04,
+   "points_above_replacement": 6.94,
    "points_per_dollar": null,
-   "points_started": 25.28,
+   "points_started": 25.18,
    "pos": "QB",
    "roster_id": 6,
    "season": "2026",
    "week": 6,
    "weekly": [
     {
-     "above_replacement": 7.04,
-     "points": 25.28,
+     "above_replacement": 6.94,
+     "points": 25.18,
      "replacement_level": 18.24,
      "week": 7
     }
    ],
-   "weeks_rostered": 12,
+   "weeks_rostered": 1,
    "weeks_started": 1
   },
   {
@@ -39337,7 +39337,7 @@
      "week": 7
     }
    ],
-   "weeks_rostered": 12,
+   "weeks_rostered": 1,
    "weeks_started": 1
   },
   {
@@ -39424,6 +39424,154 @@
    ],
    "weeks_rostered": 12,
    "weeks_started": 1
+  },
+  {
+   "bid": 3,
+   "dropped": [],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "423560331814510592",
+   "par_per_dollar": 0.0,
+   "player": "Makai Lemon",
+   "player_id": "13294",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "WR",
+   "roster_id": 2,
+   "season": "2026",
+   "week": 7,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
+  },
+  {
+   "bid": 0,
+   "dropped": [
+    "Wan'Dale Robinson"
+   ],
+   "first_week": 7,
+   "outcome": "never_started",
+   "owner_id": "471074114505797632",
+   "par_per_dollar": null,
+   "player": "Cam Little",
+   "player_id": "11786",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": null,
+   "points_started": 0.0,
+   "pos": "K",
+   "roster_id": 3,
+   "season": "2026",
+   "week": 7,
+   "weekly": [],
+   "weeks_rostered": 12,
+   "weeks_started": 0
+  },
+  {
+   "bid": 7,
+   "dropped": [
+    "Jared Goff"
+   ],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "79761560662589440",
+   "par_per_dollar": 0.0,
+   "player": "Caleb Douglas",
+   "player_id": "13296",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "WR",
+   "roster_id": 4,
+   "season": "2026",
+   "week": 7,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
+  },
+  {
+   "bid": 5,
+   "dropped": [],
+   "first_week": 7,
+   "outcome": "never_started",
+   "owner_id": "79761560662589440",
+   "par_per_dollar": 0.0,
+   "player": "Jacksonville Jaguars",
+   "player_id": "JAX",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "DEF",
+   "roster_id": 4,
+   "season": "2026",
+   "week": 7,
+   "weekly": [],
+   "weeks_rostered": 12,
+   "weeks_started": 0
+  },
+  {
+   "bid": 2,
+   "dropped": [
+    "Bo Nix"
+   ],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "471345530597797888",
+   "par_per_dollar": 0.0,
+   "player": "Jacoby Brissett",
+   "player_id": "3257",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "QB",
+   "roster_id": 6,
+   "season": "2026",
+   "week": 7,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
+  },
+  {
+   "bid": 5,
+   "dropped": [
+    "Juwan Johnson"
+   ],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "471345530597797888",
+   "par_per_dollar": 0.0,
+   "player": "Dallas Goedert",
+   "player_id": "5022",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "TE",
+   "roster_id": 6,
+   "season": "2026",
+   "week": 7,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
+  },
+  {
+   "bid": 8,
+   "dropped": [],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "471360899853053952",
+   "par_per_dollar": 0.0,
+   "player": "Mason Taylor",
+   "player_id": "12498",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "TE",
+   "roster_id": 9,
+   "season": "2026",
+   "week": 7,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
   }
  ],
  "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
@@ -39464,11 +39612,11 @@
    "week": 3,
    "weeks_started": 0
   },
-  "claims_benched_only": 197,
+  "claims_benched_only": 203,
   "claims_dropped_before_playing": 49,
-  "dollars_spent": 6837,
-  "free_claims": 367,
-  "hit_rate": 0.702,
+  "dollars_spent": 6867,
+  "free_claims": 368,
+  "hit_rate": 0.697,
   "most_points": {
    "bid": 33,
    "par_per_dollar": 1.72,
@@ -39481,12 +39629,12 @@
    "week": 1,
    "weeks_started": 12
   },
-  "paid_claims": 825,
+  "paid_claims": 831,
   "par_per_dollar": 0.12,
   "points_above_replacement": 845.8,
-  "points_from_free_claims": 4838.26,
+  "points_from_free_claims": 4838.16,
   "points_from_paid_claims": 16380.14,
-  "points_per_dollar": 2.4,
+  "points_per_dollar": 2.39,
   "worst_par_claim": {
    "bid": 4,
    "par_per_dollar": -8.38,
@@ -41388,11 +41536,11 @@
       "week": 1,
       "weeks_started": 0
      },
-     "claims_benched_only": 1,
+     "claims_benched_only": 2,
      "claims_dropped_before_playing": 0,
-     "dollars_spent": 35,
+     "dollars_spent": 38,
      "free_claims": 1,
-     "hit_rate": 0.833,
+     "hit_rate": 0.714,
      "most_points": {
       "bid": 1,
       "par_per_dollar": -4.49,
@@ -41405,12 +41553,12 @@
       "week": 2,
       "weeks_started": 3
      },
-     "paid_claims": 6,
-     "par_per_dollar": -0.38,
+     "paid_claims": 7,
+     "par_per_dollar": -0.35,
      "points_above_replacement": -13.13,
      "points_from_free_claims": 8.0,
      "points_from_paid_claims": 50.4,
-     "points_per_dollar": 1.44,
+     "points_per_dollar": 1.33,
      "worst_par_claim": {
       "bid": 1,
       "par_per_dollar": -6.83,
@@ -41425,11 +41573,11 @@
      }
     }
    },
-   "claims_benched_only": 18,
+   "claims_benched_only": 19,
    "claims_dropped_before_playing": 10,
-   "dollars_spent": 620,
+   "dollars_spent": 623,
    "free_claims": 21,
-   "hit_rate": 0.641,
+   "hit_rate": 0.633,
    "most_points": {
     "bid": 7,
     "par_per_dollar": 8.37,
@@ -41442,13 +41590,13 @@
     "week": 2,
     "weeks_started": 13
    },
-   "paid_claims": 78,
+   "paid_claims": 79,
    "par_per_dollar": -0.19,
    "par_rank": 12,
    "points_above_replacement": -118.72,
    "points_from_free_claims": 417.6,
    "points_from_paid_claims": 1528.32,
-   "points_per_dollar": 2.47,
+   "points_per_dollar": 2.45,
    "rank": 5,
    "worst_par_claim": {
     "bid": 4,
@@ -41942,7 +42090,7 @@
      "claims_benched_only": 0,
      "claims_dropped_before_playing": 0,
      "dollars_spent": 0,
-     "free_claims": 2,
+     "free_claims": 3,
      "hit_rate": null,
      "most_points": null,
      "paid_claims": 0,
@@ -41957,7 +42105,7 @@
    "claims_benched_only": 18,
    "claims_dropped_before_playing": 1,
    "dollars_spent": 445,
-   "free_claims": 29,
+   "free_claims": 30,
    "hit_rate": 0.694,
    "most_points": {
     "bid": 6,
@@ -43195,11 +43343,11 @@
       "week": 3,
       "weeks_started": 0
      },
-     "claims_benched_only": 3,
+     "claims_benched_only": 5,
      "claims_dropped_before_playing": 0,
-     "dollars_spent": 48,
+     "dollars_spent": 55,
      "free_claims": 1,
-     "hit_rate": 0.667,
+     "hit_rate": 0.545,
      "most_points": {
       "bid": 3,
       "par_per_dollar": -2.0,
@@ -43212,12 +43360,12 @@
       "week": 2,
       "weeks_started": 5
      },
-     "paid_claims": 9,
-     "par_per_dollar": 0.31,
+     "paid_claims": 11,
+     "par_per_dollar": 0.27,
      "points_above_replacement": 14.76,
-     "points_from_free_claims": 25.28,
+     "points_from_free_claims": 25.18,
      "points_from_paid_claims": 122.9,
-     "points_per_dollar": 2.56,
+     "points_per_dollar": 2.23,
      "worst_par_claim": {
       "bid": 3,
       "par_per_dollar": -2.0,
@@ -43232,11 +43380,11 @@
      }
     }
    },
-   "claims_benched_only": 25,
+   "claims_benched_only": 27,
    "claims_dropped_before_playing": 3,
-   "dollars_spent": 652,
+   "dollars_spent": 659,
    "free_claims": 27,
-   "hit_rate": 0.714,
+   "hit_rate": 0.7,
    "most_points": {
     "bid": 5,
     "par_per_dollar": 2.79,
@@ -43249,13 +43397,13 @@
     "week": 1,
     "weeks_started": 14
    },
-   "paid_claims": 98,
+   "paid_claims": 100,
    "par_per_dollar": 0.17,
    "par_rank": 6,
    "points_above_replacement": 109.8,
-   "points_from_free_claims": 216.82,
+   "points_from_free_claims": 216.72,
    "points_from_paid_claims": 2206.58,
-   "points_per_dollar": 3.38,
+   "points_per_dollar": 3.35,
    "rank": 2,
    "worst_par_claim": {
     "bid": 11,
@@ -45112,11 +45260,11 @@
       "week": 2,
       "weeks_started": 0
      },
-     "claims_benched_only": 1,
+     "claims_benched_only": 2,
      "claims_dropped_before_playing": 0,
-     "dollars_spent": 40,
+     "dollars_spent": 48,
      "free_claims": 2,
-     "hit_rate": 0.5,
+     "hit_rate": 0.333,
      "most_points": {
       "bid": 15,
       "par_per_dollar": -0.15,
@@ -45129,12 +45277,12 @@
       "week": 4,
       "weeks_started": 1
      },
-     "paid_claims": 2,
-     "par_per_dollar": -0.06,
+     "paid_claims": 3,
+     "par_per_dollar": -0.05,
      "points_above_replacement": -2.32,
      "points_from_free_claims": 34.0,
      "points_from_paid_claims": 7.2,
-     "points_per_dollar": 0.18,
+     "points_per_dollar": 0.15,
      "worst_par_claim": {
       "bid": 15,
       "par_per_dollar": -0.15,
@@ -45149,11 +45297,11 @@
      }
     }
    },
-   "claims_benched_only": 17,
+   "claims_benched_only": 18,
    "claims_dropped_before_playing": 1,
-   "dollars_spent": 691,
+   "dollars_spent": 699,
    "free_claims": 55,
-   "hit_rate": 0.684,
+   "hit_rate": 0.672,
    "most_points": {
     "bid": 7,
     "par_per_dollar": 6.71,
@@ -45166,13 +45314,13 @@
     "week": 4,
     "weeks_started": 9
    },
-   "paid_claims": 57,
+   "paid_claims": 58,
    "par_per_dollar": -0.01,
    "par_rank": 9,
    "points_above_replacement": -10.09,
    "points_from_free_claims": 687.56,
    "points_from_paid_claims": 1220.22,
-   "points_per_dollar": 1.77,
+   "points_per_dollar": 1.75,
    "rank": 9,
    "worst_par_claim": {
     "bid": 80,
@@ -47040,11 +47188,11 @@
       "week": 4,
       "weeks_started": 0
      },
-     "claims_benched_only": 1,
+     "claims_benched_only": 3,
      "claims_dropped_before_playing": 1,
-     "dollars_spent": 37,
+     "dollars_spent": 49,
      "free_claims": 1,
-     "hit_rate": 0.667,
+     "hit_rate": 0.5,
      "most_points": {
       "bid": 12,
       "par_per_dollar": 1.09,
@@ -47057,12 +47205,12 @@
       "week": 2,
       "weeks_started": 3
      },
-     "paid_claims": 6,
-     "par_per_dollar": 0.25,
+     "paid_claims": 8,
+     "par_per_dollar": 0.19,
      "points_above_replacement": 9.23,
      "points_from_free_claims": 0.0,
      "points_from_paid_claims": 91.98,
-     "points_per_dollar": 2.49,
+     "points_per_dollar": 1.88,
      "worst_par_claim": {
       "bid": 9,
       "par_per_dollar": -0.59,
@@ -47077,11 +47225,11 @@
      }
     }
    },
-   "claims_benched_only": 17,
+   "claims_benched_only": 19,
    "claims_dropped_before_playing": 3,
-   "dollars_spent": 632,
+   "dollars_spent": 644,
    "free_claims": 8,
-   "hit_rate": 0.77,
+   "hit_rate": 0.753,
    "most_points": {
     "bid": 12,
     "par_per_dollar": 1.48,
@@ -47094,13 +47242,13 @@
     "week": 2,
     "weeks_started": 11
    },
-   "paid_claims": 87,
-   "par_per_dollar": 0.49,
+   "paid_claims": 89,
+   "par_per_dollar": 0.48,
    "par_rank": 1,
    "points_above_replacement": 308.37,
    "points_from_free_claims": 50.1,
    "points_from_paid_claims": 1965.2,
-   "points_per_dollar": 3.11,
+   "points_per_dollar": 3.05,
    "rank": 3,
    "worst_par_claim": {
     "bid": 6,

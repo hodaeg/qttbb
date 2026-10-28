@@ -702,7 +702,7 @@
   "dollars_spent": 691,
   "free_claims": 35,
   "hit_rate": 0.782,
-  "league_points_per_dollar": 2.4,
+  "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 2,
    "par_per_dollar": 21.95,
@@ -780,7 +780,7 @@
    "471345530597797888": {
     "games": 11,
     "losses": 5,
-    "points_against": 1127.96,
+    "points_against": 1127.86,
     "points_for": 1056.96,
     "protected_rivalry": null,
     "ties": 0,
@@ -1094,7 +1094,7 @@
    "avg_points_for": 105.98,
    "games": 103,
    "losses": 40,
-   "points_against": 10463.6,
+   "points_against": 10463.5,
    "points_for": 10915.68,
    "ties": 0,
    "win_pct": 0.6117,
@@ -1105,7 +1105,7 @@
    "avg_points_for": 105.69,
    "games": 120,
    "losses": 49,
-   "points_against": 12369.84,
+   "points_against": 12369.74,
    "points_for": 12682.56,
    "ties": 0,
    "win_pct": 0.5917,
@@ -2174,11 +2174,11 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 105.05,
+    "avg_points_against": 105.03,
     "avg_points_for": 103.37,
     "games": 7,
     "losses": 2,
-    "points_against": 735.32,
+    "points_against": 735.22,
     "points_for": 723.62,
     "ties": 0,
     "win_pct": 0.7143,
@@ -2187,7 +2187,7 @@
    "regular_season_rank": 2,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 735.32,
+    "points_against": 735.22,
     "points_for": 723.62
    },
    "team_name": "Hodag Forest Lurkers"
