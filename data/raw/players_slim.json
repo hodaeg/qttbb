@@ -48,7 +48,7 @@
   "team": "ARI"
  },
  "10232": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Michael Wilson",
   "pos": "WR",
   "team": "ARI"
@@ -60,7 +60,7 @@
   "team": "CHI"
  },
  "10236": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Dalton Kincaid",
   "pos": "TE",
   "team": "BUF"
@@ -159,7 +159,7 @@
   "injury_status": null,
   "name": "Emari Demercado",
   "pos": "RB",
-  "team": null
+  "team": "HOU"
  },
  "11261": {
   "injury_status": null,
@@ -324,13 +324,13 @@
   "team": "SEA"
  },
  "11604": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Brock Bowers",
   "pos": "TE",
   "team": "LV"
  },
  "11610": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Malik Washington",
   "pos": "WR",
   "team": "MIA"
@@ -426,7 +426,7 @@
   "team": "SF"
  },
  "11643": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Jaylen Wright",
   "pos": "RB",
   "team": "MIA"
@@ -483,7 +483,7 @@
   "injury_status": null,
   "name": "Joshua Karty",
   "pos": "K",
-  "team": null
+  "team": "LAR"
  },
  "11792": {
   "injury_status": null,
@@ -552,7 +552,7 @@
   "team": "PHI"
  },
  "12469": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Dylan Sampson",
   "pos": "RB",
   "team": "CLE"
@@ -840,7 +840,7 @@
   "team": "NYJ"
  },
  "13279": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Carnell Tate",
   "pos": "WR",
   "team": "TEN"
@@ -1344,7 +1344,7 @@
   "team": "NYG"
  },
  "2307": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Marcus Mariota",
   "pos": "QB",
   "team": "WAS"
@@ -1476,7 +1476,7 @@
   "team": null
  },
  "2449": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Stefon Diggs",
   "pos": "WR",
   "team": "WAS"
@@ -2370,7 +2370,7 @@
   "team": null
  },
  "4995": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Ian Thomas",
   "pos": "TE",
   "team": "LV"
@@ -2778,7 +2778,7 @@
   "team": "NO"
  },
  "5859": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "A.J. Brown",
   "pos": "WR",
   "team": "NE"
@@ -2862,7 +2862,7 @@
   "team": null
  },
  "5947": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jakobi Meyers",
   "pos": "WR",
   "team": "JAX"
@@ -3342,7 +3342,7 @@
   "team": "WAS"
  },
  "6865": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Colby Parkinson",
   "pos": "TE",
   "team": "LAR"
@@ -3642,7 +3642,7 @@
   "team": "LAR"
  },
  "7564": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Ja'Marr Chase",
   "pos": "WR",
   "team": "CIN"
@@ -3654,7 +3654,7 @@
   "team": null
  },
  "7567": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Kenny Gainwell",
   "pos": "RB",
   "team": "TB"
@@ -3780,7 +3780,7 @@
   "team": "BUF"
  },
  "7720": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Kene Nwangwu",
   "pos": "RB",
   "team": "NYJ"
@@ -3918,7 +3918,7 @@
   "team": "TEN"
  },
  "8129": {
-  "injury_status": "Questionable",
+  "injury_status": "IR",
   "name": "Dameon Pierce",
   "pos": "RB",
   "team": "PHI"
@@ -3936,7 +3936,7 @@
   "team": "NYG"
  },
  "8132": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Tyler Allgeier",
   "pos": "RB",
   "team": "ARI"
@@ -3948,7 +3948,7 @@
   "team": "BUF"
  },
  "8135": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Treylon Burks",
   "pos": "WR",
   "team": "WAS"
@@ -3960,7 +3960,7 @@
   "team": "WAS"
  },
  "8137": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "George Pickens",
   "pos": "WR",
   "team": "DAL"
@@ -4080,7 +4080,7 @@
   "team": "GB"
  },
  "8172": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Greg Dulcich",
   "pos": "TE",
   "team": "MIA"
@@ -4224,7 +4224,7 @@
   "team": null
  },
  "9221": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jahmyr Gibbs",
   "pos": "RB",
   "team": "DET"
@@ -4332,7 +4332,7 @@
   "team": "LAR"
  },
  "9494": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Marvin Mims Jr.",
   "pos": "WR",
   "team": "DEN"

@@ -1,1 +1,98 @@
-[]
+[
+ {
+  "game": "Questionable",
+  "injury": "Hand",
+  "name": "Bobby Brown III",
+  "pos": "DT",
+  "practice": "Full Participation in Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Out",
+  "injury": "Triceps, Knee",
+  "name": "Akayleb Evans",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Damien Lewis",
+  "pos": "G",
+  "practice": "Did Not Participate In Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Jaelan Phillips",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Torricelli Simpkins III",
+  "pos": "G",
+  "practice": "Did Not Participate In Practice",
+  "team": "Panthers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Anthony Campbell",
+  "pos": "DT",
+  "practice": "Limited Participation in Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Quadricep",
+  "name": "Brenton Cox Jr.",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Out",
+  "injury": "Shin",
+  "name": "Zaire Franklin",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Travis Glover",
+  "pos": "G",
+  "practice": "Did Not Participate In Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Shoulder, Foot",
+  "name": "Matthew Golden",
+  "pos": "WR",
+  "practice": "Limited Participation in Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Sean Rhyan",
+  "pos": "C",
+  "practice": "Did Not Participate In Practice",
+  "team": "Packers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Devonte Wyatt",
+  "pos": "DT",
+  "practice": "Limited Participation in Practice",
+  "team": "Packers"
+ }
+]

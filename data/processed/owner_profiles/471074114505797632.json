@@ -58,7 +58,7 @@
   "weeks": 118
  },
  "faab_and_transactions": {
-  "adds": 210,
+  "adds": 211,
   "biggest_bid": {
    "amount": 88,
    "player": "Isaac Guerendo",
@@ -66,9 +66,9 @@
    "week": 13
   },
   "budget_per_season": 100,
-  "drops": 202,
+  "drops": 205,
   "faab_taken_as_penalty": 0,
-  "free_agent_adds": 118,
+  "free_agent_adds": 119,
   "most_frequent_trade_partner": null,
   "note": "spent = winning bids in the transaction log, net of claims the commissioner later undid (refunded; e.g. the Sep 2021 week-1 corrections). Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
   "refunded": 0,
@@ -1896,11 +1896,11 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.8747,
    "faab": {
-    "adds": 7,
+    "adds": 8,
     "budget": 100,
-    "drops": 6,
+    "drops": 9,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 4,
+    "free_agent_adds": 5,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 0,

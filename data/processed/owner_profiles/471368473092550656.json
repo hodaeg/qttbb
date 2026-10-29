@@ -57,7 +57,7 @@
   "weeks": 119
  },
  "faab_and_transactions": {
-  "adds": 180,
+  "adds": 182,
   "biggest_bid": {
    "amount": 26,
    "player": "Daniel Jones",
@@ -65,9 +65,9 @@
    "week": 3
   },
   "budget_per_season": 100,
-  "drops": 175,
+  "drops": 177,
   "faab_taken_as_penalty": 145,
-  "free_agent_adds": 129,
+  "free_agent_adds": 131,
   "most_frequent_trade_partner": {
    "owner_id": "423560331814510592",
    "trades": 1
@@ -2051,11 +2051,11 @@
    "division": "The Graveyard",
    "efficiency": 0.9326,
    "faab": {
-    "adds": 6,
+    "adds": 8,
     "budget": 100,
-    "drops": 4,
+    "drops": 6,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 5,
+    "free_agent_adds": 7,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 17,

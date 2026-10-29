@@ -66,7 +66,7 @@
    "week": 7
   },
   "budget_per_season": 100,
-  "drops": 319,
+  "drops": 320,
   "faab_taken_as_penalty": 50,
   "free_agent_adds": 249,
   "most_frequent_trade_partner": {
@@ -754,7 +754,7 @@
    "471359444949659648": {
     "games": 10,
     "losses": 6,
-    "points_against": 1064.38,
+    "points_against": 1063.38,
     "points_for": 1028.94,
     "protected_rivalry": null,
     "ties": 0,
@@ -1045,22 +1045,22 @@
    "wins": 6
   },
   "regular_season": {
-   "avg_points_against": 103.08,
+   "avg_points_against": 103.07,
    "avg_points_for": 100.23,
    "games": 103,
    "losses": 55,
-   "points_against": 10617.08,
+   "points_against": 10616.08,
    "points_for": 10323.58,
    "ties": 0,
    "win_pct": 0.466,
    "wins": 48
   },
   "total": {
-   "avg_points_against": 103.59,
+   "avg_points_against": 103.58,
    "avg_points_for": 100.44,
    "games": 122,
    "losses": 68,
-   "points_against": 12638.04,
+   "points_against": 12637.04,
    "points_for": 12254.18,
    "ties": 0,
    "win_pct": 0.4426,
@@ -1988,7 +1988,7 @@
    "faab": {
     "adds": 20,
     "budget": 100,
-    "drops": 18,
+    "drops": 19,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 13,
     "refunded": 0,
@@ -2085,11 +2085,11 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 114.47,
+    "avg_points_against": 114.33,
     "avg_points_for": 105.11,
     "games": 7,
     "losses": 4,
-    "points_against": 801.3,
+    "points_against": 800.3,
     "points_for": 735.78,
     "ties": 0,
     "win_pct": 0.4286,
@@ -2098,7 +2098,7 @@
    "regular_season_rank": 9,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 801.3,
+    "points_against": 800.3,
     "points_for": 735.78
    },
    "team_name": "Lil Kings"

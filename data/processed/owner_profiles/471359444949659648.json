@@ -52,8 +52,8 @@
  "efficiency": {
   "efficiency": 0.9015,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14373.9,
-  "points": 12957.9,
+  "optimal_points": 14372.9,
+  "points": 12956.9,
   "points_left_on_bench": 1416.0,
   "weeks": 118
  },
@@ -821,7 +821,7 @@
     "games": 10,
     "losses": 4,
     "points_against": 1028.94,
-    "points_for": 1064.38,
+    "points_for": 1063.38,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 6
@@ -1113,22 +1113,22 @@
   },
   "regular_season": {
    "avg_points_against": 104.12,
-   "avg_points_for": 109.98,
+   "avg_points_for": 109.97,
    "games": 103,
    "losses": 41,
    "points_against": 10724.5,
-   "points_for": 11328.14,
+   "points_for": 11327.14,
    "ties": 0,
    "win_pct": 0.6019,
    "wins": 62
   },
   "total": {
    "avg_points_against": 105.25,
-   "avg_points_for": 109.81,
+   "avg_points_for": 109.8,
    "games": 118,
    "losses": 51,
    "points_against": 12419.98,
-   "points_for": 12957.9,
+   "points_for": 12956.9,
    "ties": 0,
    "win_pct": 0.5678,
    "wins": 67
@@ -2106,7 +2106,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.9155,
+   "efficiency": 0.9153,
    "faab": {
     "adds": 24,
     "budget": 100,
@@ -2219,11 +2219,11 @@
    },
    "regular_season": {
     "avg_points_against": 108.14,
-    "avg_points_for": 98.07,
+    "avg_points_for": 97.93,
     "games": 7,
     "losses": 3,
     "points_against": 756.96,
-    "points_for": 686.5,
+    "points_for": 685.5,
     "ties": 0,
     "win_pct": 0.5714,
     "wins": 4
@@ -2232,7 +2232,7 @@
    "season": "2026",
    "sleeper_standings_reported": {
     "points_against": 756.96,
-    "points_for": 686.5
+    "points_for": 685.5
    },
    "team_name": "Grin & Bear It"
   }

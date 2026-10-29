@@ -4181,13 +4181,13 @@
  },
  {
   "a": "471359444949659648",
-  "a_points": 1064.38,
+  "a_points": 1063.38,
   "a_wins": 6,
   "b": "471359672478068736",
   "b_points": 1028.94,
   "b_wins": 4,
   "biggest_a_win": 64.48,
-  "biggest_b_win": 46.58,
+  "biggest_b_win": 47.58,
   "games": [
    {
     "a_points": 129.54,
@@ -4253,7 +4253,7 @@
     "week": 9
    },
    {
-    "a_points": 67.7,
+    "a_points": 66.7,
     "b_points": 114.28,
     "playoff": false,
     "season": "2026",
