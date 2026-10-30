@@ -58,7 +58,7 @@
   "weeks": 118
  },
  "faab_and_transactions": {
-  "adds": 288,
+  "adds": 290,
   "biggest_bid": {
    "amount": 45,
    "player": "Christian Watson",
@@ -66,9 +66,9 @@
    "week": 10
   },
   "budget_per_season": 100,
-  "drops": 285,
+  "drops": 287,
   "faab_taken_as_penalty": 35,
-  "free_agent_adds": 171,
+  "free_agent_adds": 173,
   "most_frequent_trade_partner": {
    "owner_id": "383681356686950400",
    "trades": 1
@@ -2108,11 +2108,11 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.9153,
    "faab": {
-    "adds": 24,
+    "adds": 26,
     "budget": 100,
-    "drops": 22,
+    "drops": 24,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 14,
+    "free_agent_adds": 16,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 59,

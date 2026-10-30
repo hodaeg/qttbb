@@ -57,7 +57,7 @@
   "weeks": 120
  },
  "faab_and_transactions": {
-  "adds": 223,
+  "adds": 224,
   "biggest_bid": {
    "amount": 33,
    "player": "Dontayvion Wicks",
@@ -65,9 +65,9 @@
    "week": 4
   },
   "budget_per_season": 100,
-  "drops": 218,
+  "drops": 219,
   "faab_taken_as_penalty": 0,
-  "free_agent_adds": 96,
+  "free_agent_adds": 97,
   "most_frequent_trade_partner": {
    "owner_id": "471083964757438464",
    "trades": 1
@@ -2086,11 +2086,11 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.926,
    "faab": {
-    "adds": 17,
+    "adds": 18,
     "budget": 100,
-    "drops": 16,
+    "drops": 17,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 5,
+    "free_agent_adds": 6,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 55,
