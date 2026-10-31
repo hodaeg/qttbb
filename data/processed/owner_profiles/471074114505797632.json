@@ -89,7 +89,7 @@
   "traded_out": 0,
   "trades": 0,
   "unexplained_difference": 0,
-  "waiver_claims_lost": 71,
+  "waiver_claims_lost": 72,
   "waiver_claims_won": 92
  },
  "faab_efficiency": {
@@ -589,7 +589,7 @@
   "dollars_spent": 445,
   "free_claims": 30,
   "hit_rate": 0.694,
-  "league_points_per_dollar": 2.39,
+  "league_points_per_dollar": 2.38,
   "most_points": {
    "bid": 6,
    "par_per_dollar": 8.61,
@@ -1909,7 +1909,7 @@
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
-    "waiver_claims_lost": 6,
+    "waiver_claims_lost": 7,
     "waiver_claims_won": 3
    },
    "faab_efficiency": {

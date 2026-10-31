@@ -39572,6 +39572,50 @@
    "weekly": [],
    "weeks_rostered": 11,
    "weeks_started": 0
+  },
+  {
+   "bid": 0,
+   "dropped": [
+    "Houston Texans"
+   ],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "471083964757438464",
+   "par_per_dollar": null,
+   "player": "Cleveland Browns",
+   "player_id": "CLE",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": null,
+   "points_started": 0.0,
+   "pos": "DEF",
+   "roster_id": 5,
+   "season": "2026",
+   "week": 8,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
+  },
+  {
+   "bid": 4,
+   "dropped": [
+    "Dylan Sampson"
+   ],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "471359444949659648",
+   "par_per_dollar": 0.0,
+   "player": "Kyle Monangai",
+   "player_id": "12534",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "RB",
+   "roster_id": 10,
+   "season": "2026",
+   "week": 8,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
   }
  ],
  "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
@@ -39612,11 +39656,11 @@
    "week": 3,
    "weeks_started": 0
   },
-  "claims_benched_only": 203,
+  "claims_benched_only": 204,
   "claims_dropped_before_playing": 49,
-  "dollars_spent": 6867,
-  "free_claims": 368,
-  "hit_rate": 0.697,
+  "dollars_spent": 6871,
+  "free_claims": 369,
+  "hit_rate": 0.696,
   "most_points": {
    "bid": 33,
    "par_per_dollar": 1.72,
@@ -39629,12 +39673,12 @@
    "week": 1,
    "weeks_started": 12
   },
-  "paid_claims": 831,
+  "paid_claims": 832,
   "par_per_dollar": 0.12,
   "points_above_replacement": 845.8,
   "points_from_free_claims": 4838.16,
   "points_from_paid_claims": 16380.14,
-  "points_per_dollar": 2.39,
+  "points_per_dollar": 2.38,
   "worst_par_claim": {
    "bid": 4,
    "par_per_dollar": -8.38,
@@ -42696,7 +42740,7 @@
      "claims_benched_only": 1,
      "claims_dropped_before_playing": 0,
      "dollars_spent": 57,
-     "free_claims": 1,
+     "free_claims": 2,
      "hit_rate": 0.5,
      "most_points": {
       "bid": 15,
@@ -42733,7 +42777,7 @@
    "claims_benched_only": 5,
    "claims_dropped_before_playing": 1,
    "dollars_spent": 466,
-   "free_claims": 11,
+   "free_claims": 12,
    "hit_rate": 0.857,
    "most_points": {
     "bid": 12,
@@ -44004,11 +44048,11 @@
       "week": 5,
       "weeks_started": 0
      },
-     "claims_benched_only": 1,
+     "claims_benched_only": 2,
      "claims_dropped_before_playing": 2,
-     "dollars_spent": 59,
+     "dollars_spent": 63,
      "free_claims": 2,
-     "hit_rate": 0.625,
+     "hit_rate": 0.556,
      "most_points": {
       "bid": 24,
       "par_per_dollar": 0.72,
@@ -44021,12 +44065,12 @@
       "week": 3,
       "weeks_started": 4
      },
-     "paid_claims": 8,
+     "paid_claims": 9,
      "par_per_dollar": -0.01,
      "points_above_replacement": -0.46,
      "points_from_free_claims": -1.0,
      "points_from_paid_claims": 88.24,
-     "points_per_dollar": 1.5,
+     "points_per_dollar": 1.4,
      "worst_par_claim": {
       "bid": 4,
       "par_per_dollar": -2.38,
@@ -44041,11 +44085,11 @@
      }
     }
    },
-   "claims_benched_only": 22,
+   "claims_benched_only": 23,
    "claims_dropped_before_playing": 3,
-   "dollars_spent": 667,
+   "dollars_spent": 671,
    "free_claims": 28,
-   "hit_rate": 0.719,
+   "hit_rate": 0.711,
    "most_points": {
     "bid": 7,
     "par_per_dollar": 5.33,
@@ -44058,13 +44102,13 @@
     "week": 6,
     "weeks_started": 7
    },
-   "paid_claims": 89,
+   "paid_claims": 90,
    "par_per_dollar": 0.21,
    "par_rank": 4,
    "points_above_replacement": 139.14,
    "points_from_free_claims": 302.82,
    "points_from_paid_claims": 1884.04,
-   "points_per_dollar": 2.82,
+   "points_per_dollar": 2.81,
    "rank": 4,
    "worst_par_claim": {
     "bid": 5,
