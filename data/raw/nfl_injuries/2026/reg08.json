@@ -966,5 +966,93 @@
   "pos": "DT",
   "practice": "Limited Participation in Practice",
   "team": "Commanders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "D'Marco Jackson",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Bears"
+ },
+ {
+  "game": "Out",
+  "injury": "Thumb, Toe",
+  "name": "Kyle Monangai",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bears"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Toe",
+  "name": "Malik Muhammad",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Bears"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Anthony Bradford",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Charles Cross",
+  "pos": "T",
+  "practice": "Did Not Participate In Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Velus Jones Jr.",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Elbow",
+  "name": "Drew Lock",
+  "pos": "QB",
+  "practice": "Limited Participation in Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Ankle",
+  "name": "Uchenna Nwosu",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Toe",
+  "name": "Patrick O'Connell",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Back",
+  "name": "Brandon Pili",
+  "pos": "DT",
+  "practice": "Did Not Participate In Practice",
+  "team": "Seahawks"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Rashid Shaheed",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Seahawks"
  }
 ]

@@ -39596,6 +39596,28 @@
    "weeks_started": 0
   },
   {
+   "bid": 0,
+   "dropped": [
+    "Darius Cooper"
+   ],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "422102738889867264",
+   "par_per_dollar": null,
+   "player": "Kansas City Chiefs",
+   "player_id": "KC",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": null,
+   "points_started": 0.0,
+   "pos": "DEF",
+   "roster_id": 7,
+   "season": "2026",
+   "week": 8,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
+  },
+  {
    "bid": 4,
    "dropped": [
     "Dylan Sampson"
@@ -39659,7 +39681,7 @@
   "claims_benched_only": 204,
   "claims_dropped_before_playing": 49,
   "dollars_spent": 6871,
-  "free_claims": 369,
+  "free_claims": 370,
   "hit_rate": 0.696,
   "most_points": {
    "bid": 33,
@@ -40922,7 +40944,7 @@
      "claims_benched_only": 2,
      "claims_dropped_before_playing": 0,
      "dollars_spent": 15,
-     "free_claims": 3,
+     "free_claims": 4,
      "hit_rate": 0.6,
      "most_points": {
       "bid": 7,
@@ -40959,7 +40981,7 @@
    "claims_benched_only": 20,
    "claims_dropped_before_playing": 17,
    "dollars_spent": 626,
-   "free_claims": 62,
+   "free_claims": 63,
    "hit_rate": 0.598,
    "most_points": {
     "bid": 2,
