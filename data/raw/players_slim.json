@@ -48,7 +48,7 @@
   "team": "ARI"
  },
  "10232": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Michael Wilson",
   "pos": "WR",
   "team": "ARI"
@@ -354,7 +354,7 @@
   "team": "CHI"
  },
  "11623": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Jordan Whittington",
   "pos": "WR",
   "team": "LAR"
@@ -864,7 +864,7 @@
   "team": "SEA"
  },
  "13287": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Jeremiyah Love",
   "pos": "RB",
   "team": "ARI"
@@ -1626,7 +1626,7 @@
   "team": null
  },
  "3214": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Hunter Henry",
   "pos": "TE",
   "team": "NE"
@@ -2118,7 +2118,7 @@
   "team": null
  },
  "4219": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jeremy McNichols",
   "pos": "RB",
   "team": "WAS"
@@ -2184,7 +2184,7 @@
   "team": null
  },
  "4454": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Kendrick Bourne",
   "pos": "WR",
   "team": "ARI"
@@ -2256,7 +2256,7 @@
   "team": "PHI"
  },
  "4881": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Lamar Jackson",
   "pos": "QB",
   "team": "BAL"
@@ -2334,7 +2334,7 @@
   "team": "TEN"
  },
  "4983": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "DJ Moore",
   "pos": "WR",
   "team": "BUF"
@@ -2760,7 +2760,7 @@
   "team": "PHI"
  },
  "5849": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Kyler Murray",
   "pos": "QB",
   "team": "MIN"
@@ -3348,7 +3348,7 @@
   "team": "WAS"
  },
  "6865": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Colby Parkinson",
   "pos": "TE",
   "team": "LAR"
@@ -3522,7 +3522,7 @@
   "team": "TEN"
  },
  "7083": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Tyler Huntley",
   "pos": "QB",
   "team": "BAL"
@@ -3576,7 +3576,7 @@
   "team": "PHI"
  },
  "7526": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Jaylen Waddle",
   "pos": "WR",
   "team": "DEN"
@@ -3618,7 +3618,7 @@
   "team": "NO"
  },
  "7547": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Amon-Ra St. Brown",
   "pos": "WR",
   "team": "DET"
@@ -3780,7 +3780,7 @@
   "team": null
  },
  "7670": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Joshua Palmer",
   "pos": "WR",
   "team": "BUF"
@@ -3858,7 +3858,7 @@
   "team": null
  },
  "8110": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Jake Ferguson",
   "pos": "TE",
   "team": "DAL"
@@ -3870,7 +3870,7 @@
   "team": "TB"
  },
  "8112": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Drake London",
   "pos": "WR",
   "team": "ATL"
@@ -3900,7 +3900,7 @@
   "team": "NE"
  },
  "8122": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Zonovan Knight",
   "pos": "RB",
   "team": "ARI"
@@ -3954,7 +3954,7 @@
   "team": "BUF"
  },
  "8135": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Treylon Burks",
   "pos": "WR",
   "team": "WAS"
@@ -3972,7 +3972,7 @@
   "team": "DAL"
  },
  "8138": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "James Cook III",
   "pos": "RB",
   "team": "BUF"
@@ -4377,7 +4377,7 @@
   "injury_status": null,
   "name": "Deuce Vaughn",
   "pos": "RB",
-  "team": "HOU"
+  "team": null
  },
  "9506": {
   "injury_status": null,
