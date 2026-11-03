@@ -19,14 +19,14 @@
   "record": {
    "losses": 99,
    "ties": 1,
-   "wins": 102
+   "wins": 103
   },
   "sackos": 2,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
   "scoring_bonuses": [
    -15
   ],
-  "win_pct": 0.5074
+  "win_pct": 0.5099
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -48,12 +48,12 @@
  "current_team_name": "Gotham Rogues",
  "display_name": "MrSeeYou",
  "efficiency": {
-  "efficiency": 0.9025,
+  "efficiency": 0.9029,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13237.36,
-  "points": 11946.4,
-  "points_left_on_bench": 1290.96,
-  "weeks": 118
+  "optimal_points": 13355.52,
+  "points": 12058.66,
+  "points_left_on_bench": 1296.86,
+  "weeks": 119
  },
  "faab_and_transactions": {
   "adds": 241,
@@ -645,27 +645,27 @@
    "2026": {
     "best_par_claim": {
      "bid": 6,
-     "par_per_dollar": 0.62,
+     "par_per_dollar": 1.45,
      "player": "T.J. Hockenson",
-     "points_above_replacement": 3.7,
-     "points_per_dollar": 1.92,
-     "points_started": 11.5,
+     "points_above_replacement": 8.68,
+     "points_per_dollar": 4.22,
+     "points_started": 25.3,
      "pos": "TE",
      "season": "2026",
      "week": 4,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "best_value": {
      "bid": 6,
-     "par_per_dollar": -0.72,
-     "player": "Kyler Murray",
-     "points_above_replacement": -4.34,
-     "points_per_dollar": 2.32,
-     "points_started": 13.9,
-     "pos": "QB",
+     "par_per_dollar": 1.45,
+     "player": "T.J. Hockenson",
+     "points_above_replacement": 8.68,
+     "points_per_dollar": 4.22,
+     "points_started": 25.3,
+     "pos": "TE",
      "season": "2026",
-     "week": 6,
-     "weeks_started": 1
+     "week": 4,
+     "weeks_started": 2
     },
     "biggest_bust": {
      "bid": 17,
@@ -685,28 +685,28 @@
     "free_claims": 1,
     "hit_rate": 0.714,
     "most_points": {
-     "bid": 1,
-     "par_per_dollar": -4.49,
-     "player": "Chase McLaughlin",
-     "points_above_replacement": -4.49,
-     "points_per_dollar": 19.0,
-     "points_started": 19.0,
-     "pos": "K",
+     "bid": 6,
+     "par_per_dollar": 1.45,
+     "player": "T.J. Hockenson",
+     "points_above_replacement": 8.68,
+     "points_per_dollar": 4.22,
+     "points_started": 25.3,
+     "pos": "TE",
      "season": "2026",
-     "week": 2,
-     "weeks_started": 3
+     "week": 4,
+     "weeks_started": 2
     },
     "paid_claims": 7,
-    "par_per_dollar": -0.35,
-    "points_above_replacement": -13.13,
-    "points_from_free_claims": 8.0,
-    "points_from_paid_claims": 50.4,
-    "points_per_dollar": 1.33,
+    "par_per_dollar": -0.2,
+    "points_above_replacement": -7.68,
+    "points_from_free_claims": 14.0,
+    "points_from_paid_claims": 64.2,
+    "points_per_dollar": 1.69,
     "worst_par_claim": {
      "bid": 1,
-     "par_per_dollar": -6.83,
+     "par_per_dollar": -6.88,
      "player": "Nick Folk",
-     "points_above_replacement": -6.83,
+     "points_above_replacement": -6.88,
      "points_per_dollar": 1.0,
      "points_started": 1.0,
      "pos": "K",
@@ -722,7 +722,7 @@
   "dollars_spent": 623,
   "free_claims": 21,
   "hit_rate": 0.633,
-  "league_points_per_dollar": 2.38,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 7,
    "par_per_dollar": 8.37,
@@ -737,12 +737,12 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 79,
-  "par_per_dollar": -0.19,
+  "par_per_dollar": -0.18,
   "par_rank": 12,
-  "points_above_replacement": -118.72,
-  "points_from_free_claims": 417.6,
-  "points_from_paid_claims": 1528.32,
-  "points_per_dollar": 2.45,
+  "points_above_replacement": -113.27,
+  "points_from_free_claims": 423.6,
+  "points_from_paid_claims": 1542.12,
+  "points_per_dollar": 2.48,
   "rank": 5,
   "worst_par_claim": {
    "bid": 4,
@@ -834,13 +834,13 @@
     "wins": 5
    },
    "471366618241298432": {
-    "games": 10,
+    "games": 11,
     "losses": 5,
-    "points_against": 1087.06,
-    "points_for": 1034.1,
+    "points_against": 1185.26,
+    "points_for": 1146.36,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 5
+    "wins": 6
    },
    "471368473092550656": {
     "games": 9,
@@ -906,7 +906,7 @@
     "record": {
      "losses": 1,
      "ties": 0,
-     "wins": 6
+     "wins": 7
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1071,7 +1071,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "6-1",
+     "counted_record": "7-1",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1086,10 +1086,10 @@
   "snapshot_rank": 6
  },
  "luck": {
-  "expected_wins": 46.41,
-  "luck": 0.59,
+  "expected_wins": 47.05,
+  "luck": 0.95,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 47
+  "wins": 48
  },
  "owner_id": "423560331814510592",
  "record": {
@@ -1107,26 +1107,26 @@
    "wins": 7
   },
   "regular_season": {
-   "avg_points_against": 103.14,
-   "avg_points_for": 100.92,
-   "games": 103,
+   "avg_points_against": 103.09,
+   "avg_points_for": 101.03,
+   "games": 104,
    "losses": 56,
-   "points_against": 10623.38,
-   "points_for": 10395.12,
+   "points_against": 10721.58,
+   "points_for": 10507.38,
    "ties": 0,
-   "win_pct": 0.4563,
-   "wins": 47
+   "win_pct": 0.4615,
+   "wins": 48
   },
   "total": {
-   "avg_points_against": 104.0,
-   "avg_points_for": 101.24,
-   "games": 118,
+   "avg_points_against": 103.95,
+   "avg_points_for": 101.33,
+   "games": 119,
    "losses": 64,
-   "points_against": 12272.3,
-   "points_for": 11946.4,
+   "points_against": 12370.5,
+   "points_for": 12058.66,
    "ties": 0,
-   "win_pct": 0.4576,
-   "wins": 54
+   "win_pct": 0.4622,
+   "wins": 55
   }
  },
  "scoring": {
@@ -2101,7 +2101,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.945,
+   "efficiency": 0.9456,
    "faab": {
     "adds": 13,
     "budget": 100,
@@ -2122,27 +2122,27 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 6,
-     "par_per_dollar": 0.62,
+     "par_per_dollar": 1.45,
      "player": "T.J. Hockenson",
-     "points_above_replacement": 3.7,
-     "points_per_dollar": 1.92,
-     "points_started": 11.5,
+     "points_above_replacement": 8.68,
+     "points_per_dollar": 4.22,
+     "points_started": 25.3,
      "pos": "TE",
      "season": "2026",
      "week": 4,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "best_value": {
      "bid": 6,
-     "par_per_dollar": -0.72,
-     "player": "Kyler Murray",
-     "points_above_replacement": -4.34,
-     "points_per_dollar": 2.32,
-     "points_started": 13.9,
-     "pos": "QB",
+     "par_per_dollar": 1.45,
+     "player": "T.J. Hockenson",
+     "points_above_replacement": 8.68,
+     "points_per_dollar": 4.22,
+     "points_started": 25.3,
+     "pos": "TE",
      "season": "2026",
-     "week": 6,
-     "weeks_started": 1
+     "week": 4,
+     "weeks_started": 2
     },
     "biggest_bust": {
      "bid": 17,
@@ -2162,28 +2162,28 @@
     "free_claims": 1,
     "hit_rate": 0.714,
     "most_points": {
-     "bid": 1,
-     "par_per_dollar": -4.49,
-     "player": "Chase McLaughlin",
-     "points_above_replacement": -4.49,
-     "points_per_dollar": 19.0,
-     "points_started": 19.0,
-     "pos": "K",
+     "bid": 6,
+     "par_per_dollar": 1.45,
+     "player": "T.J. Hockenson",
+     "points_above_replacement": 8.68,
+     "points_per_dollar": 4.22,
+     "points_started": 25.3,
+     "pos": "TE",
      "season": "2026",
-     "week": 2,
-     "weeks_started": 3
+     "week": 4,
+     "weeks_started": 2
     },
     "paid_claims": 7,
-    "par_per_dollar": -0.35,
-    "points_above_replacement": -13.13,
-    "points_from_free_claims": 8.0,
-    "points_from_paid_claims": 50.4,
-    "points_per_dollar": 1.33,
+    "par_per_dollar": -0.2,
+    "points_above_replacement": -7.68,
+    "points_from_free_claims": 14.0,
+    "points_from_paid_claims": 64.2,
+    "points_per_dollar": 1.69,
     "worst_par_claim": {
      "bid": 1,
-     "par_per_dollar": -6.83,
+     "par_per_dollar": -6.88,
      "player": "Nick Folk",
-     "points_above_replacement": -6.83,
+     "points_above_replacement": -6.88,
      "points_per_dollar": 1.0,
      "points_started": 1.0,
      "pos": "K",
@@ -2194,10 +2194,10 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "44-33",
-    "expected_wins": 4.0,
-    "luck": 2.0,
-    "wins": 6
+    "all_play_record": "51-37",
+    "expected_wins": 4.64,
+    "luck": 2.36,
+    "wins": 7
    },
    "made_playoffs": true,
    "playoff_result": null,
@@ -2213,21 +2213,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 95.92,
-    "avg_points_for": 111.91,
-    "games": 7,
+    "avg_points_against": 96.2,
+    "avg_points_for": 111.95,
+    "games": 8,
     "losses": 1,
-    "points_against": 671.42,
-    "points_for": 783.36,
+    "points_against": 769.62,
+    "points_for": 895.62,
     "ties": 0,
-    "win_pct": 0.8571,
-    "wins": 6
+    "win_pct": 0.875,
+    "wins": 7
    },
    "regular_season_rank": 1,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 671.42,
-    "points_for": 783.36
+    "points_against": 769.62,
+    "points_for": 895.62
    },
    "team_name": "Gotham Rogues"
   }
@@ -2276,7 +2276,7 @@
    "injured_starter_out": 24.0,
    "missed_league_note": 5
   },
-  "rank": 8,
+  "rank": 7,
   "rank_note": "1 = best (lowest). Ties share a rank.",
   "total": 29.0,
   "worst_penalty_id": "2024-w06-r2-injured_starter_out-5022"

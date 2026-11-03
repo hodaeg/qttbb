@@ -19,18 +19,6 @@
  },
  {
   "events": [],
-  "owner_id": "471083964757438464",
-  "roster_id": 5,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
-  "owner_id": "471345530597797888",
-  "roster_id": 6,
-  "tegridy_factor": 0
- },
- {
-  "events": [],
   "owner_id": "471359444949659648",
   "roster_id": 10,
   "tegridy_factor": 0
@@ -40,22 +28,6 @@
   "owner_id": "471366618241298432",
   "roster_id": 11,
   "tegridy_factor": 0
- },
- {
-  "events": [
-   {
-    "base_penalty": 6,
-    "detail": "Terry McLaurin was listed Questionable (Hamstring), did not play, and scored 0 in the starting lineup.",
-    "kind": "questionable_did_not_play",
-    "multiplier": 1.0,
-    "penalty": 6.0,
-    "penalty_id": "2026-w04-r8-questionable_did_not_play-5927",
-    "week": 4
-   }
-  ],
-  "owner_id": "471359672478068736",
-  "roster_id": 8,
-  "tegridy_factor": 6.0
  },
  {
   "events": [
@@ -71,6 +43,38 @@
   ],
   "owner_id": "423560331814510592",
   "roster_id": 2,
+  "tegridy_factor": 8.0
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 8,
+    "detail": "Jeremiyah Love was Out at 2026-11-03T03:54:45+00:00 but stayed in the lineup.",
+    "kind": "injured_starter_out",
+    "multiplier": 1.0,
+    "penalty": 8.0,
+    "penalty_id": "2026-w08-r5-injured_starter_out-13287",
+    "week": 8
+   }
+  ],
+  "owner_id": "471083964757438464",
+  "roster_id": 5,
+  "tegridy_factor": 8.0
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 8,
+    "detail": "Lamar Jackson was Out at 2026-11-03T03:54:45+00:00 but stayed in the lineup.",
+    "kind": "injured_starter_out",
+    "multiplier": 1.0,
+    "penalty": 8.0,
+    "penalty_id": "2026-w08-r6-injured_starter_out-4881",
+    "week": 8
+   }
+  ],
+  "owner_id": "471345530597797888",
+  "roster_id": 6,
   "tegridy_factor": 8.0
  },
  {
@@ -120,5 +124,30 @@
   "owner_id": "471368473092550656",
   "roster_id": 12,
   "tegridy_factor": 8.0
+ },
+ {
+  "events": [
+   {
+    "base_penalty": 6,
+    "detail": "Terry McLaurin was listed Questionable (Hamstring), did not play, and scored 0 in the starting lineup.",
+    "kind": "questionable_did_not_play",
+    "multiplier": 1.0,
+    "penalty": 6.0,
+    "penalty_id": "2026-w04-r8-questionable_did_not_play-5927",
+    "week": 4
+   },
+   {
+    "base_penalty": 8,
+    "detail": "Hunter Henry was Out at 2026-11-03T03:54:45+00:00 but stayed in the lineup.",
+    "kind": "injured_starter_out",
+    "multiplier": 1.0,
+    "penalty": 8.0,
+    "penalty_id": "2026-w08-r8-injured_starter_out-3214",
+    "week": 8
+   }
+  ],
+  "owner_id": "471359672478068736",
+  "roster_id": 8,
+  "tegridy_factor": 14.0
  }
 ]

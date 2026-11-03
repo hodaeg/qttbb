@@ -17,7 +17,7 @@
    "wins": 4
   },
   "record": {
-   "losses": 91,
+   "losses": 92,
    "ties": 0,
    "wins": 80
   },
@@ -27,7 +27,7 @@
    -15,
    -15
   ],
-  "win_pct": 0.4678
+  "win_pct": 0.4651
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -49,12 +49,12 @@
  "current_team_name": "Green and Bowled",
  "display_name": "therealGandB",
  "efficiency": {
-  "efficiency": 0.9038,
+  "efficiency": 0.904,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14035.76,
-  "points": 12685.86,
-  "points_left_on_bench": 1349.9,
-  "weeks": 119
+  "optimal_points": 14106.74,
+  "points": 12753.04,
+  "points_left_on_bench": 1353.7,
+  "weeks": 120
  },
  "faab_and_transactions": {
   "adds": 182,
@@ -624,27 +624,27 @@
    "2026": {
     "best_par_claim": {
      "bid": 17,
-     "par_per_dollar": 0.62,
+     "par_per_dollar": -0.01,
      "player": "Omar Cooper Jr.",
-     "points_above_replacement": 10.48,
+     "points_above_replacement": -0.24,
      "points_per_dollar": 1.18,
      "points_started": 20.0,
      "pos": "WR",
      "season": "2026",
      "week": 6,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "best_value": {
      "bid": 17,
-     "par_per_dollar": 0.62,
+     "par_per_dollar": -0.01,
      "player": "Omar Cooper Jr.",
-     "points_above_replacement": 10.48,
+     "points_above_replacement": -0.24,
      "points_per_dollar": 1.18,
      "points_started": 20.0,
      "pos": "WR",
      "season": "2026",
      "week": 6,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "biggest_bust": null,
     "claims_benched_only": 0,
@@ -654,33 +654,33 @@
     "hit_rate": 1.0,
     "most_points": {
      "bid": 17,
-     "par_per_dollar": 0.62,
+     "par_per_dollar": -0.01,
      "player": "Omar Cooper Jr.",
-     "points_above_replacement": 10.48,
+     "points_above_replacement": -0.24,
      "points_per_dollar": 1.18,
      "points_started": 20.0,
      "pos": "WR",
      "season": "2026",
      "week": 6,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "paid_claims": 1,
-    "par_per_dollar": 0.62,
-    "points_above_replacement": 10.48,
+    "par_per_dollar": -0.01,
+    "points_above_replacement": -0.24,
     "points_from_free_claims": 0,
     "points_from_paid_claims": 20.0,
     "points_per_dollar": 1.18,
     "worst_par_claim": {
      "bid": 17,
-     "par_per_dollar": 0.62,
+     "par_per_dollar": -0.01,
      "player": "Omar Cooper Jr.",
-     "points_above_replacement": 10.48,
+     "points_above_replacement": -0.24,
      "points_per_dollar": 1.18,
      "points_started": 20.0,
      "pos": "WR",
      "season": "2026",
      "week": 6,
-     "weeks_started": 1
+     "weeks_started": 2
     }
    }
   },
@@ -690,7 +690,7 @@
   "dollars_spent": 335,
   "free_claims": 19,
   "hit_rate": 0.594,
-  "league_points_per_dollar": 2.38,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 9,
    "par_per_dollar": 1.23,
@@ -705,9 +705,9 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 32,
-  "par_per_dollar": -0.1,
+  "par_per_dollar": -0.13,
   "par_rank": 11,
-  "points_above_replacement": -32.89,
+  "points_above_replacement": -43.61,
   "points_from_free_claims": 211.2,
   "points_from_paid_claims": 415.02,
   "points_per_dollar": 1.24,
@@ -775,10 +775,10 @@
     "wins": 4
    },
    "471345530597797888": {
-    "games": 11,
-    "losses": 5,
-    "points_against": 1154.54,
-    "points_for": 1174.6,
+    "games": 12,
+    "losses": 6,
+    "points_against": 1254.74,
+    "points_for": 1241.78,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 6
@@ -872,7 +872,7 @@
      "wins": 0
     },
     "record": {
-     "losses": 3,
+     "losses": 4,
      "ties": 0,
      "wins": 4
     },
@@ -1041,7 +1041,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "4-3",
+     "counted_record": "4-4",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1056,8 +1056,8 @@
   "snapshot_rank": 7
  },
  "luck": {
-  "expected_wins": 56.36,
-  "luck": -4.36,
+  "expected_wins": 56.45,
+  "luck": -4.45,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
   "wins": 52
  },
@@ -1077,25 +1077,25 @@
    "wins": 8
   },
   "regular_season": {
-   "avg_points_against": 106.73,
-   "avg_points_for": 105.71,
-   "games": 103,
-   "losses": 51,
-   "points_against": 10993.46,
-   "points_for": 10888.3,
+   "avg_points_against": 106.67,
+   "avg_points_for": 105.34,
+   "games": 104,
+   "losses": 52,
+   "points_against": 11093.66,
+   "points_for": 10955.48,
    "ties": 0,
-   "win_pct": 0.5049,
+   "win_pct": 0.5,
    "wins": 52
   },
   "total": {
-   "avg_points_against": 107.4,
-   "avg_points_for": 106.6,
-   "games": 119,
-   "losses": 59,
-   "points_against": 12780.72,
-   "points_for": 12685.86,
+   "avg_points_against": 107.34,
+   "avg_points_for": 106.28,
+   "games": 120,
+   "losses": 60,
+   "points_against": 12880.92,
+   "points_for": 12753.04,
    "ties": 0,
-   "win_pct": 0.5042,
+   "win_pct": 0.5,
    "wins": 60
   }
  },
@@ -2049,7 +2049,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.9326,
+   "efficiency": 0.9337,
    "faab": {
     "adds": 8,
     "budget": 100,
@@ -2070,27 +2070,27 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 17,
-     "par_per_dollar": 0.62,
+     "par_per_dollar": -0.01,
      "player": "Omar Cooper Jr.",
-     "points_above_replacement": 10.48,
+     "points_above_replacement": -0.24,
      "points_per_dollar": 1.18,
      "points_started": 20.0,
      "pos": "WR",
      "season": "2026",
      "week": 6,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "best_value": {
      "bid": 17,
-     "par_per_dollar": 0.62,
+     "par_per_dollar": -0.01,
      "player": "Omar Cooper Jr.",
-     "points_above_replacement": 10.48,
+     "points_above_replacement": -0.24,
      "points_per_dollar": 1.18,
      "points_started": 20.0,
      "pos": "WR",
      "season": "2026",
      "week": 6,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "biggest_bust": null,
     "claims_benched_only": 0,
@@ -2100,40 +2100,40 @@
     "hit_rate": 1.0,
     "most_points": {
      "bid": 17,
-     "par_per_dollar": 0.62,
+     "par_per_dollar": -0.01,
      "player": "Omar Cooper Jr.",
-     "points_above_replacement": 10.48,
+     "points_above_replacement": -0.24,
      "points_per_dollar": 1.18,
      "points_started": 20.0,
      "pos": "WR",
      "season": "2026",
      "week": 6,
-     "weeks_started": 1
+     "weeks_started": 2
     },
     "paid_claims": 1,
-    "par_per_dollar": 0.62,
-    "points_above_replacement": 10.48,
+    "par_per_dollar": -0.01,
+    "points_above_replacement": -0.24,
     "points_from_free_claims": 0,
     "points_from_paid_claims": 20.0,
     "points_per_dollar": 1.18,
     "worst_par_claim": {
      "bid": 17,
-     "par_per_dollar": 0.62,
+     "par_per_dollar": -0.01,
      "player": "Omar Cooper Jr.",
-     "points_above_replacement": 10.48,
+     "points_above_replacement": -0.24,
      "points_per_dollar": 1.18,
      "points_started": 20.0,
      "pos": "WR",
      "season": "2026",
      "week": 6,
-     "weeks_started": 1
+     "weeks_started": 2
     }
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "48-29",
-    "expected_wins": 4.36,
-    "luck": -0.36,
+    "all_play_record": "49-39",
+    "expected_wins": 4.45,
+    "luck": -0.45,
     "wins": 4
    },
    "made_playoffs": true,
@@ -2150,21 +2150,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 104.65,
-    "avg_points_for": 109.31,
-    "games": 7,
-    "losses": 3,
-    "points_against": 732.58,
-    "points_for": 765.16,
+    "avg_points_against": 104.1,
+    "avg_points_for": 104.04,
+    "games": 8,
+    "losses": 4,
+    "points_against": 832.78,
+    "points_for": 832.34,
     "ties": 0,
-    "win_pct": 0.5714,
+    "win_pct": 0.5,
     "wins": 4
    },
-   "regular_season_rank": 3,
+   "regular_season_rank": 5,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 732.58,
-    "points_for": 765.16
+    "points_against": 832.78,
+    "points_for": 832.34
    },
    "team_name": "Green and Bowled"
   }
@@ -2219,7 +2219,7 @@
    "injured_starter_out": 28.0,
    "missed_league_note": 30
   },
-  "rank": 12,
+  "rank": 11,
   "rank_note": "1 = best (lowest). Ties share a rank.",
   "total": 67.75,
   "worst_penalty_id": "2024-w11-r12-injured_starter_out-10859"

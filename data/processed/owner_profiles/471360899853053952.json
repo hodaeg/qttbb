@@ -18,12 +18,12 @@
   "record": {
    "losses": 110,
    "ties": 0,
-   "wins": 83
+   "wins": 84
   },
   "sackos": 3,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
   "scoring_bonuses": [],
-  "win_pct": 0.4301
+  "win_pct": 0.433
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -45,12 +45,12 @@
  "current_team_name": "China King",
  "display_name": "ChinaKing",
  "efficiency": {
-  "efficiency": 0.8778,
+  "efficiency": 0.879,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13296.14,
-  "points": 11671.16,
+  "optimal_points": 13428.52,
+  "points": 11803.54,
   "points_left_on_bench": 1624.98,
-  "weeks": 119
+  "weeks": 120
  },
  "faab_and_transactions": {
   "adds": 287,
@@ -116,15 +116,15 @@
    "weeks_started": 9
   },
   "biggest_bust": {
-   "bid": 25,
+   "bid": 24,
    "par_per_dollar": 0.0,
-   "player": "Jonah Coleman",
+   "player": "Peyton Barber",
    "points_above_replacement": 0.0,
    "points_per_dollar": 0.0,
    "points_started": 0.0,
    "pos": "RB",
-   "season": "2026",
-   "week": 2,
+   "season": "2021",
+   "week": 3,
    "weeks_started": 0
   },
   "by_season": {
@@ -642,68 +642,68 @@
    "2026": {
     "best_par_claim": {
      "bid": 25,
-     "par_per_dollar": 0.0,
+     "par_per_dollar": 0.38,
      "player": "Jonah Coleman",
-     "points_above_replacement": 0.0,
-     "points_per_dollar": 0.0,
-     "points_started": 0.0,
+     "points_above_replacement": 9.55,
+     "points_per_dollar": 0.74,
+     "points_started": 18.4,
      "pos": "RB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 0
+     "weeks_started": 1
     },
     "best_value": {
-     "bid": 15,
-     "par_per_dollar": -0.15,
-     "player": "Keon Coleman",
-     "points_above_replacement": -2.32,
-     "points_per_dollar": 0.48,
-     "points_started": 7.2,
-     "pos": "WR",
+     "bid": 25,
+     "par_per_dollar": 0.38,
+     "player": "Jonah Coleman",
+     "points_above_replacement": 9.55,
+     "points_per_dollar": 0.74,
+     "points_started": 18.4,
+     "pos": "RB",
      "season": "2026",
-     "week": 4,
+     "week": 2,
      "weeks_started": 1
     },
     "biggest_bust": {
-     "bid": 25,
+     "bid": 8,
      "par_per_dollar": 0.0,
-     "player": "Jonah Coleman",
+     "player": "Mason Taylor",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
-     "pos": "RB",
+     "pos": "TE",
      "season": "2026",
-     "week": 2,
+     "week": 7,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 1,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 48,
     "free_claims": 2,
-    "hit_rate": 0.333,
+    "hit_rate": 0.667,
     "most_points": {
-     "bid": 15,
-     "par_per_dollar": -0.15,
-     "player": "Keon Coleman",
-     "points_above_replacement": -2.32,
-     "points_per_dollar": 0.48,
-     "points_started": 7.2,
-     "pos": "WR",
+     "bid": 25,
+     "par_per_dollar": 0.38,
+     "player": "Jonah Coleman",
+     "points_above_replacement": 9.55,
+     "points_per_dollar": 0.74,
+     "points_started": 18.4,
+     "pos": "RB",
      "season": "2026",
-     "week": 4,
+     "week": 2,
      "weeks_started": 1
     },
     "paid_claims": 3,
-    "par_per_dollar": -0.05,
-    "points_above_replacement": -2.32,
-    "points_from_free_claims": 34.0,
-    "points_from_paid_claims": 7.2,
-    "points_per_dollar": 0.15,
+    "par_per_dollar": 0.14,
+    "points_above_replacement": 6.63,
+    "points_from_free_claims": 39.0,
+    "points_from_paid_claims": 25.6,
+    "points_per_dollar": 0.53,
     "worst_par_claim": {
      "bid": 15,
-     "par_per_dollar": -0.15,
+     "par_per_dollar": -0.19,
      "player": "Keon Coleman",
-     "points_above_replacement": -2.32,
+     "points_above_replacement": -2.92,
      "points_per_dollar": 0.48,
      "points_started": 7.2,
      "pos": "WR",
@@ -713,13 +713,13 @@
     }
    }
   },
-  "claims_benched_only": 18,
+  "claims_benched_only": 17,
   "claims_dropped_before_playing": 1,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 699,
   "free_claims": 55,
-  "hit_rate": 0.672,
-  "league_points_per_dollar": 2.38,
+  "hit_rate": 0.69,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 7,
    "par_per_dollar": 6.71,
@@ -734,12 +734,12 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 58,
-  "par_per_dollar": -0.01,
+  "par_per_dollar": -0.0,
   "par_rank": 9,
-  "points_above_replacement": -10.09,
-  "points_from_free_claims": 687.56,
-  "points_from_paid_claims": 1220.22,
-  "points_per_dollar": 1.75,
+  "points_above_replacement": -1.14,
+  "points_from_free_claims": 692.56,
+  "points_from_paid_claims": 1238.62,
+  "points_per_dollar": 1.77,
   "rank": 9,
   "worst_par_claim": {
    "bid": 80,
@@ -849,13 +849,13 @@
     "wins": 4
    },
    "79761560662589440": {
-    "games": 9,
+    "games": 10,
     "losses": 5,
-    "points_against": 927.72,
-    "points_for": 928.22,
+    "points_against": 1047.38,
+    "points_for": 1060.6,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 4
+    "wins": 5
    }
   },
   "favorite_victim_owner_id": "471345530597797888",
@@ -903,7 +903,7 @@
     "record": {
      "losses": 5,
      "ties": 0,
-     "wins": 2
+     "wins": 3
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1066,7 +1066,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "2-5",
+     "counted_record": "3-5",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1081,10 +1081,10 @@
   "snapshot_rank": 12
  },
  "luck": {
-  "expected_wins": 41.52,
-  "luck": -1.52,
+  "expected_wins": 42.43,
+  "luck": -1.43,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 40
+  "wins": 41
  },
  "owner_id": "471360899853053952",
  "record": {
@@ -1102,26 +1102,26 @@
    "wins": 8
   },
   "regular_season": {
-   "avg_points_against": 105.5,
-   "avg_points_for": 96.79,
-   "games": 103,
+   "avg_points_against": 105.64,
+   "avg_points_for": 97.13,
+   "games": 104,
    "losses": 63,
-   "points_against": 10866.52,
-   "points_for": 9969.4,
+   "points_against": 10986.18,
+   "points_for": 10101.78,
    "ties": 0,
-   "win_pct": 0.3883,
-   "wins": 40
+   "win_pct": 0.3942,
+   "wins": 41
   },
   "total": {
-   "avg_points_against": 105.49,
-   "avg_points_for": 98.08,
-   "games": 119,
+   "avg_points_against": 105.61,
+   "avg_points_for": 98.36,
+   "games": 120,
    "losses": 71,
-   "points_against": 12553.22,
-   "points_for": 11671.16,
+   "points_against": 12672.88,
+   "points_for": 11803.54,
    "ties": 0,
-   "win_pct": 0.4034,
-   "wins": 48
+   "win_pct": 0.4083,
+   "wins": 49
   }
  },
  "scoring": {
@@ -2096,7 +2096,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.8191,
+   "efficiency": 0.8468,
    "faab": {
     "adds": 7,
     "budget": 100,
@@ -2117,68 +2117,68 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 25,
-     "par_per_dollar": 0.0,
+     "par_per_dollar": 0.38,
      "player": "Jonah Coleman",
-     "points_above_replacement": 0.0,
-     "points_per_dollar": 0.0,
-     "points_started": 0.0,
+     "points_above_replacement": 9.55,
+     "points_per_dollar": 0.74,
+     "points_started": 18.4,
      "pos": "RB",
      "season": "2026",
      "week": 2,
-     "weeks_started": 0
+     "weeks_started": 1
     },
     "best_value": {
-     "bid": 15,
-     "par_per_dollar": -0.15,
-     "player": "Keon Coleman",
-     "points_above_replacement": -2.32,
-     "points_per_dollar": 0.48,
-     "points_started": 7.2,
-     "pos": "WR",
+     "bid": 25,
+     "par_per_dollar": 0.38,
+     "player": "Jonah Coleman",
+     "points_above_replacement": 9.55,
+     "points_per_dollar": 0.74,
+     "points_started": 18.4,
+     "pos": "RB",
      "season": "2026",
-     "week": 4,
+     "week": 2,
      "weeks_started": 1
     },
     "biggest_bust": {
-     "bid": 25,
+     "bid": 8,
      "par_per_dollar": 0.0,
-     "player": "Jonah Coleman",
+     "player": "Mason Taylor",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
-     "pos": "RB",
+     "pos": "TE",
      "season": "2026",
-     "week": 2,
+     "week": 7,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 1,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 48,
     "free_claims": 2,
-    "hit_rate": 0.333,
+    "hit_rate": 0.667,
     "most_points": {
-     "bid": 15,
-     "par_per_dollar": -0.15,
-     "player": "Keon Coleman",
-     "points_above_replacement": -2.32,
-     "points_per_dollar": 0.48,
-     "points_started": 7.2,
-     "pos": "WR",
+     "bid": 25,
+     "par_per_dollar": 0.38,
+     "player": "Jonah Coleman",
+     "points_above_replacement": 9.55,
+     "points_per_dollar": 0.74,
+     "points_started": 18.4,
+     "pos": "RB",
      "season": "2026",
-     "week": 4,
+     "week": 2,
      "weeks_started": 1
     },
     "paid_claims": 3,
-    "par_per_dollar": -0.05,
-    "points_above_replacement": -2.32,
-    "points_from_free_claims": 34.0,
-    "points_from_paid_claims": 7.2,
-    "points_per_dollar": 0.15,
+    "par_per_dollar": 0.14,
+    "points_above_replacement": 6.63,
+    "points_from_free_claims": 39.0,
+    "points_from_paid_claims": 25.6,
+    "points_per_dollar": 0.53,
     "worst_par_claim": {
      "bid": 15,
-     "par_per_dollar": -0.15,
+     "par_per_dollar": -0.19,
      "player": "Keon Coleman",
-     "points_above_replacement": -2.32,
+     "points_above_replacement": -2.92,
      "points_per_dollar": 0.48,
      "points_started": 7.2,
      "pos": "WR",
@@ -2189,10 +2189,10 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "20-57",
-    "expected_wins": 1.82,
-    "luck": 0.18,
-    "wins": 2
+    "all_play_record": "30-58",
+    "expected_wins": 2.73,
+    "luck": 0.27,
+    "wins": 3
    },
    "made_playoffs": false,
    "playoff_result": null,
@@ -2208,21 +2208,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 104.55,
-    "avg_points_for": 85.75,
-    "games": 7,
+    "avg_points_against": 106.44,
+    "avg_points_for": 91.58,
+    "games": 8,
     "losses": 5,
-    "points_against": 731.82,
-    "points_for": 600.24,
+    "points_against": 851.48,
+    "points_for": 732.62,
     "ties": 0,
-    "win_pct": 0.2857,
-    "wins": 2
+    "win_pct": 0.375,
+    "wins": 3
    },
-   "regular_season_rank": 12,
+   "regular_season_rank": 11,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 731.82,
-    "points_for": 600.24
+    "points_against": 851.48,
+    "points_for": 732.62
    },
    "team_name": "China King"
   }

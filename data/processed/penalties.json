@@ -2942,6 +2942,213 @@
     "weeks_before_playoffs": 9
    },
    "week": 6
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-11-03T03:54:45+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Jeremiyah Love was Out at 2026-11-03T03:54:45+00:00 but stayed in the lineup.",
+   "id": "2026-w08-r5-injured_starter_out-13287",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "BigDogsRevenge",
+    "first_name": "Jon",
+    "owner_id": "471083964757438464",
+    "roster_id": 5,
+    "team_name": "Big Dog\u2019s Revenge"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 33.72,
+    "opponent_display_name": "WhiskeyDicknCo",
+    "opponent_owner_id": "422102738889867264",
+    "opponent_roster_id": 7,
+    "points_against": 111.9,
+    "points_for": 78.18,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2026-11-01",
+    "home": false,
+    "nfl_team": "ARI",
+    "opponent": "DAL"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "Jeremiyah Love",
+    "nfl_team": "ARI",
+    "player_id": "13287",
+    "pos": "RB"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "7 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 8,
+    "weeks_before_playoffs": 7
+   },
+   "week": 8
+  },
+  {
+   "bench_option": {
+    "name": "Jacoby Brissett",
+    "player_id": "3257",
+    "points": 3.46,
+    "pos": "QB",
+    "slot": "QB"
+   },
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-11-03T03:54:45+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Lamar Jackson was Out at 2026-11-03T03:54:45+00:00 but stayed in the lineup.",
+   "id": "2026-w08-r6-injured_starter_out-4881",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "Gingivitis",
+    "first_name": "Ging",
+    "owner_id": "471345530597797888",
+    "roster_id": 6,
+    "team_name": "Angry Beavers"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 33.02,
+    "opponent_display_name": "therealGandB",
+    "opponent_owner_id": "471368473092550656",
+    "opponent_roster_id": 12,
+    "points_against": 67.18,
+    "points_for": 100.2,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2026-11-01",
+    "home": false,
+    "nfl_team": "BAL",
+    "opponent": "BUF"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "QB",
+    "name": "Lamar Jackson",
+    "nfl_team": "BAL",
+    "player_id": "4881",
+    "pos": "QB"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "7 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 8,
+    "weeks_before_playoffs": 7
+   },
+   "week": 8
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-11-03T03:54:45+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Hunter Henry was Out at 2026-11-03T03:54:45+00:00 but stayed in the lineup.",
+   "id": "2026-w08-r8-injured_starter_out-3214",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "TheBoarHouse",
+    "first_name": "Zaid",
+    "owner_id": "471359672478068736",
+    "roster_id": 8,
+    "team_name": "Lil Kings"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 69.44,
+    "opponent_display_name": "Hodaeg",
+    "opponent_owner_id": "383681356686950400",
+    "opponent_roster_id": 1,
+    "points_against": 151.82,
+    "points_for": 82.38,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2026-11-01",
+    "home": false,
+    "nfl_team": "NE",
+    "opponent": "MIA"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "TE",
+    "name": "Hunter Henry",
+    "nfl_team": "NE",
+    "player_id": "3214",
+    "pos": "TE"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "7 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 8,
+    "weeks_before_playoffs": 7
+   },
+   "week": 8
   }
  ]
 }

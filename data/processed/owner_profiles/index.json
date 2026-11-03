@@ -24,7 +24,7 @@
     "record": {
      "losses": 93,
      "ties": 0,
-     "wins": 109
+     "wins": 110
     },
     "sackos": 0,
     "scoring_bonuses": [
@@ -32,7 +32,7 @@
      15,
      15
     ],
-    "win_pct": 0.5396
+    "win_pct": 0.5419
    },
    "asterisk_fields": [
     "since_2019",
@@ -51,7 +51,7 @@
    ],
    "avatar": "7b1654047ce1cc9c108ec0e520b593b7",
    "display_name": "WhiskeyDicknCo",
-   "efficiency": 0.8953,
+   "efficiency": 0.895,
    "faab_efficiency_rank": 8,
    "faab_par_per_dollar": 0.09,
    "faab_par_rank": 8,
@@ -63,10 +63,10 @@
    "legacy_rank": 1,
    "legacy_rank_change_since_snapshot": 0,
    "legacy_rank_change_week": 0,
-   "luck": -4.59,
+   "luck": -4.14,
    "owner_id": "422102738889867264",
-   "points_against": 12396.04,
-   "points_for": 12687.78,
+   "points_against": 12474.22,
+   "points_for": 12799.68,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
@@ -77,8 +77,8 @@
     "runner_ups": 0,
     "sackos": 0,
     "ties": 0,
-    "win_pct": 0.5175,
-    "wins": 59
+    "win_pct": 0.5217,
+    "wins": 60
    },
    "tegridy_factor": 17.5,
    "tegridy_rank": 6,
@@ -104,7 +104,7 @@
     "record": {
      "losses": 98,
      "ties": 0,
-     "wins": 108
+     "wins": 109
     },
     "sackos": 0,
     "scoring_bonuses": [
@@ -113,7 +113,7 @@
      15,
      15
     ],
-    "win_pct": 0.5243
+    "win_pct": 0.5266
    },
    "asterisk_fields": [
     "since_2019",
@@ -132,22 +132,22 @@
    ],
    "avatar": "4a1a61368058bd6b7aab97976a9d2b34",
    "display_name": "ToadLicker",
-   "efficiency": 0.9015,
+   "efficiency": 0.9007,
    "faab_efficiency_rank": 4,
-   "faab_par_per_dollar": 0.21,
+   "faab_par_per_dollar": 0.23,
    "faab_par_rank": 4,
-   "faab_points_per_dollar": 2.81,
+   "faab_points_per_dollar": 2.84,
    "faab_spent": 671,
    "first_name": "Kyle",
    "in_current_league": true,
-   "legacy_points": 505,
+   "legacy_points": 525,
    "legacy_rank": 2,
    "legacy_rank_change_since_snapshot": 0,
    "legacy_rank_change_week": 0,
-   "luck": 0.35,
+   "luck": 0.62,
    "owner_id": "471359444949659648",
-   "points_against": 12419.98,
-   "points_for": 12956.9,
+   "points_against": 12482.32,
+   "points_for": 13074.7,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
@@ -158,8 +158,8 @@
     "runner_ups": 1,
     "sackos": 0,
     "ties": 0,
-    "win_pct": 0.5841,
-    "wins": 66
+    "win_pct": 0.5877,
+    "wins": 67
    },
    "tegridy_factor": 10,
    "tegridy_rank": 4,
@@ -184,7 +184,7 @@
      "wins": 6
     },
     "record": {
-     "losses": 88,
+     "losses": 89,
      "ties": 0,
      "wins": 86
     },
@@ -194,7 +194,7 @@
      15,
      -15
     ],
-    "win_pct": 0.4943
+    "win_pct": 0.4914
    },
    "asterisk_fields": [
     "since_2019",
@@ -213,7 +213,7 @@
    ],
    "avatar": "797036246433fa824df839321fda4133",
    "display_name": "JSusee",
-   "efficiency": 0.9024,
+   "efficiency": 0.9015,
    "faab_efficiency_rank": 6,
    "faab_par_per_dollar": 0.31,
    "faab_par_rank": 2,
@@ -227,19 +227,19 @@
    "legacy_rank_change_week": 0,
    "luck": -2.92,
    "owner_id": "471074114505797632",
-   "points_against": 12352.92,
-   "points_for": 12682.8,
+   "points_against": 12470.72,
+   "points_for": 12745.14,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
     "championships": 2,
-    "losses": 54,
+    "losses": 55,
     "playoff_appearances": 5,
     "record_basis": "games played while still in contention (same as the all-time record)",
     "runner_ups": 0,
     "sackos": 0,
     "ties": 0,
-    "win_pct": 0.5263,
+    "win_pct": 0.5217,
     "wins": 60
    },
    "tegridy_factor": 6.0,
@@ -267,7 +267,7 @@
     "record": {
      "losses": 91,
      "ties": 0,
-     "wins": 113
+     "wins": 114
     },
     "sackos": 0,
     "scoring_bonuses": [
@@ -275,7 +275,7 @@
      15,
      15
     ],
-    "win_pct": 0.5539
+    "win_pct": 0.5561
    },
    "asterisk_fields": [
     "since_2019",
@@ -294,11 +294,11 @@
    ],
    "avatar": "1e455017ce4dcc3ea8d32e55fdb2349b",
    "display_name": "Hodaeg",
-   "efficiency": 0.8785,
+   "efficiency": 0.8798,
    "faab_efficiency_rank": 10,
-   "faab_par_per_dollar": -0.08,
+   "faab_par_per_dollar": -0.07,
    "faab_par_rank": 10,
-   "faab_points_per_dollar": 1.39,
+   "faab_points_per_dollar": 1.42,
    "faab_spent": 691,
    "first_name": "Levi",
    "in_current_league": true,
@@ -308,8 +308,8 @@
    "legacy_rank_change_week": 0,
    "luck": 8.19,
    "owner_id": "383681356686950400",
-   "points_against": 12369.74,
-   "points_for": 12682.56,
+   "points_against": 12452.12,
+   "points_for": 12834.38,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
@@ -320,8 +320,8 @@
     "runner_ups": 2,
     "sackos": 0,
     "ties": 0,
-    "win_pct": 0.6087,
-    "wins": 70
+    "win_pct": 0.6121,
+    "wins": 71
    },
    "tegridy_factor": 14.0,
    "tegridy_rank": 5,
@@ -345,7 +345,7 @@
      "wins": 7
     },
     "record": {
-     "losses": 85,
+     "losses": 86,
      "ties": 0,
      "wins": 119
     },
@@ -353,7 +353,7 @@
     "scoring_bonuses": [
      15
     ],
-    "win_pct": 0.5833
+    "win_pct": 0.5805
    },
    "asterisk_fields": [
     "since_2019",
@@ -372,11 +372,11 @@
    ],
    "avatar": "cabca4d14861bbc8a4c578b718a5cedb",
    "display_name": "DangerDave678",
-   "efficiency": 0.8854,
+   "efficiency": 0.8852,
    "faab_efficiency_rank": 1,
    "faab_par_per_dollar": 0.27,
    "faab_par_rank": 3,
-   "faab_points_per_dollar": 3.54,
+   "faab_points_per_dollar": 3.55,
    "faab_spent": 678,
    "first_name": "Dave",
    "in_current_league": true,
@@ -384,21 +384,21 @@
    "legacy_rank": 5,
    "legacy_rank_change_since_snapshot": 0,
    "legacy_rank_change_week": 0,
-   "luck": 6.64,
+   "luck": 6.28,
    "owner_id": "471366618241298432",
-   "points_against": 12290.66,
-   "points_for": 12502.02,
+   "points_against": 12402.92,
+   "points_for": 12600.22,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
     "championships": 0,
-    "losses": 52,
+    "losses": 53,
     "playoff_appearances": 5,
     "record_basis": "games played while still in contention (same as the all-time record)",
     "runner_ups": 1,
     "sackos": 1,
     "ties": 0,
-    "win_pct": 0.5478,
+    "win_pct": 0.5431,
     "wins": 63
    },
    "tegridy_factor": 0,
@@ -426,13 +426,13 @@
     "record": {
      "losses": 99,
      "ties": 1,
-     "wins": 102
+     "wins": 103
     },
     "sackos": 2,
     "scoring_bonuses": [
      -15
     ],
-    "win_pct": 0.5074
+    "win_pct": 0.5099
    },
    "asterisk_fields": [
     "since_2019",
@@ -451,11 +451,11 @@
    ],
    "avatar": "06a0ff516d5c7334cad96ba4b3a65edd",
    "display_name": "MrSeeYou",
-   "efficiency": 0.9025,
+   "efficiency": 0.9029,
    "faab_efficiency_rank": 5,
-   "faab_par_per_dollar": -0.19,
+   "faab_par_per_dollar": -0.18,
    "faab_par_rank": 12,
-   "faab_points_per_dollar": 2.45,
+   "faab_points_per_dollar": 2.48,
    "faab_spent": 623,
    "first_name": "Max",
    "in_current_league": true,
@@ -463,10 +463,10 @@
    "legacy_rank": 6,
    "legacy_rank_change_since_snapshot": 0,
    "legacy_rank_change_week": 0,
-   "luck": 0.59,
+   "luck": 0.95,
    "owner_id": "423560331814510592",
-   "points_against": 12272.3,
-   "points_for": 11946.4,
+   "points_against": 12370.5,
+   "points_for": 12058.66,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
@@ -477,11 +477,11 @@
     "runner_ups": 0,
     "sackos": 1,
     "ties": 0,
-    "win_pct": 0.4602,
-    "wins": 52
+    "win_pct": 0.4649,
+    "wins": 53
    },
    "tegridy_factor": 29.0,
-   "tegridy_rank": 8,
+   "tegridy_rank": 7,
    "trades": 3
   },
   {
@@ -503,7 +503,7 @@
      "wins": 4
     },
     "record": {
-     "losses": 91,
+     "losses": 92,
      "ties": 0,
      "wins": 80
     },
@@ -512,7 +512,7 @@
      -15,
      -15
     ],
-    "win_pct": 0.4678
+    "win_pct": 0.4651
    },
    "asterisk_fields": [
     "since_2019",
@@ -531,9 +531,9 @@
    ],
    "avatar": "351d12306d177b0dcfa7ae0b3b3cca97",
    "display_name": "therealGandB",
-   "efficiency": 0.9038,
+   "efficiency": 0.904,
    "faab_efficiency_rank": 11,
-   "faab_par_per_dollar": -0.1,
+   "faab_par_per_dollar": -0.13,
    "faab_par_rank": 11,
    "faab_points_per_dollar": 1.24,
    "faab_spent": 335,
@@ -543,25 +543,25 @@
    "legacy_rank": 7,
    "legacy_rank_change_since_snapshot": 0,
    "legacy_rank_change_week": 0,
-   "luck": -4.36,
+   "luck": -4.45,
    "owner_id": "471368473092550656",
-   "points_against": 12780.72,
-   "points_for": 12685.86,
+   "points_against": 12880.92,
+   "points_for": 12753.04,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
     "championships": 1,
-    "losses": 56,
+    "losses": 57,
     "playoff_appearances": 4,
     "record_basis": "games played while still in contention (same as the all-time record)",
     "runner_ups": 1,
     "sackos": 0,
     "ties": 0,
-    "win_pct": 0.513,
+    "win_pct": 0.5086,
     "wins": 59
    },
    "tegridy_factor": 67.75,
-   "tegridy_rank": 12,
+   "tegridy_rank": 11,
    "trades": 4
   },
   {
@@ -583,7 +583,7 @@
      "wins": 3
     },
     "record": {
-     "losses": 73,
+     "losses": 74,
      "ties": 0,
      "wins": 75
     },
@@ -591,7 +591,7 @@
     "scoring_bonuses": [
      15
     ],
-    "win_pct": 0.5068
+    "win_pct": 0.5034
    },
    "asterisk_fields": [
     "since_2019",
@@ -610,11 +610,11 @@
    ],
    "avatar": "44ecf7c72bb5605feb4e796290ca7ee8",
    "display_name": "gabroni",
-   "efficiency": 0.8923,
+   "efficiency": 0.8919,
    "faab_efficiency_rank": 3,
-   "faab_par_per_dollar": 0.48,
+   "faab_par_per_dollar": 0.5,
    "faab_par_rank": 1,
-   "faab_points_per_dollar": 3.05,
+   "faab_points_per_dollar": 3.09,
    "faab_spent": 644,
    "first_name": "Gabe",
    "in_current_league": true,
@@ -622,21 +622,21 @@
    "legacy_rank": 8,
    "legacy_rank_change_since_snapshot": 0,
    "legacy_rank_change_week": 0,
-   "luck": -3.64,
+   "luck": -4.46,
    "owner_id": "79761560662589440",
-   "points_against": 12473.88,
-   "points_for": 12738.12,
+   "points_against": 12606.26,
+   "points_for": 12857.78,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
     "championships": 0,
-    "losses": 57,
+    "losses": 58,
     "playoff_appearances": 4,
     "record_basis": "games played while still in contention (same as the all-time record)",
     "runner_ups": 1,
     "sackos": 0,
     "ties": 0,
-    "win_pct": 0.4956,
+    "win_pct": 0.4912,
     "wins": 56
    },
    "tegridy_factor": 5,
@@ -662,7 +662,7 @@
      "wins": 3
     },
     "record": {
-     "losses": 98,
+     "losses": 99,
      "ties": 0,
      "wins": 84
     },
@@ -670,7 +670,7 @@
     "scoring_bonuses": [
      -15
     ],
-    "win_pct": 0.4615
+    "win_pct": 0.459
    },
    "asterisk_fields": [
     "since_2019",
@@ -689,9 +689,9 @@
    ],
    "avatar": "2ae586f392ece13b58b2f70f099d92c5",
    "display_name": "BigDogsRevenge",
-   "efficiency": 0.8985,
+   "efficiency": 0.899,
    "faab_efficiency_rank": 7,
-   "faab_par_per_dollar": 0.17,
+   "faab_par_per_dollar": 0.16,
    "faab_par_rank": 5,
    "faab_points_per_dollar": 2.17,
    "faab_spent": 466,
@@ -701,24 +701,24 @@
    "legacy_rank": 9,
    "legacy_rank_change_since_snapshot": 0,
    "legacy_rank_change_week": 0,
-   "luck": -4.32,
+   "luck": -4.5,
    "owner_id": "471083964757438464",
-   "points_against": 12520.92,
-   "points_for": 12377.4,
+   "points_against": 12632.82,
+   "points_for": 12455.58,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
     "championships": 1,
-    "losses": 64,
+    "losses": 65,
     "playoff_appearances": 2,
     "record_basis": "games played while still in contention (same as the all-time record)",
     "runner_ups": 0,
     "sackos": 1,
     "ties": 0,
-    "win_pct": 0.4435,
+    "win_pct": 0.4397,
     "wins": 51
    },
-   "tegridy_factor": 43.5,
+   "tegridy_factor": 51.5,
    "tegridy_rank": 10,
    "trades": 2
   },
@@ -742,7 +742,7 @@
     "record": {
      "losses": 73,
      "ties": 0,
-     "wins": 72
+     "wins": 73
     },
     "sackos": 1,
     "scoring_bonuses": [
@@ -750,7 +750,7 @@
      -15,
      -15
     ],
-    "win_pct": 0.4966
+    "win_pct": 0.5
    },
    "asterisk_fields": [
     "since_2019",
@@ -769,11 +769,11 @@
    ],
    "avatar": "de6781e76f8a6b3b0c227edbf6852def",
    "display_name": "Gingivitis",
-   "efficiency": 0.885,
+   "efficiency": 0.8852,
    "faab_efficiency_rank": 2,
-   "faab_par_per_dollar": 0.17,
+   "faab_par_per_dollar": 0.16,
    "faab_par_rank": 6,
-   "faab_points_per_dollar": 3.35,
+   "faab_points_per_dollar": 3.37,
    "faab_spent": 659,
    "first_name": "Ging",
    "in_current_league": true,
@@ -781,10 +781,10 @@
    "legacy_rank": 10,
    "legacy_rank_change_since_snapshot": 0,
    "legacy_rank_change_week": 0,
-   "luck": 4.01,
+   "luck": 4.55,
    "owner_id": "471345530597797888",
-   "points_against": 12134.44,
-   "points_for": 12016.68,
+   "points_against": 12201.62,
+   "points_for": 12116.88,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
@@ -795,11 +795,11 @@
     "runner_ups": 0,
     "sackos": 1,
     "ties": 0,
-    "win_pct": 0.453,
-    "wins": 53
+    "win_pct": 0.4576,
+    "wins": 54
    },
-   "tegridy_factor": 22.0,
-   "tegridy_rank": 7,
+   "tegridy_factor": 30.0,
+   "tegridy_rank": 8,
    "trades": 1
   },
   {
@@ -821,7 +821,7 @@
      "wins": 5
     },
     "record": {
-     "losses": 111,
+     "losses": 112,
      "ties": 1,
      "wins": 92
     },
@@ -831,7 +831,7 @@
      -15,
      -15
     ],
-    "win_pct": 0.4534
+    "win_pct": 0.4512
    },
    "asterisk_fields": [
     "since_2019",
@@ -850,7 +850,7 @@
    ],
    "avatar": "1a2562bb88d81b23b88a759e3242cd31",
    "display_name": "TheBoarHouse",
-   "efficiency": 0.8921,
+   "efficiency": 0.8924,
    "faab_efficiency_rank": 12,
    "faab_par_per_dollar": 0.15,
    "faab_par_rank": 7,
@@ -862,25 +862,25 @@
    "legacy_rank": 11,
    "legacy_rank_change_since_snapshot": 0,
    "legacy_rank_change_week": 0,
-   "luck": 1.56,
+   "luck": 1.29,
    "owner_id": "471359672478068736",
-   "points_against": 12637.04,
-   "points_for": 12254.18,
+   "points_against": 12788.86,
+   "points_for": 12336.56,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
     "championships": 0,
-    "losses": 66,
+    "losses": 67,
     "playoff_appearances": 2,
     "record_basis": "games played while still in contention (same as the all-time record)",
     "runner_ups": 1,
     "sackos": 2,
     "ties": 0,
-    "win_pct": 0.4454,
+    "win_pct": 0.4417,
     "wins": 53
    },
-   "tegridy_factor": 67.0,
-   "tegridy_rank": 11,
+   "tegridy_factor": 75.0,
+   "tegridy_rank": 12,
    "trades": 4
   },
   {
@@ -903,11 +903,11 @@
     "record": {
      "losses": 110,
      "ties": 0,
-     "wins": 83
+     "wins": 84
     },
     "sackos": 3,
     "scoring_bonuses": [],
-    "win_pct": 0.4301
+    "win_pct": 0.433
    },
    "asterisk_fields": [
     "since_2019",
@@ -926,11 +926,11 @@
    ],
    "avatar": "bd42f4bce4f0c577f5e6ab531b1063cd",
    "display_name": "ChinaKing",
-   "efficiency": 0.8778,
+   "efficiency": 0.879,
    "faab_efficiency_rank": 9,
-   "faab_par_per_dollar": -0.01,
+   "faab_par_per_dollar": -0.0,
    "faab_par_rank": 9,
-   "faab_points_per_dollar": 1.75,
+   "faab_points_per_dollar": 1.77,
    "faab_spent": 699,
    "first_name": "Adam",
    "in_current_league": true,
@@ -938,10 +938,10 @@
    "legacy_rank": 12,
    "legacy_rank_change_since_snapshot": 0,
    "legacy_rank_change_week": 0,
-   "luck": -1.52,
+   "luck": -1.43,
    "owner_id": "471360899853053952",
-   "points_against": 12553.22,
-   "points_for": 11671.16,
+   "points_against": 12672.88,
+   "points_for": 11803.54,
    "seasons": 8,
    "since_2019": {
     "asterisk": "*",
@@ -952,8 +952,8 @@
     "runner_ups": 0,
     "sackos": 1,
     "ties": 0,
-    "win_pct": 0.4071,
-    "wins": 46
+    "win_pct": 0.4123,
+    "wins": 47
    },
    "tegridy_factor": 36.0,
    "tegridy_rank": 9,

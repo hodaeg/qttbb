@@ -22,17 +22,17 @@
   },
   "471083964757438464": {
    "doubtful": 0,
-   "out": 2,
+   "out": 3,
    "questionable_dnp": 0
   },
   "471345530597797888": {
    "doubtful": 0,
-   "out": 2,
+   "out": 3,
    "questionable_dnp": 1
   },
   "471359672478068736": {
    "doubtful": 0,
-   "out": 0,
+   "out": 1,
    "questionable_dnp": 2
   },
   "471360899853053952": {
@@ -402,6 +402,45 @@
    "source": "snapshot",
    "status": "Out",
    "week": 6
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "471083964757438464",
+   "player": "Jeremiyah Love",
+   "player_id": "13287",
+   "pos": "RB",
+   "roster_id": 5,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 8
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "471345530597797888",
+   "player": "Lamar Jackson",
+   "player_id": "4881",
+   "pos": "QB",
+   "roster_id": 6,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 8
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "471359672478068736",
+   "player": "Hunter Henry",
+   "player_id": "3214",
+   "pos": "TE",
+   "roster_id": 8,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 8
   }
  ],
  "rule": "Official NFL injury report: Out/Doubtful, or Questionable who did not play, AND 0 points as a starter (plus game-day snapshot flags)"

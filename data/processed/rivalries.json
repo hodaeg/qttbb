@@ -1,5 +1,118 @@
 [
  {
+  "a": "383681356686950400",
+  "a_points": 1492.18,
+  "a_wins": 9,
+  "b": "471359672478068736",
+  "b_points": 1418.54,
+  "b_wins": 5,
+  "biggest_a_win": 69.44,
+  "biggest_b_win": 93.56,
+  "games": [
+   {
+    "a_points": 70.28,
+    "b_points": 77.12,
+    "playoff": false,
+    "season": "2019",
+    "week": 10
+   },
+   {
+    "a_points": 112.66,
+    "b_points": 102.62,
+    "playoff": true,
+    "season": "2019",
+    "week": 15
+   },
+   {
+    "a_points": 80.64,
+    "b_points": 120.14,
+    "playoff": false,
+    "season": "2020",
+    "week": 1
+   },
+   {
+    "a_points": 153.04,
+    "b_points": 95.88,
+    "playoff": false,
+    "season": "2020",
+    "week": 12
+   },
+   {
+    "a_points": 93.24,
+    "b_points": 124.52,
+    "playoff": false,
+    "season": "2021",
+    "week": 14
+   },
+   {
+    "a_points": 86.04,
+    "b_points": 128.52,
+    "playoff": false,
+    "season": "2021",
+    "week": 3
+   },
+   {
+    "a_points": 71.98,
+    "b_points": 165.54,
+    "playoff": false,
+    "season": "2022",
+    "week": 13
+   },
+   {
+    "a_points": 83.58,
+    "b_points": 60.96,
+    "playoff": false,
+    "season": "2022",
+    "week": 2
+   },
+   {
+    "a_points": 97.84,
+    "b_points": 94.1,
+    "playoff": false,
+    "season": "2023",
+    "week": 14
+   },
+   {
+    "a_points": 133.96,
+    "b_points": 86.66,
+    "playoff": false,
+    "season": "2023",
+    "week": 3
+   },
+   {
+    "a_points": 130.36,
+    "b_points": 110.04,
+    "playoff": true,
+    "season": "2024",
+    "week": 16
+   },
+   {
+    "a_points": 93.32,
+    "b_points": 72.94,
+    "playoff": false,
+    "season": "2024",
+    "week": 7
+   },
+   {
+    "a_points": 133.42,
+    "b_points": 97.12,
+    "playoff": false,
+    "season": "2025",
+    "week": 10
+   },
+   {
+    "a_points": 151.82,
+    "b_points": 82.38,
+    "playoff": false,
+    "season": "2026",
+    "week": 8
+   }
+  ],
+  "games_played": 14,
+  "protected_rivalry": null,
+  "ties": 0
+ },
+ {
   "a": "422102738889867264",
   "a_points": 1412.76,
   "a_wins": 9,
@@ -106,6 +219,119 @@
     "playoff": false,
     "season": "2025",
     "week": 7
+   }
+  ],
+  "games_played": 14,
+  "protected_rivalry": null,
+  "ties": 0
+ },
+ {
+  "a": "471074114505797632",
+  "a_points": 1436.0,
+  "a_wins": 5,
+  "b": "471359444949659648",
+  "b_points": 1546.8,
+  "b_wins": 9,
+  "biggest_a_win": 71.92,
+  "biggest_b_win": 55.46,
+  "games": [
+   {
+    "a_points": 96.16,
+    "b_points": 128.06,
+    "playoff": true,
+    "season": "2019",
+    "week": 15
+   },
+   {
+    "a_points": 100.78,
+    "b_points": 115.46,
+    "playoff": false,
+    "season": "2019",
+    "week": 8
+   },
+   {
+    "a_points": 61.22,
+    "b_points": 114.58,
+    "playoff": false,
+    "season": "2020",
+    "week": 10
+   },
+   {
+    "a_points": 146.8,
+    "b_points": 74.88,
+    "playoff": false,
+    "season": "2021",
+    "week": 6
+   },
+   {
+    "a_points": 114.1,
+    "b_points": 143.78,
+    "playoff": false,
+    "season": "2022",
+    "week": 1
+   },
+   {
+    "a_points": 132.64,
+    "b_points": 113.22,
+    "playoff": false,
+    "season": "2022",
+    "week": 12
+   },
+   {
+    "a_points": 109.38,
+    "b_points": 102.66,
+    "playoff": true,
+    "season": "2022",
+    "week": 15
+   },
+   {
+    "a_points": 117.12,
+    "b_points": 95.4,
+    "playoff": true,
+    "season": "2023",
+    "week": 16
+   },
+   {
+    "a_points": 82.96,
+    "b_points": 87.2,
+    "playoff": false,
+    "season": "2023",
+    "week": 9
+   },
+   {
+    "a_points": 103.3,
+    "b_points": 117.82,
+    "playoff": false,
+    "season": "2024",
+    "week": 13
+   },
+   {
+    "a_points": 107.74,
+    "b_points": 100.26,
+    "playoff": false,
+    "season": "2024",
+    "week": 2
+   },
+   {
+    "a_points": 91.0,
+    "b_points": 109.36,
+    "playoff": false,
+    "season": "2025",
+    "week": 14
+   },
+   {
+    "a_points": 110.46,
+    "b_points": 126.32,
+    "playoff": false,
+    "season": "2025",
+    "week": 3
+   },
+   {
+    "a_points": 62.34,
+    "b_points": 117.8,
+    "playoff": false,
+    "season": "2026",
+    "week": 8
    }
   ],
   "games_played": 14,
@@ -325,112 +551,6 @@
   "ties": 0
  },
  {
-  "a": "383681356686950400",
-  "a_points": 1340.36,
-  "a_wins": 8,
-  "b": "471359672478068736",
-  "b_points": 1336.16,
-  "b_wins": 5,
-  "biggest_a_win": 57.16,
-  "biggest_b_win": 93.56,
-  "games": [
-   {
-    "a_points": 70.28,
-    "b_points": 77.12,
-    "playoff": false,
-    "season": "2019",
-    "week": 10
-   },
-   {
-    "a_points": 112.66,
-    "b_points": 102.62,
-    "playoff": true,
-    "season": "2019",
-    "week": 15
-   },
-   {
-    "a_points": 80.64,
-    "b_points": 120.14,
-    "playoff": false,
-    "season": "2020",
-    "week": 1
-   },
-   {
-    "a_points": 153.04,
-    "b_points": 95.88,
-    "playoff": false,
-    "season": "2020",
-    "week": 12
-   },
-   {
-    "a_points": 93.24,
-    "b_points": 124.52,
-    "playoff": false,
-    "season": "2021",
-    "week": 14
-   },
-   {
-    "a_points": 86.04,
-    "b_points": 128.52,
-    "playoff": false,
-    "season": "2021",
-    "week": 3
-   },
-   {
-    "a_points": 71.98,
-    "b_points": 165.54,
-    "playoff": false,
-    "season": "2022",
-    "week": 13
-   },
-   {
-    "a_points": 83.58,
-    "b_points": 60.96,
-    "playoff": false,
-    "season": "2022",
-    "week": 2
-   },
-   {
-    "a_points": 97.84,
-    "b_points": 94.1,
-    "playoff": false,
-    "season": "2023",
-    "week": 14
-   },
-   {
-    "a_points": 133.96,
-    "b_points": 86.66,
-    "playoff": false,
-    "season": "2023",
-    "week": 3
-   },
-   {
-    "a_points": 130.36,
-    "b_points": 110.04,
-    "playoff": true,
-    "season": "2024",
-    "week": 16
-   },
-   {
-    "a_points": 93.32,
-    "b_points": 72.94,
-    "playoff": false,
-    "season": "2024",
-    "week": 7
-   },
-   {
-    "a_points": 133.42,
-    "b_points": 97.12,
-    "playoff": false,
-    "season": "2025",
-    "week": 10
-   }
-  ],
-  "games_played": 13,
-  "protected_rivalry": null,
-  "ties": 0
- },
- {
   "a": "471083964757438464",
   "a_points": 1321.28,
   "a_wins": 7,
@@ -636,112 +756,6 @@
     "playoff": false,
     "season": "2025",
     "week": 2
-   }
-  ],
-  "games_played": 13,
-  "protected_rivalry": null,
-  "ties": 0
- },
- {
-  "a": "471074114505797632",
-  "a_points": 1373.66,
-  "a_wins": 5,
-  "b": "471359444949659648",
-  "b_points": 1429.0,
-  "b_wins": 8,
-  "biggest_a_win": 71.92,
-  "biggest_b_win": 53.36,
-  "games": [
-   {
-    "a_points": 96.16,
-    "b_points": 128.06,
-    "playoff": true,
-    "season": "2019",
-    "week": 15
-   },
-   {
-    "a_points": 100.78,
-    "b_points": 115.46,
-    "playoff": false,
-    "season": "2019",
-    "week": 8
-   },
-   {
-    "a_points": 61.22,
-    "b_points": 114.58,
-    "playoff": false,
-    "season": "2020",
-    "week": 10
-   },
-   {
-    "a_points": 146.8,
-    "b_points": 74.88,
-    "playoff": false,
-    "season": "2021",
-    "week": 6
-   },
-   {
-    "a_points": 114.1,
-    "b_points": 143.78,
-    "playoff": false,
-    "season": "2022",
-    "week": 1
-   },
-   {
-    "a_points": 132.64,
-    "b_points": 113.22,
-    "playoff": false,
-    "season": "2022",
-    "week": 12
-   },
-   {
-    "a_points": 109.38,
-    "b_points": 102.66,
-    "playoff": true,
-    "season": "2022",
-    "week": 15
-   },
-   {
-    "a_points": 117.12,
-    "b_points": 95.4,
-    "playoff": true,
-    "season": "2023",
-    "week": 16
-   },
-   {
-    "a_points": 82.96,
-    "b_points": 87.2,
-    "playoff": false,
-    "season": "2023",
-    "week": 9
-   },
-   {
-    "a_points": 103.3,
-    "b_points": 117.82,
-    "playoff": false,
-    "season": "2024",
-    "week": 13
-   },
-   {
-    "a_points": 107.74,
-    "b_points": 100.26,
-    "playoff": false,
-    "season": "2024",
-    "week": 2
-   },
-   {
-    "a_points": 91.0,
-    "b_points": 109.36,
-    "playoff": false,
-    "season": "2025",
-    "week": 14
-   },
-   {
-    "a_points": 110.46,
-    "b_points": 126.32,
-    "playoff": false,
-    "season": "2025",
-    "week": 3
    }
   ],
   "games_played": 13,
@@ -2644,6 +2658,105 @@
   "ties": 0
  },
  {
+  "a": "471345530597797888",
+  "a_points": 1254.74,
+  "a_wins": 6,
+  "b": "471368473092550656",
+  "b_points": 1241.78,
+  "b_wins": 6,
+  "biggest_a_win": 54.1,
+  "biggest_b_win": 46.64,
+  "games": [
+   {
+    "a_points": 119.02,
+    "b_points": 109.64,
+    "playoff": false,
+    "season": "2019",
+    "week": 9
+   },
+   {
+    "a_points": 86.12,
+    "b_points": 83.5,
+    "playoff": false,
+    "season": "2020",
+    "week": 3
+   },
+   {
+    "a_points": 107.4,
+    "b_points": 111.4,
+    "playoff": true,
+    "season": "2021",
+    "week": 16
+   },
+   {
+    "a_points": 92.86,
+    "b_points": 139.5,
+    "playoff": false,
+    "season": "2021",
+    "week": 6
+   },
+   {
+    "a_points": 103.56,
+    "b_points": 78.88,
+    "playoff": false,
+    "season": "2022",
+    "week": 5
+   },
+   {
+    "a_points": 90.14,
+    "b_points": 122.12,
+    "playoff": false,
+    "season": "2023",
+    "week": 14
+   },
+   {
+    "a_points": 98.88,
+    "b_points": 133.68,
+    "playoff": true,
+    "season": "2023",
+    "week": 16
+   },
+   {
+    "a_points": 108.48,
+    "b_points": 83.02,
+    "playoff": false,
+    "season": "2023",
+    "week": 3
+   },
+   {
+    "a_points": 94.94,
+    "b_points": 97.0,
+    "playoff": false,
+    "season": "2024",
+    "week": 9
+   },
+   {
+    "a_points": 131.44,
+    "b_points": 77.34,
+    "playoff": false,
+    "season": "2025",
+    "week": 10
+   },
+   {
+    "a_points": 121.7,
+    "b_points": 138.52,
+    "playoff": true,
+    "season": "2025",
+    "week": 15
+   },
+   {
+    "a_points": 100.2,
+    "b_points": 67.18,
+    "playoff": false,
+    "season": "2026",
+    "week": 8
+   }
+  ],
+  "games_played": 12,
+  "protected_rivalry": null,
+  "ties": 0
+ },
+ {
   "a": "471360899853053952",
   "a_points": 1056.94,
   "a_wins": 4,
@@ -3472,6 +3585,98 @@
   "ties": 0
  },
  {
+  "a": "423560331814510592",
+  "a_points": 1146.36,
+  "a_wins": 6,
+  "b": "471366618241298432",
+  "b_points": 1185.26,
+  "b_wins": 5,
+  "biggest_a_win": 31.44,
+  "biggest_b_win": 40.42,
+  "games": [
+   {
+    "a_points": 131.94,
+    "b_points": 124.52,
+    "playoff": false,
+    "season": "2019",
+    "week": 5
+   },
+   {
+    "a_points": 104.42,
+    "b_points": 91.42,
+    "playoff": true,
+    "season": "2020",
+    "week": 15
+   },
+   {
+    "a_points": 120.3,
+    "b_points": 135.04,
+    "playoff": false,
+    "season": "2020",
+    "week": 6
+   },
+   {
+    "a_points": 67.08,
+    "b_points": 107.5,
+    "playoff": false,
+    "season": "2021",
+    "week": 11
+   },
+   {
+    "a_points": 112.26,
+    "b_points": 98.5,
+    "playoff": false,
+    "season": "2022",
+    "week": 4
+   },
+   {
+    "a_points": 69.44,
+    "b_points": 106.04,
+    "playoff": false,
+    "season": "2023",
+    "week": 11
+   },
+   {
+    "a_points": 125.12,
+    "b_points": 93.68,
+    "playoff": true,
+    "season": "2023",
+    "week": 15
+   },
+   {
+    "a_points": 113.1,
+    "b_points": 110.96,
+    "playoff": false,
+    "season": "2024",
+    "week": 6
+   },
+   {
+    "a_points": 93.76,
+    "b_points": 113.58,
+    "playoff": false,
+    "season": "2025",
+    "week": 14
+   },
+   {
+    "a_points": 96.68,
+    "b_points": 105.82,
+    "playoff": false,
+    "season": "2025",
+    "week": 3
+   },
+   {
+    "a_points": 112.26,
+    "b_points": 98.2,
+    "playoff": false,
+    "season": "2026",
+    "week": 8
+   }
+  ],
+  "games_played": 11,
+  "protected_rivalry": null,
+  "ties": 0
+ },
+ {
   "a": "471074114505797632",
   "a_points": 1120.4,
   "a_wins": 5,
@@ -3741,98 +3946,6 @@
     "playoff": false,
     "season": "2026",
     "week": 6
-   }
-  ],
-  "games_played": 11,
-  "protected_rivalry": null,
-  "ties": 0
- },
- {
-  "a": "471345530597797888",
-  "a_points": 1154.54,
-  "a_wins": 5,
-  "b": "471368473092550656",
-  "b_points": 1174.6,
-  "b_wins": 6,
-  "biggest_a_win": 54.1,
-  "biggest_b_win": 46.64,
-  "games": [
-   {
-    "a_points": 119.02,
-    "b_points": 109.64,
-    "playoff": false,
-    "season": "2019",
-    "week": 9
-   },
-   {
-    "a_points": 86.12,
-    "b_points": 83.5,
-    "playoff": false,
-    "season": "2020",
-    "week": 3
-   },
-   {
-    "a_points": 107.4,
-    "b_points": 111.4,
-    "playoff": true,
-    "season": "2021",
-    "week": 16
-   },
-   {
-    "a_points": 92.86,
-    "b_points": 139.5,
-    "playoff": false,
-    "season": "2021",
-    "week": 6
-   },
-   {
-    "a_points": 103.56,
-    "b_points": 78.88,
-    "playoff": false,
-    "season": "2022",
-    "week": 5
-   },
-   {
-    "a_points": 90.14,
-    "b_points": 122.12,
-    "playoff": false,
-    "season": "2023",
-    "week": 14
-   },
-   {
-    "a_points": 98.88,
-    "b_points": 133.68,
-    "playoff": true,
-    "season": "2023",
-    "week": 16
-   },
-   {
-    "a_points": 108.48,
-    "b_points": 83.02,
-    "playoff": false,
-    "season": "2023",
-    "week": 3
-   },
-   {
-    "a_points": 94.94,
-    "b_points": 97.0,
-    "playoff": false,
-    "season": "2024",
-    "week": 9
-   },
-   {
-    "a_points": 131.44,
-    "b_points": 77.34,
-    "playoff": false,
-    "season": "2025",
-    "week": 10
-   },
-   {
-    "a_points": 121.7,
-    "b_points": 138.52,
-    "playoff": true,
-    "season": "2025",
-    "week": 15
    }
   ],
   "games_played": 11,
@@ -4520,84 +4633,84 @@
   "ties": 0
  },
  {
-  "a": "423560331814510592",
-  "a_points": 1034.1,
+  "a": "471360899853053952",
+  "a_points": 1060.6,
   "a_wins": 5,
-  "b": "471366618241298432",
-  "b_points": 1087.06,
+  "b": "79761560662589440",
+  "b_points": 1047.38,
   "b_wins": 5,
-  "biggest_a_win": 31.44,
-  "biggest_b_win": 40.42,
+  "biggest_a_win": 51.36,
+  "biggest_b_win": 35.7,
   "games": [
    {
-    "a_points": 131.94,
-    "b_points": 124.52,
+    "a_points": 107.54,
+    "b_points": 81.4,
     "playoff": false,
     "season": "2019",
-    "week": 5
-   },
-   {
-    "a_points": 104.42,
-    "b_points": 91.42,
-    "playoff": true,
-    "season": "2020",
-    "week": 15
-   },
-   {
-    "a_points": 120.3,
-    "b_points": 135.04,
-    "playoff": false,
-    "season": "2020",
-    "week": 6
-   },
-   {
-    "a_points": 67.08,
-    "b_points": 107.5,
-    "playoff": false,
-    "season": "2021",
-    "week": 11
-   },
-   {
-    "a_points": 112.26,
-    "b_points": 98.5,
-    "playoff": false,
-    "season": "2022",
     "week": 4
    },
    {
-    "a_points": 69.44,
-    "b_points": 106.04,
+    "a_points": 129.22,
+    "b_points": 77.86,
     "playoff": false,
-    "season": "2023",
-    "week": 11
+    "season": "2020",
+    "week": 8
    },
    {
-    "a_points": 125.12,
-    "b_points": 93.68,
+    "a_points": 99.66,
+    "b_points": 112.28,
+    "playoff": false,
+    "season": "2021",
+    "week": 13
+   },
+   {
+    "a_points": 101.02,
+    "b_points": 112.58,
+    "playoff": false,
+    "season": "2021",
+    "week": 2
+   },
+   {
+    "a_points": 106.66,
+    "b_points": 100.72,
+    "playoff": false,
+    "season": "2022",
+    "week": 5
+   },
+   {
+    "a_points": 96.54,
+    "b_points": 132.24,
     "playoff": true,
     "season": "2023",
-    "week": 15
+    "week": 17
    },
    {
-    "a_points": 113.1,
-    "b_points": 110.96,
+    "a_points": 109.48,
+    "b_points": 102.02,
     "playoff": false,
-    "season": "2024",
+    "season": "2023",
     "week": 6
    },
    {
-    "a_points": 93.76,
-    "b_points": 113.58,
+    "a_points": 111.26,
+    "b_points": 111.42,
     "playoff": false,
-    "season": "2025",
-    "week": 14
+    "season": "2024",
+    "week": 9
    },
    {
-    "a_points": 96.68,
-    "b_points": 105.82,
+    "a_points": 66.84,
+    "b_points": 97.2,
     "playoff": false,
     "season": "2025",
-    "week": 3
+    "week": 11
+   },
+   {
+    "a_points": 132.38,
+    "b_points": 119.66,
+    "playoff": false,
+    "season": "2026",
+    "week": 8
    }
   ],
   "games_played": 10,
@@ -4683,6 +4796,91 @@
     "playoff": false,
     "season": "2025",
     "week": 4
+   }
+  ],
+  "games_played": 10,
+  "protected_rivalry": null,
+  "ties": 0
+ },
+ {
+  "a": "422102738889867264",
+  "a_points": 1055.24,
+  "a_wins": 6,
+  "b": "471083964757438464",
+  "b_points": 986.96,
+  "b_wins": 4,
+  "biggest_a_win": 47.38,
+  "biggest_b_win": 52.26,
+  "games": [
+   {
+    "a_points": 139.52,
+    "b_points": 92.14,
+    "playoff": false,
+    "season": "2019",
+    "week": 7
+   },
+   {
+    "a_points": 101.84,
+    "b_points": 118.44,
+    "playoff": false,
+    "season": "2020",
+    "week": 11
+   },
+   {
+    "a_points": 109.18,
+    "b_points": 113.56,
+    "playoff": false,
+    "season": "2021",
+    "week": 7
+   },
+   {
+    "a_points": 91.58,
+    "b_points": 84.62,
+    "playoff": false,
+    "season": "2022",
+    "week": 13
+   },
+   {
+    "a_points": 88.9,
+    "b_points": 68.7,
+    "playoff": true,
+    "season": "2022",
+    "week": 17
+   },
+   {
+    "a_points": 92.18,
+    "b_points": 99.04,
+    "playoff": false,
+    "season": "2022",
+    "week": 2
+   },
+   {
+    "a_points": 122.68,
+    "b_points": 95.1,
+    "playoff": false,
+    "season": "2023",
+    "week": 6
+   },
+   {
+    "a_points": 110.02,
+    "b_points": 97.48,
+    "playoff": false,
+    "season": "2024",
+    "week": 4
+   },
+   {
+    "a_points": 87.44,
+    "b_points": 139.7,
+    "playoff": false,
+    "season": "2025",
+    "week": 10
+   },
+   {
+    "a_points": 111.9,
+    "b_points": 78.18,
+    "playoff": false,
+    "season": "2026",
+    "week": 8
    }
   ],
   "games_played": 10,
@@ -4924,84 +5122,6 @@
     "playoff": false,
     "season": "2026",
     "week": 5
-   }
-  ],
-  "games_played": 9,
-  "protected_rivalry": null,
-  "ties": 0
- },
- {
-  "a": "471360899853053952",
-  "a_points": 928.22,
-  "a_wins": 4,
-  "b": "79761560662589440",
-  "b_points": 927.72,
-  "b_wins": 5,
-  "biggest_a_win": 51.36,
-  "biggest_b_win": 35.7,
-  "games": [
-   {
-    "a_points": 107.54,
-    "b_points": 81.4,
-    "playoff": false,
-    "season": "2019",
-    "week": 4
-   },
-   {
-    "a_points": 129.22,
-    "b_points": 77.86,
-    "playoff": false,
-    "season": "2020",
-    "week": 8
-   },
-   {
-    "a_points": 99.66,
-    "b_points": 112.28,
-    "playoff": false,
-    "season": "2021",
-    "week": 13
-   },
-   {
-    "a_points": 101.02,
-    "b_points": 112.58,
-    "playoff": false,
-    "season": "2021",
-    "week": 2
-   },
-   {
-    "a_points": 106.66,
-    "b_points": 100.72,
-    "playoff": false,
-    "season": "2022",
-    "week": 5
-   },
-   {
-    "a_points": 96.54,
-    "b_points": 132.24,
-    "playoff": true,
-    "season": "2023",
-    "week": 17
-   },
-   {
-    "a_points": 109.48,
-    "b_points": 102.02,
-    "playoff": false,
-    "season": "2023",
-    "week": 6
-   },
-   {
-    "a_points": 111.26,
-    "b_points": 111.42,
-    "playoff": false,
-    "season": "2024",
-    "week": 9
-   },
-   {
-    "a_points": 66.84,
-    "b_points": 97.2,
-    "playoff": false,
-    "season": "2025",
-    "week": 11
    }
   ],
   "games_played": 9,
@@ -5392,84 +5512,6 @@
     "playoff": false,
     "season": "2026",
     "week": 3
-   }
-  ],
-  "games_played": 9,
-  "protected_rivalry": null,
-  "ties": 0
- },
- {
-  "a": "422102738889867264",
-  "a_points": 943.34,
-  "a_wins": 5,
-  "b": "471083964757438464",
-  "b_points": 908.78,
-  "b_wins": 4,
-  "biggest_a_win": 47.38,
-  "biggest_b_win": 52.26,
-  "games": [
-   {
-    "a_points": 139.52,
-    "b_points": 92.14,
-    "playoff": false,
-    "season": "2019",
-    "week": 7
-   },
-   {
-    "a_points": 101.84,
-    "b_points": 118.44,
-    "playoff": false,
-    "season": "2020",
-    "week": 11
-   },
-   {
-    "a_points": 109.18,
-    "b_points": 113.56,
-    "playoff": false,
-    "season": "2021",
-    "week": 7
-   },
-   {
-    "a_points": 91.58,
-    "b_points": 84.62,
-    "playoff": false,
-    "season": "2022",
-    "week": 13
-   },
-   {
-    "a_points": 88.9,
-    "b_points": 68.7,
-    "playoff": true,
-    "season": "2022",
-    "week": 17
-   },
-   {
-    "a_points": 92.18,
-    "b_points": 99.04,
-    "playoff": false,
-    "season": "2022",
-    "week": 2
-   },
-   {
-    "a_points": 122.68,
-    "b_points": 95.1,
-    "playoff": false,
-    "season": "2023",
-    "week": 6
-   },
-   {
-    "a_points": 110.02,
-    "b_points": 97.48,
-    "playoff": false,
-    "season": "2024",
-    "week": 4
-   },
-   {
-    "a_points": 87.44,
-    "b_points": 139.7,
-    "playoff": false,
-    "season": "2025",
-    "week": 10
    }
   ],
   "games_played": 9,
