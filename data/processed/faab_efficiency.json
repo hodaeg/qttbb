@@ -38982,7 +38982,7 @@
      "week": 8
     }
    ],
-   "weeks_rostered": 14,
+   "weeks_rostered": 4,
    "weeks_started": 2
   },
   {
@@ -39515,7 +39515,7 @@
    "season": "2026",
    "week": 7,
    "weekly": [],
-   "weeks_rostered": 11,
+   "weeks_rostered": 1,
    "weeks_started": 0
   },
   {
@@ -39668,6 +39668,50 @@
    "weeks_started": 0
   },
   {
+   "bid": 18,
+   "dropped": [
+    "Atlanta Falcons"
+   ],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "383681356686950400",
+   "par_per_dollar": 0.0,
+   "player": "Houston Texans",
+   "player_id": "HOU",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "DEF",
+   "roster_id": 1,
+   "season": "2026",
+   "week": 8,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
+  },
+  {
+   "bid": 4,
+   "dropped": [
+    "Tyler Loop"
+   ],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "79761560662589440",
+   "par_per_dollar": 0.0,
+   "player": "Ka'imi Fairbairn",
+   "player_id": "3451",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "K",
+   "roster_id": 4,
+   "season": "2026",
+   "week": 8,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
+  },
+  {
    "bid": 0,
    "dropped": [
     "Houston Texans"
@@ -39695,6 +39739,88 @@
    ],
    "weeks_rostered": 11,
    "weeks_started": 1
+  },
+  {
+   "bid": 1,
+   "dropped": [],
+   "first_week": 8,
+   "outcome": "never_started",
+   "owner_id": "471345530597797888",
+   "par_per_dollar": 0.0,
+   "player": "New York Giants",
+   "player_id": "NYG",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "DEF",
+   "roster_id": 6,
+   "season": "2026",
+   "week": 8,
+   "weekly": [],
+   "weeks_rostered": 11,
+   "weeks_started": 0
+  },
+  {
+   "bid": 2,
+   "dropped": [],
+   "first_week": 9,
+   "outcome": "never_started",
+   "owner_id": "471345530597797888",
+   "par_per_dollar": 0.0,
+   "player": "Sam Darnold",
+   "player_id": "4943",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "QB",
+   "roster_id": 6,
+   "season": "2026",
+   "week": 8,
+   "weekly": [],
+   "weeks_rostered": 10,
+   "weeks_started": 0
+  },
+  {
+   "bid": 6,
+   "dropped": [],
+   "first_week": 9,
+   "outcome": "never_started",
+   "owner_id": "471345530597797888",
+   "par_per_dollar": 0.0,
+   "player": "Patrick Mahomes",
+   "player_id": "4046",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": 0.0,
+   "points_started": 0.0,
+   "pos": "QB",
+   "roster_id": 6,
+   "season": "2026",
+   "week": 8,
+   "weekly": [],
+   "weeks_rostered": 10,
+   "weeks_started": 0
+  },
+  {
+   "bid": 0,
+   "dropped": [
+    "New England Patriots"
+   ],
+   "first_week": 9,
+   "outcome": "never_started",
+   "owner_id": "422102738889867264",
+   "par_per_dollar": null,
+   "player": "Jordan Addison",
+   "player_id": "9756",
+   "points_above_replacement": 0.0,
+   "points_per_dollar": null,
+   "points_started": 0.0,
+   "pos": "WR",
+   "roster_id": 7,
+   "season": "2026",
+   "week": 8,
+   "weekly": [],
+   "weeks_rostered": 10,
+   "weeks_started": 0
   },
   {
    "bid": 0,
@@ -39779,11 +39905,11 @@
    "week": 3,
    "weeks_started": 0
   },
-  "claims_benched_only": 201,
+  "claims_benched_only": 206,
   "claims_dropped_before_playing": 49,
-  "dollars_spent": 6871,
-  "free_claims": 370,
-  "hit_rate": 0.7,
+  "dollars_spent": 6902,
+  "free_claims": 371,
+  "hit_rate": 0.695,
   "most_points": {
    "bid": 33,
    "par_per_dollar": 1.72,
@@ -39796,12 +39922,12 @@
    "week": 1,
    "weeks_started": 12
   },
-  "paid_claims": 832,
+  "paid_claims": 837,
   "par_per_dollar": 0.13,
   "points_above_replacement": 876.79,
   "points_from_free_claims": 4870.16,
   "points_from_paid_claims": 16503.76,
-  "points_per_dollar": 2.4,
+  "points_per_dollar": 2.39,
   "worst_par_claim": {
    "bid": 4,
    "par_per_dollar": -8.38,
@@ -40370,22 +40496,22 @@
       "weeks_started": 2
      },
      "biggest_bust": {
-      "bid": 14,
+      "bid": 18,
       "par_per_dollar": 0.0,
-      "player": "Adonai Mitchell",
+      "player": "Houston Texans",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,
-      "pos": "WR",
+      "pos": "DEF",
       "season": "2026",
-      "week": 2,
+      "week": 8,
       "weeks_started": 0
      },
-     "claims_benched_only": 1,
+     "claims_benched_only": 2,
      "claims_dropped_before_playing": 0,
-     "dollars_spent": 41,
+     "dollars_spent": 59,
      "free_claims": 0,
-     "hit_rate": 0.667,
+     "hit_rate": 0.5,
      "most_points": {
       "bid": 3,
       "par_per_dollar": 1.88,
@@ -40398,12 +40524,12 @@
       "week": 1,
       "weeks_started": 5
      },
-     "paid_claims": 3,
-     "par_per_dollar": 0.11,
+     "paid_claims": 4,
+     "par_per_dollar": 0.08,
      "points_above_replacement": 4.69,
      "points_from_free_claims": 0,
      "points_from_paid_claims": 130.9,
-     "points_per_dollar": 3.19,
+     "points_per_dollar": 2.22,
      "worst_par_claim": {
       "bid": 24,
       "par_per_dollar": -0.04,
@@ -40418,11 +40544,11 @@
      }
     }
    },
-   "claims_benched_only": 10,
+   "claims_benched_only": 11,
    "claims_dropped_before_playing": 2,
-   "dollars_spent": 691,
+   "dollars_spent": 709,
    "free_claims": 35,
-   "hit_rate": 0.782,
+   "hit_rate": 0.768,
    "most_points": {
     "bid": 2,
     "par_per_dollar": 21.95,
@@ -40435,13 +40561,13 @@
     "week": 1,
     "weeks_started": 11
    },
-   "paid_claims": 55,
+   "paid_claims": 56,
    "par_per_dollar": -0.07,
    "par_rank": 10,
    "points_above_replacement": -48.09,
    "points_from_free_claims": 450.52,
    "points_from_paid_claims": 981.16,
-   "points_per_dollar": 1.42,
+   "points_per_dollar": 1.38,
    "rank": 10,
    "worst_par_claim": {
     "bid": 26,
@@ -41045,7 +41171,7 @@
      "claims_benched_only": 2,
      "claims_dropped_before_playing": 0,
      "dollars_spent": 15,
-     "free_claims": 4,
+     "free_claims": 5,
      "hit_rate": 0.6,
      "most_points": {
       "bid": 7,
@@ -41082,7 +41208,7 @@
    "claims_benched_only": 20,
    "claims_dropped_before_playing": 17,
    "dollars_spent": 626,
-   "free_claims": 63,
+   "free_claims": 64,
    "hit_rate": 0.598,
    "most_points": {
     "bid": 2,
@@ -43499,22 +43625,22 @@
       "weeks_started": 1
      },
      "biggest_bust": {
-      "bid": 5,
+      "bid": 6,
       "par_per_dollar": 0.0,
-      "player": "Kendre Miller",
+      "player": "Patrick Mahomes",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,
-      "pos": "RB",
+      "pos": "QB",
       "season": "2026",
-      "week": 3,
+      "week": 8,
       "weeks_started": 0
      },
-     "claims_benched_only": 4,
+     "claims_benched_only": 7,
      "claims_dropped_before_playing": 0,
-     "dollars_spent": 55,
+     "dollars_spent": 64,
      "free_claims": 1,
-     "hit_rate": 0.636,
+     "hit_rate": 0.5,
      "most_points": {
       "bid": 22,
       "par_per_dollar": 0.54,
@@ -43527,12 +43653,12 @@
       "week": 3,
       "weeks_started": 3
      },
-     "paid_claims": 11,
-     "par_per_dollar": 0.14,
+     "paid_claims": 14,
+     "par_per_dollar": 0.12,
      "points_above_replacement": 7.97,
      "points_from_free_claims": 25.18,
      "points_from_paid_claims": 135.0,
-     "points_per_dollar": 2.45,
+     "points_per_dollar": 2.11,
      "worst_par_claim": {
       "bid": 3,
       "par_per_dollar": -2.85,
@@ -43547,11 +43673,11 @@
      }
     }
    },
-   "claims_benched_only": 26,
+   "claims_benched_only": 29,
    "claims_dropped_before_playing": 3,
-   "dollars_spent": 659,
+   "dollars_spent": 668,
    "free_claims": 27,
-   "hit_rate": 0.71,
+   "hit_rate": 0.689,
    "most_points": {
     "bid": 5,
     "par_per_dollar": 2.79,
@@ -43564,13 +43690,13 @@
     "week": 1,
     "weeks_started": 14
    },
-   "paid_claims": 100,
-   "par_per_dollar": 0.16,
-   "par_rank": 6,
+   "paid_claims": 103,
+   "par_per_dollar": 0.15,
+   "par_rank": 7,
    "points_above_replacement": 103.01,
    "points_from_free_claims": 216.72,
    "points_from_paid_claims": 2218.68,
-   "points_per_dollar": 3.37,
+   "points_per_dollar": 3.32,
    "rank": 2,
    "worst_par_claim": {
     "bid": 11,
@@ -44822,7 +44948,7 @@
    },
    "paid_claims": 37,
    "par_per_dollar": 0.15,
-   "par_rank": 7,
+   "par_rank": 6,
    "points_above_replacement": 51.51,
    "points_from_free_claims": 488.92,
    "points_from_paid_claims": 384.98,
@@ -47355,11 +47481,11 @@
       "week": 4,
       "weeks_started": 0
      },
-     "claims_benched_only": 2,
+     "claims_benched_only": 3,
      "claims_dropped_before_playing": 1,
-     "dollars_spent": 49,
+     "dollars_spent": 53,
      "free_claims": 1,
-     "hit_rate": 0.625,
+     "hit_rate": 0.556,
      "most_points": {
       "bid": 12,
       "par_per_dollar": 1.14,
@@ -47372,12 +47498,12 @@
       "week": 2,
       "weeks_started": 3
      },
-     "paid_claims": 8,
-     "par_per_dollar": 0.41,
+     "paid_claims": 9,
+     "par_per_dollar": 0.38,
      "points_above_replacement": 20.31,
      "points_from_free_claims": 0.0,
      "points_from_paid_claims": 117.48,
-     "points_per_dollar": 2.4,
+     "points_per_dollar": 2.22,
      "worst_par_claim": {
       "bid": 9,
       "par_per_dollar": -1.17,
@@ -47392,11 +47518,11 @@
      }
     }
    },
-   "claims_benched_only": 18,
+   "claims_benched_only": 19,
    "claims_dropped_before_playing": 3,
-   "dollars_spent": 644,
+   "dollars_spent": 648,
    "free_claims": 8,
-   "hit_rate": 0.764,
+   "hit_rate": 0.756,
    "most_points": {
     "bid": 12,
     "par_per_dollar": 1.48,
@@ -47409,13 +47535,13 @@
     "week": 2,
     "weeks_started": 11
    },
-   "paid_claims": 89,
-   "par_per_dollar": 0.5,
+   "paid_claims": 90,
+   "par_per_dollar": 0.49,
    "par_rank": 1,
    "points_above_replacement": 319.45,
    "points_from_free_claims": 50.1,
    "points_from_paid_claims": 1990.7,
-   "points_per_dollar": 3.09,
+   "points_per_dollar": 3.07,
    "rank": 3,
    "worst_par_claim": {
     "bid": 6,
