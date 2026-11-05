@@ -1,1 +1,58 @@
-[]
+[
+ {
+  "game": "Questionable",
+  "injury": "Ankle, Foot",
+  "name": "Bhayshul Tuten",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Jaguars"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Rib",
+  "name": "Travon Walker",
+  "pos": "DE",
+  "practice": "Limited Participation in Practice",
+  "team": "Jaguars"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Jaylinn Hawkins",
+  "pos": "S",
+  "practice": "Did Not Participate In Practice",
+  "team": "Ravens"
+ },
+ {
+  "game": "Out",
+  "injury": "Toe",
+  "name": "Tyler Huntley",
+  "pos": "QB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Ravens"
+ },
+ {
+  "game": "Out",
+  "injury": "Thumb",
+  "name": "Lamar Jackson",
+  "pos": "QB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Ravens"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Neck",
+  "name": "Adam Randall",
+  "pos": "RB",
+  "practice": "Full Participation in Practice",
+  "team": "Ravens"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Stinger, Illness",
+  "name": "Nate Wiggins",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Ravens"
+ }
+]

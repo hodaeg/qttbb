@@ -12,7 +12,7 @@
   "team": "HOU"
  },
  "10219": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Chris Rodriguez Jr.",
   "pos": "RB",
   "team": "JAX"
@@ -36,7 +36,7 @@
   "team": "CIN"
  },
  "10229": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Rashee Rice",
   "pos": "WR",
   "team": "KC"
@@ -312,7 +312,7 @@
   "team": "ARI"
  },
  "11597": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Theo Johnson",
   "pos": "TE",
   "team": "NYG"
@@ -354,7 +354,7 @@
   "team": "CHI"
  },
  "11623": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jordan Whittington",
   "pos": "WR",
   "team": "LAR"
@@ -426,7 +426,7 @@
   "team": "SF"
  },
  "11643": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jaylen Wright",
   "pos": "RB",
   "team": "MIA"
@@ -636,7 +636,7 @@
   "team": "SEA"
  },
  "12498": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Mason Taylor",
   "pos": "TE",
   "team": "NYJ"
@@ -924,7 +924,7 @@
   "team": "DEN"
  },
  "13346": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Denzel Boston",
   "pos": "WR",
   "team": "CLE"
@@ -1050,7 +1050,7 @@
   "team": null
  },
  "1466": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Travis Kelce",
   "pos": "TE",
   "team": "KC"
@@ -1890,7 +1890,7 @@
   "team": "SF"
  },
  "4035": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Alvin Kamara",
   "pos": "RB",
   "team": "NO"
@@ -2076,7 +2076,7 @@
   "team": null
  },
  "4195": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jake Elliott",
   "pos": "K",
   "team": "PHI"
@@ -2100,7 +2100,7 @@
   "team": "MIN"
  },
  "421": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Matthew Stafford",
   "pos": "QB",
   "team": "LAR"
@@ -2250,7 +2250,7 @@
   "team": null
  },
  "4866": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Saquon Barkley",
   "pos": "RB",
   "team": "PHI"
@@ -2280,7 +2280,7 @@
   "team": null
  },
  "4943": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Sam Darnold",
   "pos": "QB",
   "team": "SEA"
@@ -2292,7 +2292,7 @@
   "team": null
  },
  "4950": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Christian Kirk",
   "pos": "WR",
   "team": "SF"
@@ -2376,7 +2376,7 @@
   "team": null
  },
  "4995": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Ian Thomas",
   "pos": "TE",
   "team": "LV"
@@ -2826,7 +2826,7 @@
   "team": null
  },
  "5892": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "David Montgomery",
   "pos": "RB",
   "team": "HOU"
@@ -2868,7 +2868,7 @@
   "team": null
  },
  "5947": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Jakobi Meyers",
   "pos": "WR",
   "team": "JAX"
@@ -3618,7 +3618,7 @@
   "team": "NO"
  },
  "7547": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Amon-Ra St. Brown",
   "pos": "WR",
   "team": "DET"
@@ -3660,13 +3660,13 @@
   "team": null
  },
  "7567": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Kenny Gainwell",
   "pos": "RB",
   "team": "TB"
  },
  "7568": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Brevin Jordan",
   "pos": "TE",
   "team": "HOU"
@@ -3723,7 +3723,7 @@
   "injury_status": null,
   "name": "Jermar Jefferson",
   "pos": "RB",
-  "team": null
+  "team": "ARI"
  },
  "7600": {
   "injury_status": null,
@@ -3954,7 +3954,7 @@
   "team": "BUF"
  },
  "8135": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Treylon Burks",
   "pos": "WR",
   "team": "WAS"
@@ -3966,7 +3966,7 @@
   "team": "WAS"
  },
  "8137": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "George Pickens",
   "pos": "WR",
   "team": "DAL"

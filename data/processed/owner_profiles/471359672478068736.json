@@ -58,7 +58,7 @@
   "weeks": 123
  },
  "faab_and_transactions": {
-  "adds": 326,
+  "adds": 328,
   "biggest_bid": {
    "amount": 45,
    "player": "Michael Carter",
@@ -66,9 +66,9 @@
    "week": 7
   },
   "budget_per_season": 100,
-  "drops": 320,
+  "drops": 323,
   "faab_taken_as_penalty": 50,
-  "free_agent_adds": 250,
+  "free_agent_adds": 252,
   "most_frequent_trade_partner": {
    "owner_id": "79761560662589440",
    "trades": 2
@@ -1986,11 +1986,11 @@
    "division": "The Graveyard",
    "efficiency": 0.9073,
    "faab": {
-    "adds": 21,
+    "adds": 23,
     "budget": 100,
-    "drops": 19,
+    "drops": 22,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 14,
+    "free_agent_adds": 16,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 25,

@@ -56,7 +56,7 @@
   "weeks": 119
  },
  "faab_and_transactions": {
-  "adds": 241,
+  "adds": 242,
   "biggest_bid": {
    "amount": 45,
    "player": "Chuba Hubbard",
@@ -64,9 +64,9 @@
    "week": 3
   },
   "budget_per_season": 100,
-  "drops": 239,
+  "drops": 240,
   "faab_taken_as_penalty": 6,
-  "free_agent_adds": 141,
+  "free_agent_adds": 142,
   "most_frequent_trade_partner": {
    "owner_id": "471368473092550656",
    "trades": 1
@@ -2103,11 +2103,11 @@
    "division": "The Graveyard",
    "efficiency": 0.9456,
    "faab": {
-    "adds": 13,
+    "adds": 14,
     "budget": 100,
-    "drops": 12,
+    "drops": 13,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 5,
+    "free_agent_adds": 6,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 38,
