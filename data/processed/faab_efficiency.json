@@ -38676,7 +38676,7 @@
      "week": 5
     }
    ],
-   "weeks_rostered": 14,
+   "weeks_rostered": 4,
    "weeks_started": 1
   },
   {
@@ -39763,8 +39763,8 @@
   {
    "bid": 2,
    "dropped": [],
-   "first_week": 9,
-   "outcome": "never_started",
+   "first_week": null,
+   "outcome": "dropped_before_playing",
    "owner_id": "471345530597797888",
    "par_per_dollar": 0.0,
    "player": "Sam Darnold",
@@ -39777,7 +39777,7 @@
    "season": "2026",
    "week": 8,
    "weekly": [],
-   "weeks_rostered": 10,
+   "weeks_rostered": 0,
    "weeks_started": 0
   },
   {
@@ -39905,8 +39905,8 @@
    "week": 3,
    "weeks_started": 0
   },
-  "claims_benched_only": 206,
-  "claims_dropped_before_playing": 49,
+  "claims_benched_only": 205,
+  "claims_dropped_before_playing": 50,
   "dollars_spent": 6902,
   "free_claims": 371,
   "hit_rate": 0.695,
@@ -43636,8 +43636,8 @@
       "week": 8,
       "weeks_started": 0
      },
-     "claims_benched_only": 7,
-     "claims_dropped_before_playing": 0,
+     "claims_benched_only": 6,
+     "claims_dropped_before_playing": 1,
      "dollars_spent": 64,
      "free_claims": 1,
      "hit_rate": 0.5,
@@ -43673,8 +43673,8 @@
      }
     }
    },
-   "claims_benched_only": 29,
-   "claims_dropped_before_playing": 3,
+   "claims_benched_only": 28,
+   "claims_dropped_before_playing": 4,
    "dollars_spent": 668,
    "free_claims": 27,
    "hit_rate": 0.689,

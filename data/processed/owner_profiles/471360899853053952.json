@@ -53,7 +53,7 @@
   "weeks": 120
  },
  "faab_and_transactions": {
-  "adds": 287,
+  "adds": 288,
   "biggest_bid": {
    "amount": 89,
    "player": "Jerome Ford",
@@ -61,9 +61,9 @@
    "week": 2
   },
   "budget_per_season": 100,
-  "drops": 296,
+  "drops": 297,
   "faab_taken_as_penalty": 0,
-  "free_agent_adds": 174,
+  "free_agent_adds": 175,
   "most_frequent_trade_partner": {
    "owner_id": "422102738889867264",
    "trades": 1
@@ -2098,11 +2098,11 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.8468,
    "faab": {
-    "adds": 7,
+    "adds": 8,
     "budget": 100,
-    "drops": 7,
+    "drops": 8,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 2,
+    "free_agent_adds": 3,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 48,
