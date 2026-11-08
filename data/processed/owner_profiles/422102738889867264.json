@@ -57,7 +57,7 @@
   "weeks": 120
  },
  "faab_and_transactions": {
-  "adds": 350,
+  "adds": 351,
   "biggest_bid": {
    "amount": 48,
    "player": "Devonta Freeman",
@@ -65,9 +65,9 @@
    "week": 2
   },
   "budget_per_season": 100,
-  "drops": 341,
+  "drops": 342,
   "faab_taken_as_penalty": 25,
-  "free_agent_adds": 194,
+  "free_agent_adds": 195,
   "most_frequent_trade_partner": {
    "owner_id": "471366618241298432",
    "trades": 3
@@ -2102,11 +2102,11 @@
    "division": "The Graveyard",
    "efficiency": 0.8646,
    "faab": {
-    "adds": 23,
+    "adds": 24,
     "budget": 100,
-    "drops": 21,
+    "drops": 22,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 13,
+    "free_agent_adds": 14,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 15,

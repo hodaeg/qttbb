@@ -120,7 +120,7 @@
   "team": "Falcons"
  },
  {
-  "game": "Questionable",
+  "game": "Out",
   "injury": "Ankle",
   "name": "Cameron Williams",
   "pos": "T",
@@ -208,7 +208,7 @@
   "team": "Colts"
  },
  {
-  "game": "Questionable",
+  "game": "Out",
   "injury": "Ankle",
   "name": "A.J. Haulcy",
   "pos": "S",
@@ -392,7 +392,7 @@
   "team": "Panthers"
  },
  {
-  "game": "Questionable",
+  "game": "Out",
   "injury": "Ankle",
   "name": "Joseph Ossai",
   "pos": "DE",
@@ -400,7 +400,7 @@
   "team": "Jets"
  },
  {
-  "game": "Questionable",
+  "game": "Out",
   "injury": "Knee",
   "name": "VJ Payne",
   "pos": "S",
@@ -432,7 +432,7 @@
   "team": "Jets"
  },
  {
-  "game": "Questionable",
+  "game": "Out",
   "injury": "Back",
   "name": "Nahshon Wright",
   "pos": "CB",
@@ -718,6 +718,22 @@
   "pos": "WR",
   "practice": "Did Not Participate In Practice",
   "team": "Eagles"
+ },
+ {
+  "game": "Out",
+  "injury": "Concussion, Hand",
+  "name": "Reed Blankenship",
+  "pos": "S",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Groin",
+  "name": "David Montgomery",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
  },
  {
   "game": "Doubtful",
@@ -1080,7 +1096,7 @@
   "team": "Patriots"
  },
  {
-  "game": "Questionable",
+  "game": "Out",
   "injury": "Hamstring",
   "name": "Greg Van Roten",
   "pos": "G",
@@ -1126,5 +1142,93 @@
   "pos": "CB",
   "practice": "Limited Participation in Practice",
   "team": "Bears"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Alec Anderson",
+  "pos": "G",
+  "practice": "Limited Participation in Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Rib",
+  "name": "Dion Dawkins",
+  "pos": "T",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Calf",
+  "name": "Greg Gaines",
+  "pos": "DT",
+  "practice": "Limited Participation in Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Jordan Hancock",
+  "pos": "CB",
+  "practice": "Limited Participation in Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Josh Palmer",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Tyrell Shavers",
+  "pos": "WR",
+  "practice": "Full Participation in Practice",
+  "team": "Bills"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Demond Claiborne",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Vikings"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Quadricep",
+  "name": "Theo Jackson",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Vikings"
+ },
+ {
+  "game": "Out",
+  "injury": "Calf",
+  "name": "Jauan Jennings",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Vikings"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Kyler Murray",
+  "pos": "QB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Vikings"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Knee",
+  "name": "Jay Ward",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Vikings"
  }
 ]

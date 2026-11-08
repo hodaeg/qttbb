@@ -56,7 +56,7 @@
   "weeks": 120
  },
  "faab_and_transactions": {
-  "adds": 292,
+  "adds": 293,
   "biggest_bid": {
    "amount": 64,
    "player": "Kenneth Walker III",
@@ -64,9 +64,9 @@
    "week": 5
   },
   "budget_per_season": 100,
-  "drops": 282,
+  "drops": 283,
   "faab_taken_as_penalty": 11,
-  "free_agent_adds": 194,
+  "free_agent_adds": 195,
   "most_frequent_trade_partner": {
    "owner_id": "471366618241298432",
    "trades": 2
@@ -2083,11 +2083,11 @@
    "division": "The Graveyard",
    "efficiency": 0.9144,
    "faab": {
-    "adds": 27,
+    "adds": 28,
     "budget": 100,
-    "drops": 26,
+    "drops": 27,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 17,
+    "free_agent_adds": 18,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 53,

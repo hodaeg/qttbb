@@ -354,7 +354,7 @@
   "team": "CHI"
  },
  "11623": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Jordan Whittington",
   "pos": "WR",
   "team": "LAR"
@@ -414,7 +414,7 @@
   "team": "LAC"
  },
  "11637": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Keon Coleman",
   "pos": "WR",
   "team": "BUF"
@@ -576,7 +576,7 @@
   "team": "WAS"
  },
  "12481": {
-  "injury_status": "Doubtful",
+  "injury_status": "Out",
   "name": "Cam Skattebo",
   "pos": "RB",
   "team": "NYG"
@@ -612,7 +612,7 @@
   "team": "JAX"
  },
  "12492": {
-  "injury_status": "IR",
+  "injury_status": null,
   "name": "Pat Bryant",
   "pos": "WR",
   "team": "DEN"
@@ -852,7 +852,7 @@
   "team": "TEN"
  },
  "13281": {
-  "injury_status": "IR",
+  "injury_status": null,
   "name": "Jordyn Tyson",
   "pos": "WR",
   "team": "NO"
@@ -892,6 +892,12 @@
   "name": "KC Concepcion Jr.",
   "pos": "WR",
   "team": "CLE"
+ },
+ "13301": {
+  "injury_status": null,
+  "name": "Antonio Williams",
+  "pos": "WR",
+  "team": "WAS"
  },
  "13305": {
   "injury_status": null,
@@ -1401,7 +1407,7 @@
   "injury_status": null,
   "name": "Phillip Dorsett II",
   "pos": "WR",
-  "team": "LV"
+  "team": null
  },
  "2342": {
   "injury_status": null,
@@ -1668,7 +1674,7 @@
   "team": null
  },
  "3286": {
-  "injury_status": "IR",
+  "injury_status": null,
   "name": "Demarcus Robinson",
   "pos": "WR",
   "team": "SF"
@@ -1854,7 +1860,7 @@
   "team": "TEN"
  },
  "4017": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Deshaun Watson",
   "pos": "QB",
   "team": "CLE"
@@ -2058,7 +2064,7 @@
   "team": null
  },
  "4177": {
-  "injury_status": "IR",
+  "injury_status": "Questionable",
   "name": "Mack Hollins",
   "pos": "WR",
   "team": "NE"
@@ -2160,7 +2166,7 @@
   "team": null
  },
  "4351": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Tim Patrick",
   "pos": "WR",
   "team": "NYJ"
@@ -2292,7 +2298,7 @@
   "team": null
  },
  "4950": {
-  "injury_status": "Out",
+  "injury_status": "IR",
   "name": "Christian Kirk",
   "pos": "WR",
   "team": "SF"
@@ -2334,7 +2340,7 @@
   "team": "TEN"
  },
  "4983": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "DJ Moore",
   "pos": "WR",
   "team": "BUF"
@@ -2760,7 +2766,7 @@
   "team": "PHI"
  },
  "5849": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Kyler Murray",
   "pos": "QB",
   "team": "MIN"
@@ -3078,7 +3084,7 @@
   "team": null
  },
  "6271": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Olamide Zaccheaus",
   "pos": "WR",
   "team": "ATL"
@@ -3306,7 +3312,7 @@
   "team": "CHI"
  },
  "6828": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "AJ Dillon",
   "pos": "RB",
   "team": "CAR"
@@ -3348,7 +3354,7 @@
   "team": "WAS"
  },
  "6865": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Colby Parkinson",
   "pos": "TE",
   "team": "LAR"
@@ -3504,7 +3510,7 @@
   "team": null
  },
  "7049": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Jauan Jennings",
   "pos": "WR",
   "team": "MIN"
@@ -3600,7 +3606,7 @@
   "team": "DEN"
  },
  "7538": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Zach Wilson",
   "pos": "QB",
   "team": "NO"
@@ -3618,7 +3624,7 @@
   "team": "NO"
  },
  "7547": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Amon-Ra St. Brown",
   "pos": "WR",
   "team": "DET"
@@ -3780,7 +3786,7 @@
   "team": null
  },
  "7670": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Joshua Palmer",
   "pos": "WR",
   "team": "BUF"
@@ -3927,7 +3933,7 @@
   "injury_status": "Questionable",
   "name": "Dameon Pierce",
   "pos": "RB",
-  "team": "PHI"
+  "team": null
  },
  "8130": {
   "injury_status": null,
@@ -3966,7 +3972,7 @@
   "team": "WAS"
  },
  "8137": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "George Pickens",
   "pos": "WR",
   "team": "DAL"
@@ -4038,7 +4044,7 @@
   "team": null
  },
  "8154": {
-  "injury_status": "Out",
+  "injury_status": "IR",
   "name": "Brian Robinson Jr.",
   "pos": "RB",
   "team": "ATL"
@@ -4182,7 +4188,7 @@
   "team": "LAC"
  },
  "829": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Andy Dalton",
   "pos": "QB",
   "team": "ATL"
