@@ -16,7 +16,7 @@
    "wins": 10
   },
   "record": {
-   "losses": 98,
+   "losses": 99,
    "ties": 0,
    "wins": 109
   },
@@ -28,7 +28,7 @@
    15,
    15
   ],
-  "win_pct": 0.5266
+  "win_pct": 0.524
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -50,12 +50,12 @@
  "current_team_name": "Grin & Bear It",
  "display_name": "ToadLicker",
  "efficiency": {
-  "efficiency": 0.9007,
+  "efficiency": 0.9011,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14516.7,
-  "points": 13074.7,
-  "points_left_on_bench": 1442.0,
-  "weeks": 119
+  "optimal_points": 14615.62,
+  "points": 13169.72,
+  "points_left_on_bench": 1445.9,
+  "weeks": 120
  },
  "faab_and_transactions": {
   "adds": 293,
@@ -647,27 +647,27 @@
    "2026": {
     "best_par_claim": {
      "bid": 24,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.17,
      "player": "Braelon Allen",
-     "points_above_replacement": 30.65,
-     "points_per_dollar": 3.12,
-     "points_started": 74.9,
+     "points_above_replacement": 28.12,
+     "points_per_dollar": 3.3,
+     "points_started": 79.3,
      "pos": "RB",
      "season": "2026",
      "week": 3,
-     "weeks_started": 5
+     "weeks_started": 6
     },
     "best_value": {
      "bid": 24,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.17,
      "player": "Braelon Allen",
-     "points_above_replacement": 30.65,
-     "points_per_dollar": 3.12,
-     "points_started": 74.9,
+     "points_above_replacement": 28.12,
+     "points_per_dollar": 3.3,
+     "points_started": 79.3,
      "pos": "RB",
      "season": "2026",
      "week": 3,
-     "weeks_started": 5
+     "weeks_started": 6
     },
     "biggest_bust": {
      "bid": 9,
@@ -688,27 +688,27 @@
     "hit_rate": 0.556,
     "most_points": {
      "bid": 24,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.17,
      "player": "Braelon Allen",
-     "points_above_replacement": 30.65,
-     "points_per_dollar": 3.12,
-     "points_started": 74.9,
+     "points_above_replacement": 28.12,
+     "points_per_dollar": 3.3,
+     "points_started": 79.3,
      "pos": "RB",
      "season": "2026",
      "week": 3,
-     "weeks_started": 5
+     "weeks_started": 6
     },
     "paid_claims": 9,
-    "par_per_dollar": 0.22,
-    "points_above_replacement": 13.97,
+    "par_per_dollar": 0.15,
+    "points_above_replacement": 9.75,
     "points_from_free_claims": -1.0,
-    "points_from_paid_claims": 110.54,
-    "points_per_dollar": 1.75,
+    "points_from_paid_claims": 114.94,
+    "points_per_dollar": 1.82,
     "worst_par_claim": {
      "bid": 4,
-     "par_per_dollar": -2.03,
+     "par_per_dollar": -2.62,
      "player": "Kansas City Chiefs",
-     "points_above_replacement": -8.13,
+     "points_above_replacement": -10.5,
      "points_per_dollar": 2.25,
      "points_started": 9.0,
      "pos": "DEF",
@@ -724,7 +724,7 @@
   "dollars_spent": 671,
   "free_claims": 28,
   "hit_rate": 0.711,
-  "league_points_per_dollar": 2.39,
+  "league_points_per_dollar": 2.42,
   "most_points": {
    "bid": 7,
    "par_per_dollar": 5.33,
@@ -739,12 +739,12 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 90,
-  "par_per_dollar": 0.23,
+  "par_per_dollar": 0.22,
   "par_rank": 4,
-  "points_above_replacement": 153.57,
+  "points_above_replacement": 149.35,
   "points_from_free_claims": 302.82,
-  "points_from_paid_claims": 1906.34,
-  "points_per_dollar": 2.84,
+  "points_from_paid_claims": 1910.74,
+  "points_per_dollar": 2.85,
   "rank": 4,
   "worst_par_claim": {
    "bid": 5,
@@ -854,10 +854,10 @@
     "wins": 5
    },
    "79761560662589440": {
-    "games": 13,
-    "losses": 4,
-    "points_against": 1197.58,
-    "points_for": 1326.54,
+    "games": 14,
+    "losses": 5,
+    "points_against": 1319.84,
+    "points_for": 1421.56,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 9
@@ -906,7 +906,7 @@
      "wins": 0
     },
     "record": {
-     "losses": 3,
+     "losses": 4,
      "ties": 0,
      "wins": 5
     },
@@ -949,21 +949,21 @@
    "perfect_seasons": 0,
    "playoff_appearances": 55,
    "playoff_wins": 100,
-   "record_bonus": 20,
+   "record_bonus": 0,
    "sackos": 0,
    "scoring_bonuses": 30
   },
-  "points": 525,
+  "points": 505,
   "points_ahead_of_next_rank_down": {
    "first_name": "Suze",
    "owner_id": "471074114505797632",
-   "points": 245
+   "points": 225
   },
-  "points_since_snapshot": 20,
+  "points_since_snapshot": 0,
   "points_to_next_rank_up": {
    "first_name": "Mike",
    "owner_id": "422102738889867264",
-   "points": 125
+   "points": 145
   },
   "published_points": 505,
   "published_rank_change": 0,
@@ -1076,7 +1076,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "5-3",
+     "counted_record": "5-4",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1091,8 +1091,8 @@
   "snapshot_rank": 2
  },
  "luck": {
-  "expected_wins": 62.38,
-  "luck": 0.62,
+  "expected_wins": 62.84,
+  "luck": 0.16,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
   "wins": 63
  },
@@ -1112,25 +1112,25 @@
    "wins": 5
   },
   "regular_season": {
-   "avg_points_against": 103.72,
-   "avg_points_for": 110.05,
-   "games": 104,
-   "losses": 41,
-   "points_against": 10786.84,
-   "points_for": 11444.94,
+   "avg_points_against": 103.9,
+   "avg_points_for": 109.9,
+   "games": 105,
+   "losses": 42,
+   "points_against": 10909.1,
+   "points_for": 11539.96,
    "ties": 0,
-   "win_pct": 0.6058,
+   "win_pct": 0.6,
    "wins": 63
   },
   "total": {
-   "avg_points_against": 104.89,
-   "avg_points_for": 109.87,
-   "games": 119,
-   "losses": 51,
-   "points_against": 12482.32,
-   "points_for": 13074.7,
+   "avg_points_against": 105.04,
+   "avg_points_for": 109.75,
+   "games": 120,
+   "losses": 52,
+   "points_against": 12604.58,
+   "points_for": 13169.72,
    "ties": 0,
-   "win_pct": 0.5714,
+   "win_pct": 0.5667,
    "wins": 68
   }
  },
@@ -2106,7 +2106,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.8999,
+   "efficiency": 0.9059,
    "faab": {
     "adds": 29,
     "budget": 100,
@@ -2127,27 +2127,27 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 24,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.17,
      "player": "Braelon Allen",
-     "points_above_replacement": 30.65,
-     "points_per_dollar": 3.12,
-     "points_started": 74.9,
+     "points_above_replacement": 28.12,
+     "points_per_dollar": 3.3,
+     "points_started": 79.3,
      "pos": "RB",
      "season": "2026",
      "week": 3,
-     "weeks_started": 5
+     "weeks_started": 6
     },
     "best_value": {
      "bid": 24,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.17,
      "player": "Braelon Allen",
-     "points_above_replacement": 30.65,
-     "points_per_dollar": 3.12,
-     "points_started": 74.9,
+     "points_above_replacement": 28.12,
+     "points_per_dollar": 3.3,
+     "points_started": 79.3,
      "pos": "RB",
      "season": "2026",
      "week": 3,
-     "weeks_started": 5
+     "weeks_started": 6
     },
     "biggest_bust": {
      "bid": 9,
@@ -2168,27 +2168,27 @@
     "hit_rate": 0.556,
     "most_points": {
      "bid": 24,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.17,
      "player": "Braelon Allen",
-     "points_above_replacement": 30.65,
-     "points_per_dollar": 3.12,
-     "points_started": 74.9,
+     "points_above_replacement": 28.12,
+     "points_per_dollar": 3.3,
+     "points_started": 79.3,
      "pos": "RB",
      "season": "2026",
      "week": 3,
-     "weeks_started": 5
+     "weeks_started": 6
     },
     "paid_claims": 9,
-    "par_per_dollar": 0.22,
-    "points_above_replacement": 13.97,
+    "par_per_dollar": 0.15,
+    "points_above_replacement": 9.75,
     "points_from_free_claims": -1.0,
-    "points_from_paid_claims": 110.54,
-    "points_per_dollar": 1.75,
+    "points_from_paid_claims": 114.94,
+    "points_per_dollar": 1.82,
     "worst_par_claim": {
      "bid": 4,
-     "par_per_dollar": -2.03,
+     "par_per_dollar": -2.62,
      "player": "Kansas City Chiefs",
-     "points_above_replacement": -8.13,
+     "points_above_replacement": -10.5,
      "points_per_dollar": 2.25,
      "points_started": 9.0,
      "pos": "DEF",
@@ -2199,9 +2199,9 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "45-43",
-    "expected_wins": 4.09,
-    "luck": 0.91,
+    "all_play_record": "50-49",
+    "expected_wins": 4.55,
+    "luck": 0.45,
     "wins": 5
    },
    "made_playoffs": true,
@@ -2218,21 +2218,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 102.41,
-    "avg_points_for": 100.41,
-    "games": 8,
-    "losses": 3,
-    "points_against": 819.3,
-    "points_for": 803.3,
+    "avg_points_against": 104.62,
+    "avg_points_for": 99.81,
+    "games": 9,
+    "losses": 4,
+    "points_against": 941.56,
+    "points_for": 898.32,
     "ties": 0,
-    "win_pct": 0.625,
+    "win_pct": 0.5556,
     "wins": 5
    },
    "regular_season_rank": 3,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 819.3,
-    "points_for": 803.3
+    "points_against": 941.56,
+    "points_for": 898.32
    },
    "team_name": "Grin & Bear It"
   }
@@ -2279,7 +2279,7 @@
   "points_by_kind": {
    "missed_league_note": 10
   },
-  "rank": 4,
+  "rank": 3,
   "rank_note": "1 = best (lowest). Ties share a rank.",
   "total": 10,
   "worst_penalty_id": "2019-note-r10-1"

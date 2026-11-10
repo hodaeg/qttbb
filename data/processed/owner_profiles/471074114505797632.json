@@ -19,7 +19,7 @@
   "record": {
    "losses": 89,
    "ties": 0,
-   "wins": 86
+   "wins": 87
   },
   "sackos": 1,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -28,7 +28,7 @@
    15,
    -15
   ],
-  "win_pct": 0.4914
+  "win_pct": 0.4943
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -50,12 +50,12 @@
  "current_team_name": "Amazing Fantasy #15",
  "display_name": "JSusee",
  "efficiency": {
-  "efficiency": 0.9015,
+  "efficiency": 0.8992,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14137.4,
-  "points": 12745.14,
-  "points_left_on_bench": 1392.26,
-  "weeks": 119
+  "optimal_points": 14291.36,
+  "points": 12850.74,
+  "points_left_on_bench": 1440.62,
+  "weeks": 120
  },
  "faab_and_transactions": {
   "adds": 213,
@@ -577,7 +577,7 @@
     "paid_claims": 0,
     "par_per_dollar": null,
     "points_above_replacement": 0,
-    "points_from_free_claims": 48.3,
+    "points_from_free_claims": 63.3,
     "points_from_paid_claims": 0,
     "points_per_dollar": null,
     "worst_par_claim": null
@@ -589,7 +589,7 @@
   "dollars_spent": 445,
   "free_claims": 30,
   "hit_rate": 0.694,
-  "league_points_per_dollar": 2.39,
+  "league_points_per_dollar": 2.42,
   "most_points": {
    "bid": 6,
    "par_per_dollar": 8.61,
@@ -607,7 +607,7 @@
   "par_per_dollar": 0.31,
   "par_rank": 2,
   "points_above_replacement": 139.41,
-  "points_from_free_claims": 665.88,
+  "points_from_free_claims": 680.88,
   "points_from_paid_claims": 1077.98,
   "points_per_dollar": 2.42,
   "rank": 6,
@@ -701,13 +701,13 @@
     "wins": 7
    },
    "471366618241298432": {
-    "games": 9,
+    "games": 10,
     "losses": 6,
-    "points_against": 971.42,
-    "points_for": 983.4,
+    "points_against": 1065.3,
+    "points_for": 1089.0,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 3
+    "wins": 4
    },
    "471368473092550656": {
     "games": 8,
@@ -729,7 +729,7 @@
    }
   },
   "favorite_victim_owner_id": "422102738889867264",
-  "nemesis_owner_id": "471366618241298432"
+  "nemesis_owner_id": "471359444949659648"
  },
  "in_current_league": true,
  "legacy": {
@@ -773,7 +773,7 @@
     "record": {
      "losses": 5,
      "ties": 0,
-     "wins": 3
+     "wins": 4
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -828,7 +828,7 @@
   "points_to_next_rank_up": {
    "first_name": "Kyle",
    "owner_id": "471359444949659648",
-   "points": 245
+   "points": 225
   },
   "published_points": 280,
   "published_rank_change": 0,
@@ -941,7 +941,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "3-5",
+     "counted_record": "4-5",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -956,10 +956,10 @@
   "snapshot_rank": 3
  },
  "luck": {
-  "expected_wins": 55.92,
-  "luck": -2.92,
+  "expected_wins": 56.56,
+  "luck": -2.56,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 53
+  "wins": 54
  },
  "owner_id": "471074114505797632",
  "record": {
@@ -977,26 +977,26 @@
    "wins": 11
   },
   "regular_season": {
-   "avg_points_against": 105.26,
-   "avg_points_for": 106.81,
-   "games": 104,
+   "avg_points_against": 105.15,
+   "avg_points_for": 106.79,
+   "games": 105,
    "losses": 51,
-   "points_against": 10946.54,
-   "points_for": 11107.8,
+   "points_against": 11040.42,
+   "points_for": 11213.4,
    "ties": 0,
-   "win_pct": 0.5096,
-   "wins": 53
+   "win_pct": 0.5143,
+   "wins": 54
   },
   "total": {
-   "avg_points_against": 104.8,
-   "avg_points_for": 107.1,
-   "games": 119,
+   "avg_points_against": 104.7,
+   "avg_points_for": 107.09,
+   "games": 120,
    "losses": 55,
-   "points_against": 12470.72,
-   "points_for": 12745.14,
+   "points_against": 12564.6,
+   "points_for": 12850.74,
    "ties": 0,
-   "win_pct": 0.5378,
-   "wins": 64
+   "win_pct": 0.5417,
+   "wins": 65
   }
  },
  "scoring": {
@@ -1894,7 +1894,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.8636,
+   "efficiency": 0.8395,
    "faab": {
     "adds": 10,
     "budget": 100,
@@ -1925,19 +1925,19 @@
     "paid_claims": 0,
     "par_per_dollar": null,
     "points_above_replacement": 0,
-    "points_from_free_claims": 48.3,
+    "points_from_free_claims": 63.3,
     "points_from_paid_claims": 0,
     "points_per_dollar": null,
     "worst_par_claim": null
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "47-41",
-    "expected_wins": 4.27,
-    "luck": -1.27,
-    "wins": 3
+    "all_play_record": "54-45",
+    "expected_wins": 4.91,
+    "luck": -0.91,
+    "wins": 4
    },
-   "made_playoffs": false,
+   "made_playoffs": true,
    "playoff_result": null,
    "postseason": {
     "avg_points_against": null,
@@ -1951,21 +1951,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 108.91,
-    "avg_points_for": 105.93,
-    "games": 8,
+    "avg_points_against": 107.24,
+    "avg_points_for": 105.9,
+    "games": 9,
     "losses": 5,
-    "points_against": 871.28,
-    "points_for": 847.46,
+    "points_against": 965.16,
+    "points_for": 953.06,
     "ties": 0,
-    "win_pct": 0.375,
-    "wins": 3
+    "win_pct": 0.4444,
+    "wins": 4
    },
-   "regular_season_rank": 9,
+   "regular_season_rank": 6,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 871.28,
-    "points_for": 847.46
+    "points_against": 965.16,
+    "points_for": 953.06
    },
    "team_name": "Amazing Fantasy #15"
   }
@@ -1982,6 +1982,7 @@
  ],
  "tegridy_factor": {
   "by_kind": {
+   "injured_starter_out": 1,
    "questionable_did_not_play": 1
   },
   "by_season": {
@@ -1992,7 +1993,7 @@
    "2023": 0,
    "2024": 6.0,
    "2025": 0,
-   "2026": 0
+   "2026": 8.0
   },
   "clean_seasons": [
    "2019",
@@ -2003,17 +2004,19 @@
    "2025"
   ],
   "excluded_penalty_ids": [],
-  "penalty_count": 1,
+  "penalty_count": 2,
   "penalty_ids": [
-   "2024-w09-r3-questionable_did_not_play-2309"
+   "2024-w09-r3-questionable_did_not_play-2309",
+   "2026-w09-r3-injured_starter_out-7611"
   ],
   "points_by_kind": {
+   "injured_starter_out": 8.0,
    "questionable_did_not_play": 6.0
   },
-  "rank": 3,
+  "rank": 4,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 6.0,
-  "worst_penalty_id": "2024-w09-r3-questionable_did_not_play-2309"
+  "total": 14.0,
+  "worst_penalty_id": "2026-w09-r3-injured_starter_out-7611"
  },
  "trophies": {
   "championships": {

@@ -12,12 +12,12 @@
   },
   "423560331814510592": {
    "doubtful": 0,
-   "out": 3,
+   "out": 4,
    "questionable_dnp": 0
   },
   "471074114505797632": {
    "doubtful": 0,
-   "out": 0,
+   "out": 1,
    "questionable_dnp": 1
   },
   "471083964757438464": {
@@ -27,7 +27,7 @@
   },
   "471345530597797888": {
    "doubtful": 0,
-   "out": 3,
+   "out": 4,
    "questionable_dnp": 1
   },
   "471359672478068736": {
@@ -37,7 +37,7 @@
   },
   "471360899853053952": {
    "doubtful": 0,
-   "out": 3,
+   "out": 5,
    "questionable_dnp": 1
   },
   "471368473092550656": {
@@ -441,6 +441,71 @@
    "source": "snapshot",
    "status": "Out",
    "week": 8
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "423560331814510592",
+   "player": "Xavier Worthy",
+   "player_id": "11624",
+   "pos": "WR",
+   "roster_id": 2,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 9
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "471074114505797632",
+   "player": "Rhamondre Stevenson",
+   "player_id": "7611",
+   "pos": "RB",
+   "roster_id": 3,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 9
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "471345530597797888",
+   "player": "Josh Jacobs",
+   "player_id": "5850",
+   "pos": "RB",
+   "roster_id": 6,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 9
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "471360899853053952",
+   "player": "Michael Wilson",
+   "player_id": "10232",
+   "pos": "WR",
+   "roster_id": 9,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 9
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "471360899853053952",
+   "player": "Jaylen Waddle",
+   "player_id": "7526",
+   "pos": "WR",
+   "roster_id": 9,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 9
   }
  ],
  "rule": "Official NFL injury report: Out/Doubtful, or Questionable who did not play, AND 0 points as a starter (plus game-day snapshot flags)"

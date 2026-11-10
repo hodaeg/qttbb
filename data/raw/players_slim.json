@@ -48,7 +48,7 @@
   "team": "ARI"
  },
  "10232": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Michael Wilson",
   "pos": "WR",
   "team": "ARI"
@@ -2772,7 +2772,7 @@
   "team": "MIN"
  },
  "5850": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Josh Jacobs",
   "pos": "RB",
   "team": "GB"
@@ -2934,7 +2934,7 @@
   "team": null
  },
  "6011": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Gardner Minshew II",
   "pos": "QB",
   "team": "ARI"
@@ -3342,7 +3342,7 @@
   "team": null
  },
  "6850": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Harrison Bryant",
   "pos": "TE",
   "team": null
@@ -3534,7 +3534,7 @@
   "team": "BAL"
  },
  "7090": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Darnell Mooney",
   "pos": "WR",
   "team": "NYG"
@@ -3786,7 +3786,7 @@
   "team": null
  },
  "7670": {
-  "injury_status": "Out",
+  "injury_status": "IR",
   "name": "Joshua Palmer",
   "pos": "WR",
   "team": "BUF"
@@ -3864,7 +3864,7 @@
   "team": null
  },
  "8110": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Jake Ferguson",
   "pos": "TE",
   "team": "DAL"
@@ -4128,13 +4128,13 @@
   "team": "DET"
  },
  "8207": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Tyler Goodson",
   "pos": "RB",
   "team": "DAL"
  },
  "8210": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Chig Okonkwo",
   "pos": "TE",
   "team": "WAS"

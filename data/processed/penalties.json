@@ -3149,6 +3149,359 @@
     "weeks_before_playoffs": 7
    },
    "week": 8
+  },
+  {
+   "bench_option": {
+    "name": "Audric Estime",
+    "player_id": "11579",
+    "points": 14.2,
+    "pos": "RB",
+    "slot": "FLEX"
+   },
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-11-10T04:36:01+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Xavier Worthy was Out at 2026-11-10T04:36:01+00:00 but stayed in the lineup.",
+   "id": "2026-w09-r2-injured_starter_out-11624",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "MrSeeYou",
+    "first_name": "Max",
+    "owner_id": "423560331814510592",
+    "roster_id": 2,
+    "team_name": "Gotham Rogues"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 22.82,
+    "opponent_display_name": "therealGandB",
+    "opponent_owner_id": "471368473092550656",
+    "opponent_roster_id": 12,
+    "points_against": 85.74,
+    "points_for": 108.56,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2026-11-08",
+    "home": true,
+    "nfl_team": "KC",
+    "opponent": "NYJ"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "FLEX",
+    "name": "Xavier Worthy",
+    "nfl_team": "KC",
+    "player_id": "11624",
+    "pos": "WR"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "6 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 9,
+    "weeks_before_playoffs": 6
+   },
+   "week": 9
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-11-10T04:36:01+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Rhamondre Stevenson was Out at 2026-11-10T04:36:01+00:00 but stayed in the lineup.",
+   "id": "2026-w09-r3-injured_starter_out-7611",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "JSusee",
+    "first_name": "Suze",
+    "owner_id": "471074114505797632",
+    "roster_id": 3,
+    "team_name": "Amazing Fantasy #15"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 11.72,
+    "opponent_display_name": "DangerDave678",
+    "opponent_owner_id": "471366618241298432",
+    "opponent_roster_id": 11,
+    "points_against": 93.88,
+    "points_for": 105.6,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2026-11-08",
+    "home": true,
+    "nfl_team": "NE",
+    "opponent": "GB"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "Rhamondre Stevenson",
+    "nfl_team": "NE",
+    "player_id": "7611",
+    "pos": "RB"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "6 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 9,
+    "weeks_before_playoffs": 6
+   },
+   "week": 9
+  },
+  {
+   "bench_option": {
+    "name": "J.K. Dobbins",
+    "player_id": "6806",
+    "points": 2.7,
+    "pos": "RB",
+    "slot": "RB"
+   },
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-11-10T04:36:01+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Josh Jacobs was Out at 2026-11-10T04:36:01+00:00 but stayed in the lineup.",
+   "id": "2026-w09-r6-injured_starter_out-5850",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "Gingivitis",
+    "first_name": "Ging",
+    "owner_id": "471345530597797888",
+    "roster_id": 6,
+    "team_name": "Angry Beavers"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 17.76,
+    "opponent_display_name": "TheBoarHouse",
+    "opponent_owner_id": "471359672478068736",
+    "opponent_roster_id": 8,
+    "points_against": 91.94,
+    "points_for": 74.18,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2026-11-08",
+    "home": false,
+    "nfl_team": "GB",
+    "opponent": "NE"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "RB",
+    "name": "Josh Jacobs",
+    "nfl_team": "GB",
+    "player_id": "5850",
+    "pos": "RB"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "6 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 9,
+    "weeks_before_playoffs": 6
+   },
+   "week": 9
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-11-10T04:36:01+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Michael Wilson was Out at 2026-11-10T04:36:01+00:00 but stayed in the lineup.",
+   "id": "2026-w09-r9-injured_starter_out-10232",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "ChinaKing",
+    "first_name": "Adam",
+    "owner_id": "471360899853053952",
+    "roster_id": 9,
+    "team_name": "China King"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 11.32,
+    "opponent_display_name": "WhiskeyDicknCo",
+    "opponent_owner_id": "422102738889867264",
+    "opponent_roster_id": 7,
+    "points_against": 101.9,
+    "points_for": 113.22,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2026-11-08",
+    "home": false,
+    "nfl_team": "ARI",
+    "opponent": "SEA"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "WR",
+    "name": "Michael Wilson",
+    "nfl_team": "ARI",
+    "player_id": "10232",
+    "pos": "WR"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "6 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 9,
+    "weeks_before_playoffs": 6
+   },
+   "week": 9
+  },
+  {
+   "bench_option": {
+    "name": "Isaiah Likely",
+    "player_id": "8131",
+    "points": 13.8,
+    "pos": "TE",
+    "slot": "FLEX"
+   },
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-11-10T04:36:01+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Jaylen Waddle was Out at 2026-11-10T04:36:01+00:00 but stayed in the lineup.",
+   "id": "2026-w09-r9-injured_starter_out-7526",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "ChinaKing",
+    "first_name": "Adam",
+    "owner_id": "471360899853053952",
+    "roster_id": 9,
+    "team_name": "China King"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": false,
+    "margin": 11.32,
+    "opponent_display_name": "WhiskeyDicknCo",
+    "opponent_owner_id": "422102738889867264",
+    "opponent_roster_id": 7,
+    "points_against": 101.9,
+    "points_for": 113.22,
+    "result": "won"
+   },
+   "nfl_game": {
+    "date": "2026-11-08",
+    "home": false,
+    "nfl_team": "DEN",
+    "opponent": "CAR"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "FLEX",
+    "name": "Jaylen Waddle",
+    "nfl_team": "DEN",
+    "player_id": "7526",
+    "pos": "WR"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "6 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 9,
+    "weeks_before_playoffs": 6
+   },
+   "week": 9
   }
  ]
 }

@@ -10,12 +10,12 @@
   "reason": "still in contention"
  },
  "3": {
-  "bracket": "losers",
+  "bracket": "winners",
   "last_week": null,
   "reason": "still in contention"
  },
  "4": {
-  "bracket": "losers",
+  "bracket": "winners",
   "last_week": null,
   "reason": "still in contention"
  },
@@ -50,12 +50,12 @@
   "reason": "still in contention"
  },
  "11": {
-  "bracket": "winners",
+  "bracket": "losers",
   "last_week": null,
   "reason": "still in contention"
  },
  "12": {
-  "bracket": "winners",
+  "bracket": "losers",
   "last_week": null,
   "reason": "still in contention"
  }
