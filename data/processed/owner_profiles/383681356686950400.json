@@ -58,7 +58,7 @@
   "weeks": 122
  },
  "faab_and_transactions": {
-  "adds": 260,
+  "adds": 261,
   "biggest_bid": {
    "amount": 89,
    "player": "De'Von Achane",
@@ -66,7 +66,7 @@
    "week": 3
   },
   "budget_per_season": 100,
-  "drops": 273,
+  "drops": 274,
   "faab_taken_as_penalty": 0,
   "free_agent_adds": 169,
   "most_frequent_trade_partner": {
@@ -76,8 +76,8 @@
   "note": "spent = winning bids in the transaction log, net of claims the commissioner later undid (refunded; e.g. the Sep 2021 week-1 corrections). Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
   "refunded": 0,
   "remaining_unexplained": 0,
-  "sleeper_reported_used": 719,
-  "spent": 709,
+  "sleeper_reported_used": 751,
+  "spent": 741,
   "spent_per_season": {
    "2019": 90,
    "2020": 100,
@@ -86,14 +86,14 @@
    "2023": 100,
    "2024": 60,
    "2025": 100,
-   "2026": 59
+   "2026": 91
   },
   "traded_in": 0,
   "traded_out": 10,
   "trades": 6,
   "unexplained_difference": 0,
   "waiver_claims_lost": 46,
-  "waiver_claims_won": 91
+  "waiver_claims_won": 92
  },
  "faab_efficiency": {
   "best_par_claim": {
@@ -121,15 +121,15 @@
    "weeks_started": 5
   },
   "biggest_bust": {
-   "bid": 26,
+   "bid": 32,
    "par_per_dollar": 0.0,
-   "player": "Jacksonville Jaguars",
+   "player": "Tank Dell",
    "points_above_replacement": 0.0,
    "points_per_dollar": 0.0,
    "points_started": 0.0,
-   "pos": "DEF",
-   "season": "2025",
-   "week": 14,
+   "pos": "WR",
+   "season": "2026",
+   "week": 9,
    "weeks_started": 0
   },
   "by_season": {
@@ -648,22 +648,22 @@
      "weeks_started": 2
     },
     "biggest_bust": {
-     "bid": 14,
+     "bid": 32,
      "par_per_dollar": 0.0,
-     "player": "Adonai Mitchell",
+     "player": "Tank Dell",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
      "season": "2026",
-     "week": 2,
+     "week": 9,
      "weeks_started": 0
     },
-    "claims_benched_only": 1,
+    "claims_benched_only": 2,
     "claims_dropped_before_playing": 0,
-    "dollars_spent": 59,
+    "dollars_spent": 91,
     "free_claims": 0,
-    "hit_rate": 0.75,
+    "hit_rate": 0.6,
     "most_points": {
      "bid": 3,
      "par_per_dollar": 8.39,
@@ -676,12 +676,12 @@
      "week": 1,
      "weeks_started": 6
     },
-    "paid_claims": 4,
-    "par_per_dollar": 0.51,
+    "paid_claims": 5,
+    "par_per_dollar": 0.33,
     "points_above_replacement": 30.18,
     "points_from_free_claims": 0,
     "points_from_paid_claims": 179.08,
-    "points_per_dollar": 3.04,
+    "points_per_dollar": 1.97,
     "worst_par_claim": {
      "bid": 24,
      "par_per_dollar": -0.02,
@@ -696,13 +696,13 @@
     }
    }
   },
-  "claims_benched_only": 10,
+  "claims_benched_only": 11,
   "claims_dropped_before_playing": 2,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
-  "dollars_spent": 709,
+  "dollars_spent": 741,
   "free_claims": 35,
-  "hit_rate": 0.786,
-  "league_points_per_dollar": 2.42,
+  "hit_rate": 0.772,
+  "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 3,
    "par_per_dollar": 8.39,
@@ -716,13 +716,13 @@
    "weeks_started": 6
   },
   "name": "Bang for Buck",
-  "paid_claims": 56,
+  "paid_claims": 57,
   "par_per_dollar": -0.03,
   "par_rank": 10,
   "points_above_replacement": -22.6,
   "points_from_free_claims": 450.52,
   "points_from_paid_claims": 1029.34,
-  "points_per_dollar": 1.45,
+  "points_per_dollar": 1.39,
   "rank": 10,
   "worst_par_claim": {
    "bid": 26,
@@ -2064,21 +2064,21 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.9619,
    "faab": {
-    "adds": 15,
+    "adds": 16,
     "budget": 100,
-    "drops": 15,
+    "drops": 16,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 11,
     "refunded": 0,
     "remaining_unexplained": 0,
-    "sleeper_reported_used": 59,
-    "spent": 59,
+    "sleeper_reported_used": 91,
+    "spent": 91,
     "traded_in": 0,
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
     "waiver_claims_lost": 0,
-    "waiver_claims_won": 4
+    "waiver_claims_won": 5
    },
    "faab_efficiency": {
     "best_par_claim": {
@@ -2106,22 +2106,22 @@
      "weeks_started": 2
     },
     "biggest_bust": {
-     "bid": 14,
+     "bid": 32,
      "par_per_dollar": 0.0,
-     "player": "Adonai Mitchell",
+     "player": "Tank Dell",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
      "pos": "WR",
      "season": "2026",
-     "week": 2,
+     "week": 9,
      "weeks_started": 0
     },
-    "claims_benched_only": 1,
+    "claims_benched_only": 2,
     "claims_dropped_before_playing": 0,
-    "dollars_spent": 59,
+    "dollars_spent": 91,
     "free_claims": 0,
-    "hit_rate": 0.75,
+    "hit_rate": 0.6,
     "most_points": {
      "bid": 3,
      "par_per_dollar": 8.39,
@@ -2134,12 +2134,12 @@
      "week": 1,
      "weeks_started": 6
     },
-    "paid_claims": 4,
-    "par_per_dollar": 0.51,
+    "paid_claims": 5,
+    "par_per_dollar": 0.33,
     "points_above_replacement": 30.18,
     "points_from_free_claims": 0,
     "points_from_paid_claims": 179.08,
-    "points_per_dollar": 3.04,
+    "points_per_dollar": 1.97,
     "worst_par_claim": {
      "bid": 24,
      "par_per_dollar": -0.02,

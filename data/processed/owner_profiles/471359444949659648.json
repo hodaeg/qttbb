@@ -58,7 +58,7 @@
   "weeks": 120
  },
  "faab_and_transactions": {
-  "adds": 293,
+  "adds": 295,
   "biggest_bid": {
    "amount": 45,
    "player": "Christian Watson",
@@ -66,7 +66,7 @@
    "week": 10
   },
   "budget_per_season": 100,
-  "drops": 290,
+  "drops": 292,
   "faab_taken_as_penalty": 35,
   "free_agent_adds": 175,
   "most_frequent_trade_partner": {
@@ -76,8 +76,8 @@
   "note": "spent = winning bids in the transaction log, net of claims the commissioner later undid (refunded; e.g. the Sep 2021 week-1 corrections). Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
   "refunded": 28,
   "remaining_unexplained": 0,
-  "sleeper_reported_used": 706,
-  "spent": 671,
+  "sleeper_reported_used": 712,
+  "spent": 677,
   "spent_per_season": {
    "2019": 78,
    "2020": 99,
@@ -86,14 +86,14 @@
    "2023": 80,
    "2024": 59,
    "2025": 96,
-   "2026": 63
+   "2026": 69
   },
   "traded_in": 0,
   "traded_out": 0,
   "trades": 3,
   "unexplained_difference": 35,
-  "waiver_claims_lost": 91,
-  "waiver_claims_won": 118
+  "waiver_claims_lost": 92,
+  "waiver_claims_won": 120
  },
  "faab_efficiency": {
   "best_par_claim": {
@@ -681,11 +681,11 @@
      "week": 5,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 4,
     "claims_dropped_before_playing": 2,
-    "dollars_spent": 63,
+    "dollars_spent": 69,
     "free_claims": 2,
-    "hit_rate": 0.556,
+    "hit_rate": 0.455,
     "most_points": {
      "bid": 24,
      "par_per_dollar": 1.17,
@@ -698,12 +698,12 @@
      "week": 3,
      "weeks_started": 6
     },
-    "paid_claims": 9,
-    "par_per_dollar": 0.15,
+    "paid_claims": 11,
+    "par_per_dollar": 0.14,
     "points_above_replacement": 9.75,
     "points_from_free_claims": -1.0,
     "points_from_paid_claims": 114.94,
-    "points_per_dollar": 1.82,
+    "points_per_dollar": 1.67,
     "worst_par_claim": {
      "bid": 4,
      "par_per_dollar": -2.62,
@@ -718,13 +718,13 @@
     }
    }
   },
-  "claims_benched_only": 23,
+  "claims_benched_only": 25,
   "claims_dropped_before_playing": 3,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
-  "dollars_spent": 671,
+  "dollars_spent": 677,
   "free_claims": 28,
-  "hit_rate": 0.711,
-  "league_points_per_dollar": 2.42,
+  "hit_rate": 0.696,
+  "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 7,
    "par_per_dollar": 5.33,
@@ -738,13 +738,13 @@
    "weeks_started": 7
   },
   "name": "Bang for Buck",
-  "paid_claims": 90,
+  "paid_claims": 92,
   "par_per_dollar": 0.22,
   "par_rank": 4,
   "points_above_replacement": 149.35,
   "points_from_free_claims": 302.82,
   "points_from_paid_claims": 1910.74,
-  "points_per_dollar": 2.85,
+  "points_per_dollar": 2.82,
   "rank": 4,
   "worst_par_claim": {
    "bid": 5,
@@ -2108,21 +2108,21 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.9059,
    "faab": {
-    "adds": 29,
+    "adds": 31,
     "budget": 100,
-    "drops": 27,
+    "drops": 29,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 18,
     "refunded": 0,
     "remaining_unexplained": 0,
-    "sleeper_reported_used": 63,
-    "spent": 63,
+    "sleeper_reported_used": 69,
+    "spent": 69,
     "traded_in": 0,
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
-    "waiver_claims_lost": 15,
-    "waiver_claims_won": 11
+    "waiver_claims_lost": 16,
+    "waiver_claims_won": 13
    },
    "faab_efficiency": {
     "best_par_claim": {
@@ -2161,11 +2161,11 @@
      "week": 5,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 4,
     "claims_dropped_before_playing": 2,
-    "dollars_spent": 63,
+    "dollars_spent": 69,
     "free_claims": 2,
-    "hit_rate": 0.556,
+    "hit_rate": 0.455,
     "most_points": {
      "bid": 24,
      "par_per_dollar": 1.17,
@@ -2178,12 +2178,12 @@
      "week": 3,
      "weeks_started": 6
     },
-    "paid_claims": 9,
-    "par_per_dollar": 0.15,
+    "paid_claims": 11,
+    "par_per_dollar": 0.14,
     "points_above_replacement": 9.75,
     "points_from_free_claims": -1.0,
     "points_from_paid_claims": 114.94,
-    "points_per_dollar": 1.82,
+    "points_per_dollar": 1.67,
     "worst_par_claim": {
      "bid": 4,
      "par_per_dollar": -2.62,

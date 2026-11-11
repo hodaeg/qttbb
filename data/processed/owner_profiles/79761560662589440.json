@@ -56,7 +56,7 @@
   "weeks": 121
  },
  "faab_and_transactions": {
-  "adds": 293,
+  "adds": 294,
   "biggest_bid": {
    "amount": 64,
    "player": "Kenneth Walker III",
@@ -64,9 +64,9 @@
    "week": 5
   },
   "budget_per_season": 100,
-  "drops": 283,
+  "drops": 284,
   "faab_taken_as_penalty": 11,
-  "free_agent_adds": 195,
+  "free_agent_adds": 196,
   "most_frequent_trade_partner": {
    "owner_id": "471366618241298432",
    "trades": 2
@@ -90,7 +90,7 @@
   "traded_out": 0,
   "trades": 5,
   "unexplained_difference": 11,
-  "waiver_claims_lost": 57,
+  "waiver_claims_lost": 59,
   "waiver_claims_won": 98
  },
  "faab_efficiency": {
@@ -711,7 +711,7 @@
   "dollars_spent": 648,
   "free_claims": 8,
   "hit_rate": 0.778,
-  "league_points_per_dollar": 2.42,
+  "league_points_per_dollar": 2.39,
   "most_points": {
    "bid": 12,
    "par_per_dollar": 1.48,
@@ -2083,11 +2083,11 @@
    "division": "The Graveyard",
    "efficiency": 0.9216,
    "faab": {
-    "adds": 28,
+    "adds": 29,
     "budget": 100,
-    "drops": 27,
+    "drops": 28,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 18,
+    "free_agent_adds": 19,
     "refunded": 0,
     "remaining_unexplained": 0,
     "sleeper_reported_used": 53,
@@ -2096,7 +2096,7 @@
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
-    "waiver_claims_lost": 7,
+    "waiver_claims_lost": 9,
     "waiver_claims_won": 10
    },
    "faab_efficiency": {
