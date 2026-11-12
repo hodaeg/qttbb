@@ -39419,7 +39419,7 @@
    "season": "2026",
    "week": 6,
    "weekly": [],
-   "weeks_rostered": 12,
+   "weeks_rostered": 3,
    "weeks_started": 0
   },
   {
@@ -40125,8 +40125,8 @@
   {
    "bid": 1,
    "dropped": [],
-   "first_week": 10,
-   "outcome": "never_started",
+   "first_week": null,
+   "outcome": "dropped_before_playing",
    "owner_id": "471360899853053952",
    "par_per_dollar": 0.0,
    "player": "Makai Lemon",
@@ -40139,7 +40139,7 @@
    "season": "2026",
    "week": 9,
    "weekly": [],
-   "weeks_rostered": 9,
+   "weeks_rostered": 0,
    "weeks_started": 0
   },
   {
@@ -40287,8 +40287,8 @@
    "week": 3,
    "weeks_started": 0
   },
-  "claims_benched_only": 209,
-  "claims_dropped_before_playing": 50,
+  "claims_benched_only": 208,
+  "claims_dropped_before_playing": 51,
   "dollars_spent": 6970,
   "free_claims": 374,
   "hit_rate": 0.694,
@@ -45935,8 +45935,8 @@
       "week": 7,
       "weeks_started": 0
      },
-     "claims_benched_only": 2,
-     "claims_dropped_before_playing": 0,
+     "claims_benched_only": 1,
+     "claims_dropped_before_playing": 1,
      "dollars_spent": 49,
      "free_claims": 3,
      "hit_rate": 0.5,
@@ -45972,8 +45972,8 @@
      }
     }
    },
-   "claims_benched_only": 18,
-   "claims_dropped_before_playing": 1,
+   "claims_benched_only": 17,
+   "claims_dropped_before_playing": 2,
    "dollars_spent": 700,
    "free_claims": 56,
    "hit_rate": 0.678,

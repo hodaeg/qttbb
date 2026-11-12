@@ -1,1 +1,50 @@
-[]
+[
+ {
+  "game": "Out",
+  "injury": "Concussion",
+  "name": "Lucas Patrick",
+  "pos": "C",
+  "practice": "Did Not Participate In Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Colson Yankoff",
+  "pos": "TE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Commanders"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Groin",
+  "name": "Malik Harrison",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Giants"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Ben Brown",
+  "pos": "C",
+  "practice": "Did Not Participate In Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Carlton Davis III",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Patriots"
+ },
+ {
+  "game": "Out",
+  "injury": "Illness",
+  "name": "TreVeyon Henderson",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Patriots"
+ }
+]
