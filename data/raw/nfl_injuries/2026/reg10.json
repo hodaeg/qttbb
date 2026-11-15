@@ -658,14 +658,6 @@
  {
   "game": "Questionable",
   "injury": "Hamstring",
-  "name": "Arden Key",
-  "pos": "DE",
-  "practice": "Full Participation in Practice",
-  "team": "Colts"
- },
- {
-  "game": "Questionable",
-  "injury": "Hamstring",
   "name": "Will Mallory",
   "pos": "TE",
   "practice": "Limited Participation in Practice",
@@ -1278,5 +1270,101 @@
   "pos": "G",
   "practice": "Full Participation in Practice",
   "team": "Bengals"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Fibula",
+  "name": "Kayode Awosika",
+  "pos": "G",
+  "practice": "Full Participation in Practice",
+  "team": "Chargers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Ankle",
+  "name": "Justin Eboigbe",
+  "pos": "DE",
+  "practice": "Limited Participation in Practice",
+  "team": "Chargers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Back",
+  "name": "Ladd McConkey",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Chargers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Fibula",
+  "name": "David Njoku",
+  "pos": "TE",
+  "practice": "Full Participation in Practice",
+  "team": "Chargers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Pectoral",
+  "name": "Denzel Perryman",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Chargers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Not injury related - personal matter, Knee",
+  "name": "Trey Pipkins",
+  "pos": "T",
+  "practice": "Limited Participation in Practice",
+  "team": "Chargers"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Branson Taylor",
+  "pos": "G",
+  "practice": "Did Not Participate In Practice",
+  "team": "Chargers"
+ },
+ {
+  "game": "Doubtful",
+  "injury": "Hamstring",
+  "name": "Brenen Thompson",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Chargers"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Isas Waxter",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Chargers"
+ },
+ {
+  "game": "Out",
+  "injury": "Calf",
+  "name": "Kendall Williamson",
+  "pos": "S",
+  "practice": "Did Not Participate In Practice",
+  "team": "Chargers"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Jaylinn Hawkins",
+  "pos": "S",
+  "practice": "Limited Participation in Practice",
+  "team": "Ravens"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Neck, Hamstring",
+  "name": "Adam Randall",
+  "pos": "RB",
+  "practice": "Full Participation in Practice",
+  "team": "Ravens"
  }
 ]
