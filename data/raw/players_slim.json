@@ -6,7 +6,7 @@
   "team": "LV"
  },
  "10218": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Xavier Hutchinson",
   "pos": "WR",
   "team": "HOU"
@@ -174,7 +174,7 @@
   "team": "BUF"
  },
  "11435": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Emanuel Wilson",
   "pos": "RB",
   "team": "SEA"
@@ -324,7 +324,7 @@
   "team": "SEA"
  },
  "11604": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Brock Bowers",
   "pos": "TE",
   "team": "LV"
@@ -408,7 +408,7 @@
   "team": "NYG"
  },
  "11635": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Ladd McConkey",
   "pos": "WR",
   "team": "LAC"
@@ -564,7 +564,7 @@
   "team": "CLE"
  },
  "12474": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Woody Marks",
   "pos": "RB",
   "team": "HOU"
@@ -852,7 +852,7 @@
   "team": "PIT"
  },
  "13276": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Omar Cooper Jr.",
   "pos": "WR",
   "team": "NYJ"
@@ -1002,7 +1002,7 @@
   "team": "GB"
  },
  "1373": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Geno Smith",
   "pos": "QB",
   "team": "NYJ"
@@ -1068,7 +1068,7 @@
   "team": null
  },
  "1466": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Travis Kelce",
   "pos": "TE",
   "team": "KC"
@@ -1302,7 +1302,7 @@
   "team": null
  },
  "2197": {
-  "injury_status": null,
+  "injury_status": "Out",
   "name": "Brandin Cooks",
   "pos": "WR",
   "team": "SF"
@@ -3357,7 +3357,7 @@
   "injury_status": null,
   "name": "Harrison Bryant",
   "pos": "TE",
-  "team": null
+  "team": "IND"
  },
  "6853": {
   "injury_status": null,
@@ -3744,7 +3744,7 @@
   "team": null
  },
  "7600": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Pat Freiermuth",
   "pos": "TE",
   "team": "PIT"
@@ -3888,7 +3888,7 @@
   "team": "TB"
  },
  "8112": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Drake London",
   "pos": "WR",
   "team": "ATL"
@@ -3936,7 +3936,7 @@
   "team": "NYG"
  },
  "8126": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Wan'Dale Robinson",
   "pos": "WR",
   "team": "TEN"
@@ -4098,7 +4098,7 @@
   "team": "GB"
  },
  "8168": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Skyy Moore",
   "pos": "WR",
   "team": "GB"
