@@ -54,11 +54,11 @@
     display: flex;
     flex-direction: column;
     background: var(--glass-strong);
-    backdrop-filter: blur(24px) saturate(1.3);
-    -webkit-backdrop-filter: blur(24px) saturate(1.3);
-    border: 1px solid var(--glass-line);
-    border-bottom: 0;
-    border-radius: 24px 24px 0 0;
+    backdrop-filter: blur(30px) saturate(2);
+    -webkit-backdrop-filter: blur(30px) saturate(2);
+    border-top: 1.5px solid;
+    border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.12) 35%, rgba(255, 255, 255, 0.12) 70%, rgba(255, 255, 255, 0.5)) 1;
+    clip-path: polygon(0 0, calc(100% - var(--cut) * 1.4) 0, 100% calc(var(--cut) * 1.4), 100% 100%, 0 100%);
     padding-bottom: var(--safe-bottom);
     animation: rise 420ms var(--ease-spring);
   }
@@ -75,17 +75,18 @@
   }
   .grab span {
     width: 40px;
-    height: 4px;
-    border-radius: 2px;
+    height: 3px;
     background: var(--ink-3);
     opacity: 0.6;
   }
   h2 {
     margin: 0 20px 8px;
     font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 26px;
-    letter-spacing: -0.01em;
+    font-weight: var(--display-weight);
+    font-stretch: var(--display-stretch);
+    text-transform: var(--display-case);
+    letter-spacing: var(--display-track);
+    font-size: calc(26px * var(--display-scale));
   }
   .body {
     overflow-y: auto;

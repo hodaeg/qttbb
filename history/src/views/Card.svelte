@@ -2,6 +2,7 @@
   import { people, type Card } from '../lib/model';
   import Rich from './Rich.svelte';
   import Avatar from './Avatar.svelte';
+  import Glass from './Glass.svelte';
 
   let { card, onperson }: { card: Card; onperson: (id: string) => void } = $props();
   let open = $state(false);
@@ -11,81 +12,72 @@
 
 {#if card.kind === 'season' && card.season}
   {@const s = card.season}
-  <article class="card season">
-    <span class="yr">{card.year}{s.source === 'sleeper' ? '*' : ''}</span>
-    {#if s.champion}
-      <button class="line pressable" onclick={() => onperson(s.champion!)}>
-        <Avatar id={s.champion} size={28} /><span><small>Champion</small><b>{people[s.champion].name}</b></span>
-      </button>
-    {:else}
-      <p class="tbd">{s.complete ? 'Champion not on record yet' : 'Season in progress'}</p>
-    {/if}
-    {#if s.sacko}
-      <button class="line pressable" onclick={() => onperson(s.sacko!)}>
-        <Avatar id={s.sacko} size={28} /><span><small>Sacko</small><b>{people[s.sacko].name}</b></span>
-      </button>
-    {/if}
-  </article>
+  <Glass pad="12px 14px">
+    <article class="season">
+      <span class="yr">{card.year}{s.source === 'sleeper' ? '*' : ''}</span>
+      {#if s.champion}
+        <button class="line pressable" onclick={() => onperson(s.champion!)}>
+          <Avatar id={s.champion} size={28} /><span><small>Champion</small><b class="display">{people[s.champion].name}</b></span>
+        </button>
+      {:else}
+        <p class="tbd">{s.complete ? 'Champion not on record yet' : 'Season in progress'}</p>
+      {/if}
+      {#if s.sacko}
+        <button class="line pressable" onclick={() => onperson(s.sacko!)}>
+          <Avatar id={s.sacko} size={28} /><span><small>Sacko</small><b class="display">{people[s.sacko].name}</b></span>
+        </button>
+      {/if}
+    </article>
+  </Glass>
 {:else}
-  <article class="card" class:beat={card.kind === 'beat'}>
-    <span class="yr">{card.year}</span>
-    <h3>{card.title}</h3>
-    {#if card.body}<p><Rich text={card.body} {onperson} /></p>{/if}
+  <Glass>
+    <article class:beat={card.kind === 'beat'}>
+      <span class="yr">{card.year}</span>
+      <h3 class="display">{card.title}</h3>
+      {#if card.body}<p><Rich text={card.body} {onperson} /></p>{/if}
 
-    {#if card.quote}
-      <blockquote class:clamp={long && !open}>
-        {card.quote.text}
-        {#if card.quote.by || card.quote.context}
-          <cite>{#if card.quote.by}— {first(card.quote.by)}{/if}{#if card.quote.context}{card.quote.by ? ', ' : ''}{card.quote.by ? card.quote.context[0].toLowerCase() + card.quote.context.slice(1) : card.quote.context}{/if}</cite>
-        {/if}
-      </blockquote>
-      {#if long}<button class="more pressable" onclick={() => (open = !open)}>{open ? 'Show less' : 'Read the whole message'}</button>{/if}
-    {/if}
+      {#if card.quote}
+        <blockquote class:clamp={long && !open}>
+          {card.quote.text}
+          {#if card.quote.by || card.quote.context}
+            <cite>{#if card.quote.by}— {first(card.quote.by)}{/if}{#if card.quote.context}{card.quote.by ? ', ' : ''}{card.quote.by ? card.quote.context[0].toLowerCase() + card.quote.context.slice(1) : card.quote.context}{/if}</cite>
+          {/if}
+        </blockquote>
+        {#if long}<button class="more pressable" onclick={() => (open = !open)}>{open ? 'Show less' : 'Read the whole message'}</button>{/if}
+      {/if}
 
-    {#if card.out?.length || (card.in?.length && !card.founders)}
-      <div class="moves">
-        {#if card.out?.length}
-          <div><small>Out</small>{#each card.out as id}<button class="chip out pressable" onclick={() => onperson(id)}><Avatar {id} size={20} />{first(id)}</button>{/each}</div>
-        {/if}
-        {#if card.in?.length}
-          <div><small>In</small>{#each card.in as id}<button class="chip pressable" onclick={() => onperson(id)}><Avatar {id} size={20} />{first(id)}{card.returns?.includes(id) ? ' ↩' : ''}</button>{/each}</div>
-        {/if}
-      </div>
-    {/if}
+      {#if card.out?.length || (card.in?.length && !card.founders)}
+        <div class="moves">
+          {#if card.out?.length}
+            <div><small>Out</small>{#each card.out as id}<button class="chip out pressable" onclick={() => onperson(id)}><Avatar {id} size={20} />{first(id)}</button>{/each}</div>
+          {/if}
+          {#if card.in?.length}
+            <div><small>In</small>{#each card.in as id}<button class="chip pressable" onclick={() => onperson(id)}><Avatar {id} size={20} />{first(id)}{card.returns?.includes(id) ? ' ↩' : ''}</button>{/each}</div>
+          {/if}
+        </div>
+      {/if}
 
-    {#if card.funFact}<p class="fact"><b>Fun fact</b> <Rich text={card.funFact} {onperson} /></p>{/if}
-  </article>
+      {#if card.funFact}<p class="fact"><b>Fun fact</b> <Rich text={card.funFact} {onperson} /></p>{/if}
+    </article>
+  </Glass>
 {/if}
 
 <style>
-  .card {
-    position: relative;
-    padding: 16px 18px 18px;
-    border-radius: var(--radius-card);
-    background: var(--glass);
-    backdrop-filter: blur(var(--blur)) saturate(1.5);
-    -webkit-backdrop-filter: blur(var(--blur)) saturate(1.5);
-    border: 1px solid var(--glass-line);
-    box-shadow: 0 18px 50px -18px rgba(0, 0, 0, 0.6);
-  }
   .yr {
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.14em;
-    color: var(--accent);
+    letter-spacing: 0.16em;
+    color: var(--ink-2);
     font-variant-numeric: tabular-nums;
   }
   h3 {
     margin: 4px 0 8px;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 23px;
-    line-height: 1.12;
-    letter-spacing: -0.015em;
+    font-size: calc(23px * var(--display-scale));
+    line-height: 1.06;
   }
   .beat h3 {
-    font-size: 30px;
-    font-weight: 700;
+    font-size: calc(31px * var(--display-scale));
+    line-height: 1;
   }
   p {
     margin: 0;
@@ -96,11 +88,10 @@
   blockquote {
     margin: 12px 0 0;
     padding-left: 14px;
-    border-left: 2px solid var(--accent);
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 17px;
-    line-height: 1.42;
+    border-left: 2px solid var(--ink);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.46;
     white-space: pre-line;
   }
   blockquote.clamp {
@@ -113,8 +104,8 @@
   cite {
     display: block;
     margin-top: 8px;
-    font-family: var(--font-text);
     font-style: normal;
+    font-weight: 400;
     font-size: 13px;
     color: var(--ink-2);
   }
@@ -123,7 +114,8 @@
     min-height: 32px;
     font-size: 13px;
     font-weight: 600;
-    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
   .moves {
     display: grid;
@@ -147,11 +139,11 @@
   .chip {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
     height: 30px;
     padding: 0 10px 0 5px;
-    border-radius: 15px;
     border: 1px solid var(--glass-line);
+    background: rgba(255, 255, 255, 0.05);
     font-size: 13px;
     font-weight: 600;
   }
@@ -170,12 +162,11 @@
     font-size: 10px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--ink);
   }
   .season {
     display: grid;
     gap: 8px;
-    padding: 12px 14px;
   }
   .line {
     display: flex;
@@ -192,9 +183,8 @@
     color: var(--ink-2);
   }
   .line b {
-    font-family: var(--font-display);
-    font-size: 17px;
-    font-weight: 600;
+    font-size: calc(17px * var(--display-scale));
+    line-height: 1.05;
   }
   .tbd {
     font-size: 13px;

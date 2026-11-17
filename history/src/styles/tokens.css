@@ -3,21 +3,35 @@
   color-scheme: dark light;
 
   /* colour */
-  --bg: #0c0e13;
+  --bg: #0a0b0f;
   --bg-2: #141821;
-  --ink: #f4f0e8;
-  --ink-2: #b9b4a8;
-  --ink-3: #7d7a72;
-  --accent: #f3a712;
-  --glass: rgba(18, 21, 29, 0.58);
-  --glass-strong: rgba(18, 21, 29, 0.82);
-  --glass-line: rgba(255, 255, 255, 0.13);
+  --ink: #ffffff;
+  --ink-2: #b4b6bd;
+  --ink-3: #777a83;
+  --accent: var(--ink); /* gold is parked for now: everything reads white, the members carry the colour */
+  --thread: #666a75; /* a column once it has left for the alumni pile */
   --scrim: rgba(4, 5, 8, 0.6);
-  --ghost: rgba(255, 255, 255, 0.1); /* the giant year numeral */
+  --ghost: rgba(255, 255, 255, 0.12); /* the giant year numeral */
+  --line: rgba(255, 255, 255, 0.14);
 
-  /* type */
-  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
-  --font-text: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* glass */
+  --glass-tint: rgba(9, 11, 16, 0.5);
+  --glass-strong: rgba(9, 11, 16, 0.84);
+  --glass-line: rgba(255, 255, 255, 0.14);
+  --glass-filter: blur(26px) saturate(2.1) brightness(1.06);
+  --edge-filter: blur(5px) saturate(3.2) brightness(2.1); /* the stroke lights up in whatever colour is behind it */
+  --glint: rgba(255, 255, 255, 0.95);
+  --cut: 14px; /* the clipped corner that replaces rounded ones */
+
+  /* type: set A (see the [data-type] blocks below for the other sets) */
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --font-text: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --display-weight: 800;
+  --display-case: uppercase;
+  --display-track: 0.005em;
+  --display-stretch: 100%;
+  --display-scale: 1.24; /* condensed faces need to be set bigger */
+  --year-scale: 1.36;
 
   /* motion */
   --dur-micro: 120ms;
@@ -29,25 +43,46 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* shape */
-  --radius-card: 18px;
-  --blur: 16px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+:root[data-type='b'] {
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-text: 'Hanken Grotesk', system-ui, sans-serif;
+  --display-weight: 800;
+  --display-case: none;
+  --display-track: -0.035em;
+  --display-scale: 1;
+  --year-scale: 1;
+}
+:root[data-type='c'] {
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-text: 'Archivo', system-ui, sans-serif;
+  --display-weight: 800;
+  --display-case: none;
+  --display-track: -0.03em;
+  --display-stretch: 125%;
+  --display-scale: 0.9;
+  --year-scale: 0.8;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    --bg: #f5f1e8;
-    --bg-2: #ebe5d8;
-    --ink: #16181d;
-    --ink-2: #4a4b4f;
-    --ink-3: #7a7770;
-    --accent: #b86a00;
-    --glass: rgba(255, 253, 248, 0.66);
-    --glass-strong: rgba(255, 253, 248, 0.9);
-    --glass-line: rgba(0, 0, 0, 0.1);
-    --scrim: rgba(30, 26, 18, 0.35);
-    --ghost: rgba(0, 0, 0, 0.06);
+    --bg: #f2f1ee;
+    --bg-2: #e6e4df;
+    --ink: #0d0e11;
+    --ink-2: #47494f;
+    --ink-3: #7b7d84;
+    --thread: #a3a5ab;
+    --scrim: rgba(30, 30, 34, 0.35);
+    --ghost: rgba(0, 0, 0, 0.07);
+    --line: rgba(0, 0, 0, 0.12);
+    --glass-tint: rgba(255, 255, 255, 0.5);
+    --glass-strong: rgba(255, 255, 255, 0.9);
+    --glass-line: rgba(0, 0, 0, 0.12);
+    --glass-filter: blur(26px) saturate(1.9) brightness(1.04);
+    --edge-filter: blur(5px) saturate(3) brightness(1.15);
   }
 }
 
@@ -74,7 +109,7 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--ink);
   outline-offset: 2px;
 }
 .pressable {
@@ -82,4 +117,13 @@ button:focus-visible {
 }
 .pressable:active {
   transform: scale(0.96);
+}
+
+/* Every big piece of type uses this, so a new display face is a token change. */
+.display {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-stretch: var(--display-stretch);
+  text-transform: var(--display-case);
+  letter-spacing: var(--display-track);
 }

@@ -59,6 +59,14 @@ export const constants = new Set(members.filter((p) => tenures[p].length === 1 &
 export const isCurrent = (p: string) => tenures[p]?.some((t) => t.end === LAST) ?? false;
 export const alumni = members.filter((p) => !isCurrent(p));
 
+// Every time someone left. Each exit gets its own lane in the gutter so the threads run side by side.
+export type Exit = Segment & { lane: number };
+export const exits: Exit[] = segments
+  .filter((s) => s.end !== LAST)
+  .sort((a, b) => a.end - b.end || a.slot - b.slot)
+  .map((s, i) => ({ ...s, lane: i % 5 }));
+const exitOf = (p: string, start: number) => exits.find((e) => e.person === p && e.start === start)!;
+
 export function yearsLabel(p: string): string {
   const t = tenures[p];
   if (!t) return '';
@@ -154,7 +162,7 @@ export function makeLayout(vh: number, W: number) {
   const finale = end + vh * 0.35;
   const pageHeight = finale - P + vh * 1.15;
 
-  return { vh, W, desktop, P, headerY, right, padL, gap, cw, av, colX, stops, T, top, nextTop, end, bandH, cardPos, appearAt, pile, finale, pageHeight, perYear };
+  return { vh, W, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, stops, T, top, nextTop, end, bandH, cardPos, appearAt, pile, finale, pageHeight, perYear };
 }
 
 // ---------------------------------------------------------------- pure functions of the playhead
@@ -190,14 +198,48 @@ export function fillEdge(L: Layout, slot: number, w: number): number {
   return t0 + (w - t0) * e;
 }
 
-export type AvatarState = { x: number; y: number; scale: number; opacity: number; inPile: boolean; flying: number; returning: number; landed: number };
+// ---- leaving: a column doesn't stop, it drains into a thread that ducks under the other
+// columns, runs to the gutter and climbs to the alumni pile. The avatar rides the same line.
+
+export const DRAIN = 18; // world px a leaving column stops short of the season line, to make room for the funnel
+const DROP = 0.2; // share of the exit spent sliding down the column before riding the thread
+type Pt = [number, number];
+const pathLen = (pts: Pt[]) => pts.slice(1).reduce((n, p, i) => n + Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]), 0);
+function pointAt(pts: Pt[], d: number): Pt {
+  for (let i = 1; i < pts.length; i++) {
+    const seg = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
+    if (d <= seg || i === pts.length - 1) {
+      const t = seg ? clamp(d / seg) : 1;
+      return [lerp(pts[i - 1][0], pts[i][0], t), lerp(pts[i - 1][1], pts[i][1], t)];
+    }
+    d -= seg;
+  }
+  return pts[0];
+}
+
+/** One exit's thread, in screen pixels, for a given playhead. */
+export function threadAt(L: Layout, ex: Exit, w: number) {
+  const endY = L.top(ex.end + 1) - DRAIN - w + L.P; // where the column ends, on screen
+  const f = clamp((w - (L.top(ex.end + 1) - DRAIN)) / (L.vh * 0.42)); // 0 → 1 over the exit
+  const go = f <= DROP ? 0 : smooth((f - DROP) / (1 - DROP)); // progress along the thread
+  const x = L.colX(ex.slot);
+  const gx = L.pile.x - 10 + ex.lane * 5;
+  const y0 = endY + 9; // tip of the funnel
+  const yH = endY + 17; // the run under the columns, in the gap between seasons
+  const yTop = Math.min(L.pile.y + 14, yH - 8);
+  const c = 6; // corner cut
+  const pts: Pt[] = [[x, y0], [x, yH - c], [x + c, yH], [gx - c, yH], [gx, yH - c], [gx, yTop]];
+  return { ex, f, go, x, endY, y0, yH, gx, pts, len: pathLen(pts) };
+}
+
+export type AvatarState = { x: number; y: number; scale: number; opacity: number; inPile: boolean; flying: number; returning: number; landed: number; gray: number; under: boolean };
 
 /** Where one person's avatar is, for a given playhead. One element per person, for its whole life. */
 export function avatarState(L: Layout, p: string, w: number, pileIndex: number): AvatarState {
   const iv = tenures[p];
   const { vh, headerY, colX, pile } = L;
   const pileX = pile.x - Math.min(pileIndex, 3) * 9;
-  const st: AvatarState = { x: colX(iv[0].slot), y: headerY, scale: 0, opacity: 0, inPile: false, flying: 0, returning: 0, landed: 0 };
+  const st: AvatarState = { x: colX(iv[0].slot), y: headerY, scale: 0, opacity: 0, inPile: false, flying: 0, returning: 0, landed: 0, gray: 0, under: false };
 
   const a = L.appearAt[p];
   if (w < a) return st;
@@ -208,17 +250,25 @@ export function avatarState(L: Layout, p: string, w: number, pileIndex: number):
 
   for (let k = 0; k < iv.length; k++) {
     if (iv[k].end === LAST) break;
-    const B = L.top(iv[k].end + 1); // the season after their last
-    const f = clamp((w - (B - vh * 0.1)) / (vh * 0.3));
+    const th = threadAt(L, exitOf(p, iv[k].start), w);
+    const f = th.f;
     if (f <= 0) break;
-    const e = smooth(f);
     const sx = colX(iv[k].slot);
-    // quadratic arc: up and over to the alumni pile
-    const cx = lerp(sx, pileX, 0.5);
-    const cy = headerY - 46;
-    st.x = (1 - e) * (1 - e) * sx + 2 * (1 - e) * e * cx + e * e * pileX;
-    st.y = (1 - e) * (1 - e) * headerY + 2 * (1 - e) * e * cy + e * e * pile.y;
-    st.scale = lerp(1, 0.62, e);
+    if (f <= DROP) {
+      // slide down their own column to where it ends
+      const u = smooth(f / DROP);
+      st.x = sx;
+      st.y = lerp(headerY, th.y0, u);
+      st.scale = lerp(1, 0.62, u);
+      st.gray = u * 0.5;
+    } else {
+      // then ride the thread: under the other columns, out to the gutter, up to the pile
+      const path: Pt[] = [...th.pts, [pileX, pile.y]];
+      [st.x, st.y] = pointAt(path, th.go * pathLen(path));
+      st.scale = 0.62;
+      st.gray = lerp(0.5, 1, clamp(th.go * 4));
+      st.under = st.x > sx + 2 && st.x < L.padL + L.fieldW + 4;
+    }
     st.flying = Math.sin(Math.PI * f);
     st.landed = f;
     st.inPile = f >= 1;
@@ -238,6 +288,8 @@ export function avatarState(L: Layout, p: string, w: number, pileIndex: number):
     st.returning = g < 1 ? Math.sin(Math.PI * g) : clamp(1 - (w - L.T[next.start]) / (vh * 0.9));
     st.inPile = false;
     st.landed = 0;
+    st.gray = 1 - e2;
+    st.under = false;
   }
   return st;
 }

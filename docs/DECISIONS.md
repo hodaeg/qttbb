@@ -278,3 +278,13 @@ Built and verified in a phone-sized preview: title screen; pre-league beat (avat
 **The 2014 exit message** is now in `story.json` (transcribed from Levi's screenshot).
 **Not done yet / known rough edges:** the dial (phase 3), column expansion (phase 4), friend web (phase 5); the liquid edge is a simple wobble, not yet a real meniscus; the wide-screen layout needs a design pass; nothing has been tried on a real iPhone.
 
+
+### D35 — History app: checkpoint 1 feedback, first design revision — Accepted
+Levi's notes after checkpoint 1, and what changed:
+- **Exits.** A leaving column no longer just stops. It drains through a small funnel into a thread that runs under the other columns (shown as a faint groove across them), turns muted grey, runs to the right gutter and climbs to the alumni pile. The avatar slides down its own column and rides the same thread, passing beneath the other columns. Geometry lives in `threadAt` in `history/src/lib/model.ts`; each exit gets its own lane in the gutter.
+- **No rounded corners anywhere.** Cards and the sheet have one clipped corner (`--cut`); columns, chips and avatars are square.
+- **Glass.** `Glass.svelte`: heavier frosting, plus an edge layer that brightens and saturates the colour behind it, and a glint that travels along the edge as the card moves up the screen. Cards fade per layer, because fading a wrapper switches backdrop filters off.
+- **Colour.** Gold is parked: `--accent` now equals the ink colour, so big type is white and the member colours carry the page.
+- **Type.** The serif is gone. Three sets to compare, switched with a temporary "Type A/B/C" button (or `?type=a|b|c`): A Big Shoulders Display + Instrument Sans, B Bricolage Grotesque + Hanken Grotesk, C Archivo Expanded + Archivo. All display type goes through the `.display` class and tokens in `tokens.css`.
+**Temporary:** the type switcher and loading all three font sets; remove both once Levi picks one.
+**Open:** the gutter threads will share space with the dial (phase 3).

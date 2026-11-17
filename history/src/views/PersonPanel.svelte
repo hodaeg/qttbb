@@ -22,7 +22,7 @@
 <header>
   <Avatar {id} size={64} />
   <div>
-    <h3>{p.name}</h3>
+    <h3 class="display">{p.name}</h3>
     <p class="sub">{#if p.nickname}“{p.nickname}” · {/if}{status}</p>
   </div>
 </header>
@@ -77,11 +77,8 @@
   }
   h3 {
     margin: 0;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 1.1;
-    letter-spacing: -0.015em;
+    font-size: calc(28px * var(--display-scale));
+    line-height: 1.02;
   }
   .sub {
     margin: 4px 0 0;
@@ -95,7 +92,6 @@
   .years i {
     flex: 1;
     height: 8px;
-    border-radius: 4px;
     background: var(--glass-line);
   }
   .years i.on {
@@ -119,14 +115,15 @@
   }
   .stats div {
     padding: 12px 10px;
-    border-radius: 14px;
     border: 1px solid var(--glass-line);
+    background: rgba(255, 255, 255, 0.04);
   }
   .stats b {
     display: block;
     font-family: var(--font-display);
-    font-size: 21px;
-    font-weight: 600;
+    font-stretch: var(--display-stretch);
+    font-size: calc(22px * var(--display-scale));
+    font-weight: var(--display-weight);
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
   }
@@ -143,10 +140,9 @@
   blockquote {
     margin: 0 0 12px;
     padding: 2px 0 2px 14px;
-    border-left: 2px solid var(--accent);
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 17px;
+    border-left: 2px solid var(--ink);
+    font-weight: 500;
+    font-size: 16px;
     line-height: 1.45;
   }
   h4 {
