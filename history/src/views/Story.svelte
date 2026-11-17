@@ -12,6 +12,9 @@
   import Tray from './Tray.svelte';
   import Scrubber from './Scrubber.svelte';
   import PersonPanel from './PersonPanel.svelte';
+  import Roll from './Roll.svelte';
+  import { fly, fade } from 'svelte/transition';
+  import { backOut } from 'svelte/easing';
 
   type Photo = { src: string; alt: string };
   let { onperson, onphoto }: { onperson: (id: string) => void; onphoto: (p: Photo) => void } = $props();
@@ -72,8 +75,54 @@
     tt = L.trayTop;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') focus = null;
+      if (focus !== null && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) openSlot(clamp(focus + (e.key === 'ArrowRight' ? 1 : -1), 0, SLOTS - 1));
     };
     window.addEventListener('keydown', onKey);
+    // sideways swipes on an open column (touch), and sideways trackpad scrolls (desktop)
+    let sx = 0, sy = 0, t0 = 0, track = false, side = false;
+    const tStart = (e: TouchEvent) => {
+      track = false;
+      if (focus === null || e.touches.length !== 1) return;
+      const t = e.touches[0];
+      if (t.clientX > L.padL + L.fieldW + 4 || (e.target as Element).closest?.('[role="dialog"]')) return; // the scrubber, sheets
+      (sx = t.clientX), (sy = t.clientY), (t0 = performance.now()), (track = true), (side = false);
+    };
+    const tMove = (e: TouchEvent) => {
+      if (!track) return;
+      const t = e.touches[0];
+      const dx = t.clientX - sx;
+      const dy = t.clientY - sy;
+      if (!side) {
+        if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy) * 1.3) side = true;
+        else if (Math.abs(dy) > 10) return void (track = false);
+        else return;
+      }
+      e.preventDefault();
+      drag = dx;
+    };
+    const tEnd = () => {
+      if (track && side) swipeEnd(drag, performance.now() - t0);
+      track = side = false;
+    };
+    let wx = 0, wIdle = 0, wCool = 0;
+    const onWheel = (e: WheelEvent) => {
+      if (focus === null || Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      clearTimeout(wIdle);
+      if (performance.now() < wCool) return;
+      wx += e.deltaX;
+      drag = clamp(-wx, -140, 140);
+      if (Math.abs(wx) > 90) {
+        swipeEnd(-wx, 1000);
+        wx = 0;
+        wCool = performance.now() + 450;
+      } else wIdle = window.setTimeout(() => ((wx = 0), (drag = 0)), 140);
+    };
+    window.addEventListener('touchstart', tStart, { passive: true });
+    window.addEventListener('touchmove', tMove, { passive: false });
+    window.addEventListener('touchend', tEnd);
+    window.addEventListener('touchcancel', tEnd);
+    window.addEventListener('wheel', onWheel, { passive: false });
     const tick = (now: number) => {
       stepCuts(now);
       stepFocus();
@@ -99,6 +148,11 @@
       window.removeEventListener('resize', size);
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('keydown', onKey);
+      window.removeEventListener('touchstart', tStart);
+      window.removeEventListener('touchmove', tMove);
+      window.removeEventListener('touchend', tEnd);
+      window.removeEventListener('touchcancel', tEnd);
+      window.removeEventListener('wheel', onWheel);
     };
   });
 
@@ -109,20 +163,75 @@
   let shown = $state(0); // the slot the panel shows (kept while it closes)
   let fz = $state(0); // 0 = the story, 1 = expanded; springs between
   let geo = $state<{ x: number; w: number }[]>([]); // each slot's left edge and width, springing to target
+  let prev = $state<number | null>(null); // the column closing while another opens
+  let dir = $state(1); // which way we're moving through the columns: 1 = to the right
+  let drag = $state(0); // a sideways swipe in progress, in finger px (negative: pulling the next column in from the right)
   const slice = $derived({ w: L.desktop ? 12 : 5, gap: L.desktop ? 6 : 2 });
   const openW = $derived(L.fieldW - (SLOTS - 1) * (slice.w + slice.gap));
+  const PW = $derived(openW - 16); // the glass panel's width (fixed, so its text never reflows)
+  /** The neighbour a swipe in progress is pulling in, if there is one. */
+  const peekSlot = () => (focus === null || !drag ? -1 : focus + (drag < 0 ? 1 : -1));
   function geoTarget(slot: number, f: number | null) {
     if (f === null) return { x: L.colX(slot) - L.cw / 2, w: L.cw };
-    const step = slice.w + slice.gap;
-    if (slot < f) return { x: L.padL + slot * step, w: slice.w };
-    if (slot === f) return { x: L.padL + f * step, w: openW };
-    return { x: L.padL + f * step + openW + slice.gap + (slot - f - 1) * step, w: slice.w };
+    // mid-swipe the neighbour opens up a little under the finger, taking room from the open column
+    const nb = peekSlot();
+    const peek = nb >= 0 && nb < SLOTS ? Math.min(Math.abs(drag) * 0.45, openW * 0.4) : 0;
+    const width = (i: number) => (i === f ? openW - peek : i === nb ? slice.w + peek : slice.w);
+    let x = L.padL;
+    for (let i = 0; i < slot; i++) x += width(i) + slice.gap;
+    return { x, w: width(slot) };
   }
   const gOf = (slot: number) => geo[slot] ?? geoTarget(slot, null);
   const litFor = (slot: number) => pourAt(L, slot, rawScroll() + L.P) >= 0.9;
+
+  // The glass panel rides inside its column (clipped to it) on a soft spring, so it's pulled along
+  // behind the column's edge, overshoots a touch and settles. Opening from the story it's revealed
+  // from the middle. Switching, the incoming glass rides in on the edge facing the outgoing column,
+  // and the outgoing one is dragged out by the edge facing the incoming one.
+  let pull = $state<Record<number, { x: number; v: number }>>({});
+  function anchor(k: number) {
+    const g = gOf(k);
+    const near = 8;
+    const far = g.w - 8 - PW;
+    if (k === shown && prev === null) return drag < 0 ? far : drag > 0 ? near : (g.w - PW) / 2;
+    if (k === shown) return dir > 0 ? near : far;
+    return dir > 0 ? far : near;
+  }
+  function stepPull() {
+    const next: Record<number, { x: number; v: number }> = {};
+    let changed = false;
+    for (const k of prev === null ? [shown] : [shown, prev]) {
+      const nb = peekSlot();
+      const rubber = k === shown ? drag * (nb >= 0 && nb < SLOTS ? 0.12 : 0.18) : 0; // at the ends it just stretches
+      const t = anchor(k) + rubber;
+      const c = pull[k] ?? { x: t, v: 0 };
+      let v = reduced ? 0 : c.v * 0.7 + (t - c.x) * 0.17;
+      let x = reduced ? t : c.x + v;
+      if (Math.abs(t - x) < 0.05 && Math.abs(v) < 0.05) (x = t), (v = 0);
+      next[k] = { x, v };
+      if (x !== c.x || v !== c.v) changed = true;
+    }
+    if (changed || Object.keys(next).length !== Object.keys(pull).length) pull = next;
+  }
+  function openSlot(slot: number) {
+    if (focus === slot || !litFor(slot)) return;
+    fanned = false;
+    if (focus !== null) {
+      dir = slot > focus ? 1 : -1;
+      prev = focus;
+    } else prev = null;
+    focus = shown = slot;
+    // the incoming glass starts on its column's leading edge, hidden by the clip until the column opens
+    const g = gOf(slot);
+    pull = { ...pull, [slot]: { x: prev === null ? (g.w - PW) / 2 : dir > 0 ? 8 : g.w - 8 - PW, v: 0 } };
+  }
   function stepFocus() {
     if (focus !== null && !litFor(focus)) focus = null; // scrolled back before the league: close
-    const k = reduced ? 1 : 0.2;
+    if (focus === null && (prev !== null || drag)) (prev = null), (drag = 0);
+    if (prev !== null && gOf(prev).w < slice.w + 0.6) prev = null; // done closing
+    stepPull();
+    const k = reduced ? 1 : drag ? 0.3 : 0.15; // under the finger it follows closely; let go, it eases over
+
     const ease = (c: number, t: number) => (Math.abs(t - c) < 0.2 ? t : c + (t - c) * k);
     let changed = geo.length !== SLOTS;
     const next = Array.from({ length: SLOTS }, (_, i) => {
@@ -145,14 +254,19 @@
     const yr = L.stops[Math.min(L.stops.length - 1, Math.floor(stopAt(L, rawScroll() + L.P)))];
     const slot = lineup[yr]?.indexOf(id) ?? -1;
     if (slot < 0 || !litFor(slot)) return false;
-    fanned = false;
-    focus = shown = slot;
+    openSlot(slot);
     return true;
   }
-  function tapCol(slot: number) {
-    if (focus === slot || !litFor(slot)) return;
-    fanned = false;
-    focus = shown = slot;
+  const tapCol = openSlot;
+
+  // Swiping sideways on an open column moves to the next one. The neighbour opens a little under
+  // the finger as you drag; let go past ~60px (or flick) and it takes over, otherwise it springs back.
+  // Vertical drags stay the page's: the story keeps scrolling through the years.
+  function swipeEnd(dx: number, ms: number) {
+    drag = 0;
+    if (focus === null) return;
+    const to = focus + (dx < 0 ? 1 : -1);
+    if ((Math.abs(dx) > 60 || Math.abs(dx) / Math.max(ms, 1) > 0.45) && to >= 0 && to < SLOTS) openSlot(to);
   }
 
   // ---- the moment a column is cut. This one beat runs on the clock, not the scroll: tension
@@ -361,21 +475,59 @@
     }
     return out;
   });
-  let panelH = $state<Record<string, number>>({});
-  const panels = $derived.by(() => {
-    const out: { key: string; person: string; y: number; yr: number; lines: Line[]; tally: string }[] = [];
+  // each panel's natural height (n) and its fixed top part (t), measured
+  let nat = $state<Record<string, { n: number; t: number }>>({});
+  function natural(node: HTMLElement, key: string) {
+    const top = node.querySelector('.top') as HTMLElement;
+    const inner = node.querySelector('.inner') as HTMLElement;
+    const ro = new ResizeObserver(() => {
+      const t = top.offsetHeight;
+      const n = t + inner.offsetHeight + 19; // .more's padding and rule
+      const c = nat[key];
+      if (!c || c.n !== n || c.t !== t) nat[key] = { n, t };
+    });
+    ro.observe(top);
+    ro.observe(inner);
+    return { destroy: () => ro.disconnect() };
+  }
+  // a fade at the bottom edge while there's more to scroll
+  function moreFade(node: HTMLElement) {
+    const check = () => node.classList.toggle('more-below', node.scrollTop + node.clientHeight < node.scrollHeight - 4);
+    const ro = new ResizeObserver(check);
+    ro.observe(node);
+    if (node.firstElementChild) ro.observe(node.firstElementChild);
+    node.addEventListener('scroll', check, { passive: true });
+    return { destroy: () => (ro.disconnect(), node.removeEventListener('scroll', check)) };
+  }
+  type Panel = { key: string; person: string; y: number; h: number; yr: number; last: number; lines: Line[]; tally: { n: number; one: string; many: string }[] };
+  /**
+   * The panels for one column. A panel sits under the header and reaches down as far as its content
+   * goes, to the bottom of the screen if need be. Only a member who leaves has a limit: as their
+   * cut rises the panel gives way (its content scrolls inside it), and once it's down to its top
+   * part it's pushed up and away, so it never runs into the next person's ribbon.
+   */
+  function panelsOf(slot: number): Panel[] {
+    const out: Panel[] = [];
     if (fz < 0.01) return out;
     const yrNow = L.stops[Math.min(L.stops.length - 1, Math.floor(fi))];
     const stick = L.headerY * 2 - 4;
     for (const seg of segments) {
-      if (seg.slot !== shown) continue;
+      if (seg.slot !== slot) continue;
       const key = `${seg.slot}-${seg.start}`;
       const tip = seg.start === FIRST ? growTip(L, seg.person, w) : L.T[seg.start] + CUT_GAP / 2 - s;
       if (tip === null) continue;
-      const bot = (seg.end !== LAST ? L.top(seg.end + 1) - CUT_GAP / 2 : L.end) - s;
-      const hgt = panelH[key] ?? 150;
+      const bot = (seg.end !== LAST ? L.top(seg.end + 1) - CUT_GAP / 2 : Infinity) - s;
       if (bot < 0 || tip > vh) continue;
-      const y = Math.min(Math.max(stick, tip + 10), bot - hgt - 10);
+      const m = nat[key] ?? { n: vh * 0.6, t: 150 };
+      const y0 = Math.max(stick, tip + 10);
+      const segLimit = bot - 10;
+      let h = Math.min(m.n, Math.min(vh - 12, segLimit) - y0);
+      let y = y0;
+      const minH = Math.min(m.n, m.t + 96);
+      if (h < minH) {
+        h = minH;
+        y = Math.min(y0, segLimit - h);
+      }
       const yr = clamp(yrNow, seg.start, seg.end);
       const p = seg.person;
       const done = (y: number) => w >= honourAt(y); // a season counts once its line has passed
@@ -386,13 +538,19 @@
       const t = n(titles[p]);
       const k = n(sackos[p]);
       const sv = n(silvers[p]);
-      const tally = [t && `${t} title${t > 1 ? 's' : ''}`, sv && `${sv} silver star${sv > 1 ? 's' : ''}`, k && `${k} Sacko${k > 1 ? 's' : ''}`].filter(Boolean).join(' · ');
-      out.push({ key, person: p, y, yr, lines, tally });
+      const tally = [
+        { n: t, one: 'title', many: 'titles' },
+        { n: sv, one: 'silver star', many: 'silver stars' },
+        { n: k, one: 'Sacko', many: 'Sackos' },
+      ].filter((x) => x.n > 0);
+      out.push({ key, person: p, y, h, yr, last, lines, tally });
     }
     return out;
-  });
-  // the panel shows once its column is (nearly) open, so its text never reflows as it widens
-  const panelO = $derived(clamp((gOf(shown).w - openW * 0.85) / (openW * 0.15)) * fz);
+  }
+  // the open column and, while switching, the one closing
+  const panelCols = $derived(
+    (prev === null ? [shown] : [shown, prev]).map((k) => ({ k, g: gOf(k), pull: pull[k] ?? { x: 8, v: 0 }, list: panelsOf(k) })),
+  );
 
   // ---- avatars and the alumni pile. The pile is a literal pile: everyone who left, stacked
   // messily. One tap fans it out to the left and down; tap again, tap elsewhere or scroll to close.
@@ -571,7 +729,7 @@
 
 <div class="spacer" style:height="{L.pageHeight}px"></div>
 
-<div class="stage" class:reduced style:height="{vh}px">
+<div class="stage" class:reduced style:height="{vh}px" style:touch-action={focus !== null ? 'pan-y' : null}>
   <!-- columns: nothing is ever drawn over these except their own markers -->
   <div
     class="field"
@@ -625,7 +783,7 @@
       </span>
     {/each}
     {#each focusMarks as m (m.key)}
-      <span class="fmark" style:opacity={panelO} style:transform="translate3d({gOf(shown).x + 8}px,{m.y}px,0) translateY(-50%)">
+      <span class="fmark" style:opacity={fz} style:transform="translate3d({gOf(shown).x + 8}px,{m.y}px,0) translateY(-50%)">
         {#each m.lines as l}<b class={l.kind}><svg viewBox="0 0 16 16" aria-hidden="true">{@render icon(l.kind)}</svg>{m.year} {l.text}</b>{/each}
       </span>
     {/each}
@@ -679,33 +837,57 @@
         ></button>
       {/each}
     {/if}
-    {#each panels as pn (pn.key)}
+    <!-- each column's glass, clipped to its column: it's pulled in and out with the column's edge -->
+    {#each panelCols as pc (pc.k)}
+      {@const v = pc.pull.v}
       <div
-        class="panel"
-        style:opacity={panelO}
-        style:pointer-events={panelO > 0.6 ? 'auto' : 'none'}
-        style:width="{openW - 16}px"
-        style:max-height="{Math.round(vh * 0.64)}px"
-        style:transform="translate3d({gOf(shown).x + 8}px,{pn.y}px,0)"
-        bind:offsetHeight={panelH[pn.key]}
+        class="pclip"
+        style:--o={pc.k === shown ? fz : 1}
+        style:width="{Math.max(0, pc.g.w)}px"
+        style:height="{vh}px"
+        style:transform="translate3d({pc.g.x}px,0,0)"
       >
-        <div class="top">
-          <div class="who">
-            <Avatar id={pn.person} size={L.desktop ? 52 : 40} />
-            <span><b class="display">{people[pn.person].name}</b><small>{#if people[pn.person].nickname}“{people[pn.person].nickname}” · {/if}{statusOf(pn.person)}</small></span>
+        {#each pc.list as pn (pn.key)}
+          <div
+            class="panel"
+            style:pointer-events={pc.k === focus && fz > 0.6 ? 'auto' : 'none'}
+            style:width="{PW}px"
+            style:height="{Math.max(0, pn.h)}px"
+            style:--pv="{clamp(-v * 1.6, -16, 16)}px"
+            style:transform="translate3d({pc.pull.x}px,{pn.y}px,0) skewX({clamp(-v * 0.35, -4, 4)}deg) scale({lerp(0.94, 1, pc.k === shown ? fz : 1)})"
+          >
+            <Glass full pad="0">
+              <div class="pbody" use:natural={pn.key}>
+                <div class="top">
+                  <div class="who">
+                    <Avatar id={pn.person} size={L.desktop ? 52 : 40} />
+                    <span><b class="display">{people[pn.person].name}</b><small>{#if people[pn.person].nickname}“{people[pn.person].nickname}” · {/if}{statusOf(pn.person)}</small></span>
+                  </div>
+                  <div class="yr display"><Roll value={pn.yr} /></div>
+                  {#each pn.lines as l (l.text)}
+                    <p class="res {l.kind}" in:fly={{ y: 10, duration: reduced ? 0 : 420, easing: backOut }} out:fade={{ duration: reduced ? 0 : 160 }}>
+                      <svg viewBox="0 0 16 16" aria-hidden="true">{@render icon(l.kind)}</svg>{l.text}
+                    </p>
+                  {/each}
+                  {#if pn.tally.length}
+                    <p class="tally">
+                      Through <Roll value={pn.yr} />:
+                      {#each pn.tally as x, i (x.one)}{i ? ' · ' : ''}<Roll value={x.n} />&nbsp;{x.n > 1 ? x.many : x.one}{/each}
+                    </p>
+                  {/if}
+                </div>
+                <!-- everything the person sheet has; it scrolls inside the glass when it doesn't fit -->
+                <div class="more" use:moreFade><div class="inner"><PersonPanel id={pn.person} {onperson} bare /></div></div>
+              </div>
+            </Glass>
           </div>
-          <div class="yr display">{pn.yr}</div>
-          {#each pn.lines as l}<p class="res {l.kind}"><svg viewBox="0 0 16 16" aria-hidden="true">{@render icon(l.kind)}</svg>{l.text}</p>{/each}
-          {#if pn.tally}<p class="tally">Through {pn.yr}: {pn.tally}</p>{/if}
-        </div>
-        <!-- everything the person sheet has; it scrolls inside the panel -->
-        <div class="more"><PersonPanel id={pn.person} {onperson} bare /></div>
+        {/each}
       </div>
     {/each}
     <button
       class="minimize"
       aria-label="Back to the story"
-      style:opacity={panelO}
+      style:opacity={fz}
       style:pointer-events={focus !== null ? 'auto' : 'none'}
       style:transform="translate3d({gOf(shown).x + gOf(shown).w - 44}px,{Math.max(0, L.headerY - 22)}px,0)"
       onclick={() => (focus = null)}
@@ -1041,16 +1223,26 @@
   .slicehit {
     z-index: 3;
   }
-  .panel {
+  .pclip {
     z-index: 9;
+    overflow: hidden; /* not clip-path or opacity: either would switch the glass's frosting off */
+    will-change: transform;
+    pointer-events: none;
+  }
+  .panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 50% 0;
+    color: var(--ink);
+    will-change: transform;
+  }
+  .pbody {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom, rgba(8, 9, 12, 0.62), rgba(8, 9, 12, 0.5));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    color: var(--ink);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    /* the content lags the glass a little as it's pulled, like it's sitting in something thick */
+    transform: translate3d(var(--pv, 0px), 0, 0);
   }
   .panel .top {
     display: grid;
@@ -1066,9 +1258,14 @@
     overscroll-behavior: contain;
     padding: 4px 12px 14px;
     border-top: 1px solid var(--glass-line);
-    text-shadow: none;
-    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 22px), transparent);
-    mask-image: linear-gradient(to bottom, #000 calc(100% - 22px), transparent);
+    scrollbar-width: none;
+  }
+  .panel .more::-webkit-scrollbar {
+    display: none;
+  }
+  .panel .more:global(.more-below) {
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 30px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 30px), transparent);
   }
   .who {
     display: flex;

@@ -404,3 +404,9 @@ Levi's next round, and what changed:
 ### D51 — History app: people open their column; sheets only for those without one — Accepted
 - Tapping anyone who holds a column at the year under the playhead (header avatar, a name in a card, a connection) opens their expanded column instead of a sheet. Alumni, friends of the league, and anyone before the league starts still get the sheet.
 - The column's panel carries everything the sheet had (seasons bar, legacy stats, titles and sackos, story, anecdotes, connections) under its sticky header, scrolling inside the panel (max ~64% of the screen). Phone slices are 5px with 2px gaps to give the open column more room.
+
+### D52 — History app: the expanded column gets glass, swipes and rolling numbers — Accepted
+- The column's panel is the same glass as the cards, clipped to its column and riding it on a soft spring (it lags the column's edge, overshoots a touch and settles, skewing slightly with speed; its content lags the glass a little more).
+- Swipe sideways (or arrow keys / trackpad) to move to the next column. Mid-swipe the neighbour opens up under the finger and the glass follows with some rubber; let go past ~60px or flick and it takes over, otherwise it springs back. Switching, the outgoing glass is dragged out by the edge facing the new column, and the new one is pulled in on its edge. Vertical drags still scroll the years.
+- The panel reaches as far down as its content goes, to the bottom of the screen if need be. Only a member who leaves has a limit: as their cut rises the panel gives way (content scrolls inside), then is pushed up, never running into the next person's ribbon.
+- Numbers roll like an odometer (only the digits that change move, up going forward, down going back): the year, "Through {year}", and the running tally. Each season's result line flies in as it lands.
