@@ -8,15 +8,16 @@
 
     { "from": "max-christensen", "to": "alex-randall", "year": 2008, "how": "pals; the high school visit weekend in Winona", "type": "friend" },
     { "from": "alex-randall", "to": "sam-schurman", "year": null, "how": "high school", "type": "high-school" },
-    { "from": "alex-randall", "to": "alex-hoover", "year": 2008, "how": "the 2008 visit weekend", "type": "friend", "inferred": true },
-    { "from": "alex-randall", "to": "tim-underhill", "year": 2008, "how": "the 2008 visit weekend", "type": "friend", "inferred": true },
+    { "from": "alex-randall", "to": "alex-hoover", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "alex-hoover", "to": "tim-underhill", "year": null, "how": "met through roommates", "type": "friend" },
+    { "from": "levi-nellen", "to": "sam-schurman", "year": 2009, "how": "met at Japs; invited for sharing a major", "type": "class" },
     { "from": "tim-underhill", "to": "levi-nellen", "year": null, "how": "roommates", "type": "roommate" },
     { "from": "alex-randall", "to": "levi-nellen", "year": 2009, "how": "parties at Alex's house", "type": "party" },
     { "from": "jake", "to": "alex-randall", "year": 2009, "how": "made rap songs together, including Parallel Dat Park", "type": "friend" },
     { "from": "tattoo-adam", "to": "alex-randall", "year": 2009, "how": "got Alex and Jake's song tattooed", "type": "friend" },
 
     { "from": "levi-nellen", "to": "nate-mehlhoff", "year": 2009, "how": "freshman roommates", "type": "roommate" },
-    { "from": "nate-mehlhoff", "to": "max-christensen", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "nate-mehlhoff", "to": "max-christensen", "year": null, "how": "high school, later roommates at 71", "type": "high-school" },
     { "from": "nate-mehlhoff", "to": "zaid-hunitie", "year": null, "how": "high school", "type": "high-school" },
     { "from": "max-christensen", "to": "zaid-hunitie", "year": null, "how": "high school", "type": "high-school" },
     { "from": "levi-nellen", "to": "max-christensen", "year": 2009, "how": "introduced by Nate", "type": "friend" },
@@ -30,11 +31,18 @@
     { "from": "stephen-rydberg", "to": "ben-rydberg", "year": null, "how": "brothers", "type": "family" },
     { "from": "ben-rydberg", "to": "max-christensen", "year": null, "how": "high school", "type": "high-school" },
 
-    { "from": "tim-comes", "to": "luke-reinardy", "year": 2009, "how": "freshman roommates", "type": "roommate" },
+    { "from": "tim-comes", "to": "luke-reinardy", "year": 2009, "how": "freshman roommates, later at 71", "type": "roommate" },
     { "from": "luke-reinardy", "to": "kalyn-reinardy", "year": null, "how": "brother and sister", "type": "family" },
-    { "from": "luke-reinardy", "to": "max-christensen", "year": null, "how": "roommates", "type": "roommate" },
-    { "from": "luke-reinardy", "to": "andy-althoff", "year": null, "how": "grew up together", "type": "friend" },
-    { "from": "andy-althoff", "to": "max-christensen", "year": 2011, "how": "roommates, brought in by Luke", "type": "roommate" },
+    { "from": "kalyn-reinardy", "to": "tim-comes", "year": null, "how": "came in through Luke, Tim's roommate", "type": "friend" },
+    { "from": "kalyn-reinardy", "to": "max-christensen", "year": null, "how": "came in through Luke, Max's roommate", "type": "friend" },
+    { "from": "luke-reinardy", "to": "max-christensen", "year": null, "how": "roommates at 71", "type": "roommate" },
+    { "from": "luke-reinardy", "to": "andy-althoff", "year": null, "how": "grew up together, then roommates at 71", "type": "friend" },
+    { "from": "andy-althoff", "to": "max-christensen", "year": 2011, "how": "roommates at 71, brought in by Luke", "type": "roommate" },
+    { "from": "andy-althoff", "to": "tim-comes", "year": null, "how": "roommates at 71", "type": "roommate" },
+    { "from": "andy-althoff", "to": "nate-mehlhoff", "year": null, "how": "roommates at 71", "type": "roommate" },
+    { "from": "tim-comes", "to": "max-christensen", "year": null, "how": "roommates at 71", "type": "roommate" },
+    { "from": "tim-comes", "to": "nate-mehlhoff", "year": null, "how": "roommates at 71", "type": "roommate" },
+    { "from": "luke-reinardy", "to": "nate-mehlhoff", "year": null, "how": "roommates at 71", "type": "roommate" },
 
     { "from": "megan-hardie", "to": "levi-nellen", "year": 2009, "how": "freshman year friends", "type": "friend" },
     { "from": "megan-hardie", "to": "max-christensen", "year": 2009, "how": "freshman year friends", "type": "friend" },
@@ -58,8 +66,11 @@
     { "from": "mike-whiting", "to": "jon-petters", "year": 2012, "how": "frat brothers", "type": "frat" },
 
     { "from": "josh-susee", "to": "levi-nellen", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "josh-susee", "to": "adam-herr", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "dominic-morelli", "to": "callan-curtis", "year": null, "how": "classes together", "type": "class" },
     { "from": "kyle-mont-blanc", "to": "fish", "year": null, "how": "high school", "type": "high-school" },
     { "from": "fish", "to": "jordan-morris", "year": null, "how": "West Campus dorms", "type": "dorm" },
+    { "from": "kyle-mont-blanc", "to": "jordan-morris", "year": null, "how": "brought in through Fish", "type": "friend" },
     { "from": "gabe-warneke", "to": "zaid-hunitie", "year": 2016, "how": "a big marketing project", "type": "class" }
   ]
 }
