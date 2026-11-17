@@ -1,10 +1,10 @@
 {
   "_about": "Everyone in the story. role 'member' = has played in the league (current or alumni); 'outsider' = connected us but never played. 'sleeper' links a current member to the stats pipeline. color and avatar are placeholders until Levi supplies them (avatar falls back to initials). Names in story text are written [[id|Display name]] so they are tappable.",
   "people": [
-    { "id": "levi-nellen", "name": "Levi Nellen", "nickname": null, "initials": "LN", "role": "member", "founder": true, "sleeper": "Hodaeg", "color": "#E4572E", "avatar": null, "story": "TODO", "anecdotes": [] },
+    { "id": "levi-nellen", "name": "Levi Nellen", "nickname": null, "initials": "LN", "role": "member", "founder": true, "sleeper": "Hodaeg", "color": "#E4572E", "avatar": "avatars/levi-nellen.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "zaid-hunitie", "name": "Zaid Hunitie", "nickname": null, "initials": "ZH", "role": "member", "founder": true, "sleeper": "TheBoarHouse", "color": "#F3A712", "avatar": "avatars/zaid-hunitie.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "max-christensen", "name": "Max Christensen", "nickname": null, "initials": "MC", "role": "member", "founder": true, "sleeper": "MrSeeYou", "color": "#A8C256", "avatar": "avatars/max-christensen.jpg", "story": "TODO", "anecdotes": ["Went to a KFAN fantasy draft party, paid to go, didn't know much football, brought a binder, and threw up at the draft."] },
-    { "id": "adam-herr", "name": "Adam Herr", "nickname": null, "initials": "AH", "role": "member", "founder": true, "sleeper": "ChinaKing", "color": "#2E86AB", "avatar": null, "story": "TODO", "anecdotes": [] },
+    { "id": "adam-herr", "name": "Adam Herr", "nickname": null, "initials": "AH", "role": "member", "founder": true, "sleeper": "ChinaKing", "color": "#2E86AB", "avatar": "avatars/adam-herr.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "jon-petters", "name": "Jon Petters", "nickname": null, "initials": "JP", "role": "member", "founder": false, "sleeper": "BigDogsRevenge", "color": "#6C5CE7", "avatar": null, "story": "TODO", "anecdotes": [] },
     { "id": "gabe-warneke", "name": "Gabe Warneke", "nickname": null, "initials": "GW", "role": "member", "founder": false, "sleeper": "gabroni", "color": "#00B8A9", "avatar": "avatars/gabe-warneke.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "josh-susee", "name": "Josh Susee", "nickname": "Suze", "initials": "JS", "role": "member", "founder": false, "sleeper": "JSusee", "color": "#D7263D", "avatar": "avatars/josh-susee.jpg", "story": "TODO", "anecdotes": [] },
@@ -12,7 +12,7 @@
     { "id": "kyle-mont-blanc", "name": "Kyle Mont Blanc", "nickname": null, "initials": "KM", "role": "member", "founder": false, "sleeper": "ToadLicker", "color": "#1B998B", "avatar": "avatars/kyle-mont-blanc.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "jordan-morris", "name": "Jordan Morris", "nickname": null, "initials": "JM", "role": "member", "founder": false, "sleeper": "therealGandB", "color": "#3BB273", "avatar": "avatars/jordan-morris.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "dave-skradski", "name": "Dave Skradski", "nickname": null, "initials": "DS", "role": "member", "founder": false, "sleeper": "DangerDave678", "color": "#4D9DE0", "avatar": "avatars/dave-skradski.jpg", "story": "TODO", "anecdotes": [] },
-    { "id": "kalyn-reinardy", "name": "Kalyn Reinardy", "nickname": "Ging", "initials": "KR", "role": "member", "founder": false, "sleeper": "Gingivitis", "color": "#E15554", "avatar": null, "story": "TODO", "anecdotes": [] },
+    { "id": "kalyn-reinardy", "name": "Kalyn Reinardy", "nickname": "Ging", "initials": "KR", "role": "member", "founder": false, "sleeper": "Gingivitis", "color": "#E15554", "avatar": "avatars/kalyn-reinardy.jpg", "story": "TODO", "anecdotes": [] },
 
     { "id": "nate-mehlhoff", "name": "Nate Mehlhoff", "nickname": null, "initials": "NM", "role": "member", "founder": true, "sleeper": null, "color": "#B08EA2", "avatar": "avatars/nate-mehlhoff.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "toby-bachuber", "name": "Toby Bachuber", "nickname": null, "initials": "TB", "role": "member", "founder": true, "sleeper": null, "color": "#C9A227", "avatar": "avatars/toby-bachuber.jpg", "story": "TODO", "anecdotes": ["Passed out by round 6 of the first draft."] },
@@ -21,13 +21,13 @@
     { "id": "callan-curtis", "name": "Callan Curtis", "nickname": "Cal", "initials": "CC", "role": "member", "founder": true, "sleeper": null, "color": "#5C80BC", "avatar": "avatars/callan-curtis.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "dominic-morelli", "name": "Dominic Morelli", "nickname": "Dom", "initials": "DM", "role": "member", "founder": true, "sleeper": null, "color": "#C97C5D", "avatar": "avatars/dominic-morelli.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "jared-haldemann", "name": "Jared Haldemann", "nickname": null, "initials": "JH", "role": "member", "founder": true, "sleeper": null, "color": "#9C9A40", "avatar": "avatars/jared-haldemann.jpg", "story": "TODO", "anecdotes": ["Pulled off a hilarious trade on Zaid and was more or less insufferable about it."] },
-    { "id": "stephen-rydberg", "name": "Stephen Rydberg", "nickname": "Scuba", "initials": "SR", "role": "member", "founder": true, "sleeper": null, "color": "#4F9D9D", "avatar": null, "story": "TODO", "anecdotes": [] },
+    { "id": "stephen-rydberg", "name": "Stephen Rydberg", "nickname": "Scuba", "initials": "SR", "role": "member", "founder": true, "sleeper": null, "color": "#4F9D9D", "avatar": "avatars/stephen-rydberg.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "sam-schurman", "name": "Sam Schurman", "nickname": null, "initials": "SS", "role": "member", "founder": false, "sleeper": null, "color": "#A26769", "avatar": "avatars/sam-schurman.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "ben-rydberg", "name": "Ben Rydberg", "nickname": null, "initials": "BR", "role": "member", "founder": false, "sleeper": null, "color": "#6D9DC5", "avatar": "avatars/ben-rydberg.jpg", "story": "TODO", "anecdotes": [] },
 
     { "id": "dustin-sadnick", "name": "Dustin Sadnick", "nickname": null, "initials": "DS", "role": "outsider", "avatar": null, "story": "Levi's brother." },
     { "id": "doug-comes", "name": "Doug Comes", "nickname": null, "initials": "DC", "role": "outsider", "avatar": null, "story": "Tim Comes's brother." },
-    { "id": "luke-reinardy", "name": "Lucas Reinardy", "nickname": "Luke", "initials": "LR", "role": "outsider", "avatar": null, "story": "Kalyn's older brother. Tim's freshman roommate; also lived with Max, Zaid and Nate." },
+    { "id": "luke-reinardy", "name": "Lucas Reinardy", "nickname": "Luke", "initials": "LR", "role": "outsider", "avatar": "avatars/luke-reinardy.jpg", "story": "Kalyn's older brother. Tim's freshman roommate; also lived with Max, Zaid and Nate." },
     { "id": "alex-randall", "name": "Alex Randall", "nickname": null, "initials": "AR", "role": "outsider", "avatar": "avatars/alex-randall.jpg", "story": "Max's pal. The group partied at his house." },
     { "id": "alex-hoover", "name": "Alex Hoover", "nickname": null, "initials": "AH", "role": "outsider", "avatar": "avatars/alex-hoover.jpg", "story": "TODO" },
     { "id": "tim-underhill", "name": "Tim Underhill", "nickname": null, "initials": "TU", "role": "outsider", "avatar": "avatars/tim-underhill.jpg", "story": "Levi's future roommate." },

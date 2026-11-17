@@ -4,7 +4,8 @@
   // - tap: jump to that year;
   // - hold (0.2s): the rail bulges out under the finger, quarter-year ticks appear inside the
   //   bulge, and dragging scrubs finely (4x the travel per year). Let go: it settles on a quarter;
-  // - a swipe that starts moving before the hold kicks in is just a page scroll.
+  // - moving before the hold kicks in does nothing (the rail never pans the page, so the browser
+  //   and the scrubber never fight over the finger).
   // While the scrubber is in charge it draws its own value, not the (smoothed, lagging) scroll, so
   // it never fights itself; it hands back to the scroll once the two agree.
   import { onMount } from 'svelte';
@@ -13,7 +14,7 @@
   let { L, fi, opacity = 1, reduced = false }: { L: Layout; fi: number; opacity?: number; reduced?: boolean } = $props();
 
   const HOLD_MS = 200;
-  const SLOP = 6;
+  const SLOP = 8;
   const FINE = 4; // the bulge magnifies this much; also quarters per year
   const R = 92; // reach of the bulge, px either side of the finger
   const SWELL = 16; // how far the rail swells out to the left
@@ -35,34 +36,31 @@
   const yOf = (v: number) => (v + 0.5) * gap; // a value's place on the flat rail
   const fAt = (y: number) => clamp(y / gap - 0.5, 0, n - 1);
 
-  // the bulge: a fisheye around the finger (monotonic, back to flat at R), plus a swell to the left
+  // Holding lays a fine scale (4x the spacing, quarter-year ticks) over the rail, pinned where the
+  // hold started: the tick under the finger is always the current value, and nothing on the scale
+  // moves while you drag. Only the bulge (a swell of the rail to the left) follows the finger.
+  let ay = $state(0); // where the hold started, rail coordinates
+  let af = $state(0); // the value there
   const bell = (d: number, sigma: number) => Math.exp(-(d * d) / (2 * sigma * sigma));
-  function lens(y: number) {
-    const d = y - fy;
-    const a = Math.abs(d) / R;
-    if (b <= 0 || a >= 1) return y;
-    const k = (FINE - 1) * b;
-    return fy + Math.sign(d) * R * (((k + 1) * a) / (k * a + 1));
-  }
   const swell = (y: number) => -SWELL * b * bell(y - fy, R * 0.42);
 
   const ticks = $derived(
     L.stops.map((year, i) => {
-      const y = lens(yOf(i));
-      const core = b * bell(y - fy, R * 0.38); // inside the bulge the fine ticks take over
+      const y = yOf(i);
+      const core = bell(y - fy, R * 0.5); // the fine scale takes over inside the bulge
       const label = i === 0 || i === n - 1 || year === 2011 || year % 5 === 0;
-      return { year, i, y, x: swell(y), o: 1 - core, label };
+      return { year, i, y, x: swell(y), o: 1 - b * (0.55 + 0.45 * core), label };
     }),
   );
   const fine = $derived.by(() => {
     if (b < 0.01) return [];
-    const out: { key: number; y: number; x: number; o: number; whole: boolean; year: number }[] = [];
-    const span = R / (gap * FINE);
-    for (let q = Math.ceil((f - span) * FINE); q <= Math.floor((f + span) * FINE); q++) {
+    const out: { key: number; y: number; x: number; o: number; whole: boolean }[] = [];
+    const px = gap * FINE;
+    for (let q = Math.ceil((af + (fy - R * 1.3 - ay) / px) * FINE); q <= Math.floor((af + (fy + R * 1.3 - ay) / px) * FINE); q++) {
       const v = q / FINE;
       if (v < 0 || v > n - 1) continue;
-      const y = fy + (v - f) * gap * FINE;
-      out.push({ key: q, y, x: swell(y), o: b * bell(y - fy, R * 0.45), whole: q % FINE === 0, year: L.stops[Math.round(v)] });
+      const y = ay + (v - af) * px;
+      out.push({ key: q, y, x: swell(y), o: b * bell(y - fy, R * 0.6), whole: q % FINE === 0 });
     }
     return out;
   });
@@ -139,6 +137,9 @@
     const y = localY(e);
     g = { id: e.pointerId, y0: y, f0: f, t0: e.timeStamp, held: false };
     fy = clamp(y, 0, H);
+    try {
+      el?.setPointerCapture(e.pointerId);
+    } catch {}
     clearTimeout(holdTimer);
     holdTimer = window.setTimeout(() => {
       if (!g) return;
@@ -146,12 +147,9 @@
       g.held = true;
       scrubbing = true;
       driving = true;
-      try {
-        el?.setPointerCapture(g.id);
-      } catch {}
-      go(fAt(fy));
-      g.y0 = fy;
-      g.f0 = f;
+      ay = fy;
+      af = fAt(fy);
+      go(af);
       setBulge(1);
       buzz();
     }, HOLD_MS);
@@ -160,11 +158,11 @@
     if (!g || e.pointerId !== g.id) return;
     const y = localY(e);
     if (!g.held) {
-      if (Math.abs(y - g.y0) > SLOP) cancel(); // a swipe: let the page scroll
+      if (Math.abs(y - g.y0) > SLOP) cancel(); // moved before the hold: not a tap, not a scrub
       return;
     }
     fy = clamp(y, 0, H);
-    go(g.f0 + (y - g.y0) / (gap * FINE));
+    go(af + (fy - ay) / (gap * FINE)); // the fine tick under the finger is the value
   }
   function up(e: PointerEvent) {
     if (!g || e.pointerId !== g.id) return;
@@ -199,9 +197,9 @@
   }
 
   onMount(() => {
-    // once scrubbing, the finger belongs to us: stop the page from panning (must be non-passive)
+    // belt and braces for iOS: the rail's touches never scroll the page (must be non-passive)
     const block = (e: TouchEvent) => {
-      if (g?.held && e.cancelable) e.preventDefault();
+      if (e.cancelable) e.preventDefault();
     };
     el?.addEventListener('touchmove', block, { passive: false });
     // the reader taking over (wheel, touch on the page) cancels a scrubber animation
@@ -266,7 +264,7 @@
     top: 0;
     left: 0;
     z-index: 26;
-    touch-action: pan-y; /* a swipe still scrolls the page; once held, we take the finger */
+    touch-action: none; /* the rail never pans the page: nothing fights the finger */
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;

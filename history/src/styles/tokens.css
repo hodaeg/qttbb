@@ -15,14 +15,16 @@
   --ghost: rgba(255, 255, 255, 0.12); /* the giant year numeral */
   --line: rgba(255, 255, 255, 0.14);
 
-  /* glass */
-  --glass-tint: rgba(9, 11, 16, 0.5);
-  --glass-strong: rgba(9, 11, 16, 0.84);
-  --glass-line: rgba(255, 255, 255, 0.14);
-  --glass-filter: blur(26px) saturate(2.1) brightness(1.06);
-  --edge-filter: blur(5px) saturate(3.2) brightness(2.1); /* the stroke lights up in whatever colour is behind it */
-  --glint: rgba(255, 255, 255, 0.95);
-  --cut: 14px; /* the clipped corner that replaces rounded ones */
+  /* glass: frosted, with a soft rim that catches light along the top edge (like iOS glass) */
+  --glass-tint: rgba(22, 24, 30, 0.52);
+  --glass-strong: rgba(18, 20, 26, 0.86);
+  --glass-line: rgba(255, 255, 255, 0.1);
+  --glass-filter: blur(28px) saturate(1.8);
+  --glass-rim:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.09),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+  --glass-lift: 0 16px 44px -8px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.25);
 
   /* founders' ribbons: a faint harlequin lattice (one diamond per column width) */
   --regal: 0.12;
@@ -84,11 +86,15 @@
     --scrim: rgba(30, 30, 34, 0.35);
     --ghost: rgba(0, 0, 0, 0.07);
     --line: rgba(0, 0, 0, 0.12);
-    --glass-tint: rgba(255, 255, 255, 0.5);
-    --glass-strong: rgba(255, 255, 255, 0.9);
-    --glass-line: rgba(0, 0, 0, 0.12);
-    --glass-filter: blur(26px) saturate(1.9) brightness(1.04);
-    --edge-filter: blur(5px) saturate(3) brightness(1.15);
+    --glass-tint: rgba(255, 255, 255, 0.55);
+    --glass-strong: rgba(255, 255, 255, 0.88);
+    --glass-line: rgba(0, 0, 0, 0.08);
+    --glass-filter: blur(28px) saturate(1.8);
+    --glass-rim:
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.6),
+      inset 0 0 0 1.5px rgba(0, 0, 0, 0.04);
+    --glass-lift: 0 12px 32px -6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.06);
   }
 }
 

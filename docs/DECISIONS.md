@@ -333,3 +333,14 @@ Levi's next round, and what changed:
 - **Photos:** cards can carry `photos`. They slide in from the left one after another, each later one tucked underneath and a little higher, and all leave right as the next card arrives (cards with photos get more scroll). Tap opens the photo. New "Parallel Dat Park" card after Japs; new outsider Jake.
 - **Real avatars** for 21 people (resized to 192px squares in `public/avatars/`); a colour ring is drawn over the photo.
 **Not tested:** real touch on iPhone (the hold-vs-scroll handoff in particular), the ripple's look on a phone.
+
+### D40 — History app: scrubber hold rebuilt, calmer motion, quieter glass — Accepted
+- **Scrubber hold glitched on iPhone.** Likely cause: the rail allowed vertical panning (`pan-y`), so the browser and the scrubber both moved the page under the finger; and the bulge was a fisheye that re-mapped ticks around a moving finger, so the scale swam. Now the rail never pans the page (`touch-action: none`), and a hold pins a fine (4x, quarter-year) scale where it started: the tick under the finger is the value and nothing on the scale moves; only the swell and the marker follow the finger. Tap still jumps; moving before the hold does nothing.
+- **Avatars no longer overshoot** off the top when founders grow in (ease-out, no spring).
+- **No ribbons before 2009.** Founders appear with the first card from 2009 on that names them (Levi with "Freshman year", Tim with "On his brother's instruction").
+- **Photos stack the other way:** the first one climbs up as each new one arrives on top, where it was.
+- **Ripple removed** (flickered, too uniform). Ribbons sway sideways by a pixel or so while scrolling, each on its own phase.
+- **Cut seam:** the hanging tail now overlaps the ribbon by 2px so no hairline of background shows at the hinge.
+- **Glass restyled** after the iOS look Levi pointed to: frosted fill, a soft light rim along the top edge, a quiet shadow. No clipped corner ("notch"), no moving glint, no saturating edge filter.
+- **Eyebrow labels removed:** the era label above cards, the year above card titles, the intro kicker, the finale's kicker and the alumni panel label.
+- New avatars: Ging, Levi, Stephen, Luke, Adam. Japs gets the Petey story.

@@ -11,7 +11,7 @@
 {#if card.kind === 'season' && card.season}
   {@const s = card.season}
     <article class="season">
-      <span class="yr">{card.year}{s.source === 'sleeper' ? '*' : ''}</span>
+      <h3 class="display">{card.year}{s.source === 'sleeper' ? '*' : ''}</h3>
       {#if s.champion}
         <button class="line pressable" onclick={() => onperson(s.champion!)}>
           <Avatar id={s.champion} size={28} /><span><small>Champion</small><b class="display">{people[s.champion].name}</b></span>
@@ -27,7 +27,6 @@
     </article>
 {:else}
     <article class:beat={card.kind === 'beat'}>
-      <span class="yr">{card.year}</span>
       <h3 class="display">{card.title}</h3>
       {#if card.body}<p><Rich text={card.body} {onperson} /></p>{/if}
 
@@ -56,15 +55,8 @@
 {/if}
 
 <style>
-  .yr {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    color: var(--ink-2);
-    font-variant-numeric: tabular-nums;
-  }
   h3 {
-    margin: 2px 0 6px;
+    margin: 4px 0 6px;
     font-size: calc(22px * var(--display-scale));
     line-height: 1.06;
   }

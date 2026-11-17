@@ -97,6 +97,7 @@ const mentions = (c: Card) => [...(c.body + (c.funFact ?? '')).matchAll(/\[\[([a
 
 export type Layout = ReturnType<typeof makeLayout>;
 export const CUT_GAP = 7; // px of daylight between a cut column and its replacement
+const RIBBONS_FROM = 2009;
 
 /**
  * Three zones that never overlap: header avatars, the column field, the card tray.
@@ -156,12 +157,13 @@ export function makeLayout(vh: number, W: number) {
   seq.forEach((r, i) => (r.b = i < seq.length - 1 ? seq[i + 1].a : end));
   const cardPos = new Map<Card, number>(seq.map((r) => [r.card, r.a]));
 
-  // When each member first shows up in the header.
+  // When each member first shows up in the header. Nobody gets a ribbon before 2009 (the year we
+  // all got to Winona State): founders appear with the first card from then on that names them.
   const appearAt: Record<string, number> = {};
   for (const p of members) {
     const first = tenures[p][0];
     if (first.start === FIRST) {
-      const met = cards.find((c) => mentions(c).includes(p));
+      const met = cards.find((c) => c.year >= RIBBONS_FROM && mentions(c).includes(p));
       const metW = met ? cardPos.get(met)! + vh * 0.05 : Infinity;
       appearAt[p] = Math.min(metW, T[FIRST] + first.slot * vh * 0.018);
     } else appearAt[p] = T[first.start] + vh * 0.05;
@@ -242,7 +244,7 @@ export function growTip(L: Layout, p: string, w: number): number | null {
   const a = L.appearAt[p];
   if (a === undefined || w < a) return null;
   const q = clamp((w - a) / (L.vh * 0.12));
-  return lerp(L.vh + L.av, L.headerY, back(q));
+  return lerp(L.vh + L.av, L.headerY, easeOut(q)); // no overshoot: it settles straight into its slot
 }
 
 export const PILE_SCALE = 0.72;

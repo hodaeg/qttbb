@@ -9,10 +9,10 @@
 
   type Item = { card: Card; i: number; o: number; dy: number; t: number };
   let {
-    L, items, opacity, era, top, onperson, want = $bindable(0),
-  }: { L: Layout; items: Item[]; opacity: number; era: string; top: number; onperson: (id: string) => void; want?: number } = $props();
+    L, items, opacity, top, onperson, want = $bindable(0),
+  }: { L: Layout; items: Item[]; opacity: number; top: number; onperson: (id: string) => void; want?: number } = $props();
 
-  const HEAD = 30;
+  const HEAD = 16; // room above the card for the pips (several cards in one year)
   const main = $derived(items.reduce<Item | null>((m, x) => (!m || x.o > m.o ? x : m), null));
   const siblings = $derived(main ? (L.perYear[main.card.year] ?? []) : []);
 
@@ -44,17 +44,13 @@
   style:width="{L.trayW}px"
   style:height="{h}px"
   style:--o={opacity}
-  style:--sheen={main ? main.t : 0.5}
   style:pointer-events={opacity > 0.6 ? 'auto' : 'none'}
   style:transform="translate3d({L.padL}px,{top + (1 - opacity) * 24}px,0)"
 >
   <Glass full pad="0">
-    <div class="head">
-      <span>{era}</span>
-      {#if siblings.length > 1}
-        <span class="pips" aria-hidden="true">{#each siblings as c}<i class:on={c === main?.card}></i>{/each}</span>
-      {/if}
-    </div>
+    {#if siblings.length > 1}
+      <span class="pips" aria-hidden="true">{#each siblings as c}<i class:on={c === main?.card}></i>{/each}</span>
+    {/if}
     {#each items as it (it.i)}
       <div
         class="slot"
@@ -77,19 +73,11 @@
     z-index: 5;
     will-change: transform; /* never fade this wrapper: it would switch the glass off. Layers fade via --o */
   }
-  .head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 30px;
-    padding: 0 calc(var(--cut) + 8px) 0 18px;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-  }
   .pips {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    z-index: 1;
     display: flex;
     gap: 4px;
   }
@@ -105,7 +93,7 @@
   }
   .slot {
     position: absolute;
-    inset: 30px 0 0 0;
+    inset: 16px 0 0 0;
     padding: 0 18px 14px;
     overflow-x: hidden;
     overflow-y: auto;

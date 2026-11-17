@@ -54,11 +54,9 @@
     display: flex;
     flex-direction: column;
     background: var(--glass-strong);
-    backdrop-filter: blur(30px) saturate(2);
-    -webkit-backdrop-filter: blur(30px) saturate(2);
-    border-top: 1.5px solid;
-    border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.12) 35%, rgba(255, 255, 255, 0.12) 70%, rgba(255, 255, 255, 0.5)) 1;
-    clip-path: polygon(0 0, calc(100% - var(--cut) * 1.4) 0, 100% calc(var(--cut) * 1.4), 100% 100%, 0 100%);
+    backdrop-filter: var(--glass-filter);
+    -webkit-backdrop-filter: var(--glass-filter);
+    box-shadow: var(--glass-rim), var(--glass-lift);
     padding-bottom: var(--safe-bottom);
     animation: rise 420ms var(--ease-spring);
   }

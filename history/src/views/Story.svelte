@@ -140,6 +140,11 @@
   // there before the league, all in shadow, and the colour pours down them when 2011 starts.
   type Piece = { key: string; person: string; slot: number; x: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean };
   type Tail = Piece & { tf: string; p: number };
+  // while scrolling the ribbons sway a little side to side, each on its own slow phase
+  const sway = (slot: number) => {
+    const a = clamp(Math.abs(vel) / 30) * (L.desktop ? 2.2 : 1.4);
+    return a ? Math.sin(time * 4.2 + slot * 1.37) * a : 0;
+  };
   const field = $derived.by(() => {
     const cols: Piece[] = [];
     const tails: Tail[] = [];
@@ -164,7 +169,7 @@
         if (w <= top + 1) continue; // arrives when its cut reaches the playhead
       }
       const f = fx[key] ?? { g: cut ? 1 : 0, x: 0 };
-      const x = L.colX(seg.slot) - L.cw / 2 + f.x;
+      const x = L.colX(seg.slot) - L.cw / 2 + f.x + sway(seg.slot);
       const litY = founding ? lerp(L.headerY - 30, tt, pourAt(L, seg.slot, w)) : tt; // screen
       const base = { person: seg.person, slot: seg.slot, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person) };
 
@@ -179,13 +184,14 @@
         }
       }
       if (cut) {
-        const y = tailTop - s;
-        const h = bottom - tailTop;
+        // the tail starts 2px up inside the body, so no hairline of background shows at the hinge
+        const y = tailTop - s - 2;
+        const h = bottom - tailTop + 2;
         if (y < vh && y + h > -60) {
           const p = clamp((w - B1) / (vh * 0.12)); // how far it has fallen away
-          const clip = `polygon(0 0,100% 0,100% ${px(bottom - L.cutH - tailTop)},0 ${px(bottom - tailTop)})`;
+          const clip = `polygon(0 0,100% 0,100% ${px(bottom - L.cutH - tailTop + 2)},0 ${px(bottom - tailTop + 2)})`;
           const tf = `translate3d(${px(x)},${px(y)},0) perspective(260px) rotateX(${(-22 * p).toFixed(2)}deg)`;
-          tails.push({ ...base, key, x, y, h, clip, py: -tailTop, lit: litY - y, tf, p });
+          tails.push({ ...base, key, x, y, h, clip, py: -(y + s), lit: litY - y, tf, p });
         }
       }
     }
@@ -199,8 +205,8 @@
       .filter((m) => m.sy > L.headerY + 14 && m.sy < vh + 4),
   );
 
-  // ---- photos: they slide in from the left, one after another, stacking up (each new one tucked
-  // underneath, a little higher), and all leave to the right as the next card arrives.
+  // ---- photos: they slide in from the left, one after another. Each new one lands on top, where
+  // the last one was, and pushes the ones before it up the stack. All leave right as the next card arrives.
   const photos = $derived.by(() => {
     const out: { key: string; p: Photo; x: number; y: number; rot: number; z: number; o: number }[] = [];
     const pw = Math.min(L.fieldW * 0.7, 330);
@@ -215,15 +221,15 @@
       const base = regionBot - ph / 2 - 4;
       const step = n > 1 ? Math.min(ph * 0.58, (base - ph / 2 - regionTop) / (n - 1)) : 0;
       const exit = smooth(clamp((w - (r.b - vh * 0.12)) / (vh * 0.14)));
+      const ents = list.map((_, k) => easeOut(clamp((w - (r.a + span * (0.06 + (0.6 * k) / n))) / ((span * 0.6) / n))));
       list.forEach((p, k) => {
-        const t0 = r.a + span * (0.06 + (0.6 * k) / n);
-        const enter = clamp((w - t0) / ((span * 0.6) / n));
-        if (enter <= 0) return;
-        const e = easeOut(enter);
+        const e = ents[k];
+        if (e <= 0) return;
+        const climb = ents.slice(k + 1).reduce((t, v) => t + v, 0); // pushed up by every later arrival
         const tx = L.padL + L.fieldW / 2 + [-10, 14, -6][k % 3] * (L.fieldW / 300);
         const rot = [-3, 2.5, -1.5][k % 3];
-        const x = lerp(-pw * 0.6, tx, e) + exit * (L.W + pw * 0.6 - tx) + k * exit * exit * 30;
-        out.push({ key: p.src, p, x, y: base - k * step, rot: rot - (1 - e) * 12 + exit * 10, z: n - k, o: 1 });
+        const x = lerp(-pw * 0.6, tx, e) + exit * (L.W + pw * 0.6 - tx) + (n - 1 - k) * exit * exit * 30;
+        out.push({ key: p.src, p, x, y: base - climb * step, rot: rot - (1 - e) * 12 + exit * 10, z: k + 1, o: 1 });
       });
     }
     return { list: out, pw, ph };
@@ -337,8 +343,6 @@
 
   // ---- where we are in time (the dial and the tray read this)
   const fi = $derived(stopAt(L, w));
-  const yearNow = $derived(L.stops[Math.min(L.stops.length - 1, Math.floor(fi))]);
-  const era = $derived(yearNow < FIRST ? 'Before the league' : yearNow === FIRST ? 'Founding' : yearNow < 2016 ? 'Shake-ups' : 'Current era');
   const started = $derived(clamp((w - (L.T[L.stops[0]] - vh * 0.35)) / (vh * 0.2)));
   const trayItems = $derived(trayAt(L, w));
   const trayO = $derived(started * (1 - clamp((w - L.end) / (vh * 0.2))));
@@ -355,8 +359,6 @@
   <div
     class="field"
     style:--fade="{L.headerY * 2 + 26}px"
-    style:--wave="{(time * 150).toFixed(1)}px"
-    style:--wv={clamp(Math.abs(vel) / 18) * 0.9}
     style:--cw="{L.cw}px"
   >
     {#each field.cols as c (c.key)}
@@ -369,7 +371,6 @@
         style:--g={c.g}
         style:--py="{c.py}px"
         style:--lit="{c.lit}px"
-        style:--ph="{c.slot * 23}px"
         style:width="{L.cw}px"
         style:height="{c.h}px"
         style:clip-path={c.clip}
@@ -385,7 +386,6 @@
         style:--g={t.g}
         style:--p={t.p}
         style:--py="{t.py}px"
-        style:--ph="{t.slot * 23}px"
         style:width="{L.cw}px"
         style:height="{t.h}px"
         style:clip-path={t.clip}
@@ -431,13 +431,12 @@
   {/if}
 
   <!-- the card tray -->
-  <Tray {L} items={trayItems} opacity={trayO} {era} top={tt} {onperson} bind:want />
+  <Tray {L} items={trayItems} opacity={trayO} top={tt} {onperson} bind:want />
 
   <!-- finale -->
   {#if finaleCy < vh * 1.4}
-    <div class="cardwrap finale" style:width="{Math.min(L.trayW, 440)}px" style:--o={clamp((vh - finaleCy) / (vh * 0.25))} style:--sheen={1 - finaleCy / vh} style:transform="translate3d({L.padL}px,calc({finaleCy}px - 50%),0)">
+    <div class="cardwrap finale" style:width="{Math.min(L.trayW, 440)}px" style:--o={clamp((vh - finaleCy) / (vh * 0.25))} style:transform="translate3d({L.padL}px,calc({finaleCy}px - 50%),0)">
       <Glass pad="18px 18px 16px"><article class="fin">
-        <span class="k">Now · {legacy.asOf.season}, week {legacy.asOf.last_scored_week}</span>
         <h3 class="display">The Legacy Rankings</h3>
         <ol>
           {#each legacy.rankings as r}
@@ -448,7 +447,7 @@
             </li>
           {/each}
         </ol>
-        <p class="fine">Mike's rankings, kept current from league data. The friend web comes next.</p>
+        <p class="fine">Mike's rankings, through week {legacy.asOf.last_scored_week} of {legacy.asOf.season}. The friend web comes next.</p>
       </article></Glass>
     </div>
   {/if}
@@ -456,7 +455,6 @@
   <!-- intro -->
   {#if introO > 0}
     <div class="intro" style:opacity={introO} style:transform="translate3d(0,{-s * 0.35}px,0)">
-      <p class="kicker">A history, 2002 → now</p>
       <h1 class="display">The Quest <span>to the</span> <em>Bria Bowl</em></h1>
       <p class="lede">How twelve friends ended up in one fantasy football league, and who we lost along the way.</p>
       <span class="hint" aria-hidden="true">Scroll<i></i></span>
@@ -470,7 +468,6 @@
   {/if}
   {#if pileCount > 0}
     <div class="fanback" class:show={fanned} style:width="{fanBox.w}px" style:height="{fanBox.h}px" style:transform="translate3d({fanBox.x}px,{fanBox.y}px,0)">
-      <span>Alumni · {pileCount}</span>
     </div>
   {/if}
   {#each avatars as a (a.p)}
@@ -584,24 +581,6 @@
       linear-gradient(to top, rgba(0, 0, 0, calc(var(--p) * 0.6)) 0, transparent calc(var(--p) * 100%)),
       var(--now);
   }
-  .col::after,
-  .tail::after {
-    /* the ripple: soft bands of light and shade travel down every ribbon while you scroll */
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.075) 0,
-      transparent 36px,
-      rgba(0, 0, 0, 0.14) 72px,
-      transparent 108px,
-      rgba(255, 255, 255, 0.075) 144px
-    );
-    background-position: 0 calc(var(--py) + var(--wave) + var(--ph));
-    opacity: var(--wv);
-    pointer-events: none;
-  }
   .cardshade {
     /* the card's shadow falling on the ribbons just above it */
     height: 44px;
@@ -713,15 +692,8 @@
     z-index: 6;
     will-change: transform; /* never fade this wrapper: it would switch the glass off. Layers fade via --o */
   }
-  .fin .k {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-2);
-  }
   .fin h3 {
-    margin: 4px 0 10px;
+    margin: 0 0 10px;
     font-size: calc(30px * var(--display-scale));
     line-height: 1;
   }
@@ -775,14 +747,6 @@
     padding: 0 26px calc(8vh + var(--safe-bottom));
     max-width: 720px;
     pointer-events: none;
-  }
-  .kicker {
-    margin: 0 0 14px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-2);
   }
   h1 {
     margin: 0;
@@ -921,19 +885,10 @@
   }
   .fanback {
     z-index: 39;
-    padding: 9px 12px;
     background: var(--glass-strong);
-    backdrop-filter: blur(20px) saturate(1.6);
-    -webkit-backdrop-filter: blur(20px) saturate(1.6);
-    box-shadow:
-      inset 0 0 0 1px var(--line),
-      0 24px 60px -10px rgba(0, 0, 0, 0.7);
-    clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-3);
+    backdrop-filter: var(--glass-filter);
+    -webkit-backdrop-filter: var(--glass-filter);
+    box-shadow: var(--glass-rim), var(--glass-lift);
     opacity: 0;
     transform-origin: 100% 0;
     scale: 0.6;
@@ -970,8 +925,8 @@
     z-index: 35;
     width: 30px;
     height: 30px;
-    border: 1px solid var(--line);
     background: var(--glass-strong);
+    box-shadow: var(--glass-rim);
     font-size: 11px;
     font-weight: 600;
     color: var(--ink-2);
@@ -985,10 +940,6 @@
     .col.constant,
     .hint i {
       animation: none;
-    }
-    .col::after,
-    .tail::after {
-      display: none;
     }
   }
 </style>
