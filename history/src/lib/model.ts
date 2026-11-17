@@ -59,13 +59,8 @@ export const constants = new Set(members.filter((p) => tenures[p].length === 1 &
 export const isCurrent = (p: string) => tenures[p]?.some((t) => t.end === LAST) ?? false;
 export const alumni = members.filter((p) => !isCurrent(p));
 
-// Every time someone left. Each exit gets its own lane in the gutter so the threads run side by side.
-export type Exit = Segment & { lane: number };
-export const exits: Exit[] = segments
-  .filter((s) => s.end !== LAST)
-  .sort((a, b) => a.end - b.end || a.slot - b.slot)
-  .map((s, i) => ({ ...s, lane: i % 5 }));
-const exitOf = (p: string, start: number) => exits.find((e) => e.person === p && e.start === start)!;
+// Every time someone left: where a column gets cut.
+export const exits: Segment[] = segments.filter((s) => s.end !== LAST).sort((a, b) => a.end - b.end || a.slot - b.slot);
 
 export function yearsLabel(p: string): string {
   const t = tenures[p];
@@ -100,28 +95,38 @@ const mentions = (c: Card) => [...(c.body + (c.funFact ?? '')).matchAll(/\[\[([a
 // ---------------------------------------------------------------- layout
 
 export type Layout = ReturnType<typeof makeLayout>;
+export const CUT_GAP = 7; // px of daylight between a cut column and its replacement
 
+/**
+ * Three zones that never overlap: header avatars, the column field, the card tray.
+ * The dial lives in the right gutter. The playhead ("now") sits just above the tray.
+ */
 export function makeLayout(vh: number, W: number) {
-  const desktop = W >= 1120; // side-by-side cards need the room; below this, cards float over the columns
-  const P = Math.round(vh * 0.56); // playhead: where "now" sits on screen
+  const desktop = W >= 1120;
   const headerY = desktop ? 46 : 38;
-  const right = desktop ? 120 : 58; // gutter kept for the dial (phase 3) and the alumni pile
+  const right = desktop ? 120 : 58; // gutter: the dial and the alumni pile
   const padL = desktop ? 28 : 8;
   const gap = desktop ? 8 : 3;
   const fieldW = Math.min(W - right - padL, SLOTS * 84);
   const cw = (fieldW - (SLOTS - 1) * gap) / SLOTS;
   const av = Math.max(18, Math.min(cw - 1, desktop ? 44 : 30));
   const colX = (slot: number) => padL + slot * (cw + gap) + cw / 2;
+  const cutH = Math.round(cw * 0.6); // how far the diagonal cut drops across a column
+
+  const trayH = Math.round(Math.min(vh * 0.4, 360));
+  const trayTop = vh - trayH - 10;
+  const trayW = Math.min(fieldW, 620);
+  const P = trayTop - 12; // playhead: where "now" sits on screen
 
   const stops = [...new Set([...cards.map((c) => c.year), ...Object.keys(lineup).map(Number)])].sort((a, b) => a - b);
   const perYear: Record<number, Card[]> = {};
   for (const c of cards) (perYear[c.year] ??= []).push(c);
 
+  // How much scrolling each year gets: every card needs time on the tray.
   const bandH = (y: number) => {
-    const n = (perYear[y] ?? []).filter((c) => c.kind !== 'season').length;
-    if (y > lastStoryYear) return vh * 0.52;
-    if (y === lastStoryYear) return vh * 1.05;
-    return vh * (n ? 0.3 + 0.6 * n : 0.5) + (y === FIRST ? vh * 0.8 : 0);
+    const n = (perYear[y] ?? []).length;
+    if (y > lastStoryYear) return vh * 0.5;
+    return vh * (n ? 0.2 + 0.55 * n : 0.5) + (y === FIRST ? vh * 0.7 : 0);
   };
 
   const T: Record<number, number> = {};
@@ -132,20 +137,16 @@ export function makeLayout(vh: number, W: number) {
   }
   const end = y0;
   const top = (y: number) => T[y] ?? end; // top of a year's band; past the last year -> end of the timeline
-  const nextTop = (y: number) => {
-    const i = stops.indexOf(y);
-    return i >= 0 && i < stops.length - 1 ? T[stops[i + 1]] : end;
-  };
 
-  // Where each card sits in the world. A card is "in focus" (upper-middle of the screen) when the
-  // playhead reaches its world position.
-  const cardPos = new Map<Card, number>();
+  // The tray shows one card at a time. Each card owns a stretch of its year's band; a card
+  // stays up through any card-less years that follow it.
+  const seq: { card: Card; a: number; b: number }[] = [];
   for (const y of stops) {
     const list = perYear[y] ?? [];
-    const h = bandH(y);
-    const pour = y === FIRST ? vh * 0.55 : 0;
-    list.forEach((c, j) => cardPos.set(c, T[y] + pour + ((j + 0.5) / list.length) * (h - pour) * 0.94));
+    list.forEach((card, j) => seq.push({ card, a: T[y] + (j / list.length) * bandH(y), b: 0 }));
   }
+  seq.forEach((r, i) => (r.b = i < seq.length - 1 ? seq[i + 1].a : end));
+  const cardPos = new Map<Card, number>(seq.map((r) => [r.card, r.a]));
 
   // When each member first shows up in the header.
   const appearAt: Record<string, number> = {};
@@ -153,16 +154,21 @@ export function makeLayout(vh: number, W: number) {
     const first = tenures[p][0];
     if (first.start === FIRST) {
       const met = cards.find((c) => mentions(c).includes(p));
-      const metW = met ? cardPos.get(met)! - vh * 0.1 : Infinity;
+      const metW = met ? cardPos.get(met)! + vh * 0.05 : Infinity;
       appearAt[p] = Math.min(metW, T[FIRST] + first.slot * vh * 0.018);
-    } else appearAt[p] = T[first.start] + vh * 0.07;
+    } else appearAt[p] = T[first.start] + vh * 0.05;
   }
 
   const pile = { x: W - (desktop ? 60 : 30), y: headerY };
+  const dialR = desktop ? 190 : 150;
+  const dial = { r: dialR, sliver: desktop ? 78 : 50, cy: Math.round(P - dialR * 0.35), step: 8 }; // step: degrees per year stop
   const finale = end + vh * 0.35;
   const pageHeight = finale - P + vh * 1.15;
 
-  return { vh, W, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, stops, T, top, nextTop, end, bandH, cardPos, appearAt, pile, finale, pageHeight, perYear };
+  return {
+    vh, W, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayH, trayTop, trayW,
+    stops, T, top, end, bandH, seq, cardPos, appearAt, pile, dial, finale, pageHeight, perYear,
+  };
 }
 
 // ---------------------------------------------------------------- pure functions of the playhead
@@ -188,6 +194,28 @@ export function stopAt(L: Layout, w: number): number {
   }
   return stops.length - 0.0001;
 }
+/** The inverse: the playhead position for a fractional stop. Used by the dial. */
+export function wAtStop(L: Layout, f: number): number {
+  const { stops, T, end } = L;
+  const i = clamp(Math.floor(f), 0, stops.length - 1);
+  const a = T[stops[i]];
+  const b = i < stops.length - 1 ? T[stops[i + 1]] : end;
+  return a + clamp(f - i) * (b - a);
+}
+
+/** Which card(s) the tray is showing. Two while one hands over to the next. */
+export function trayAt(L: Layout, w: number) {
+  const d = L.vh * 0.07;
+  const out: { card: Card; i: number; o: number; dy: number; t: number }[] = [];
+  L.seq.forEach((r, i) => {
+    // one leaves, then the next arrives: they never sit on top of each other
+    const enter = i === 0 ? 1 : smooth(clamp((w - (r.a - d / 2)) / (d / 2)));
+    const exit = i === L.seq.length - 1 ? 0 : smooth(clamp((w - (r.b - d)) / (d / 2)));
+    const o = enter * (1 - exit);
+    if (o > 0.001) out.push({ card: r.card, i, o, dy: (1 - enter) * 16 - exit * 12, t: clamp((w - r.a) / (r.b - r.a)) });
+  });
+  return out;
+}
 
 /** How far down a slot's column the liquid has reached. In the founding year the columns pour in, staggered. */
 export function fillEdge(L: Layout, slot: number, w: number): number {
@@ -198,48 +226,15 @@ export function fillEdge(L: Layout, slot: number, w: number): number {
   return t0 + (w - t0) * e;
 }
 
-// ---- leaving: a column doesn't stop, it drains into a thread that ducks under the other
-// columns, runs to the gutter and climbs to the alumni pile. The avatar rides the same line.
-
-export const DRAIN = 18; // world px a leaving column stops short of the season line, to make room for the funnel
-const DROP = 0.2; // share of the exit spent sliding down the column before riding the thread
-type Pt = [number, number];
-const pathLen = (pts: Pt[]) => pts.slice(1).reduce((n, p, i) => n + Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]), 0);
-function pointAt(pts: Pt[], d: number): Pt {
-  for (let i = 1; i < pts.length; i++) {
-    const seg = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
-    if (d <= seg || i === pts.length - 1) {
-      const t = seg ? clamp(d / seg) : 1;
-      return [lerp(pts[i - 1][0], pts[i][0], t), lerp(pts[i - 1][1], pts[i][1], t)];
-    }
-    d -= seg;
-  }
-  return pts[0];
-}
-
-/** One exit's thread, in screen pixels, for a given playhead. */
-export function threadAt(L: Layout, ex: Exit, w: number) {
-  const endY = L.top(ex.end + 1) - DRAIN - w + L.P; // where the column ends, on screen
-  const f = clamp((w - (L.top(ex.end + 1) - DRAIN)) / (L.vh * 0.42)); // 0 → 1 over the exit
-  const go = f <= DROP ? 0 : smooth((f - DROP) / (1 - DROP)); // progress along the thread
-  const x = L.colX(ex.slot);
-  const gx = L.pile.x - 10 + ex.lane * 5;
-  const y0 = endY + 9; // tip of the funnel
-  const yH = endY + 17; // the run under the columns, in the gap between seasons
-  const yTop = Math.min(L.pile.y + 14, yH - 8);
-  const c = 6; // corner cut
-  const pts: Pt[] = [[x, y0], [x, yH - c], [x + c, yH], [gx - c, yH], [gx, yH - c], [gx, yTop]];
-  return { ex, f, go, x, endY, y0, yH, gx, pts, len: pathLen(pts) };
-}
-
-export type AvatarState = { x: number; y: number; scale: number; opacity: number; inPile: boolean; flying: number; returning: number; landed: number; gray: number; under: boolean };
+export type AvatarState = { x: number; y: number; scale: number; opacity: number; inPile: boolean; flying: number; returning: number; landed: number; gray: number };
 
 /** Where one person's avatar is, for a given playhead. One element per person, for its whole life. */
 export function avatarState(L: Layout, p: string, w: number, pileIndex: number): AvatarState {
   const iv = tenures[p];
   const { vh, headerY, colX, pile } = L;
   const pileX = pile.x - Math.min(pileIndex, 3) * 9;
-  const st: AvatarState = { x: colX(iv[0].slot), y: headerY, scale: 0, opacity: 0, inPile: false, flying: 0, returning: 0, landed: 0, gray: 0, under: false };
+  const st: AvatarState = { x: colX(iv[0].slot), y: headerY, scale: 0, opacity: 0, inPile: false, flying: 0, returning: 0, landed: 0, gray: 0 };
+  const bez = (a: number, c: number, b: number, e: number) => (1 - e) * (1 - e) * a + 2 * (1 - e) * e * c + e * e * b;
 
   const a = L.appearAt[p];
   if (w < a) return st;
@@ -250,25 +245,17 @@ export function avatarState(L: Layout, p: string, w: number, pileIndex: number):
 
   for (let k = 0; k < iv.length; k++) {
     if (iv[k].end === LAST) break;
-    const th = threadAt(L, exitOf(p, iv[k].start), w);
-    const f = th.f;
+    const B = L.top(iv[k].end + 1); // the cut: the season after their last
+    const order = exits.filter((x) => x.end === iv[k].end && x.slot < iv[k].slot).length; // leavers go one after another
+    const f = clamp((w - B - order * vh * 0.045) / (vh * 0.3));
     if (f <= 0) break;
+    const e = smooth(f);
     const sx = colX(iv[k].slot);
-    if (f <= DROP) {
-      // slide down their own column to where it ends
-      const u = smooth(f / DROP);
-      st.x = sx;
-      st.y = lerp(headerY, th.y0, u);
-      st.scale = lerp(1, 0.62, u);
-      st.gray = u * 0.5;
-    } else {
-      // then ride the thread: under the other columns, out to the gutter, up to the pile
-      const path: Pt[] = [...th.pts, [pileX, pile.y]];
-      [st.x, st.y] = pointAt(path, th.go * pathLen(path));
-      st.scale = 0.62;
-      st.gray = lerp(0.5, 1, clamp(th.go * 4));
-      st.under = st.x > sx + 2 && st.x < L.padL + L.fieldW + 4;
-    }
+    // swing down over the columns, in the open, and up to the alumni pile
+    st.x = bez(sx, lerp(sx, pileX, 0.55), pileX, e);
+    st.y = bez(headerY, headerY + vh * 0.22, pile.y, e);
+    st.scale = lerp(1, 0.62, e) * (1 + Math.sin(Math.PI * f) * 0.5);
+    st.gray = clamp(f * 2.5);
     st.flying = Math.sin(Math.PI * f);
     st.landed = f;
     st.inPile = f >= 1;
@@ -280,16 +267,14 @@ export function avatarState(L: Layout, p: string, w: number, pileIndex: number):
     if (g <= 0) break;
     const e2 = smooth(g);
     const tx = colX(next.slot);
-    const cx2 = lerp(pileX, tx, 0.5);
-    st.x = (1 - e2) * (1 - e2) * pileX + 2 * (1 - e2) * e2 * cx2 + e2 * e2 * tx;
-    st.y = (1 - e2) * (1 - e2) * pile.y + 2 * (1 - e2) * e2 * (headerY - 52) + e2 * e2 * headerY;
+    st.x = bez(pileX, lerp(pileX, tx, 0.5), tx, e2);
+    st.y = bez(pile.y, headerY + vh * 0.2, headerY, e2);
     st.scale = lerp(0.62, 1, back(g));
+    st.gray = 1 - e2;
     st.flying = Math.sin(Math.PI * g);
     st.returning = g < 1 ? Math.sin(Math.PI * g) : clamp(1 - (w - L.T[next.start]) / (vh * 0.9));
     st.inPile = false;
     st.landed = 0;
-    st.gray = 1 - e2;
-    st.under = false;
   }
   return st;
 }

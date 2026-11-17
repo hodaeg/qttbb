@@ -1,16 +1,18 @@
 <script lang="ts">
-  // The roster story. One fixed stage; everything on it is drawn from the scroll position,
-  // so the whole history scrubs forwards and backwards like a film.
+  // The roster story. One fixed stage with three zones that never overlap: header avatars, the
+  // column field, and the card tray, plus the year dial on the right edge. Everything is drawn
+  // from the scroll position, so the whole history scrubs forwards and backwards like a film.
   import { onMount } from 'svelte';
   import {
-    makeLayout, segments, members, tenures, people, cards, legacy, constants, FIRST, LAST,
-    fillEdge, avatarState, stopAt, clamp, lerp, smooth, exits, threadAt, DRAIN, type AvatarState,
+    makeLayout, segments, members, tenures, people, legacy, constants, lineup, exits, FIRST, LAST, CUT_GAP,
+    fillEdge, avatarState, stopAt, trayAt, clamp, lerp, back, type AvatarState, type Card,
   } from '../lib/model';
   import Avatar from './Avatar.svelte';
-  import CardView from './Card.svelte';
   import Glass from './Glass.svelte';
+  import Tray from './Tray.svelte';
+  import Dial from './Dial.svelte';
 
-  let { onperson, onalumni }: { onperson: (id: string) => void; onalumni: () => void } = $props();
+  let { onperson, onalumni, oncard }: { onperson: (id: string) => void; onalumni: () => void; oncard: (c: Card) => void } = $props();
 
   let vh = $state(800);
   let W = $state(390);
@@ -21,7 +23,6 @@
 
   const L = $derived(makeLayout(vh, W));
   const w = $derived(s + L.P); // the playhead, in world pixels
-  const fieldW = $derived(12 * L.cw + 11 * L.gap);
 
   // Temporary, for the design review: cycle through the type sets (also ?type=a|b|c).
   const TYPES = ['a', 'b', 'c'];
@@ -69,14 +70,18 @@
     };
   });
 
-  // ---- columns
-  type Col = { key: string; person: string; slot: number; x: number; y: number; h: number; growing: boolean; dim: number; constant: boolean };
-  const cols = $derived.by(() => {
-    const out: Col[] = [];
+  // ---- columns. A leaving column is sliced on the diagonal; its replacement starts with the matching slice.
+  type Col = { key: string; person: string; x: number; y: number; h: number; clip: string; leaving: boolean; drain: number; constant: boolean };
+  const field = $derived.by(() => {
+    const cols: Col[] = [];
+    const lips: { key: string; x: number; y: number; tone: string }[] = [];
     const amp = clamp(Math.abs(vel) / 26) * 5;
     for (const seg of segments) {
-      const top = L.T[seg.start] + (seg.start > FIRST ? 5 : 0);
-      const bottom = seg.end === LAST ? L.end : L.top(seg.end + 1) - DRAIN;
+      const cutTop = seg.start > FIRST;
+      const cutBot = seg.end !== LAST;
+      const B1 = L.top(seg.end + 1);
+      const top = cutTop ? L.T[seg.start] - L.cutH / 2 + CUT_GAP / 2 : L.T[seg.start];
+      const bottom = cutBot ? B1 + L.cutH / 2 - CUT_GAP / 2 : L.end;
       const edge = fillEdge(L, seg.slot, w);
       const growing = edge < bottom;
       let fill = Math.min(bottom, edge);
@@ -85,32 +90,41 @@
       const y = Math.max(top - s, -40);
       const h = fill - s - y;
       if (h <= 0 || y > vh) continue;
-      const after = w - bottom;
-      out.push({
-        key: `${seg.slot}-${seg.start}`, person: seg.person, slot: seg.slot, x: L.colX(seg.slot) - L.cw / 2, y, h, growing,
-        dim: growing || seg.end === LAST ? 0 : clamp(after / (vh * 0.35)), constant: constants.has(seg.person),
-      });
+      const o = y + s; // the element's top, in world pixels
+      const far = h + 60;
+      const px = (n: number) => `${n.toFixed(1)}px`;
+      const clip = `polygon(0 ${px(cutTop ? top + L.cutH - o : -1)},100% ${px(cutTop ? top - o : -1)},100% ${px(cutBot ? bottom - L.cutH - o : far)},0 ${px(cutBot ? bottom - o : far)})`;
+      const key = `${seg.slot}-${seg.start}`;
+      const x = L.colX(seg.slot) - L.cw / 2;
+      cols.push({ key, person: seg.person, x, y, h, clip, leaving: cutBot, drain: cutBot ? clamp((w - B1) * 3, -90, 5000) - 90 : 0, constant: constants.has(seg.person) });
+      if (growing && fill - s < L.P + 8) lips.push({ key, x, y: fill - s, tone: people[seg.person].color ?? '#fff' });
     }
-    return out;
+    return { cols, lips };
   });
 
-  // ---- threads: where a column goes when its owner leaves
-  const threads = $derived.by(() => {
-    const out: { key: string; tone: string; d: string; funnel: string; x: number; drawn: number; len: number; o: number }[] = [];
-    const tw = L.desktop ? 3 : 2.5;
-    for (const ex of exits) {
-      const th = threadAt(L, ex, w);
-      if (th.f <= 0 || th.endY > vh + 20) continue;
-      const o = clamp((th.yH - L.pile.y - 30) / 50); // gone once its season has scrolled up into the header
-      if (o <= 0) continue;
-      const hw = L.cw / 2;
-      const [x, e, y0] = [th.x, th.endY - 0.5, th.y0];
-      out.push({
-        key: `${ex.slot}-${ex.start}`, tone: people[ex.person].color ?? 'var(--thread)', x,
-        d: 'M' + th.pts.map((p) => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join('L'),
-        funnel: `M${x - hw} ${e}L${x + hw} ${e}L${x + tw / 2} ${y0}L${x - tw / 2} ${y0}Z`,
-        drawn: th.go * th.len, len: th.len, o: o * clamp(th.f * 14),
-      });
+  // ---- season lines across the field, once the liquid has passed them
+  const seasonLines = $derived(
+    Object.keys(lineup).map(Number).filter((y) => y > FIRST && w > L.T[y] && L.T[y] - s > L.headerY && L.T[y] - s < L.P).map((y) => ({ y, sy: L.T[y] - s })),
+  );
+
+  // ---- markers that live on the columns: who left where, and each season's champion and sacko
+  const marks = $derived.by(() => {
+    const out: { key: string; kind: 'left' | 'champ' | 'sacko'; person: string; x: number; y: number; pop: number }[] = [];
+    const add = (key: string, kind: 'left' | 'champ' | 'sacko', person: string, slot: number, world: number) => {
+      const y = world - s;
+      if (w <= world || y < 0 || y > L.P + 20) return;
+      out.push({ key, kind, person, x: L.colX(slot), y, pop: clamp((w - world) / (vh * 0.07)) });
+    };
+    for (const ex of exits) add(`x${ex.slot}-${ex.start}`, 'left', ex.person, ex.slot, L.top(ex.end + 1) - L.cutH / 2 - L.av * 0.5 - 5);
+    for (const [year, season] of Object.entries(legacy.seasons)) {
+      const y = Number(year);
+      if (!lineup[y]) continue;
+      const mid = L.T[y] + L.bandH(y) * 0.5;
+      for (const kind of ['champ', 'sacko'] as const) {
+        const id = kind === 'champ' ? season.champion : season.sacko;
+        const slot = id ? lineup[y].indexOf(id) : -1;
+        if (id && slot >= 0) add(`${kind}${y}`, kind, id, slot, mid);
+      }
     }
     return out;
   });
@@ -123,7 +137,7 @@
       for (let k = 0; k < iv.length; k++) {
         if (iv[k].end === LAST) break;
         const B = L.top(iv[k].end + 1);
-        if (w <= B - DRAIN) break;
+        if (w <= B) break;
         const next = iv[k + 1];
         if (next && w > L.T[next.start] - vh * 0.04) continue; // on the way back
         inPile.push({ p, at: B + iv[k].slot });
@@ -140,31 +154,16 @@
   );
   const pileCount = $derived(avatars.filter((a) => a.pileIndex >= 0 && a.st.landed > 0.6).length);
   const pileBump = $derived(Math.max(0, ...avatars.map((a) => (a.st.landed > 0.8 && a.st.landed < 1 ? Math.sin((Math.PI * (a.st.landed - 0.8)) / 0.2) : 0))));
-  // while it is under the other columns, a leaving avatar sits beneath them (with the thread)
-  const zOf = (a: { st: AvatarState; pileIndex: number }) => (a.st.under ? 1 : a.st.flying > 0.02 ? 30 : a.pileIndex >= 0 ? 20 - a.pileIndex : 10);
+  const zOf = (a: { st: AvatarState; pileIndex: number }) => (a.st.flying > 0.02 ? 30 : a.pileIndex >= 0 ? 20 - a.pileIndex : 10);
 
-  // ---- the giant year
+  // ---- where we are in time (the dial and the tray read this)
   const fi = $derived(stopAt(L, w));
-  const yearRoll = $derived(Math.floor(fi) + smooth(clamp((fi - Math.floor(fi) - 0.8) / 0.2)));
   const yearNow = $derived(L.stops[Math.min(L.stops.length - 1, Math.floor(fi))]);
-  const era = $derived(yearNow < FIRST ? 'Before' : yearNow === FIRST ? 'Founding' : yearNow < 2016 ? 'Shake-ups' : 'Current era');
-  const yearOpacity = $derived(clamp((w - (L.T[L.stops[0]] - vh * 0.35)) / (vh * 0.25)) * (1 - clamp((w - L.end) / (vh * 0.3))));
+  const era = $derived(yearNow < FIRST ? 'Before the league' : yearNow === FIRST ? 'Founding' : yearNow < 2016 ? 'Shake-ups' : 'Current era');
+  const started = $derived(clamp((w - (L.T[L.stops[0]] - vh * 0.35)) / (vh * 0.2)));
+  const trayItems = $derived(trayAt(L, w));
+  const trayO = $derived(started * (1 - clamp((w - L.end) / (vh * 0.2))));
 
-  // ---- cards
-  const cardViews = $derived.by(() => {
-    const out: { card: (typeof cards)[number]; i: number; cy: number; o: number; x: number; width: number }[] = [];
-    cards.forEach((card, i) => {
-      const cy = (L.cardPos.get(card)! - w) * 0.94 + vh * 0.34;
-      if (cy < -vh * 0.5 || cy > vh * 1.35) return;
-      const o = Math.min(clamp((vh * 1.0 - cy) / (vh * 0.2)), clamp((cy - vh * 0.03) / (vh * 0.13)));
-      const season = card.kind === 'season';
-      const width = season ? Math.min(210, fieldW * 0.66) : Math.min(L.desktop ? 400 : fieldW + 34, W - 20);
-      const left = L.desktop ? L.padL + fieldW + 28 : i % 2 ? Math.max(10, L.padL + fieldW + 34 - width) : 10;
-      const x = season && !L.desktop ? L.padL + fieldW + 34 - width : left;
-      out.push({ card, i, cy, o, x, width });
-    });
-    return out;
-  });
   const finaleCy = $derived((L.finale - w) * 0.94 + vh * 0.52);
   const introO = $derived(1 - clamp(s / (vh * 0.45)));
   const first = (id: string) => people[id].nickname ?? people[id].name.split(' ')[0];
@@ -172,78 +171,55 @@
 
 <div class="spacer" style:height="{L.pageHeight}px"></div>
 
-<div class="stage" class:reduced style:--fade="{L.headerY * 2 + 26}px">
-  <!-- the giant year -->
-  <div class="year display" style:opacity={yearOpacity} style:left="{L.padL + 2}px" aria-hidden="true">
-    <span class="era">{era}</span>
-    <div class="window">
-      <div class="strip" style:transform="translate3d(0,{-yearRoll * 0.9}em,0)">
-        {#each L.stops as y}<span>{y}</span>{/each}
-      </div>
-    </div>
-  </div>
-
-  <!-- threads: leaving columns drain under the others and climb to the alumni pile -->
-  <svg class="threads" width={W} height={vh} aria-hidden="true">
-    {#each threads as t (t.key)}
-      <linearGradient id="th-{t.key}" gradientUnits="userSpaceOnUse" x1={t.x} y1="0" x2={t.x + L.cw * 2.2} y2="0">
-        <stop offset="0" stop-color={t.tone} /><stop offset="1" stop-color="var(--thread)" />
-      </linearGradient>
-      <g opacity={t.o}>
-        <path d={t.funnel} fill={t.tone} />
-        <path d={t.d} fill="none" stroke="url(#th-{t.key})" stroke-width={L.desktop ? 3 : 2.5} stroke-dasharray="{t.drawn} {t.len + 10}" />
-      </g>
-    {/each}
-  </svg>
-
-  <!-- columns -->
+<div class="stage" class:reduced>
+  <!-- columns: nothing is ever drawn over these except their own markers -->
   <div class="field" style:--fade="{L.headerY * 2 + 26}px">
-    {#each cols as c (c.key)}
+    {#each field.cols as c (c.key)}
       <button
         class="col"
-        class:growing={c.growing}
+        class:leaving={c.leaving}
         class:constant={c.constant}
         aria-label={people[c.person].name}
         style:--tone={people[c.person].color}
+        style:--drain="{c.drain}px"
         style:width="{L.cw}px"
         style:height="{c.h}px"
-        style:opacity={1 - c.dim * 0.3}
+        style:clip-path={c.clip}
         style:transform="translate3d({c.x}px,{c.y}px,0)"
         onclick={() => onperson(c.person)}
       ></button>
     {/each}
+    {#each field.lips as l (l.key)}
+      <i class="lip" style:--tone={l.tone} style:width="{L.cw}px" style:transform="translate3d({l.x}px,{l.y - 2}px,0)"></i>
+    {/each}
+    {#each seasonLines as sl (sl.y)}
+      <i class="season" style:width="{L.fieldW}px" style:transform="translate3d({L.padL}px,{sl.sy}px,0)"></i>
+    {/each}
+    {#each marks as m (m.key)}
+      {#if m.kind === 'left'}
+        <button class="mark left" aria-label="{people[m.person].name} left here" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop) * 0.84})" onclick={() => onperson(m.person)}>
+          <Avatar id={m.person} size={L.av} />
+        </button>
+      {:else}
+        <span class="mark {m.kind}" title="{m.kind === 'champ' ? 'Champion' : 'Sacko'}: {people[m.person].name}" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop)})">
+          <svg viewBox="0 0 16 16" width={Math.min(L.cw - 5, 18)} height={Math.min(L.cw - 5, 18)} aria-hidden="true">
+            {#if m.kind === 'champ'}
+              <path d="M4 2h8v3.2a4 4 0 0 1-8 0zM1.8 3H4v1.3H3.1A1.7 1.7 0 0 0 4.2 6l-.5 1.2A3 3 0 0 1 1.8 4.4zM12 3h2.2v1.4a3 3 0 0 1-1.9 2.8L11.8 6a1.7 1.7 0 0 0 1.1-1.7H12zM7.2 9h1.6v2.4H11V13H5v-1.6h2.2z" />
+            {:else}
+              <path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6" />
+            {/if}
+          </svg>
+        </span>
+      {/if}
+    {/each}
   </div>
 
-  <!-- the same threads again, as a faint groove pressed into the columns they pass beneath -->
-  <svg class="threads groove" width={W} height={vh} aria-hidden="true">
-    <clipPath id="th-field"><rect x={L.padL} y="0" width={fieldW} height={vh} /></clipPath>
-    <g clip-path="url(#th-field)">
-      {#each threads as t (t.key)}
-        <path d={t.d} fill="none" opacity={t.o} stroke-width={L.desktop ? 4 : 3.5} stroke-dasharray="{t.drawn} {t.len + 10}" />
-      {/each}
-    </g>
-  </svg>
-
-  <!-- the playhead: a hairline where "now" is -->
-  <div class="now" style:top="{L.P}px" style:left="{L.padL}px" style:width="{fieldW}px" style:opacity={yearOpacity * 0.9}></div>
-
-  <!-- story cards -->
-  {#each cardViews as v (v.i)}
-    <div
-      class="cardwrap"
-      style:width="{v.width}px"
-      style:--o={v.o}
-      style:--sheen={1 - v.cy / vh}
-      style:pointer-events={v.o > 0.6 ? 'auto' : 'none'}
-      style:transform="translate3d({v.x}px,calc({v.cy + (1 - v.o) * 12}px - 50%),0)"
-    >
-      <CardView card={v.card} {onperson} />
-    </div>
-  {/each}
+  <!-- the card tray -->
+  <Tray {L} items={trayItems} opacity={trayO} {era} {onperson} {oncard} />
 
   <!-- finale -->
   {#if finaleCy < vh * 1.4}
-    <div class="cardwrap finale" style:width="{Math.min(W - 20, 440)}px" style:--o={clamp((vh - finaleCy) / (vh * 0.25))} style:--sheen={1 - finaleCy / vh} style:transform="translate3d({L.desktop ? L.padL : 10}px,calc({finaleCy}px - 50%),0)">
+    <div class="cardwrap finale" style:width="{Math.min(L.trayW, 440)}px" style:--o={clamp((vh - finaleCy) / (vh * 0.25))} style:--sheen={1 - finaleCy / vh} style:transform="translate3d({L.padL}px,calc({finaleCy}px - 50%),0)">
       <Glass pad="18px 18px 16px"><article class="fin">
         <span class="k">Now · {legacy.asOf.season}, week {legacy.asOf.last_scored_week}</span>
         <h3 class="display">The Legacy Rankings</h3>
@@ -272,7 +248,7 @@
   {/if}
 
   <!-- header -->
-  <div class="header" style:height="{L.headerY * 2 - 6}px" style:opacity={clamp((w - (L.T[L.stops[0]] - vh * 0.5)) / (vh * 0.2))}></div>
+  <div class="header" style:height="{L.headerY * 2 - 6}px" style:opacity={started}></div>
   {#each avatars as a (a.p)}
     {#if a.st.opacity > 0.01 && (a.pileIndex < 4 || a.st.flying > 0.02)}
       <button
@@ -282,7 +258,7 @@
         style:height="{L.av}px"
         style:z-index={zOf(a)}
         style:opacity={a.st.opacity}
-        style:--glow={a.st.under ? 0 : a.st.flying}
+        style:--glow={a.st.flying}
         style:--gray={a.st.gray}
         style:--tone={people[a.p].color}
         style:transform="translate3d({a.st.x - L.av / 2}px,{a.st.y - L.av / 2}px,0) scale({a.st.scale})"
@@ -304,8 +280,11 @@
     </button>
   {/if}
 
+  <!-- the year dial -->
+  <Dial {L} {fi} opacity={started} {reduced} />
+
   <!-- temporary: type set switcher for the design review -->
-  <button class="typeswitch" onclick={() => setType(TYPES[(TYPES.indexOf(type) + 1) % TYPES.length])} aria-label="Switch typeface set">Type {type.toUpperCase()}</button>
+  <button class="typeswitch" onclick={() => setType(TYPES[(TYPES.indexOf(type) + 1) % TYPES.length])} aria-label="Switch typeface set, now {type.toUpperCase()}">{type.toUpperCase()}</button>
 </div>
 
 <style>
@@ -328,57 +307,6 @@
     will-change: transform, opacity;
   }
 
-  /* giant year */
-  .year {
-    top: auto;
-    bottom: calc(4vh + var(--safe-bottom));
-    pointer-events: none;
-    font-size: calc(clamp(92px, 31vw, 230px) * var(--year-scale));
-    line-height: 0.9;
-    color: var(--ghost);
-    font-variant-numeric: tabular-nums;
-  }
-  .year .era {
-    display: block;
-    margin: 0 0 0.9em 0.3em;
-    font-family: var(--font-text);
-    font-stretch: 100%;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    line-height: 1;
-    text-transform: uppercase;
-    color: var(--ink-3);
-  }
-  .window {
-    height: 0.9em;
-    overflow: hidden;
-  }
-  .strip span {
-    display: block;
-    height: 0.9em;
-  }
-
-  /* threads sit under the columns */
-  .threads {
-    z-index: 1;
-    pointer-events: none;
-    overflow: visible;
-  }
-  .threads path {
-    stroke-linejoin: miter;
-    stroke-linecap: butt;
-  }
-  .threads.groove {
-    z-index: 3;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--fade));
-    mask-image: linear-gradient(to bottom, transparent 0, #000 var(--fade));
-  }
-  .threads.groove path {
-    stroke: rgba(0, 0, 0, 0.34);
-    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.22));
-  }
-
   /* columns */
   .field {
     z-index: 2;
@@ -387,19 +315,20 @@
     mask-image: linear-gradient(to bottom, transparent 0, #000 var(--fade));
     pointer-events: none;
   }
-  .col {
+  .field > * {
     position: absolute;
     top: 0;
     left: 0;
+  }
+  .col {
     pointer-events: auto;
-    background: linear-gradient(to bottom, color-mix(in srgb, var(--tone) 78%, #000 22%), var(--tone));
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--tone) 78%, #000 22%), var(--tone) 240px);
     will-change: transform, height;
   }
-  .col.growing {
-    /* the pouring edge: a bright lip and a glow below it */
-    box-shadow:
-      inset 0 -2px 0 color-mix(in srgb, var(--tone) 40%, white 60%),
-      0 10px 26px -4px color-mix(in srgb, var(--tone) 80%, transparent);
+  .col.leaving {
+    /* once it's cut, grey climbs the ribbon from the cut upwards */
+    --dead: color-mix(in srgb, var(--thread) 80%, var(--tone));
+    background: linear-gradient(to top, var(--dead) 0, var(--dead) var(--drain), var(--tone) calc(var(--drain) + 90px));
   }
   .col.constant {
     animation: hue 9s var(--ease-in-out) infinite alternate;
@@ -412,16 +341,39 @@
       filter: hue-rotate(14deg) saturate(1.2);
     }
   }
-  .now {
-    z-index: 3;
+  .lip {
+    /* the pouring edge: a bright lip with a glow under it */
+    height: 2px;
+    background: color-mix(in srgb, var(--tone) 35%, white 65%);
+    box-shadow: 0 6px 22px 3px color-mix(in srgb, var(--tone) 85%, transparent);
+  }
+  .season {
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--ink-3) 12%, var(--ink-3) 88%, transparent);
-    pointer-events: none;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .mark {
+    display: grid;
+    place-items: center;
+    pointer-events: auto;
+  }
+  .mark.left {
+    box-shadow: 0 0 0 2px var(--bg);
+  }
+  .mark.champ path {
+    fill: #fff;
+  }
+  .mark.champ {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.75));
+  }
+  .mark.sacko path {
+    fill: none;
+    stroke: rgba(8, 9, 12, 0.85);
+    stroke-width: 2.6;
   }
 
-  /* cards */
+  /* finale */
   .cardwrap {
-    z-index: 5;
+    z-index: 6;
     will-change: transform; /* never fade this wrapper: it would switch the glass off. Layers fade via --o */
   }
   .fin .k {
@@ -562,7 +514,7 @@
     z-index: 10;
     display: grid;
     place-items: center;
-    filter: grayscale(var(--gray, 0)) drop-shadow(0 0 calc(var(--glow) * 10px) var(--tone));
+    filter: grayscale(var(--gray, 0)) drop-shadow(0 0 calc(var(--glow) * 12px) var(--tone));
   }
   .av::after {
     /* keeps the tap target at 44px even though the avatar is ~26px */
@@ -585,7 +537,7 @@
     white-space: nowrap;
   }
   .pile {
-    z-index: 25;
+    z-index: 27;
     width: 62px;
     height: 44px;
     display: grid;
@@ -606,14 +558,12 @@
     right: 8px;
     bottom: calc(8px + var(--safe-bottom));
     z-index: 35;
+    width: 30px;
     height: 30px;
-    padding: 0 10px;
     border: 1px solid var(--line);
     background: var(--glass-strong);
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     color: var(--ink-2);
   }
 

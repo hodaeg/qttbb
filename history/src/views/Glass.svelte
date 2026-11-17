@@ -4,10 +4,10 @@
   // saturates the colour behind it. Fading is done per layer (--o), because fading a parent would
   // switch the frosting off. A glint runs along the edge as the card moves up the screen (--sheen).
   import type { Snippet } from 'svelte';
-  let { children, pad = '16px 18px 18px' }: { children: Snippet; pad?: string } = $props();
+  let { children, pad = '16px 18px 18px', full = false }: { children: Snippet; pad?: string; full?: boolean } = $props();
 </script>
 
-<div class="glass">
+<div class="glass" class:full>
   <i class="shade"></i>
   <i class="pane"></i>
   <i class="edge"></i>
@@ -61,6 +61,10 @@
       linear-gradient(140deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1) 26%, rgba(255, 255, 255, 0.04) 64%, rgba(255, 255, 255, 0.45));
     backdrop-filter: var(--edge-filter);
     -webkit-backdrop-filter: var(--edge-filter);
+  }
+  .full,
+  .full .body {
+    height: 100%;
   }
   .body {
     position: relative;

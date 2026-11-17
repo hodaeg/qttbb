@@ -288,3 +288,15 @@ Levi's notes after checkpoint 1, and what changed:
 - **Type.** The serif is gone. Three sets to compare, switched with a temporary "Type A/B/C" button (or `?type=a|b|c`): A Big Shoulders Display + Instrument Sans, B Bricolage Grotesque + Hanken Grotesk, C Archivo Expanded + Archivo. All display type goes through the `.display` class and tokens in `tokens.css`.
 **Temporary:** the type switcher and loading all three font sets; remove both once Levi picks one.
 **Open:** the gutter threads will share space with the dial (phase 3).
+
+### D36 — History app: second design revision (clear columns, docked cards, the dial) — Accepted
+Levi's notes on D35: floating cards hid the columns exactly where they change hands, and he did not want a leaving column to shrink into a thread. **The thread idea from D35 is dropped.**
+- **Three zones that never overlap:** header avatars, the column field, and a card tray docked at the bottom. The playhead sits just above the tray. Nothing is drawn over the columns except their own markers.
+- **Card tray** (`Tray.svelte`): one pane of glass, one card at a time; each card owns a stretch of its year's scroll (`seq` in `makeLayout`), one leaves before the next arrives. Cards that don't fit get "Read more", which opens the whole card in the bottom sheet. In the tray, in/out chips show faces only.
+- **Columns are cut, not ended:** a leaving column is sliced on the diagonal at the season line and its replacement starts with the matching slice. Grey then climbs the old ribbon from the cut. A grey copy of the leaver's avatar stays at the cut as a marker.
+- **Leaving avatars** swing down over the columns and up to the alumni pile, one after another when several leave in the same year (Levi chose "cut marker + fly").
+- **Season markers on columns:** a trophy on the champion's column and an X on the sacko's, for seasons the pipeline has results for (2019 on). Faint lines mark each season.
+- **The giant year numeral is gone.** The year lives on the **dial** (`Dial.svelte`, phase 3 pulled forward): a wheel half off the right edge. Scrolling turns it; dragging it scrolls the story by year; a flick carries and settles on a year; tapping a year jumps to it; arrow keys step. Mapping is `stopAt` / `wAtStop` in `model.ts`.
+- Type is tabled: set A stays the default and the temporary switcher (now a small "A/B/C" button) stays.
+**Tested:** phone-sized preview with simulated pointer events. **Not tested:** real touch (does a dial spin ever scroll the page), haptics, light mode, wide screens.
+**Open:** the pre-league years (2002-2010) have an empty field above the tray; the sacko mark is a plain X for now.
