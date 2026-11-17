@@ -3,7 +3,7 @@
   // stays put; the cards change inside it as the playhead moves (two overlap while handing over).
   // It is only as tall as the card needs (up to the tray's maximum); a card that still doesn't fit
   // scrolls inside the glass. The stage springs the height (`top`) so the ribbons' shadow follows.
-  import { type Card, type Layout } from '../lib/model';
+  import { shownIn, type Card, type Layout } from '../lib/model';
   import Glass from './Glass.svelte';
   import CardView from './Card.svelte';
 
@@ -14,7 +14,7 @@
 
   const HEAD = 16; // room above the card for the pips (several cards in one year)
   const main = $derived(items.reduce<Item | null>((m, x) => (!m || x.o > m.o ? x : m), null));
-  const siblings = $derived(main ? (L.perYear[main.card.year] ?? []) : []);
+  const siblings = $derived(main ? (L.perYear[shownIn(main.card)] ?? []) : []);
 
   // natural height of each card's content, measured
   let heights = $state<Record<number, number>>({});

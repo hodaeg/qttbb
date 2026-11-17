@@ -17,7 +17,10 @@ export type Card = {
   in?: string[]; out?: string[]; returns?: string[]; founders?: string[]; season?: SeasonInfo;
   photos?: { src: string; alt: string }[];
   arrive?: string[]; // ribbons that come in with this card even though it doesn't name them
+  at?: number; // the year whose stretch of the timeline shows this card, if not `year`
 };
+/** The year whose band a card is shown in. */
+export const shownIn = (c: Card) => c.at ?? c.year;
 export type SeasonInfo = {
   champion: string | null; runnerUp: string | null; sacko: string | null; ledScoring: string | null; complete: boolean; source: string;
   championAsterisk?: string; // a * on that trophy, and why
@@ -74,19 +77,20 @@ export function yearsLabel(p: string): string {
   return t.map((x) => (x.end === LAST ? `${x.start}–now` : x.start === x.end ? `${x.start}` : `${x.start}–${x.end}`)).join(', ');
 }
 
-// Story cards, plus a generated card for every season of the steady era (2017 on).
+// Story cards, plus a generated champion/sacko card for every season. A season's trophy and sacko X
+// sit on the ribbons right at the year line that closes it, so they land on the avatars just after
+// that line passes: the season's card therefore leads the *next* year's stretch of the timeline
+// (`at`), and stays up until they've landed. The current season has no next year; it closes its own.
 const storyCards = storyFile.cards as Card[];
-const lastStoryYear = Math.max(...storyCards.map((c) => c.year));
 export const cards: Card[] = [...storyCards];
 for (let y = FIRST; y <= LAST; y++) {
   const season = legacy.seasons[String(y)];
   if (!season) continue;
-  // every season gets a champion/sacko card that closes its year, so the honours land while it's showing
-  let at = -1;
-  cards.forEach((c, i) => {
-    if (c.year <= y) at = i;
+  let i = -1;
+  cards.forEach((c, k) => {
+    if (c.year <= y) i = k;
   });
-  cards.splice(at + 1, 0, { year: y, title: String(y), body: '', kind: 'season', season });
+  cards.splice(i + 1, 0, { year: y, title: String(y), body: '', kind: 'season', season, at: y < LAST ? y + 1 : y });
 }
 
 // Rich text: "[[id|Name]]" -> tappable name.
@@ -134,19 +138,15 @@ export function makeLayout(vh: number, W: number) {
 
   const stops = [...new Set([...cards.map((c) => c.year), ...Object.keys(lineup).map(Number)])].sort((a, b) => a - b);
   const perYear: Record<number, Card[]> = {};
-  for (const c of cards) (perYear[c.year] ??= []).push(c);
+  for (const c of cards) (perYear[shownIn(c)] ??= []).push(c);
 
-  // How much scrolling each year gets: every card needs time on the tray, and each photo a little more.
-  const weight = (c: Card) => 0.55 + 0.22 * (c.photos?.length ?? 0);
-  // A season with a champion gets at least enough scroll for its trophy, star and sacko stamp to
-  // ride up and land on the avatars (~0.8 of a screen) before the year ends.
-  const SEASON_MIN = 1.0;
-  const hasSeason = (y: number) => y >= FIRST && !!legacy.seasons[String(y)]?.champion;
+  // How much scrolling each year gets: every card needs time on the tray, and each photo a little
+  // more. A season card leading the next year needs the most: its trophy, star and sacko stamp ride
+  // up from the year line and land on the avatars (~0.8 of a screen) while it's showing.
+  const weight = (c: Card) => (c.kind === 'season' && shownIn(c) !== c.year ? 0.95 : 0.55 + 0.22 * (c.photos?.length ?? 0));
   const bandH = (y: number) => {
     const list = perYear[y] ?? [];
-    const min = hasSeason(y) ? vh * SEASON_MIN : 0;
-    if (y > lastStoryYear) return Math.max(min, vh * 0.5);
-    return Math.max(min, vh * (list.length ? 0.2 + list.reduce((t, c) => t + weight(c), 0) : 0.5) + (y === FIRST ? vh * 0.7 : 0));
+    return vh * (list.length ? 0.2 + list.reduce((t, c) => t + weight(c), 0) : 0.5) + (y === FIRST ? vh * 0.7 : 0);
   };
 
   const T: Record<number, number> = {};

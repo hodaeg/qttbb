@@ -380,3 +380,8 @@ Levi's next round, and what changed:
 - Every season from 2011 gets a generated champion/sacko card that closes its year (previously only 2017 on), so the honours always land on the card that names them; each year's band grows by one card's worth of scroll.
 - "The league is born" no longer quotes Levi's own words back at him.
 - Toby, Jared and Stephen arrive with "Dorm life" again (the card that names them); the `arrive` field stays available.
+
+### D47 — History app: honours sit on the year line that closes their season — Accepted
+- Each season's trophy, silver star and sacko X sit on the ribbon just above the year line that ends that season (~32px above it at phone size), so they land on the avatars just after that line passes.
+- To match, each season's champion/sacko card now **leads the next year's stretch** of the timeline (new card field `at`, helper `shownIn()`), with ~0.95 of a screen of its own so the honours land while it's up. The current season, with no closing line yet, keeps its card and markers in its own year. Year lengths are now just the sum of their cards (the season minimum from D44 is gone).
+- Measured at phone size: the season card appears as the line passes, the star and stamp land ~0.5–0.7 of a screen later, and the card changes ~0.3 of a screen after that.
