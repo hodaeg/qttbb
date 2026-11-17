@@ -1,11 +1,21 @@
 {
-  "_about": "The glass info cards, in order. One or more per year. Write names as [[person-id|Display name]] to make them tappable. 'in' and 'out' list who joined or left the league that season. 'quote' is an optional pull-quote. 'kind': 'beat' marks a big held moment. Levi's voice; edit freely.",
+  "_about": "The glass info cards, in order. One or more per year. Write names as [[person-id|Display name]] to make them tappable. 'in' and 'out' list who joined or left the league that season. 'quote' is an optional pull-quote. 'kind': 'beat' marks a big held moment. Levi's voice; edit freely. 'photos' is an optional list of {src, alt} (files in public/photos); they slide in from the left one after another while the card is up.",
   "cards": [
     {
       "year": 2002,
       "title": "Where it starts",
       "kind": "beat",
-      "body": "[[dustin-sadnick|Dustin Sadnick]] (Levi's brother) and [[doug-comes|Doug Comes]] (Tim's brother) are freshman roommates at Winona State. Years later, Dustin tells [[levi-nellen|Levi]] to look out for [[tim-comes|Tim]] on his dorm floor."
+      "body": "[[dustin-sadnick|Dustin Sadnick]] (Levi's brother) and [[doug-comes|Doug Comes]] (Tim's brother) are freshman roommates at Winona State. Years later, Dustin tells [[levi-nellen|Levi]] to look out for [[tim-comes|Tim]] on his dorm floor.",
+      "photos": [
+        {
+          "src": "photos/dustindoug.jpg",
+          "alt": "Dustin and Doug clowning around in a Winona State dorm hallway"
+        },
+        {
+          "src": "photos/levi2002.jpg",
+          "alt": "Levi in 2002, headphones on in the back of a van"
+        }
+      ]
     },
     {
       "year": 2008,
@@ -16,7 +26,13 @@
     {
       "year": 2009,
       "title": "Freshman year",
-      "body": "Levi's roommate [[nate-mehlhoff|Nate Mehlhoff]] introduces him to [[max-christensen|Max]] and [[zaid-hunitie|Zaid]]."
+      "body": "Levi's roommate [[nate-mehlhoff|Nate Mehlhoff]] introduces him to [[max-christensen|Max]] and [[zaid-hunitie|Zaid]].",
+      "photos": [
+        {
+          "src": "photos/levinateroommates.jpg",
+          "alt": "Levi and Nate, freshman roommates, in matching white tees and buzz cuts"
+        }
+      ]
     },
     {
       "year": 2009,
@@ -31,7 +47,41 @@
     {
       "year": 2009,
       "title": "Japs",
-      "body": "The group parties at \"Japs\", [[alex-randall|Alex Randall]]'s house. Alex went to high school with [[sam-schurman|Sam Schurman]]."
+      "body": "The group parties at \"Japs\", [[alex-randall|Alex Randall]]'s house. Alex went to high school with [[sam-schurman|Sam Schurman]].",
+      "photos": [
+        {
+          "src": "photos/japs.jpg",
+          "alt": "Japs: the brick house at 517, snow piled out front"
+        },
+        {
+          "src": "photos/japsroof.jpg",
+          "alt": "The view from the roof at Japs"
+        },
+        {
+          "src": "photos/japsjustinday.jpg",
+          "alt": "A night around the table at Japs"
+        }
+      ]
+    },
+    {
+      "year": 2009,
+      "title": "Parallel Dat Park",
+      "body": "[[jake|Jake]] and [[alex-randall|Alex]] produced rap songs that were pretty big hits. One was called Parallel Dat Park. [[adam-herr|Adam]] got it tattooed on his body.",
+      "funFact": "Michelle Obama has seen this tattoo. Adam was working security detail as a Marine at Camp David when Michelle Obama walked into the gym and he was working out. He was never supposed to be seen by the First Family and she was not happy with him.",
+      "photos": [
+        {
+          "src": "photos/tattoo.jpg",
+          "alt": "The tattoo: \"Parallel dat Park\" in blackletter"
+        },
+        {
+          "src": "photos/tattooowner.jpg",
+          "alt": "Adam, the tattoo's owner"
+        },
+        {
+          "src": "photos/tattoogroup.jpg",
+          "alt": "Showing off the tattoo"
+        }
+      ]
     },
     {
       "year": 2009,
@@ -46,7 +96,17 @@
     {
       "year": 2011,
       "title": "Moving in",
-      "body": "Levi convinces high school friend [[adam-herr|Adam Herr]] to move to Winona, in with him, Zaid, [[callan-curtis|Callan]] and [[dominic-morelli|Dominic]]. [[andy-althoff|Andy Althoff]] grew up with [[luke-reinardy|Luke Reinardy]]. When Max, Tim and Nate needed another roommate, Luke brought Andy in."
+      "body": "Levi convinces high school friend [[adam-herr|Adam Herr]] to move to Winona, in with him, Zaid, [[callan-curtis|Callan]] and [[dominic-morelli|Dominic]]. [[andy-althoff|Andy Althoff]] grew up with [[luke-reinardy|Luke Reinardy]]. When Max, Tim and Nate needed another roommate, Luke brought Andy in.",
+      "photos": [
+        {
+          "src": "photos/leviadamhs.jpg",
+          "alt": "Levi and Adam in high school"
+        },
+        {
+          "src": "photos/leviadam.jpg",
+          "alt": "Levi and Adam in Winona"
+        }
+      ]
     },
     {
       "year": 2011,

@@ -1,25 +1,28 @@
 <script lang="ts">
   // The roster story. One fixed stage with three zones that never overlap: header avatars, the
-  // column field, and the card tray, plus the year dial on the right edge. Everything is drawn
+  // column field, and the card tray, plus the year scrubber on the right edge. Everything is drawn
   // from the scroll position, so the whole history scrubs forwards and backwards like a film.
   import { onMount } from 'svelte';
   import {
-    makeLayout, segments, members, tenures, people, legacy, constants, lineup, exits, FIRST, LAST, CUT_GAP,
-    fillEdge, avatarState, stopAt, trayAt, clamp, lerp, back, type AvatarState, type Card, type Spot,
+    makeLayout, segments, members, people, legacy, constants, lineup, exits, FIRST, LAST, CUT_GAP,
+    pourAt, growTip, avatarState, stopAt, trayAt, clamp, lerp, back, smooth, easeOut, type AvatarState, type Spot,
   } from '../lib/model';
   import Avatar from './Avatar.svelte';
   import Glass from './Glass.svelte';
   import Tray from './Tray.svelte';
-  import Dial from './Dial.svelte';
+  import Scrubber from './Scrubber.svelte';
 
-  let { onperson, oncard }: { onperson: (id: string) => void; oncard: (c: Card) => void } = $props();
+  type Photo = { src: string; alt: string };
+  let { onperson, onphoto }: { onperson: (id: string) => void; onphoto: (p: Photo) => void } = $props();
 
   let vh = $state(800);
   let W = $state(390);
   let s = $state(0); // smoothed scroll position
-  let vel = $state(0); // how fast we're moving (drives the liquid wobble)
+  let vel = $state(0); // how fast we're moving (drives the ripple)
   let time = $state(0);
   let reduced = $state(false);
+  let want = $state(0); // how tall the current card wants to be (reported by the tray)
+  let tt = $state(0); // where the card's top actually is right now (springs toward `want`)
 
   const L = $derived(makeLayout(vh, W));
   const w = $derived(s + L.P); // the playhead, in world pixels
@@ -62,13 +65,18 @@
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     let raf = 0;
+    tt = L.trayTop;
     const tick = (now: number) => {
       stepCuts(now);
+      const tTarget = L.vh - 10 - (want ? Math.min(want, L.trayH) : L.trayH);
+      if (Math.abs(tTarget - tt) > 0.3) tt = reduced ? tTarget : tt + (tTarget - tt) * 0.2;
+      else if (tt !== tTarget) tt = tTarget;
       const target = window.scrollY;
       const d = target - s;
       if (Math.abs(d) > 0.05) s = reduced ? target : s + d * 0.2;
       else if (d !== 0) s = target;
-      const v = reduced ? 0 : lerp(vel, d, 0.25);
+      // the ripple fades out over ~400ms after the scroll stops
+      const v = reduced ? 0 : Math.abs(d) > Math.abs(vel) ? lerp(vel, d, 0.3) : lerp(vel, d, 0.06);
       if (Math.abs(v) > 0.02 || vel !== 0) {
         vel = Math.abs(v) < 0.02 ? 0 : v;
         time = now / 1000;
@@ -127,67 +135,99 @@
   }
 
   // ---- columns. A leaving column is sliced on the diagonal; its replacement starts with the matching slice.
-  type Piece = { key: string; person: string; x: number; y: number; h: number; clip: string; g: number; py: number; founder: boolean; constant: boolean };
+  // Every ribbon runs to the bottom of the screen. Below the card's top edge it is in the card's
+  // shadow (--lit: where the shadow starts, in the element's own pixels). Founders' ribbons are
+  // there before the league, all in shadow, and the colour pours down them when 2011 starts.
+  type Piece = { key: string; person: string; slot: number; x: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean };
   type Tail = Piece & { tf: string; p: number };
-  type Under = { key: string; person: string; x: number; py: number; founder: boolean };
   const field = $derived.by(() => {
     const cols: Piece[] = [];
     const tails: Tail[] = [];
-    const under: Under[] = [];
-    const lips: { key: string; x: number; y: number; tone: string }[] = [];
-    const amp = clamp(Math.abs(vel) / 26) * 5;
     const px = (n: number) => `${n.toFixed(1)}px`;
+    const floor = s + vh + 10; // the bottom of the screen, in world pixels
     for (const seg of segments) {
-      const cutTop = seg.start > FIRST;
+      const founding = seg.start === FIRST;
       const cutBot = seg.end !== LAST;
       const key = `${seg.slot}-${seg.start}`;
       const B1 = L.top(seg.end + 1);
-      const top = cutTop ? L.T[seg.start] - L.cutH / 2 + CUT_GAP / 2 : L.T[seg.start];
+      const cut = cutBot && w >= B1; // the cut has reached the playhead
       const bottom = cutBot ? B1 + L.cutH / 2 - CUT_GAP / 2 : L.end;
       const tailTop = cutBot ? bottom - L.cutH - L.cw * 1.8 : bottom; // the last stretch hangs free once cut
-      const edge = fillEdge(L, seg.slot, w);
-      const growing = edge < bottom;
-      let fill = Math.min(bottom, edge);
-      if (growing) fill += Math.sin(time * 9 + seg.slot * 1.7) * amp;
-      const f = fx[key] ?? { g: cutBot && w > B1 ? 1 : 0, x: 0 };
-      const x = L.colX(seg.slot) - L.cw / 2 + f.x;
-      const base = { person: seg.person, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person) };
 
-      const mEnd = Math.min(fill, tailTop);
+      let top: number; // world
+      if (founding) {
+        const tip = growTip(L, seg.person, w);
+        if (tip === null) continue;
+        top = tip + s;
+      } else {
+        top = L.T[seg.start] - L.cutH / 2 + CUT_GAP / 2;
+        if (w <= top + 1) continue; // arrives when its cut reaches the playhead
+      }
+      const f = fx[key] ?? { g: cut ? 1 : 0, x: 0 };
+      const x = L.colX(seg.slot) - L.cw / 2 + f.x;
+      const litY = founding ? lerp(L.headerY - 30, tt, pourAt(L, seg.slot, w)) : tt; // screen
+      const base = { person: seg.person, slot: seg.slot, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person) };
+
+      const mEnd = cut ? tailTop : floor;
       if (mEnd > top + 1) {
         const y = Math.max(top - s, -40);
         const h = mEnd - s - y;
         if (h > 0 && y < vh) {
           const o = y + s; // the element's top, in world pixels
-          const clip = cutTop ? `polygon(0 ${px(top + L.cutH - o)},100% ${px(top - o)},100% ${px(h + 60)},0 ${px(h + 60)})` : 'none';
-          cols.push({ ...base, key, x, y, h, clip, py: -o });
+          const clip = !founding ? `polygon(0 ${px(top + L.cutH - o)},100% ${px(top - o)},100% ${px(h + 60)},0 ${px(h + 60)})` : 'none';
+          cols.push({ ...base, key, x, y, h, clip, py: -o, lit: litY - y });
         }
       }
-      if (cutBot && fill > tailTop) {
+      if (cut) {
         const y = tailTop - s;
-        const h = fill - tailTop;
+        const h = bottom - tailTop;
         if (y < vh && y + h > -60) {
           const p = clamp((w - B1) / (vh * 0.12)); // how far it has fallen away
-          const jit = p > 0 ? Math.sin(time * 11 + seg.slot * 2.3) * clamp(Math.abs(vel) / 26) * 2.5 : 0;
           const clip = `polygon(0 0,100% 0,100% ${px(bottom - L.cutH - tailTop)},0 ${px(bottom - tailTop)})`;
-          const tf = `translate3d(${px(x)},${px(y)},0) perspective(260px) rotateX(${(-22 * p).toFixed(2)}deg) rotateZ(${jit.toFixed(2)}deg)`;
-          tails.push({ ...base, key, x, y, h, clip, py: -tailTop, tf, p });
+          const tf = `translate3d(${px(x)},${px(y)},0) perspective(260px) rotateX(${(-22 * p).toFixed(2)}deg)`;
+          tails.push({ ...base, key, x, y, h, clip, py: -tailTop, lit: litY - y, tf, p });
         }
       }
-      const pouring = edge < w - 1;
-      if (pouring && growing && fill - s < L.P + 8) lips.push({ key, x, y: fill - s, tone: people[seg.person].color ?? '#fff' });
-      // the stretch of ribbon that is "now" carries on underneath the card, to the bottom of the screen
-      const from = cutTop ? L.T[seg.start] : L.T[FIRST];
-      const until = cutBot ? B1 : L.end;
-      if (!pouring && w >= from && w < until) under.push({ key, person: seg.person, x, py: -(L.P + s), founder: base.founder });
     }
-    return { cols, tails, lips, under };
+    return { cols, tails };
   });
 
-  // ---- season lines across the field, once the liquid has passed them
-  const seasonLines = $derived(
-    Object.keys(lineup).map(Number).filter((y) => y > FIRST && w > L.T[y] && L.T[y] - s > L.headerY && L.T[y] - s < L.P).map((y) => ({ y, sy: L.T[y] - s })),
+  // ---- year markers: a faint line across the field, badged on Levi's ribbon. Cuts land on them.
+  const markers = $derived(
+    L.stops
+      .map((y) => ({ y, sy: L.T[y] - s }))
+      .filter((m) => m.sy > L.headerY + 14 && m.sy < vh + 4),
   );
+
+  // ---- photos: they slide in from the left, one after another, stacking up (each new one tucked
+  // underneath, a little higher), and all leave to the right as the next card arrives.
+  const photos = $derived.by(() => {
+    const out: { key: string; p: Photo; x: number; y: number; rot: number; z: number; o: number }[] = [];
+    const pw = Math.min(L.fieldW * 0.7, 330);
+    const ph = pw * 0.75;
+    const regionTop = L.headerY + L.av + 14;
+    const regionBot = tt - 18;
+    for (const r of L.seq) {
+      const list = r.card.photos;
+      if (!list?.length || w < r.a - vh * 0.5 || w > r.b + vh * 0.25) continue;
+      const n = list.length;
+      const span = r.b - r.a;
+      const base = regionBot - ph / 2 - 4;
+      const step = n > 1 ? Math.min(ph * 0.58, (base - ph / 2 - regionTop) / (n - 1)) : 0;
+      const exit = smooth(clamp((w - (r.b - vh * 0.12)) / (vh * 0.14)));
+      list.forEach((p, k) => {
+        const t0 = r.a + span * (0.06 + (0.6 * k) / n);
+        const enter = clamp((w - t0) / ((span * 0.6) / n));
+        if (enter <= 0) return;
+        const e = easeOut(enter);
+        const tx = L.padL + L.fieldW / 2 + [-10, 14, -6][k % 3] * (L.fieldW / 300);
+        const rot = [-3, 2.5, -1.5][k % 3];
+        const x = lerp(-pw * 0.6, tx, e) + exit * (L.W + pw * 0.6 - tx) + k * exit * exit * 30;
+        out.push({ key: p.src, p, x, y: base - k * step, rot: rot - (1 - e) * 12 + exit * 10, z: n - k, o: 1 });
+      });
+    }
+    return { list: out, pw, ph };
+  });
 
   // ---- markers that live on the columns: each season's champion and sacko
   const marks = $derived.by(() => {
@@ -312,7 +352,13 @@
 
 <div class="stage" class:reduced style:height="{vh}px">
   <!-- columns: nothing is ever drawn over these except their own markers -->
-  <div class="field" style:--fade="{L.headerY * 2 + 26}px">
+  <div
+    class="field"
+    style:--fade="{L.headerY * 2 + 26}px"
+    style:--wave="{(time * 150).toFixed(1)}px"
+    style:--wv={clamp(Math.abs(vel) / 18) * 0.9}
+    style:--cw="{L.cw}px"
+  >
     {#each field.cols as c (c.key)}
       <button
         class="col"
@@ -322,7 +368,8 @@
         style:--tone={people[c.person].color}
         style:--g={c.g}
         style:--py="{c.py}px"
-        style:--cw="{L.cw}px"
+        style:--lit="{c.lit}px"
+        style:--ph="{c.slot * 23}px"
         style:width="{L.cw}px"
         style:height="{c.h}px"
         style:clip-path={c.clip}
@@ -338,33 +385,20 @@
         style:--g={t.g}
         style:--p={t.p}
         style:--py="{t.py}px"
-        style:--cw="{L.cw}px"
+        style:--ph="{t.slot * 23}px"
         style:width="{L.cw}px"
         style:height="{t.h}px"
         style:clip-path={t.clip}
         style:transform={t.tf}
       ></i>
     {/each}
-    {#each field.under as u (u.key)}
-      <i
-        class="under"
-        class:founder={u.founder}
-        style:--tone={people[u.person].color}
-        style:--py="{u.py}px"
-        style:--cw="{L.cw}px"
-        style:width="{L.cw}px"
-        style:height="{vh - L.P + 4}px"
-        style:transform="translate3d({u.x}px,{L.P}px,0)"
-      ></i>
-    {/each}
-    {#if field.under.length}
-      <i class="cardshade" style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{L.P - 44}px,0)"></i>
-    {/if}
-    {#each field.lips as l (l.key)}
-      <i class="lip" style:--tone={l.tone} style:width="{L.cw}px" style:transform="translate3d({l.x}px,{l.y - 2}px,0)"></i>
-    {/each}
-    {#each seasonLines as sl (sl.y)}
-      <i class="season" style:width="{L.fieldW}px" style:transform="translate3d({L.padL}px,{sl.sy}px,0)"></i>
+    <!-- the card's shadow falling on the ribbons just above it, and the ribbons falling away at the bottom -->
+    <i class="cardshade" style:opacity={started} style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{tt - 44}px,0)"></i>
+    <i class="floorshade" style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{vh - 110}px,0)"></i>
+    {#each markers as m (m.y)}
+      <span class="marker" style:opacity={started} style:width="{L.fieldW}px" style:transform="translate3d({L.padL}px,{m.sy}px,0)">
+        <b class="display" style:left="{L.colX(L.leviSlot) - L.cw / 2 - L.padL}px">{m.y}</b>
+      </span>
     {/each}
     {#each marks as m (m.key)}
       <span class="mark {m.kind}" style:opacity={m.o} title="{m.kind === 'champ' ? 'Champion' : 'Sacko'}: {people[m.person].name}" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop)})">
@@ -379,8 +413,25 @@
     {/each}
   </div>
 
+  <!-- photos, between the ribbons and the card -->
+  {#if photos.list.length}
+    <div class="photos">
+      {#each photos.list as ph (ph.key)}
+        <button
+          class="photo"
+          aria-label="Photo: {ph.p.alt}"
+          style:width="{photos.pw}px"
+          style:height="{photos.ph}px"
+          style:z-index={ph.z}
+          style:transform="translate3d({ph.x - photos.pw / 2}px,{ph.y - photos.ph / 2}px,0) rotate({ph.rot}deg)"
+          onclick={() => onphoto(ph.p)}
+        ><img src={import.meta.env.BASE_URL + ph.p.src} alt="" decoding="async" /></button>
+      {/each}
+    </div>
+  {/if}
+
   <!-- the card tray -->
-  <Tray {L} items={trayItems} opacity={trayO} {era} {onperson} {oncard} />
+  <Tray {L} items={trayItems} opacity={trayO} {era} top={tt} {onperson} bind:want />
 
   <!-- finale -->
   {#if finaleCy < vh * 1.4}
@@ -470,8 +521,8 @@
     </button>
   {/if}
 
-  <!-- the year dial -->
-  <Dial {L} {fi} opacity={started} {reduced} />
+  <!-- the year scrubber -->
+  <Scrubber {L} {fi} opacity={started} {reduced} />
 
   <!-- temporary: type set switcher for the design review -->
   <button class="typeswitch" onclick={() => setType(TYPES[(TYPES.indexOf(type) + 1) % TYPES.length])} aria-label="Switch typeface set, now {type.toUpperCase()}">{type.toUpperCase()}</button>
@@ -521,7 +572,10 @@
   }
   .col {
     pointer-events: auto;
-    background: linear-gradient(to bottom, color-mix(in srgb, var(--now) 78%, #000 22%), var(--now) 240px);
+    background:
+      /* in the card's shadow from --lit down (and, before the league, all the way up) */
+      linear-gradient(to bottom, transparent calc(var(--lit) - 14px), rgba(0, 0, 0, 0.46) calc(var(--lit) + 6px)),
+      linear-gradient(to bottom, color-mix(in srgb, var(--now) 78%, #000 22%), var(--now) 240px);
   }
   .tail {
     /* the cut-off end, falling away into the screen; its shadow grows from the tip up */
@@ -530,14 +584,34 @@
       linear-gradient(to top, rgba(0, 0, 0, calc(var(--p) * 0.6)) 0, transparent calc(var(--p) * 100%)),
       var(--now);
   }
-  .under {
-    /* the ribbon carrying on beneath the card: in the card's shadow */
-    background: color-mix(in srgb, var(--tone) 55%, #000 45%);
+  .col::after,
+  .tail::after {
+    /* the ripple: soft bands of light and shade travel down every ribbon while you scroll */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.075) 0,
+      transparent 36px,
+      rgba(0, 0, 0, 0.14) 72px,
+      transparent 108px,
+      rgba(255, 255, 255, 0.075) 144px
+    );
+    background-position: 0 calc(var(--py) + var(--wave) + var(--ph));
+    opacity: var(--wv);
+    pointer-events: none;
   }
   .cardshade {
-    /* the card's shadow falling on the columns just above it */
+    /* the card's shadow falling on the ribbons just above it */
     height: 44px;
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.42));
+    pointer-events: none;
+  }
+  .floorshade {
+    /* the ribbons fall down and away into the screen at the bottom edge */
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0.82));
     pointer-events: none;
   }
   .founder {
@@ -562,8 +636,7 @@
     background-position: 0 var(--py);
     opacity: calc(var(--regal) * (1 - var(--g, 0) * 0.45));
     pointer-events: none;
-  }
-  .col.constant {
+  }  .col.constant {
     animation: hue 9s var(--ease-in-out) infinite alternate;
   }
   @keyframes hue {
@@ -574,15 +647,49 @@
       filter: hue-rotate(14deg) saturate(1.2);
     }
   }
-  .lip {
-    /* the pouring edge: a bright lip with a glow under it */
-    height: 2px;
-    background: color-mix(in srgb, var(--tone) 35%, white 65%);
-    box-shadow: 0 6px 22px 3px color-mix(in srgb, var(--tone) 85%, transparent);
-  }
-  .season {
+  .marker {
+    /* a year line: cuts happen here */
     height: 1px;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.16));
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  }
+  .marker b {
+    position: absolute;
+    bottom: 1px;
+    padding: 1px 3px 0;
+    background: rgba(8, 9, 12, 0.72);
+    color: var(--ink);
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  /* photos */
+  .photos {
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+  }
+  .photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    background: #f4f1ea;
+    box-shadow:
+      0 18px 40px -8px rgba(0, 0, 0, 0.75),
+      0 2px 6px rgba(0, 0, 0, 0.4);
+    pointer-events: auto;
+    will-change: transform;
+  }
+  .photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
   }
   .mark {
     display: grid;
@@ -878,6 +985,10 @@
     .col.constant,
     .hint i {
       animation: none;
+    }
+    .col::after,
+    .tail::after {
+      display: none;
     }
   }
 </style>

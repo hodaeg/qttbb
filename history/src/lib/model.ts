@@ -15,6 +15,7 @@ export type Card = {
   year: number; title: string; body: string; kind?: string; funFact?: string;
   quote?: { by: string | null; text: string; context?: string; todo?: boolean };
   in?: string[]; out?: string[]; returns?: string[]; founders?: string[]; season?: SeasonInfo;
+  photos?: { src: string; alt: string }[];
 };
 export type SeasonInfo = { champion: string | null; runnerUp: string | null; sacko: string | null; ledScoring: string | null; complete: boolean; source: string };
 export type Tenure = { slot: number; start: number; end: number };
@@ -99,12 +100,13 @@ export const CUT_GAP = 7; // px of daylight between a cut column and its replace
 
 /**
  * Three zones that never overlap: header avatars, the column field, the card tray.
- * The dial lives in the right gutter. The playhead ("now") sits just above the tray.
+ * The year scrubber lives in the right gutter. The playhead ("now") sits just above the tallest
+ * the card can be; shorter cards hug their content and leave the playhead where it is.
  */
 export function makeLayout(vh: number, W: number) {
   const desktop = W >= 1120;
   const headerY = desktop ? 46 : 38;
-  const right = desktop ? 120 : 58; // gutter: the dial and the alumni pile
+  const right = desktop ? 120 : 58; // gutter: the scrubber and the alumni pile
   const padL = desktop ? 28 : 8;
   const gap = desktop ? 8 : 3;
   const fieldW = Math.min(W - right - padL, SLOTS * 84);
@@ -122,11 +124,12 @@ export function makeLayout(vh: number, W: number) {
   const perYear: Record<number, Card[]> = {};
   for (const c of cards) (perYear[c.year] ??= []).push(c);
 
-  // How much scrolling each year gets: every card needs time on the tray.
+  // How much scrolling each year gets: every card needs time on the tray, and each photo a little more.
+  const weight = (c: Card) => 0.55 + 0.22 * (c.photos?.length ?? 0);
   const bandH = (y: number) => {
-    const n = (perYear[y] ?? []).length;
+    const list = perYear[y] ?? [];
     if (y > lastStoryYear) return vh * 0.5;
-    return vh * (n ? 0.2 + 0.55 * n : 0.5) + (y === FIRST ? vh * 0.7 : 0);
+    return vh * (list.length ? 0.2 + list.reduce((t, c) => t + weight(c), 0) : 0.5) + (y === FIRST ? vh * 0.7 : 0);
   };
 
   const T: Record<number, number> = {};
@@ -143,7 +146,12 @@ export function makeLayout(vh: number, W: number) {
   const seq: { card: Card; a: number; b: number }[] = [];
   for (const y of stops) {
     const list = perYear[y] ?? [];
-    list.forEach((card, j) => seq.push({ card, a: T[y] + (j / list.length) * bandH(y), b: 0 }));
+    const total = list.reduce((t, c) => t + weight(c), 0);
+    let acc = 0;
+    for (const card of list) {
+      seq.push({ card, a: T[y] + (acc / total) * bandH(y), b: 0 });
+      acc += weight(card);
+    }
   }
   seq.forEach((r, i) => (r.b = i < seq.length - 1 ? seq[i + 1].a : end));
   const cardPos = new Map<Card, number>(seq.map((r) => [r.card, r.a]));
@@ -160,15 +168,15 @@ export function makeLayout(vh: number, W: number) {
   }
 
   const pile = { x: W - (desktop ? 60 : 30), y: headerY };
-  const dialR = desktop ? 190 : 150;
-  // bottom right, level with the card tray. step: degrees per year stop (zoomed in, ZOOM times that)
-  const dial = { r: dialR, sliver: desktop ? 78 : 50, cy: Math.round(Math.min(trayTop + trayH * 0.5, vh - dialR * 0.62)), step: 13 };
+  // the scrubber rail: from just under the pile to the bottom of the screen (clear of the type switch)
+  const scrub = { top: headerY + 44, bottom: vh - 44 };
   const finale = end + vh * 0.35;
   const pageHeight = finale - P + vh * 1.15;
+  const leviSlot = Math.max(0, lineup[FIRST].indexOf('levi-nellen')); // year badges sit on Levi's ribbon
 
   return {
     vh, W, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayH, trayTop, trayW,
-    stops, T, top, end, bandH, seq, cardPos, appearAt, pile, dial, finale, pageHeight, perYear,
+    stops, T, top, end, bandH, seq, cardPos, appearAt, pile, scrub, finale, pageHeight, perYear, leviSlot,
   };
 }
 
@@ -195,7 +203,7 @@ export function stopAt(L: Layout, w: number): number {
   }
   return stops.length - 0.0001;
 }
-/** The inverse: the playhead position for a fractional stop. Used by the dial. */
+/** The inverse: the playhead position for a fractional stop. Used by the scrubber. */
 export function wAtStop(L: Layout, f: number): number {
   const { stops, T, end } = L;
   const i = clamp(Math.floor(f), 0, stops.length - 1);
@@ -218,13 +226,23 @@ export function trayAt(L: Layout, w: number) {
   return out;
 }
 
-/** How far down a slot's column the liquid has reached. In the founding year the columns pour in, staggered. */
-export function fillEdge(L: Layout, slot: number, w: number): number {
+/**
+ * Founders' ribbons are there before the league, dark, as if still under a card. When the
+ * founding season starts the colour pours down them, staggered by column: 0 = dark, 1 = fully lit.
+ */
+export function pourAt(L: Layout, slot: number, w: number): number {
   const t0 = L.T[FIRST];
-  if (w <= t0) return t0;
+  if (w <= t0) return 0;
   const p = clamp((w - t0) / (L.vh * 0.62));
-  const e = easeOut(clamp(p * 1.75 - slot * 0.065));
-  return t0 + (w - t0) * e;
+  return easeOut(clamp(p * 1.75 - slot * 0.065));
+}
+
+/** A founder growing in: the screen y of their ribbon's tip (and avatar), rising from the bottom. Null before. */
+export function growTip(L: Layout, p: string, w: number): number | null {
+  const a = L.appearAt[p];
+  if (a === undefined || w < a) return null;
+  const q = clamp((w - a) / (L.vh * 0.12));
+  return lerp(L.vh + L.av, L.headerY, back(q));
 }
 
 export const PILE_SCALE = 0.72;
@@ -241,7 +259,7 @@ export type AvatarState = {
 
 /**
  * Where one person's avatar is, for a given playhead. One element per person, for their whole life:
- * - founders pop into their header slot as the story meets them;
+ * - founders grow up from the bottom of the screen with their ribbon as the story meets them;
  * - everyone else rides up from just below their column's cut and docks in the header;
  * - when the newcomer gets close, the leaver is pushed up off the top of the screen and drops
  *   in from above onto the alumni pile;
@@ -269,11 +287,11 @@ export function avatarState(L: Layout, p: string, w: number, spot: Spot): Avatar
   };
 
   if (iv[0].start === FIRST) {
-    const a = L.appearAt[p];
-    if (w < a) return st;
-    const q = clamp((w - a) / (vh * 0.16));
-    st.scale = back(q);
-    st.opacity = clamp(q * 3);
+    const tip = growTip(L, p, w); // founders grow up from the bottom of the screen on the tip of their ribbon
+    if (tip === null) return st;
+    st.y = tip;
+    st.scale = 1;
+    st.opacity = 1;
   } else if (!rideIn(iv[0], false)) return st;
 
   for (let k = 0; k < iv.length; k++) {

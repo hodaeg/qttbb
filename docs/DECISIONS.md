@@ -321,3 +321,15 @@ Levi's notes from his iPhone, and what changed:
 - **Founders' ribbons** get a fine serrated (pinking-shear) edge, via CSS mask.
 - **Championship stars:** a trophy rising toward the header merges into its owner's avatar and becomes a gold star; stars sit in a row under the avatar and the newest pushes the others apart as it grows (2019 on, until earlier champions are supplied). Token `--gold`.
 **Not tested:** the address-bar fix and the dial on a real iPhone (I can only simulate touch).
+
+### D39 — History app: scrubber, founders grow in, flexible card, year markers, ripple, photos — Accepted
+Levi's next round, and what changed:
+- **Dial removed; a year scrubber instead.** A rail of tick marks down the right gutter, fading into the alumni pile at the top and the bottom of the screen. Tap = jump to that year. Hold 0.2s = the rail bulges at the finger (a fisheye that magnifies 4x, plus a swell to the left), quarter-year ticks appear inside the bulge, and dragging scrubs at 4x finer travel; letting go settles on the nearest quarter. A swipe that moves before 0.2s is an ordinary page scroll (`touch-action: pan-y`, and touchmove is only blocked once the hold has fired).
+- **Founders grow in:** each founder's ribbon grows up from the bottom of the screen with their avatar on its tip. Before the league the ribbons are all in the "under the card" shadow; when 2011 starts the colour pours down them, staggered by column.
+- **Every ribbon runs to the bottom of the screen** and falls away into a dark shade there. One continuous element per ribbon now (the separate "under" pieces and the pour lip are gone); the card's shadow is a gradient inside each ribbon that starts at the card's live top edge.
+- **The card flexes** with its content (up to the old maximum), springing between sizes; a card that doesn't fit scrolls inside the glass. "Read more" and the card sheet are gone. The playhead stays at the maximum card position so the story never jumps when cards resize.
+- **Year markers:** a faint line across the field at every year, badged on Levi's ribbon. Cuts land on them.
+- **Ripple, not edge wobble:** the pouring edge's wobble read as a glitch. Now soft bands of light and shade travel down all ribbons while scrolling (opacity follows scroll speed), with a small phase lag per column.
+- **Photos:** cards can carry `photos`. They slide in from the left one after another, each later one tucked underneath and a little higher, and all leave right as the next card arrives (cards with photos get more scroll). Tap opens the photo. New "Parallel Dat Park" card after Japs; new outsider Jake.
+- **Real avatars** for 21 people (resized to 192px squares in `public/avatars/`); a colour ring is drawn over the photo.
+**Not tested:** real touch on iPhone (the hold-vs-scroll handoff in particular), the ripple's look on a phone.

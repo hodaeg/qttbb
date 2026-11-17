@@ -12,6 +12,7 @@
     { "from": "alex-randall", "to": "tim-underhill", "year": 2008, "how": "the 2008 visit weekend", "type": "friend", "inferred": true },
     { "from": "tim-underhill", "to": "levi-nellen", "year": null, "how": "roommates", "type": "roommate" },
     { "from": "alex-randall", "to": "levi-nellen", "year": 2009, "how": "parties at Alex's house", "type": "party" },
+    { "from": "jake", "to": "alex-randall", "year": 2009, "how": "made rap songs together, including Parallel Dat Park", "type": "friend" },
 
     { "from": "levi-nellen", "to": "nate-mehlhoff", "year": 2009, "how": "freshman roommates", "type": "roommate" },
     { "from": "nate-mehlhoff", "to": "max-christensen", "year": null, "how": "high school", "type": "high-school" },

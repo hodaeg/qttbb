@@ -3,9 +3,8 @@
   import Rich from './Rich.svelte';
   import Avatar from './Avatar.svelte';
 
-  // `full`: the whole card (in the sheet). Otherwise it is sized for the tray and long quotes are clamped.
+  // `full`: names on the in/out chips. In the tray they are faces only. (Long cards scroll in the tray.)
   let { card, onperson, full = false }: { card: Card; onperson: (id: string) => void; full?: boolean } = $props();
-  const long = $derived((card.quote?.text.length ?? 0) > 160);
   const first = (id: string) => people[id].nickname ?? people[id].name.split(' ')[0];
 </script>
 
@@ -33,7 +32,7 @@
       {#if card.body}<p><Rich text={card.body} {onperson} /></p>{/if}
 
       {#if card.quote}
-        <blockquote class:clamp={long && !full}>
+        <blockquote>
           {card.quote.text}
           {#if card.quote.by || card.quote.context}
             <cite>{#if card.quote.by}— {first(card.quote.by)}{/if}{#if card.quote.context}{card.quote.by ? ', ' : ''}{card.quote.by ? card.quote.context[0].toLowerCase() + card.quote.context.slice(1) : card.quote.context}{/if}</cite>
@@ -87,13 +86,6 @@
     font-weight: 500;
     line-height: 1.46;
     white-space: pre-line;
-  }
-  blockquote.clamp {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
   cite {
     display: block;

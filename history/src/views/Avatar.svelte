@@ -22,6 +22,7 @@
 
 <style>
   .avatar {
+    position: relative;
     display: inline-grid;
     place-items: center;
     flex: none;
@@ -48,5 +49,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .avatar:has(img)::after {
+    /* the member's colour ring, drawn over the photo */
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 0 1.5px var(--tone);
+    pointer-events: none;
+  }
+  .avatar.alum img {
+    filter: grayscale(0.8);
   }
 </style>
