@@ -300,3 +300,13 @@ Levi's notes on D35: floating cards hid the columns exactly where they change ha
 - Type is tabled: set A stays the default and the temporary switcher (now a small "A/B/C" button) stays.
 **Tested:** phone-sized preview with simulated pointer events. **Not tested:** real touch (does a dial spin ever scroll the page), haptics, light mode, wide screens.
 **Open:** the pre-league years (2002-2010) have an empty field above the tray; the sacko mark is a plain X for now.
+
+### D37 — History app: third design revision (one avatar per person, hanging cut, shake, founders' lattice, real pile) — Accepted
+Planned on Fable 5.2, built on Opus 5.5. Levi's notes on D36 and what changed:
+- **One avatar per person, always.** The grey marker at the cut is gone. An avatar is the head of its own column: a newcomer pops in just below the cut, rides it up and docks in the header. When the newcomer gets close, the leaver (greyed with their column) is pushed up off the top and drops in from above onto the alumni pile; several leavers land one after another. A returner (Stephen) rises off the pile and rides up from below his new cut with the "returns" badge. All of it is a function of scroll, so scrolling back reverses it (the leaver comes back down from the top; the newcomer rides back down with their column). `avatarState()` in `model.ts`.
+- **Hanging cut.** The last stretch of a cut ribbon is a separate tail that tips back into the screen (rotateX), with a shadow growing from the tip up, and jitters with scroll speed.
+- **Shake and fade.** When a cut arrives the column does a damped shake (about 750ms) and its colour drains to grey on the same envelope, so it is grey exactly when it settles. This is the one beat that runs on the clock rather than the scroll; scrolling back restores the colour without a shake. `stepCuts()` in `Story.svelte`.
+- **Founders' lattice.** Founding members' ribbons carry a faint harlequin lattice (one diamond per column width), weaker once grey. Strength token `--regal`.
+- **The pile is a pile.** Every alumnus is stacked with small offsets and rotations, newest on top. Tapping it fans the avatars out to the left and down with names; tapping one there opens their sheet; tap again, tap outside or scroll to close. The alumni drawer (`AlumniPanel.svelte`) is removed.
+- **Fix:** the stage is now `overflow: clip`; with `hidden`, focus or scrollIntoView could scroll the whole stage sideways.
+**Not tested:** real touch, how the shake reads on a phone, light mode, wide screens.

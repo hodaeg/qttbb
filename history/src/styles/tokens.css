@@ -23,6 +23,10 @@
   --glint: rgba(255, 255, 255, 0.95);
   --cut: 14px; /* the clipped corner that replaces rounded ones */
 
+  /* founders' ribbons: a faint harlequin lattice (one diamond per column width) */
+  --regal: 0.12;
+  --lattice: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 15' preserveAspectRatio='none'%3E%3Cpath d='M5 0L10 7.5L5 15L0 7.5Z' fill='none' stroke='white' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3Ccircle cx='5' cy='7.5' r='.7' fill='white'/%3E%3C/svg%3E");
+
   /* type: set A (see the [data-type] blocks below for the other sets) */
   --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
   --font-text: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;

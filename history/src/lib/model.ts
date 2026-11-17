@@ -226,55 +226,98 @@ export function fillEdge(L: Layout, slot: number, w: number): number {
   return t0 + (w - t0) * e;
 }
 
-export type AvatarState = { x: number; y: number; scale: number; opacity: number; inPile: boolean; flying: number; returning: number; landed: number; gray: number };
+export const PILE_SCALE = 0.72;
+export type Spot = { x: number; y: number; rot: number };
+export type AvatarState = {
+  x: number; y: number; scale: number; rot: number; opacity: number;
+  flying: number; // 0..1, in the air (drawn above everything)
+  returning: number; // "returns" badge
+  landed: number; // 0..1 progress of the drop into the pile (drives the pile's bump)
+  gray: number;
+  cut: string | null; // waiting in the header after their column was cut: greys with that column (key slot-start)
+  pileAt: number | null; // in the pile; the value orders the pile (bigger = newer, on top)
+};
 
-/** Where one person's avatar is, for a given playhead. One element per person, for its whole life. */
-export function avatarState(L: Layout, p: string, w: number, pileIndex: number): AvatarState {
+/**
+ * Where one person's avatar is, for a given playhead. One element per person, for their whole life:
+ * - founders pop into their header slot as the story meets them;
+ * - everyone else rides up from just below their column's cut and docks in the header;
+ * - when the newcomer gets close, the leaver is pushed up off the top of the screen and drops
+ *   in from above onto the alumni pile;
+ * - a returner rises off the pile and rides up from below their new cut.
+ * Pure function of w, so scrolling back plays all of it in reverse.
+ */
+export function avatarState(L: Layout, p: string, w: number, spot: Spot): AvatarState {
   const iv = tenures[p];
-  const { vh, headerY, colX, pile } = L;
-  const pileX = pile.x - Math.min(pileIndex, 3) * 9;
-  const st: AvatarState = { x: colX(iv[0].slot), y: headerY, scale: 0, opacity: 0, inPile: false, flying: 0, returning: 0, landed: 0, gray: 0 };
-  const bez = (a: number, c: number, b: number, e: number) => (1 - e) * (1 - e) * a + 2 * (1 - e) * e * c + e * e * b;
+  const { vh, headerY, colX, av, P } = L;
+  const ride = L.cutH / 2 + CUT_GAP + av / 2 + 4; // avatar centre below the cut line
+  const st: AvatarState = { x: colX(iv[0].slot), y: headerY, scale: 0, rot: 0, opacity: 0, flying: 0, returning: 0, landed: 0, gray: 0, cut: null, pileAt: null };
 
-  const a = L.appearAt[p];
-  if (w < a) return st;
-  const q = clamp((w - a) / (vh * 0.16));
-  st.scale = back(q);
-  st.opacity = clamp(q * 3);
-  if (iv[0].start !== FIRST) st.y = headerY - (1 - easeOut(q)) * 22; // late joiners drop in
+  const rideIn = (seg: Tenure, ret: boolean) => {
+    const cut = L.T[seg.start];
+    const w0 = cut + ride; // the avatar's spot reaches the playhead: it pops in there
+    if (w < w0) return false;
+    const q = clamp((w - w0) / (vh * 0.06));
+    const y = cut - w + P + ride;
+    const wDock = cut + P + ride - headerY;
+    Object.assign(st, {
+      x: colX(seg.slot), y: Math.max(headerY, y), scale: back(q), rot: 0, opacity: clamp(q * 3), flying: 0, gray: 0, cut: null, pileAt: null, landed: 0,
+      returning: ret ? (w < wDock ? 1 : clamp(1 - (w - wDock) / (vh * 0.5))) : 0,
+    });
+    return true;
+  };
+
+  if (iv[0].start === FIRST) {
+    const a = L.appearAt[p];
+    if (w < a) return st;
+    const q = clamp((w - a) / (vh * 0.16));
+    st.scale = back(q);
+    st.opacity = clamp(q * 3);
+  } else if (!rideIn(iv[0], false)) return st;
 
   for (let k = 0; k < iv.length; k++) {
-    if (iv[k].end === LAST) break;
-    const B = L.top(iv[k].end + 1); // the cut: the season after their last
-    const order = exits.filter((x) => x.end === iv[k].end && x.slot < iv[k].slot).length; // leavers go one after another
-    const f = clamp((w - B - order * vh * 0.045) / (vh * 0.3));
-    if (f <= 0) break;
-    const e = smooth(f);
-    const sx = colX(iv[k].slot);
-    // swing down over the columns, in the open, and up to the alumni pile
-    st.x = bez(sx, lerp(sx, pileX, 0.55), pileX, e);
-    st.y = bez(headerY, headerY + vh * 0.22, pile.y, e);
-    st.scale = lerp(1, 0.62, e) * (1 + Math.sin(Math.PI * f) * 0.5);
-    st.gray = clamp(f * 2.5);
-    st.flying = Math.sin(Math.PI * f);
-    st.landed = f;
-    st.inPile = f >= 1;
+    const seg = iv[k];
+    if (seg.end === LAST) break;
+    const B = L.top(seg.end + 1); // the cut under this column
+    if (w <= B) break;
+    st.cut = `${seg.slot}-${seg.start}`; // waits in the header, greying with its column
+
+    // pushed out when the newcomer riding up the same slot gets within reach
+    const wPush = B + P + ride - headerY - 1.3 * av;
+    const order = exits.filter((x) => x.end === seg.end && x.slot < seg.slot).length; // several leavers land one after another
+    const A = clamp((w - wPush) / (vh * 0.07));
+    if (A <= 0) break;
+    const sx = colX(seg.slot);
+    st.x = sx;
+    st.y = lerp(headerY, -av, smooth(A));
+    st.flying = 1;
     st.opacity = 1;
+
+    const D = clamp((w - wPush - vh * 0.07 - order * vh * 0.035) / (vh * 0.1));
+    if (D <= 0) break;
+    st.cut = null;
+    st.gray = 1;
+    st.x = spot.x;
+    st.y = lerp(-av, spot.y, back(D));
+    st.scale = lerp(1, PILE_SCALE, D);
+    st.rot = spot.rot * D;
+    st.landed = D;
+    if (D < 1) break;
+    st.flying = 0;
+    st.pileAt = wPush + order;
 
     const next = iv[k + 1];
     if (!next) break;
-    const g = clamp((w - (L.T[next.start] - vh * 0.04)) / (vh * 0.3));
-    if (g <= 0) break;
-    const e2 = smooth(g);
-    const tx = colX(next.slot);
-    st.x = bez(pileX, lerp(pileX, tx, 0.5), tx, e2);
-    st.y = bez(pile.y, headerY + vh * 0.2, headerY, e2);
-    st.scale = lerp(0.62, 1, back(g));
-    st.gray = 1 - e2;
-    st.flying = Math.sin(Math.PI * g);
-    st.returning = g < 1 ? Math.sin(Math.PI * g) : clamp(1 - (w - L.T[next.start]) / (vh * 0.9));
-    st.inPile = false;
+    const R = clamp((w - (L.T[next.start] - vh * 0.1)) / (vh * 0.07)); // rise off the pile, up and away
+    if (R <= 0) break;
+    st.pileAt = null;
     st.landed = 0;
+    st.flying = 1;
+    st.y = lerp(spot.y, -av, smooth(R));
+    st.scale = lerp(PILE_SCALE, 1, R);
+    st.rot = spot.rot * (1 - R);
+    st.gray = 1 - R;
+    if (!rideIn(next, true)) break;
   }
   return st;
 }

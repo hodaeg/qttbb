@@ -5,14 +5,14 @@
   import { onMount } from 'svelte';
   import {
     makeLayout, segments, members, tenures, people, legacy, constants, lineup, exits, FIRST, LAST, CUT_GAP,
-    fillEdge, avatarState, stopAt, trayAt, clamp, lerp, back, type AvatarState, type Card,
+    fillEdge, avatarState, stopAt, trayAt, clamp, lerp, back, type AvatarState, type Card, type Spot,
   } from '../lib/model';
   import Avatar from './Avatar.svelte';
   import Glass from './Glass.svelte';
   import Tray from './Tray.svelte';
   import Dial from './Dial.svelte';
 
-  let { onperson, onalumni, oncard }: { onperson: (id: string) => void; onalumni: () => void; oncard: (c: Card) => void } = $props();
+  let { onperson, oncard }: { onperson: (id: string) => void; oncard: (c: Card) => void } = $props();
 
   let vh = $state(800);
   let W = $state(390);
@@ -50,8 +50,13 @@
     size();
     s = window.scrollY;
     window.addEventListener('resize', size);
+    const onScroll = () => {
+      if (fanned && Math.abs(window.scrollY - fanY) > 12) fanned = false;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
     let raf = 0;
     const tick = (now: number) => {
+      stepCuts(now);
       const target = window.scrollY;
       const d = target - s;
       if (Math.abs(d) > 0.05) s = reduced ? target : s + d * 0.2;
@@ -67,39 +72,101 @@
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener('resize', size);
+      window.removeEventListener('scroll', onScroll);
     };
   });
 
+  // ---- the moment a column is cut. This one beat runs on the clock, not the scroll: tension
+  // releasing plays out by itself. The column shakes and its colour drains to grey on the same
+  // envelope, so it is grey exactly when it comes to rest. Scrolling back up restores the colour.
+  type Fx = { g: number; x: number };
+  let fx = $state<Record<string, Fx>>({});
+  const cutAnim: Record<string, { passed: boolean; t0: number; mode: 'idle' | 'shake' | 'unfade'; g0: number }> = {};
+  function stepCuts(now: number) {
+    const wNow = window.scrollY + L.P; // the raw scroll: the shake starts the moment the cut arrives
+    const amp = L.desktop ? 5 : 3;
+    const next: Record<string, Fx> = {};
+    let changed = false;
+    for (const ex of exits) {
+      const key = `${ex.slot}-${ex.start}`;
+      const passed = wNow > L.top(ex.end + 1);
+      let a = cutAnim[key];
+      if (!a) a = cutAnim[key] = { passed, t0: 0, mode: 'idle', g0: 0 }; // already past on load: settled
+      if (passed !== a.passed) {
+        a.passed = passed;
+        a.t0 = now;
+        a.g0 = fx[key]?.g ?? (passed ? 0 : 1);
+        a.mode = passed ? 'shake' : 'unfade';
+      }
+      let g = passed ? 1 : 0;
+      let x = 0;
+      if (a.mode === 'shake') {
+        const q = clamp((now - a.t0) / (reduced ? 200 : 750));
+        const env = (1 - q) * (1 - q);
+        g = reduced ? q : 1 - env;
+        x = reduced ? 0 : Math.sin(q * Math.PI * 2 * 4.5) * amp * env;
+        if (q >= 1) a.mode = 'idle';
+      } else if (a.mode === 'unfade') {
+        const q = clamp((now - a.t0) / 250);
+        g = a.g0 * (1 - q);
+        if (q >= 1) a.mode = 'idle';
+      }
+      next[key] = { g, x };
+      const prev = fx[key];
+      if (!prev || Math.abs(prev.g - g) > 0.001 || Math.abs(prev.x - x) > 0.01) changed = true;
+    }
+    if (changed) fx = next;
+  }
+
   // ---- columns. A leaving column is sliced on the diagonal; its replacement starts with the matching slice.
-  type Col = { key: string; person: string; x: number; y: number; h: number; clip: string; leaving: boolean; drain: number; constant: boolean };
+  type Piece = { key: string; person: string; x: number; y: number; h: number; clip: string; g: number; py: number; founder: boolean; constant: boolean };
+  type Tail = Piece & { tf: string; p: number };
   const field = $derived.by(() => {
-    const cols: Col[] = [];
+    const cols: Piece[] = [];
+    const tails: Tail[] = [];
     const lips: { key: string; x: number; y: number; tone: string }[] = [];
     const amp = clamp(Math.abs(vel) / 26) * 5;
+    const px = (n: number) => `${n.toFixed(1)}px`;
     for (const seg of segments) {
       const cutTop = seg.start > FIRST;
       const cutBot = seg.end !== LAST;
+      const key = `${seg.slot}-${seg.start}`;
       const B1 = L.top(seg.end + 1);
       const top = cutTop ? L.T[seg.start] - L.cutH / 2 + CUT_GAP / 2 : L.T[seg.start];
       const bottom = cutBot ? B1 + L.cutH / 2 - CUT_GAP / 2 : L.end;
+      const tailTop = cutBot ? bottom - L.cutH - L.cw * 1.8 : bottom; // the last stretch hangs free once cut
       const edge = fillEdge(L, seg.slot, w);
       const growing = edge < bottom;
       let fill = Math.min(bottom, edge);
       if (growing) fill += Math.sin(time * 9 + seg.slot * 1.7) * amp;
-      if (fill <= top + 1) continue;
-      const y = Math.max(top - s, -40);
-      const h = fill - s - y;
-      if (h <= 0 || y > vh) continue;
-      const o = y + s; // the element's top, in world pixels
-      const far = h + 60;
-      const px = (n: number) => `${n.toFixed(1)}px`;
-      const clip = `polygon(0 ${px(cutTop ? top + L.cutH - o : -1)},100% ${px(cutTop ? top - o : -1)},100% ${px(cutBot ? bottom - L.cutH - o : far)},0 ${px(cutBot ? bottom - o : far)})`;
-      const key = `${seg.slot}-${seg.start}`;
-      const x = L.colX(seg.slot) - L.cw / 2;
-      cols.push({ key, person: seg.person, x, y, h, clip, leaving: cutBot, drain: cutBot ? clamp((w - B1) * 3, -90, 5000) - 90 : 0, constant: constants.has(seg.person) });
+      const f = fx[key] ?? { g: cutBot && w > B1 ? 1 : 0, x: 0 };
+      const x = L.colX(seg.slot) - L.cw / 2 + f.x;
+      const base = { person: seg.person, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person) };
+
+      const mEnd = Math.min(fill, tailTop);
+      if (mEnd > top + 1) {
+        const y = Math.max(top - s, -40);
+        const h = mEnd - s - y;
+        if (h > 0 && y < vh) {
+          const o = y + s; // the element's top, in world pixels
+          const clip = cutTop ? `polygon(0 ${px(top + L.cutH - o)},100% ${px(top - o)},100% ${px(h + 60)},0 ${px(h + 60)})` : 'none';
+          cols.push({ ...base, key, x, y, h, clip, py: -o });
+        }
+      }
+      if (cutBot && fill > tailTop) {
+        const y = tailTop - s;
+        const h = fill - tailTop;
+        if (y < vh && y + h > -60) {
+          const p = clamp((w - B1) / (vh * 0.12)); // how far it has fallen away
+          const jit = p > 0 ? Math.sin(time * 11 + seg.slot * 2.3) * clamp(Math.abs(vel) / 26) * 2.5 : 0;
+          const clip = `polygon(0 0,100% 0,100% ${px(bottom - L.cutH - tailTop)},0 ${px(bottom - tailTop)})`;
+          const tf = `translate3d(${px(x)},${px(y)},0) perspective(260px) rotateX(${(-22 * p).toFixed(2)}deg) rotateZ(${jit.toFixed(2)}deg)`;
+          tails.push({ ...base, key, x, y, h, clip, py: -tailTop, tf, p });
+        }
+      }
       if (growing && fill - s < L.P + 8) lips.push({ key, x, y: fill - s, tone: people[seg.person].color ?? '#fff' });
     }
-    return { cols, lips };
+    return { cols, tails, lips };
   });
 
   // ---- season lines across the field, once the liquid has passed them
@@ -107,15 +174,14 @@
     Object.keys(lineup).map(Number).filter((y) => y > FIRST && w > L.T[y] && L.T[y] - s > L.headerY && L.T[y] - s < L.P).map((y) => ({ y, sy: L.T[y] - s })),
   );
 
-  // ---- markers that live on the columns: who left where, and each season's champion and sacko
+  // ---- markers that live on the columns: each season's champion and sacko
   const marks = $derived.by(() => {
-    const out: { key: string; kind: 'left' | 'champ' | 'sacko'; person: string; x: number; y: number; pop: number }[] = [];
-    const add = (key: string, kind: 'left' | 'champ' | 'sacko', person: string, slot: number, world: number) => {
+    const out: { key: string; kind: 'champ' | 'sacko'; person: string; x: number; y: number; pop: number }[] = [];
+    const add = (key: string, kind: 'champ' | 'sacko', person: string, slot: number, world: number) => {
       const y = world - s;
       if (w <= world || y < 0 || y > L.P + 20) return;
       out.push({ key, kind, person, x: L.colX(slot), y, pop: clamp((w - world) / (vh * 0.07)) });
     };
-    for (const ex of exits) add(`x${ex.slot}-${ex.start}`, 'left', ex.person, ex.slot, L.top(ex.end + 1) - L.cutH / 2 - L.av * 0.5 - 5);
     for (const [year, season] of Object.entries(legacy.seasons)) {
       const y = Number(year);
       if (!lineup[y]) continue;
@@ -129,32 +195,63 @@
     return out;
   });
 
-  // ---- avatars and the alumni pile
-  const pileOrder = $derived.by(() => {
-    const inPile: { p: string; at: number }[] = [];
-    for (const p of members) {
-      const iv = tenures[p];
-      for (let k = 0; k < iv.length; k++) {
-        if (iv[k].end === LAST) break;
-        const B = L.top(iv[k].end + 1);
-        if (w <= B) break;
-        const next = iv[k + 1];
-        if (next && w > L.T[next.start] - vh * 0.04) continue; // on the way back
-        inPile.push({ p, at: B + iv[k].slot });
-      }
-    }
-    inPile.sort((a, b) => b.at - a.at); // newest on top
-    return inPile.map((x) => x.p);
-  });
-  const avatars = $derived(
-    members.map((p) => {
-      const i = pileOrder.indexOf(p);
-      return { p, st: avatarState(L, p, w, Math.max(i, 0)), pileIndex: i };
-    }),
-  );
-  const pileCount = $derived(avatars.filter((a) => a.pileIndex >= 0 && a.st.landed > 0.6).length);
+  // ---- avatars and the alumni pile. The pile is a literal pile: everyone who left, stacked
+  // messily. One tap fans it out to the left and down; tap again, tap elsewhere or scroll to close.
+  const hash = (str: string) => {
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 16777619);
+    return h >>> 0;
+  };
+  const spotOf = (p: string): Spot => {
+    const h = hash(p);
+    const r = (n: number) => (((h >>> n) & 255) / 255) * 2 - 1;
+    return { x: L.pile.x + r(0) * 7, y: L.pile.y + r(8) * 5, rot: r(16) * 14 };
+  };
+  const avatars = $derived(members.map((p) => ({ p, st: avatarState(L, p, w, spotOf(p)) })));
+  const piled = $derived(avatars.filter((a) => a.st.pileAt !== null).sort((a, b) => a.st.pileAt! - b.st.pileAt!)); // oldest first
+  const pileIx = $derived(Object.fromEntries(piled.map((a, i) => [a.p, i])) as Record<string, number>);
+  const pileCount = $derived(piled.length);
   const pileBump = $derived(Math.max(0, ...avatars.map((a) => (a.st.landed > 0.8 && a.st.landed < 1 ? Math.sin((Math.PI * (a.st.landed - 0.8)) / 0.2) : 0))));
-  const zOf = (a: { st: AvatarState; pileIndex: number }) => (a.st.flying > 0.02 ? 30 : a.pileIndex >= 0 ? 20 - a.pileIndex : 10);
+
+  let fanned = $state(false);
+  let fanY = 0;
+  $effect(() => {
+    if (pileCount === 0) fanned = false;
+  });
+  const FAN_COLS = 4;
+  const cell = $derived(L.desktop ? 78 : 62);
+  const fanPos = (i: number) => ({
+    x: L.pile.x - 6 - (FAN_COLS - 1 - (i % FAN_COLS)) * cell,
+    y: L.headerY + 52 + Math.floor(i / FAN_COLS) * cell,
+  });
+  const fanBox = $derived.by(() => {
+    const rows = Math.max(1, Math.ceil(pileCount / FAN_COLS));
+    const x0 = L.pile.x - 6 - (FAN_COLS - 1) * cell - cell / 2 - 4;
+    return { x: x0, y: L.headerY + 20, w: Math.min(L.W - 6 - x0, FAN_COLS * cell + 16), h: rows * cell + 34 };
+  });
+  function toggleFan() {
+    fanned = !fanned;
+    fanY = window.scrollY;
+  }
+  function tapAvatar(a: { p: string; st: AvatarState }) {
+    const p = a.p;
+    if (pileIx[p] === undefined && a.st.landed > 0 && pileCount) return toggleFan(); // still dropping onto the pile
+    if (pileIx[p] === undefined) return onperson(p);
+    if (!fanned) return toggleFan();
+    fanned = false;
+    onperson(p);
+  }
+  function view(a: { p: string; st: AvatarState }) {
+    const i = pileIx[a.p];
+    if (fanned && i !== undefined) {
+      const f = fanPos(i);
+      return { x: f.x, y: f.y, scale: L.desktop ? 1.05 : 1.2, rot: 0 };
+    }
+    return { x: a.st.x, y: a.st.y, scale: a.st.scale, rot: a.st.rot };
+  }
+  const zOf = (a: { p: string; st: AvatarState }) =>
+    pileIx[a.p] !== undefined ? (fanned ? 45 : 12 + pileIx[a.p]) : a.st.flying > 0.02 ? 30 : 10;
+  const grayOf = (st: AvatarState) => (st.cut ? (fx[st.cut]?.g ?? 1) : st.gray);
 
   // ---- where we are in time (the dial and the tray read this)
   const fi = $derived(stopAt(L, w));
@@ -177,17 +274,34 @@
     {#each field.cols as c (c.key)}
       <button
         class="col"
-        class:leaving={c.leaving}
+        class:founder={c.founder}
         class:constant={c.constant}
         aria-label={people[c.person].name}
         style:--tone={people[c.person].color}
-        style:--drain="{c.drain}px"
+        style:--g={c.g}
+        style:--py="{c.py}px"
+        style:--cw="{L.cw}px"
         style:width="{L.cw}px"
         style:height="{c.h}px"
         style:clip-path={c.clip}
         style:transform="translate3d({c.x}px,{c.y}px,0)"
         onclick={() => onperson(c.person)}
       ></button>
+    {/each}
+    {#each field.tails as t (t.key)}
+      <i
+        class="tail"
+        class:founder={t.founder}
+        style:--tone={people[t.person].color}
+        style:--g={t.g}
+        style:--p={t.p}
+        style:--py="{t.py}px"
+        style:--cw="{L.cw}px"
+        style:width="{L.cw}px"
+        style:height="{t.h}px"
+        style:clip-path={t.clip}
+        style:transform={t.tf}
+      ></i>
     {/each}
     {#each field.lips as l (l.key)}
       <i class="lip" style:--tone={l.tone} style:width="{L.cw}px" style:transform="translate3d({l.x}px,{l.y - 2}px,0)"></i>
@@ -196,12 +310,7 @@
       <i class="season" style:width="{L.fieldW}px" style:transform="translate3d({L.padL}px,{sl.sy}px,0)"></i>
     {/each}
     {#each marks as m (m.key)}
-      {#if m.kind === 'left'}
-        <button class="mark left" aria-label="{people[m.person].name} left here" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop) * 0.84})" onclick={() => onperson(m.person)}>
-          <Avatar id={m.person} size={L.av} />
-        </button>
-      {:else}
-        <span class="mark {m.kind}" title="{m.kind === 'champ' ? 'Champion' : 'Sacko'}: {people[m.person].name}" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop)})">
+      <span class="mark {m.kind}" title="{m.kind === 'champ' ? 'Champion' : 'Sacko'}: {people[m.person].name}" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop)})">
           <svg viewBox="0 0 16 16" width={Math.min(L.cw - 5, 18)} height={Math.min(L.cw - 5, 18)} aria-hidden="true">
             {#if m.kind === 'champ'}
               <path d="M4 2h8v3.2a4 4 0 0 1-8 0zM1.8 3H4v1.3H3.1A1.7 1.7 0 0 0 4.2 6l-.5 1.2A3 3 0 0 1 1.8 4.4zM12 3h2.2v1.4a3 3 0 0 1-1.9 2.8L11.8 6a1.7 1.7 0 0 0 1.1-1.7H12zM7.2 9h1.6v2.4H11V13H5v-1.6h2.2z" />
@@ -210,7 +319,6 @@
             {/if}
           </svg>
         </span>
-      {/if}
     {/each}
   </div>
 
@@ -249,23 +357,37 @@
 
   <!-- header -->
   <div class="header" style:height="{L.headerY * 2 - 6}px" style:opacity={started}></div>
+  {#if fanned}
+    <button class="closer" aria-label="Close the alumni" onclick={() => (fanned = false)}></button>
+  {/if}
+  {#if pileCount > 0}
+    <div class="fanback" class:show={fanned} style:width="{fanBox.w}px" style:height="{fanBox.h}px" style:transform="translate3d({fanBox.x}px,{fanBox.y}px,0)">
+      <span>Alumni · {pileCount}</span>
+    </div>
+  {/if}
   {#each avatars as a (a.p)}
-    {#if a.st.opacity > 0.01 && (a.pileIndex < 4 || a.st.flying > 0.02)}
+    {#if a.st.opacity > 0.01 && a.st.y > -L.av * 1.2}
+      {@const v = view(a)}
+      {@const ip = pileIx[a.p]}
       <button
         class="av"
+        class:piled={ip !== undefined}
+        class:fanned={fanned && ip !== undefined}
         aria-label={people[a.p].name}
         style:width="{L.av}px"
         style:height="{L.av}px"
         style:z-index={zOf(a)}
         style:opacity={a.st.opacity}
         style:--glow={a.st.flying}
-        style:--gray={a.st.gray}
+        style:--gray={fanned && ip !== undefined ? 0.35 : grayOf(a.st)}
         style:--tone={people[a.p].color}
-        style:transform="translate3d({a.st.x - L.av / 2}px,{a.st.y - L.av / 2}px,0) scale({a.st.scale})"
-        onclick={() => (a.st.inPile ? onalumni() : onperson(a.p))}
+        style:--i={ip ?? 0}
+        style:transform="translate3d({v.x - L.av / 2}px,{v.y - L.av / 2}px,0) rotate({v.rot}deg) scale({v.scale})"
+        onclick={() => tapAvatar(a)}
       >
         <Avatar id={a.p} size={L.av} live />
         {#if a.st.returning > 0.02}<span class="returns" style:opacity={a.st.returning}>returns</span>{/if}
+        {#if ip !== undefined}<span class="nm">{first(a.p)}</span>{/if}
       </button>
     {/if}
   {/each}
@@ -273,8 +395,9 @@
     <button
       class="pile"
       aria-label="Alumni, {pileCount} people"
-      style:transform="translate3d({L.pile.x - 44}px,{L.pile.y - 22}px,0) scale({1 + pileBump * 0.12})"
-      onclick={onalumni}
+      aria-expanded={fanned}
+      style:transform="translate3d({L.pile.x - 31}px,{L.pile.y - 22}px,0) scale({1 + pileBump * 0.12})"
+      onclick={toggleFan}
     >
       <span class="count">+{pileCount}</span>
     </button>
@@ -294,7 +417,7 @@
   .stage {
     position: fixed;
     inset: 0;
-    overflow: hidden;
+    overflow: clip; /* not hidden: a hidden box can still be scrolled sideways by focus or scrollIntoView */
     contain: strict;
     background:
       radial-gradient(120% 70% at 20% 0%, color-mix(in srgb, var(--bg-2) 85%, transparent), transparent 70%),
@@ -320,15 +443,34 @@
     top: 0;
     left: 0;
   }
-  .col {
-    pointer-events: auto;
-    background: linear-gradient(to bottom, color-mix(in srgb, var(--tone) 78%, #000 22%), var(--tone) 240px);
+  .col,
+  .tail {
+    /* --g: 0 = the member's colour, 1 = muted grey (a column that has been cut) */
+    --dead: color-mix(in srgb, var(--thread) 80%, var(--tone));
+    --now: color-mix(in srgb, var(--dead) calc(var(--g, 0) * 100%), var(--tone));
     will-change: transform, height;
   }
-  .col.leaving {
-    /* once it's cut, grey climbs the ribbon from the cut upwards */
-    --dead: color-mix(in srgb, var(--thread) 80%, var(--tone));
-    background: linear-gradient(to top, var(--dead) 0, var(--dead) var(--drain), var(--tone) calc(var(--drain) + 90px));
+  .col {
+    pointer-events: auto;
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--now) 78%, #000 22%), var(--now) 240px);
+  }
+  .tail {
+    /* the cut-off end, falling away into the screen; its shadow grows from the tip up */
+    transform-origin: 50% 0;
+    background:
+      linear-gradient(to top, rgba(0, 0, 0, calc(var(--p) * 0.6)) 0, transparent calc(var(--p) * 100%)),
+      var(--now);
+  }
+  .founder::before {
+    /* founders' ribbons carry a faint harlequin lattice, anchored to the timeline so it scrolls with them */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--lattice);
+    background-size: var(--cw) calc(var(--cw) * 1.5);
+    background-position: 0 var(--py);
+    opacity: calc(var(--regal) * (1 - var(--g, 0) * 0.45));
+    pointer-events: none;
   }
   .col.constant {
     animation: hue 9s var(--ease-in-out) infinite alternate;
@@ -355,9 +497,6 @@
     display: grid;
     place-items: center;
     pointer-events: auto;
-  }
-  .mark.left {
-    box-shadow: 0 0 0 2px var(--bg);
   }
   .mark.champ path {
     fill: #fff;
@@ -536,6 +675,62 @@
     text-transform: uppercase;
     white-space: nowrap;
   }
+  .av.piled {
+    transition:
+      transform 520ms var(--ease-spring) calc(var(--i) * 30ms),
+      filter var(--dur-ui) var(--ease-out);
+  }
+  .nm {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 3px;
+    transform: translateX(-50%);
+    font-size: 9px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--ink);
+    opacity: 0;
+    transition: opacity var(--dur-micro) var(--ease-out);
+    pointer-events: none;
+  }
+  .av.fanned .nm {
+    opacity: 1;
+    transition-delay: calc(180ms + var(--i) * 30ms);
+  }
+  .closer {
+    inset: 0;
+    z-index: 38;
+    background: transparent;
+    cursor: default;
+  }
+  .fanback {
+    z-index: 39;
+    padding: 9px 12px;
+    background: var(--glass-strong);
+    backdrop-filter: blur(20px) saturate(1.6);
+    -webkit-backdrop-filter: blur(20px) saturate(1.6);
+    box-shadow:
+      inset 0 0 0 1px var(--line),
+      0 24px 60px -10px rgba(0, 0, 0, 0.7);
+    clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    opacity: 0;
+    transform-origin: 100% 0;
+    scale: 0.6;
+    pointer-events: none;
+    transition:
+      opacity var(--dur-ui) var(--ease-out),
+      scale var(--dur-expand) var(--ease-spring);
+  }
+  .fanback.show {
+    opacity: 1;
+    scale: 1;
+  }
   .pile {
     z-index: 27;
     width: 62px;
@@ -568,6 +763,10 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .av.piled,
+    .fanback {
+      transition-duration: 1ms;
+    }
     .col.constant,
     .hint i {
       animation: none;

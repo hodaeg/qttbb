@@ -27,7 +27,7 @@
   function detent() {
     pulse++;
     try {
-      navigator.vibrate?.(6);
+      if ((navigator as Navigator & { userActivation?: { hasBeenActive: boolean } }).userActivation?.hasBeenActive !== false) navigator.vibrate?.(6);
     } catch {}
   }
   function stop() {
