@@ -375,3 +375,8 @@ Levi's next round, and what changed:
 ### D45 — History app: honours land at the end of the year; Max's commissioner year — Accepted
 - **Honours land as the year ends** (D44 had them landing early). Each marker is placed so the longest moment, the sacko stamp, completes ~0.1 screen before the next year line reaches the playhead; the star lands a little before that. Measured at phone size: the sacko settles 40–60px of scroll before the card changes. The 2017 season card goes back to closing its year.
 - **"A tumultuous season" rewritten** around Max's one year as commissioner: the dubious trade with Ben, the (asterisked) title, voted out, Levi reinstated. The exit-message quote is removed from it, and "The coup" card is gone (its content is folded in).
+
+### D46 — History app: a season card for every year — Accepted
+- Every season from 2011 gets a generated champion/sacko card that closes its year (previously only 2017 on), so the honours always land on the card that names them; each year's band grows by one card's worth of scroll.
+- "The league is born" no longer quotes Levi's own words back at him.
+- Toby, Jared and Stephen arrive with "Dorm life" again (the card that names them); the `arrive` field stays available.

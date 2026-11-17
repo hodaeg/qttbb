@@ -78,11 +78,15 @@ export function yearsLabel(p: string): string {
 const storyCards = storyFile.cards as Card[];
 const lastStoryYear = Math.max(...storyCards.map((c) => c.year));
 export const cards: Card[] = [...storyCards];
-for (let y = lastStoryYear; y <= LAST; y++) {
+for (let y = FIRST; y <= LAST; y++) {
   const season = legacy.seasons[String(y)];
   if (!season) continue;
-  // a year's season card closes that year, so its champion and sacko land while it's showing
-  cards.push({ year: y, title: String(y), body: '', kind: 'season', season });
+  // every season gets a champion/sacko card that closes its year, so the honours land while it's showing
+  let at = -1;
+  cards.forEach((c, i) => {
+    if (c.year <= y) at = i;
+  });
+  cards.splice(at + 1, 0, { year: y, title: String(y), body: '', kind: 'season', season });
 }
 
 // Rich text: "[[id|Name]]" -> tappable name.

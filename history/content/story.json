@@ -38,11 +38,6 @@
           "src": "photos/levinateroommates.jpg",
           "alt": "Levi and Nate, freshman roommates, in matching white tees and buzz cuts"
         }
-      ],
-      "arrive": [
-        "toby-bachuber",
-        "jared-haldemann",
-        "stephen-rydberg"
       ]
     },
     {
@@ -120,7 +115,7 @@
       "year": 2011,
       "title": "The league is born",
       "kind": "beat",
-      "body": "The league is named The Quest to the Bria Bowl, \"because we are not creative and liked the show The League.\"",
+      "body": "The league is named The Quest to the Bria Bowl because we are not creative and liked the show The League.",
       "founders": [
         "levi-nellen",
         "max-christensen",
