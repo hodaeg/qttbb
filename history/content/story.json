@@ -2,96 +2,190 @@
   "_about": "The glass info cards, in order. One or more per year. Write names as [[person-id|Display name]] to make them tappable. 'in' and 'out' list who joined or left the league that season. 'quote' is an optional pull-quote. 'kind': 'beat' marks a big held moment. Levi's voice; edit freely.",
   "cards": [
     {
-      "year": 2002, "title": "Where it starts", "kind": "beat",
+      "year": 2002,
+      "title": "Where it starts",
+      "kind": "beat",
       "body": "[[dustin-sadnick|Dustin Sadnick]] (Levi's brother) and [[doug-comes|Doug Comes]] (Tim's brother) are freshman roommates at Winona State. Years later, Dustin tells [[levi-nellen|Levi]] to look out for [[tim-comes|Tim]] on his dorm floor."
     },
     {
-      "year": 2008, "title": "The visit",
+      "year": 2008,
+      "title": "The visit",
       "body": "[[max-christensen|Max Christensen]] spends a high school visit weekend in Winona with his \"pal\" [[alex-randall|Alex Randall]].",
       "funFact": "That weekend eventually brought [[tim-underhill|Tim Underhill]] (Levi's future roommate), [[alex-hoover|Alex Hoover]] and [[sam-schurman|Sam Schurman]] into our sphere."
     },
     {
-      "year": 2009, "title": "Freshman year",
+      "year": 2009,
+      "title": "Freshman year",
       "body": "Levi's roommate [[nate-mehlhoff|Nate Mehlhoff]] introduces him to [[max-christensen|Max]] and [[zaid-hunitie|Zaid]]."
     },
     {
-      "year": 2009, "title": "Dorm life",
+      "year": 2009,
+      "title": "Dorm life",
       "body": "Max rooms with [[jared-haldemann|Jared Haldemann]] and lives next to [[toby-bachuber|Toby Bachuber]]. Max, Zaid and Nate know [[stephen-rydberg|Stephen Rydberg]] and his little brother [[ben-rydberg|Ben]] from high school."
     },
     {
-      "year": 2009, "title": "On his brother's instruction",
+      "year": 2009,
+      "title": "On his brother's instruction",
       "body": "Levi befriends [[tim-comes|Tim Comes]], whose roommate is [[luke-reinardy|Lucas Reinardy]], older brother of [[kalyn-reinardy|Kalyn]]."
     },
     {
-      "year": 2009, "title": "Japs",
+      "year": 2009,
+      "title": "Japs",
       "body": "The group parties at \"Japs\", [[alex-randall|Alex Randall]]'s house. Alex went to high school with [[sam-schurman|Sam Schurman]]."
     },
     {
-      "year": 2009, "title": "Neighbors",
+      "year": 2009,
+      "title": "Neighbors",
       "body": "Levi, Max, Zaid, Tim and Nate befriend [[megan-hardie|Megan Hardie]], whose dorm neighbor [[kennedy-curtis|Kennedy Curtis]] is [[callan-curtis|Callan Curtis]]'s sister. Levi befriends [[dominic-morelli|Dominic Morelli]], a dorm neighbor at Prentiss-Lucas."
     },
     {
-      "year": 2010, "title": "English class",
+      "year": 2010,
+      "title": "English class",
       "body": "Levi befriends WSU transfer [[kyle-mont-blanc|Kyle Mont Blanc]] through English courses."
     },
     {
-      "year": 2011, "title": "Moving in",
+      "year": 2011,
+      "title": "Moving in",
       "body": "Levi convinces high school friend [[adam-herr|Adam Herr]] to move to Winona, in with him, Zaid, [[callan-curtis|Callan]] and [[dominic-morelli|Dominic]]. [[andy-althoff|Andy Althoff]] grew up with [[luke-reinardy|Luke Reinardy]]. When Max, Tim and Nate needed another roommate, Luke brought Andy in."
     },
     {
-      "year": 2011, "title": "The league is born", "kind": "beat",
+      "year": 2011,
+      "title": "The league is born",
+      "kind": "beat",
       "body": "The league is named The Quest to the Bria Bowl, \"because we are not creative and liked the show The League.\"",
-      "founders": ["levi-nellen", "max-christensen", "zaid-hunitie", "adam-herr", "nate-mehlhoff", "tim-comes", "stephen-rydberg", "toby-bachuber", "jared-haldemann", "dominic-morelli", "callan-curtis", "andy-althoff"],
-      "in": ["levi-nellen", "zaid-hunitie", "max-christensen", "adam-herr", "nate-mehlhoff", "toby-bachuber", "andy-althoff", "callan-curtis", "dominic-morelli", "jared-haldemann", "stephen-rydberg", "tim-comes"],
+      "founders": [
+        "levi-nellen",
+        "max-christensen",
+        "zaid-hunitie",
+        "adam-herr",
+        "nate-mehlhoff",
+        "tim-comes",
+        "stephen-rydberg",
+        "toby-bachuber",
+        "jared-haldemann",
+        "dominic-morelli",
+        "callan-curtis",
+        "andy-althoff"
+      ],
+      "in": [
+        "levi-nellen",
+        "zaid-hunitie",
+        "max-christensen",
+        "adam-herr",
+        "nate-mehlhoff",
+        "toby-bachuber",
+        "andy-althoff",
+        "callan-curtis",
+        "dominic-morelli",
+        "jared-haldemann",
+        "stephen-rydberg",
+        "tim-comes"
+      ],
       "funFact": "Max went to a KFAN fantasy draft party, paid to go, didn't know much football, brought a binder, and threw up at the draft. Toby passed out by round 6."
     },
     {
-      "year": 2011, "title": "Wrestling",
+      "year": 2011,
+      "title": "Wrestling",
       "body": "[[adam-herr|Adam]] meets [[mike-whiting|Mike Whiting]] as class project partners; both love wrestling."
     },
     {
-      "year": 2012, "title": "First shake-up", "kind": "beat",
+      "year": 2012,
+      "title": "First shake-up",
+      "kind": "beat",
       "body": "[[dave-skradski|Dave Skradski]], high school friend of Max, Zaid and Nate, joins WSU. [[dominic-morelli|Dom]] moves away, [[callan-curtis|Callan]] doesn't watch football, and [[jared-haldemann|Jared]] pulls off a hilarious trade on Zaid and is more or less insufferable.",
-      "out": ["dominic-morelli", "callan-curtis", "jared-haldemann", "stephen-rydberg"],
-      "in": ["mike-whiting", "kyle-mont-blanc", "dave-skradski", "sam-schurman"],
+      "out": [
+        "dominic-morelli",
+        "callan-curtis",
+        "jared-haldemann",
+        "stephen-rydberg"
+      ],
+      "in": [
+        "mike-whiting",
+        "kyle-mont-blanc",
+        "dave-skradski",
+        "sam-schurman"
+      ],
       "funFact": "Nate really wanted Mike in the league."
     },
     {
-      "year": 2012, "title": "The frat",
+      "year": 2012,
+      "title": "The frat",
       "body": "[[tim-comes|Tim Comes]] starts a frat; [[mike-whiting|Mike]], [[jon-petters|Jon Petters]] and [[adam-herr|Adam]] join."
     },
     {
-      "year": 2013, "title": "Three out, three in",
+      "year": 2013,
+      "title": "Three out, three in",
       "body": "[[toby-bachuber|Toby]] isn't interested, [[nate-mehlhoff|Nate]] is too busy, and [[tim-comes|Tim]] doesn't really watch football. The Rydbergs are a fairly unanimous pick, as is Petters.",
-      "out": ["toby-bachuber", "tim-comes", "nate-mehlhoff"],
-      "in": ["stephen-rydberg", "ben-rydberg", "jon-petters"],
-      "returns": ["stephen-rydberg"]
+      "out": [
+        "toby-bachuber",
+        "tim-comes",
+        "nate-mehlhoff"
+      ],
+      "in": [
+        "stephen-rydberg",
+        "ben-rydberg",
+        "jon-petters"
+      ],
+      "returns": [
+        "stephen-rydberg"
+      ]
     },
     {
-      "year": 2014, "title": "A tumultuous season", "kind": "beat",
+      "year": 2014,
+      "title": "A tumultuous season",
+      "kind": "beat",
       "body": "Interim commissioner [[max-christensen|Max]] sends [[andy-althoff|Andy]] and [[sam-schurman|Sam]] the exit message.",
-      "quote": { "by": "max-christensen", "text": "TODO: the full exit message from Levi's FigJam, including \"I consulted my Small Council\".", "todo": true },
-      "out": ["andy-althoff", "sam-schurman"],
-      "in": ["jordan-morris", "josh-susee"]
+      "quote": {
+        "by": "max-christensen",
+        "text": "Hey guys. So I consulted my Small Council [sic] about this and we came to the conclusion that we're going to roll with 2 other guys this next season. It's not that we didn't enjoy you being in it for 2 seasons, (at least, I enjoyed it) but we're looking for guys with a little more depth to their overall knowledge and edge of Fantasy Football. Again, we enjoyed having you guys be a part of this. And I'm not saying you have shifty [sic] knowledge of the NFL and FF-related topics.\n\nIf there's an issue either of you have for any reason at all, you can message me there, text me, or visit Bub's (i work quite a bit).\n\nThanks again!",
+        "context": "The exit message to Andy and Sam"
+      },
+      "out": [
+        "andy-althoff",
+        "sam-schurman"
+      ],
+      "in": [
+        "jordan-morris",
+        "josh-susee"
+      ]
     },
     {
-      "year": 2014, "title": "Suze and Jordan",
+      "year": 2014,
+      "title": "Suze and Jordan",
       "body": "Many in the league have met [[josh-susee|Suze]] over the years (Levi's high school friend), so he and [[jordan-morris|Jordan]] join. Jordan's way in: [[kyle-mont-blanc|Kyle]] met him through [[fish|\"Fish\"]], a high school friend of Kyle's who lived in the West Campus dorms with Jordan.",
-      "quote": { "by": "max-christensen", "text": "Personally, I don't want him. That's just me, everybody can have their own opinion.", "context": "On Jordan being offered a spot" }
+      "quote": {
+        "by": "max-christensen",
+        "text": "Personally, I don't want him. That's just me, everybody can have their own opinion.",
+        "context": "On Jordan being offered a spot"
+      }
     },
     {
-      "year": 2014, "title": "The coup",
+      "year": 2014,
+      "title": "The coup",
       "body": "[[max-christensen|Max]] fleeces [[ben-rydberg|Ben Rydberg]] in a shady trade and pushes it through himself. He is voted out as commissioner and [[levi-nellen|Levi]] is rightfully reinstated."
     },
     {
-      "year": 2016, "title": "The current era", "kind": "beat",
+      "year": 2016,
+      "title": "The current era",
+      "kind": "beat",
       "body": "[[ben-rydberg|Ben]] and [[stephen-rydberg|Stephen \"Scuba\" Rydberg]] exit. In: [[gabe-warneke|Gabe Warneke]] (met Zaid through a big marketing project) and [[kalyn-reinardy|Kalyn \"Ging\" Reinardy]] (Luke's little sister, always around the group).",
-      "quote": { "by": null, "text": "Many relent this day." },
-      "out": ["ben-rydberg", "stephen-rydberg"],
-      "in": ["gabe-warneke", "kalyn-reinardy"]
+      "quote": {
+        "by": null,
+        "text": "Many relent this day."
+      },
+      "out": [
+        "ben-rydberg",
+        "stephen-rydberg"
+      ],
+      "in": [
+        "gabe-warneke",
+        "kalyn-reinardy"
+      ]
     },
     {
-      "year": 2017, "title": "The lineup holds", "kind": "era",
+      "year": 2017,
+      "title": "The lineup holds",
+      "kind": "era",
       "body": "The lineup hasn't changed since. From here the story is told in champions and legacy rankings."
     }
   ]

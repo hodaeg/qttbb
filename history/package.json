@@ -1,0 +1,19 @@
+{
+  "name": "bria-bowl-history",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/build-legacy.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/validate.mjs && node scripts/build-legacy.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "validate": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "svelte": "^5.57.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  }
+}

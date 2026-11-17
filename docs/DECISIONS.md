@@ -269,3 +269,12 @@ Content files were filled from the brief and pass a consistency check (31 people
 - Two connections are marked `inferred` (Alex Randall to Alex Hoover and Tim Underhill, from "that weekend brought them into our sphere") for Levi to confirm.
 - People ids are `first-last`; story text marks tappable names as `[[id|Name]]`.
 **Open:** the 2014 exit-message quote (placeholder), 2011-2018 champions, avatars, member colours (placeholders), per-person stories and anecdotes (TODO).
+
+### D34 — History app: phases 1-2 built (checkpoint 1) — Accepted
+Built and verified in a phone-sized preview: title screen; pre-league beat (avatars pop into their future slots as each person is met); the 2011 pour (twelve columns fill, staggered); glass story cards over the columns with tappable names; exits (column caps, avatar arcs to the alumni pile, count updates); entries; Stephen's return with a "returns" badge; the compressed 2017-now era with champion/sacko cards; a finale with the live Legacy Rankings; person and alumni bottom sheets.
+**How it works:** one fixed stage; every element's position is a pure function of the scroll position (`history/src/lib/model.ts`), so the whole story scrubs forwards and backwards. No animation library was needed for this phase, so GSAP is not installed (the plan allowed adjusting the stack). Bundle: about 85 KB of JS (29 KB gzipped) against a 200 KB budget.
+**Stats wiring:** `history/scripts/build-legacy.mjs` runs before each build and reads `data/processed/legacy_rankings.json`; champions and sackos for 2019+ come from the pipeline and are asterisked. `history/scripts/validate.mjs` checks the content files and fails the build on errors.
+**Deploy:** `.github/workflows/pages.yml` (push to main, after each data refresh, or manual). Needs Pages turned on with Source "GitHub Actions".
+**The 2014 exit message** is now in `story.json` (transcribed from Levi's screenshot).
+**Not done yet / known rough edges:** the dial (phase 3), column expansion (phase 4), friend web (phase 5); the liquid edge is a simple wobble, not yet a real meniscus; the wide-screen layout needs a design pass; nothing has been tried on a real iPhone.
+
