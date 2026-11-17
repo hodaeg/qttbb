@@ -359,3 +359,11 @@ Levi's next round, and what changed:
 - **Title borders go on the ribbon edges, not the avatar** (frames were too busy): 1st title gold foil down both edges, 2nd platinum just inside it, 3rd gold chevrons. With the ESPN years in, Mike and Kyle now have chevrons.
 - **Avatars pass behind photos and cards** (avatars 10, photos 11, card 12).
 - **In arrow points right too:** red "out" arrow points off the card, green "in" arrow points into it.
+
+### D43 — History app: counts instead of icon rows, ribbon textures, Adam Field — Accepted
+- **Counts, not rows:** one gold star, one silver star and one sacko X per avatar, with "×N" once there is more than one. A new one bumps the icon and ticks the count halfway through its landing; the sacko stamp still slams onto the face and shrinks up onto the X.
+- **All of a season's honours land together:** the silver star marker sits mid-season like the trophy and sacko X.
+- **Ribbon dressing:** 4th title = double chevrons. Chevrons are inset 5px from the edges so they don't run into the foil. Current members who weren't founders get a fine dot texture; founders keep the lattice.
+- **Season cards list silver stars** under champion and sacko (2024: Levi, undefeated regular season 14-0).
+- **Toby, Jared and Stephen arrive with "Freshman year"** via a new card field `arrive` (ribbons that come in with a card that doesn't name them).
+- **Adam Field** is the tattooed Adam. Alex Randall's house photo moved from Japs to "The visit" (2008).

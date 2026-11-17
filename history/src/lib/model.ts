@@ -16,6 +16,7 @@ export type Card = {
   quote?: { by: string | null; text: string; context?: string; todo?: boolean };
   in?: string[]; out?: string[]; returns?: string[]; founders?: string[]; season?: SeasonInfo;
   photos?: { src: string; alt: string }[];
+  arrive?: string[]; // ribbons that come in with this card even though it doesn't name them
 };
 export type SeasonInfo = {
   champion: string | null; runnerUp: string | null; sacko: string | null; ledScoring: string | null; complete: boolean; source: string;
@@ -167,7 +168,7 @@ export function makeLayout(vh: number, W: number) {
   for (const p of members) {
     const first = tenures[p][0];
     if (first.start === FIRST) {
-      const met = cards.find((c) => c.year >= RIBBONS_FROM && mentions(c).includes(p));
+      const met = cards.find((c) => c.year >= RIBBONS_FROM && (mentions(c).includes(p) || c.arrive?.includes(p)));
       const metW = met ? cardPos.get(met)! + vh * 0.05 : Infinity;
       appearAt[p] = Math.min(metW, T[FIRST] + first.slot * vh * 0.018);
     } else appearAt[p] = T[first.start] + vh * 0.05;

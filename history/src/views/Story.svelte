@@ -4,7 +4,7 @@
   // from the scroll position, so the whole history scrubs forwards and backwards like a film.
   import { onMount } from 'svelte';
   import {
-    makeLayout, segments, members, people, legacy, constants, lineup, exits, FIRST, LAST, CUT_GAP,
+    makeLayout, segments, members, people, legacy, constants, lineup, exits, isCurrent, FIRST, LAST, CUT_GAP,
     pourAt, growTip, avatarState, stopAt, trayAt, clamp, lerp, back, smooth, easeOut, type AvatarState, type Spot,
   } from '../lib/model';
   import Avatar from './Avatar.svelte';
@@ -138,7 +138,7 @@
   // Every ribbon runs to the bottom of the screen. Below the card's top edge it is in the card's
   // shadow (--lit: where the shadow starts, in the element's own pixels). Founders' ribbons are
   // there before the league, all in shadow, and the colour pours down them when 2011 starts.
-  type Piece = { key: string; person: string; slot: number; x: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean; gold: number; plat: number; chev: number };
+  type Piece = { key: string; person: string; slot: number; x: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean; dotted: boolean; gold: number; plat: number; chev: number; chev2: number };
   type Tail = Piece & { tf: string; p: number };
   // while scrolling the ribbons sway a little side to side, each on its own slow phase
   const sway = (slot: number) => {
@@ -171,7 +171,7 @@
       const f = fx[key] ?? { g: cut ? 1 : 0, x: 0 };
       const x = L.colX(seg.slot) - L.cw / 2 + f.x + sway(seg.slot);
       const litY = founding ? lerp(L.headerY - 30, tt, pourAt(L, seg.slot, w)) : tt; // screen
-      const base = { person: seg.person, slot: seg.slot, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person), ...edgesOf(seg.person) };
+      const base = { person: seg.person, slot: seg.slot, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person), dotted: !people[seg.person].founder && isCurrent(seg.person), ...edgesOf(seg.person) };
 
       const mEnd = cut ? tailTop : floor;
       if (mEnd > top + 1) {
@@ -254,7 +254,7 @@
       const slotOf = (id: string | null) => (id ? lineup[y].indexOf(id) : -1);
       if (slotOf(season.champion) >= 0) add(`champ${y}`, 'champ', season.champion!, slotOf(season.champion), mid, !!season.championAsterisk);
       if (slotOf(season.sacko) >= 0) add(`sacko${y}`, 'sacko', season.sacko!, slotOf(season.sacko), mid);
-      for (const sv of season.silverStars ?? []) if (slotOf(sv.person) >= 0) add(`silver${y}${sv.person}`, 'silver', sv.person, slotOf(sv.person), silverAt(y));
+      for (const sv of season.silverStars ?? []) if (slotOf(sv.person) >= 0) add(`silver${y}${sv.person}`, 'silver', sv.person, slotOf(sv.person), mid);
     }
     return out;
   });
@@ -331,56 +331,65 @@
     if (season.sacko && lineup[y].includes(season.sacko)) (sackos[season.sacko] ??= []).push(y);
     for (const sv of season.silverStars ?? []) if (lineup[y].includes(sv.person)) (silvers[sv.person] ??= []).push(y);
   }
-  // where on the timeline each marker sits: mid-season; a silver star a little after
+  // every marker (trophy, silver star, sacko X) sits mid-season, so a season's honours land together
   const midOf = (y: number) => L.T[y] + L.bandH(y) * 0.5;
-  function silverAt(y: number) {
-    return L.T[y] + L.bandH(y) * 0.68;
-  }
   /** 0..1 progress of an honour once its marker reaches the avatar; it plays over more scroll after that. */
   const reach = (world: number) => L.headerY + L.av * 4 - (world - s);
   const starOf = (year: number) => clamp((reach(midOf(year)) - L.av * 2.4) / (vh * 0.16));
-  const silverOf = (year: number) => clamp((reach(silverAt(year)) - L.av * 2.4) / (vh * 0.16));
   const stampOf = (year: number) => clamp((reach(midOf(year)) - L.av * 1.5) / (vh * 0.3));
-  const STAR_GAP = 7;
-  const row = (list: number[]) => {
-    const n = list.length - 1 + list[list.length - 1]; // the newest pushes the others apart as it grows
-    return (k: number) => (k - (n - 1) / 2) * STAR_GAP;
-  };
+
+  // One icon per kind, with a count once there is more than one (x2, x3 ...), instead of a row of icons.
+  // A new one: the first grows in; later ones bump the icon and tick the count up halfway through.
+  type Group = { kind: 'gold' | 'silver'; n: number; sc: number; ast: boolean; grow: number };
+  function group(kind: 'gold' | 'silver', list: { g: number; ast: boolean }[]): Group | null {
+    const got = list.filter((x) => x.g > 0);
+    if (!got.length) return null;
+    const g = got[got.length - 1].g;
+    const n = got.length - (g < 0.5 && got.length > 1 ? 1 : 0);
+    const sc = got.length === 1 ? back(g) : 1 + 0.35 * Math.sin(Math.PI * g);
+    const ast = got.some((x, k) => x.ast && (k < got.length - 1 || g >= 0.5));
+    return { kind, n, sc, ast, grow: got.length === 1 ? clamp(g * 1.5) : 1 };
+  }
   function honoursOf(p: string) {
-    const got = [
-      ...(titles[p] ?? []).map((y) => ({ y, at: midOf(y), g: starOf(y), silver: false, ast: !!legacy.seasons[y].championAsterisk })),
-      ...(silvers[p] ?? []).map((y) => ({ y, at: silverAt(y), g: silverOf(y), silver: true, ast: false })),
-    ]
-      .filter((x) => x.g > 0)
-      .sort((a, b) => a.at - b.at);
-    const lost = (sackos[p] ?? []).map(stampOf).filter((g) => g > 0);
-    const sx = got.length ? row(got.map((x) => x.g)) : () => 0;
-    const stars = got.map((x, k) => ({ x: sx(k), sc: back(x.g), silver: x.silver, ast: x.ast }));
-    const newest = got[got.length - 1];
-    const win = newest && newest.g < 1 ? Math.sin(Math.PI * newest.g) : 0; // the swell and glow as a star lands
-    const winSilver = !!newest?.silver;
-    // sacko X: stamp (big to on-the-face), sit while the avatar shakes, then shrink into the top row
-    const xr = lost.length ? row(lost.map((g) => clamp((g - 0.65) / 0.35))) : () => 0;
-    const xs = lost.map((g, k) => {
-      const stamp = easeOut(clamp(g / 0.25));
-      const fly = smooth(clamp((g - 0.65) / 0.35));
-      return {
-        x: lerp(0, xr(k), fly),
-        y: lerp(0, -L.av / 2 - 5, fly),
-        size: lerp(L.av * 0.95, 8, fly),
-        sc: lerp(2.4, 1, stamp),
-        o: clamp(g / 0.12),
-        big: fly < 1,
-      };
+    const gold = group('gold', (titles[p] ?? []).map((y) => ({ g: starOf(y), ast: !!legacy.seasons[y].championAsterisk })));
+    const silver = group('silver', (silvers[p] ?? []).map((y) => ({ g: starOf(y), ast: false })));
+    // lay the groups out side by side under the avatar, centred; a group just arriving slides in
+    const groups = [gold, silver].filter((x): x is Group => !!x);
+    const width = (x: Group) => (9 + (x.n > 1 ? 11 : 0) + (x.ast ? 4 : 0)) * x.grow;
+    const total = groups.reduce((t, x) => t + width(x), 0) + Math.max(0, groups.length - 1) * 3;
+    let at = -total / 2;
+    const stars = groups.map((x) => {
+      const left = at;
+      at += width(x) + 3;
+      return { ...x, x: left + 4.5 * x.grow };
     });
+    const newestG = Math.max(
+      0,
+      ...[...(titles[p] ?? []), ...(silvers[p] ?? [])].map(starOf).filter((g) => g > 0 && g < 1),
+    );
+    const win = newestG > 0 ? Math.sin(Math.PI * newestG) : 0; // the swell and glow as a star lands
+    const winSilver = !!(silvers[p] ?? []).some((y) => starOf(y) === newestG) && !(titles[p] ?? []).some((y) => starOf(y) === newestG);
+
+    // sacko X: stamp onto the face, sit while the avatar shakes, then shrink up to the X along the top
+    const lost = (sackos[p] ?? []).map(stampOf).filter((g) => g > 0);
+    const landed = lost.filter((g) => g >= 1).length;
+    const flying = lost
+      .filter((g) => g < 1)
+      .map((g) => {
+        const stamp = easeOut(clamp(g / 0.25));
+        const fly = smooth(clamp((g - 0.65) / 0.35));
+        return { x: 0, y: lerp(0, -L.av / 2 - 5, fly), size: lerp(L.av * 0.95, 8, fly), sc: lerp(2.4, 1, stamp), o: clamp(g / 0.12) };
+      });
     const q = lost.length ? (lost[lost.length - 1] - 0.25) / 0.4 : -1; // the shake, right after the stamp lands
     const shake = q > 0 && q < 1 && !reduced ? Math.sin(q * Math.PI * 2 * 3.5) * (1 - q) * (L.desktop ? 4 : 3) : 0;
-    return { stars, win, winSilver, xs, shake };
+    return { stars, win, winSilver, landed, flying, shake, sackoCount: lost.length };
   }
-  // the ribbon's edges for a person's 1st, 2nd and 3rd titles (0..1 each, as each star lands)
+  // the ribbon's dressing for a person's titles (0..1 each, as each star lands):
+  // 1st gold foil edges, 2nd platinum inside them, 3rd gold chevrons, 4th double chevrons
   const edgesOf = (p: string) => {
     const t = titles[p] ?? [];
-    return { gold: t[0] ? starOf(t[0]) : 0, plat: t[1] ? starOf(t[1]) : 0, chev: t[2] ? starOf(t[2]) : 0 };
+    const at = (k: number) => (t[k] ? starOf(t[k]) : 0);
+    return { gold: at(0), plat: at(1), chev: at(2), chev2: at(3) };
   };
   const grayOf = (st: AvatarState) => (st.cut ? (fx[st.cut]?.g ?? 1) : st.gray);
 
@@ -410,6 +419,8 @@
         class:founder={c.founder}
         class:constant={c.constant}
         class:chev={c.chev > 0}
+        class:chev2={c.chev2 > 0.5}
+        class:dotted={c.dotted}
         style:--chev={c.chev}
         aria-label={people[c.person].name}
         style:--tone={people[c.person].color}
@@ -537,8 +548,7 @@
         style:opacity={a.st.opacity}
         style:--glow={a.st.flying}
         style:--win={h?.win ?? 0}
-        style:--win-tone={h?.winSilver ? '#dfe5ea' : 'var(--gold)'}
-        style:--gray={fanned && ip !== undefined ? 0.35 : grayOf(a.st)}
+        style:--win-tone={h?.winSilver ? '#dfe5ea' : 'var(--gold)'}        style:--gray={fanned && ip !== undefined ? 0.35 : grayOf(a.st)}
         style:--tone={people[a.p].color}
         style:--i={ip ?? 0}
         style:transform="translate3d({v.x - L.av / 2 + (h?.shake ?? 0)}px,{v.y - L.av / 2}px,0) rotate({v.rot}deg) scale({v.scale * (1 + (h?.win ?? 0) * 0.24)})"
@@ -546,18 +556,23 @@
       >
         <Avatar id={a.p} size={L.av} live />
         {#if h?.stars.length}
-          <span class="stars" aria-label="{h.stars.filter((x) => !x.silver).length} titles, {h.stars.filter((x) => x.silver).length} silver stars">
-            {#each h.stars as st, k (k)}
-              <svg class:silver={st.silver} viewBox="0 0 10 10" style:transform="translate({st.x}px,0) scale({st.sc})" aria-hidden="true"><path d="M5 .4l1.4 3 3.2.3-2.4 2.2.7 3.2L5 7.5 2.1 9.1l.7-3.2L.4 3.7l3.2-.3z" /></svg>
-              {#if st.ast}<b class="ast" style:transform="translate({st.x + 4}px,-3px) scale({st.sc})">*</b>{/if}
+          <span class="stars" aria-label={h.stars.map((x) => `${x.n} ${x.kind === 'gold' ? 'title' : 'silver star'}${x.n > 1 ? 's' : ''}`).join(', ')}>
+            {#each h.stars as st (st.kind)}
+              <svg class:silver={st.kind === 'silver'} viewBox="0 0 10 10" style:transform="translate({st.x}px,0) scale({st.sc})" aria-hidden="true"><path d="M5 .4l1.4 3 3.2.3-2.4 2.2.7 3.2L5 7.5 2.1 9.1l.7-3.2L.4 3.7l3.2-.3z" /></svg>
+              {#if st.ast}<b class="ast" style:transform="translate({st.x + 4}px,-3px)">*</b>{/if}
+              {#if st.n > 1}<b class="cnt" class:silver={st.kind === 'silver'} style:transform="translate({st.x + (st.ast ? 8 : 5)}px,0)">×{st.n}</b>{/if}
             {/each}
           </span>
         {/if}
-        {#if h?.xs.length}
-          <span class="sackos" aria-label="{h.xs.length} sacko{h.xs.length > 1 ? 's' : ''}">
-            {#each h.xs as x, k (k)}
+        {#if h && h.sackoCount}
+          <span class="sackos" aria-label="{h.sackoCount} sacko{h.sackoCount > 1 ? 's' : ''}">
+            {#if h.landed}
+              <svg viewBox="0 0 10 10" style:width="8px" style:height="8px" style:transform="translate(0px,{-L.av / 2 - 5}px) translate(-50%,-50%)" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" /></svg>
+              {#if h.landed > 1}<b class="cnt sk" style:transform="translate(5px,{-L.av / 2 - 10}px)">×{h.landed}</b>{/if}
+            {/if}
+            {#each h.flying as x, k (k)}
               <svg
-                class:big={x.big}
+                class="big"
                 viewBox="0 0 10 10"
                 style:width="{x.size}px"
                 style:height="{x.size}px"
@@ -704,14 +719,29 @@
       calc(100% - 2px) calc(var(--py) + 40px);
   }
   .col.chev::after {
-    /* a third title: gold chevrons running down the ribbon (anchored to the timeline) */
+    /* a third title: gold chevrons running down the ribbon (anchored to the timeline), kept in
+       off the edges so they don't run into the foil; a fourth doubles them */
+    content: '';
+    position: absolute;
+    inset: 0 5px;
+    background-image: var(--chevrons);
+    background-size: 100% calc(var(--cw) * 0.8);
+    background-position: 0 var(--py);
+    opacity: calc(var(--chev) * 0.55);
+    pointer-events: none;
+  }
+  .col.chev2::after {
+    background-image: var(--chevrons2);
+  }
+  .col.dotted::before {
+    /* current members who weren't founders: a fine dot texture, so they pop */
     content: '';
     position: absolute;
     inset: 0;
-    background-image: var(--chevrons);
-    background-size: var(--cw) calc(var(--cw) * 0.8);
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0.7px, transparent 1.1px);
+    background-size: 5px 5px;
     background-position: 0 var(--py);
-    opacity: calc(var(--chev) * 0.55);
+    opacity: calc(0.32 * (1 - var(--g, 0) * 0.5));
     pointer-events: none;
   }
   .col.constant {
@@ -968,6 +998,27 @@
   .stars svg.silver {
     fill: #e3e8ee;
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 4px rgba(227, 232, 238, 0.6));
+  }
+  .cnt {
+    position: absolute;
+    left: 0;
+    top: -0.5px;
+    font-size: 8.5px;
+    line-height: 10px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--gold);
+    text-shadow:
+      0 0 2px #000,
+      0 0 1px #000;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .cnt.silver {
+    color: #e3e8ee;
+  }
+  .cnt.sk {
+    color: #ff6b70;
   }
   .stars .ast {
     position: absolute;

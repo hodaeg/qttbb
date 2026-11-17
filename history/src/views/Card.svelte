@@ -24,6 +24,11 @@
           <Avatar id={s.sacko} size={28} /><span><small>Sacko</small><b class="display">{people[s.sacko].name}</b></span>
         </button>
       {/if}
+      {#each s.silverStars ?? [] as sv}
+        <button class="line pressable" onclick={() => onperson(sv.person)}>
+          <Avatar id={sv.person} size={28} /><span><small>Silver star · {sv.why}</small><b class="display">{people[sv.person].name}</b></span>
+        </button>
+      {/each}
     </article>
 {:else}
     <article class:beat={card.kind === 'beat'}>
