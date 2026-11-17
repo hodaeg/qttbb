@@ -17,6 +17,9 @@
   const played = $derived(new Set((tenures[id] ?? []).flatMap((t) => Array.from({ length: t.end - t.start + 1 }, (_, i) => t.start + i))));
   const titles = $derived(Object.entries(legacy.seasons).filter(([, s]) => s.champion === id).map(([y]) => y));
   const sackos = $derived(Object.entries(legacy.seasons).filter(([, s]) => s.sacko === id).map(([y]) => y));
+  const silver = $derived(
+    Object.entries(legacy.seasons).flatMap(([y, s]) => (s.silverStars ?? []).filter((x) => x.person === id).map((x) => ({ year: y, why: x.why }))),
+  );
 </script>
 
 <header>
@@ -43,12 +46,13 @@
     <div><b>{lg.sackos}</b><span>Sackos</span></div>
     <div><b>{lg.playoffAppearances}</b><span>Playoffs</span></div>
   </div>
-  {#if titles.length || sackos.length}
-    <p class="cap">
-      {#if titles.length}Champion {titles.join(', ')}*{/if}{#if titles.length && sackos.length} · {/if}{#if sackos.length}Sacko {sackos.join(', ')}*{/if}
-      <br /><span class="fine">* seasons from 2019 on; earlier ones aren't on record yet</span>
-    </p>
-  {/if}
+{/if}
+{#if titles.length || sackos.length || silver.length}
+  <p class="cap">
+    {#if titles.length}Champion {titles.map((y) => y + (legacy.seasons[y].championAsterisk ? '*' : '')).join(', ')}{/if}{#if titles.length && sackos.length} · {/if}{#if sackos.length}Sacko {sackos.join(', ')}{/if}
+    {#each silver as s}<br />Silver star {s.year}: {s.why}{/each}
+    {#each titles.filter((y) => legacy.seasons[y].championAsterisk) as y}<br /><span class="fine">* {y}: {legacy.seasons[y].championAsterisk}</span>{/each}
+  </p>
 {/if}
 
 {#if p.story && p.story !== 'TODO'}<p class="story">{p.story}</p>{/if}

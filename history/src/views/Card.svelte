@@ -14,7 +14,7 @@
       <h3 class="display">{card.year}{s.source === 'sleeper' ? '*' : ''}</h3>
       {#if s.champion}
         <button class="line pressable" onclick={() => onperson(s.champion!)}>
-          <Avatar id={s.champion} size={28} /><span><small>Champion</small><b class="display">{people[s.champion].name}</b></span>
+          <Avatar id={s.champion} size={28} /><span><small>Champion{s.championAsterisk ? ` · * ${s.championAsterisk}` : ''}</small><b class="display">{people[s.champion].name}{s.championAsterisk ? '*' : ''}</b></span>
         </button>
       {:else}
         <p class="tbd">{s.complete ? 'Champion not on record yet' : 'Season in progress'}</p>
@@ -40,7 +40,7 @@
       {/if}
 
       {#if card.out?.length || (card.in?.length && !card.founders)}
-        <!-- who left rides a red arrow out to the right; who joined, a green arrow in from the right -->
+        <!-- who left rides a red arrow off the card (right); who joined, a green arrow into it (from the left) -->
         <div class="moves" class:compact={!full}>
           {#if card.out?.length}
             <div class="arrow out" role="group" aria-label="Out">{#each card.out as id}<button class="chip pressable" aria-label="{people[id].name} (out)" onclick={() => onperson(id)}><Avatar {id} size={22} /><span>{first(id)}</span></button>{/each}</div>
@@ -111,11 +111,11 @@
     clip-path: polygon(0 0, calc(100% - var(--head)) 0, 100% 50%, calc(100% - var(--head)) 100%, 0 100%);
   }
   .arrow.in {
-    /* left aligned under it, pointing in to the left */
+    /* left aligned under it, pointing right: into the card */
     align-self: flex-start;
-    padding-left: calc(var(--head) + 6px);
+    padding-right: calc(var(--head) + 6px);
     background: linear-gradient(to bottom, #36b26f, #208a50);
-    clip-path: polygon(var(--head) 0, 100% 0, 100% 100%, var(--head) 100%, 0 50%);
+    clip-path: polygon(0 0, calc(100% - var(--head)) 0, 100% 50%, calc(100% - var(--head)) 100%, 0 100%);
   }
   .chip {
     display: inline-flex;

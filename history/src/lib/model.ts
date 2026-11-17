@@ -17,7 +17,11 @@ export type Card = {
   in?: string[]; out?: string[]; returns?: string[]; founders?: string[]; season?: SeasonInfo;
   photos?: { src: string; alt: string }[];
 };
-export type SeasonInfo = { champion: string | null; runnerUp: string | null; sacko: string | null; ledScoring: string | null; complete: boolean; source: string };
+export type SeasonInfo = {
+  champion: string | null; runnerUp: string | null; sacko: string | null; ledScoring: string | null; complete: boolean; source: string;
+  championAsterisk?: string; // a * on that trophy, and why
+  silverStars?: { person: string; why: string }[]; // honours short of a title
+};
 export type Tenure = { slot: number; start: number; end: number };
 export type Segment = Tenure & { person: string };
 

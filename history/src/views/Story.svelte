@@ -138,7 +138,7 @@
   // Every ribbon runs to the bottom of the screen. Below the card's top edge it is in the card's
   // shadow (--lit: where the shadow starts, in the element's own pixels). Founders' ribbons are
   // there before the league, all in shadow, and the colour pours down them when 2011 starts.
-  type Piece = { key: string; person: string; slot: number; x: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean; chev: number };
+  type Piece = { key: string; person: string; slot: number; x: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean; gold: number; plat: number; chev: number };
   type Tail = Piece & { tf: string; p: number };
   // while scrolling the ribbons sway a little side to side, each on its own slow phase
   const sway = (slot: number) => {
@@ -171,7 +171,7 @@
       const f = fx[key] ?? { g: cut ? 1 : 0, x: 0 };
       const x = L.colX(seg.slot) - L.cw / 2 + f.x + sway(seg.slot);
       const litY = founding ? lerp(L.headerY - 30, tt, pourAt(L, seg.slot, w)) : tt; // screen
-      const base = { person: seg.person, slot: seg.slot, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person), chev: chevronOf(seg.person) };
+      const base = { person: seg.person, slot: seg.slot, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person), ...edgesOf(seg.person) };
 
       const mEnd = cut ? tailTop : floor;
       if (mEnd > top + 1) {
@@ -237,24 +237,24 @@
 
   // ---- markers that live on the columns: each season's champion and sacko
   const marks = $derived.by(() => {
-    const out: { key: string; kind: 'champ' | 'sacko'; person: string; x: number; y: number; pop: number; o: number }[] = [];
-    const add = (key: string, kind: 'champ' | 'sacko', person: string, slot: number, world: number) => {
+    type Kind = 'champ' | 'sacko' | 'silver';
+    const out: { key: string; kind: Kind; person: string; x: number; y: number; pop: number; o: number; star: boolean }[] = [];
+    const add = (key: string, kind: Kind, person: string, slot: number, world: number, star = false) => {
       const y = world - s;
       if (w <= world || y < 0 || y > L.P + 20) return;
       // a trophy or sacko X nearing the header merges into its owner's avatar (see honours below)
       const merge = clamp((L.headerY + L.av * 4 - y) / (L.av * 3));
-      if (merge >= (kind === 'champ' ? 1 : 0.5)) return; // the sacko X hands over to the stamp
-      out.push({ key, kind, person, x: L.colX(slot), y, pop: clamp((w - world) / (vh * 0.07)) * (1 - merge * 0.55), o: 1 - merge });
+      if (merge >= (kind === 'sacko' ? 0.5 : 1)) return; // the sacko X hands over to the stamp
+      out.push({ key, kind, person, x: L.colX(slot), y, pop: clamp((w - world) / (vh * 0.07)) * (1 - merge * 0.55), o: 1 - merge, star });
     };
     for (const [year, season] of Object.entries(legacy.seasons)) {
       const y = Number(year);
       if (!lineup[y]) continue;
       const mid = L.T[y] + L.bandH(y) * 0.5;
-      for (const kind of ['champ', 'sacko'] as const) {
-        const id = kind === 'champ' ? season.champion : season.sacko;
-        const slot = id ? lineup[y].indexOf(id) : -1;
-        if (id && slot >= 0) add(`${kind}${y}`, kind, id, slot, mid);
-      }
+      const slotOf = (id: string | null) => (id ? lineup[y].indexOf(id) : -1);
+      if (slotOf(season.champion) >= 0) add(`champ${y}`, 'champ', season.champion!, slotOf(season.champion), mid, !!season.championAsterisk);
+      if (slotOf(season.sacko) >= 0) add(`sacko${y}`, 'sacko', season.sacko!, slotOf(season.sacko), mid);
+      for (const sv of season.silverStars ?? []) if (slotOf(sv.person) >= 0) add(`silver${y}${sv.person}`, 'silver', sv.person, slotOf(sv.person), silverAt(y));
     }
     return out;
   });
@@ -317,37 +317,48 @@
     pileIx[a.p] !== undefined ? (fanned ? 45 : 12 + pileIx[a.p]) : a.st.flying > 0.02 ? 30 : 10;
   // ---- honours. A season's trophy (or sacko X) rides up its owner's column and merges into their
   // avatar as it nears the header. All of it is a pure function of the scroll, so it reverses.
-  // - title: a gold star grows under the avatar (middle out), the avatar swells with a gold glow,
-  //   and it earns a frame: 1 title gold foil, 2 a platinum frame outside that, 3+ a gold chevron
-  //   pattern on their ribbon;
+  // - title: a gold star grows under the avatar (middle out) and the avatar swells with a gold glow.
+  //   Their ribbon earns edges: 1 title gold foil, 2 platinum just inside it, 3+ gold chevrons;
+  // - a silver star (an honour short of a title, e.g. an undefeated regular season) lands the same way;
   // - sacko: an X stamps onto the avatar, which shakes, then the X shrinks into a row along the top.
   const titles: Record<string, number[]> = {};
   const sackos: Record<string, number[]> = {};
+  const silvers: Record<string, number[]> = {};
   for (const [year, season] of Object.entries(legacy.seasons)) {
     const y = Number(year);
     if (!lineup[y]) continue;
     if (season.champion && lineup[y].includes(season.champion)) (titles[season.champion] ??= []).push(y);
     if (season.sacko && lineup[y].includes(season.sacko)) (sackos[season.sacko] ??= []).push(y);
+    for (const sv of season.silverStars ?? []) if (lineup[y].includes(sv.person)) (silvers[sv.person] ??= []).push(y);
   }
-  /**
-   * 0..1 progress of a season's honour once its marker reaches the avatar. `d` is how far the marker
-   * has travelled into the avatar's zone; the moment then plays over `span` more pixels of scroll.
-   */
-  const reachOf = (year: number) => L.headerY + L.av * 4 - (L.T[year] + L.bandH(year) * 0.5 - s);
-  const starOf = (year: number) => clamp((reachOf(year) - L.av * 2.4) / (vh * 0.16));
-  const stampOf = (year: number) => clamp((reachOf(year) - L.av * 1.5) / (vh * 0.3));
+  // where on the timeline each marker sits: mid-season; a silver star a little after
+  const midOf = (y: number) => L.T[y] + L.bandH(y) * 0.5;
+  function silverAt(y: number) {
+    return L.T[y] + L.bandH(y) * 0.68;
+  }
+  /** 0..1 progress of an honour once its marker reaches the avatar; it plays over more scroll after that. */
+  const reach = (world: number) => L.headerY + L.av * 4 - (world - s);
+  const starOf = (year: number) => clamp((reach(midOf(year)) - L.av * 2.4) / (vh * 0.16));
+  const silverOf = (year: number) => clamp((reach(silverAt(year)) - L.av * 2.4) / (vh * 0.16));
+  const stampOf = (year: number) => clamp((reach(midOf(year)) - L.av * 1.5) / (vh * 0.3));
   const STAR_GAP = 7;
   const row = (list: number[]) => {
     const n = list.length - 1 + list[list.length - 1]; // the newest pushes the others apart as it grows
     return (k: number) => (k - (n - 1) / 2) * STAR_GAP;
   };
   function honoursOf(p: string) {
-    const won = (titles[p] ?? []).map(starOf).filter((g) => g > 0);
+    const got = [
+      ...(titles[p] ?? []).map((y) => ({ y, at: midOf(y), g: starOf(y), silver: false, ast: !!legacy.seasons[y].championAsterisk })),
+      ...(silvers[p] ?? []).map((y) => ({ y, at: silverAt(y), g: silverOf(y), silver: true, ast: false })),
+    ]
+      .filter((x) => x.g > 0)
+      .sort((a, b) => a.at - b.at);
     const lost = (sackos[p] ?? []).map(stampOf).filter((g) => g > 0);
-    const sx = won.length ? row(won) : () => 0;
-    const stars = won.map((g, k) => ({ x: sx(k), sc: back(g) }));
-    const newest = won.length ? won[won.length - 1] : 1;
-    const win = newest < 1 ? Math.sin(Math.PI * newest) : 0; // the swell and glow as a star lands
+    const sx = got.length ? row(got.map((x) => x.g)) : () => 0;
+    const stars = got.map((x, k) => ({ x: sx(k), sc: back(x.g), silver: x.silver, ast: x.ast }));
+    const newest = got[got.length - 1];
+    const win = newest && newest.g < 1 ? Math.sin(Math.PI * newest.g) : 0; // the swell and glow as a star lands
+    const winSilver = !!newest?.silver;
     // sacko X: stamp (big to on-the-face), sit while the avatar shakes, then shrink into the top row
     const xr = lost.length ? row(lost.map((g) => clamp((g - 0.65) / 0.35))) : () => 0;
     const xs = lost.map((g, k) => {
@@ -364,10 +375,13 @@
     });
     const q = lost.length ? (lost[lost.length - 1] - 0.25) / 0.4 : -1; // the shake, right after the stamp lands
     const shake = q > 0 && q < 1 && !reduced ? Math.sin(q * Math.PI * 2 * 3.5) * (1 - q) * (L.desktop ? 4 : 3) : 0;
-    return { stars, win, xs, shake, ring1: won[0] ?? 0, ring2: won[1] ?? 0 };
+    return { stars, win, winSilver, xs, shake };
   }
-  // the ribbon pattern for a third title (by person, for the columns)
-  const chevronOf = (p: string) => ((titles[p]?.length ?? 0) < 3 ? 0 : starOf(titles[p][2]));
+  // the ribbon's edges for a person's 1st, 2nd and 3rd titles (0..1 each, as each star lands)
+  const edgesOf = (p: string) => {
+    const t = titles[p] ?? [];
+    return { gold: t[0] ? starOf(t[0]) : 0, plat: t[1] ? starOf(t[1]) : 0, chev: t[2] ? starOf(t[2]) : 0 };
+  };
   const grayOf = (st: AvatarState) => (st.cut ? (fx[st.cut]?.g ?? 1) : st.gray);
 
   // ---- where we are in time (the dial and the tray read this)
@@ -407,7 +421,10 @@
         style:clip-path={c.clip}
         style:transform="translate3d({c.x}px,{c.y}px,0)"
         onclick={() => onperson(c.person)}
-      ></button>
+      >
+        {#if c.gold > 0}<i class="edge gold" style:opacity={c.gold}></i>{/if}
+        {#if c.plat > 0}<i class="edge plat" style:opacity={c.plat}></i>{/if}
+      </button>
     {/each}
     {#each field.tails as t (t.key)}
       <i
@@ -432,14 +449,17 @@
       </span>
     {/each}
     {#each marks as m (m.key)}
-      <span class="mark {m.kind}" style:opacity={m.o} title="{m.kind === 'champ' ? 'Champion' : 'Sacko'}: {people[m.person].name}" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop)})">
+      <span class="mark {m.kind}" style:opacity={m.o} title="{m.kind === 'champ' ? 'Champion' : m.kind === 'silver' ? 'Silver star' : 'Sacko'}: {people[m.person].name}" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop)})">
           <svg viewBox="0 0 16 16" width={Math.min(L.cw - 5, 18)} height={Math.min(L.cw - 5, 18)} aria-hidden="true">
             {#if m.kind === 'champ'}
               <path d="M4 2h8v3.2a4 4 0 0 1-8 0zM1.8 3H4v1.3H3.1A1.7 1.7 0 0 0 4.2 6l-.5 1.2A3 3 0 0 1 1.8 4.4zM12 3h2.2v1.4a3 3 0 0 1-1.9 2.8L11.8 6a1.7 1.7 0 0 0 1.1-1.7H12zM7.2 9h1.6v2.4H11V13H5v-1.6h2.2z" />
+            {:else if m.kind === 'silver'}
+              <path d="M8 .8l2.2 4.6 5 .5-3.8 3.4 1.1 5L8 11.8l-4.5 2.5 1.1-5L.8 5.9l5-.5z" />
             {:else}
               <path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6" />
             {/if}
           </svg>
+          {#if m.star}<b class="ast" aria-label="with an asterisk">*</b>{/if}
         </span>
     {/each}
   </div>
@@ -505,7 +525,7 @@
     {#if a.st.opacity > 0.01 && a.st.y > -L.av * 1.2}
       {@const v = view(a)}
       {@const ip = pileIx[a.p]}
-      {@const h = titles[a.p] || sackos[a.p] ? honoursOf(a.p) : null}
+      {@const h = titles[a.p] || sackos[a.p] || silvers[a.p] ? honoursOf(a.p) : null}
       <button
         class="av"
         class:piled={ip !== undefined}
@@ -517,19 +537,19 @@
         style:opacity={a.st.opacity}
         style:--glow={a.st.flying}
         style:--win={h?.win ?? 0}
+        style:--win-tone={h?.winSilver ? '#dfe5ea' : 'var(--gold)'}
         style:--gray={fanned && ip !== undefined ? 0.35 : grayOf(a.st)}
         style:--tone={people[a.p].color}
         style:--i={ip ?? 0}
         style:transform="translate3d({v.x - L.av / 2 + (h?.shake ?? 0)}px,{v.y - L.av / 2}px,0) rotate({v.rot}deg) scale({v.scale * (1 + (h?.win ?? 0) * 0.24)})"
         onclick={() => tapAvatar(a)}
       >
-        {#if h && h.ring2 > 0}<i class="ring plat" style:opacity={h.ring2}></i>{/if}
-        {#if h && h.ring1 > 0}<i class="ring gold" style:opacity={h.ring1}></i>{/if}
         <Avatar id={a.p} size={L.av} live />
         {#if h?.stars.length}
-          <span class="stars" aria-label="{h.stars.length} title{h.stars.length > 1 ? 's' : ''}">
+          <span class="stars" aria-label="{h.stars.filter((x) => !x.silver).length} titles, {h.stars.filter((x) => x.silver).length} silver stars">
             {#each h.stars as st, k (k)}
-              <svg viewBox="0 0 10 10" style:transform="translate({st.x}px,0) scale({st.sc})" aria-hidden="true"><path d="M5 .4l1.4 3 3.2.3-2.4 2.2.7 3.2L5 7.5 2.1 9.1l.7-3.2L.4 3.7l3.2-.3z" /></svg>
+              <svg class:silver={st.silver} viewBox="0 0 10 10" style:transform="translate({st.x}px,0) scale({st.sc})" aria-hidden="true"><path d="M5 .4l1.4 3 3.2.3-2.4 2.2.7 3.2L5 7.5 2.1 9.1l.7-3.2L.4 3.7l3.2-.3z" /></svg>
+              {#if st.ast}<b class="ast" style:transform="translate({st.x + 4}px,-3px) scale({st.sc})">*</b>{/if}
             {/each}
           </span>
         {/if}
@@ -662,7 +682,28 @@
     background-position: 0 var(--py);
     opacity: calc(var(--regal) * (1 - var(--g, 0) * 0.45));
     pointer-events: none;
-  }  .col.chev::after {
+  }  /* championship edges down the ribbon: gold foil for the first title, platinum inside it for the second */
+  .edge {
+    position: absolute;
+    inset: 0;
+    background-repeat: repeat-y;
+    pointer-events: none;
+  }
+  .edge.gold {
+    background-image: var(--foil-gold), var(--foil-gold);
+    background-size: 2px 96px;
+    background-position:
+      0 var(--py),
+      100% var(--py);
+  }
+  .edge.plat {
+    background-image: var(--foil-plat), var(--foil-plat);
+    background-size: 1.5px 96px;
+    background-position:
+      2px calc(var(--py) + 40px),
+      calc(100% - 2px) calc(var(--py) + 40px);
+  }
+  .col.chev::after {
     /* a third title: gold chevrons running down the ribbon (anchored to the timeline) */
     content: '';
     position: absolute;
@@ -706,7 +747,7 @@
   /* photos */
   .photos {
     inset: 0;
-    z-index: 4;
+    z-index: 11; /* above the avatars (10): a rising avatar passes behind photos and the card */
     pointer-events: none;
   }
   .photo {
@@ -747,7 +788,7 @@
 
   /* finale */
   .cardwrap {
-    z-index: 6;
+    z-index: 12;
     will-change: transform; /* never fade this wrapper: it would switch the glass off. Layers fade via --o */
   }
   .fin h3 {
@@ -874,29 +915,7 @@
     display: grid;
     place-items: center;
     filter: grayscale(var(--gray, 0)) drop-shadow(0 0 calc(var(--glow) * 12px) var(--tone))
-      drop-shadow(0 0 calc(var(--win, 0) * 14px) color-mix(in srgb, var(--gold) calc(var(--win, 0) * 100%), transparent));
-  }
-  /* championship frames: gold foil for the first title, platinum outside it for the second */
-  .ring {
-    position: absolute;
-    pointer-events: none;
-    padding: 2px;
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    mask-composite: exclude;
-  }
-  .ring.gold {
-    inset: -3px;
-    background: conic-gradient(from 210deg, #8a6510, #f8dc84, #b8861c, #fff4c4, #a77a14, #f2cf6a, #8a6510);
-  }
-  .ring.plat {
-    inset: -6px;
-    background: conic-gradient(from 30deg, #8d96a0, #f5f8fb, #aeb7c1, #ffffff, #8a939d, #dfe5ea, #8d96a0);
+      drop-shadow(0 0 calc(var(--win, 0) * 14px) color-mix(in srgb, var(--win-tone, var(--gold)) calc(var(--win, 0) * 100%), transparent));
   }
   /* sacko: the X stamps onto the face, then sits in a row along the top */
   .sackos {
@@ -945,6 +964,36 @@
     height: 9px;
     fill: var(--gold);
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 4px color-mix(in srgb, var(--gold) 70%, transparent));
+  }
+  .stars svg.silver {
+    fill: #e3e8ee;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 4px rgba(227, 232, 238, 0.6));
+  }
+  .stars .ast {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 800;
+    color: var(--gold);
+    text-shadow: 0 0 2px #000;
+  }
+  .mark .ast {
+    position: absolute;
+    right: -6px;
+    top: -5px;
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+  }
+  .mark.silver path {
+    fill: #e3e8ee;
+  }
+  .mark.silver {
+    filter: drop-shadow(0 0 5px rgba(227, 232, 238, 0.7));
   }
   .returns {
     position: absolute;

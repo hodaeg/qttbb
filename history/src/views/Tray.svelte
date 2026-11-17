@@ -70,7 +70,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 12; /* above avatars (10) and photos (11) */
     will-change: transform; /* never fade this wrapper: it would switch the glass off. Layers fade via --o */
   }
   .pips {

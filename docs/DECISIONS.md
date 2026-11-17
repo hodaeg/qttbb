@@ -353,3 +353,9 @@ Levi's next round, and what changed:
 - **Honours, all scroll-driven:** a title's star now lands with the avatar swelling (up to 1.24x) and glowing gold. Frames: 1st title a gold-foil frame, 2nd a platinum frame outside it, 3rd gold chevrons on their ribbon (different from the founders' lattice). A sacko's X slams onto the avatar (2.4x to 1x), the avatar shakes, then the X shrinks into a row along the top. Each plays over ~130–240px of scroll so it can be seen.
 - **Type sets B and C replaced:** B = Schibsted Grotesk (newsroom, heavy and tight); C = Anybody stretched wide in caps with Figtree for text. A unchanged.
 - Story cards get a 2px radius. "Tattoo Adam" is a different person from league Adam: new outsider `tattoo-adam`. Jon's avatar; Josh's crop lowered.
+
+### D42 — History app: the ESPN-era results, title edges on ribbons, silver stars — Accepted
+- **2011–2018 champions and sackos** from Levi, in `content/legacy-manual.json`: 2011 Zaid/Adam, 2012 Mike/Adam, 2013 Ben/Andy, 2014 Max*/Zaid, 2015 Kyle/Jon, 2016 Kyle/Max, 2017 Mike/Zaid, 2018 Max/Suze. Max's 2014 title carries an asterisk ("the dubious trade") on its trophy, its star and his person sheet. New manual fields: `asterisks` (year → why) and `silverStars` (year → [{person, why}]); first silver star: Levi 2024, undefeated regular season (14-0). It rides up the ribbon and joins the star row in silver.
+- **Title borders go on the ribbon edges, not the avatar** (frames were too busy): 1st title gold foil down both edges, 2nd platinum just inside it, 3rd gold chevrons. With the ESPN years in, Mike and Kyle now have chevrons.
+- **Avatars pass behind photos and cards** (avatars 10, photos 11, card 12).
+- **In arrow points right too:** red "out" arrow points off the card, green "in" arrow points into it.

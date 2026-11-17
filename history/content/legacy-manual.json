@@ -1,6 +1,8 @@
 {
-  "_about": "Hand-filled history for the ESPN years, which can't be pulled from anywhere. 2019 and later come from the data pipeline automatically. Put a person id (see people.json) for each season you know; leave null for unknown. 'notes' is free text shown on that season's card.",
-  "champions": { "2011": null, "2012": null, "2013": null, "2014": null, "2015": null, "2016": null, "2017": null, "2018": null },
-  "sackos": { "2011": null, "2012": null, "2013": null, "2014": null, "2015": null, "2016": null, "2017": null, "2018": null },
+  "_about": "Hand-filled history for the ESPN years, which can't be pulled from anywhere. 2019 and later come from the data pipeline automatically. Put a person id (see people.json) for each season you know; leave null for unknown. 'notes' is free text shown on that season's card. 'asterisks' puts a * on that season's trophy, with the reason. 'silverStars' are honours short of a title (any season), shown as a silver star on the avatar.",
+  "champions": { "2011": "zaid-hunitie", "2012": "mike-whiting", "2013": "ben-rydberg", "2014": "max-christensen", "2015": "kyle-mont-blanc", "2016": "kyle-mont-blanc", "2017": "mike-whiting", "2018": "max-christensen" },
+  "sackos": { "2011": "adam-herr", "2012": "adam-herr", "2013": "andy-althoff", "2014": "zaid-hunitie", "2015": "jon-petters", "2016": "max-christensen", "2017": "zaid-hunitie", "2018": "josh-susee" },
+  "asterisks": { "2014": "The dubious trade" },
+  "silverStars": { "2024": [{ "person": "levi-nellen", "why": "Undefeated regular season (14-0)" }] },
   "notes": {}
 }

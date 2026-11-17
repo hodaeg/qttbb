@@ -42,6 +42,8 @@ for (const r of lr.rankings) {
 for (const [year, champ] of Object.entries(manual.champions)) {
   seasons[year] ??= { champion: champ, runnerUp: null, sacko: manual.sackos?.[year] ?? null, ledScoring: null, complete: true, source: 'manual' };
 }
+for (const [year, why] of Object.entries(manual.asterisks ?? {})) if (seasons[year]) seasons[year].championAsterisk = why;
+for (const [year, list] of Object.entries(manual.silverStars ?? {})) if (seasons[year]) seasons[year].silverStars = list;
 rankings.sort((a, b) => a.rank - b.rank);
 
 const out = {
