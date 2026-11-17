@@ -18,6 +18,7 @@ export type Card = {
   photos?: { src: string; alt: string }[];
   arrive?: string[]; // ribbons that come in with this card even though it doesn't name them
   at?: number; // the year whose stretch of the timeline shows this card, if not `year`
+  results?: number; // in story.json: this card carries that season's champion/sacko lines
 };
 /** The year whose band a card is shown in. */
 export const shownIn = (c: Card) => c.at ?? c.year;
@@ -81,16 +82,26 @@ export function yearsLabel(p: string): string {
 // sit on the ribbons right at the year line that closes it, so they land on the avatars just after
 // that line passes: the season's card therefore leads the *next* year's stretch of the timeline
 // (`at`), and stays up until they've landed. The current season has no next year; it closes its own.
-const storyCards = storyFile.cards as Card[];
+const storyFileCards = storyFile.cards as Card[];
+const seasonExtras = storyFileCards.filter((c) => c.kind === 'season'); // fun facts for a generated season card
+const storyCards = storyFileCards.filter((c) => c.kind !== 'season');
 export const cards: Card[] = [...storyCards];
 for (let y = FIRST; y <= LAST; y++) {
   const season = legacy.seasons[String(y)];
   if (!season) continue;
+  const at = y < LAST ? y + 1 : y;
+  const carrier = cards.find((c) => c.results === y); // a story card that tells this season itself
+  if (carrier) {
+    carrier.season = season;
+    carrier.at = at;
+    continue;
+  }
+  const extra = seasonExtras.find((c) => c.year === y);
   let i = -1;
   cards.forEach((c, k) => {
     if (c.year <= y) i = k;
   });
-  cards.splice(i + 1, 0, { year: y, title: String(y), body: '', kind: 'season', season, at: y < LAST ? y + 1 : y });
+  cards.splice(i + 1, 0, { year: y, title: String(y), body: '', kind: 'season', season, at, funFact: extra?.funFact });
 }
 
 // Rich text: "[[id|Name]]" -> tappable name.
@@ -143,7 +154,13 @@ export function makeLayout(vh: number, W: number) {
   // How much scrolling each year gets: every card needs time on the tray, and each photo a little
   // more. A season card leading the next year needs the most: its trophy, star and sacko stamp ride
   // up from the year line and land on the avatars (~0.8 of a screen) while it's showing.
-  const weight = (c: Card) => (c.kind === 'season' && shownIn(c) !== c.year ? 0.95 : 0.55 + 0.22 * (c.photos?.length ?? 0));
+  // In the years with cuts (to 2016), the next story card (who left, who joined) follows quickly.
+  const weight = (c: Card) => {
+    const base = 0.55 + 0.22 * (c.photos?.length ?? 0);
+    if (!c.season || shownIn(c) === c.year) return base;
+    if (shownIn(c) > 2016) return 0.95;
+    return 0.3 + (c.funFact ? 0.06 : 0) + (c.body ? 0.3 : 0); // ~0.38 screen: just past the sacko stamp
+  };
   const bandH = (y: number) => {
     const list = perYear[y] ?? [];
     return vh * (list.length ? 0.2 + list.reduce((t, c) => t + weight(c), 0) : 0.5) + (y === FIRST ? vh * 0.7 : 0);

@@ -243,7 +243,7 @@
     type Kind = 'champ' | 'sacko' | 'silver';
     const out: { key: string; kind: Kind; person: string; x: number; y: number; pop: number; o: number; star: boolean }[] = [];
     const add = (key: string, kind: Kind, person: string, slot: number, world: number, star = false) => {
-      const y = world - s;
+      const y = markY(world);
       if (w <= world || y < 0 || y > L.P + 20) return;
       // a trophy or sacko X nearing the header merges into its owner's avatar (see honours below)
       const merge = clamp((L.headerY + L.av * 4 - y) / (L.av * 3));
@@ -343,10 +343,19 @@
     return L.top(y + 1) - L.cutH - L.av * 0.8;
   }
   const midOf = honourAt;
+  /**
+   * Where a marker is on screen. Until it reaches the playhead it sits on its ribbon; from there it
+   * rides up to the avatars MARK_SPEED times faster than the scroll, so a season's honours land
+   * within ~0.4 of a screen and the next card (who left, who joined) can follow quickly.
+   */
+  const MARK_SPEED = 2.6;
+  function markY(world: number) {
+    return w < world ? world - s : L.P - (w - world) * MARK_SPEED;
+  }
   /** 0..1 progress of an honour once its marker reaches the avatar; it plays over more scroll after that. */
-  const reach = (world: number) => L.headerY + L.av * 4 - (world - s);
-  const starOf = (year: number) => clamp((reach(midOf(year)) - L.av * 2.4) / (vh * 0.16));
-  const stampOf = (year: number) => clamp((reach(midOf(year)) - L.av * 1.5) / (vh * 0.3));
+  const reach = (world: number) => L.headerY + L.av * 4 - markY(world);
+  const starOf = (year: number) => clamp((reach(midOf(year)) - L.av * 2.4) / (MARK_SPEED * vh * 0.09));
+  const stampOf = (year: number) => clamp((reach(midOf(year)) - L.av * 1.5) / (MARK_SPEED * vh * 0.15));
 
   // One icon per kind, with a count once there is more than one (x2, x3 ...), instead of a row of icons.
   // A new one: the first grows in; later ones bump the icon and tick the count up halfway through.

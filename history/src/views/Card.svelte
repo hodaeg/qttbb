@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { people, type Card } from '../lib/model';
+  import { people, type Card, type SeasonInfo } from '../lib/model';
   import Rich from './Rich.svelte';
   import Avatar from './Avatar.svelte';
 
@@ -8,27 +8,32 @@
   const first = (id: string) => people[id].nickname ?? people[id].name.split(' ')[0];
 </script>
 
+{#snippet results(s: SeasonInfo)}
+  {#if s.champion}
+    <button class="line pressable" onclick={() => onperson(s.champion!)}>
+      <Avatar id={s.champion} size={28} /><span><small>Champion{s.championAsterisk ? ` · * ${s.championAsterisk}` : ''}</small><b class="display">{people[s.champion].name}{s.championAsterisk ? '*' : ''}</b></span>
+    </button>
+  {:else}
+    <p class="tbd">{s.complete ? 'Champion not on record yet' : 'Season in progress'}</p>
+  {/if}
+  {#if s.sacko}
+    <button class="line pressable" onclick={() => onperson(s.sacko!)}>
+      <Avatar id={s.sacko} size={28} /><span><small>Sacko</small><b class="display">{people[s.sacko].name}</b></span>
+    </button>
+  {/if}
+  {#each s.silverStars ?? [] as sv}
+    <button class="line pressable" onclick={() => onperson(sv.person)}>
+      <Avatar id={sv.person} size={28} /><span><small>Silver star · {sv.why}</small><b class="display">{people[sv.person].name}</b></span>
+    </button>
+  {/each}
+{/snippet}
+
 {#if card.kind === 'season' && card.season}
   {@const s = card.season}
     <article class="season">
       <h3 class="display">{card.year}{s.source === 'sleeper' ? '*' : ''}</h3>
-      {#if s.champion}
-        <button class="line pressable" onclick={() => onperson(s.champion!)}>
-          <Avatar id={s.champion} size={28} /><span><small>Champion{s.championAsterisk ? ` · * ${s.championAsterisk}` : ''}</small><b class="display">{people[s.champion].name}{s.championAsterisk ? '*' : ''}</b></span>
-        </button>
-      {:else}
-        <p class="tbd">{s.complete ? 'Champion not on record yet' : 'Season in progress'}</p>
-      {/if}
-      {#if s.sacko}
-        <button class="line pressable" onclick={() => onperson(s.sacko!)}>
-          <Avatar id={s.sacko} size={28} /><span><small>Sacko</small><b class="display">{people[s.sacko].name}</b></span>
-        </button>
-      {/if}
-      {#each s.silverStars ?? [] as sv}
-        <button class="line pressable" onclick={() => onperson(sv.person)}>
-          <Avatar id={sv.person} size={28} /><span><small>Silver star · {sv.why}</small><b class="display">{people[sv.person].name}</b></span>
-        </button>
-      {/each}
+      {@render results(s)}
+      {#if card.funFact}<p class="fact"><b>Fun fact</b> <Rich text={card.funFact} {onperson} /></p>{/if}
     </article>
 {:else}
     <article class:beat={card.kind === 'beat'}>
@@ -54,6 +59,10 @@
             <div class="arrow in" role="group" aria-label="In">{#each card.in as id}<button class="chip pressable" aria-label="{people[id].name} (in{card.returns?.includes(id) ? ', returning' : ''})" onclick={() => onperson(id)}><Avatar {id} size={22} /><span>{first(id)}{card.returns?.includes(id) ? ' ↩' : ''}</span></button>{/each}</div>
           {/if}
         </div>
+      {/if}
+
+      {#if card.season}
+        <div class="season results">{@render results(card.season)}</div>
       {/if}
 
       {#if card.funFact}<p class="fact"><b>Fun fact</b> <Rich text={card.funFact} {onperson} /></p>{/if}
@@ -152,6 +161,11 @@
   .season {
     display: grid;
     gap: 8px;
+  }
+  .results {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--glass-line);
   }
   .line {
     display: flex;

@@ -385,3 +385,8 @@ Levi's next round, and what changed:
 - Each season's trophy, silver star and sacko X sit on the ribbon just above the year line that ends that season (~32px above it at phone size), so they land on the avatars just after that line passes.
 - To match, each season's champion/sacko card now **leads the next year's stretch** of the timeline (new card field `at`, helper `shownIn()`), with ~0.95 of a screen of its own so the honours land while it's up. The current season, with no closing line yet, keeps its card and markers in its own year. Year lengths are now just the sum of their cards (the season minimum from D44 is gone).
 - Measured at phone size: the season card appears as the line passes, the star and stamp land ~0.5–0.7 of a screen later, and the card changes ~0.3 of a screen after that.
+
+### D48 — History app: quicker honours, next card sooner, merged cards — Accepted
+- **Markers ride up 2.6x faster than the scroll** once they pass the playhead (star over 0.09 screen, stamp over 0.15 screen after arriving), so a season's honours land within ~0.3 screen of its closing year line.
+- **Cut years (to 2016): the next story card follows right after**: the season card leading the next year is ~0.38 screen (+ a little for a fun fact, more for a story card carrying results). Measured: honours land with the year line ~220px from the top; the next card (who left, who joined) arrives with the line at ~115–190px. Later seasons keep ~1 screen each.
+- **Merged cards:** "Wrestling" is the 2011 season card's fun fact, "The frat" the 2012 one's (story.json entries with `kind: "season"`). "Suze and Jordan" now precedes "A tumultuous season", which carries the 2014 champion/sacko lines itself (`results: 2014`) instead of a separate card.

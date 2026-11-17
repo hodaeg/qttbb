@@ -1,5 +1,5 @@
 {
-  "_about": "The glass info cards, in order. One or more per year. Write names as [[person-id|Display name]] to make them tappable. 'in' and 'out' list who joined or left the league that season. 'quote' is an optional pull-quote. 'kind': 'beat' marks a big held moment. Levi's voice; edit freely. 'photos' is an optional list of {src, alt} (files in public/photos); they slide in from the left one after another while the card is up. 'arrive' lists people whose ribbons come in with this card even though it doesn't name them.",
+  "_about": "The glass info cards, in order. One or more per year. Write names as [[person-id|Display name]] to make them tappable. 'in' and 'out' list who joined or left the league that season. 'quote' is an optional pull-quote. 'kind': 'beat' marks a big held moment. Levi's voice; edit freely. 'photos' is an optional list of {src, alt} (files in public/photos); they slide in from the left one after another while the card is up. 'arrive' lists people whose ribbons come in with this card even though it doesn't name them. A card with \"kind\": \"season\" (and an empty body) adds a fun fact to that year's generated champion/sacko card. \"results\": <year> on a story card makes it carry that season's champion/sacko lines instead of a separate card.",
   "cards": [
     {
       "year": 2002,
@@ -148,8 +148,9 @@
     },
     {
       "year": 2011,
-      "title": "Wrestling",
-      "body": "[[adam-herr|Adam]] meets [[mike-whiting|Mike Whiting]] as class project partners; both love wrestling."
+      "kind": "season",
+      "body": "",
+      "funFact": "[[adam-herr|Adam]] meets [[mike-whiting|Mike Whiting]] as class project partners; both love wrestling."
     },
     {
       "year": 2012,
@@ -172,8 +173,9 @@
     },
     {
       "year": 2012,
-      "title": "The frat",
-      "body": "[[tim-comes|Tim Comes]] starts a frat; [[mike-whiting|Mike]], [[jon-petters|Jon Petters]] and [[adam-herr|Adam]] join."
+      "kind": "season",
+      "body": "",
+      "funFact": "[[tim-comes|Tim Comes]] starts a frat; [[mike-whiting|Mike]], [[jon-petters|Jon Petters]] and [[adam-herr|Adam]] join."
     },
     {
       "year": 2013,
@@ -195,6 +197,16 @@
     },
     {
       "year": 2014,
+      "title": "Suze and Jordan",
+      "body": "Many in the league have met [[josh-susee|Suze]] over the years (Levi's high school friend), so he and [[jordan-morris|Jordan]] join. Jordan's way in: [[kyle-mont-blanc|Kyle]] met him through [[fish|\"Fish\"]], a high school friend of Kyle's who lived in the West Campus dorms with Jordan.",
+      "quote": {
+        "by": "max-christensen",
+        "text": "Personally, I don't want him. That's just me, everybody can have their own opinion.",
+        "context": "On Jordan being offered a spot"
+      }
+    },
+    {
+      "year": 2014,
       "title": "A tumultuous season",
       "kind": "beat",
       "body": "[[max-christensen|Max]]'s one and only year as commissioner. He fleeces [[ben-rydberg|Ben Rydberg]] in a dubious trade, pushes it through himself, and wins the title (hence the asterisk). He's voted out, and [[levi-nellen|Levi]] is reinstated.",
@@ -205,17 +217,8 @@
       "in": [
         "jordan-morris",
         "josh-susee"
-      ]
-    },
-    {
-      "year": 2014,
-      "title": "Suze and Jordan",
-      "body": "Many in the league have met [[josh-susee|Suze]] over the years (Levi's high school friend), so he and [[jordan-morris|Jordan]] join. Jordan's way in: [[kyle-mont-blanc|Kyle]] met him through [[fish|\"Fish\"]], a high school friend of Kyle's who lived in the West Campus dorms with Jordan.",
-      "quote": {
-        "by": "max-christensen",
-        "text": "Personally, I don't want him. That's just me, everybody can have their own opinion.",
-        "context": "On Jordan being offered a spot"
-      }
+      ],
+      "results": 2014
     },
     {
       "year": 2016,
