@@ -310,3 +310,14 @@ Planned on Fable 5.2, built on Opus 5.5. Levi's notes on D36 and what changed:
 - **The pile is a pile.** Every alumnus is stacked with small offsets and rotations, newest on top. Tapping it fans the avatars out to the left and down with names; tapping one there opens their sheet; tap again, tap outside or scroll to close. The alumni drawer (`AlumniPanel.svelte`) is removed.
 - **Fix:** the stage is now `overflow: clip`; with `hidden`, focus or scrollIntoView could scroll the whole stage sideways.
 **Not tested:** real touch, how the shake reads on a phone, light mode, wide screens.
+
+### D38 — History app: phone feedback round (dial, scroll jump, ribbons under the card, stars) — Accepted
+Levi's notes from his iPhone, and what changed:
+- **Scrolling up jumped down first.** Cause: the story is laid out in screen heights and was re-laid-out on every resize; on iPhone the address bar returning shrinks the window, so every band shrank and the story leapt forward. Fix: lay out once against the large viewport (a `100lvh` probe) and size the stage to it; the bar now just overlays the bottom.
+- **Dial was finicky.** Causes: a grab with no movement counted as a tap and jumped to the year under the finger; one year was only ~18px of travel; after release the wheel snapped back to the smoothed scroll. Fix: 6px slop before a drag starts, ~30px per year, a still grab never moves the story, the dial draws its own value until the scroll catches up. **Hold to zoom:** resting for 320ms (before or during a drag) zooms in like a video scrubber: quarter-year sub-ticks, 4x finer travel, settles on the nearest quarter, "Fine" label, lighter haptic.
+- **Dial moved to the bottom right**, level with the card tray.
+- **Name links** wear the person's avatar colour (members only).
+- **Ribbons run under the card** to the bottom of the screen, darkened, with the card's shadow falling on them just above it. Cuts and avatars still happen at the playhead.
+- **Founders' ribbons** get a fine serrated (pinking-shear) edge, via CSS mask.
+- **Championship stars:** a trophy rising toward the header merges into its owner's avatar and becomes a gold star; stars sit in a row under the avatar and the newest pushes the others apart as it grows (2019 on, until earlier champions are supplied). Token `--gold`.
+**Not tested:** the address-bar fix and the dial on a real iPhone (I can only simulate touch).

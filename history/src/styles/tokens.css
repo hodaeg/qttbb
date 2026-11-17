@@ -10,6 +10,7 @@
   --ink-3: #777a83;
   --accent: var(--ink); /* gold is parked for now: everything reads white, the members carry the colour */
   --thread: #666a75; /* a column once it has left for the alumni pile */
+  --gold: #f6c445; /* championship stars */
   --scrim: rgba(4, 5, 8, 0.6);
   --ghost: rgba(255, 255, 255, 0.12); /* the giant year numeral */
   --line: rgba(255, 255, 255, 0.14);
@@ -79,6 +80,7 @@
     --ink-2: #47494f;
     --ink-3: #7b7d84;
     --thread: #a3a5ab;
+    --gold: #c98f00;
     --scrim: rgba(30, 30, 34, 0.35);
     --ghost: rgba(0, 0, 0, 0.07);
     --line: rgba(0, 0, 0, 0.12);

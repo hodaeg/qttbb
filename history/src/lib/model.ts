@@ -161,7 +161,8 @@ export function makeLayout(vh: number, W: number) {
 
   const pile = { x: W - (desktop ? 60 : 30), y: headerY };
   const dialR = desktop ? 190 : 150;
-  const dial = { r: dialR, sliver: desktop ? 78 : 50, cy: Math.round(P - dialR * 0.35), step: 8 }; // step: degrees per year stop
+  // bottom right, level with the card tray. step: degrees per year stop (zoomed in, ZOOM times that)
+  const dial = { r: dialR, sliver: desktop ? 78 : 50, cy: Math.round(Math.min(trayTop + trayH * 0.5, vh - dialR * 0.62)), step: 13 };
   const finale = end + vh * 0.35;
   const pageHeight = finale - P + vh * 1.15;
 

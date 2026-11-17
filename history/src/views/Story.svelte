@@ -43,8 +43,15 @@
     setType(new URLSearchParams(location.search).get('type') ?? saved ?? 'a');
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     reduced = mq.matches;
+    // Lay the story out against the *large* viewport (address bar hidden), measured with a 100lvh
+    // probe. On iPhone the bar comes back when you scroll up; if that re-measured the page, every
+    // band would shrink and the story would leap forward. The bar just overlays the bottom instead.
+    const probe = document.createElement('div');
+    probe.style.cssText = 'position:fixed;top:0;left:0;width:0;height:100lvh;visibility:hidden;pointer-events:none';
+    document.body.append(probe);
     const size = () => {
-      vh = window.innerHeight;
+      const tall = probe.offsetHeight || window.innerHeight;
+      vh = Math.max(tall, window.innerHeight);
       W = document.documentElement.clientWidth;
     };
     size();
@@ -71,6 +78,7 @@
     raf = requestAnimationFrame(tick);
     return () => {
       cancelAnimationFrame(raf);
+      probe.remove();
       window.removeEventListener('resize', size);
       window.removeEventListener('scroll', onScroll);
     };
@@ -121,9 +129,11 @@
   // ---- columns. A leaving column is sliced on the diagonal; its replacement starts with the matching slice.
   type Piece = { key: string; person: string; x: number; y: number; h: number; clip: string; g: number; py: number; founder: boolean; constant: boolean };
   type Tail = Piece & { tf: string; p: number };
+  type Under = { key: string; person: string; x: number; py: number; founder: boolean };
   const field = $derived.by(() => {
     const cols: Piece[] = [];
     const tails: Tail[] = [];
+    const under: Under[] = [];
     const lips: { key: string; x: number; y: number; tone: string }[] = [];
     const amp = clamp(Math.abs(vel) / 26) * 5;
     const px = (n: number) => `${n.toFixed(1)}px`;
@@ -164,9 +174,14 @@
           tails.push({ ...base, key, x, y, h, clip, py: -tailTop, tf, p });
         }
       }
-      if (growing && fill - s < L.P + 8) lips.push({ key, x, y: fill - s, tone: people[seg.person].color ?? '#fff' });
+      const pouring = edge < w - 1;
+      if (pouring && growing && fill - s < L.P + 8) lips.push({ key, x, y: fill - s, tone: people[seg.person].color ?? '#fff' });
+      // the stretch of ribbon that is "now" carries on underneath the card, to the bottom of the screen
+      const from = cutTop ? L.T[seg.start] : L.T[FIRST];
+      const until = cutBot ? B1 : L.end;
+      if (!pouring && w >= from && w < until) under.push({ key, person: seg.person, x, py: -(L.P + s), founder: base.founder });
     }
-    return { cols, tails, lips };
+    return { cols, tails, lips, under };
   });
 
   // ---- season lines across the field, once the liquid has passed them
@@ -176,11 +191,14 @@
 
   // ---- markers that live on the columns: each season's champion and sacko
   const marks = $derived.by(() => {
-    const out: { key: string; kind: 'champ' | 'sacko'; person: string; x: number; y: number; pop: number }[] = [];
+    const out: { key: string; kind: 'champ' | 'sacko'; person: string; x: number; y: number; pop: number; o: number }[] = [];
     const add = (key: string, kind: 'champ' | 'sacko', person: string, slot: number, world: number) => {
       const y = world - s;
       if (w <= world || y < 0 || y > L.P + 20) return;
-      out.push({ key, kind, person, x: L.colX(slot), y, pop: clamp((w - world) / (vh * 0.07)) });
+      // a trophy nearing the header merges into its owner's avatar (see stars below)
+      const merge = kind === 'champ' ? clamp((L.headerY + L.av * 4 - y) / (L.av * 3)) : 0;
+      if (merge >= 1) return;
+      out.push({ key, kind, person, x: L.colX(slot), y, pop: clamp((w - world) / (vh * 0.07)) * (1 - merge * 0.55), o: 1 - merge });
     };
     for (const [year, season] of Object.entries(legacy.seasons)) {
       const y = Number(year);
@@ -251,6 +269,30 @@
   }
   const zOf = (a: { p: string; st: AvatarState }) =>
     pileIx[a.p] !== undefined ? (fanned ? 45 : 12 + pileIx[a.p]) : a.st.flying > 0.02 ? 30 : 10;
+  // gold stars on an avatar, one per title, growing from the middle out
+  const titles: Record<string, { world: number; slot: number }[]> = {};
+  for (const [year, season] of Object.entries(legacy.seasons)) {
+    const y = Number(year);
+    const id = season.champion;
+    if (!id || !lineup[y] || lineup[y].indexOf(id) < 0) continue;
+    (titles[id] ??= []).push({ world: 0, slot: lineup[y].indexOf(id) });
+    titles[id][titles[id].length - 1].world = y; // the season; its position depends on the layout
+  }
+  const STAR_GAP = 7;
+  function starsOf(p: string) {
+    const list = titles[p];
+    if (!list) return [];
+    const grown: number[] = [];
+    for (const t of list) {
+      const y = L.T[t.world] + L.bandH(t.world) * 0.5 - s; // where that season's trophy is on screen
+      const merge = clamp((L.headerY + L.av * 4 - y) / (L.av * 3));
+      const g = clamp((merge - 0.55) / 0.45);
+      if (g > 0) grown.push(g);
+    }
+    if (!grown.length) return [];
+    const n = grown.length - 1 + grown[grown.length - 1]; // the newest star pushes the others apart as it grows
+    return grown.map((g, k) => ({ x: (k - (n - 1) / 2) * STAR_GAP, sc: back(g) }));
+  }
   const grayOf = (st: AvatarState) => (st.cut ? (fx[st.cut]?.g ?? 1) : st.gray);
 
   // ---- where we are in time (the dial and the tray read this)
@@ -268,7 +310,7 @@
 
 <div class="spacer" style:height="{L.pageHeight}px"></div>
 
-<div class="stage" class:reduced>
+<div class="stage" class:reduced style:height="{vh}px">
   <!-- columns: nothing is ever drawn over these except their own markers -->
   <div class="field" style:--fade="{L.headerY * 2 + 26}px">
     {#each field.cols as c (c.key)}
@@ -303,6 +345,21 @@
         style:transform={t.tf}
       ></i>
     {/each}
+    {#each field.under as u (u.key)}
+      <i
+        class="under"
+        class:founder={u.founder}
+        style:--tone={people[u.person].color}
+        style:--py="{u.py}px"
+        style:--cw="{L.cw}px"
+        style:width="{L.cw}px"
+        style:height="{vh - L.P + 4}px"
+        style:transform="translate3d({u.x}px,{L.P}px,0)"
+      ></i>
+    {/each}
+    {#if field.under.length}
+      <i class="cardshade" style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{L.P - 44}px,0)"></i>
+    {/if}
     {#each field.lips as l (l.key)}
       <i class="lip" style:--tone={l.tone} style:width="{L.cw}px" style:transform="translate3d({l.x}px,{l.y - 2}px,0)"></i>
     {/each}
@@ -310,7 +367,7 @@
       <i class="season" style:width="{L.fieldW}px" style:transform="translate3d({L.padL}px,{sl.sy}px,0)"></i>
     {/each}
     {#each marks as m (m.key)}
-      <span class="mark {m.kind}" title="{m.kind === 'champ' ? 'Champion' : 'Sacko'}: {people[m.person].name}" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop)})">
+      <span class="mark {m.kind}" style:opacity={m.o} title="{m.kind === 'champ' ? 'Champion' : 'Sacko'}: {people[m.person].name}" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop)})">
           <svg viewBox="0 0 16 16" width={Math.min(L.cw - 5, 18)} height={Math.min(L.cw - 5, 18)} aria-hidden="true">
             {#if m.kind === 'champ'}
               <path d="M4 2h8v3.2a4 4 0 0 1-8 0zM1.8 3H4v1.3H3.1A1.7 1.7 0 0 0 4.2 6l-.5 1.2A3 3 0 0 1 1.8 4.4zM12 3h2.2v1.4a3 3 0 0 1-1.9 2.8L11.8 6a1.7 1.7 0 0 0 1.1-1.7H12zM7.2 9h1.6v2.4H11V13H5v-1.6h2.2z" />
@@ -386,6 +443,16 @@
         onclick={() => tapAvatar(a)}
       >
         <Avatar id={a.p} size={L.av} live />
+        {#if titles[a.p]}
+          {@const stars = starsOf(a.p)}
+          {#if stars.length}
+            <span class="stars" aria-label="{stars.length} title{stars.length > 1 ? 's' : ''}">
+              {#each stars as st, k (k)}
+                <svg viewBox="0 0 10 10" style:transform="translate({st.x}px,0) scale({st.sc})" aria-hidden="true"><path d="M5 .4l1.4 3 3.2.3-2.4 2.2.7 3.2L5 7.5 2.1 9.1l.7-3.2L.4 3.7l3.2-.3z" /></svg>
+              {/each}
+            </span>
+          {/if}
+        {/if}
         {#if a.st.returning > 0.02}<span class="returns" style:opacity={a.st.returning}>returns</span>{/if}
         {#if ip !== undefined}<span class="nm">{first(a.p)}</span>{/if}
       </button>
@@ -416,7 +483,9 @@
   }
   .stage {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     overflow: clip; /* not hidden: a hidden box can still be scrolled sideways by focus or scrollIntoView */
     contain: strict;
     background:
@@ -460,6 +529,28 @@
     background:
       linear-gradient(to top, rgba(0, 0, 0, calc(var(--p) * 0.6)) 0, transparent calc(var(--p) * 100%)),
       var(--now);
+  }
+  .under {
+    /* the ribbon carrying on beneath the card: in the card's shadow */
+    background: color-mix(in srgb, var(--tone) 55%, #000 45%);
+  }
+  .cardshade {
+    /* the card's shadow falling on the columns just above it */
+    height: 44px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.42));
+    pointer-events: none;
+  }
+  .founder {
+    /* founders' ribbons get a fine serrated edge */
+    --teeth: linear-gradient(#000, #000), conic-gradient(from 45deg at 0 50%, #000 90deg, transparent 0), conic-gradient(from 225deg at 100% 50%, #000 90deg, transparent 0);
+    -webkit-mask-image: var(--teeth);
+    mask-image: var(--teeth);
+    -webkit-mask-size: calc(100% - 3px) 100%, 1.5px 4px, 1.5px 4px;
+    mask-size: calc(100% - 3px) 100%, 1.5px 4px, 1.5px 4px;
+    -webkit-mask-position: center, 0 var(--py), 100% var(--py);
+    mask-position: center, 0 var(--py), 100% var(--py);
+    -webkit-mask-repeat: no-repeat, repeat-y, repeat-y;
+    mask-repeat: no-repeat, repeat-y, repeat-y;
   }
   .founder::before {
     /* founders' ribbons carry a faint harlequin lattice, anchored to the timeline so it scrolls with them */
@@ -660,6 +751,23 @@
     content: '';
     position: absolute;
     inset: -9px;
+  }
+  .stars {
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 9px;
+    pointer-events: none;
+  }
+  .stars svg {
+    position: absolute;
+    left: -4.5px;
+    top: 0;
+    width: 9px;
+    height: 9px;
+    fill: var(--gold);
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 4px color-mix(in srgb, var(--gold) 70%, transparent));
   }
   .returns {
     position: absolute;
