@@ -367,3 +367,7 @@ Levi's next round, and what changed:
 - **Season cards list silver stars** under champion and sacko (2024: Levi, undefeated regular season 14-0).
 - **Toby, Jared and Stephen arrive with "Freshman year"** via a new card field `arrive` (ribbons that come in with a card that doesn't name them).
 - **Adam Field** is the tattooed Adam. Alex Randall's house photo moved from Japs to "The visit" (2008).
+
+### D44 — History app: honours land while their card is up; scrubber previews instead of scrolling — Accepted
+- **Honours ride just under the year line** (cut depth + ~1.2 avatar below it) instead of mid-season, and a season with a champion gets at least a full screen of scroll; its first card stays up a little longer. Measured on a phone-size viewport: the season card appears, ~0.55–0.65 of a screen later the star and the sacko stamp land, and the card changes ~0.3 of a screen after that. A year's generated season card now leads its year (2017's comes before "The lineup holds"), so the honours land on the card that names them.
+- **Scrubber hold no longer scrolls the page under the finger.** Even with `touch-action: none`, scrolling the window while a finger is down on iPhone kept fighting the browser. Now, while held, the story draws a preview playhead from the scrubber and the page scroll is untouched; on release the scrubber settles to the quarter and only then commits one `scrollTo`. Taps still scroll directly (no finger down during the animation).

@@ -11,7 +11,12 @@
   import { onMount } from 'svelte';
   import { wAtStop, clamp, easeOut, type Layout } from '../lib/model';
 
-  let { L, fi, opacity = 1, reduced = false }: { L: Layout; fi: number; opacity?: number; reduced?: boolean } = $props();
+  // `onpreview`: while a hold is in progress the page scroll is left alone entirely (on iPhone,
+  // scrolling the page under a finger that's down fights the browser); the story draws this
+  // playhead instead. Letting go commits it to the real scroll position.
+  let {
+    L, fi, opacity = 1, reduced = false, onpreview,
+  }: { L: Layout; fi: number; opacity?: number; reduced?: boolean; onpreview: (w: number | null) => void } = $props();
 
   const HOLD_MS = 200;
   const SLOP = 8;
@@ -80,18 +85,30 @@
   // ---- driving the story
   let tweenRaf = 0;
   let bRaf = 0;
+  let previewing = false;
   const go = (v: number) => {
     f = clamp(v, 0, n - 1);
-    window.scrollTo(0, wAtStop(L, f) - L.P);
+    if (previewing) onpreview(wAtStop(L, f));
+    else window.scrollTo(0, wAtStop(L, f) - L.P);
   };
+  /** Hand the preview over to the real scroll position. */
+  function commit() {
+    if (!previewing) return;
+    previewing = false;
+    window.scrollTo(0, wAtStop(L, f) - L.P);
+    onpreview(null);
+  }
   function stop() {
     cancelAnimationFrame(tweenRaf);
     tweenRaf = 0;
   }
-  function tween(to: number) {
+  function tween(to: number, then?: () => void) {
     stop();
     to = clamp(to, 0, n - 1);
-    if (reduced || Math.abs(to - f) < 0.01) return go(to);
+    if (reduced || Math.abs(to - f) < 0.01) {
+      go(to);
+      return then?.();
+    }
     const from = f;
     const dur = clamp(260 + Math.abs(to - from) * 110, 200, 850);
     const t0 = performance.now();
@@ -99,6 +116,7 @@
       const t = clamp((now - t0) / dur);
       go(from + (to - from) * easeOut(t));
       tweenRaf = t < 1 ? requestAnimationFrame(tick) : 0;
+      if (t >= 1) then?.();
     };
     tweenRaf = requestAnimationFrame(tick);
   }
@@ -134,6 +152,7 @@
   function down(e: PointerEvent) {
     if (e.button > 0) return;
     stop();
+    commit(); // a settle still in progress hands over first
     const y = localY(e);
     g = { id: e.pointerId, y0: y, f0: f, t0: e.timeStamp, held: false };
     fy = clamp(y, 0, H);
@@ -147,6 +166,7 @@
       g.held = true;
       scrubbing = true;
       driving = true;
+      previewing = true;
       ay = fy;
       af = fAt(fy);
       go(af);
@@ -172,7 +192,7 @@
     if (d.held) {
       scrubbing = false;
       setBulge(0);
-      tween(Math.round(f * FINE) / FINE);
+      tween(Math.round(f * FINE) / FINE, commit); // settle on the quarter, then hand over to the page
     } else {
       f = fi;
       driving = true;
@@ -184,6 +204,7 @@
     if (g?.held) {
       scrubbing = false;
       setBulge(0);
+      commit();
     }
     g = null;
   }

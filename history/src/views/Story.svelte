@@ -23,6 +23,9 @@
   let reduced = $state(false);
   let want = $state(0); // how tall the current card wants to be (reported by the tray)
   let tt = $state(0); // where the card's top actually is right now (springs toward `want`)
+  // while the scrubber is held, the story follows its preview playhead instead of the page scroll
+  let previewW: number | null = null;
+  const rawScroll = () => (previewW !== null ? previewW - L.P : window.scrollY);
 
   const L = $derived(makeLayout(vh, W));
   const w = $derived(s + L.P); // the playhead, in world pixels
@@ -71,7 +74,7 @@
       const tTarget = L.vh - 10 - (want ? Math.min(want, L.trayH) : L.trayH);
       if (Math.abs(tTarget - tt) > 0.3) tt = reduced ? tTarget : tt + (tTarget - tt) * 0.2;
       else if (tt !== tTarget) tt = tTarget;
-      const target = window.scrollY;
+      const target = rawScroll();
       const d = target - s;
       if (Math.abs(d) > 0.05) s = reduced ? target : s + d * 0.2;
       else if (d !== 0) s = target;
@@ -99,7 +102,7 @@
   let fx = $state<Record<string, Fx>>({});
   const cutAnim: Record<string, { passed: boolean; t0: number; mode: 'idle' | 'shake' | 'unfade'; g0: number }> = {};
   function stepCuts(now: number) {
-    const wNow = window.scrollY + L.P; // the raw scroll: the shake starts the moment the cut arrives
+    const wNow = rawScroll() + L.P; // the raw scroll: the shake starts the moment the cut arrives
     const amp = L.desktop ? 5 : 3;
     const next: Record<string, Fx> = {};
     let changed = false;
@@ -250,7 +253,7 @@
     for (const [year, season] of Object.entries(legacy.seasons)) {
       const y = Number(year);
       if (!lineup[y]) continue;
-      const mid = L.T[y] + L.bandH(y) * 0.5;
+      const mid = honourAt(y);
       const slotOf = (id: string | null) => (id ? lineup[y].indexOf(id) : -1);
       if (slotOf(season.champion) >= 0) add(`champ${y}`, 'champ', season.champion!, slotOf(season.champion), mid, !!season.championAsterisk);
       if (slotOf(season.sacko) >= 0) add(`sacko${y}`, 'sacko', season.sacko!, slotOf(season.sacko), mid);
@@ -331,8 +334,12 @@
     if (season.sacko && lineup[y].includes(season.sacko)) (sackos[season.sacko] ??= []).push(y);
     for (const sv of season.silverStars ?? []) if (lineup[y].includes(sv.person)) (silvers[sv.person] ??= []).push(y);
   }
-  // every marker (trophy, silver star, sacko X) sits mid-season, so a season's honours land together
-  const midOf = (y: number) => L.T[y] + L.bandH(y) * 0.5;
+  // every marker (trophy, silver star, sacko X) rides just under its year line, so a season's
+  // honours land together, early in the year, while that year's card is still up
+  function honourAt(y: number) {
+    return L.T[y] + L.cutH + L.av * 1.2;
+  }
+  const midOf = honourAt;
   /** 0..1 progress of an honour once its marker reaches the avatar; it plays over more scroll after that. */
   const reach = (world: number) => L.headerY + L.av * 4 - (world - s);
   const starOf = (year: number) => clamp((reach(midOf(year)) - L.av * 2.4) / (vh * 0.16));
@@ -601,7 +608,7 @@
   {/if}
 
   <!-- the year scrubber -->
-  <Scrubber {L} {fi} opacity={started} {reduced} />
+  <Scrubber {L} {fi} opacity={started} {reduced} onpreview={(pw) => (previewW = pw)} />
 
   <!-- temporary: type set switcher for the design review -->
   <button class="typeswitch" onclick={() => setType(TYPES[(TYPES.indexOf(type) + 1) % TYPES.length])} aria-label="Switch typeface set, now {type.toUpperCase()}">{type.toUpperCase()}</button>
