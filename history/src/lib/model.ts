@@ -161,9 +161,11 @@ export function makeLayout(vh: number, W: number) {
     if (shownIn(c) > 2016) return 0.95;
     return 0.3 + (c.funFact ? 0.06 : 0) + (c.body ? 0.3 : 0); // ~0.38 screen: just past the sacko stamp
   };
+  const stretch = (storyFile as { yearLength?: Record<string, number> }).yearLength ?? {}; // e.g. 2014 twice as long
   const bandH = (y: number) => {
     const list = perYear[y] ?? [];
-    return vh * (list.length ? 0.2 + list.reduce((t, c) => t + weight(c), 0) : 0.5) + (y === FIRST ? vh * 0.7 : 0);
+    const h = vh * (list.length ? 0.2 + list.reduce((t, c) => t + weight(c), 0) : 0.5) + (y === FIRST ? vh * 0.7 : 0);
+    return h * (stretch[String(y)] ?? 1);
   };
 
   const T: Record<number, number> = {};

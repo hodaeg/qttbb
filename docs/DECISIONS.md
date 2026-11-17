@@ -390,3 +390,7 @@ Levi's next round, and what changed:
 - **Markers ride up 2.6x faster than the scroll** once they pass the playhead (star over 0.09 screen, stamp over 0.15 screen after arriving), so a season's honours land within ~0.3 screen of its closing year line.
 - **Cut years (to 2016): the next story card follows right after**: the season card leading the next year is ~0.38 screen (+ a little for a fun fact, more for a story card carrying results). Measured: honours land with the year line ~220px from the top; the next card (who left, who joined) arrives with the line at ~115–190px. Later seasons keep ~1 screen each.
 - **Merged cards:** "Wrestling" is the 2011 season card's fun fact, "The frat" the 2012 one's (story.json entries with `kind: "season"`). "Suze and Jordan" now precedes "A tumultuous season", which carries the 2014 champion/sacko lines itself (`results: 2014`) instead of a separate card.
+
+### D49 — History app: 2014 twice as long, its own season card again — Accepted
+- 2014 order: "A tumultuous season", "Suze and Jordan", then the generated 2014 champion/sacko card (leading 2015, as every season card does). The tumultuous card no longer carries the results (`results` stays supported).
+- New `yearLength` map in story.json stretches a year's scrolling; 2014 is 2x.
