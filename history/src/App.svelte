@@ -6,13 +6,19 @@
   let person = $state<string | null>(null);
   let photo = $state<{ src: string; alt: string } | null>(null);
 
+  let story: ReturnType<typeof Story> | undefined = $state();
+  // someone holding a column right now opens it; the sheet is for everyone else
   function openPerson(id: string) {
     photo = null;
+    if (story?.show(id)) {
+      person = null;
+      return;
+    }
     person = id;
   }
 </script>
 
-<Story onperson={openPerson} onphoto={(p) => (photo = p)} />
+<Story bind:this={story} onperson={openPerson} onphoto={(p) => (photo = p)} />
 
 {#if photo}
   <Sheet onclose={() => (photo = null)}>

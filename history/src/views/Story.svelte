@@ -4,13 +4,14 @@
   // from the scroll position, so the whole history scrubs forwards and backwards like a film.
   import { onMount } from 'svelte';
   import {
-    makeLayout, segments, members, people, legacy, constants, lineup, exits, isCurrent, yearsLabel, FIRST, LAST, CUT_GAP, SLOTS,
+    makeLayout, segments, members, people, legacy, constants, lineup, exits, isCurrent, statusOf, FIRST, LAST, CUT_GAP, SLOTS,
     pourAt, growTip, avatarState, stopAt, trayAt, clamp, lerp, back, smooth, easeOut, type AvatarState, type Spot,
   } from '../lib/model';
   import Avatar from './Avatar.svelte';
   import Glass from './Glass.svelte';
   import Tray from './Tray.svelte';
   import Scrubber from './Scrubber.svelte';
+  import PersonPanel from './PersonPanel.svelte';
 
   type Photo = { src: string; alt: string };
   let { onperson, onphoto }: { onperson: (id: string) => void; onphoto: (p: Photo) => void } = $props();
@@ -108,7 +109,7 @@
   let shown = $state(0); // the slot the panel shows (kept while it closes)
   let fz = $state(0); // 0 = the story, 1 = expanded; springs between
   let geo = $state<{ x: number; w: number }[]>([]); // each slot's left edge and width, springing to target
-  const slice = $derived({ w: L.desktop ? 12 : 6, gap: L.desktop ? 6 : 3 });
+  const slice = $derived({ w: L.desktop ? 12 : 5, gap: L.desktop ? 6 : 2 });
   const openW = $derived(L.fieldW - (SLOTS - 1) * (slice.w + slice.gap));
   function geoTarget(slot: number, f: number | null) {
     if (f === null) return { x: L.colX(slot) - L.cw / 2, w: L.cw };
@@ -135,6 +136,18 @@
     const fT = focus === null ? 0 : 1;
     const nf = Math.abs(fT - fz) < 0.003 ? fT : fz + (fT - fz) * k;
     if (nf !== fz) fz = nf;
+  }
+  /**
+   * Anyone holding a column right now opens it instead of a sheet; sheets are for everyone else
+   * (alumni, friends of the league, and anyone before the league starts). True if it opened.
+   */
+  export function show(id: string): boolean {
+    const yr = L.stops[Math.min(L.stops.length - 1, Math.floor(stopAt(L, rawScroll() + L.P)))];
+    const slot = lineup[yr]?.indexOf(id) ?? -1;
+    if (slot < 0 || !litFor(slot)) return false;
+    fanned = false;
+    focus = shown = slot;
+    return true;
   }
   function tapCol(slot: number) {
     if (focus === slot || !litFor(slot)) return;
@@ -667,14 +680,26 @@
       {/each}
     {/if}
     {#each panels as pn (pn.key)}
-      <div class="panel" style:opacity={panelO} style:width="{openW - 16}px" style:transform="translate3d({gOf(shown).x + 8}px,{pn.y}px,0)" bind:offsetHeight={panelH[pn.key]}>
-        <button class="who pressable" onclick={() => onperson(pn.person)}>
-          <Avatar id={pn.person} size={L.desktop ? 52 : 40} />
-          <span><b class="display">{people[pn.person].name}</b><small>{yearsLabel(pn.person)}{people[pn.person].founder ? ' · Founder' : ''}</small></span>
-        </button>
-        <div class="yr display">{pn.yr}</div>
-        {#each pn.lines as l}<p class="res {l.kind}"><svg viewBox="0 0 16 16" aria-hidden="true">{@render icon(l.kind)}</svg>{l.text}</p>{/each}
-        {#if pn.tally}<p class="tally">{pn.tally}</p>{/if}
+      <div
+        class="panel"
+        style:opacity={panelO}
+        style:pointer-events={panelO > 0.6 ? 'auto' : 'none'}
+        style:width="{openW - 16}px"
+        style:max-height="{Math.round(vh * 0.64)}px"
+        style:transform="translate3d({gOf(shown).x + 8}px,{pn.y}px,0)"
+        bind:offsetHeight={panelH[pn.key]}
+      >
+        <div class="top">
+          <div class="who">
+            <Avatar id={pn.person} size={L.desktop ? 52 : 40} />
+            <span><b class="display">{people[pn.person].name}</b><small>{#if people[pn.person].nickname}“{people[pn.person].nickname}” · {/if}{statusOf(pn.person)}</small></span>
+          </div>
+          <div class="yr display">{pn.yr}</div>
+          {#each pn.lines as l}<p class="res {l.kind}"><svg viewBox="0 0 16 16" aria-hidden="true">{@render icon(l.kind)}</svg>{l.text}</p>{/each}
+          {#if pn.tally}<p class="tally">Through {pn.yr}: {pn.tally}</p>{/if}
+        </div>
+        <!-- everything the person sheet has; it scrolls inside the panel -->
+        <div class="more"><PersonPanel id={pn.person} {onperson} bare /></div>
       </div>
     {/each}
     <button
@@ -1018,14 +1043,32 @@
   }
   .panel {
     z-index: 9;
-    display: grid;
-    gap: 6px;
-    justify-items: start;
-    padding: 10px 12px 12px;
-    background: linear-gradient(to bottom, rgba(8, 9, 12, 0.5), rgba(8, 9, 12, 0.3));
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(8, 9, 12, 0.62), rgba(8, 9, 12, 0.5));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
     color: var(--ink);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .panel .top {
+    display: grid;
+    gap: 6px;
+    justify-items: start;
+    padding: 10px 12px 10px;
+    flex: none;
+  }
+  .panel .more {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 4px 12px 14px;
+    border-top: 1px solid var(--glass-line);
+    text-shadow: none;
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 22px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 22px), transparent);
   }
   .who {
     display: flex;

@@ -400,3 +400,7 @@ Levi's next round, and what changed:
 - Expanded: no story cards, photos, header avatars or pile. The timeline below the playhead is drawn too, and cuts are flat: just a gap and the colour change.
 - A panel sticks to the top of the open column: who holds it, the year under the playhead, the season just decided (it stays up through the next year, since honours land at the year line), and their running tally. At a cut the next person's panel rises with their ribbon and pushes the last one away. Each season's honours sit labelled on the ribbon at its closing line.
 - Season card years no longer carry the Sleeper-era asterisk.
+
+### D51 — History app: people open their column; sheets only for those without one — Accepted
+- Tapping anyone who holds a column at the year under the playhead (header avatar, a name in a card, a connection) opens their expanded column instead of a sheet. Alumni, friends of the league, and anyone before the league starts still get the sheet.
+- The column's panel carries everything the sheet had (seasons bar, legacy stats, titles and sackos, story, anecdotes, connections) under its sticky header, scrolling inside the panel (max ~64% of the screen). Phone slices are 5px with 2px gaps to give the open column more room.

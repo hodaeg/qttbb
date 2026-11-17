@@ -72,6 +72,11 @@ export const alumni = members.filter((p) => !isCurrent(p));
 // Every time someone left: where a column gets cut.
 export const exits: Segment[] = segments.filter((s) => s.end !== LAST).sort((a, b) => a.end - b.end || a.slot - b.slot);
 
+export const statusOf = (id: string) => {
+  const p = people[id];
+  return p.role === 'outsider' ? 'Friend of the league' : isCurrent(id) ? (p.founder ? 'Founder, current member' : 'Current member') : p.founder ? 'Founder, alumni' : 'Alumni';
+};
+
 export function yearsLabel(p: string): string {
   const t = tenures[p];
   if (!t) return '';
