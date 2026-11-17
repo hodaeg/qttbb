@@ -1,0 +1,12 @@
+{
+  "_about": "The 12 slots per season. A slot is a seat in the league: when someone leaves, their replacement takes the same position in the list. Only seasons where the lineup changed are listed; every later season repeats the last one listed, up to currentThrough. For a new season with no changes, just raise currentThrough. For a change, add that season's full list of 12.",
+  "firstSeason": 2011,
+  "currentThrough": 2026,
+  "seasons": {
+    "2011": ["levi-nellen", "zaid-hunitie", "max-christensen", "adam-herr", "nate-mehlhoff", "toby-bachuber", "andy-althoff", "callan-curtis", "dominic-morelli", "jared-haldemann", "stephen-rydberg", "tim-comes"],
+    "2012": ["levi-nellen", "zaid-hunitie", "max-christensen", "adam-herr", "nate-mehlhoff", "toby-bachuber", "andy-althoff", "mike-whiting", "kyle-mont-blanc", "sam-schurman", "dave-skradski", "tim-comes"],
+    "2013": ["levi-nellen", "zaid-hunitie", "max-christensen", "adam-herr", "jon-petters", "ben-rydberg", "andy-althoff", "mike-whiting", "kyle-mont-blanc", "sam-schurman", "dave-skradski", "stephen-rydberg"],
+    "2014": ["levi-nellen", "zaid-hunitie", "max-christensen", "adam-herr", "jon-petters", "ben-rydberg", "josh-susee", "mike-whiting", "kyle-mont-blanc", "jordan-morris", "dave-skradski", "stephen-rydberg"],
+    "2016": ["levi-nellen", "zaid-hunitie", "max-christensen", "adam-herr", "jon-petters", "gabe-warneke", "josh-susee", "mike-whiting", "kyle-mont-blanc", "jordan-morris", "dave-skradski", "kalyn-reinardy"]
+  }
+}

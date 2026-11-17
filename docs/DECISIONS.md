@@ -244,3 +244,28 @@ Mike used to build the Legacy Rankings by hand from a spreadsheet. They now upda
 2. Final Tegridy weights, and does the score have consequences? (D9, D16)
 3. ~~Sunday-inactives source for the Questionable→Out gap~~ — mostly closed by D18; revisit only if the active-but-didn't-play ambiguity becomes a problem.
 4. Front-end contract: does the Figma design need any fields the JSON doesn't have yet?
+
+---
+
+## Bria Bowl History app
+
+### D31 — The repo is public — Accepted (supersedes D4)
+Levi made `hodaeg/qttbb` public on 2026-11-16 so the history site can be served from GitHub Pages. Everything in the repo is therefore public: league data, Tegridy penalties, the commissioner penalty ledger, first names, and the history content with full names. This was Levi's decision, made knowingly. Nothing secret (tokens, cookies) has ever been committed.
+
+### D32 — Bria Bowl History: a scrollytelling site in `history/` — Accepted
+Levi's annual league note: a mobile-first single-page site telling the league's story from 2002 to now, with two views on one timeline (roster story, friend web). Brief: `docs/history-brief.md`. Approved plan summary:
+- Lives in `history/`. Hand-edited content in `history/content/` (`people`, `roster`, `connections`, `story`, `legacy-manual`), because `/data` belongs to the pipeline.
+- Stack: Vite + TypeScript + Svelte 5, GSAP + ScrollTrigger, SVG friend web with hand-rolled ring layout. Deployed to GitHub Pages by a workflow, redeployed after each data refresh.
+- **Stats come from the pipeline** (legacy rankings, 2019+ champions/sackos/records), asterisked as 2019+ where Sleeper-derived. Champions for 2011-2018 are hand-filled in `legacy-manual.json` (ESPN data is gone).
+- Visual design: Claude proposes, restyles to Levi's Figma when it arrives; all tokens.
+- **Bar: showstopper interaction design** (award-level editorial scrollytelling). Scroll is the playhead (fully reversible), nothing teleports, choreographed motion, signature moments prototyped first (the 2011 pour, the dial).
+- Review checkpoints after phase 2 (scroll story) and phase 4 (column expansion).
+This reverses the earlier working rule that Claude doesn't build front end: Levi asked for this one explicitly.
+
+### D33 — History content: what was assumed — Accepted, open items
+Content files were filled from the brief and pass a consistency check (31 people: 22 members, 9 outsiders; 12 unique per season; story joins/exits match the roster grid for every season; the friend web is one connected graph; the current 12 map 1:1 to Sleeper names).
+- Kalyn's nickname is "Ging" throughout (the brief also says "Ginge"; the pipeline uses Ging).
+- Zaid's column runs through 2026: members are only removed in the offseason (D19).
+- Two connections are marked `inferred` (Alex Randall to Alex Hoover and Tim Underhill, from "that weekend brought them into our sphere") for Levi to confirm.
+- People ids are `first-last`; story text marks tappable names as `[[id|Name]]`.
+**Open:** the 2014 exit-message quote (placeholder), 2011-2018 champions, avatars, member colours (placeholders), per-person stories and anecdotes (TODO).

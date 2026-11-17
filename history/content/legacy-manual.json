@@ -1,0 +1,6 @@
+{
+  "_about": "Hand-filled history for the ESPN years, which can't be pulled from anywhere. 2019 and later come from the data pipeline automatically. Put a person id (see people.json) for each season you know; leave null for unknown. 'notes' is free text shown on that season's card.",
+  "champions": { "2011": null, "2012": null, "2013": null, "2014": null, "2015": null, "2016": null, "2017": null, "2018": null },
+  "sackos": { "2011": null, "2012": null, "2013": null, "2014": null, "2015": null, "2016": null, "2017": null, "2018": null },
+  "notes": {}
+}

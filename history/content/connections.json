@@ -1,0 +1,63 @@
+{
+  "_about": "Edges for the friend web and the path sentences. 'how' is read aloud in the path sentence, so write it as a short phrase. Types: family, high-school, roommate, dorm, class, frat, party, friend. year is when the connection formed (null if unknown). 'inferred': true marks edges I read between the lines of the brief; Levi should confirm or delete them.",
+  "connections": [
+    { "from": "dustin-sadnick", "to": "levi-nellen", "year": null, "how": "brothers", "type": "family" },
+    { "from": "doug-comes", "to": "tim-comes", "year": null, "how": "brothers", "type": "family" },
+    { "from": "dustin-sadnick", "to": "doug-comes", "year": 2002, "how": "freshman roommates at Winona State", "type": "roommate" },
+    { "from": "levi-nellen", "to": "tim-comes", "year": 2009, "how": "same dorm floor, on Dustin's instruction", "type": "dorm" },
+
+    { "from": "max-christensen", "to": "alex-randall", "year": 2008, "how": "pals; the high school visit weekend in Winona", "type": "friend" },
+    { "from": "alex-randall", "to": "sam-schurman", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "alex-randall", "to": "alex-hoover", "year": 2008, "how": "the 2008 visit weekend", "type": "friend", "inferred": true },
+    { "from": "alex-randall", "to": "tim-underhill", "year": 2008, "how": "the 2008 visit weekend", "type": "friend", "inferred": true },
+    { "from": "tim-underhill", "to": "levi-nellen", "year": null, "how": "roommates", "type": "roommate" },
+    { "from": "alex-randall", "to": "levi-nellen", "year": 2009, "how": "parties at Alex's house", "type": "party" },
+
+    { "from": "levi-nellen", "to": "nate-mehlhoff", "year": 2009, "how": "freshman roommates", "type": "roommate" },
+    { "from": "nate-mehlhoff", "to": "max-christensen", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "nate-mehlhoff", "to": "zaid-hunitie", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "max-christensen", "to": "zaid-hunitie", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "levi-nellen", "to": "max-christensen", "year": 2009, "how": "introduced by Nate", "type": "friend" },
+    { "from": "levi-nellen", "to": "zaid-hunitie", "year": 2009, "how": "introduced by Nate", "type": "friend" },
+    { "from": "max-christensen", "to": "jared-haldemann", "year": 2009, "how": "freshman roommates", "type": "roommate" },
+    { "from": "max-christensen", "to": "toby-bachuber", "year": 2009, "how": "lived next door in the dorms", "type": "dorm" },
+
+    { "from": "stephen-rydberg", "to": "max-christensen", "year": null, "how": "high school, later roommates", "type": "high-school" },
+    { "from": "stephen-rydberg", "to": "zaid-hunitie", "year": null, "how": "high school, later roommates", "type": "high-school" },
+    { "from": "stephen-rydberg", "to": "nate-mehlhoff", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "stephen-rydberg", "to": "ben-rydberg", "year": null, "how": "brothers", "type": "family" },
+    { "from": "ben-rydberg", "to": "max-christensen", "year": null, "how": "high school", "type": "high-school" },
+
+    { "from": "tim-comes", "to": "luke-reinardy", "year": 2009, "how": "freshman roommates", "type": "roommate" },
+    { "from": "luke-reinardy", "to": "kalyn-reinardy", "year": null, "how": "brother and sister", "type": "family" },
+    { "from": "luke-reinardy", "to": "max-christensen", "year": null, "how": "roommates", "type": "roommate" },
+    { "from": "luke-reinardy", "to": "andy-althoff", "year": null, "how": "grew up together", "type": "friend" },
+    { "from": "andy-althoff", "to": "max-christensen", "year": 2011, "how": "roommates, brought in by Luke", "type": "roommate" },
+
+    { "from": "megan-hardie", "to": "levi-nellen", "year": 2009, "how": "freshman year friends", "type": "friend" },
+    { "from": "megan-hardie", "to": "max-christensen", "year": 2009, "how": "freshman year friends", "type": "friend" },
+    { "from": "megan-hardie", "to": "kennedy-curtis", "year": 2009, "how": "dorm neighbors", "type": "dorm" },
+    { "from": "kennedy-curtis", "to": "callan-curtis", "year": null, "how": "brother and sister", "type": "family" },
+    { "from": "callan-curtis", "to": "levi-nellen", "year": 2011, "how": "roommates", "type": "roommate" },
+
+    { "from": "levi-nellen", "to": "dominic-morelli", "year": 2009, "how": "dorm neighbors at Prentiss-Lucas", "type": "dorm" },
+    { "from": "levi-nellen", "to": "kyle-mont-blanc", "year": 2010, "how": "English courses", "type": "class" },
+    { "from": "levi-nellen", "to": "adam-herr", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "adam-herr", "to": "zaid-hunitie", "year": 2011, "how": "roommates", "type": "roommate" },
+    { "from": "adam-herr", "to": "mike-whiting", "year": 2011, "how": "class project partners, bonded over wrestling", "type": "class" },
+
+    { "from": "dave-skradski", "to": "max-christensen", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "dave-skradski", "to": "zaid-hunitie", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "dave-skradski", "to": "nate-mehlhoff", "year": null, "how": "high school", "type": "high-school" },
+
+    { "from": "tim-comes", "to": "mike-whiting", "year": 2012, "how": "Tim's frat", "type": "frat" },
+    { "from": "tim-comes", "to": "jon-petters", "year": 2012, "how": "Tim's frat", "type": "frat" },
+    { "from": "tim-comes", "to": "adam-herr", "year": 2012, "how": "Tim's frat", "type": "frat" },
+    { "from": "mike-whiting", "to": "jon-petters", "year": 2012, "how": "frat brothers", "type": "frat" },
+
+    { "from": "josh-susee", "to": "levi-nellen", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "kyle-mont-blanc", "to": "fish", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "fish", "to": "jordan-morris", "year": null, "how": "West Campus dorms", "type": "dorm" },
+    { "from": "gabe-warneke", "to": "zaid-hunitie", "year": 2016, "how": "a big marketing project", "type": "class" }
+  ]
+}
