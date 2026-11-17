@@ -81,11 +81,8 @@ export const cards: Card[] = [...storyCards];
 for (let y = lastStoryYear; y <= LAST; y++) {
   const season = legacy.seasons[String(y)];
   if (!season) continue;
-  const card: Card = { year: y, title: String(y), body: '', kind: 'season', season };
-  // a year's season card leads that year, so its champion and sacko land while it's showing
-  const at = cards.findIndex((c) => c.year === y);
-  if (at >= 0) cards.splice(at, 0, card);
-  else cards.push(card);
+  // a year's season card closes that year, so its champion and sacko land while it's showing
+  cards.push({ year: y, title: String(y), body: '', kind: 'season', season });
 }
 
 // Rich text: "[[id|Name]]" -> tappable name.
@@ -138,16 +135,14 @@ export function makeLayout(vh: number, W: number) {
   // How much scrolling each year gets: every card needs time on the tray, and each photo a little more.
   const weight = (c: Card) => 0.55 + 0.22 * (c.photos?.length ?? 0);
   // A season with a champion gets at least enough scroll for its trophy, star and sacko stamp to
-  // ride up from the card and land on the avatars before the card moves on (~0.8 of a screen).
-  // The first card of such a year also stays up longer, so the honours land while it's showing.
+  // ride up and land on the avatars (~0.8 of a screen) before the year ends.
   const SEASON_MIN = 1.0;
   const hasSeason = (y: number) => y >= FIRST && !!legacy.seasons[String(y)]?.champion;
-  const cardWeight = (y: number, c: Card, j: number) => weight(c) + (j === 0 && hasSeason(y) ? 0.3 : 0);
   const bandH = (y: number) => {
     const list = perYear[y] ?? [];
     const min = hasSeason(y) ? vh * SEASON_MIN : 0;
     if (y > lastStoryYear) return Math.max(min, vh * 0.5);
-    return Math.max(min, vh * (list.length ? 0.2 + list.reduce((t, c, j) => t + cardWeight(y, c, j), 0) : 0.5) + (y === FIRST ? vh * 0.7 : 0));
+    return Math.max(min, vh * (list.length ? 0.2 + list.reduce((t, c) => t + weight(c), 0) : 0.5) + (y === FIRST ? vh * 0.7 : 0));
   };
 
   const T: Record<number, number> = {};
@@ -164,12 +159,12 @@ export function makeLayout(vh: number, W: number) {
   const seq: { card: Card; a: number; b: number }[] = [];
   for (const y of stops) {
     const list = perYear[y] ?? [];
-    const total = list.reduce((t, c, j) => t + cardWeight(y, c, j), 0);
+    const total = list.reduce((t, c) => t + weight(c), 0);
     let acc = 0;
-    list.forEach((card, j) => {
+    for (const card of list) {
       seq.push({ card, a: T[y] + (acc / total) * bandH(y), b: 0 });
-      acc += cardWeight(y, card, j);
-    });
+      acc += weight(card);
+    }
   }
   seq.forEach((r, i) => (r.b = i < seq.length - 1 ? seq[i + 1].a : end));
   const cardPos = new Map<Card, number>(seq.map((r) => [r.card, r.a]));

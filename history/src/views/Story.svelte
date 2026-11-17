@@ -334,10 +334,13 @@
     if (season.sacko && lineup[y].includes(season.sacko)) (sackos[season.sacko] ??= []).push(y);
     for (const sv of season.silverStars ?? []) if (lineup[y].includes(sv.person)) (silvers[sv.person] ??= []).push(y);
   }
-  // every marker (trophy, silver star, sacko X) rides just under its year line, so a season's
-  // honours land together, early in the year, while that year's card is still up
+  // Every marker (trophy, silver star, sacko X) is placed so that a season's honours finish landing
+  // on the avatars just as the year ends, right before the next year line arrives and the card
+  // changes. The sacko stamp is the longest moment; it completes when the marker has travelled
+  // (P - header - 2.5 avatars + 0.3 screens) past the playhead.
   function honourAt(y: number) {
-    return L.T[y] + L.cutH + L.av * 1.2;
+    const travel = L.P - L.headerY - L.av * 2.5 + vh * 0.3;
+    return Math.max(L.T[y] + L.cutH + L.av, L.top(y + 1) - vh * 0.1 - travel);
   }
   const midOf = honourAt;
   /** 0..1 progress of an honour once its marker reaches the avatar; it plays over more scroll after that. */
