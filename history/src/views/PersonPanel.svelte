@@ -1,6 +1,7 @@
 <script lang="ts">
   import { people, tenures, yearsLabel, statusOf, legacyOf, legacy, connections, constants, FIRST, LAST } from '../lib/model';
   import Avatar from './Avatar.svelte';
+  import ConnPile from './ConnPile.svelte';
 
   // `bare`: inside an expanded column, which draws its own header; everything else is the same as the sheet
   let { id, onperson, bare = false }: { id: string; onperson: (id: string) => void; bare?: boolean } = $props();
@@ -60,7 +61,10 @@
 {#if p.story && p.story !== 'TODO'}<p class="story">{p.story}</p>{/if}
 {#each p.anecdotes ?? [] as a}<blockquote>{a}</blockquote>{/each}
 
-{#if links.length}
+{#if links.length && bare}
+  <h4>Connected to</h4>
+  <ConnPile {id} {links} {onperson} />
+{:else if links.length}
   <h4>Connected to</h4>
   <ul>
     {#each links as l}

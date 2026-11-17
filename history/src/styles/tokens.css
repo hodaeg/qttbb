@@ -18,6 +18,7 @@
   /* glass: frosted, with a soft rim that catches light along the top edge (like iOS glass) */
   --glass-tint: rgba(22, 24, 30, 0.52);
   --glass-strong: rgba(18, 20, 26, 0.86);
+  --glass-thin: rgba(22, 24, 30, 0.38); /* the expanded column's panel: more of the ribbon shows through */
   --glass-line: rgba(255, 255, 255, 0.1);
   --glass-filter: blur(28px) saturate(1.8);
   --glass-rim:
@@ -97,6 +98,7 @@
     --line: rgba(0, 0, 0, 0.12);
     --glass-tint: rgba(255, 255, 255, 0.55);
     --glass-strong: rgba(255, 255, 255, 0.88);
+    --glass-thin: rgba(255, 255, 255, 0.34);
     --glass-line: rgba(0, 0, 0, 0.08);
     --glass-filter: blur(28px) saturate(1.8);
     --glass-rim:

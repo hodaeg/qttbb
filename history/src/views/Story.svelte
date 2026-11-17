@@ -1236,6 +1236,11 @@
     transform-origin: 50% 0;
     color: var(--ink);
     will-change: transform;
+    /* thinner glass than the cards, so the ribbon's colour comes through; a little less blur keeps
+       some of its texture, and a soft shadow on the type keeps it readable over bright ribbons */
+    --glass-tint: var(--glass-thin);
+    --glass-filter: blur(20px) saturate(1.7);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   }
   .pbody {
     display: flex;
