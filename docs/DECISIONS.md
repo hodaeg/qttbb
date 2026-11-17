@@ -394,3 +394,9 @@ Levi's next round, and what changed:
 ### D49 — History app: 2014 twice as long, its own season card again — Accepted
 - 2014 order: "A tumultuous season", "Suze and Jordan", then the generated 2014 champion/sacko card (leading 2015, as every season card does). The tumultuous card no longer carries the results (`results` stays supported).
 - New `yearLength` map in story.json stretches a year's scrolling; 2014 is 2x.
+
+### D50 — History app: expanded column (phase 4) — Accepted
+- Tap a lit ribbon (founders once the colour has poured in; everyone after) and it opens across the field; the other eleven squeeze to thin slices on either side, in order. Tap a slice to switch; the minimize arrow (or Esc) returns to the story. Scrolling back before the league closes it.
+- Expanded: no story cards, photos, header avatars or pile. The timeline below the playhead is drawn too, and cuts are flat: just a gap and the colour change.
+- A panel sticks to the top of the open column: who holds it, the year under the playhead, the season just decided (it stays up through the next year, since honours land at the year line), and their running tally. At a cut the next person's panel rises with their ribbon and pushes the last one away. Each season's honours sit labelled on the ribbon at its closing line.
+- Season card years no longer carry the Sleeper-era asterisk.

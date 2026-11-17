@@ -4,7 +4,7 @@
   // from the scroll position, so the whole history scrubs forwards and backwards like a film.
   import { onMount } from 'svelte';
   import {
-    makeLayout, segments, members, people, legacy, constants, lineup, exits, isCurrent, FIRST, LAST, CUT_GAP,
+    makeLayout, segments, members, people, legacy, constants, lineup, exits, isCurrent, yearsLabel, FIRST, LAST, CUT_GAP, SLOTS,
     pourAt, growTip, avatarState, stopAt, trayAt, clamp, lerp, back, smooth, easeOut, type AvatarState, type Spot,
   } from '../lib/model';
   import Avatar from './Avatar.svelte';
@@ -69,8 +69,13 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     let raf = 0;
     tt = L.trayTop;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') focus = null;
+    };
+    window.addEventListener('keydown', onKey);
     const tick = (now: number) => {
       stepCuts(now);
+      stepFocus();
       const tTarget = L.vh - 10 - (want ? Math.min(want, L.trayH) : L.trayH);
       if (Math.abs(tTarget - tt) > 0.3) tt = reduced ? tTarget : tt + (tTarget - tt) * 0.2;
       else if (tt !== tTarget) tt = tTarget;
@@ -92,8 +97,50 @@
       probe.remove();
       window.removeEventListener('resize', size);
       window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('keydown', onKey);
     };
   });
+
+  // ---- the expanded column. Tap a lit ribbon and it opens up across the field; everyone else
+  // squeezes down to thin slices on either side (tap a slice to switch). The years scroll as usual,
+  // the ribbon's own panel follows them, and no story cards show. Cuts here are just a gap.
+  let focus = $state<number | null>(null); // the open column's slot
+  let shown = $state(0); // the slot the panel shows (kept while it closes)
+  let fz = $state(0); // 0 = the story, 1 = expanded; springs between
+  let geo = $state<{ x: number; w: number }[]>([]); // each slot's left edge and width, springing to target
+  const slice = $derived({ w: L.desktop ? 12 : 6, gap: L.desktop ? 6 : 3 });
+  const openW = $derived(L.fieldW - (SLOTS - 1) * (slice.w + slice.gap));
+  function geoTarget(slot: number, f: number | null) {
+    if (f === null) return { x: L.colX(slot) - L.cw / 2, w: L.cw };
+    const step = slice.w + slice.gap;
+    if (slot < f) return { x: L.padL + slot * step, w: slice.w };
+    if (slot === f) return { x: L.padL + f * step, w: openW };
+    return { x: L.padL + f * step + openW + slice.gap + (slot - f - 1) * step, w: slice.w };
+  }
+  const gOf = (slot: number) => geo[slot] ?? geoTarget(slot, null);
+  const litFor = (slot: number) => pourAt(L, slot, rawScroll() + L.P) >= 0.9;
+  function stepFocus() {
+    if (focus !== null && !litFor(focus)) focus = null; // scrolled back before the league: close
+    const k = reduced ? 1 : 0.2;
+    const ease = (c: number, t: number) => (Math.abs(t - c) < 0.2 ? t : c + (t - c) * k);
+    let changed = geo.length !== SLOTS;
+    const next = Array.from({ length: SLOTS }, (_, i) => {
+      const t = geoTarget(i, focus);
+      const c = geo[i] ?? t;
+      const n = { x: ease(c.x, t.x), w: ease(c.w, t.w) };
+      if (n.x !== c.x || n.w !== c.w) changed = true;
+      return n;
+    });
+    if (changed) geo = next;
+    const fT = focus === null ? 0 : 1;
+    const nf = Math.abs(fT - fz) < 0.003 ? fT : fz + (fT - fz) * k;
+    if (nf !== fz) fz = nf;
+  }
+  function tapCol(slot: number) {
+    if (focus === slot || !litFor(slot)) return;
+    fanned = false;
+    focus = shown = slot;
+  }
 
   // ---- the moment a column is cut. This one beat runs on the clock, not the scroll: tension
   // releasing plays out by itself. The column shakes and its colour drains to grey on the same
@@ -141,7 +188,7 @@
   // Every ribbon runs to the bottom of the screen. Below the card's top edge it is in the card's
   // shadow (--lit: where the shadow starts, in the element's own pixels). Founders' ribbons are
   // there before the league, all in shadow, and the colour pours down them when 2011 starts.
-  type Piece = { key: string; person: string; slot: number; x: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean; dotted: boolean; gold: number; plat: number; chev: number; chev2: number };
+  type Piece = { key: string; person: string; slot: number; x: number; cw: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean; dotted: boolean; gold: number; plat: number; chev: number; chev2: number };
   type Tail = Piece & { tf: string; p: number };
   // while scrolling the ribbons sway a little side to side, each on its own slow phase
   const sway = (slot: number) => {
@@ -153,6 +200,10 @@
     const tails: Tail[] = [];
     const px = (n: number) => `${n.toFixed(1)}px`;
     const floor = s + vh + 10; // the bottom of the screen, in world pixels
+    // expanded: no card, so nothing is in its shadow, and the timeline below the playhead is drawn
+    // too (cuts are a flat gap you can see coming, not a slice that falls away)
+    const flat = fz > 0.5;
+    const cardTop = lerp(tt, vh + 40, fz);
     for (const seg of segments) {
       const founding = seg.start === FIRST;
       const cutBot = seg.end !== LAST;
@@ -169,24 +220,29 @@
         top = tip + s;
       } else {
         top = L.T[seg.start] - L.cutH / 2 + CUT_GAP / 2;
-        if (w <= top + 1) continue; // arrives when its cut reaches the playhead
+        if (!flat && w <= top + 1) continue; // arrives when its cut reaches the playhead
       }
       const f = fx[key] ?? { g: cut ? 1 : 0, x: 0 };
-      const x = L.colX(seg.slot) - L.cw / 2 + f.x + sway(seg.slot);
-      const litY = founding ? lerp(L.headerY - 30, tt, pourAt(L, seg.slot, w)) : tt; // screen
-      const base = { person: seg.person, slot: seg.slot, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person), dotted: !people[seg.person].founder && isCurrent(seg.person), ...edgesOf(seg.person) };
+      const gm = gOf(seg.slot);
+      const x = gm.x + (f.x + sway(seg.slot)) * (1 - fz);
+      const litY = founding ? lerp(L.headerY - 30, cardTop, pourAt(L, seg.slot, w)) : cardTop; // screen
+      const base = { person: seg.person, slot: seg.slot, cw: gm.w, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person), dotted: !people[seg.person].founder && isCurrent(seg.person), ...edgesOf(seg.person) };
 
-      const mEnd = cut ? tailTop : floor;
+      const mEnd = flat ? (cutBot ? Math.min(bottom, floor) : floor) : cut ? tailTop : floor;
       if (mEnd > top + 1) {
         const y = Math.max(top - s, -40);
         const h = mEnd - s - y;
         if (h > 0 && y < vh) {
           const o = y + s; // the element's top, in world pixels
-          const clip = !founding ? `polygon(0 ${px(top + L.cutH - o)},100% ${px(top - o)},100% ${px(h + 60)},0 ${px(h + 60)})` : 'none';
+          // the diagonal flattens as the column opens; expanded, the bottom is cut flat too
+          const tl = founding ? 0 : top + L.cutH * (1 - fz / 2) - o;
+          const tr = founding ? 0 : top + (L.cutH * fz) / 2 - o;
+          const b = flat && cutBot ? bottom - L.cutH / 2 - o : h + 60;
+          const clip = founding && !(flat && cutBot) ? 'none' : `polygon(0 ${px(tl)},100% ${px(tr)},100% ${px(b)},0 ${px(b)})`;
           cols.push({ ...base, key, x, y, h, clip, py: -o, lit: litY - y });
         }
       }
-      if (cut) {
+      if (cut && !flat) {
         // the tail starts 2px up inside the body, so no hairline of background shows at the hinge
         const y = tailTop - s - 2;
         const h = bottom - tailTop + 2;
@@ -248,8 +304,9 @@
       // a trophy or sacko X nearing the header merges into its owner's avatar (see honours below)
       const merge = clamp((L.headerY + L.av * 4 - y) / (L.av * 3));
       if (merge >= (kind === 'sacko' ? 0.5 : 1)) return; // the sacko X hands over to the stamp
-      out.push({ key, kind, person, x: L.colX(slot), y, pop: clamp((w - world) / (vh * 0.07)) * (1 - merge * 0.55), o: 1 - merge, star });
+      out.push({ key, kind, person, x: gOf(slot).x + gOf(slot).w / 2, y, pop: clamp((w - world) / (vh * 0.07)) * (1 - merge * 0.55), o: (1 - merge) * (1 - fz), star });
     };
+    if (fz > 0.99) return out;
     for (const [year, season] of Object.entries(legacy.seasons)) {
       const y = Number(year);
       if (!lineup[y]) continue;
@@ -261,6 +318,68 @@
     }
     return out;
   });
+
+  // ---- the expanded column's content. Each season's honours sit on the ribbon at the line that
+  // closes it, labelled. A panel at the top follows the years: who holds this column, the season
+  // under the playhead, and their running tally. At a cut the next person's panel rises with their
+  // ribbon and pushes the last one up and away.
+  type Line = { kind: 'champ' | 'runner' | 'sacko' | 'silver' | 'points'; text: string };
+  function linesOf(y: number, p: string): Line[] {
+    const season = legacy.seasons[String(y)];
+    if (!season) return [];
+    const out: Line[] = [];
+    if (season.champion === p) out.push({ kind: 'champ', text: `Champion${season.championAsterisk ? '*' : ''}` });
+    if (season.runnerUp === p) out.push({ kind: 'runner', text: 'Runner-up' });
+    for (const sv of season.silverStars ?? []) if (sv.person === p) out.push({ kind: 'silver', text: `Silver star · ${sv.why}` });
+    if (season.ledScoring === p) out.push({ kind: 'points', text: 'Most points' });
+    if (season.sacko === p) out.push({ kind: 'sacko', text: 'Sacko' });
+    return out;
+  }
+  const focusMarks = $derived.by(() => {
+    const out: { key: string; y: number; year: number; lines: Line[] }[] = [];
+    if (fz < 0.01) return out;
+    for (const year of Object.keys(legacy.seasons)) {
+      const y = Number(year);
+      if (!lineup[y]) continue;
+      const sy = honourAt(y) - s;
+      if (sy < L.headerY || sy > vh + 20) continue;
+      const lines = linesOf(y, lineup[y][shown]);
+      if (lines.length) out.push({ key: `f${y}`, y: sy, year: y, lines });
+    }
+    return out;
+  });
+  let panelH = $state<Record<string, number>>({});
+  const panels = $derived.by(() => {
+    const out: { key: string; person: string; y: number; yr: number; lines: Line[]; tally: string }[] = [];
+    if (fz < 0.01) return out;
+    const yrNow = L.stops[Math.min(L.stops.length - 1, Math.floor(fi))];
+    const stick = L.headerY * 2 - 4;
+    for (const seg of segments) {
+      if (seg.slot !== shown) continue;
+      const key = `${seg.slot}-${seg.start}`;
+      const tip = seg.start === FIRST ? growTip(L, seg.person, w) : L.T[seg.start] + CUT_GAP / 2 - s;
+      if (tip === null) continue;
+      const bot = (seg.end !== LAST ? L.top(seg.end + 1) - CUT_GAP / 2 : L.end) - s;
+      const hgt = panelH[key] ?? 150;
+      if (bot < 0 || tip > vh) continue;
+      const y = Math.min(Math.max(stick, tip + 10), bot - hgt - 10);
+      const yr = clamp(yrNow, seg.start, seg.end);
+      const p = seg.person;
+      const done = (y: number) => w >= honourAt(y); // a season counts once its line has passed
+      // the season just decided stays up through the next one (honours land right at the year line)
+      const last = done(yr) ? yr : yr - 1;
+      const lines = last >= seg.start ? linesOf(last, p).map((l) => ({ ...l, text: `${last} ${l.text}` })) : [];
+      const n = (list: number[] | undefined) => (list ?? []).filter(done).length;
+      const t = n(titles[p]);
+      const k = n(sackos[p]);
+      const sv = n(silvers[p]);
+      const tally = [t && `${t} title${t > 1 ? 's' : ''}`, sv && `${sv} silver star${sv > 1 ? 's' : ''}`, k && `${k} Sacko${k > 1 ? 's' : ''}`].filter(Boolean).join(' · ');
+      out.push({ key, person: p, y, yr, lines, tally });
+    }
+    return out;
+  });
+  // the panel shows once its column is (nearly) open, so its text never reflows as it widens
+  const panelO = $derived(clamp((gOf(shown).w - openW * 0.85) / (openW * 0.15)) * fz);
 
   // ---- avatars and the alumni pile. The pile is a literal pile: everyone who left, stacked
   // messily. One tap fans it out to the left and down; tap again, tap elsewhere or scroll to close.
@@ -423,6 +542,20 @@
   const first = (id: string) => people[id].nickname ?? people[id].name.split(' ')[0];
 </script>
 
+{#snippet icon(kind: string)}
+  {#if kind === 'champ'}
+    <path d="M4 2h8v3.2a4 4 0 0 1-8 0zM1.8 3H4v1.3H3.1A1.7 1.7 0 0 0 4.2 6l-.5 1.2A3 3 0 0 1 1.8 4.4zM12 3h2.2v1.4a3 3 0 0 1-1.9 2.8L11.8 6a1.7 1.7 0 0 0 1.1-1.7H12zM7.2 9h1.6v2.4H11V13H5v-1.6h2.2z" />
+  {:else if kind === 'silver'}
+    <path d="M8 .8l2.2 4.6 5 .5-3.8 3.4 1.1 5L8 11.8l-4.5 2.5 1.1-5L.8 5.9l5-.5z" />
+  {:else if kind === 'runner'}
+    <path d="M8 1.5a4.3 4.3 0 1 1 0 8.6 4.3 4.3 0 0 1 0-8.6zM5.4 10.4l-1 4.3L8 12.8l3.6 1.9-1-4.3A5.6 5.6 0 0 1 8 11a5.6 5.6 0 0 1-2.6-.6z" />
+  {:else if kind === 'points'}
+    <path d="M2 14h3V8H2zM6.5 14h3V4.5h-3zM11 14h3V2h-3z" />
+  {:else}
+    <path class="x" d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6" />
+  {/if}
+{/snippet}
+
 <div class="spacer" style:height="{L.pageHeight}px"></div>
 
 <div class="stage" class:reduced style:height="{vh}px">
@@ -441,16 +574,16 @@
         class:chev2={c.chev2 > 0.5}
         class:dotted={c.dotted}
         style:--chev={c.chev}
-        aria-label={people[c.person].name}
+        aria-label={focus === c.slot ? people[c.person].name : `Open ${first(c.person)}'s column`}
         style:--tone={people[c.person].color}
         style:--g={c.g}
         style:--py="{c.py}px"
         style:--lit="{c.lit}px"
-        style:width="{L.cw}px"
+        style:width="{c.cw}px"
         style:height="{c.h}px"
         style:clip-path={c.clip}
         style:transform="translate3d({c.x}px,{c.y}px,0)"
-        onclick={() => onperson(c.person)}
+        onclick={() => tapCol(c.slot)}
       >
         {#if c.gold > 0}<i class="edge gold" style:opacity={c.gold}></i>{/if}
         {#if c.plat > 0}<i class="edge plat" style:opacity={c.plat}></i>{/if}
@@ -464,18 +597,23 @@
         style:--g={t.g}
         style:--p={t.p}
         style:--py="{t.py}px"
-        style:width="{L.cw}px"
+        style:width="{t.cw}px"
         style:height="{t.h}px"
         style:clip-path={t.clip}
         style:transform={t.tf}
       ></i>
     {/each}
     <!-- the card's shadow falling on the ribbons just above it, and the ribbons falling away at the bottom -->
-    <i class="cardshade" style:opacity={started} style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{tt - 44}px,0)"></i>
+    <i class="cardshade" style:opacity={started * (1 - fz)} style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{tt - 44}px,0)"></i>
     <i class="floorshade" style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{vh - 110}px,0)"></i>
     {#each markers as m (m.y)}
       <span class="marker" style:opacity={started} style:width="{L.fieldW}px" style:transform="translate3d({L.padL}px,{m.sy}px,0)">
-        <b class="display" style:left="{L.colX(L.leviSlot) - L.cw / 2 - L.padL}px">{m.y}</b>
+        <b class="display" style:left="{lerp(L.colX(L.leviSlot) - L.cw / 2, gOf(shown).x, fz) - L.padL}px">{m.y}</b>
+      </span>
+    {/each}
+    {#each focusMarks as m (m.key)}
+      <span class="fmark" style:opacity={panelO} style:transform="translate3d({gOf(shown).x + 8}px,{m.y}px,0) translateY(-50%)">
+        {#each m.lines as l}<b class={l.kind}><svg viewBox="0 0 16 16" aria-hidden="true">{@render icon(l.kind)}</svg>{m.year} {l.text}</b>{/each}
       </span>
     {/each}
     {#each marks as m (m.key)}
@@ -495,8 +633,8 @@
   </div>
 
   <!-- photos, between the ribbons and the card -->
-  {#if photos.list.length}
-    <div class="photos">
+  {#if photos.list.length && fz < 0.99}
+    <div class="photos" style:opacity={1 - fz}>
       {#each photos.list as ph (ph.key)}
         <button
           class="photo"
@@ -512,10 +650,45 @@
   {/if}
 
   <!-- the card tray -->
-  <Tray {L} items={trayItems} opacity={trayO} top={tt} {onperson} bind:want />
+  <Tray {L} items={trayItems} opacity={trayO * (1 - fz)} top={tt} {onperson} bind:want />
+
+  <!-- the expanded column: tap a slice to switch, the arrow to go back to the story -->
+  {#if fz > 0.01}
+    {#if focus !== null}
+      {#each Array.from({ length: SLOTS }, (_, i) => i).filter((i) => i !== focus) as i (i)}
+        <button
+          class="slicehit"
+          aria-label="Open {first(lineup[clamp(L.stops[Math.floor(fi)] ?? LAST, FIRST, LAST)][i])}'s column"
+          style:width="{gOf(i).w + slice.gap}px"
+          style:height="{vh - L.headerY * 2}px"
+          style:transform="translate3d({gOf(i).x - slice.gap / 2}px,{L.headerY * 2}px,0)"
+          onclick={() => tapCol(i)}
+        ></button>
+      {/each}
+    {/if}
+    {#each panels as pn (pn.key)}
+      <div class="panel" style:opacity={panelO} style:width="{openW - 16}px" style:transform="translate3d({gOf(shown).x + 8}px,{pn.y}px,0)" bind:offsetHeight={panelH[pn.key]}>
+        <button class="who pressable" onclick={() => onperson(pn.person)}>
+          <Avatar id={pn.person} size={L.desktop ? 52 : 40} />
+          <span><b class="display">{people[pn.person].name}</b><small>{yearsLabel(pn.person)}{people[pn.person].founder ? ' · Founder' : ''}</small></span>
+        </button>
+        <div class="yr display">{pn.yr}</div>
+        {#each pn.lines as l}<p class="res {l.kind}"><svg viewBox="0 0 16 16" aria-hidden="true">{@render icon(l.kind)}</svg>{l.text}</p>{/each}
+        {#if pn.tally}<p class="tally">{pn.tally}</p>{/if}
+      </div>
+    {/each}
+    <button
+      class="minimize"
+      aria-label="Back to the story"
+      style:opacity={panelO}
+      style:pointer-events={focus !== null ? 'auto' : 'none'}
+      style:transform="translate3d({gOf(shown).x + gOf(shown).w - 44}px,{Math.max(0, L.headerY - 22)}px,0)"
+      onclick={() => (focus = null)}
+    ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4l-6 6M14 5v5h5M4 20l6-6M10 19v-5H5" /></svg></button>
+  {/if}
 
   <!-- finale -->
-  {#if finaleCy < vh * 1.4}
+  {#if finaleCy < vh * 1.4 && fz < 0.5}
     <div class="cardwrap finale" style:width="{Math.min(L.trayW, 440)}px" style:--o={clamp((vh - finaleCy) / (vh * 0.25))} style:transform="translate3d({L.padL}px,calc({finaleCy}px - 50%),0)">
       <Glass pad="18px 18px 16px"><article class="fin">
         <h3 class="display">The Legacy Rankings</h3>
@@ -564,7 +737,8 @@
         style:width="{L.av}px"
         style:height="{L.av}px"
         style:z-index={zOf(a)}
-        style:opacity={a.st.opacity}
+        style:opacity={a.st.opacity * (1 - fz)}
+        style:pointer-events={fz > 0.5 ? 'none' : null}
         style:--glow={a.st.flying}
         style:--win={h?.win ?? 0}
         style:--win-tone={h?.winSilver ? '#dfe5ea' : 'var(--gold)'}        style:--gray={fanned && ip !== undefined ? 0.35 : grayOf(a.st)}
@@ -612,6 +786,8 @@
       class="pile"
       aria-label="Alumni, {pileCount} people"
       aria-expanded={fanned}
+      style:opacity={1 - fz}
+      style:pointer-events={fz > 0.5 ? 'none' : null}
       style:transform="translate3d({L.pile.x - 31}px,{L.pile.y - 22}px,0) scale({1 + pileBump * 0.12})"
       onclick={toggleFan}
     >
@@ -744,8 +920,9 @@
     position: absolute;
     inset: 0 5px;
     background-image: var(--chevrons);
-    background-size: 100% calc(var(--cw) * 0.8);
-    background-position: 0 var(--py);
+    /* one ribbon's width per chevron, so an expanded column repeats them instead of stretching */
+    background-size: calc(var(--cw) - 10px) calc(var(--cw) * 0.8);
+    background-position: 50% var(--py);
     opacity: calc(var(--chev) * 0.55);
     pointer-events: none;
   }
@@ -791,6 +968,117 @@
     letter-spacing: 0.04em;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
+  }
+
+  /* the expanded column */
+  .fmark {
+    display: grid;
+    gap: 3px;
+    justify-items: start;
+    pointer-events: none;
+  }
+  .fmark b {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 7px 3px 5px;
+    background: rgba(8, 9, 12, 0.62);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .fmark svg,
+  .res svg {
+    width: 12px;
+    height: 12px;
+    flex: none;
+    fill: currentColor;
+  }
+  .fmark .x,
+  .res .x {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+  }
+  .champ svg {
+    color: var(--gold);
+  }
+  .silver svg,
+  .runner svg {
+    color: #e3e8ee;
+  }
+  .sacko svg {
+    color: #ff6b70;
+  }
+  .slicehit {
+    z-index: 3;
+  }
+  .panel {
+    z-index: 9;
+    display: grid;
+    gap: 6px;
+    justify-items: start;
+    padding: 10px 12px 12px;
+    background: linear-gradient(to bottom, rgba(8, 9, 12, 0.5), rgba(8, 9, 12, 0.3));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    color: var(--ink);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .who {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+  }
+  .who b {
+    display: block;
+    font-size: calc(19px * var(--display-scale));
+    line-height: 1.05;
+  }
+  .who small {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    color: var(--ink-2);
+  }
+  .yr {
+    font-size: calc(40px * var(--display-scale));
+    line-height: 0.95;
+    font-variant-numeric: tabular-nums;
+  }
+  .res {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .tally {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: var(--ink-2);
+  }
+  .minimize {
+    z-index: 9;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    color: var(--ink);
+  }
+  .minimize svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
   }
 
   /* photos */

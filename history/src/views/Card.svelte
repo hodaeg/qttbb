@@ -31,7 +31,7 @@
 {#if card.kind === 'season' && card.season}
   {@const s = card.season}
     <article class="season">
-      <h3 class="display">{card.year}{s.source === 'sleeper' ? '*' : ''}</h3>
+      <h3 class="display">{card.year}</h3>
       {@render results(s)}
       {#if card.funFact}<p class="fact"><b>Fun fact</b> <Rich text={card.funFact} {onperson} /></p>{/if}
     </article>
