@@ -40,12 +40,13 @@
       {/if}
 
       {#if card.out?.length || (card.in?.length && !card.founders)}
+        <!-- who left rides a red arrow out to the right; who joined, a green arrow in from the right -->
         <div class="moves" class:compact={!full}>
           {#if card.out?.length}
-            <div><small>Out</small>{#each card.out as id}<button class="chip out pressable" onclick={() => onperson(id)}><Avatar {id} size={20} /><span>{first(id)}</span></button>{/each}</div>
+            <div class="arrow out" role="group" aria-label="Out">{#each card.out as id}<button class="chip pressable" aria-label="{people[id].name} (out)" onclick={() => onperson(id)}><Avatar {id} size={22} /><span>{first(id)}</span></button>{/each}</div>
           {/if}
           {#if card.in?.length}
-            <div><small>In</small>{#each card.in as id}<button class="chip pressable" onclick={() => onperson(id)}><Avatar {id} size={20} /><span>{first(id)}{card.returns?.includes(id) ? ' ↩' : ''}</span></button>{/each}</div>
+            <div class="arrow in" role="group" aria-label="In">{#each card.in as id}<button class="chip pressable" aria-label="{people[id].name} (in{card.returns?.includes(id) ? ', returning' : ''})" onclick={() => onperson(id)}><Avatar {id} size={22} /><span>{first(id)}{card.returns?.includes(id) ? ' ↩' : ''}</span></button>{/each}</div>
           {/if}
         </div>
       {/if}
@@ -88,54 +89,46 @@
     color: var(--ink-2);
   }
   .moves {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 6px;
     margin-top: 12px;
   }
-  .moves div {
+  .arrow {
+    --head: 13px;
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 5px;
     align-items: center;
+    max-width: 100%;
+    padding: 4px 6px;
   }
-  .moves small {
-    width: 26px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-2);
+  .arrow.out {
+    /* right aligned, pointing out to the right */
+    align-self: flex-end;
+    padding-right: calc(var(--head) + 6px);
+    background: linear-gradient(to bottom, #e0474d, #b8282e);
+    clip-path: polygon(0 0, calc(100% - var(--head)) 0, 100% 50%, calc(100% - var(--head)) 100%, 0 100%);
+  }
+  .arrow.in {
+    /* left aligned under it, pointing in to the left */
+    align-self: flex-start;
+    padding-left: calc(var(--head) + 6px);
+    background: linear-gradient(to bottom, #36b26f, #208a50);
+    clip-path: polygon(var(--head) 0, 100% 0, 100% 100%, var(--head) 100%, 0 50%);
   }
   .chip {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    height: 30px;
-    padding: 0 10px 0 5px;
-    border: 1px solid var(--glass-line);
-    background: rgba(255, 255, 255, 0.05);
+    gap: 6px;
+    height: 24px;
     font-size: 13px;
     font-weight: 600;
+    color: #fff;
   }
-  /* in the tray: one row, faces only (names are in the full card) */
-  .moves.compact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 16px;
-  }
-  .moves.compact small {
-    width: auto;
-    margin-right: 2px;
-  }
-  .moves.compact .chip {
-    padding: 0 4px;
-    height: 28px;
-  }
+  /* in the tray: faces only */
   .moves.compact .chip > span:last-child {
     display: none;
-  }
-  .chip.out {
-    color: var(--ink-2);
   }
   .fact {
     margin-top: 10px;

@@ -22,6 +22,7 @@
     pointer-events: none;
   }
   .pane {
+    border-radius: 2px;
     background:
       linear-gradient(to bottom, rgba(255, 255, 255, 0.06), transparent 40%),
       var(--glass-tint);

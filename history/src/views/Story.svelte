@@ -138,7 +138,7 @@
   // Every ribbon runs to the bottom of the screen. Below the card's top edge it is in the card's
   // shadow (--lit: where the shadow starts, in the element's own pixels). Founders' ribbons are
   // there before the league, all in shadow, and the colour pours down them when 2011 starts.
-  type Piece = { key: string; person: string; slot: number; x: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean };
+  type Piece = { key: string; person: string; slot: number; x: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean; chev: number };
   type Tail = Piece & { tf: string; p: number };
   // while scrolling the ribbons sway a little side to side, each on its own slow phase
   const sway = (slot: number) => {
@@ -171,7 +171,7 @@
       const f = fx[key] ?? { g: cut ? 1 : 0, x: 0 };
       const x = L.colX(seg.slot) - L.cw / 2 + f.x + sway(seg.slot);
       const litY = founding ? lerp(L.headerY - 30, tt, pourAt(L, seg.slot, w)) : tt; // screen
-      const base = { person: seg.person, slot: seg.slot, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person) };
+      const base = { person: seg.person, slot: seg.slot, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person), chev: chevronOf(seg.person) };
 
       const mEnd = cut ? tailTop : floor;
       if (mEnd > top + 1) {
@@ -241,9 +241,9 @@
     const add = (key: string, kind: 'champ' | 'sacko', person: string, slot: number, world: number) => {
       const y = world - s;
       if (w <= world || y < 0 || y > L.P + 20) return;
-      // a trophy nearing the header merges into its owner's avatar (see stars below)
-      const merge = kind === 'champ' ? clamp((L.headerY + L.av * 4 - y) / (L.av * 3)) : 0;
-      if (merge >= 1) return;
+      // a trophy or sacko X nearing the header merges into its owner's avatar (see honours below)
+      const merge = clamp((L.headerY + L.av * 4 - y) / (L.av * 3));
+      if (merge >= (kind === 'champ' ? 1 : 0.5)) return; // the sacko X hands over to the stamp
       out.push({ key, kind, person, x: L.colX(slot), y, pop: clamp((w - world) / (vh * 0.07)) * (1 - merge * 0.55), o: 1 - merge });
     };
     for (const [year, season] of Object.entries(legacy.seasons)) {
@@ -315,30 +315,59 @@
   }
   const zOf = (a: { p: string; st: AvatarState }) =>
     pileIx[a.p] !== undefined ? (fanned ? 45 : 12 + pileIx[a.p]) : a.st.flying > 0.02 ? 30 : 10;
-  // gold stars on an avatar, one per title, growing from the middle out
-  const titles: Record<string, { world: number; slot: number }[]> = {};
+  // ---- honours. A season's trophy (or sacko X) rides up its owner's column and merges into their
+  // avatar as it nears the header. All of it is a pure function of the scroll, so it reverses.
+  // - title: a gold star grows under the avatar (middle out), the avatar swells with a gold glow,
+  //   and it earns a frame: 1 title gold foil, 2 a platinum frame outside that, 3+ a gold chevron
+  //   pattern on their ribbon;
+  // - sacko: an X stamps onto the avatar, which shakes, then the X shrinks into a row along the top.
+  const titles: Record<string, number[]> = {};
+  const sackos: Record<string, number[]> = {};
   for (const [year, season] of Object.entries(legacy.seasons)) {
     const y = Number(year);
-    const id = season.champion;
-    if (!id || !lineup[y] || lineup[y].indexOf(id) < 0) continue;
-    (titles[id] ??= []).push({ world: 0, slot: lineup[y].indexOf(id) });
-    titles[id][titles[id].length - 1].world = y; // the season; its position depends on the layout
+    if (!lineup[y]) continue;
+    if (season.champion && lineup[y].includes(season.champion)) (titles[season.champion] ??= []).push(y);
+    if (season.sacko && lineup[y].includes(season.sacko)) (sackos[season.sacko] ??= []).push(y);
   }
+  /**
+   * 0..1 progress of a season's honour once its marker reaches the avatar. `d` is how far the marker
+   * has travelled into the avatar's zone; the moment then plays over `span` more pixels of scroll.
+   */
+  const reachOf = (year: number) => L.headerY + L.av * 4 - (L.T[year] + L.bandH(year) * 0.5 - s);
+  const starOf = (year: number) => clamp((reachOf(year) - L.av * 2.4) / (vh * 0.16));
+  const stampOf = (year: number) => clamp((reachOf(year) - L.av * 1.5) / (vh * 0.3));
   const STAR_GAP = 7;
-  function starsOf(p: string) {
-    const list = titles[p];
-    if (!list) return [];
-    const grown: number[] = [];
-    for (const t of list) {
-      const y = L.T[t.world] + L.bandH(t.world) * 0.5 - s; // where that season's trophy is on screen
-      const merge = clamp((L.headerY + L.av * 4 - y) / (L.av * 3));
-      const g = clamp((merge - 0.55) / 0.45);
-      if (g > 0) grown.push(g);
-    }
-    if (!grown.length) return [];
-    const n = grown.length - 1 + grown[grown.length - 1]; // the newest star pushes the others apart as it grows
-    return grown.map((g, k) => ({ x: (k - (n - 1) / 2) * STAR_GAP, sc: back(g) }));
+  const row = (list: number[]) => {
+    const n = list.length - 1 + list[list.length - 1]; // the newest pushes the others apart as it grows
+    return (k: number) => (k - (n - 1) / 2) * STAR_GAP;
+  };
+  function honoursOf(p: string) {
+    const won = (titles[p] ?? []).map(starOf).filter((g) => g > 0);
+    const lost = (sackos[p] ?? []).map(stampOf).filter((g) => g > 0);
+    const sx = won.length ? row(won) : () => 0;
+    const stars = won.map((g, k) => ({ x: sx(k), sc: back(g) }));
+    const newest = won.length ? won[won.length - 1] : 1;
+    const win = newest < 1 ? Math.sin(Math.PI * newest) : 0; // the swell and glow as a star lands
+    // sacko X: stamp (big to on-the-face), sit while the avatar shakes, then shrink into the top row
+    const xr = lost.length ? row(lost.map((g) => clamp((g - 0.65) / 0.35))) : () => 0;
+    const xs = lost.map((g, k) => {
+      const stamp = easeOut(clamp(g / 0.25));
+      const fly = smooth(clamp((g - 0.65) / 0.35));
+      return {
+        x: lerp(0, xr(k), fly),
+        y: lerp(0, -L.av / 2 - 5, fly),
+        size: lerp(L.av * 0.95, 8, fly),
+        sc: lerp(2.4, 1, stamp),
+        o: clamp(g / 0.12),
+        big: fly < 1,
+      };
+    });
+    const q = lost.length ? (lost[lost.length - 1] - 0.25) / 0.4 : -1; // the shake, right after the stamp lands
+    const shake = q > 0 && q < 1 && !reduced ? Math.sin(q * Math.PI * 2 * 3.5) * (1 - q) * (L.desktop ? 4 : 3) : 0;
+    return { stars, win, xs, shake, ring1: won[0] ?? 0, ring2: won[1] ?? 0 };
   }
+  // the ribbon pattern for a third title (by person, for the columns)
+  const chevronOf = (p: string) => ((titles[p]?.length ?? 0) < 3 ? 0 : starOf(titles[p][2]));
   const grayOf = (st: AvatarState) => (st.cut ? (fx[st.cut]?.g ?? 1) : st.gray);
 
   // ---- where we are in time (the dial and the tray read this)
@@ -366,6 +395,8 @@
         class="col"
         class:founder={c.founder}
         class:constant={c.constant}
+        class:chev={c.chev > 0}
+        style:--chev={c.chev}
         aria-label={people[c.person].name}
         style:--tone={people[c.person].color}
         style:--g={c.g}
@@ -474,6 +505,7 @@
     {#if a.st.opacity > 0.01 && a.st.y > -L.av * 1.2}
       {@const v = view(a)}
       {@const ip = pileIx[a.p]}
+      {@const h = titles[a.p] || sackos[a.p] ? honoursOf(a.p) : null}
       <button
         class="av"
         class:piled={ip !== undefined}
@@ -484,22 +516,37 @@
         style:z-index={zOf(a)}
         style:opacity={a.st.opacity}
         style:--glow={a.st.flying}
+        style:--win={h?.win ?? 0}
         style:--gray={fanned && ip !== undefined ? 0.35 : grayOf(a.st)}
         style:--tone={people[a.p].color}
         style:--i={ip ?? 0}
-        style:transform="translate3d({v.x - L.av / 2}px,{v.y - L.av / 2}px,0) rotate({v.rot}deg) scale({v.scale})"
+        style:transform="translate3d({v.x - L.av / 2 + (h?.shake ?? 0)}px,{v.y - L.av / 2}px,0) rotate({v.rot}deg) scale({v.scale * (1 + (h?.win ?? 0) * 0.24)})"
         onclick={() => tapAvatar(a)}
       >
+        {#if h && h.ring2 > 0}<i class="ring plat" style:opacity={h.ring2}></i>{/if}
+        {#if h && h.ring1 > 0}<i class="ring gold" style:opacity={h.ring1}></i>{/if}
         <Avatar id={a.p} size={L.av} live />
-        {#if titles[a.p]}
-          {@const stars = starsOf(a.p)}
-          {#if stars.length}
-            <span class="stars" aria-label="{stars.length} title{stars.length > 1 ? 's' : ''}">
-              {#each stars as st, k (k)}
-                <svg viewBox="0 0 10 10" style:transform="translate({st.x}px,0) scale({st.sc})" aria-hidden="true"><path d="M5 .4l1.4 3 3.2.3-2.4 2.2.7 3.2L5 7.5 2.1 9.1l.7-3.2L.4 3.7l3.2-.3z" /></svg>
-              {/each}
-            </span>
-          {/if}
+        {#if h?.stars.length}
+          <span class="stars" aria-label="{h.stars.length} title{h.stars.length > 1 ? 's' : ''}">
+            {#each h.stars as st, k (k)}
+              <svg viewBox="0 0 10 10" style:transform="translate({st.x}px,0) scale({st.sc})" aria-hidden="true"><path d="M5 .4l1.4 3 3.2.3-2.4 2.2.7 3.2L5 7.5 2.1 9.1l.7-3.2L.4 3.7l3.2-.3z" /></svg>
+            {/each}
+          </span>
+        {/if}
+        {#if h?.xs.length}
+          <span class="sackos" aria-label="{h.xs.length} sacko{h.xs.length > 1 ? 's' : ''}">
+            {#each h.xs as x, k (k)}
+              <svg
+                class:big={x.big}
+                viewBox="0 0 10 10"
+                style:width="{x.size}px"
+                style:height="{x.size}px"
+                style:opacity={x.o}
+                style:transform="translate({x.x}px,{x.y}px) translate(-50%,-50%) scale({x.sc})"
+                aria-hidden="true"
+              ><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" /></svg>
+            {/each}
+          </span>
         {/if}
         {#if a.st.returning > 0.02}<span class="returns" style:opacity={a.st.returning}>returns</span>{/if}
         {#if ip !== undefined}<span class="nm">{first(a.p)}</span>{/if}
@@ -615,7 +662,18 @@
     background-position: 0 var(--py);
     opacity: calc(var(--regal) * (1 - var(--g, 0) * 0.45));
     pointer-events: none;
-  }  .col.constant {
+  }  .col.chev::after {
+    /* a third title: gold chevrons running down the ribbon (anchored to the timeline) */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--chevrons);
+    background-size: var(--cw) calc(var(--cw) * 0.8);
+    background-position: 0 var(--py);
+    opacity: calc(var(--chev) * 0.55);
+    pointer-events: none;
+  }
+  .col.constant {
     animation: hue 9s var(--ease-in-out) infinite alternate;
   }
   @keyframes hue {
@@ -815,7 +873,55 @@
     z-index: 10;
     display: grid;
     place-items: center;
-    filter: grayscale(var(--gray, 0)) drop-shadow(0 0 calc(var(--glow) * 12px) var(--tone));
+    filter: grayscale(var(--gray, 0)) drop-shadow(0 0 calc(var(--glow) * 12px) var(--tone))
+      drop-shadow(0 0 calc(var(--win, 0) * 14px) color-mix(in srgb, var(--gold) calc(var(--win, 0) * 100%), transparent));
+  }
+  /* championship frames: gold foil for the first title, platinum outside it for the second */
+  .ring {
+    position: absolute;
+    pointer-events: none;
+    padding: 2px;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+  .ring.gold {
+    inset: -3px;
+    background: conic-gradient(from 210deg, #8a6510, #f8dc84, #b8861c, #fff4c4, #a77a14, #f2cf6a, #8a6510);
+  }
+  .ring.plat {
+    inset: -6px;
+    background: conic-gradient(from 30deg, #8d96a0, #f5f8fb, #aeb7c1, #ffffff, #8a939d, #dfe5ea, #8d96a0);
+  }
+  /* sacko: the X stamps onto the face, then sits in a row along the top */
+  .sackos {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+  .sackos svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: visible;
+  }
+  .sackos path {
+    fill: none;
+    stroke: #e5484d;
+    stroke-width: 2;
+    stroke-linecap: square;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9));
+  }
+  .sackos svg.big path {
+    stroke-width: 1.6;
   }
   .av::after {
     /* keeps the tap target at 44px even though the avatar is ~26px */

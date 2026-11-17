@@ -344,3 +344,12 @@ Levi's next round, and what changed:
 - **Glass restyled** after the iOS look Levi pointed to: frosted fill, a soft light rim along the top edge, a quiet shadow. No clipped corner ("notch"), no moving glint, no saturating edge filter.
 - **Eyebrow labels removed:** the era label above cards, the year above card titles, the intro kicker, the finale's kicker and the alumni panel label.
 - New avatars: Ging, Levi, Stephen, Luke, Adam. Japs gets the Petey story.
+
+### D41 — History app: honours on the avatars, arrows for ins and outs, two new type sets — Accepted
+- **Founders grow at scroll speed** (their ribbon tip rises 1px per px scrolled, like every ribbon that rides up from a cut), instead of shooting up over a tenth of a screen.
+- **Newcomers arrive big:** every avatar shows up at 1.55x, spread over its ribbon, and shrinks to size over the last third of a screen before it docks.
+- **Colour washes in with "The league is born"**, not at the first 2011 card.
+- **Ins and outs:** out = a red arrow, right aligned, pointing right; in = a green arrow, left aligned beneath it, pointing left (in from the edge). Faces only.
+- **Honours, all scroll-driven:** a title's star now lands with the avatar swelling (up to 1.24x) and glowing gold. Frames: 1st title a gold-foil frame, 2nd a platinum frame outside it, 3rd gold chevrons on their ribbon (different from the founders' lattice). A sacko's X slams onto the avatar (2.4x to 1x), the avatar shakes, then the X shrinks into a row along the top. Each plays over ~130–240px of scroll so it can be seen.
+- **Type sets B and C replaced:** B = Schibsted Grotesk (newsroom, heavy and tight); C = Anybody stretched wide in caps with Figtree for text. A unchanged.
+- Story cards get a 2px radius. "Tattoo Adam" is a different person from league Adam: new outsider `tattoo-adam`. Jon's avatar; Josh's crop lowered.

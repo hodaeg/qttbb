@@ -5,7 +5,7 @@
     { "id": "zaid-hunitie", "name": "Zaid Hunitie", "nickname": null, "initials": "ZH", "role": "member", "founder": true, "sleeper": "TheBoarHouse", "color": "#F3A712", "avatar": "avatars/zaid-hunitie.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "max-christensen", "name": "Max Christensen", "nickname": null, "initials": "MC", "role": "member", "founder": true, "sleeper": "MrSeeYou", "color": "#A8C256", "avatar": "avatars/max-christensen.jpg", "story": "TODO", "anecdotes": ["Went to a KFAN fantasy draft party, paid to go, didn't know much football, brought a binder, and threw up at the draft."] },
     { "id": "adam-herr", "name": "Adam Herr", "nickname": null, "initials": "AH", "role": "member", "founder": true, "sleeper": "ChinaKing", "color": "#2E86AB", "avatar": "avatars/adam-herr.jpg", "story": "TODO", "anecdotes": [] },
-    { "id": "jon-petters", "name": "Jon Petters", "nickname": null, "initials": "JP", "role": "member", "founder": false, "sleeper": "BigDogsRevenge", "color": "#6C5CE7", "avatar": null, "story": "TODO", "anecdotes": [] },
+    { "id": "jon-petters", "name": "Jon Petters", "nickname": null, "initials": "JP", "role": "member", "founder": false, "sleeper": "BigDogsRevenge", "color": "#6C5CE7", "avatar": "avatars/jon-petters.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "gabe-warneke", "name": "Gabe Warneke", "nickname": null, "initials": "GW", "role": "member", "founder": false, "sleeper": "gabroni", "color": "#00B8A9", "avatar": "avatars/gabe-warneke.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "josh-susee", "name": "Josh Susee", "nickname": "Suze", "initials": "JS", "role": "member", "founder": false, "sleeper": "JSusee", "color": "#D7263D", "avatar": "avatars/josh-susee.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "mike-whiting", "name": "Mike Whiting", "nickname": null, "initials": "MW", "role": "member", "founder": false, "sleeper": "WhiskeyDicknCo", "color": "#F46036", "avatar": "avatars/mike-whiting.jpg", "story": "TODO", "anecdotes": ["Nate really wanted Mike in the league."] },
@@ -34,6 +34,7 @@
     { "id": "megan-hardie", "name": "Megan Hardie", "nickname": null, "initials": "MH", "role": "outsider", "avatar": "avatars/megan-hardie.jpg", "story": "TODO" },
     { "id": "kennedy-curtis", "name": "Kennedy Curtis", "nickname": null, "initials": "KC", "role": "outsider", "avatar": null, "story": "Callan Curtis's sister." },
     { "id": "jake", "name": "Jake", "nickname": null, "initials": "J", "role": "outsider", "avatar": null, "story": "Produced rap songs with Alex Randall, including Parallel Dat Park." },
+    { "id": "tattoo-adam", "name": "Adam", "nickname": null, "initials": "A", "role": "outsider", "avatar": null, "story": "Got Parallel Dat Park tattooed. Not the league's Adam: a different Adam, later a Marine." },
     { "id": "fish", "name": "Fish", "nickname": "Fish", "initials": "F", "role": "outsider", "avatar": null, "story": "A high school friend of Kyle's who lived in the West Campus dorms with Jordan." }
   ]
 }

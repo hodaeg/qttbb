@@ -30,6 +30,9 @@
   --regal: 0.12;
   --lattice: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 15' preserveAspectRatio='none'%3E%3Cpath d='M5 0L10 7.5L5 15L0 7.5Z' fill='none' stroke='white' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3Ccircle cx='5' cy='7.5' r='.7' fill='white'/%3E%3C/svg%3E");
 
+  /* a third championship: gold chevrons on the ribbon */
+  --chevrons: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8' preserveAspectRatio='none'%3E%3Cpath d='M0 1.5L5 5L10 1.5' fill='none' stroke='%23f6c445' stroke-width='1.4' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+
   /* type: set A (see the [data-type] blocks below for the other sets) */
   --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
   --font-text: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -54,24 +57,26 @@
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+/* B: newsroom. Schibsted Grotesk (made for a news publisher), heavy and tight, same face for text */
 :root[data-type='b'] {
-  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
-  --font-text: 'Hanken Grotesk', system-ui, sans-serif;
-  --display-weight: 800;
+  --font-display: 'Schibsted Grotesk', system-ui, sans-serif;
+  --font-text: 'Schibsted Grotesk', system-ui, sans-serif;
+  --display-weight: 900;
   --display-case: none;
-  --display-track: -0.035em;
-  --display-scale: 1;
+  --display-track: -0.04em;
+  --display-scale: 1.02;
   --year-scale: 1;
 }
+/* C: loud and wide. Anybody stretched out, all caps, with Figtree for reading */
 :root[data-type='c'] {
-  --font-display: 'Archivo', system-ui, sans-serif;
-  --font-text: 'Archivo', system-ui, sans-serif;
+  --font-display: 'Anybody', system-ui, sans-serif;
+  --font-text: 'Figtree', system-ui, sans-serif;
   --display-weight: 800;
-  --display-case: none;
-  --display-track: -0.03em;
-  --display-stretch: 125%;
-  --display-scale: 0.9;
-  --year-scale: 0.8;
+  --display-case: uppercase;
+  --display-track: -0.01em;
+  --display-stretch: 135%;
+  --display-scale: 0.82;
+  --year-scale: 0.78;
 }
 
 @media (prefers-color-scheme: light) {

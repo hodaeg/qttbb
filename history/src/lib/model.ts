@@ -175,10 +175,12 @@ export function makeLayout(vh: number, W: number) {
   const finale = end + vh * 0.35;
   const pageHeight = finale - P + vh * 1.15;
   const leviSlot = Math.max(0, lineup[FIRST].indexOf('levi-nellen')); // year badges sit on Levi's ribbon
+  const born = cards.find((c) => c.founders);
+  const bornAt = born ? cardPos.get(born)! : T[FIRST];
 
   return {
     vh, W, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayH, trayTop, trayW,
-    stops, T, top, end, bandH, seq, cardPos, appearAt, pile, scrub, finale, pageHeight, perYear, leviSlot,
+    stops, T, top, end, bandH, seq, cardPos, appearAt, pile, scrub, finale, pageHeight, perYear, leviSlot, bornAt,
   };
 }
 
@@ -233,19 +235,28 @@ export function trayAt(L: Layout, w: number) {
  * founding season starts the colour pours down them, staggered by column: 0 = dark, 1 = fully lit.
  */
 export function pourAt(L: Layout, slot: number, w: number): number {
-  const t0 = L.T[FIRST];
+  const t0 = L.bornAt; // the colour washes in with "The league is born"
   if (w <= t0) return 0;
   const p = clamp((w - t0) / (L.vh * 0.62));
   return easeOut(clamp(p * 1.75 - slot * 0.065));
 }
 
-/** A founder growing in: the screen y of their ribbon's tip (and avatar), rising from the bottom. Null before. */
+/**
+ * A founder growing in: the screen y of their ribbon's tip (and avatar), rising from the bottom of
+ * the screen at scroll speed, like every other ribbon, until it docks in the header. Null before.
+ */
 export function growTip(L: Layout, p: string, w: number): number | null {
   const a = L.appearAt[p];
   if (a === undefined || w < a) return null;
-  const q = clamp((w - a) / (L.vh * 0.12));
-  return lerp(L.vh + L.av, L.headerY, easeOut(q)); // no overshoot: it settles straight into its slot
+  return Math.max(L.headerY, L.vh + L.av - (w - a));
 }
+
+/**
+ * A newcomer's avatar arrives big, spread over their ribbon, and shrinks into place as it docks.
+ * `t` runs 0 (just arrived) to 1 (docked).
+ */
+export const ARRIVE_SCALE = 1.55;
+export const arriveScale = (t: number) => lerp(ARRIVE_SCALE, 1, smooth(clamp(t)));
 
 export const PILE_SCALE = 0.72;
 export type Spot = { x: number; y: number; rot: number };
@@ -282,7 +293,7 @@ export function avatarState(L: Layout, p: string, w: number, spot: Spot): Avatar
     const y = cut - w + P + ride;
     const wDock = cut + P + ride - headerY;
     Object.assign(st, {
-      x: colX(seg.slot), y: Math.max(headerY, y), scale: back(q), rot: 0, opacity: clamp(q * 3), flying: 0, gray: 0, cut: null, pileAt: null, landed: 0,
+      x: colX(seg.slot), y: Math.max(headerY, y), scale: back(q) * arriveScale(1 - (y - headerY) / (vh * 0.35)), rot: 0, opacity: clamp(q * 3), flying: 0, gray: 0, cut: null, pileAt: null, landed: 0,
       returning: ret ? (w < wDock ? 1 : clamp(1 - (w - wDock) / (vh * 0.5))) : 0,
     });
     return true;
@@ -292,7 +303,7 @@ export function avatarState(L: Layout, p: string, w: number, spot: Spot): Avatar
     const tip = growTip(L, p, w); // founders grow up from the bottom of the screen on the tip of their ribbon
     if (tip === null) return st;
     st.y = tip;
-    st.scale = 1;
+    st.scale = arriveScale(1 - (tip - headerY) / (vh * 0.35));
     st.opacity = 1;
   } else if (!rideIn(iv[0], false)) return st;
 
