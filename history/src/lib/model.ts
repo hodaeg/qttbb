@@ -94,9 +94,9 @@ export function yearsLabel(p: string): string {
   return t.map((x) => (x.end === LAST ? `${x.start}–now` : x.start === x.end ? `${x.start}` : `${x.start}–${x.end}`)).join(', ');
 }
 
-// Story cards, plus a small fun-fact card for any season that has one. Season results aren't cards any
-// more: they're written on the ribbons (CHAMPION, SACKO, UNDEFEATED) and ride up into the avatars. A
-// season's fun fact sits at the start of the *next* year's stretch (`at`), right after its results land.
+// Story cards, plus a small fun-fact card for any season that has one. Season results aren't cards: they
+// are patches stitched onto the ribbons (CHAMPION, SACKO, UNDEFEATED). In each year's stretch: its story
+// cards, then its result patches, then its fun fact, then the next year's line.
 const storyFileCards = storyFile.cards as Card[];
 const seasonExtras = storyFileCards.filter((c) => c.kind === 'season'); // fun facts for a generated season card
 const storyCards = storyFileCards.filter((c) => c.kind !== 'season');
@@ -104,7 +104,7 @@ export const cards: Card[] = [...storyCards];
 for (let y = FIRST; y <= LAST; y++) {
   const season = legacy.seasons[String(y)];
   if (!season) continue;
-  const at = y < LAST ? y + 1 : y;
+  const at = undefined;
   const carrier = cards.find((c) => c.results === y); // a story card that tells this season itself
   if (carrier) {
     carrier.season = season;
@@ -188,11 +188,19 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
   // room between, then a tail where its season's results are written on the ribbons and ride up.
   const lead = cutH + av * 2.6;
   const GAP = vh * 0.26;
-  const tail = vh * 0.42;
+  const PATCHES = 150; // the stretch of ribbon a season's result patches are stitched on
+  const END = vh * 0.2; // ribbon before the next year's line
   const stretch = (storyFile as { yearLength?: Record<string, number> }).yearLength ?? {}; // e.g. 2014 twice as long
+  const storiesOf = (y: number) => (perYear[y] ?? []).filter((c) => c.kind !== 'season');
+  const factOf = (y: number) => (perYear[y] ?? []).find((c) => c.kind === 'season');
+  const hasResults = (y: number) => !!legacy.seasons[String(y)];
+  const storiesH = (y: number) => {
+    const st = storiesOf(y);
+    return st.length ? st.reduce((t, c) => t + blockH(c), 0) + (st.length - 1) * GAP + GAP * 0.6 : 0;
+  };
   const bandH = (y: number) => {
-    const list = perYear[y] ?? [];
-    const content = list.length ? lead + list.reduce((t, c) => t + blockH(c), 0) + (list.length - 1) * GAP + tail : 0;
+    const f = factOf(y);
+    const content = lead + storiesH(y) + (hasResults(y) ? PATCHES : 0) + (f ? GAP * 0.45 + blockH(f) : 0) + END;
     return Math.max(vh * 0.62, content) * (stretch[String(y)] ?? 1) + (y === FIRST ? vh * 0.7 : 0);
   };
 
@@ -205,19 +213,24 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
   const end = y0;
   const top = (y: number) => T[y] ?? end; // top of a year's band; past the last year -> end of the timeline
 
-  // Where each card sits (world px, its top). A stretched year spreads its cards out.
+  // Where each card sits (world px, its top), and where each season's result patches end (`honour`, the
+  // foot of the patches: they're stitched on just after the year's stories, its fun fact right after them)
   const seq: { card: Card; a: number; b: number; h: number }[] = [];
+  const honour: Record<number, number> = {};
   for (const y of stops) {
-    const list = perYear[y] ?? [];
-    if (!list.length) continue;
-    const used = list.reduce((t, c) => t + blockH(c), 0);
-    const room = bandH(y) - (y === FIRST ? vh * 0.7 : 0) - lead - tail - used;
-    const gap = list.length > 1 ? Math.max(GAP, room / (list.length - 1)) : 0;
     let at = T[y] + lead;
-    for (const card of list) {
+    const st = storiesOf(y);
+    for (const card of st) {
       seq.push({ card, a: at, b: 0, h: cardH(card) });
-      at += blockH(card) + gap;
+      at += blockH(card) + GAP;
     }
+    if (st.length) at += GAP * 0.6 - GAP;
+    if (hasResults(y)) {
+      honour[y] = at + PATCHES - 10;
+      at += PATCHES;
+    }
+    const f = factOf(y);
+    if (f) seq.push({ card: f, a: at + GAP * 0.45, b: 0, h: cardH(f) });
   }
   seq.forEach((r, i) => (r.b = i < seq.length - 1 ? seq[i + 1].a : end));
   const cardPos = new Map<Card, number>(seq.map((r) => [r.card, r.a]));
@@ -249,7 +262,7 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
 
   return {
     vh, W, inset, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayW, cardX, photo,
-    stops, T, top, end, bandH, seq, cardPos, appearAt, pile, scrub, finale, pageHeight, perYear, leviSlot, bornAt,
+    stops, T, top, end, bandH, seq, honour, cardPos, appearAt, pile, scrub, finale, pageHeight, perYear, leviSlot, bornAt,
   };
 }
 

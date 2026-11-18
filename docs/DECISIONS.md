@@ -556,3 +556,14 @@ Replaces the pinned card tray (D39 and on).
   - "lower is better" is gone from the open bar.
   - Randy (desaturated, cut out by hand-traced polygon plus colour trimming, `public/tegridy/randy.png`) stands dark behind the low bars on the left, looming over the scores. He rises into place with the bars.
 - **Other.** The in/out arrows show faces only again. 2014 is back to normal length.
+
+### D69 — History app: stitched patches stay put; fun facts inside their year; flick-away fades; symmetric swipes; ripple trim — Accepted
+- **Result patches stay put.** They're stitched on, so they scroll exactly with the ribbon (no faster ride) and sit higher: each year's stretch is now its story cards, then a 150px patch zone, then its fun fact, then the next year's line (`L.honour[year]` is the patches' foot). The star, trim or X lands as the patch slides up into its owner's avatar (same timings, rescaled for the slower movement).
+- **Fun facts land inside their season**, after the patches and before the next year's line (they used to lead the next year).
+- **Flicked-away cards and photos** blur, lose their colour and shrink as they go. On a card, the glass fades and the words blur, since a filter on the card itself would switch its frosting off. They pass under the scrubber (z 26 over 12).
+- **The expanded column's glass is now sprung in screen space**, not relative to its column, so it lags, overshoots and skews the same way whichever direction you swipe. Before, one direction just rode rigidly with the column's edge.
+- **Title trim** now goes on as a single ripple running down the ribbon, like a tablecloth snapped down: a soft white glow at the crest, the ribbon shadowed in the troughs either side. It replaces the bright line and sparkles.
+- **Fixes and wording.**
+  - The ribbons' end fade drew only once their end was on screen, so it popped on; it now draws as soon as any of it is.
+  - Integridy's lede now reads "acts *without* integridy".
+  - Randy comes out of total shadow to his dim state with the scroll (brightness 0 → 0.32) instead of snapping between levels.

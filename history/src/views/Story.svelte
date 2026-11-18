@@ -231,7 +231,9 @@
     for (const k of prev === null ? [shown] : [shown, prev]) {
       const nb = peekSlot();
       const rubber = k === shown ? drag * (nb >= 0 && nb < SLOTS ? 0.12 : 0.18) : 0; // at the ends it just stretches
-      const t = anchor(k) + rubber;
+      // sprung in screen space (not relative to the column), so the glass lags and overshoots the same
+      // way whichever direction you swipe
+      const t = gOf(k).x + anchor(k) + rubber;
       const c = pull[k] ?? { x: t, v: 0 };
       let v = reduced ? 0 : c.v * 0.7 + (t - c.x) * 0.17;
       let x = reduced ? t : c.x + v;
@@ -251,7 +253,7 @@
     focus = shown = slot;
     // the incoming glass starts on its column's leading edge, hidden by the clip until the column opens
     const g = gOf(slot);
-    pull = { ...pull, [slot]: { x: prev === null ? (g.w - PW) / 2 : dir > 0 ? 8 : g.w - 8 - PW, v: 0 } };
+    pull = { ...pull, [slot]: { x: g.x + (prev === null ? (g.w - PW) / 2 : dir > 0 ? 8 : g.w - 8 - PW), v: 0 } };
   }
   function stepFocus() {
     if (focus !== null && (!litFor(focus) || sink > 0.05)) focus = null; // scrolled back before the league, or past the end: close
@@ -438,7 +440,7 @@
   // ---- photos: a little stack under their card, scrolling with it. Each one settles in as it comes up
   // from the bottom of the screen (a touch small and tilted, then square), later ones on top.
   const photos = $derived.by(() => {
-    const out: { key: string; p: Photo; x: number; y: number; rot: number; z: number; o: number; sc: number }[] = [];
+    const out: { key: string; p: Photo; x: number; y: number; rot: number; z: number; o: number; sc: number; e: number }[] = [];
     const { w: pw, h: ph, step, gap } = L.photo;
     for (const [ri, r] of L.seq.entries()) {
       const list = r.card.photos;
@@ -452,7 +454,7 @@
         const x = L.cardX + L.trayW / 2 + [-0.12, 0.1, -0.05][k % 3] * L.trayW * 0.5;
         const rot = [-3, 2.5, -1.5][k % 3];
         const f = flick(y - ph / 2, ph, ri); // thrown off the same side as its card
-        out.push({ key: p.src, p, x: x + f.x, y: y + (1 - t) * 30, rot: rot + (1 - t) * 7 * (k % 2 ? -1 : 1) + f.rot, z: k + 1, o: clamp(t * 2.5), sc: lerp(0.84, 1, t) });
+        out.push({ key: p.src, p, x: x + f.x, y: y + (1 - t) * 30, rot: rot + (1 - t) * 7 * (k % 2 ? -1 : 1) + f.rot, z: k + 1, o: clamp(t * 2.5), sc: lerp(0.84, 1, t) * (1 - f.e * 0.3), e: f.e });
       });
     }
     return { list: out, pw, ph };
@@ -467,7 +469,7 @@
   const flick = (top: number, _h: number, i: number) => {
     const e = clamp((exitLine - top) / (exitLine - clearLine));
     const side = i % 2 ? 1 : -1;
-    return { x: side * Math.pow(e, 1.6) * (W * 1.05), rot: side * e * 9 };
+    return { x: side * Math.pow(e, 1.6) * (W * 1.05), rot: side * e * 9, e };
   };
   const anchored = $derived(
     L.seq
@@ -618,7 +620,7 @@
   }
   // the open column and, while switching, the one closing
   const panelCols = $derived(
-    (prev === null ? [shown] : [shown, prev]).map((k) => ({ k, g: gOf(k), pull: pull[k] ?? { x: 8, v: 0 }, list: panelsOf(k) })),
+    (prev === null ? [shown] : [shown, prev]).map((k) => ({ k, g: gOf(k), pull: pull[k] ?? { x: gOf(k).x + 8, v: 0 }, list: panelsOf(k) })),
   );
 
   // ---- avatars and the alumni pile. The pile is a literal pile: everyone who left, stacked
@@ -715,28 +717,21 @@
     if (season.sacko && lineup[y].includes(season.sacko)) (sackos[season.sacko] ??= []).push(y);
     for (const sv of season.silverStars ?? []) if (lineup[y].includes(sv.person)) (silvers[sv.person] ??= []).push(y);
   }
-  // Every result (CHAMPION, UNDEFEATED, SACKO) sits on its ribbon right at the year line that closes
-  // its season, and lands on the avatars just after that line passes, while the season's card (which
-  // leads the next year, see model.ts) is up. The current season has no closing line yet: its
-  // markers sit early in its own year.
+  // A season's result patches are stitched onto the ribbons just after its stories (the layout decides
+  // where: `L.honour`, the foot of the patches). They scroll with everything else; as a patch scrolls up
+  // into its owner's avatar, the star, trim or X lands.
   function honourAt(y: number) {
-    if (y >= LAST) return L.T[y] + L.cutH + L.av;
-    return L.top(y + 1) - L.cutH - L.av * 0.8;
+    return L.honour[y] ?? L.top(y + 1) - L.cutH - L.av * 0.8;
   }
   const midOf = honourAt;
-  /**
-   * Where a marker is on screen. Until it reaches the playhead it sits on its ribbon; from there it
-   * rides up to the avatars MARK_SPEED times faster than the scroll, so a season's honours land
-   * within ~0.4 of a screen and the next card (who left, who joined) can follow quickly.
-   */
-  const MARK_SPEED = 2.6;
+  /** where a patch's foot is on screen: stitched on, so it just scrolls */
   function markY(world: number) {
-    return w < world ? world - s : L.P - (w - world) * MARK_SPEED;
+    return world - s;
   }
-  /** 0..1 progress of an honour once its marker reaches the avatar; it plays over more scroll after that. */
+  /** 0..1 progress of an honour once its patch reaches the avatar; it plays over a little more scroll after that. */
   const reach = (world: number) => L.headerY + L.av * 4 - markY(world);
-  const starOf = (year: number) => clamp((reach(midOf(year)) - L.av * 2.4) / (MARK_SPEED * vh * 0.09));
-  const stampOf = (year: number) => clamp((reach(midOf(year)) - L.av * 1.5) / (MARK_SPEED * vh * 0.15));
+  const starOf = (year: number) => clamp((reach(midOf(year)) - L.av * 2.4) / (vh * 0.09));
+  const stampOf = (year: number) => clamp((reach(midOf(year)) - L.av * 1.5) / (vh * 0.15));
 
   // One icon per kind, with a count once there is more than one (x2, x3 ...), instead of a row of icons.
   // A new one: the first grows in; later ones bump the icon and tick the count up halfway through.
@@ -787,8 +782,8 @@
   // the ribbon's dressing for a person's titles (0..1 each, as each star lands):
   // 1st gold foil edges, 2nd platinum inside them, 3rd gold chevrons, 4th double chevrons
   // ...and each one grows down the ribbon from the header as you keep scrolling once its star lands
-  // (over ~0.4 of a screen), a glittering flare riding the growing front
-  const edgeGrow = (year: number) => clamp((reach(midOf(year)) - L.av * 2.4) / (MARK_SPEED * vh * 0.09) / 4.5);
+  // (over ~0.4 of a screen), a ripple running down the ribbon with the growing front
+  const edgeGrow = (year: number) => clamp((reach(midOf(year)) - L.av * 2.4) / (vh * 0.09) / 4.5);
   const edgesOf = (p: string) => {
     const t = titles[p] ?? [];
     const at = (k: number) => (t[k] ? edgeGrow(t[k]) : 0);
@@ -798,7 +793,7 @@
   const edgeFront = (g: number) => L.headerY + g * (vh + 40 - L.headerY);
   /** how much of a ribbon piece (screen top y, height h) the edge hasn't reached yet, from its bottom */
   const edgeCut = (g: number, y: number, h: number) => (g >= 1 ? 0 : clamp(h - (edgeFront(g) - y), 0, h));
-  // the flare on each edge that's still growing
+  // the ripple on each edge that's still growing
   const glitz = $derived.by(() => {
     const out: { key: string; x: number; w: number; y: number }[] = [];
     if (fz > 0.5 || sink > 0) return out;
@@ -887,6 +882,8 @@
   const pageH = $derived(Math.max(L.pageHeight, TG.G + TG.uEnd - L.P + vh));
   const headIn = $derived(vh - u < vh * 0.84);
   const paraIn = $derived(vh - u + TG.paraOff < vh * 0.9);
+  // Randy comes out of the shadows as the chart comes up: pitch black to dim, with the scroll
+  const randyLit = $derived(clamp((vh * 0.95 - (vh - u + TG.chartOff)) / (vh * 0.55)));
   const logoIn = $derived(vh - u + TG.logoOff < vh * 0.78);
   // the bars grow on the clock (left to right, overshooting a touch) once the chart is well in view
   let grown = $state(false);
@@ -1112,9 +1109,9 @@
       </i>
     {/each}
     {#each glitz as gz (gz.key)}
-      <span class="flare" style:width="{gz.w}px" style:transform="translate3d({gz.x}px,{gz.y}px,0)"><i class="tw l"></i><i class="tw m"></i><i class="tw r"></i></span>
+      <span class="ripple" style:width="{gz.w}px" style:transform="translate3d({gz.x}px,{gz.y - 70}px,0)"></span>
     {/each}
-    {#if ribbonEnd - s < vh + 10}
+    {#if ribbonEnd - s - endFade < vh + 10}
       <i class="rend" style:width="{L.fieldW + 8}px" style:height="{endFade + 2}px" style:transform="translate3d({L.padL - 4}px,{ribbonEnd - s - endFade}px,0)"></i>
     {/if}
     <!-- the ribbons falling away at the bottom -->
@@ -1165,9 +1162,11 @@
       <div
         class="acard"
         style:width="{L.trayW}px"
-        style:--o={c.o * (1 - fz)}
+        style:--o={c.o * (1 - fz) * (1 - c.f.e * 0.75)}
+        style:--fb="{(c.f.e * 6).toFixed(2)}px"
+        style:--fs={1 - c.f.e * 0.9}
         style:pointer-events={fz > 0.5 || c.o < 0.6 ? 'none' : null}
-        style:transform="translate3d({(L.cardX + c.f.x).toFixed(1)}px,{c.y.toFixed(1)}px,0) rotate({c.f.rot.toFixed(2)}deg)"
+        style:transform="translate3d({(L.cardX + c.f.x).toFixed(1)}px,{c.y.toFixed(1)}px,0) rotate({c.f.rot.toFixed(2)}deg) scale({(1 - c.f.e * 0.3).toFixed(3)})"
       >
         <Glass pad="16px 20px 18px"><CardView card={c.r.card} {onperson} /></Glass>
       </div>
@@ -1191,6 +1190,7 @@
           style:height="{photos.ph}px"
           style:z-index={big ? 50 : ph.z}
           style:opacity={big ? 1 : ph.o}
+          style:filter={!big && ph.e > 0.01 ? `blur(${(ph.e * 6).toFixed(2)}px) saturate(${(1 - ph.e * 0.9).toFixed(2)})` : null}
           style:transform={big
             ? `translate3d(${W / 2 - photos.pw / 2}px,${(vh - L.inset) / 2 - photos.ph / 2}px,0) rotate(0deg) scale(${zs})`
             : `translate3d(${ph.x - photos.pw / 2}px,${ph.y - photos.ph / 2}px,0) rotate(${ph.rot}deg) scale(${ph.sc})`}
@@ -1233,7 +1233,7 @@
             style:opacity={pc.k === shown ? fz : 0}
             style:pointer-events={pc.k === focus && fz > 0.6 ? 'auto' : 'none'}
             style:width="{PW}px"
-            style:transform="translate3d({pc.pull.x}px,{pn.y + pn.h + 6}px,0)"
+            style:transform="translate3d({pc.pull.x - pc.g.x}px,{pn.y + pn.h + 6}px,0)"
             onclick={() => goBack(pn.key, () => (focus = null))}
           >Return</button>
           <div
@@ -1242,7 +1242,7 @@
             style:width="{PW}px"
             style:height="{Math.max(0, pn.h)}px"
             style:--pv="{clamp(-v * 1.6, -16, 16)}px"
-            style:transform="translate3d({pc.pull.x}px,{pn.y}px,0) skewX({clamp(-v * 0.35, -4, 4)}deg) scale({lerp(0.94, 1, pc.k === shown ? fz : 1)})"
+            style:transform="translate3d({pc.pull.x - pc.g.x}px,{pn.y}px,0) skewX({clamp(-v * 0.35, -4, 4)}deg) scale({lerp(0.94, 1, pc.k === shown ? fz : 1)})"
           >
             <Glass full pad="0">
               <div class="pbody" use:natural={pn.key}>
@@ -1300,7 +1300,7 @@
         Integridy<br />Facto<span class="r">r<img class="sticker" src="{import.meta.env.BASE_URL}tegridy/sticker.png" alt="An “I got tegridy” sticker" draggable="false" /></span>
       </h2>
       <div class="tgpara" class:in={paraIn} bind:clientHeight={paraH} style:left="{TG.x0}px" style:width="{Math.min(TG.chartW, 560)}px" style:top="{TG.paraOff}px">
-        <p class="lede">Every time a member acts with integridy, they get penalized. Golf scoring with data from Sleeper only.</p>
+        <p class="lede">Every time a member acts without integridy, they get penalized. Golf scoring with data from Sleeper only.</p>
         <div class="rdiv"><span>Penalties</span></div>
         <div class="rules">
           {#each tgRules as r (r.label)}
@@ -1319,7 +1319,6 @@
       <!-- Randy, dark, looming over the scores from the left -->
       <img
         class="randy"
-        class:in={grown}
         src="{import.meta.env.BASE_URL}tegridy/randy.png"
         alt=""
         aria-hidden="true"
@@ -1328,6 +1327,7 @@
         style:left="{TG.x0 - 6}px"
         style:top="{TG.base - TG.chartH * 0.8}px"
         style:opacity={(1 - tfz) * 0.9}
+        style:filter="brightness({(0.32 * randyLit).toFixed(3)}) contrast(1.15) drop-shadow(0 0 30px rgba(0, 0, 0, 0.6))"
       />
       <i class="tgbase" style:left="{TG.x0}px" style:width="{TG.chartW}px" style:top="{TG.base}px" style:opacity={growOf(0) > 0 ? 1 : 0}></i>
       {#each tgBars as b (b.m.person)}
@@ -1603,8 +1603,13 @@
     visibility: hidden;
     pointer-events: none;
   }
+  .acard :global(.body) {
+    /* flicked away: the words blur and lose their colour as it goes (the glass itself fades: a filter
+       on the card would switch its frosting off) */
+    filter: blur(var(--fb, 0px)) saturate(var(--fs, 1));
+  }
   .acard {
-    z-index: 12; /* above the avatars (10): a card is thrown off the side before it gets up to them */
+    z-index: 12; /* above the avatars (10), under the scrubber (26): thrown off the side before the avatars */
     will-change: transform; /* not opacity: it would switch the glass off (Glass fades via --o) */
     /* heavier, darker glass than elsewhere: the ribbons behind stay a soft blur of colour */
     --glass-tint: rgba(10, 12, 17, 0.7);
@@ -1698,57 +1703,32 @@
     pointer-events: none;
     clip-path: inset(0 0 var(--cut, 0px) 0); /* grows down the ribbon as it's earned */
   }
-  /* the flare riding a growing edge's front: a bright line across the ribbon and sparkles winking at both
-     edges, like a little magic as the trim is sewn on */
-  .flare {
-    height: 0;
+  /* the trim going on: a single ripple running down the ribbon, like a tablecloth snapped down. A soft
+     white glow at its crest, the ribbon shadowed in the troughs either side of it */
+  .ripple {
+    height: 140px;
     pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      transparent 0,
+      rgba(0, 0, 0, 0.3) 30%,
+      rgba(0, 0, 0, 0.08) 44%,
+      rgba(255, 255, 255, 0.55) 50%,
+      rgba(0, 0, 0, 0.08) 56%,
+      rgba(0, 0, 0, 0.32) 72%,
+      transparent 100%
+    );
   }
-  .flare::before {
+  .ripple::after {
     content: '';
     position: absolute;
-    left: -3px;
-    right: -3px;
-    top: -1px;
-    height: 2px;
-    background: linear-gradient(to right, #fff4c4, #fff 50%, #fff4c4);
-    box-shadow:
-      0 0 8px 2px rgba(255, 236, 170, 0.9),
-      0 0 18px 4px rgba(248, 210, 110, 0.45);
-  }
-  .tw {
-    position: absolute;
-    top: -5px;
-    width: 10px;
-    height: 10px;
-    background: conic-gradient(from 0deg, transparent 0 40deg, #fff 45deg, transparent 50deg 130deg, #fff 135deg, transparent 140deg 220deg, #fff 225deg, transparent 230deg 310deg, #fff 315deg, transparent 320deg);
-    -webkit-mask: radial-gradient(circle, #000 0 25%, transparent 70%);
-    mask: radial-gradient(circle, #000 0 25%, transparent 70%);
-    filter: drop-shadow(0 0 3px rgba(255, 236, 170, 1));
-    animation: twinkle 700ms ease-in-out infinite;
-  }
-  .tw.l {
-    left: -5px;
-  }
-  .tw.r {
-    right: -5px;
-    animation-delay: 230ms;
-  }
-  .tw.m {
-    left: calc(50% - 5px);
-    top: -9px;
-    animation-delay: 460ms;
-  }
-  @keyframes twinkle {
-    0%,
-    100% {
-      transform: scale(0.35) rotate(0deg);
-      opacity: 0.4;
-    }
-    50% {
-      transform: scale(1.25) rotate(45deg);
-      opacity: 1;
-    }
+    left: -4px;
+    right: -4px;
+    top: 50%;
+    height: 22px;
+    margin-top: -11px;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255, 255, 255, 0.95), rgba(255, 250, 235, 0.35) 55%, transparent 75%);
+    filter: blur(2px);
   }
   .edge.gold {
     background-image: var(--foil-gold), var(--foil-gold);
@@ -2140,24 +2120,11 @@
     background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--bg) 70%, transparent) 55%, var(--bg));
   }
   .randy {
-    /* desaturated and dark: a figure in the shadows, staring down at the scores */
+    /* desaturated, in the shadows, staring down at the scores (his light comes up with the scroll) */
     max-width: none;
     width: auto;
     pointer-events: none;
     user-select: none;
-    filter: brightness(0.32) contrast(1.15) drop-shadow(0 0 30px rgba(0, 0, 0, 0.6));
-    transform: translateY(14px);
-    clip-path: inset(0 0 14px 0); /* stands on the baseline */
-    visibility: hidden;
-    transition:
-      transform 900ms cubic-bezier(0.2, 1, 0.3, 1),
-      visibility 0s 900ms;
-  }
-  .randy.in {
-    visibility: visible;
-    transform: none;
-    clip-path: none;
-    transition: transform 900ms cubic-bezier(0.2, 1, 0.3, 1);
   }
   .tg > .tgmed {
     height: 0;
