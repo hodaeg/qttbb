@@ -27,7 +27,7 @@
 
     { "id": "dustin-sadnick", "name": "Dustin Sadnick", "nickname": null, "initials": "DS", "role": "outsider", "avatar": "avatars/dustin-sadnick.jpg", "story": "Levi's brother." },
     { "id": "doug-comes", "name": "Doug Comes", "nickname": null, "initials": "DC", "role": "outsider", "avatar": null, "story": "Tim Comes's brother." },
-    { "id": "luke-reinardy", "name": "Lucas Reinardy", "nickname": "Luke", "initials": "LR", "role": "outsider", "avatar": "avatars/luke-reinardy.jpg", "story": "Kalyn's older brother. Tim's freshman roommate; also lived with Max, Zaid and Nate." },
+    { "id": "luke-reinardy", "name": "Lucas Reinardy", "nickname": "Luke", "initials": "LR", "role": "outsider", "avatar": "avatars/luke-reinardy.jpg", "story": "Kalyn's older brother. Tim's freshman roommate; later lived at 71 with Andy, Max, Tim and Nate." },
     { "id": "alex-randall", "name": "Alex Randall", "nickname": null, "initials": "AR", "role": "outsider", "avatar": "avatars/alex-randall.jpg", "story": "Max's pal. The group partied at his house." },
     { "id": "alex-hoover", "name": "Alex Hoover", "nickname": null, "initials": "AH", "role": "outsider", "avatar": "avatars/alex-hoover.jpg", "story": "TODO" },
     { "id": "tim-underhill", "name": "Tim Underhill", "nickname": null, "initials": "TU", "role": "outsider", "avatar": "avatars/tim-underhill.jpg", "story": "Levi's future roommate." },
