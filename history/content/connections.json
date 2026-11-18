@@ -59,6 +59,8 @@
     { "from": "levi-nellen", "to": "kyle-mont-blanc", "year": 2010, "how": "English courses", "type": "class" },
     { "from": "levi-nellen", "to": "adam-herr", "year": null, "how": "high school", "type": "high-school" },
     { "from": "adam-herr", "to": "zaid-hunitie", "year": 2011, "how": "roommates", "type": "roommate" },
+    { "from": "adam-herr", "to": "callan-curtis", "year": 2011, "how": "roommates", "type": "roommate" },
+    { "from": "adam-herr", "to": "dominic-morelli", "year": 2011, "how": "roommates", "type": "roommate" },
     { "from": "adam-herr", "to": "mike-whiting", "year": 2011, "how": "class project partners, bonded over wrestling; Tim's frat", "type": "class" },
 
     { "from": "dave-skradski", "to": "max-christensen", "year": null, "how": "high school", "type": "high-school" },
