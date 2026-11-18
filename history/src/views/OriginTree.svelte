@@ -48,28 +48,25 @@
 <script lang="ts">
   import Avatar from './Avatar.svelte';
 
-  // u: how far the section has scrolled up from the bottom of the screen (its top is at vh - u)
-  let { T, u, vh, desktop, onperson }: { T: TreeLayout; u: number; vh: number; desktop: boolean; onperson: (id: string) => void } = $props();
+  // u: how far the section has scrolled up from the bottom of the screen (its top is at vh - u);
+  // inset: the bottom safe zone (a browser toolbar can cover that much of the screen)
+  let { T, u, vh, inset = 0, desktop, onperson }: { T: TreeLayout; u: number; vh: number; inset?: number; desktop: boolean; onperson: (id: string) => void } = $props();
 
   const clamp = (v: number, a = 0, b = 1) => Math.max(a, Math.min(b, v));
   const back = (t: number) => 1 + 2.4 * Math.pow(t - 1, 3) + 1.4 * Math.pow(t - 1, 2);
+  const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
   const R = $derived(Math.min(10, T.ind - T.av / 2 - 3)); // the elbow's radius
-  const SPAN = 46; // px of scroll an arrival takes
-  // the growth front: everything above this line (in the section's pixels) has grown in
-  const front = $derived(u - vh * 0.2);
+  // the tree comes up out of the dark at the bottom of the screen: `floor` is where it's black (just
+  // above any toolbar), and it's fully there `FADE` px above that
+  const floor = $derived(u - inset);
+  const FADE = $derived(vh * 0.24);
   const headIn = $derived(u > vh * 0.16);
   const ledeIn = $derived(u > vh * 0.24);
   const first = (id: string) => people[id].nickname ?? people[id].name.split(' ')[0];
+  /** 0..1: how far a row has risen out of the dark (0 at the floor, 1 settled) */
+  const rise = (r: Row, lag = 0) => clamp((floor - r.y - lag) / FADE);
 
-  // one arrival's progress, 0..1: the branch draws, the avatar pops, the words slide in
-  const progress = (r: Row) =>
-    clamp((front - (!r.parent ? r.y - T.av : r.straight ? r.parent.y + T.av / 2 : r.y - R)) / (r.straight ? T.rh - T.av + 20 : SPAN));
-  const stem = (r: Row) => {
-    // the ribbon running down from someone to the people they brought in, grown as far as the front
-    const top = r.y + T.av / 2 - 2;
-    const bot = Math.min(r.last - R, Math.max(top, front));
-    return bot > top ? `M${r.x} ${top}V${bot}` : '';
-  };
+  const stem = (r: Row) => `M${r.x} ${r.y + T.av / 2 - 2}V${r.last - R}`;
   const elbow = (r: Row) => {
     const px = r.parent!.x;
     if (r.straight) return `M${px} ${r.parent!.y + T.av / 2 - 2}V${r.y - T.av / 2 + 2}`;
@@ -77,50 +74,72 @@
   };
 </script>
 
-<h2 class="head display" class:in={headIn} style:left="{T.x0}px" style:font-size="calc({T.title}px * var(--display-scale))">Family Tree</h2>
-<p class="lede" class:in={ledeIn} style:left="{T.x0}px" style:width="{T.colW}px" style:top="{T.title * 0.92 + 18}px">
-  The whole league traces back to one dorm room: Dustin and Doug, freshman roommates at Winona State in 2002.
-</p>
+<div class="wrap" style:height="{T.end + 20}px" style:--f="{floor.toFixed(1)}px" style:--fh="{FADE.toFixed(0)}px">
+  <h2 class="head display" class:in={headIn} style:left="{T.x0}px" style:font-size="calc({T.title}px * var(--display-scale))">Family Tree</h2>
+  <p class="lede" class:in={ledeIn} style:left="{T.x0}px" style:width="{T.colW}px" style:top="{T.title * 0.92 + 18}px">
+    The whole league traces back to one dorm room: Dustin and Doug, freshman roommates at Winona State in 2002.
+  </p>
 
-<svg class="ribbons" width="100%" height={T.end + 20} aria-hidden="true" style:--w="{desktop ? 5 : 4}px">
+  <svg class="ribbons" width="100%" height={T.end + 20} aria-hidden="true" style:--w="{desktop ? 5 : 4}px">
+    <defs>
+      <!-- each branch blends from the colour of whoever brought them in to their own -->
+      {#each T.rows as r (r.id)}
+        {#if r.parent}
+          {#if r.straight}
+            <linearGradient id="tg-{r.id}" gradientUnits="userSpaceOnUse" x1={r.x} x2={r.x} y1={r.parent.y + T.av / 2} y2={r.y - T.av / 2}>
+              <stop offset="0" stop-color={r.parent.color} /><stop offset="1" stop-color={r.color} />
+            </linearGradient>
+          {:else}
+            <linearGradient id="tg-{r.id}" gradientUnits="userSpaceOnUse" x1={r.parent.x - 2} x2={r.x - T.av / 2} y1={r.y} y2={r.y}>
+              <stop offset="0" stop-color={r.parent.color} /><stop offset="1" stop-color={r.color} />
+            </linearGradient>
+          {/if}
+        {/if}
+      {/each}
+    </defs>
+    {#each T.rows as r (r.id)}
+      {#if r.last > r.y}<path d={stem(r)} stroke={r.color} />{/if}
+      {#if r.parent}<path d={elbow(r)} stroke="url(#tg-{r.id})" />{/if}
+    {/each}
+  </svg>
+
   {#each T.rows as r (r.id)}
-    {@const p = progress(r)}
-    {#if r.parent && p > 0}
-      <path d={elbow(r)} stroke={r.color} pathLength="1" stroke-dasharray="1 1" stroke-dashoffset={1 - clamp(p / 0.55)} />
-    {/if}
-    {#if r.last > r.y && front > r.y}
-      <path d={stem(r)} stroke={r.color} />
-    {/if}
+    {@const a = rise(r)}
+    {@const b = rise(r, 18)}
+    <button
+      class="row"
+      style:left="{r.x - T.av / 2}px"
+      style:top="{r.y - T.av / 2}px"
+      style:width="{T.x0 + T.colW - (r.x - T.av / 2)}px"
+      style:height="{T.av}px"
+      style:pointer-events={a > 0.3 ? null : 'none'}
+      tabindex={a > 0.3 ? 0 : -1}
+      aria-label="{people[r.id].name}: {r.how}{r.year ? `, ${r.year}` : ''}"
+      onclick={() => onperson(r.id)}
+    >
+      <!-- rising up out of the dark and settling: the avatar first, then its words -->
+      <span class="av" style:transform="translateY({((1 - easeOut(a)) * 34).toFixed(1)}px) scale({(0.72 + 0.28 * back(a)).toFixed(3)})">
+        <Avatar id={r.id} size={T.av} live />
+      </span>
+      <span class="words" style:opacity={b} style:transform="translateY({((1 - easeOut(b)) * 22).toFixed(1)}px)">
+        <b class="display" style:color={r.color === GREY ? null : `color-mix(in srgb, ${r.color} 70%, white)`}>{people[r.id].name}{#if people[r.id].nickname && people[r.id].nickname !== people[r.id].name}<small>{' “' + first(r.id) + '”'}</small>{/if}</b>
+        <small class="how">{r.how}</small>
+      </span>
+      {#if r.year}<i class="yr" style:opacity={b}>{r.year}</i>{/if}
+    </button>
   {/each}
-</svg>
-
-{#each T.rows as r (r.id)}
-  {@const p = progress(r)}
-  {@const pop = clamp((p - 0.4) / 0.45)}
-  {@const words = clamp((p - 0.55) / 0.45)}
-  <button
-    class="row"
-    style:left="{r.x - T.av / 2}px"
-    style:top="{r.y - T.av / 2}px"
-    style:width="{T.x0 + T.colW - (r.x - T.av / 2)}px"
-    style:height="{T.av}px"
-    style:visibility={p > 0.4 ? 'visible' : 'hidden'}
-    tabindex={p > 0.4 ? 0 : -1}
-    aria-label="{people[r.id].name}: {r.how}{r.year ? `, ${r.year}` : ''}"
-    onclick={() => onperson(r.id)}
-  >
-    <span class="av" style:transform="scale({(0.4 + 0.6 * back(pop)).toFixed(3)})" style:opacity={pop}>
-      <Avatar id={r.id} size={T.av} live />
-    </span>
-    <span class="words" style:opacity={words} style:transform="translateX({((1 - words) * 10).toFixed(1)}px)">
-      <b class="display" style:color={r.color === GREY ? null : `color-mix(in srgb, ${r.color} 70%, white)`}>{people[r.id].name}{#if people[r.id].nickname && people[r.id].nickname !== people[r.id].name}<small>{' “' + first(r.id) + '”'}</small>{/if}</b>
-      <small class="how">{r.how}</small>
-    </span>
-    {#if r.year}<i class="yr" style:opacity={words}>{r.year}</i>{/if}
-  </button>
-{/each}
+</div>
 
 <style>
+  .wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* everything comes up out of the dark at the bottom of the screen */
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(var(--f) - var(--fh)), transparent var(--f));
+    mask-image: linear-gradient(to bottom, #000 calc(var(--f) - var(--fh)), transparent var(--f));
+  }
   .head,
   .lede,
   .ribbons,

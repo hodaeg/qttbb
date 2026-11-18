@@ -674,3 +674,9 @@ Levi's corrections:
 - Megan came in through Toby: his high school friend Krissie was Megan's roommate. Krissie joins as a friend of the league. Megan's links to Levi and Max are dropped, as "introduced by" links, and the 2009 dorm card now says how she came in.
 - The chain Toby → Krissie → Megan → Kennedy → Callan would have pushed names off a phone screen. So in the tree, someone who brought in just one person carries straight on down into them (a lineage) rather than stepping right.
 - Nate keeps Max and Zaid, not Levi: Levi brought Nate in (they were roommates), and Nate brought in his high school friends.
+
+### D85 — History app: the tree rises out of the dark, branches blend — Accepted
+- **Reveal:** the tree no longer draws its lines down to a growth front at 80% of the screen, which left a dead strip at the bottom. It comes up out of the dark at the bottom of the screen, just above any browser toolbar: a mask fades everything to black over the bottom quarter. Each row rises and settles as it comes up, avatar first, then its words. It's still a pure function of the scroll.
+- **Colour:** each branch, whether elbow or straight, is a gradient from the colour of whoever brought them in to the person's own colour, so there are no hard joints.
+- **Taps:** every row opens that person's sheet, checked with a hit test at each row.
+- **Photos:** a new photo of Dustin and Doug at a party leads the 2002 card. Doug's avatar is cropped from it, and Krissie and Kennedy have photo avatars.

@@ -1449,7 +1449,7 @@
   <!-- Tegridy Factor: the last word -->
   {#if uT > -60 && uT < TR.len + vh + 200}
     <section class="tree" aria-label="Family tree" style:width="{W}px" style:height="{TR.end + 20}px" style:transform="translate3d(0,{(vh - uT).toFixed(1)}px,0)">
-      <OriginTree T={TR} u={uT} {vh} desktop={L.desktop} {onperson} />
+      <OriginTree T={TR} u={uT} {vh} inset={L.inset} desktop={L.desktop} {onperson} />
     </section>
   {/if}
 
