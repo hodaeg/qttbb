@@ -13,7 +13,7 @@ export type Person = {
   founder?: boolean; sleeper?: string | null; color?: string; avatar: string | null; story?: string; anecdotes?: string[];
 };
 export type Card = {
-  year: number; title: string; body: string; kind?: string; funFact?: string;
+  year: number; title: string; body: string; kind?: string; funFact?: string; note?: string; // note: a small aside under the title
   quote?: { by: string | null; text: string; context?: string; todo?: boolean };
   in?: string[]; out?: string[]; returns?: string[]; founders?: string[]; season?: SeasonInfo;
   photos?: { src: string; alt: string }[];
@@ -200,13 +200,16 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
   const hasResults = (y: number) => !!legacy.seasons[String(y)];
   // the undefeated patch is longer ("(reg. season)" under the word), so that season gets more room
   const patchesFor = (y: number) => PATCHES + (legacy.seasons[String(y)]?.silverStars?.length ? 80 : 0);
+  // a year with no stories (most of the recent ones): its patches come in well below its line, so each
+  // year has a stretch of its own on screen before its results hit (they used to follow the line straight in)
+  const patchRoom = (y: number) => (storiesOf(y).length ? 0 : vh * 0.24);
   const storiesH = (y: number) => {
     const st = storiesOf(y);
     return st.length ? st.reduce((t, c) => t + blockH(c), 0) + (st.length - 1) * GAP + GAP * 0.6 : 0;
   };
   const bandH = (y: number) => {
     const f = factOf(y);
-    const content = lead + storiesH(y) + (hasResults(y) ? patchesFor(y) : 0) + (f ? GAP * 0.45 + blockH(f) : 0) + END;
+    const content = lead + storiesH(y) + (hasResults(y) ? patchRoom(y) + patchesFor(y) : 0) + (f ? GAP * 0.45 + blockH(f) : 0) + END;
     return Math.max(vh * 0.62, content) * (stretch[String(y)] ?? 1) + (y === FIRST ? vh * 0.7 : 0);
   };
 
@@ -232,6 +235,7 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
     }
     if (st.length) at += GAP * 0.6 - GAP;
     if (hasResults(y)) {
+      at += patchRoom(y);
       honour[y] = at + patchesFor(y) - 10;
       at += patchesFor(y);
     }

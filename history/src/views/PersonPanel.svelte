@@ -28,7 +28,7 @@
     <Avatar {id} size={64} />
     <div>
       <h3 class="display">{p.name}</h3>
-      <p class="sub">{#if p.nickname}“{p.nickname}” · {/if}{status}</p>
+      <p class="sub">{#if p.nickname}“{p.nickname}”{' · '}{/if}{status}</p>
     </div>
   </header>
 {/if}
@@ -37,7 +37,7 @@
   <div class="years" aria-label="Seasons played: {yearsLabel(id)}">
     {#each years as y}<i class:on={played.has(y)} style:--tone={p.color}></i>{/each}
   </div>
-  <p class="cap">{yearsLabel(id)}{#if constants.has(id)} · every season{/if}</p>
+  <p class="cap">{yearsLabel(id)}{#if constants.has(id)}{' · every season'}{/if}</p>
 {/if}
 
 {#if lg}

@@ -645,3 +645,14 @@ The line under the title ("How twelve friends…") is gone. The ghost ribbons ar
 
 ### D80 — History app: a sheet always leaves room at the top — Accepted
 A long person sheet could fill the whole screen on iPhone, leaving no backdrop to tap: it was capped at `86vh`, and on iOS `vh` is the screen with Safari's bars hidden. It's now capped at `100dvh - 88px - safe-top` (falling back to `100vh - 88px`), so there's always at least 88px of backdrop above it to tap to close, besides the grab bar and Escape.
+
+### D81 — History app: late-year patches, title sway, back to top, data fixes — Accepted
+- Years with no stories (2018 on) put a quarter screen of ribbon between their line and their result patches, so each year gets its own stretch on screen before its results hit.
+- On the title screen, before any scrolling, the ghost ribbons sway on a loop; the first scroll stops it for good. It runs on its own clock so the real ribbons don't redraw for it.
+- A Back to top button fades in under the Hodag logo once it lights. It rewinds the whole story on a custom 1.2–2.6s ease, because the browser's own smooth scroll stalls on a page this long and then jumps. Your wheel or touch takes over.
+- Dot separators: Svelte trims whitespace at the edges of an `{#if}` block, so "“Dom” · " and " · every season" lost their spaces. Those now use string literals.
+- The scrubber's ticks and labels and the year lines across the ribbons are brighter. Outsider avatars without a photo get a solid fill, so they don't show through in piles.
+- Data:
+  - Adam Field's avatar is cropped from the desk photo; he was dorm neighbours with Levi, Nate and Tim.
+  - Alex Hoover went to high school only with Sam; he and Tim Underhill each met Alex Randall through friends their freshman year.
+  - The Parallel Dat Park card gets a `note` aside.

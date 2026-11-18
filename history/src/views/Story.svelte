@@ -42,6 +42,10 @@
   let s = $state(0); // smoothed scroll position
   let vel = $state(0); // how fast we're moving (drives the ripple)
   let time = $state(0);
+  // on the title screen, before you've scrolled at all, the ghost ribbons sway on a loop (as they do
+  // while scrolling); the first scroll stops it. Its own clock, so the real ribbons don't redraw for it.
+  let idle = $state(1);
+  let idleT = $state(0);
   let reduced = $state(false);
   // every story card's height, measured off-screen, so the timeline can give each its room
   let cardHs = $state<Record<number, number>>({});
@@ -166,6 +170,10 @@
       else if (d !== 0) s = target;
       // the ripple fades out over ~400ms after the scroll stops
       const v = reduced ? 0 : Math.abs(d) > Math.abs(vel) ? lerp(vel, d, 0.3) : lerp(vel, d, 0.06);
+      if (idle > 0) {
+        if (reduced || s > 3 || target > 3) idle = reduced ? 0 : Math.max(0, idle - 0.05);
+        idleT = now / 1000;
+      }
       if (Math.abs(v) > 0.02 || vel !== 0) {
         vel = Math.abs(v) < 0.02 ? 0 : v;
         time = now / 1000;
@@ -368,6 +376,7 @@
     const a = clamp(Math.abs(vel) / 30) * (L.desktop ? 2.2 : 1.4);
     return a ? Math.sin(time * 4.2 + slot * 1.37) * a : 0;
   };
+  const idleSway = (slot: number) => (idle ? Math.sin(idleT * 4.2 + slot * 1.37) * idle * (L.desktop ? 2.6 : 1.8) : 0);
   const field = $derived.by(() => {
     const cols: Piece[] = [];
     const tails: Tail[] = [];
@@ -915,6 +924,30 @@
   const logoDraw = $derived(clamp(logoQ / 0.62));
   const logoFill = $derived(clamp((logoQ - 0.62) / 0.24));
   const logoLit = $derived(logoQ >= 0.88);
+  // back to top: the whole story rewinds past (the browser's own smooth scroll stalls on a page this long,
+  // then jumps). Your own wheel or touch takes over.
+  function rewind() {
+    const from = window.scrollY;
+    if (reduced || from < 2) return void window.scrollTo(0, 0);
+    const dur = clamp(900 + from / 14, 1200, 2600);
+    const t0 = performance.now();
+    let raf = 0;
+    const stopIt = () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('wheel', stopIt);
+      window.removeEventListener('touchstart', stopIt);
+    };
+    window.addEventListener('wheel', stopIt, { passive: true });
+    window.addEventListener('touchstart', stopIt, { passive: true });
+    const step = (now: number) => {
+      const q = clamp((now - t0) / dur);
+      const e = q < 0.5 ? 4 * q * q * q : 1 - Math.pow(-2 * q + 2, 3) / 2;
+      window.scrollTo(0, from * (1 - e));
+      if (q < 1) raf = requestAnimationFrame(step);
+      else stopIt();
+    };
+    raf = requestAnimationFrame(step);
+  }
   // the bars grow on the clock (left to right, overshooting a touch) once the chart is well in view
   let grown = $state(false);
   let growT0 = 0;
@@ -1363,7 +1396,7 @@
                 <div class="top">
                   <div class="who">
                     <Avatar id={pn.person} size={L.desktop ? 52 : 40} />
-                    <span><b class="display">{people[pn.person].name}</b><small>{#if people[pn.person].nickname}“{people[pn.person].nickname}” · {/if}{statusOf(pn.person)}</small></span>
+                    <span><b class="display">{people[pn.person].name}</b><small>{#if people[pn.person].nickname}“{people[pn.person].nickname}”{' · '}{/if}{statusOf(pn.person)}</small></span>
                   </div>
                   <div class="yr display"><Roll value={pn.yr} /></div>
                   {#each pn.lines as l (l.text)}
@@ -1583,6 +1616,17 @@
       <div class="hodag" style:left="{(W - TG.logoW) / 2}px" style:top="{TG.logoOff}px" style:width="{TG.logoW}px" style:height="{TG.logoH}px">
         <HodagLogo draw={logoDraw} fill={logoFill} lit={logoLit} {reduced} />
       </div>
+      <!-- and once it's lit, a way back to the start -->
+      <button
+        class="totop"
+        class:on={logoLit}
+        tabindex={logoLit ? 0 : -1}
+        style:top="{TG.logoOff + TG.logoH + 30}px"
+        onclick={rewind}
+      >
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" /></svg>
+        Back to top
+      </button>
       <footer class="foot" style:width="{W}px" style:top="{uEndReal + innerH - vh - 86}px">
         <p>© {new Date().getFullYear()} Hodag Digital. All rights reserved.</p>
         <p>The Quest to the Bria Bowl: its stories, design, artwork and code are original work. Reproduction or redistribution without permission is prohibited.</p>
@@ -1611,7 +1655,7 @@
           style:--lit="99999px"
           style:width="{L.cw}px"
           style:height="{vh + 80}px"
-          style:transform="translate3d({ghostX0 + slot * (L.cw + L.gap) + sway(slot) * (1 - ghostR)}px,-40px,0)"
+          style:transform="translate3d({ghostX0 + slot * (L.cw + L.gap) + (sway(slot) * (1 - ghostR) + idleSway(slot))}px,-40px,0)"
         ></i>
       {/each}
     </div>
@@ -1973,7 +2017,7 @@
   .marker {
     /* a year line: cuts happen here */
     height: 1px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.16));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.32));
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   }
   .marker b {
@@ -1981,7 +2025,7 @@
     position: absolute;
     top: 1px;
     padding: 0 3px 1px;
-    background: rgba(8, 9, 12, 0.72);
+    background: rgba(8, 9, 12, 0.82);
     color: var(--ink);
     font-size: 10px;
     line-height: 12px;
@@ -2492,6 +2536,51 @@
   /* the logo at the end, and the footer under it */
   .tg > .hodag {
     pointer-events: none;
+  }
+  .tg > .totop {
+    left: 50%;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 42px;
+    padding: 0 18px 0 14px;
+    border-radius: 2px;
+    background: var(--glass-tint);
+    backdrop-filter: var(--glass-filter);
+    -webkit-backdrop-filter: var(--glass-filter);
+    box-shadow: var(--glass-rim), var(--glass-lift);
+    font-family: var(--font-display);
+    font-stretch: var(--display-stretch);
+    font-weight: var(--display-weight);
+    font-size: calc(15px * var(--display-scale));
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 10px);
+    transition:
+      opacity 500ms var(--ease-out) 600ms,
+      transform 500ms var(--ease-out) 600ms;
+  }
+  .tg > .totop.on {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+  }
+  .tg > .totop:active {
+    transform: translate(-50%, 0) scale(0.97);
+    transition-delay: 0ms;
+  }
+  .totop svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
   .tg > .foot {
     pointer-events: auto;

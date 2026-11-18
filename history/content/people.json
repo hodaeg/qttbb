@@ -34,7 +34,7 @@
     { "id": "megan-hardie", "name": "Megan Hardie", "nickname": null, "initials": "MH", "role": "outsider", "avatar": "avatars/megan-hardie.jpg", "story": "TODO", "anecdotes": ["Mark Hardie"] },
     { "id": "kennedy-curtis", "name": "Kennedy Curtis", "nickname": null, "initials": "KC", "role": "outsider", "avatar": null, "story": "Callan Curtis's sister." },
     { "id": "jake", "name": "Jake", "nickname": null, "initials": "J", "role": "outsider", "avatar": null, "story": "Produced rap songs with Alex Randall, including Parallel Dat Park.", "anecdotes": ["Looks like Cam Skattebo."] },
-    { "id": "tattoo-adam", "name": "Adam Field", "nickname": null, "initials": "AF", "role": "outsider", "avatar": null, "story": "Got Parallel Dat Park tattooed. Later a Marine.", "anecdotes": ["Was a gym major and never went to class."] },
+    { "id": "tattoo-adam", "name": "Adam Field", "nickname": null, "initials": "AF", "role": "outsider", "avatar": "avatars/tattoo-adam.jpg", "story": "Got Parallel Dat Park tattooed. Later a Marine.", "anecdotes": ["Was a gym major and never went to class."] },
     { "id": "fish", "name": "Fish", "nickname": "Fish", "initials": "F", "role": "outsider", "avatar": "avatars/fish.jpg", "story": "A high school friend of Kyle's who lived in the West Campus dorms with Jordan.", "anecdotes": ["Not a fish?"] }
   ]
 }

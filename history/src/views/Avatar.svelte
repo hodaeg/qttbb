@@ -40,7 +40,8 @@
     box-shadow: inset 0 0 0 1px var(--thread);
   }
   .avatar.outsider {
-    background: transparent;
+    /* solid, so an outsider without a photo doesn't show the avatars under it in a pile */
+    background: color-mix(in srgb, var(--ink-3) 24%, var(--bg-2));
     color: var(--ink-2);
     text-shadow: none;
     box-shadow: inset 0 0 0 1.5px var(--ink-3);

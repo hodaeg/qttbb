@@ -8,13 +8,17 @@
 
     { "from": "max-christensen", "to": "alex-randall", "year": 2008, "how": "pals; the high school visit weekend in Winona", "type": "friend" },
     { "from": "alex-randall", "to": "sam-schurman", "year": null, "how": "high school", "type": "high-school" },
-    { "from": "alex-randall", "to": "alex-hoover", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "alex-hoover", "to": "alex-randall", "year": null, "how": "met through friends, Hoover's freshman year", "type": "friend" },
+    { "from": "tim-underhill", "to": "alex-randall", "year": null, "how": "met through friends, Tim's freshman year", "type": "friend" },
     { "from": "sam-schurman", "to": "alex-hoover", "year": null, "how": "high school", "type": "high-school" },
     { "from": "alex-hoover", "to": "tim-underhill", "year": null, "how": "met through roommates", "type": "friend" },
     { "from": "levi-nellen", "to": "sam-schurman", "year": 2009, "how": "met at Japs; invited for sharing a major", "type": "class" },
     { "from": "tim-underhill", "to": "levi-nellen", "year": null, "how": "roommates", "type": "roommate" },
     { "from": "alex-randall", "to": "levi-nellen", "year": 2009, "how": "parties at Alex's house", "type": "party" },
     { "from": "jake", "to": "alex-randall", "year": 2009, "how": "made rap songs together, including Parallel Dat Park", "type": "friend" },
+    { "from": "tattoo-adam", "to": "levi-nellen", "year": 2009, "how": "dorm neighbors", "type": "dorm" },
+    { "from": "tattoo-adam", "to": "nate-mehlhoff", "year": 2009, "how": "dorm neighbors", "type": "dorm" },
+    { "from": "tattoo-adam", "to": "tim-comes", "year": 2009, "how": "dorm neighbors", "type": "dorm" },
     { "from": "tattoo-adam", "to": "alex-randall", "year": 2009, "how": "got Alex and Jake's song tattooed", "type": "friend" },
 
     { "from": "levi-nellen", "to": "nate-mehlhoff", "year": 2009, "how": "freshman roommates", "type": "roommate" },

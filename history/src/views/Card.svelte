@@ -17,6 +17,7 @@
 {:else}
     <article class:beat={card.kind === 'beat'}>
       <h3 class="display">{card.title}</h3>
+      {#if card.note}<p class="note">{card.note}</p>{/if}
       {#if card.body}<p><Rich text={card.body} {onperson} /></p>{/if}
 
       {#if card.quote}
@@ -59,6 +60,12 @@
     font-size: 15px;
     line-height: 1.46;
     color: var(--ink);
+  }
+  .note {
+    margin: -2px 0 6px;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-2);
   }
   blockquote {
     margin: 12px 0 0;
