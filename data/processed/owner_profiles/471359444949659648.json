@@ -58,7 +58,7 @@
   "weeks": 121
  },
  "faab_and_transactions": {
-  "adds": 297,
+  "adds": 300,
   "biggest_bid": {
    "amount": 45,
    "player": "Christian Watson",
@@ -66,9 +66,9 @@
    "week": 10
   },
   "budget_per_season": 100,
-  "drops": 296,
+  "drops": 299,
   "faab_taken_as_penalty": 35,
-  "free_agent_adds": 177,
+  "free_agent_adds": 178,
   "most_frequent_trade_partner": {
    "owner_id": "383681356686950400",
    "trades": 1
@@ -76,8 +76,8 @@
   "note": "spent = winning bids in the transaction log, net of claims the commissioner later undid (refunded; e.g. the Sep 2021 week-1 corrections). Sleeper's own 'used' figure also reflects FAAB traded between owners and any budget edits that aren't in the log; unexplained_difference is what's left (positive = Sleeper shows more used than the log explains). faab_taken_as_penalty is FAAB the commissioner took for missed league notes (config/commissioner_penalties.json); remaining_unexplained is what's still unexplained after that (small corrections and refunds, mostly 2019 and 2021).",
   "refunded": 28,
   "remaining_unexplained": 0,
-  "sleeper_reported_used": 712,
-  "spent": 677,
+  "sleeper_reported_used": 727,
+  "spent": 692,
   "spent_per_season": {
    "2019": 78,
    "2020": 99,
@@ -86,14 +86,14 @@
    "2023": 80,
    "2024": 59,
    "2025": 96,
-   "2026": 69
+   "2026": 84
   },
   "traded_in": 0,
   "traded_out": 0,
   "trades": 3,
   "unexplained_difference": 35,
-  "waiver_claims_lost": 92,
-  "waiver_claims_won": 120
+  "waiver_claims_lost": 93,
+  "waiver_claims_won": 122
  },
  "faab_efficiency": {
   "best_par_claim": {
@@ -670,22 +670,22 @@
      "weeks_started": 6
     },
     "biggest_bust": {
-     "bid": 9,
+     "bid": 11,
      "par_per_dollar": 0.0,
-     "player": "San Francisco 49ers",
+     "player": "Bo Nix",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
-     "pos": "DEF",
+     "pos": "QB",
      "season": "2026",
-     "week": 5,
+     "week": 10,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 4,
     "claims_dropped_before_playing": 2,
-    "dollars_spent": 69,
+    "dollars_spent": 84,
     "free_claims": 2,
-    "hit_rate": 0.636,
+    "hit_rate": 0.538,
     "most_points": {
      "bid": 24,
      "par_per_dollar": 1.09,
@@ -698,12 +698,12 @@
      "week": 3,
      "weeks_started": 6
     },
-    "paid_claims": 11,
-    "par_per_dollar": -0.15,
+    "paid_claims": 13,
+    "par_per_dollar": -0.12,
     "points_above_replacement": -10.37,
     "points_from_free_claims": -1.0,
     "points_from_paid_claims": 120.86,
-    "points_per_dollar": 1.75,
+    "points_per_dollar": 1.44,
     "worst_par_claim": {
      "bid": 3,
      "par_per_dollar": -3.97,
@@ -718,13 +718,13 @@
     }
    }
   },
-  "claims_benched_only": 23,
+  "claims_benched_only": 25,
   "claims_dropped_before_playing": 3,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
-  "dollars_spent": 677,
+  "dollars_spent": 692,
   "free_claims": 28,
-  "hit_rate": 0.717,
-  "league_points_per_dollar": 2.41,
+  "hit_rate": 0.702,
+  "league_points_per_dollar": 2.4,
   "most_points": {
    "bid": 7,
    "par_per_dollar": 5.33,
@@ -738,13 +738,13 @@
    "weeks_started": 7
   },
   "name": "Bang for Buck",
-  "paid_claims": 92,
+  "paid_claims": 94,
   "par_per_dollar": 0.19,
   "par_rank": 5,
   "points_above_replacement": 129.23,
   "points_from_free_claims": 302.82,
   "points_from_paid_claims": 1916.66,
-  "points_per_dollar": 2.83,
+  "points_per_dollar": 2.77,
   "rank": 4,
   "worst_par_claim": {
    "bid": 5,
@@ -2108,21 +2108,21 @@
    "division": "Hodag\u2019s Harem",
    "efficiency": 0.8979,
    "faab": {
-    "adds": 33,
+    "adds": 36,
     "budget": 100,
-    "drops": 33,
+    "drops": 36,
     "faab_taken_as_penalty": 0,
-    "free_agent_adds": 20,
+    "free_agent_adds": 21,
     "refunded": 0,
     "remaining_unexplained": 0,
-    "sleeper_reported_used": 69,
-    "spent": 69,
+    "sleeper_reported_used": 84,
+    "spent": 84,
     "traded_in": 0,
     "traded_out": 0,
     "trades": 0,
     "unexplained_difference": 0,
-    "waiver_claims_lost": 16,
-    "waiver_claims_won": 13
+    "waiver_claims_lost": 17,
+    "waiver_claims_won": 15
    },
    "faab_efficiency": {
     "best_par_claim": {
@@ -2150,22 +2150,22 @@
      "weeks_started": 6
     },
     "biggest_bust": {
-     "bid": 9,
+     "bid": 11,
      "par_per_dollar": 0.0,
-     "player": "San Francisco 49ers",
+     "player": "Bo Nix",
      "points_above_replacement": 0.0,
      "points_per_dollar": 0.0,
      "points_started": 0.0,
-     "pos": "DEF",
+     "pos": "QB",
      "season": "2026",
-     "week": 5,
+     "week": 10,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 4,
     "claims_dropped_before_playing": 2,
-    "dollars_spent": 69,
+    "dollars_spent": 84,
     "free_claims": 2,
-    "hit_rate": 0.636,
+    "hit_rate": 0.538,
     "most_points": {
      "bid": 24,
      "par_per_dollar": 1.09,
@@ -2178,12 +2178,12 @@
      "week": 3,
      "weeks_started": 6
     },
-    "paid_claims": 11,
-    "par_per_dollar": -0.15,
+    "paid_claims": 13,
+    "par_per_dollar": -0.12,
     "points_above_replacement": -10.37,
     "points_from_free_claims": -1.0,
     "points_from_paid_claims": 120.86,
-    "points_per_dollar": 1.75,
+    "points_per_dollar": 1.44,
     "worst_par_claim": {
      "bid": 3,
      "par_per_dollar": -3.97,
