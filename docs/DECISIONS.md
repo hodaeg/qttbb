@@ -575,3 +575,15 @@ Replaces the pinned card tray (D39 and on).
   - Android and anything else with the Vibration API gets `navigator.vibrate`.
   - iOS Safari has no Vibration API, but since iOS 18 toggling a native `<input type=checkbox switch>` gives a haptic tick, so it falls back to toggling a hidden one. That's reliable inside a tap, and may not fire during a scroll.
   - Taps fire when: a season's patches land on the avatars (one per season, champion and sacko together), a cut hits (one per year's cuts), a column or Tegridy bar opens or closes, and the alumni pile or a "Connected to" pile opens or closes.
+
+### D71 — History app: centred desktop container, dark only, gentler lock — Accepted
+- **Desktop.**
+  - The ribbons and the scrubber gutter sit together in one container, centred on wide screens: `padL` centres the field plus gutter, and the scrubber and alumni pile hang off the container's right edge (`L.rightEdge`) instead of the window's. Phones are unchanged.
+  - The Legacy Rankings card is centred over the ribbons.
+  - Result patches leave 10px of ribbon either side on wide ribbons.
+  - "Tegridy Factor" is one line with the sticker at its end, and the explainer runs the chart's full width.
+- **Tegridy bars stayed dead** after scrolling past a fixed window around the chart, which a tall desktop window easily does while the chart is still in view. They now take taps, and stay open, whenever the chart is actually on screen.
+- **Light mode is gone**: dark only (`color-scheme: dark`, the light token block removed).
+- **The lock.**
+  - Right: a small green light now glows through the Enter glass from behind (a small blurred spot, 8% tint, faint outer glow), instead of washing the button out.
+  - Unlocking: the controls blur, shrink slightly and fade, and the frosted veil (now a 93% dark tint with a 30px backdrop blur over the story) melts away, so the story comes into focus. It no longer wipes up off the screen.

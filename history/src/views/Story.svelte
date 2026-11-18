@@ -503,7 +503,7 @@
       if (merge >= (kind === 'sacko' ? 0.5 : 1)) return;
       const reveal = clamp((vh - (y - len)) / (len * 1.3)); // written down the ribbon as it comes on screen
       // CHAMPION and SACKO are cut out of a block of gold or charred material, a little narrower than the ribbon
-      const bw = Math.max(12, Math.round(L.cw - 4));
+      const bw = Math.max(12, Math.round(L.cw - (L.cw > 40 ? 20 : 4))); // wide ribbons: 10px of ribbon either side
       // the undefeated patch adds "(reg. season)" in small type under the word
       const sub = kind === 'silver' ? '(reg. season)' : '';
       const subFs = markFs * 0.6;
@@ -953,7 +953,13 @@
     return { x, w: width(i), r: i === f ? 1 : 0 };
   }
   const tgG = (i: number) => tgGeo[i] ?? tgTarget(i, null);
-  const tgReady = () => grown && u > TG.chartEnd - vh * 0.22 && u < TG.chartEnd + vh * 0.3;
+  // the bars take taps whenever the chart is actually on screen (a tall desktop window can show it well past
+  // where a phone would have scrolled it away)
+  const chartOnScreen = () => {
+    const top = vh - u + TG.chartOff;
+    return top + TG.chartH * 0.6 > 0 && top + TG.chartH * 0.4 < vh;
+  };
+  const tgReady = () => grown && chartOnScreen();
   function tgOpen(i: number) {
     if (tgFocus === i) return void (tgFocus = null); // tap the open bar again to close it
     if (!tgReady()) return;
@@ -966,7 +972,7 @@
     if ((Math.abs(dx) > 60 || Math.abs(dx) / Math.max(ms, 1) > 0.45) && to >= 0 && to < TGN) tgFocus = tgShown = to;
   }
   function stepTg() {
-    if (tgFocus !== null && (u < TG.chartEnd - vh * 0.3 || u > TG.chartEnd + vh * 0.35)) tgFocus = null; // scrolled away from the chart: close
+    if (tgFocus !== null && !chartOnScreen()) tgFocus = null; // scrolled the chart away: close
     const k = reduced ? 1 : drag ? 0.3 : 0.15;
     const ease = (c: number, t: number, eps = 0.2) => (Math.abs(t - c) < eps ? t : c + (t - c) * k);
     let changed = tgGeo.length !== TGN;
@@ -1311,7 +1317,7 @@
 
   <!-- finale -->
   {#if finaleCy < vh * 1.4 && fz < 0.5}
-    <div class="cardwrap finale" style:width="{Math.min(L.trayW, 440)}px" style:--o={clamp((vh - finaleCy) / (vh * 0.25))} style:transform="translate3d({L.padL}px,calc({finaleCy}px - 50%),0)">
+    <div class="cardwrap finale" style:width="{Math.min(L.trayW, 440)}px" style:--o={clamp((vh - finaleCy) / (vh * 0.25))} style:transform="translate3d({L.padL + (L.fieldW - Math.min(L.trayW, 440)) / 2}px,calc({finaleCy}px - 50%),0)">
       <Glass pad="18px 18px 16px"><article class="fin">
         <h3 class="display">The Legacy Rankings</h3>
         <ol>
@@ -1332,9 +1338,9 @@
   {#if tgOn}
     <section class="tg" aria-label="Tegridy Factor" style:width="{W}px" style:height="{TG.uEnd}px" style:transform="translate3d(0,{(vh - u).toFixed(1)}px,0)">
       <h2 class="tghead display" class:in={headIn} bind:clientHeight={headH} style:left="{TG.x0}px" style:font-size="calc({L.desktop ? 104 : 64}px * var(--display-scale))">
-        Tegridy<br />Facto<span class="r">r<img class="sticker" src="{import.meta.env.BASE_URL}tegridy/sticker.png" alt="An “I got tegridy” sticker" draggable="false" /></span>
+        Tegridy{#if L.desktop}{' '}{:else}<br />{/if}Facto<span class="r">r<img class="sticker" src="{import.meta.env.BASE_URL}tegridy/sticker.png" alt="An “I got tegridy” sticker" draggable="false" /></span>
       </h2>
-      <div class="tgpara" class:in={paraIn} bind:clientHeight={paraH} style:left="{TG.x0}px" style:width="{Math.min(TG.chartW, 560)}px" style:top="{TG.paraOff}px">
+      <div class="tgpara" class:in={paraIn} bind:clientHeight={paraH} style:left="{TG.x0}px" style:width="{TG.chartW}px" style:top="{TG.paraOff}px">
         <p class="lede">Every time a member acts without tegridy, they get penalized. Golf scoring with data from Sleeper only.</p>
         <div class="rdiv"><span>Penalties</span></div>
         <div class="rules">

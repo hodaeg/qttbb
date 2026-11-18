@@ -1,7 +1,7 @@
 <script lang="ts">
   // The front door. Three picker wheels (two digits and a surname) and one Enter button. Wrong: the
-  // button flashes red, lit from behind. Right: it flashes green and the whole lock falls up off the
-  // screen, revealing the title.
+  // button flashes red, lit from behind. Right: a small green light comes on behind the glass, then the
+  // controls blur and fade away and the frosted veil melts, bringing the story into focus.
   //
   // This is a curtain, not a safe: the site and its data are public on GitHub, and 5,000 combinations
   // can be tried by anyone who wants to. It keeps casual visitors out. The combination itself isn't in
@@ -78,7 +78,7 @@
       localStorage.setItem('qttbb-unlocked', KEY);
     } catch {}
     window.setTimeout(() => (phase = 'gone'), reduced ? 0 : 520);
-    window.setTimeout(onunlock, reduced ? 0 : 1400);
+    window.setTimeout(onunlock, reduced ? 0 : 1600);
   }
 
   onMount(() => {
@@ -149,15 +149,30 @@
     display: grid;
     place-items: center;
     padding: 16px;
+    /* a heavy frosted veil over the story (nothing behind it is readable), which melts away on unlock:
+       as it fades, the story underneath comes into focus */
     background:
       radial-gradient(120% 70% at 20% 0%, color-mix(in srgb, var(--bg-2) 85%, transparent), transparent 70%),
-      var(--bg);
-    /* falls up off the screen, gathering speed */
-    transition: transform 850ms cubic-bezier(0.6, 0, 0.85, 0.35);
-    will-change: transform;
+      color-mix(in srgb, var(--bg) 93%, transparent);
+    backdrop-filter: blur(30px) saturate(0.8);
+    -webkit-backdrop-filter: blur(30px) saturate(0.8);
+    transition: opacity 900ms cubic-bezier(0.4, 0, 0.2, 1) 120ms;
   }
   .lock.gone {
-    transform: translateY(-115%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .box {
+    transition:
+      opacity 520ms ease,
+      filter 520ms ease,
+      transform 620ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .lock.gone .box {
+    /* the controls blur and fade away first */
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.94);
   }
   .box {
     display: grid;
@@ -272,12 +287,16 @@
     animation: lit 900ms ease-out;
   }
   .enter.yes {
-    --lit: #3ddc6a;
-    background: color-mix(in srgb, #3ddc6a 30%, var(--glass-tint));
-    box-shadow: var(--glass-rim), 0 0 40px rgba(61, 220, 106, 0.45);
+    /* right: a small green light behind the glass, glowing through it (the glass stays glass) */
+    --lit: rgba(61, 220, 106, 0.8);
+    background: color-mix(in srgb, #3ddc6a 8%, var(--glass-tint));
+    box-shadow: var(--glass-rim), var(--glass-lift), 0 0 14px rgba(61, 220, 106, 0.16);
   }
   .enter.yes::before {
-    opacity: 1;
+    inset: 8px 28%;
+    border-radius: 50%;
+    filter: blur(9px);
+    opacity: 0.9;
     animation: lit 520ms ease-out;
   }
   @keyframes lit {

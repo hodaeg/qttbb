@@ -157,9 +157,13 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
   const desktop = W >= 1120;
   const headerY = desktop ? 46 : 38;
   const right = desktop ? 120 : 58; // gutter: the scrubber and the alumni pile
-  const padL = desktop ? 28 : 8;
+  const edge = desktop ? 28 : 8;
   const gap = desktop ? 8 : 3;
-  const fieldW = Math.min(W - right - padL, SLOTS * 84);
+  const fieldW = Math.min(W - right - edge, SLOTS * 84);
+  // the ribbons and the scrubber gutter sit together in one container, centred on wide screens (so on a
+  // big monitor the ribbons aren't pinned left with the scrubber far off on the right)
+  const padL = desktop ? Math.max(edge, Math.round((W - fieldW - right) / 2)) : edge;
+  const rightEdge = padL + fieldW + right; // the container's right edge: the scrubber and pile hang off it
   const cw = (fieldW - (SLOTS - 1) * gap) / SLOTS;
   const av = Math.max(18, Math.min(cw - 1, desktop ? 44 : 30));
   const colX = (slot: number) => padL + slot * (cw + gap) + cw / 2;
@@ -253,7 +257,7 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
     appearAt[p] = r ? atTop(firstOfYear ? T[shownIn(r.card)] : r.a) : atTop(T[FIRST]) + first.slot * vh * 0.015;
   }
 
-  const pile = { x: W - (desktop ? 60 : 30), y: headerY };
+  const pile = { x: rightEdge - (desktop ? 60 : 30), y: headerY };
   // the scrubber rail: from just under the pile all the way down (above any browser toolbar)
   const scrub = { top: headerY + 44, bottom: vh - inset - 10 };
   const finale = end + vh * 0.35;
@@ -263,7 +267,7 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
   const bornAt = born ? cardPos.get(born)! : T[FIRST];
 
   return {
-    vh, W, inset, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayW, cardX, photo,
+    vh, W, inset, desktop, P, headerY, right, rightEdge, padL, gap, cw, av, colX, fieldW, cutH, trayW, cardX, photo,
     stops, T, top, end, bandH, seq, honour, cardPos, appearAt, pile, scrub, finale, pageHeight, perYear, leviSlot, bornAt,
   };
 }

@@ -25,7 +25,7 @@
   const SWELL = 16; // how far the rail swells out to the left
 
   const n = $derived(L.stops.length);
-  const CW = $derived(L.right); // the strip we own, flush with the right edge
+  const CW = $derived(L.right); // the strip we own: the gutter at the right of the centred container
   const H = $derived(L.scrub.bottom - L.scrub.top);
   const gap = $derived(H / n); // px per year on the flat rail
   const railX = $derived(CW - (L.desktop ? 26 : 14));
@@ -256,7 +256,7 @@
   style:height="{H}px"
   style:opacity
   style:pointer-events={opacity > 0.5 ? 'auto' : 'none'}
-  style:transform="translate3d({L.W - CW}px,{L.scrub.top}px,0)"
+  style:transform="translate3d({L.rightEdge - CW}px,{L.scrub.top}px,0)"
   onpointerdown={down}
   onpointermove={move}
   onpointerup={up}
