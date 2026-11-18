@@ -567,3 +567,11 @@ Replaces the pinned card tray (D39 and on).
   - The ribbons' end fade drew only once their end was on screen, so it popped on; it now draws as soon as any of it is.
   - Integridy's lede now reads "acts *without* integridy".
   - Randy comes out of total shadow to his dim state with the scroll (brightness 0 → 0.32) instead of snapping between levels.
+
+### D70 — History app: back to "Tegridy Factor"; "(reg. season)"; haptics — Accepted
+- **Name.** The site says **Tegridy Factor** again everywhere (header, labels, screen-reader text, "acts without tegridy"). This reverses D59's rename.
+- **The undefeated patch** carries "(reg. season)" in small type under UNDEFEATED. Seasons with an undefeated patch get 80px more ribbon for it.
+- **Haptics** (`src/lib/haptics.ts`): one light tap, with calls within 120ms merged, so several things landing at once make one tap.
+  - Android and anything else with the Vibration API gets `navigator.vibrate`.
+  - iOS Safari has no Vibration API, but since iOS 18 toggling a native `<input type=checkbox switch>` gives a haptic tick, so it falls back to toggling a hidden one. That's reliable inside a tap, and may not fire during a scroll.
+  - Taps fire when: a season's patches land on the avatars (one per season, champion and sacko together), a cut hits (one per year's cuts), a column or Tegridy bar opens or closes, and the alumni pile or a "Connected to" pile opens or closes.

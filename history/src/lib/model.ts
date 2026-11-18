@@ -194,13 +194,15 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
   const storiesOf = (y: number) => (perYear[y] ?? []).filter((c) => c.kind !== 'season');
   const factOf = (y: number) => (perYear[y] ?? []).find((c) => c.kind === 'season');
   const hasResults = (y: number) => !!legacy.seasons[String(y)];
+  // the undefeated patch is longer ("(reg. season)" under the word), so that season gets more room
+  const patchesFor = (y: number) => PATCHES + (legacy.seasons[String(y)]?.silverStars?.length ? 80 : 0);
   const storiesH = (y: number) => {
     const st = storiesOf(y);
     return st.length ? st.reduce((t, c) => t + blockH(c), 0) + (st.length - 1) * GAP + GAP * 0.6 : 0;
   };
   const bandH = (y: number) => {
     const f = factOf(y);
-    const content = lead + storiesH(y) + (hasResults(y) ? PATCHES : 0) + (f ? GAP * 0.45 + blockH(f) : 0) + END;
+    const content = lead + storiesH(y) + (hasResults(y) ? patchesFor(y) : 0) + (f ? GAP * 0.45 + blockH(f) : 0) + END;
     return Math.max(vh * 0.62, content) * (stretch[String(y)] ?? 1) + (y === FIRST ? vh * 0.7 : 0);
   };
 
@@ -226,8 +228,8 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
     }
     if (st.length) at += GAP * 0.6 - GAP;
     if (hasResults(y)) {
-      honour[y] = at + PATCHES - 10;
-      at += PATCHES;
+      honour[y] = at + patchesFor(y) - 10;
+      at += patchesFor(y);
     }
     const f = factOf(y);
     if (f) seq.push({ card: f, a: at + GAP * 0.45, b: 0, h: cardH(f) });

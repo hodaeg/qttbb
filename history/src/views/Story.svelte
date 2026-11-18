@@ -11,6 +11,7 @@
   import Avatar from './Avatar.svelte';
   import Glass from './Glass.svelte';
   import CardView from './Card.svelte';
+  import { haptic } from '../lib/haptics';
   import Scrubber from './Scrubber.svelte';
   import PersonPanel from './PersonPanel.svelte';
   import Roll from './Roll.svelte';
@@ -151,6 +152,7 @@
     window.addEventListener('wheel', onWheel, { passive: false });
     const tick = (now: number) => {
       stepCuts(now);
+      stepLandings();
       stepFocus();
       stepTg();
       stepGrow(now);
@@ -330,6 +332,7 @@
         a.t0 = now;
         a.g0 = fx[key]?.g ?? (passed ? 0 : 1);
         a.mode = passed ? 'shake' : 'unfade';
+        if (passed) haptic(18); // the cut hits (several in one year: still one tap)
       }
       let g = passed ? 1 : 0;
       let x = 0;
@@ -489,7 +492,7 @@
   const markFs = $derived(clamp(L.cw * 0.58, 10, 17));
   const marks = $derived.by(() => {
     type Kind = 'champ' | 'sacko' | 'silver';
-    const out: { key: string; kind: Kind; person: string; x: number; y: number; o: number; star: boolean; reveal: number; text: string; len: number; bw: number; bh: number }[] = [];
+    const out: { key: string; kind: Kind; person: string; x: number; y: number; o: number; star: boolean; reveal: number; text: string; len: number; bw: number; bh: number; sub: string; subFs: number; subLen: number; pad: number }[] = [];
     const add = (key: string, kind: Kind, person: string, slot: number, world: number, star = false) => {
       const y = markY(world); // the word's foot
       const text = kind === 'sacko' ? 'SACKO' : kind === 'silver' ? 'UNDEFEATED' : star ? 'champion*' : 'CHAMPION';
@@ -501,8 +504,13 @@
       const reveal = clamp((vh - (y - len)) / (len * 1.3)); // written down the ribbon as it comes on screen
       // CHAMPION and SACKO are cut out of a block of gold or charred material, a little narrower than the ribbon
       const bw = Math.max(12, Math.round(L.cw - 4));
-      const bh = Math.round(len + markFs * 1.3);
-      out.push({ key, kind, person, x: gOf(slot).x + gOf(slot).w / 2, y, o: (1 - merge) * (1 - fz), star, reveal, text, len, bw, bh });
+      // the undefeated patch adds "(reg. season)" in small type under the word
+      const sub = kind === 'silver' ? '(reg. season)' : '';
+      const subFs = markFs * 0.6;
+      const subLen = sub ? sub.length * subFs * 0.62 : 0;
+      const pad = markFs * 0.65;
+      const bh = Math.round(pad * 2 + len + (sub ? markFs * 0.45 + subLen : 0));
+      out.push({ key, kind, person, x: gOf(slot).x + gOf(slot).w / 2, y, o: (1 - merge) * (1 - fz), star, reveal, text, len, bw, bh, sub, subFs, subLen, pad });
     };
     if (fz > 0.99) return out;
     for (const [year, season] of Object.entries(legacy.seasons)) {
@@ -827,6 +835,23 @@
       } else if (!landed) platArmed[p] = false;
     }
   });
+  // one tap of haptics as a season's patches land on the avatars (champion and sacko together: one tap)
+  const honourYears = Object.keys(legacy.seasons).map(Number).filter((y) => lineup[y]);
+  const landedSeason: Record<number, boolean> = {};
+  function stepLandings() {
+    for (const y of honourYears) {
+      const now = reach(honourAt(y)) >= L.av * 1.5;
+      if (now && landedSeason[y] === false) haptic(14);
+      landedSeason[y] = now;
+    }
+  }
+  // a subtle tap as a column (or Tegridy bar, or the alumni pile) opens or closes
+  let wasOpen = { col: false, bar: false, pile: false };
+  $effect(() => {
+    const open = { col: focus !== null, bar: tgFocus !== null, pile: fanned };
+    if (open.col !== wasOpen.col || open.bar !== wasOpen.bar || open.pile !== wasOpen.pile) haptic(8);
+    wasOpen = open;
+  });
   const grayOf = (st: AvatarState) => (st.cut ? (fx[st.cut]?.g ?? 1) : st.gray);
 
   // ---- where we are in time (the dial and the tray read this)
@@ -839,10 +864,10 @@
   // rest of them, their last stretch fading into the dark, as if they run on into the screen
   const sink = $derived(clamp((w - (L.finale + vh * 0.3)) / (vh * 0.6)));
   const avFade = $derived(smooth(clamp(sink / 0.22)));
-  const ribbonEnd = $derived(L.finale + vh * 1.5 - L.P - 40); // world: just above where Integridy comes in
+  const ribbonEnd = $derived(L.finale + vh * 1.5 - L.P - 40); // world: just above where Tegridy comes in
   const endFade = $derived(vh * 0.55);
 
-  // ---- Integridy Factor (the pipeline calls it Tegridy): the last word. Once the ribbons have fallen away, a header pops in and gets a
+  // ---- Tegridy Factor (the pipeline calls it Tegridy): the last word. Once the ribbons have fallen away, a header pops in and gets a
   // sticker slapped on it, a paragraph explains the score, and a bar chart rises in which every bar is
   // that member's own ribbon, lowest (best) on the left. Tap a bar and it opens like a column, with
   // everything that went into the number. The scene scrolls up from below like a page.
@@ -1144,12 +1169,22 @@
           <rect class="stitch" x="2" y="2" width={m.bw - 4} height={m.bh - 4} rx="1" />
           <text
             class="ptext"
-            transform="translate({m.bw / 2},{m.bh / 2}) rotate(90)"
+            transform="translate({m.bw / 2},{m.pad + m.len / 2}) rotate(90)"
             text-anchor="middle"
             dominant-baseline="central"
             font-size={markFs}
             textLength={m.len}
             lengthAdjust="spacing">{m.text}</text>
+          {#if m.sub}
+            <text
+              class="ptext psub"
+              transform="translate({m.bw / 2},{m.pad + m.len + markFs * 0.45 + m.subLen / 2}) rotate(90)"
+              text-anchor="middle"
+              dominant-baseline="central"
+              font-size={m.subFs}
+              textLength={m.subLen}
+              lengthAdjust="spacing">{m.sub}</text>
+          {/if}
         </svg>
       </span>
     {/each}
@@ -1293,14 +1328,14 @@
     </div>
   {/if}
 
-  <!-- Integridy Factor: the last word -->
+  <!-- Tegridy Factor: the last word -->
   {#if tgOn}
-    <section class="tg" aria-label="Integridy Factor" style:width="{W}px" style:height="{TG.uEnd}px" style:transform="translate3d(0,{(vh - u).toFixed(1)}px,0)">
+    <section class="tg" aria-label="Tegridy Factor" style:width="{W}px" style:height="{TG.uEnd}px" style:transform="translate3d(0,{(vh - u).toFixed(1)}px,0)">
       <h2 class="tghead display" class:in={headIn} bind:clientHeight={headH} style:left="{TG.x0}px" style:font-size="calc({L.desktop ? 104 : 64}px * var(--display-scale))">
-        Integridy<br />Facto<span class="r">r<img class="sticker" src="{import.meta.env.BASE_URL}tegridy/sticker.png" alt="An “I got tegridy” sticker" draggable="false" /></span>
+        Tegridy<br />Facto<span class="r">r<img class="sticker" src="{import.meta.env.BASE_URL}tegridy/sticker.png" alt="An “I got tegridy” sticker" draggable="false" /></span>
       </h2>
       <div class="tgpara" class:in={paraIn} bind:clientHeight={paraH} style:left="{TG.x0}px" style:width="{Math.min(TG.chartW, 560)}px" style:top="{TG.paraOff}px">
-        <p class="lede">Every time a member acts without integridy, they get penalized. Golf scoring with data from Sleeper only.</p>
+        <p class="lede">Every time a member acts without tegridy, they get penalized. Golf scoring with data from Sleeper only.</p>
         <div class="rdiv"><span>Penalties</span></div>
         <div class="rules">
           {#each tgRules as r (r.label)}
@@ -1339,7 +1374,7 @@
           class:dotted={!p.founder}
           class:chev={e.chev > 0}
           class:chev2={e.chev2 > 0.5}
-          aria-label="{p.name}: Integridy Factor {b.m.total}"
+          aria-label="{p.name}: Tegridy Factor {b.m.total}"
           style:--chev={e.chev}
           style:--tone={p.color}
           style:--g="0"
@@ -1360,7 +1395,7 @@
           <b class="tgval" style:color={tfHeat(b.m.total)} style:opacity={(1 - tfz) * clamp(b.gr * 3)} style:transform="translate3d({cx}px,{b.down ? b.end + 4 : b.end - 17}px,0) translateX(-50%)">{b.gr >= 0.999 ? fmtTF(b.m.total) : Math.round(b.m.total * Math.min(1, b.gr))}</b>
           <button
             class="tgav"
-            aria-label="Open {p.name}'s Integridy breakdown"
+            aria-label="Open {p.name}'s Tegridy breakdown"
             tabindex={tgReady() ? 0 : -1}
             style:opacity={(1 - tfz) * clamp(b.gr * 3)}
             style:pointer-events={tfz > 0.5 ? 'none' : null}
@@ -1412,7 +1447,7 @@
                   <div class="top">
                     <div class="who">
                       <Avatar id={m.person} size={L.desktop ? 52 : 40} />
-                      <span><b class="display">{people[m.person].name}</b><small>Integridy rank {m.rank} of {TGN}</small></span>
+                      <span><b class="display">{people[m.person].name}</b><small>Tegridy rank {m.rank} of {TGN}</small></span>
                     </div>
                     <div class="yr display" style:color={tfHeat(m.total)}><Roll value={fmtTF(m.total)} /></div>
                     <p class="tally">
@@ -1955,7 +1990,7 @@
     color: var(--ink-2);
   }
 
-  /* Integridy Factor */
+  /* Tegridy Factor */
   .tg {
     z-index: 20;
     pointer-events: none;
@@ -2493,6 +2528,10 @@
   .ptext {
     font-family: var(--font-display);
     font-weight: var(--display-weight);
+  }
+  .psub {
+    font-family: var(--font-text);
+    font-weight: 600;
   }
   .stitch {
     fill: none;
