@@ -146,7 +146,13 @@ const RIBBONS_FROM = 2009;
  * The year scrubber lives in the right gutter. The playhead ("now") sits just above the tallest
  * the card can be; shorter cards hug their content and leave the playhead where it is.
  */
-export function makeLayout(vh: number, W: number) {
+/**
+ * @param vh    the LARGE viewport height (browser bars hidden): the story is laid out against it, so the
+ *              scroll mapping never changes when Safari's bars come and go
+ * @param inset the bottom safe zone: how much of that height a browser toolbar (iOS Safari's floats
+ *              over the page) plus the home indicator can cover. The card, scrubber and chart stay above it.
+ */
+export function makeLayout(vh: number, W: number, inset = 0) {
   const desktop = W >= 1120;
   const headerY = desktop ? 46 : 38;
   const right = desktop ? 120 : 58; // gutter: the scrubber and the alumni pile
@@ -158,8 +164,8 @@ export function makeLayout(vh: number, W: number) {
   const colX = (slot: number) => padL + slot * (cw + gap) + cw / 2;
   const cutH = Math.round(cw * 0.6); // how far the diagonal cut drops across a column
 
-  const trayH = Math.round(Math.min(vh * 0.4, 360));
-  const trayTop = vh - trayH - 10;
+  const trayH = Math.round(Math.min((vh - inset) * 0.4, 360));
+  const trayTop = vh - inset - trayH - 10;
   const trayW = Math.min(fieldW, 620);
   const P = trayTop - 12; // playhead: where "now" sits on screen
 
@@ -222,7 +228,7 @@ export function makeLayout(vh: number, W: number) {
 
   const pile = { x: W - (desktop ? 60 : 30), y: headerY };
   // the scrubber rail: from just under the pile to the bottom of the screen (clear of the type switch)
-  const scrub = { top: headerY + 44, bottom: vh - 44 };
+  const scrub = { top: headerY + 44, bottom: vh - inset - 44 };
   const finale = end + vh * 0.35;
   const pageHeight = finale - P + vh * 1.15;
   const leviSlot = Math.max(0, lineup[FIRST].indexOf('levi-nellen')); // year badges sit on Levi's ribbon
@@ -230,7 +236,7 @@ export function makeLayout(vh: number, W: number) {
   const bornAt = born ? cardPos.get(born)! : T[FIRST];
 
   return {
-    vh, W, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayH, trayTop, trayW,
+    vh, W, inset, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayH, trayTop, trayW,
     stops, T, top, end, bandH, seq, cardPos, appearAt, pile, scrub, finale, pageHeight, perYear, leviSlot, bornAt,
   };
 }

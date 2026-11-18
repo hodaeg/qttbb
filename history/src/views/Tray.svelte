@@ -36,7 +36,7 @@
     node.addEventListener('scroll', check, { passive: true });
     return { destroy: () => (ro.disconnect(), node.removeEventListener('scroll', check)) };
   }
-  const h = $derived(L.vh - 10 - top);
+  const h = $derived(L.vh - L.inset - 10 - top);
 </script>
 
 <div

@@ -497,3 +497,13 @@ Because the site shows personal data, it opens on a lock (`src/views/Lock.svelte
 ### D64 — History app: tap the ribbon to close; a burnt-in Return under the glass — Accepted
 - The expand/minimize button on an open column (and on an open Integridy bar) is gone. Tapping the open ribbon again, anywhere outside the glass card, closes it.
 - A "Return" text button sits on the ribbon just under the glass card, "burnt" in: a dark shade of that ribbon's own colour (`color-mix(tone 40%, black)`) with a lit lower lip and a faint scorched halo. Tapped, it backs up under the glass card as the column closes. Panels leave room for it (54px), so it never falls off the screen. Integridy bars get the same treatment.
+
+### D65 — History app: a bottom safe zone for iOS Safari's toolbar; sticker lower — Accepted
+On iOS Safari the bottom of the story was cut off, and sometimes the card was hidden entirely, by the toolbar. On iOS 26 it's a floating glass bar over the page. Brave was fine.
+- **Cause.** The story is laid out against the *large* viewport (bars hidden), which keeps the scroll mapping stable as the bars come and go, and that stays. But the card, scrubber and chart were anchored to the bottom of that large viewport, under Safari's bar. Reports for iOS 26 say the viewport units (svh/dvh/lvh) don't reliably reflect the bar, and fixed elements near the bottom edge get covered.
+- **Fix.** `makeLayout` now takes a bottom `inset`: the most the bars have ever covered, plus the home indicator.
+  - Most covered = large height minus the smallest visible height seen, from 100svh, innerHeight and visualViewport, updated on visualViewport resize.
+  - Home indicator = `env(safe-area-inset-bottom)`.
+  - The inset is capped at 22% of the screen and only ratchets up, so it settles after the first toolbar show/hide and doesn't jitter.
+- **What it moves.** The card (and its height), the scrubber's bottom, the Integridy chart's resting position, the logo's centre, the alumni burst's limits and the type switch all keep above it. Where there's no toolbar (desktop, Chrome's emulation) the inset is 0 and nothing moves.
+- **Sticker.** The "I got tegridy" sticker sits 13px lower, covering less of "Factor".

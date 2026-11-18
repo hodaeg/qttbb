@@ -32,7 +32,9 @@
   let previewW: number | null = null;
   const rawScroll = () => (previewW !== null ? previewW - L.P : window.scrollY);
 
-  const L = $derived(makeLayout(vh, W));
+  // the bottom safe zone (see size() below): only ever grows, so nothing jumps as Safari's bars move
+  let inset = $state(0);
+  const L = $derived(makeLayout(vh, W, inset));
   const w = $derived(s + L.P); // the playhead, in world pixels
 
   // Temporary, for the design review: cycle through the type sets (also ?type=a|b|c).
@@ -57,14 +59,28 @@
     // Lay the story out against the *large* viewport (address bar hidden), measured with a 100lvh
     // probe. On iPhone the bar comes back when you scroll up; if that re-measured the page, every
     // band would shrink and the story would leap forward. The bar just overlays the bottom instead.
+    //
+    // But iOS Safari's toolbar (on iOS 26 a floating glass bar) sits over the bottom of that large
+    // viewport, and the viewport units don't reliably report it there. So keep a bottom safe zone for the
+    // card, scrubber and chart: the most the bars have ever covered (large height minus the smallest
+    // visible height seen, from 100svh, innerHeight and visualViewport) plus the home indicator. It only
+    // ratchets up, a little at a time, so it settles after the first toolbar show/hide and stays put.
     const probe = document.createElement('div');
     probe.style.cssText = 'position:fixed;top:0;left:0;width:0;height:100lvh;visibility:hidden;pointer-events:none';
-    document.body.append(probe);
+    const small = document.createElement('div');
+    small.style.cssText = 'position:fixed;top:0;left:0;width:0;height:100svh;visibility:hidden;pointer-events:none';
+    const safe = document.createElement('div');
+    safe.style.cssText = 'position:fixed;top:0;left:0;width:0;height:0;padding-bottom:env(safe-area-inset-bottom,0px);visibility:hidden;pointer-events:none';
+    document.body.append(probe, small, safe);
     const size = () => {
       const tall = probe.offsetHeight || window.innerHeight;
       vh = Math.max(tall, window.innerHeight);
       W = document.documentElement.clientWidth;
+      const seen = Math.min(small.offsetHeight || vh, window.innerHeight, window.visualViewport?.height ?? vh);
+      const want = Math.min(Math.round(Math.max(0, vh - seen) + safe.offsetHeight), Math.round(vh * 0.22));
+      if (want > inset + 1) inset = want;
     };
+    window.visualViewport?.addEventListener('resize', size);
     size();
     s = window.scrollY;
     window.addEventListener('resize', size);
@@ -130,7 +146,7 @@
       stepFocus();
       stepTg();
       stepGrow(now);
-      const tTarget = L.vh - 10 - (want ? Math.min(want, L.trayH) : L.trayH);
+      const tTarget = L.vh - L.inset - 10 - (want ? Math.min(want, L.trayH) : L.trayH);
       if (Math.abs(tTarget - tt) > 0.3) tt = reduced ? tTarget : tt + (tTarget - tt) * 0.2;
       else if (tt !== tTarget) tt = tTarget;
       const target = rawScroll();
@@ -149,6 +165,9 @@
     return () => {
       cancelAnimationFrame(raf);
       probe.remove();
+      small.remove();
+      safe.remove();
+      window.visualViewport?.removeEventListener('resize', size);
       window.removeEventListener('resize', size);
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('keydown', onKey);
@@ -634,7 +653,7 @@
   function toggleFan() {
     if (fanned) return void (fanned = false);
     const a = L.av * fanScale;
-    fanSpots = scatter(pileCount, L.pile, 'alumni', { w: 92, h: a + 40, up: a / 2 }, { left: 8, top: 8, right: L.W - 8, bottom: vh - 10 });
+    fanSpots = scatter(pileCount, L.pile, 'alumni', { w: 92, h: a + 40, up: a / 2 }, { left: 8, top: 8, right: L.W - 8, bottom: vh - L.inset - 10 });
     fanned = true;
     fanY = window.scrollY;
     clearTimeout(settleT);
@@ -781,19 +800,19 @@
     const side = L.desktop ? 32 : 14;
     const chartW = Math.min(W - side * 2, 880);
     const x0 = (W - chartW) / 2;
-    const chartH = clamp(vh * 0.6, 300, 560);
+    const chartH = clamp((vh - L.inset) * 0.6, 300, 560);
     const gap = L.desktop ? 8 : 4;
     const bw = (chartW - (TGN - 1) * gap) / TGN;
     const av = Math.max(18, Math.min(bw - 2, L.desktop ? 44 : 30));
     const paraOff = headH + 18;
     const chartOff = paraOff + paraH + 40;
-    const chartEnd = chartOff + chartH + 34; // scrolled this far, the chart sits at the bottom of the screen
+    const chartEnd = chartOff + chartH + 34 + L.inset; // scrolled this far, the chart sits at the bottom of the visible screen
     // then the page falls away to black and the logo comes up out of it, ending centred on screen
     const logoW = Math.min(W * 0.78, 520);
     const logoH = (logoW * 505) / 900;
     const blackOff = chartEnd + 6;
     const logoOff = chartEnd + vh * 0.62;
-    const uEnd = logoOff + logoH / 2 + vh * 0.5;
+    const uEnd = logoOff + logoH / 2 + (vh + L.inset) * 0.5; // centred in what's visible
     // bars rise from a baseline at the chart's foot; if anyone ever goes negative, the baseline lifts
     // so their bar can hang below it, with the avatar at its lower end
     const pos = Math.max(0, ...tgM.map((m) => m.total));
@@ -1409,7 +1428,7 @@
   <Scrubber {L} {fi} opacity={started * (1 - sink)} {reduced} onpreview={(pw) => (previewW = pw)} />
 
   <!-- temporary: type set switcher for the design review -->
-  <button class="typeswitch" onclick={() => setType(TYPES[(TYPES.indexOf(type) + 1) % TYPES.length])} aria-label="Switch typeface set, now {type.toUpperCase()}">{type.toUpperCase()}</button>
+  <button class="typeswitch" style:bottom="{L.inset + 8}px" onclick={() => setType(TYPES[(TYPES.indexOf(type) + 1) % TYPES.length])} aria-label="Switch typeface set, now {type.toUpperCase()}">{type.toUpperCase()}</button>
 </div>
 
 <style>
@@ -1783,7 +1802,7 @@
     /* slapped on, overlapping the r a little */
     position: absolute;
     left: 0.36em;
-    top: -0.5em;
+    top: calc(-0.5em + 13px); /* sits a little lower, covering less of the word */
     width: 1.32em;
     height: 1.32em;
     max-width: none;
