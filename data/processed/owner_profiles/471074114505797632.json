@@ -1982,7 +1982,6 @@
  ],
  "tegridy_factor": {
   "by_kind": {
-   "injured_starter_out": 1,
    "questionable_did_not_play": 1
   },
   "by_season": {
@@ -1993,7 +1992,7 @@
    "2023": 0,
    "2024": 6.0,
    "2025": 0,
-   "2026": 8.0
+   "2026": 0
   },
   "clean_seasons": [
    "2019",
@@ -2004,19 +2003,17 @@
    "2025"
   ],
   "excluded_penalty_ids": [],
-  "penalty_count": 2,
+  "penalty_count": 1,
   "penalty_ids": [
-   "2024-w09-r3-questionable_did_not_play-2309",
-   "2026-w09-r3-injured_starter_out-7611"
+   "2024-w09-r3-questionable_did_not_play-2309"
   ],
   "points_by_kind": {
-   "injured_starter_out": 8.0,
    "questionable_did_not_play": 6.0
   },
   "rank": 3,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 14.0,
-  "worst_penalty_id": "2026-w09-r3-injured_starter_out-7611"
+  "total": 6.0,
+  "worst_penalty_id": "2024-w09-r3-questionable_did_not_play-2309"
  },
  "trophies": {
   "championships": {

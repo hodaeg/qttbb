@@ -1,8 +1,26 @@
 [
  {
   "events": [],
+  "owner_id": "383681356686950400",
+  "roster_id": 1,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "423560331814510592",
+  "roster_id": 2,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
   "owner_id": "79761560662589440",
   "roster_id": 4,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471083964757438464",
+  "roster_id": 5,
   "tegridy_factor": 0
  },
  {
@@ -65,78 +83,12 @@
   "events": [
    {
     "base_penalty": 8,
-    "detail": "Christian Watson was listed Out (Ankle) on the official NFL injury report and scored 0 in the starting lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2024-w04-r1-injured_starter_out-8167",
-    "week": 4
-   }
-  ],
-  "owner_id": "383681356686950400",
-  "roster_id": 1,
-  "tegridy_factor": 8.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 8,
-    "detail": "Marvin Harrison Jr. was listed Out (gameday concussion protocol evaluation) on the official NFL injury report and scored 0 in the starting lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2024-w06-r5-injured_starter_out-11628",
-    "week": 6
-   }
-  ],
-  "owner_id": "471083964757438464",
-  "roster_id": 5,
-  "tegridy_factor": 8.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 8,
-    "detail": "Dallas Goedert was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2024-w06-r2-injured_starter_out-5022",
-    "week": 6
-   },
-   {
-    "base_penalty": 8,
-    "detail": "Deebo Samuel Sr. was listed Out (Illness) on the official NFL injury report and scored 0 in the starting lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2024-w07-r2-injured_starter_out-5872",
-    "week": 7
-   }
-  ],
-  "owner_id": "423560331814510592",
-  "roster_id": 2,
-  "tegridy_factor": 16.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 8,
     "detail": "Evan Engram was listed Out (Hamstring) on the official NFL injury report and scored 0 in the starting lineup.",
     "kind": "injured_starter_out",
     "multiplier": 1.0,
     "penalty": 8.0,
     "penalty_id": "2024-w02-r6-injured_starter_out-4066",
     "week": 2
-   },
-   {
-    "base_penalty": 8,
-    "detail": "Rashee Rice was listed Out (Knee) on the official NFL injury report and scored 0 in the starting lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2024-w04-r6-injured_starter_out-10229",
-    "week": 4
    },
    {
     "base_penalty": 6,
@@ -150,7 +102,7 @@
   ],
   "owner_id": "471345530597797888",
   "roster_id": 6,
-  "tegridy_factor": 22.0
+  "tegridy_factor": 14.0
  },
  {
   "events": [

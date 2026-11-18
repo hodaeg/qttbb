@@ -2117,7 +2117,6 @@
  "tegridy_factor": {
   "by_kind": {
    "bye_week_starter": 3,
-   "injured_starter_out": 1,
    "missed_league_note": 2,
    "questionable_did_not_play": 2
   },
@@ -2129,7 +2128,7 @@
    "2023": 0,
    "2024": 0,
    "2025": 46.0,
-   "2026": 14.0
+   "2026": 6.0
   },
   "clean_seasons": [
    "2019",
@@ -2139,7 +2138,7 @@
    "2024"
   ],
   "excluded_penalty_ids": [],
-  "penalty_count": 8,
+  "penalty_count": 7,
   "penalty_ids": [
    "2021-w07-r8-bye_week_starter-4663",
    "2021-note-r8-1",
@@ -2147,18 +2146,16 @@
    "2025-w14-r8-bye_week_starter-3214",
    "2025-w14-r8-bye_week_starter-NE",
    "2025-note-r8-1",
-   "2026-w04-r8-questionable_did_not_play-5927",
-   "2026-w08-r8-injured_starter_out-3214"
+   "2026-w04-r8-questionable_did_not_play-5927"
   ],
   "points_by_kind": {
    "bye_week_starter": 45.0,
-   "injured_starter_out": 8.0,
    "missed_league_note": 10,
    "questionable_did_not_play": 12.0
   },
   "rank": 12,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 75.0,
+  "total": 67.0,
   "worst_penalty_id": "2025-w14-r8-bye_week_starter-3214"
  },
  "trophies": {

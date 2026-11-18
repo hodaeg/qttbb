@@ -7,6 +7,42 @@
  },
  {
   "events": [],
+  "owner_id": "423560331814510592",
+  "roster_id": 2,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471074114505797632",
+  "roster_id": 3,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471083964757438464",
+  "roster_id": 5,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471345530597797888",
+  "roster_id": 6,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "422102738889867264",
+  "roster_id": 7,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
+  "owner_id": "471360899853053952",
+  "roster_id": 9,
+  "tegridy_factor": 0
+ },
+ {
+  "events": [],
   "owner_id": "471359444949659648",
   "roster_id": 10,
   "tegridy_factor": 0
@@ -18,80 +54,13 @@
   "tegridy_factor": 0
  },
  {
-  "events": [
-   {
-    "base_penalty": 8,
-    "detail": "Rhamondre Stevenson was Out at 2026-11-10T04:36:01+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w09-r3-injured_starter_out-7611",
-    "week": 9
-   }
-  ],
-  "owner_id": "471074114505797632",
-  "roster_id": 3,
-  "tegridy_factor": 8.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 8,
-    "detail": "Jeremiyah Love was Out at 2026-11-03T03:54:45+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w08-r5-injured_starter_out-13287",
-    "week": 8
-   }
-  ],
-  "owner_id": "471083964757438464",
-  "roster_id": 5,
-  "tegridy_factor": 8.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 8,
-    "detail": "David Montgomery was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w05-r7-injured_starter_out-5892",
-    "week": 5
-   }
-  ],
-  "owner_id": "422102738889867264",
-  "roster_id": 7,
-  "tegridy_factor": 8.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 8,
-    "detail": "Davante Adams was Out at 2026-10-20T01:46:13+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w06-r12-injured_starter_out-2133",
-    "week": 6
-   }
-  ],
+  "events": [],
   "owner_id": "471368473092550656",
   "roster_id": 12,
-  "tegridy_factor": 8.0
+  "tegridy_factor": 0
  },
  {
   "events": [
-   {
-    "base_penalty": 8,
-    "detail": "Drake Maye was Out at 2026-11-15T20:28:19+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w10-r4-injured_starter_out-11564",
-    "week": 10
-   },
    {
     "base_penalty": 5,
     "detail": "gabroni did not post the annual league note, so $0 of FAAB was taken.",
@@ -104,7 +73,7 @@
   ],
   "owner_id": "79761560662589440",
   "roster_id": 4,
-  "tegridy_factor": 13.0
+  "tegridy_factor": 5
  },
  {
   "events": [
@@ -116,103 +85,10 @@
     "penalty": 6.0,
     "penalty_id": "2026-w04-r8-questionable_did_not_play-5927",
     "week": 4
-   },
-   {
-    "base_penalty": 8,
-    "detail": "Hunter Henry was Out at 2026-11-03T03:54:45+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w08-r8-injured_starter_out-3214",
-    "week": 8
    }
   ],
   "owner_id": "471359672478068736",
   "roster_id": 8,
-  "tegridy_factor": 14.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 8,
-    "detail": "TreVeyon Henderson was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w05-r2-injured_starter_out-12529",
-    "week": 5
-   },
-   {
-    "base_penalty": 8,
-    "detail": "Xavier Worthy was Out at 2026-11-10T04:36:01+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w09-r2-injured_starter_out-11624",
-    "week": 9
-   }
-  ],
-  "owner_id": "423560331814510592",
-  "roster_id": 2,
-  "tegridy_factor": 16.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 8,
-    "detail": "Lamar Jackson was Out at 2026-11-03T03:54:45+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w08-r6-injured_starter_out-4881",
-    "week": 8
-   },
-   {
-    "base_penalty": 8,
-    "detail": "Josh Jacobs was Out at 2026-11-10T04:36:01+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w09-r6-injured_starter_out-5850",
-    "week": 9
-   }
-  ],
-  "owner_id": "471345530597797888",
-  "roster_id": 6,
-  "tegridy_factor": 16.0
- },
- {
-  "events": [
-   {
-    "base_penalty": 8,
-    "detail": "Deebo Samuel Sr. was Out at 2026-10-13T03:30:58+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w05-r9-injured_starter_out-5872",
-    "week": 5
-   },
-   {
-    "base_penalty": 8,
-    "detail": "Michael Wilson was Out at 2026-11-10T04:36:01+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w09-r9-injured_starter_out-10232",
-    "week": 9
-   },
-   {
-    "base_penalty": 8,
-    "detail": "Jaylen Waddle was Out at 2026-11-10T04:36:01+00:00 but stayed in the lineup.",
-    "kind": "injured_starter_out",
-    "multiplier": 1.0,
-    "penalty": 8.0,
-    "penalty_id": "2026-w09-r9-injured_starter_out-7526",
-    "week": 9
-   }
-  ],
-  "owner_id": "471360899853053952",
-  "roster_id": 9,
-  "tegridy_factor": 24.0
+  "tegridy_factor": 6.0
  }
 ]

@@ -2224,7 +2224,6 @@
  ],
  "tegridy_factor": {
   "by_kind": {
-   "injured_starter_out": 1,
    "missed_league_note": 2
   },
   "by_season": {
@@ -2235,7 +2234,7 @@
    "2023": 0,
    "2024": 0,
    "2025": 0,
-   "2026": 13.0
+   "2026": 5
   },
   "clean_seasons": [
    "2019",
@@ -2246,20 +2245,18 @@
    "2025"
   ],
   "excluded_penalty_ids": [],
-  "penalty_count": 3,
+  "penalty_count": 2,
   "penalty_ids": [
    "2022-note-r4-1",
-   "2026-w10-r4-injured_starter_out-11564",
    "2026-note-r4-1"
   ],
   "points_by_kind": {
-   "injured_starter_out": 8.0,
    "missed_league_note": 10
   },
   "rank": 6,
   "rank_note": "1 = best (lowest). Ties share a rank.",
-  "total": 18.0,
-  "worst_penalty_id": "2026-w10-r4-injured_starter_out-11564"
+  "total": 10,
+  "worst_penalty_id": "2022-note-r4-1"
  },
  "trophies": {
   "championships": {

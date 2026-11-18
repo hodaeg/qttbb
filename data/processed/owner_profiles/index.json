@@ -80,7 +80,7 @@
     "win_pct": 0.5214,
     "wins": 61
    },
-   "tegridy_factor": 17.5,
+   "tegridy_factor": 9.5,
    "tegridy_rank": 5,
    "trades": 9
   },
@@ -162,7 +162,7 @@
     "wins": 67
    },
    "tegridy_factor": 10,
-   "tegridy_rank": 2,
+   "tegridy_rank": 6,
    "trades": 3
   },
   {
@@ -242,7 +242,7 @@
     "win_pct": 0.5214,
     "wins": 61
    },
-   "tegridy_factor": 14.0,
+   "tegridy_factor": 6.0,
    "tegridy_rank": 3,
    "trades": 0
   },
@@ -323,7 +323,7 @@
     "win_pct": 0.6102,
     "wins": 72
    },
-   "tegridy_factor": 14.0,
+   "tegridy_factor": 6.0,
    "tegridy_rank": 3,
    "trades": 6
   },
@@ -480,8 +480,8 @@
     "win_pct": 0.4655,
     "wins": 54
    },
-   "tegridy_factor": 37.0,
-   "tegridy_rank": 7,
+   "tegridy_factor": 5,
+   "tegridy_rank": 2,
    "trades": 3
   },
   {
@@ -560,7 +560,7 @@
     "win_pct": 0.5085,
     "wins": 60
    },
-   "tegridy_factor": 67.75,
+   "tegridy_factor": 59.75,
    "tegridy_rank": 11,
    "trades": 4
   },
@@ -639,7 +639,7 @@
     "win_pct": 0.4914,
     "wins": 57
    },
-   "tegridy_factor": 18.0,
+   "tegridy_factor": 10,
    "tegridy_rank": 6,
    "trades": 5
   },
@@ -718,8 +718,8 @@
     "win_pct": 0.4322,
     "wins": 51
    },
-   "tegridy_factor": 51.5,
-   "tegridy_rank": 9,
+   "tegridy_factor": 35.5,
+   "tegridy_rank": 10,
    "trades": 2
   },
   {
@@ -798,7 +798,7 @@
     "win_pct": 0.4583,
     "wins": 55
    },
-   "tegridy_factor": 38.0,
+   "tegridy_factor": 14.0,
    "tegridy_rank": 8,
    "trades": 1
   },
@@ -879,7 +879,7 @@
     "win_pct": 0.4508,
     "wins": 55
    },
-   "tegridy_factor": 75.0,
+   "tegridy_factor": 67.0,
    "tegridy_rank": 12,
    "trades": 4
   },
@@ -955,8 +955,8 @@
     "win_pct": 0.4224,
     "wins": 49
    },
-   "tegridy_factor": 52.0,
-   "tegridy_rank": 10,
+   "tegridy_factor": 28.0,
+   "tegridy_rank": 9,
    "trades": 2
   }
  ],

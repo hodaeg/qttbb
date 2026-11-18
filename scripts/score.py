@@ -101,7 +101,7 @@ class ByeDetector:
     nearest week with a row: up to 8 weeks back, then up to 4 forward."""
 
     def __init__(self):
-        self.schedule, self.teams = {}, {}
+        self.schedule, self.teams, self._pp = {}, {}, {}
 
     def _schedule(self, season):
         if season not in self.schedule:
@@ -126,9 +126,21 @@ class ByeDetector:
         return None
 
     def played(self, season, week, pid):
-        """True/False = player did/didn't have a stats row that week; None = no stats data for that week."""
+        """True/False = player did/didn't have a stats row that week; None = no stats data for that week.
+        A stats row is NOT proof he played: Sleeper writes rows for inactive players too. Use took_field()."""
         teams = self._teams(season, int(week))
         return (pid in teams) if teams else None
+
+    def took_field(self, season, week, pid):
+        """True = he actually played that week (Sleeper's games-played >= 1, or he scored any points), per
+        data/raw/player_points, which lists exactly those players. False = he didn't. None = no data.
+        The fair-play rule (D60): a starter who took the field is NEVER an injury penalty, whatever his
+        status said, because a status seen during or after the game is just an in-game injury."""
+        key = (str(season), int(week))
+        if key not in self._pp:
+            self._pp[key] = load(RAW / "player_points" / str(season) / f"wk{int(week):02d}.json")
+        pp = self._pp[key]
+        return (pid in pp) if pp else None
 
     def team_at(self, season, week, pid, pos):
         if pos == "DEF":
@@ -236,8 +248,8 @@ PENALTY_LABELS = {
     "missed_league_note": "Missed the annual league note",
 }
 RULES = {
-    "injured_starter_out": "Listed Out on the official NFL injury report, started, and scored 0.",
-    "injured_starter_doubtful": "Listed Doubtful on the official NFL injury report, started, and scored 0.",
+    "injured_starter_out": "Listed Out on the official NFL injury report, started, did not play, and scored 0.",
+    "injured_starter_doubtful": "Listed Doubtful on the official NFL injury report, started, did not play, and scored 0.",
     "questionable_did_not_play": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0.",
     "bye_week_starter": "Started a player whose NFL team had no game that week, and scored 0.",
     "missed_league_note": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner.",
@@ -263,7 +275,7 @@ def build_penalty(*, kind, base, mult, counts, excluded_reason, season, wk, rid,
         sources = [{"name": "NFL schedule (via Sleeper)", "url": f"https://www.nfl.com/schedules/{season}/REG{wk}"}]
     elif flag["source"] == "snapshot":
         evidence = {"status": flag["status"], "observed_at": flag.get("first_seen"), "source": "game-day snapshot",
-                    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup."}
+                    "rule": "Out/Doubtful at a game-day snapshot, still in the final lineup, did not play, and scored 0."}
         headline = f"{name} was {flag['status']} at {flag.get('first_seen')} but stayed in the lineup."
         sources = [{"name": "Sleeper game-day snapshot", "url": None}]
     else:
@@ -361,11 +373,14 @@ def analyse_season(bundle, players, cfg, owners):
             # Injury flags, two sources:
             #  1. official NFL injury report: game status Out/Doubtful AND scored 0 as a starter (retroactive rule)
             #  2. game-day snapshots: Out/Doubtful at snapshot time and still in the final lineup
+            # Both need the starter to have scored 0 AND not taken the field (D60). Snapshots run late (GitHub
+            # cron drifts hours), so a status seen at one can be an in-game injury: if he played, it's no penalty.
             flags = {}
+            sat = lambda p: pts.get(p, 0) == 0 and bye.took_field(season, wk, p) is not True  # noqa: E731
             report = nfl_report_for(season, wk)
             if report is not None:
                 for p in starters:
-                    if p and p != "0" and pts.get(p, 0) == 0 and p in players:
+                    if p and p != "0" and sat(p) and p in players:
                         hit = report_flag(report, players[p])
                         if hit:
                             flags[p] = {"status": hit["game"], "source": "nfl_report", "injury": hit["injury"], "practice": hit["practice"]}
@@ -380,7 +395,7 @@ def analyse_season(bundle, players, cfg, owners):
                     if r["roster_id"] != rid:
                         continue
                     for p, st in r["statuses"].items():
-                        if p in starters and (st in out_set or st in doubt_set):
+                        if p in starters and (st in out_set or st in doubt_set) and sat(p):
                             flags.setdefault(p, {"status": st, "source": "snapshot", "first_seen": s["taken_at"]})
 
             bye_starters = [p for p in zero if bye.is_bye(season, int(wk), p, players.get(p, {}).get("pos")) is True]
@@ -552,6 +567,27 @@ def head_to_head(bundles, owners, cfg):
     return result
 
 
+INJURY_KINDS = ("injured_starter_out", "injured_starter_doubtful", "questionable_did_not_play")
+
+
+def check_fair_play(all_penalties, bundles):
+    """Guard rail (D60): stop the run, writing nothing, if any counted injury penalty went to a starter
+    who scored points or took the field that week. Those are in-game injuries, never penalties."""
+    bye = ByeDetector()
+    by_season = {b["league"]["season"]: b for b in bundles}
+    bad = []
+    for p in all_penalties:
+        if p["kind"] not in INJURY_KINDS or not p["counts"]:
+            continue
+        s, wk, rid, pid = p["season"], str(p["week"]), p["manager"]["roster_id"], p["player"]["player_id"]
+        m = next((x for x in by_season[s]["matchups"].get(wk, []) if x["roster_id"] == rid), None)
+        scored = ((m or {}).get("players_points") or {}).get(pid, 0)
+        if scored != 0 or bye.took_field(s, wk, pid) is True:
+            bad.append(f'{p["id"]} ({p["player"]["name"]}: scored {scored}, took the field: {bye.took_field(s, wk, pid)})')
+    if bad:
+        raise SystemExit("Fair-play check failed: injury penalties for starters who played:\n  " + "\n  ".join(bad))
+
+
 def main():
     cfg = load(ROOT / "config" / "league.json")
     cfg["_ledger"] = (load(ROOT / "config" / "commissioner_penalties.json", {}) or {}).get("entries", [])
@@ -624,6 +660,7 @@ def main():
             alltime[uid]["by_season"][season] = t
     dump(OUT / "tegridy_alltime.json", dict(sorted(alltime.items(), key=lambda kv: kv[1]["total"])))
     all_penalties.sort(key=lambda x: (x["season"], x["week"] or 99, x["manager"]["roster_id"]))
+    check_fair_play(all_penalties, bundles)
     dump(OUT / "penalties.json", {
         "note": "Every penalty with its evidence. counts=false entries are listed for transparency but carry 0 points (see excluded_reason).",
         "penalties": all_penalties,

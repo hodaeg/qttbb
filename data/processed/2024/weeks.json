@@ -4282,14 +4282,7 @@
    "efficiency": 0.8445,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {
-    "8167": {
-     "injury": "Ankle",
-     "practice": "",
-     "source": "nfl_report",
-     "status": "Out"
-    }
-   },
+   "injured_starters": {},
    "multiplier": 1.0,
    "optimal_points": 110.6,
    "points": 93.4,
@@ -4479,14 +4472,7 @@
    "efficiency": 0.86,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {
-    "10229": {
-     "injury": "Knee",
-     "practice": "Full Participation in Practice",
-     "source": "nfl_report",
-     "status": "Out"
-    }
-   },
+   "injured_starters": {},
    "multiplier": 1.0,
    "optimal_points": 89.26,
    "points": 76.76,
@@ -5183,14 +5169,7 @@
    "efficiency": 1.0,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {
-    "5022": {
-     "injury": "Hamstring",
-     "practice": "",
-     "source": "nfl_report",
-     "status": "Out"
-    }
-   },
+   "injured_starters": {},
    "multiplier": 1.0,
    "optimal_points": 113.1,
    "points": 113.1,
@@ -5296,14 +5275,7 @@
    "efficiency": 0.9671,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {
-    "11628": {
-     "injury": "gameday concussion protocol evaluation",
-     "practice": "",
-     "source": "nfl_report",
-     "status": "Out"
-    }
-   },
+   "injured_starters": {},
    "multiplier": 1.0,
    "optimal_points": 88.1,
    "points": 85.2,
@@ -5634,14 +5606,7 @@
    "efficiency": 0.9576,
    "empty_slots": 0,
    "excluded_reason": null,
-   "injured_starters": {
-    "5872": {
-     "injury": "Illness",
-     "practice": "Full Participation in Practice",
-     "source": "nfl_report",
-     "status": "Out"
-    }
-   },
+   "injured_starters": {},
    "multiplier": 1.0,
    "optimal_points": 129.8,
    "points": 124.3,

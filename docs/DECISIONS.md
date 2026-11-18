@@ -452,3 +452,20 @@ Levi's next round, and what changed:
 - **Explainer.** A one-line lede, then a compact grid: each violation's cost (red for the highest, green for the lowest) and the playoff multipliers (×1.5 green to ×2 red). Values still come from `config/league.json`.
 - **Sources.** Every penalty in an open bar shows its source: the official NFL injury report or NFL schedule (linked), a Sleeper game-day snapshot, or the commissioner's record.
 - **Gabe.** gabroni missed the 2026 league note: added to `config/commissioner_penalties.json` with $0 FAAB taken (the commissioner's call). A refresh also added his 2026 week 10 penalty (Drake Maye, Out, left in the lineup). "so $0 of FAAB was taken" is dropped from that headline on the site.
+
+### D60 — A starter who took the field is never an injury penalty — Accepted
+Found when the commissioner disputed Gabe's 2026 week 10 penalty: Drake Maye was flagged "Out" by a game-day snapshot. But he played, got hurt in the game, and scored 3.02.
+**Cause.**
+- The snapshot rule (D12) only checked the status at snapshot time and never asked whether the player played or scored.
+- GitHub cron drifts by hours, so "pre-kickoff" snapshots often run mid-game or Monday night and catch in-game injuries. The 11:30am ET Sunday snapshot ran at 3:28pm.
+- Archived NFL injury report pages can also be updated after the game: 2024 week 4 shows Rashee Rice "Out (Knee)" with "Full Participation in Practice".
+- A Sleeper stats row isn't proof of playing either, since inactive players get rows too.
+
+**Rule.** Every injury flag (official report or snapshot, Out or Doubtful) now needs the starter to have scored 0 **and** not taken the field. "Took the field" is Sleeper's games-played ≥ 1 or any points: `ByeDetector.took_field()`, read from `data/raw/player_points`. The Questionable rule (D18) keeps its own test and is only tightened by this.
+
+**Guard rail.** `check_fair_play()` in `scripts/score.py` stops a run, writing nothing, if a counted injury penalty goes to a starter who played or scored. The rules are written up for future work in the project skill `.claude/skills/integridy-rules/SKILL.md`.
+
+**Effect.** 18 penalties removed (144 points) and none added.
+- 2026 snapshot penalties: TreVeyon Henderson, David Montgomery, Deebo Samuel, Davante Adams, Jeremiyah Love, Lamar Jackson (1 snap), Hunter Henry, Xavier Worthy, Rhamondre Stevenson, Josh Jacobs, Michael Wilson, Jaylen Waddle and Drake Maye.
+- 2024 report penalties for players who played: Christian Watson, Rashee Rice, Dallas Goedert, Marvin Harrison Jr. and Deebo Samuel.
+- All-time totals now: Hodaeg 6, MrSeeYou 5, JSusee 6, WhiskeyDicknCo 9.5, ToadLicker 10, gabroni 10, Gingivitis 14, ChinaKing 28, BigDogsRevenge 35.5, therealGandB 59.75, TheBoarHouse 67, DangerDave678 0.
