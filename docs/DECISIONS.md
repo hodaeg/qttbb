@@ -507,3 +507,21 @@ On iOS Safari the bottom of the story was cut off, and sometimes the card was hi
   - The inset is capped at 22% of the screen and only ratchets up, so it settles after the first toolbar show/hide and doesn't jitter.
 - **What it moves.** The card (and its height), the scrubber's bottom, the Integridy chart's resting position, the logo's centre, the alumni burst's limits and the type switch all keep above it. Where there's no toolbar (desktop, Chrome's emulation) the inset is 0 and nothing moves.
 - **Sticker.** The "I got tegridy" sticker sits 13px lower, covering less of "Factor".
+
+### D66 — History app: story cards live in the timeline; season results are written on the ribbons — Accepted
+Replaces the pinned card tray (D39 and on).
+- **Cards.**
+  - Every story card is anchored in its year's stretch: just after the year line (leaving room for the cut and arrivals), scrolling with the ribbons. Scroll it into view, stop to read, carry on.
+  - Cards settle in slightly as they come up from the bottom, and pass under the header and avatars.
+  - A year's stretch is sized from its cards' real heights, measured off-screen at the card width: room under the line, the cards with about a quarter-screen of ribbon between them, then a tail for the season's results. A stretched year (2014) spreads its cards out.
+  - The tray, its pips, its shadow on the ribbons and the "under the card" darkening are gone. The playhead ("now") sits at 60% of the visible height.
+  - Photos are a stack under their card, scrolling with it and settling in from below.
+  - Nothing important is pinned to the bottom edge any more, so iOS Safari's toolbar no longer hides story content. The safe zone (D65) still keeps the scrubber clear.
+- **Season results are no longer cards.** They're written down the ribbon, vertically, as the word scrolls into view. When its foot reaches the playhead it rides up into the avatar, disappearing under the header fade, and the existing landing follows: star and trim, or the X stamp.
+  - **CHAMPION**: gold foil with a running sheen.
+  - **2014 (Max)**: lowercase **champion\***, burnt into the ribbon like Return, with no gold and no explanation anywhere. The asterisk's footnote is gone from the person sheet too; the * stays. It's a sticking point with the league.
+  - **SACKO**: burnt in.
+  - **UNDEFEATED** (Levi 2024, 14-0), formerly the "silver star": platinum, with a fast mirrored sheen, a breathing cool glow and winking glints. Its star on the avatar is platinum too (gradient fill, pulsing glow). When it lands, a timed burst plays (a platinum shockwave ring and 12 sparkles), so fast scrolling can't skip it.
+  - Labels elsewhere say "Undefeated" instead of "Silver star".
+- **Fun facts.** A season card now exists only if the season has a fun fact. It's a small card with the year and "Fun fact", at the start of the next year's stretch.
+- Testing in a throttled (hidden) preview pane uses a dev-only `window.__jump(y)` that skips the scroll easing; it isn't in production builds.

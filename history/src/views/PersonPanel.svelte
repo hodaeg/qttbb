@@ -53,8 +53,7 @@
 {#if titles.length || sackos.length || silver.length}
   <p class="cap">
     {#if titles.length}Champion {titles.map((y) => y + (legacy.seasons[y].championAsterisk ? '*' : '')).join(', ')}{/if}{#if titles.length && sackos.length}{' · '}{/if}{#if sackos.length}Sacko {sackos.join(', ')}{/if}
-    {#each silver as s}<br />Silver star {s.year}: {s.why}{/each}
-    {#each titles.filter((y) => legacy.seasons[y].championAsterisk) as y}<br /><span class="fine">* {y}: {legacy.seasons[y].championAsterisk}</span>{/each}
+    {#each silver as s}<br />Undefeated {s.year}{s.why.match(/\(([^)]+)\)/) ? ` (${s.why.match(/\(([^)]+)\)/)![1]})` : ''}{/each}
   </p>
 {/if}
 
@@ -148,10 +147,6 @@
     color: var(--ink-2);
     font-size: 13px;
     line-height: 1.5;
-  }
-  .fine {
-    color: var(--ink-3);
-    font-size: 12px;
   }
   .stats {
     display: grid;

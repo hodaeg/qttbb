@@ -4,13 +4,13 @@
   // from the scroll position, so the whole history scrubs forwards and backwards like a film.
   import { onMount } from 'svelte';
   import {
-    makeLayout, segments, members, people, legacy, constants, lineup, exits, isCurrent, statusOf, FIRST, LAST, CUT_GAP, SLOTS,
-    pourAt, growTip, avatarState, stopAt, trayAt, clamp, lerp, back, smooth, easeOut, yearsLabel, tegridy, type AvatarState, type Spot, type TgMember,
+    makeLayout, cards, segments, members, people, legacy, constants, lineup, exits, isCurrent, statusOf, FIRST, LAST, CUT_GAP, SLOTS,
+    pourAt, growTip, avatarState, stopAt, clamp, lerp, back, smooth, easeOut, yearsLabel, tegridy, type AvatarState, type Spot, type TgMember,
   } from '../lib/model';
   import { scatter, type Spot as BurstSpot } from '../lib/scatter';
   import Avatar from './Avatar.svelte';
   import Glass from './Glass.svelte';
-  import Tray from './Tray.svelte';
+  import CardView from './Card.svelte';
   import Scrubber from './Scrubber.svelte';
   import PersonPanel from './PersonPanel.svelte';
   import Roll from './Roll.svelte';
@@ -26,15 +26,23 @@
   let vel = $state(0); // how fast we're moving (drives the ripple)
   let time = $state(0);
   let reduced = $state(false);
-  let want = $state(0); // how tall the current card wants to be (reported by the tray)
-  let tt = $state(0); // where the card's top actually is right now (springs toward `want`)
+  // every story card's height, measured off-screen, so the timeline can give each its room
+  let cardHs = $state<Record<number, number>>({});
+  function measureCard(node: HTMLElement, i: number) {
+    const ro = new ResizeObserver(() => {
+      const h = Math.round(node.offsetHeight);
+      if (h && cardHs[i] !== h) cardHs[i] = h;
+    });
+    ro.observe(node);
+    return { destroy: () => ro.disconnect() };
+  }
   // while the scrubber is held, the story follows its preview playhead instead of the page scroll
   let previewW: number | null = null;
   const rawScroll = () => (previewW !== null ? previewW - L.P : window.scrollY);
 
   // the bottom safe zone (see size() below): only ever grows, so nothing jumps as Safari's bars move
   let inset = $state(0);
-  const L = $derived(makeLayout(vh, W, inset));
+  const L = $derived(makeLayout(vh, W, inset, cardHs));
   const w = $derived(s + L.P); // the playhead, in world pixels
 
   // Temporary, for the design review: cycle through the type sets (also ?type=a|b|c).
@@ -88,8 +96,9 @@
       if (fanned && Math.abs(window.scrollY - fanY) > 40) fanned = false; // a real scroll, not an iOS toolbar nudge
     };
     window.addEventListener('scroll', onScroll, { passive: true });
+    // dev only: jump straight to a scroll position, skipping the easing (for testing in a throttled pane)
+    if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__jump = (y: number) => (window.scrollTo(0, y), (s = y));
     let raf = 0;
-    tt = L.trayTop;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') (focus = null), (tgFocus = null);
       if (focus !== null && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) openSlot(clamp(focus + (e.key === 'ArrowRight' ? 1 : -1), 0, SLOTS - 1));
@@ -146,9 +155,6 @@
       stepFocus();
       stepTg();
       stepGrow(now);
-      const tTarget = L.vh - L.inset - 10 - (want ? Math.min(want, L.trayH) : L.trayH);
-      if (Math.abs(tTarget - tt) > 0.3) tt = reduced ? tTarget : tt + (tTarget - tt) * 0.2;
-      else if (tt !== tTarget) tt = tTarget;
       const target = rawScroll();
       const d = target - s;
       if (Math.abs(d) > 0.05) s = reduced ? target : s + d * 0.2;
@@ -364,8 +370,7 @@
     // too (cuts are a flat gap you can see coming, not a slice that falls away)
     const flat = fz > 0.5;
     // past the last card its shadow lifts off the ribbons too (it used to linger as a dark band)
-    const cardGone = clamp((w - L.end) / (vh * 0.2));
-    const cardTop = lerp(tt, vh + 40, Math.max(fz, cardGone));
+    const cardTop = vh + 40; // nothing is in a card's shadow now (the founders' pre-league dark pours away below)
     for (const seg of segments) {
       const founding = seg.start === FIRST;
       const cutBot = seg.end !== LAST;
@@ -429,57 +434,58 @@
       .filter((m) => m.sy > L.headerY + 14 && m.sy < vh + 4),
   );
 
-  // ---- photos: they rise up from behind the card one after another, growing as they come. Each new
-  // one lands on top, where the last one was, and pushes the ones before it up the stack. As the next
-  // card arrives they drift up and shrink away into the top, the highest first.
+  // ---- photos: a little stack under their card, scrolling with it. Each one settles in as it comes up
+  // from the bottom of the screen (a touch small and tilted, then square), later ones on top.
   const photos = $derived.by(() => {
     const out: { key: string; p: Photo; x: number; y: number; rot: number; z: number; o: number; sc: number }[] = [];
-    const pw = Math.min(L.fieldW * 0.7, 330);
-    const ph = pw * 0.75;
-    const regionTop = L.headerY + L.av + 14;
-    const regionBot = L.trayTop - 18; // a fixed line (the tallest card's top): a shorter next card mustn't drag leaving photos down
+    const { w: pw, h: ph, step, gap } = L.photo;
     for (const r of L.seq) {
       const list = r.card.photos;
-      const span = r.b - r.a;
-      if (!list?.length || w < r.a - vh * 0.5 || w > r.b + span * 0.6) continue;
-      const n = list.length;
-      // leaving takes each photo about as long as arriving did (the mirror of its ease), the top of
-      // the stack first, overlapping a little more than the arrivals so the last isn't left alone
-      const dIn = (span * 0.6) / n;
-      const dOut = dIn * 0.85;
-      const exitAt = (k: number) => r.b - span * 0.18 + k * dOut * 0.45;
-      const base = regionBot - ph / 2 - 4;
-      const step = n > 1 ? Math.min(ph * 0.58, (base - ph / 2 - regionTop) / (n - 1)) : 0;
-      const ents = list.map((_, k) => easeOut(clamp((w - (r.a + span * 0.06 + k * dIn)) / dIn)));
+      if (!list?.length) continue;
+      const top = r.a + r.h + gap - s; // screen y of the stack's top
+      if (top > vh + 40 || top + ph + (list.length - 1) * step < -40) continue;
       list.forEach((p, k) => {
-        const e = ents[k];
-        if (e <= 0) return;
-        const climb = ents.slice(k + 1).reduce((t, v) => t + v, 0); // pushed up by every later arrival
-        const tx = L.padL + L.fieldW / 2 + [-10, 14, -6][k % 3] * (L.fieldW / 300);
+        const y = top + ph / 2 + k * step;
+        if (y - ph / 2 > vh + 30 || y + ph / 2 < -30) return;
+        const t = easeOut(clamp((vh - (y - ph / 2)) / (vh * 0.42)));
+        const x = L.padL + L.trayW / 2 + [-0.12, 0.1, -0.05][k % 3] * L.trayW * 0.5;
         const rot = [-3, 2.5, -1.5][k % 3];
-        const ty = base - climb * step;
-        const ex = 1 - easeOut(1 - clamp((w - exitAt(k)) / dOut));
-        if (ex >= 1) return;
-        const enterY = lerp(Math.max(tt, L.trayTop) + ph * 0.25, ty, e); // from behind the card
-        const y = lerp(enterY, L.headerY - ph * 0.15, ex);
-        const sc = lerp(0.5, 1, e) * lerp(1, 0.32, ex);
-        out.push({ key: p.src, p, x: tx, y, rot: rot * (0.4 + 0.6 * e) + (1 - e) * 5 - ex * rot * 1.5, z: k + 1, o: clamp(e * 3) * (1 - ex * ex), sc });
+        out.push({ key: p.src, p, x, y: y + (1 - t) * 30, rot: rot + (1 - t) * 7 * (k % 2 ? -1 : 1), z: k + 1, o: clamp(t * 2.5), sc: lerp(0.84, 1, t) });
       });
     }
     return { list: out, pw, ph };
   });
 
-  // ---- markers that live on the columns: each season's champion and sacko
+  // ---- story cards, anchored in the timeline: each scrolls with the ribbons, settling in a touch as
+  // it comes up from the bottom of the screen
+  const anchored = $derived(
+    L.seq
+      .map((r) => {
+        const y = r.a - s;
+        const e = easeOut(clamp((vh - y) / (vh * 0.3)));
+        return { r, i: L.seq.indexOf(r), y: y + (1 - e) * 26, o: clamp(e * 1.6) };
+      })
+      .filter((c) => c.y < vh + 30 && c.y + c.r.h > -30),
+  );
+
+  // ---- each season's results, written down the winner's (or loser's) ribbon: CHAMPION in gold foil,
+  // SACKO burnt in, UNDEFEATED in platinum, and 2014's "champion*" burnt in, no foil, no explanation.
+  // A word is written onto its ribbon as it scrolls into view; once its foot reaches the playhead it
+  // rides up into the avatar (swallowed by the fade under the header), and the star, trim or X lands.
+  const markFs = $derived(clamp(L.cw * 0.58, 10, 17));
   const marks = $derived.by(() => {
     type Kind = 'champ' | 'sacko' | 'silver';
-    const out: { key: string; kind: Kind; person: string; x: number; y: number; pop: number; o: number; star: boolean }[] = [];
+    const out: { key: string; kind: Kind; person: string; x: number; y: number; o: number; star: boolean; reveal: number; text: string }[] = [];
     const add = (key: string, kind: Kind, person: string, slot: number, world: number, star = false) => {
-      const y = markY(world);
-      if (w <= world || y < 0 || y > L.P + 20) return;
-      // a trophy or sacko X nearing the header merges into its owner's avatar (see honours below)
+      const y = markY(world); // the word's foot
+      const text = kind === 'sacko' ? 'SACKO' : kind === 'silver' ? 'UNDEFEATED' : star ? 'champion*' : 'CHAMPION';
+      const len = text.length * markFs * 0.78;
+      if (y - len > vh + 4 || y < 0) return;
+      // nearing the avatars it fades into them (the sacko hands over to the X stamp a little earlier)
       const merge = clamp((L.headerY + L.av * 4 - y) / (L.av * 3));
-      if (merge >= (kind === 'sacko' ? 0.5 : 1)) return; // the sacko X hands over to the stamp
-      out.push({ key, kind, person, x: gOf(slot).x + gOf(slot).w / 2, y, pop: clamp((w - world) / (vh * 0.07)) * (1 - merge * 0.55), o: (1 - merge) * (1 - fz), star });
+      if (merge >= (kind === 'sacko' ? 0.5 : 1)) return;
+      const reveal = clamp((vh - (y - len)) / (len * 1.3)); // written down the ribbon as it comes on screen
+      out.push({ key, kind, person, x: gOf(slot).x + gOf(slot).w / 2, y, o: (1 - merge) * (1 - fz), star, reveal, text });
     };
     if (fz > 0.99) return out;
     for (const [year, season] of Object.entries(legacy.seasons)) {
@@ -505,7 +511,7 @@
     const out: Line[] = [];
     if (season.champion === p) out.push({ kind: 'champ', text: `Champion${season.championAsterisk ? '*' : ''}` });
     if (season.runnerUp === p) out.push({ kind: 'runner', text: 'Runner-up' });
-    for (const sv of season.silverStars ?? []) if (sv.person === p) out.push({ kind: 'silver', text: `Silver star · ${sv.why}` });
+    for (const sv of season.silverStars ?? []) if (sv.person === p) out.push({ kind: 'silver', text: `Undefeated · ${sv.why.replace(/^Undefeated\s*/i, '')}` });
     if (season.ledScoring === p) out.push({ kind: 'points', text: 'Most points' });
     if (season.sacko === p) out.push({ kind: 'sacko', text: 'Sacko' });
     return out;
@@ -588,7 +594,7 @@
       const sv = n(silvers[p]);
       const tally = [
         { n: t, one: 'title', many: 'titles' },
-        { n: sv, one: 'silver star', many: 'silver stars' },
+        { n: sv, one: 'undefeated season', many: 'undefeated seasons' },
         { n: k, one: 'Sacko', many: 'Sackos' },
       ].filter((x) => x.n > 0);
       out.push({ key, person: p, y, h, yr, last, lines, tally });
@@ -682,7 +688,7 @@
   // avatar as it nears the header. All of it is a pure function of the scroll, so it reverses.
   // - title: a gold star grows under the avatar (middle out) and the avatar swells with a gold glow.
   //   Their ribbon earns edges: 1 title gold foil, 2 platinum just inside it, 3+ gold chevrons;
-  // - a silver star (an honour short of a title, e.g. an undefeated regular season) lands the same way;
+  // - an undefeated regular season lands the same way, as a platinum star with a burst of sparkles;
   // - sacko: an X stamps onto the avatar, which shakes, then the X shrinks into a row along the top.
   const titles: Record<string, number[]> = {};
   const sackos: Record<string, number[]> = {};
@@ -694,7 +700,7 @@
     if (season.sacko && lineup[y].includes(season.sacko)) (sackos[season.sacko] ??= []).push(y);
     for (const sv of season.silverStars ?? []) if (lineup[y].includes(sv.person)) (silvers[sv.person] ??= []).push(y);
   }
-  // Every marker (trophy, silver star, sacko X) sits on its ribbon right at the year line that closes
+  // Every result (CHAMPION, UNDEFEATED, SACKO) sits on its ribbon right at the year line that closes
   // its season, and lands on the avatars just after that line passes, while the season's card (which
   // leads the next year, see model.ts) is up. The current season has no closing line yet: its
   // markers sit early in its own year.
@@ -770,13 +776,28 @@
     const at = (k: number) => (t[k] ? starOf(t[k]) : 0);
     return { gold: at(0), plat: at(1), chev: at(2), chev2: at(3) };
   };
+  // the undefeated star gets its moment: once it's landed, a timed burst plays on the avatar (fast
+  // scrolling can't skip it); scrolling back above it re-arms it
+  let platBurst = $state<Record<string, number>>({});
+  const platArmed: Record<string, boolean> = {};
+  $effect(() => {
+    for (const p of Object.keys(silvers)) {
+      const landed = silvers[p].some((y) => starOf(y) >= 0.4);
+      if (landed && !platArmed[p] && !reduced) {
+        platArmed[p] = true;
+        const n = (platBurst[p] ?? 0) + 1;
+        platBurst[p] = n;
+        window.setTimeout(() => {
+          if (platBurst[p] === n) platBurst[p] = 0;
+        }, 1900);
+      } else if (!landed) platArmed[p] = false;
+    }
+  });
   const grayOf = (st: AvatarState) => (st.cut ? (fx[st.cut]?.g ?? 1) : st.gray);
 
   // ---- where we are in time (the dial and the tray read this)
   const fi = $derived(stopAt(L, w));
   const started = $derived(clamp((w - (L.T[L.stops[0]] - vh * 0.35)) / (vh * 0.2)));
-  const trayItems = $derived(trayAt(L, w));
-  const trayO = $derived(started * (1 - clamp((w - L.end) / (vh * 0.2))));
 
   const finaleCy = $derived((L.finale - w) * 0.94 + vh * 0.52);
   // after the rankings, the ribbons (and everyone riding them) drop down the page, gathering speed,
@@ -964,6 +985,23 @@
 
 <div class="spacer" style:height="{pageH}px"></div>
 
+<!-- the platinum the undefeated star is made of -->
+<svg class="defs" width="0" height="0" aria-hidden="true">
+  <defs>
+    <linearGradient id="platfoil" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8d96a0" /><stop offset="0.3" stop-color="#ffffff" /><stop offset="0.5" stop-color="#b9c2cc" />
+      <stop offset="0.68" stop-color="#ffffff" /><stop offset="1" stop-color="#7d8792" />
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- every card, measured off-screen at its real width, so the timeline can make room for it -->
+<div class="measure" inert aria-hidden="true" style:width="{L.trayW}px">
+  {#each cards as c, i (i)}
+    <div use:measureCard={i}><Glass pad="14px 18px 16px"><CardView card={c} {onperson} full /></Glass></div>
+  {/each}
+</div>
+
 <div class="stage" class:reduced style:height="{vh}px" style:touch-action={focus !== null || tgFocus !== null ? 'pan-y' : null}>
   <!-- columns: nothing is ever drawn over these except their own markers -->
   <div
@@ -1020,7 +1058,6 @@
       </i>
     {/each}
     <!-- the card's shadow falling on the ribbons just above it, and the ribbons falling away at the bottom -->
-    <i class="cardshade" style:opacity={started * (1 - fz) * (1 - clamp((w - L.end) / (vh * 0.2)))} style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{tt - 44}px,0)"></i>
     <i class="floorshade" style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{vh - 110}px,0)"></i>
     {#each markers as m (m.y)}
       <span class="marker" style:opacity={started} style:width="{L.fieldW}px" style:transform="translate3d({L.padL}px,{m.sy}px,0)">
@@ -1033,18 +1070,16 @@
       </span>
     {/each}
     {#each marks as m (m.key)}
-      <span class="mark {m.kind}" style:opacity={m.o} title="{m.kind === 'champ' ? 'Champion' : m.kind === 'silver' ? 'Silver star' : 'Sacko'}: {people[m.person].name}" style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-50%) scale({back(m.pop)})">
-          <svg viewBox="0 0 16 16" width={Math.min(L.cw - 5, 18)} height={Math.min(L.cw - 5, 18)} aria-hidden="true">
-            {#if m.kind === 'champ'}
-              <path d="M4 2h8v3.2a4 4 0 0 1-8 0zM1.8 3H4v1.3H3.1A1.7 1.7 0 0 0 4.2 6l-.5 1.2A3 3 0 0 1 1.8 4.4zM12 3h2.2v1.4a3 3 0 0 1-1.9 2.8L11.8 6a1.7 1.7 0 0 0 1.1-1.7H12zM7.2 9h1.6v2.4H11V13H5v-1.6h2.2z" />
-            {:else if m.kind === 'silver'}
-              <path d="M8 .8l2.2 4.6 5 .5-3.8 3.4 1.1 5L8 11.8l-4.5 2.5 1.1-5L.8 5.9l5-.5z" />
-            {:else}
-              <path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6" />
-            {/if}
-          </svg>
-          {#if m.star}<b class="ast" aria-label="with an asterisk">*</b>{/if}
-        </span>
+      <span
+        class="mark {m.kind}"
+        class:burnt={m.kind === 'sacko' || m.star}
+        style:--tone={people[m.person].color}
+        style:--reveal="{(100 - m.reveal * 100).toFixed(1)}%"
+        style:font-size="{markFs}px"
+        style:opacity={m.o}
+        title="{m.text}: {people[m.person].name}"
+        style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-100%)"
+      >{m.text}{#if m.kind === 'silver'}<i class="glint g1"></i><i class="glint g2"></i><i class="glint g3"></i>{/if}</span>
     {/each}
   </div>
 
@@ -1054,7 +1089,22 @@
     <i class="abyss" style:width="{W}px" style:height="{abH}px" style:opacity={clamp(sink * 3)} style:transform="translate3d(0,{vh - abH}px,0)"></i>
   {/if}
 
-  <!-- photos, between the ribbons and the card -->
+  <!-- story cards, in the timeline (under the header and avatars) -->
+  {#if fz < 0.99}
+    {#each anchored as c (c.i)}
+      <div
+        class="acard"
+        style:width="{L.trayW}px"
+        style:--o={c.o * (1 - fz)}
+        style:pointer-events={fz > 0.5 || c.o < 0.6 ? 'none' : null}
+        style:transform="translate3d({L.padL}px,{c.y.toFixed(1)}px,0)"
+      >
+        <Glass pad="14px 18px 16px"><CardView card={c.r.card} {onperson} full /></Glass>
+      </div>
+    {/each}
+  {/if}
+
+  <!-- photos, in a stack under their card -->
   {#if photos.list.length && fz < 0.99}
     <div class="photos" style:opacity={1 - fz}>
       {#each photos.list as ph (ph.key)}
@@ -1071,9 +1121,6 @@
       {/each}
     </div>
   {/if}
-
-  <!-- the card tray -->
-  <Tray {L} items={trayItems} opacity={trayO * (1 - fz)} top={tt} {onperson} bind:want />
 
   <!-- the expanded column: tap a slice to switch, the arrow to go back to the story -->
   {#if fz > 0.01}
@@ -1369,16 +1416,28 @@
         style:pointer-events={fz > 0.5 || sink > 0.5 ? 'none' : null}
         style:--glow={a.st.flying}
         style:--win={h?.win ?? 0}
-        style:--win-tone={h?.winSilver ? '#dfe5ea' : 'var(--gold)'}        style:--gray={fanned && ip !== undefined ? 0.35 : grayOf(a.st)}
+        style:--win-tone={h?.winSilver ? '#f2f7ff' : 'var(--gold)'}        style:--gray={fanned && ip !== undefined ? 0.35 : grayOf(a.st)}
         style:--tone={people[a.p].color}
+        style:--av="{L.av}px"
         style:--i={ip ?? 0}
         style:--j={pileCount - 1 - (ip ?? 0)}
         style:transform="translate3d({v.x - L.av / 2 + (h?.shake ?? 0)}px,{v.y - L.av / 2}px,0) rotate({v.rot}deg) scale({v.scale * (1 + (h?.win ?? 0) * 0.24)})"
         onclick={() => tapAvatar(a)}
       >
         <Avatar id={a.p} size={L.av} live />
+        {#if platBurst[a.p]}
+          <!-- an undefeated season landing: a platinum shockwave and sparkles flying out, on the clock -->
+          {#key platBurst[a.p]}
+            <span class="pburst" aria-hidden="true">
+              <i class="pring"></i>
+              {#each { length: 12 } as _, k (k)}
+                <i class="pspark" style:--a="{k * 30 + (k % 2) * 11}deg" style:--d="{L.av * (0.95 + (k % 3) * 0.28)}px" style:--s={0.7 + (k % 4) * 0.22} style:--t="{(k % 3) * 70}ms"></i>
+              {/each}
+            </span>
+          {/key}
+        {/if}
         {#if h?.stars.length}
-          <span class="stars" aria-label={h.stars.map((x) => `${x.n} ${x.kind === 'gold' ? 'title' : 'silver star'}${x.n > 1 ? 's' : ''}`).join(', ')}>
+          <span class="stars" aria-label={h.stars.map((x) => `${x.n} ${x.kind === 'gold' ? (x.n > 1 ? 'titles' : 'title') : x.n > 1 ? 'undefeated seasons' : 'undefeated season'}`).join(', ')}>
             {#each h.stars as st (st.kind)}
               <svg class:silver={st.kind === 'silver'} viewBox="0 0 10 10" style:transform="translate({st.x}px,0) scale({st.sc})" aria-hidden="true"><path d="M5 .4l1.4 3 3.2.3-2.4 2.2.7 3.2L5 7.5 2.1 9.1l.7-3.2L.4 3.7l3.2-.3z" /></svg>
               {#if st.ast}<b class="ast" style:transform="translate({st.x + 4}px,-3px)">*</b>{/if}
@@ -1435,6 +1494,22 @@
   .spacer {
     width: 1px;
   }
+  .defs {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  .measure {
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .acard {
+    z-index: 7; /* under the header (8) and the avatars (10) */
+    will-change: transform; /* not opacity: it would switch the glass off (Glass fades via --o) */
+  }
   .stage {
     position: fixed;
     top: 0;
@@ -1486,12 +1561,6 @@
     background:
       linear-gradient(to top, rgba(0, 0, 0, calc(var(--p) * 0.6)) 0, transparent calc(var(--p) * 100%)),
       var(--now);
-  }
-  .cardshade {
-    /* the card's shadow falling on the ribbons just above it */
-    height: 44px;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.42));
-    pointer-events: none;
   }
   .floorshade {
     /* the ribbons fall down and away into the screen at the bottom edge */
@@ -1637,9 +1706,12 @@
   .champ svg {
     color: var(--gold);
   }
-  .silver svg,
   .runner svg {
     color: #e3e8ee;
+  }
+  .silver svg {
+    color: #f4f8ff;
+    filter: drop-shadow(0 0 4px rgba(225, 236, 255, 0.9));
   }
   .sacko svg {
     color: #ff6b70;
@@ -2184,7 +2256,7 @@
   /* photos */
   .photos {
     inset: 0;
-    z-index: 11; /* above the avatars (10): a rising avatar passes behind photos and the card */
+    z-index: 7; /* with the cards: under the header and avatars */
     pointer-events: none;
   }
   .photo {
@@ -2206,21 +2278,105 @@
     object-fit: cover;
     object-position: 50% 30%;
   }
+  /* season results, written down the ribbon (vertical, reading top to bottom) */
   .mark {
-    display: grid;
-    place-items: center;
-    pointer-events: auto;
+    position: absolute;
+    writing-mode: vertical-rl;
+    font-family: var(--font-display);
+    font-stretch: var(--display-stretch);
+    font-weight: var(--display-weight);
+    line-height: 1;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+    pointer-events: none;
+    /* written onto the ribbon from the top down as it comes on screen */
+    clip-path: inset(0 0 var(--reveal, 0%) 0);
   }
-  .mark.champ path {
-    fill: #fff;
+  /* CHAMPION: gold foil with a sheen running down it */
+  .mark.champ:not(.burnt) {
+    background: linear-gradient(to bottom, #8a6510, #f8dc84 18%, #b8861c 34%, #fff4c4 46%, #a77a14 60%, #f8dc84 76%, #8a6510) 0 0 / 100% 220%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 4px rgba(248, 220, 132, 0.35));
+    animation: foil-run 3.2s linear infinite;
   }
-  .mark.champ {
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.75));
+  /* SACKO and 2014's champion*: burnt into the ribbon, a dark shade of its own colour with a lit lip */
+  .mark.burnt {
+    color: color-mix(in srgb, var(--tone) 36%, #000);
+    text-shadow:
+      -1px 0 0 color-mix(in srgb, var(--tone) 72%, #fff 28%),
+      0 0 6px color-mix(in srgb, var(--tone) 45%, #000);
+    letter-spacing: 0.1em;
   }
-  .mark.sacko path {
-    fill: none;
-    stroke: rgba(8, 9, 12, 0.85);
-    stroke-width: 2.6;
+  .mark.champ.burnt {
+    text-transform: none;
+    letter-spacing: 0.06em;
+  }
+  /* UNDEFEATED: platinum, and a big deal. Bright mirrored sheen, a cool glow that breathes, glints */
+  .mark.silver {
+    background: linear-gradient(to bottom, #7d8792, #ffffff 12%, #c3ccd6 26%, #f4f8fc 38%, #8e99a6 52%, #ffffff 64%, #b9c2cc 80%, #7d8792) 0 0 / 100% 240%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation:
+      foil-run 2.2s linear infinite,
+      plat-glow 2.6s ease-in-out infinite;
+  }
+  @keyframes foil-run {
+    to {
+      background-position: 0 -220%;
+    }
+  }
+  @keyframes plat-glow {
+    0%,
+    100% {
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 4px rgba(225, 236, 255, 0.55));
+    }
+    50% {
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 10px rgba(235, 244, 255, 0.95)) drop-shadow(0 0 22px rgba(190, 215, 255, 0.45));
+    }
+  }
+  .glint {
+    /* four-point sparkles that wink along the word */
+    position: absolute;
+    left: 50%;
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: -0.45em;
+    background: radial-gradient(circle, #fff 0 12%, transparent 13%),
+      conic-gradient(from 0deg, transparent 0 40deg, rgba(255, 255, 255, 0.95) 45deg, transparent 50deg 130deg, rgba(255, 255, 255, 0.95) 135deg, transparent 140deg 220deg, rgba(255, 255, 255, 0.95) 225deg, transparent 230deg 310deg, rgba(255, 255, 255, 0.95) 315deg, transparent 320deg);
+    -webkit-mask: radial-gradient(circle, #000 0 30%, transparent 70%);
+    mask: radial-gradient(circle, #000 0 30%, transparent 70%);
+    transform: scale(0) rotate(0deg);
+    animation: glint 2.4s ease-in-out infinite;
+  }
+  .glint.g1 {
+    top: 12%;
+  }
+  .glint.g2 {
+    top: 48%;
+    animation-delay: 0.8s;
+  }
+  .glint.g3 {
+    top: 82%;
+    animation-delay: 1.6s;
+  }
+  @keyframes glint {
+    0%,
+    60%,
+    100% {
+      transform: scale(0) rotate(0deg);
+      opacity: 0;
+    }
+    70% {
+      transform: scale(1.5) rotate(45deg);
+      opacity: 1;
+    }
+    85% {
+      transform: scale(0.6) rotate(90deg);
+      opacity: 0.6;
+    }
   }
 
   /* finale */
@@ -2402,9 +2558,82 @@
     fill: var(--gold);
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 4px color-mix(in srgb, var(--gold) 70%, transparent));
   }
+  /* the undefeated star: platinum, mirrored, and it keeps catching the light */
   .stars svg.silver {
-    fill: #e3e8ee;
-    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 4px rgba(227, 232, 238, 0.6));
+    width: 11px;
+    height: 11px;
+    left: -5.5px;
+    top: -1px;
+    fill: url(#platfoil);
+    animation: plat-star 2.6s ease-in-out infinite;
+  }
+  @keyframes plat-star {
+    0%,
+    100% {
+      filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 3px rgba(225, 236, 255, 0.6));
+    }
+    50% {
+      filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 7px rgba(240, 247, 255, 1)) drop-shadow(0 0 14px rgba(190, 215, 255, 0.55));
+    }
+  }
+  /* an undefeated season landing: a platinum shockwave ring and sparkles flying out */
+  .pburst {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+  .pring {
+    position: absolute;
+    left: calc(var(--av, 30px) * -0.5);
+    top: calc(var(--av, 30px) * -0.5);
+    width: var(--av, 30px);
+    height: var(--av, 30px);
+    border-radius: 50%;
+    border: 2px solid #f4f8ff;
+    box-shadow:
+      0 0 12px rgba(235, 244, 255, 0.9),
+      inset 0 0 8px rgba(235, 244, 255, 0.7);
+    animation: pring 1100ms cubic-bezier(0.15, 0.7, 0.3, 1) forwards;
+  }
+  @keyframes pring {
+    0% {
+      transform: scale(0.5);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3.2);
+      opacity: 0;
+      border-width: 0.5px;
+    }
+  }
+  .pspark {
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    width: 8px;
+    height: 8px;
+    background: conic-gradient(from 0deg, transparent 0 40deg, #fff 45deg, transparent 50deg 130deg, #fff 135deg, transparent 140deg 220deg, #fff 225deg, transparent 230deg 310deg, #fff 315deg, transparent 320deg);
+    -webkit-mask: radial-gradient(circle, #000 0 25%, transparent 70%);
+    mask: radial-gradient(circle, #000 0 25%, transparent 70%);
+    filter: drop-shadow(0 0 4px rgba(235, 244, 255, 1));
+    opacity: 0;
+    animation: pspark 1500ms cubic-bezier(0.15, 0.75, 0.3, 1) var(--t) forwards;
+  }
+  @keyframes pspark {
+    0% {
+      opacity: 1;
+      transform: rotate(var(--a)) translateX(0) scale(0.3);
+    }
+    35% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(var(--a)) translateX(var(--d)) scale(var(--s)) rotate(180deg);
+    }
   }
   .cnt {
     position: absolute;
@@ -2436,22 +2665,6 @@
     font-weight: 800;
     color: var(--gold);
     text-shadow: 0 0 2px #000;
-  }
-  .mark .ast {
-    position: absolute;
-    right: -6px;
-    top: -5px;
-    font-size: 11px;
-    line-height: 1;
-    font-weight: 800;
-    color: #fff;
-    text-shadow: 0 0 3px #000;
-  }
-  .mark.silver path {
-    fill: #e3e8ee;
-  }
-  .mark.silver {
-    filter: drop-shadow(0 0 5px rgba(227, 232, 238, 0.7));
   }
   .returns {
     position: absolute;

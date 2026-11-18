@@ -94,10 +94,9 @@ export function yearsLabel(p: string): string {
   return t.map((x) => (x.end === LAST ? `${x.start}–now` : x.start === x.end ? `${x.start}` : `${x.start}–${x.end}`)).join(', ');
 }
 
-// Story cards, plus a generated champion/sacko card for every season. A season's trophy and sacko X
-// sit on the ribbons right at the year line that closes it, so they land on the avatars just after
-// that line passes: the season's card therefore leads the *next* year's stretch of the timeline
-// (`at`), and stays up until they've landed. The current season has no next year; it closes its own.
+// Story cards, plus a small fun-fact card for any season that has one. Season results aren't cards any
+// more: they're written on the ribbons (CHAMPION, SACKO, UNDEFEATED) and ride up into the avatars. A
+// season's fun fact sits at the start of the *next* year's stretch (`at`), right after its results land.
 const storyFileCards = storyFile.cards as Card[];
 const seasonExtras = storyFileCards.filter((c) => c.kind === 'season'); // fun facts for a generated season card
 const storyCards = storyFileCards.filter((c) => c.kind !== 'season');
@@ -113,6 +112,7 @@ for (let y = FIRST; y <= LAST; y++) {
     continue;
   }
   const extra = seasonExtras.find((c) => c.year === y);
+  if (!extra?.funFact) continue;
   let i = -1;
   cards.forEach((c, k) => {
     if (c.year <= y) i = k;
@@ -142,9 +142,10 @@ export const CUT_GAP = 7; // px of daylight between a cut column and its replace
 const RIBBONS_FROM = 2009;
 
 /**
- * Three zones that never overlap: header avatars, the column field, the card tray.
- * The year scrubber lives in the right gutter. The playhead ("now") sits just above the tallest
- * the card can be; shorter cards hug their content and leave the playhead where it is.
+ * The header avatars over the column field, the year scrubber in the right gutter. Story cards (and
+ * their photos) are anchored in the timeline: each sits in its year's stretch, just after the year
+ * line, and scrolls with the ribbons. A year's stretch is as long as its cards need. The playhead
+ * ("now", where cuts happen and honours start their ride up) sits a little below the middle.
  */
 /**
  * @param vh    the LARGE viewport height (browser bars hidden): the story is laid out against it, so the
@@ -152,7 +153,7 @@ const RIBBONS_FROM = 2009;
  * @param inset the bottom safe zone: how much of that height a browser toolbar (iOS Safari's floats
  *              over the page) plus the home indicator can cover. The card, scrubber and chart stay above it.
  */
-export function makeLayout(vh: number, W: number, inset = 0) {
+export function makeLayout(vh: number, W: number, inset = 0, measured: Record<number, number> = {}) {
   const desktop = W >= 1120;
   const headerY = desktop ? 46 : 38;
   const right = desktop ? 120 : 58; // gutter: the scrubber and the alumni pile
@@ -164,30 +165,34 @@ export function makeLayout(vh: number, W: number, inset = 0) {
   const colX = (slot: number) => padL + slot * (cw + gap) + cw / 2;
   const cutH = Math.round(cw * 0.6); // how far the diagonal cut drops across a column
 
-  const trayH = Math.round(Math.min((vh - inset) * 0.4, 360));
-  const trayTop = vh - inset - trayH - 10;
-  const trayW = Math.min(fieldW, 620);
-  const P = trayTop - 12; // playhead: where "now" sits on screen
+  const trayW = Math.min(fieldW, 620); // a card's width
+  const P = Math.round((vh - inset) * 0.6); // playhead: where "now" sits on screen
 
   const stops = [...new Set([...cards.map((c) => c.year), ...Object.keys(lineup).map(Number)])].sort((a, b) => a - b);
   const perYear: Record<number, Card[]> = {};
   for (const c of cards) (perYear[shownIn(c)] ??= []).push(c);
 
-  // How much scrolling each year gets: every card needs time on the tray, and each photo a little
-  // more. A season card leading the next year needs the most: its trophy, star and sacko stamp ride
-  // up from the year line and land on the avatars (~0.8 of a screen) while it's showing.
-  // In the years with cuts (to 2016), the next story card (who left, who joined) follows quickly.
-  const weight = (c: Card) => {
-    const base = 0.55 + 0.22 * (c.photos?.length ?? 0);
-    if (!c.season || shownIn(c) === c.year) return base;
-    if (shownIn(c) > 2016) return 0.95;
-    return 0.3 + (c.funFact ? 0.06 : 0) + (c.body ? 0.3 : 0); // ~0.38 screen: just past the sacko stamp
+  // Each card's height (measured by the story; estimated until then) and its photo stack under it.
+  const cardIx = new Map(cards.map((c, i) => [c, i]));
+  const cardH = (c: Card) => measured[cardIx.get(c)!] ?? (c.kind === 'season' ? vh * 0.16 : vh * 0.3);
+  const pw = Math.min(fieldW * 0.72, 330);
+  const photo = { w: pw, h: pw * 0.75, step: pw * 0.75 * 0.62, gap: 18 };
+  const photosH = (c: Card) => {
+    const n = c.photos?.length ?? 0;
+    return n ? photo.gap + photo.h + (n - 1) * photo.step + 6 : 0;
   };
+  const blockH = (c: Card) => cardH(c) + photosH(c);
+
+  // A year's stretch: room under its line for the cut and anyone arriving, its cards with breathing
+  // room between, then a tail where its season's results are written on the ribbons and ride up.
+  const lead = cutH + av * 2.6;
+  const GAP = vh * 0.26;
+  const tail = vh * 0.42;
   const stretch = (storyFile as { yearLength?: Record<string, number> }).yearLength ?? {}; // e.g. 2014 twice as long
   const bandH = (y: number) => {
     const list = perYear[y] ?? [];
-    const h = vh * (list.length ? 0.2 + list.reduce((t, c) => t + weight(c), 0) : 0.5) + (y === FIRST ? vh * 0.7 : 0);
-    return h * (stretch[String(y)] ?? 1);
+    const content = list.length ? lead + list.reduce((t, c) => t + blockH(c), 0) + (list.length - 1) * GAP + tail : 0;
+    return Math.max(vh * 0.62, content) * (stretch[String(y)] ?? 1) + (y === FIRST ? vh * 0.7 : 0);
   };
 
   const T: Record<number, number> = {};
@@ -199,16 +204,18 @@ export function makeLayout(vh: number, W: number, inset = 0) {
   const end = y0;
   const top = (y: number) => T[y] ?? end; // top of a year's band; past the last year -> end of the timeline
 
-  // The tray shows one card at a time. Each card owns a stretch of its year's band; a card
-  // stays up through any card-less years that follow it.
-  const seq: { card: Card; a: number; b: number }[] = [];
+  // Where each card sits (world px, its top). A stretched year spreads its cards out.
+  const seq: { card: Card; a: number; b: number; h: number }[] = [];
   for (const y of stops) {
     const list = perYear[y] ?? [];
-    const total = list.reduce((t, c) => t + weight(c), 0);
-    let acc = 0;
+    if (!list.length) continue;
+    const used = list.reduce((t, c) => t + blockH(c), 0);
+    const room = bandH(y) - (y === FIRST ? vh * 0.7 : 0) - lead - tail - used;
+    const gap = list.length > 1 ? Math.max(GAP, room / (list.length - 1)) : 0;
+    let at = T[y] + lead;
     for (const card of list) {
-      seq.push({ card, a: T[y] + (acc / total) * bandH(y), b: 0 });
-      acc += weight(card);
+      seq.push({ card, a: at, b: 0, h: cardH(card) });
+      at += blockH(card) + gap;
     }
   }
   seq.forEach((r, i) => (r.b = i < seq.length - 1 ? seq[i + 1].a : end));
@@ -236,7 +243,7 @@ export function makeLayout(vh: number, W: number, inset = 0) {
   const bornAt = born ? cardPos.get(born)! : T[FIRST];
 
   return {
-    vh, W, inset, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayH, trayTop, trayW,
+    vh, W, inset, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayW, photo,
     stops, T, top, end, bandH, seq, cardPos, appearAt, pile, scrub, finale, pageHeight, perYear, leviSlot, bornAt,
   };
 }
@@ -274,19 +281,6 @@ export function wAtStop(L: Layout, f: number): number {
 }
 
 /** Which card(s) the tray is showing. Two while one hands over to the next. */
-export function trayAt(L: Layout, w: number) {
-  const d = L.vh * 0.07;
-  const out: { card: Card; i: number; o: number; dy: number; t: number }[] = [];
-  L.seq.forEach((r, i) => {
-    // one leaves, then the next arrives: they never sit on top of each other
-    const enter = i === 0 ? 1 : smooth(clamp((w - (r.a - d / 2)) / (d / 2)));
-    const exit = i === L.seq.length - 1 ? 0 : smooth(clamp((w - (r.b - d)) / (d / 2)));
-    const o = enter * (1 - exit);
-    if (o > 0.001) out.push({ card: r.card, i, o, dy: (1 - enter) * 16 - exit * 12, t: clamp((w - r.a) / (r.b - r.a)) });
-  });
-  return out;
-}
-
 /**
  * Founders' ribbons are there before the league, dark, as if still under a card. When the
  * founding season starts the colour pours down them, staggered by column: 0 = dark, 1 = fully lit.
