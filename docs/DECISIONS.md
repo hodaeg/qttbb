@@ -483,3 +483,13 @@ Found when the commissioner disputed Gabe's 2026 week 10 penalty: Drake Maye was
   - Past the Integridy chart the page falls away to pure black, and Levi's Hodag logo (`public/tegridy/hodag.png`, cut out of its black background) rises out of the abyss, ending centred on screen.
   - The logo is four copies of one image, clipped into a top jaw and a bottom jaw (split through the middle of the letters) and the two horn tips. It chomps three times, each bite smaller, with the horns riding the top jaw and flicking outward, then settles. No chomp with reduced motion.
   - The chart's open-bar interaction now keys off the chart's position (`chartEnd`) instead of the end of the page.
+
+### D63 — History app: a combination lock on the front door — Accepted
+Because the site shows personal data, it opens on a lock (`src/views/Lock.svelte`).
+- **The lock.** Three picker wheels: a digit, a digit, and one of 50 very common American surnames in alphabetical order. Below them, a single glass "Enter" button.
+  - Wrong: the button flashes red, lit from behind.
+  - Right: it flashes green and the whole lock falls up off the screen, revealing the title.
+  - Wheels snap row by row, tick with a light haptic on supporting phones, and accept arrow keys.
+  - Once opened on a device it stays open there (localStorage).
+- **The combination** is Levi's (the house, 71 Johnson). Only a SHA-256 fingerprint of it is in the code.
+- **Limits, stated plainly.** This keeps casual visitors out; it is not security. The repo and therefore the data are public (D-entry 2026-11-16), and 5,000 combinations can be tried by anyone determined. Real protection would mean taking the data out of the public repo and serving it from somewhere that checks the combination server-side.
