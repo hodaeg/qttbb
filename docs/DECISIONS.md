@@ -537,3 +537,22 @@ Replaces the pinned card tray (D39 and on).
   - Newcomers pop in at the playhead and ride up 2.4× faster; the leaver's push-out is timed to match.
   - Avatars draw above cards (z 10 against 7). The only remaining overlap is a founder briefly passing a card already on screen as it rises.
 - **CHAMPION, SACKO and champion\*** are now cut out of a block of material instead of the letters being the material, so they read better. Inline SVG with a text mask: gold foil with a sliding sheen, or a charred block (a dark shade of the ribbon's colour, scorched at the edges), with the word cut out so the ribbon shows through. UNDEFEATED keeps its platinum letters.
+
+### D68 — History app: patches, flicked cards, landing founders, clean pushes, growing trim, an honest ending — Accepted
+- **Results are stitched-on patches.** The cut-out letters cast a shadow that made them hard to read, so they're gone. Each patch has a dashed stitch line just inside its edge and only a whisker of shadow:
+  - CHAMPION: gold with a light static sheen, white lettering.
+  - SACKO, and 2014's champion\*: brown, light-brown lettering.
+  - UNDEFEATED: platinum, dark slate lettering, no animation (the platinum star and landing burst are unchanged).
+- **Cards and photos sit above the avatars**, and are flicked off the side (alternating left and right, with a little spin) as their top climbs from about 85px under the header to the avatars. They never slide under the header. Tapping a photo lifts that same print out of its stack and grows it to fill the screen over a dimmed backdrop. Tapping again, tapping the backdrop, scrolling or Escape puts it back. The photo sheet is gone.
+- **Year badges sit under their line**: everything below a line is that year.
+- **Founders land** by dropping into the header from above (with a small bounce), and their ribbon pours down from under them. They land as the card that brings them in reaches the top, or that year's line does if it's the year's first card: Levi, Zaid, Max and Nate with the 2009 line; Toby, Jared and Stephen with Dorm life; Tim with his card. They never travel through the field.
+- **Newcomers stay pinned to their cut edge**, moving with the scroll. The member they replace is pushed up by contact, always just above the newcomer and never overlapping (checked across every cut), then flies to the pile once it's off the top.
+- **Title trim grows.** Gold edges, platinum edges and chevrons grow down the ribbon from the header over about 0.4 of a screen once the star lands. A flare rides the front: a bright line with sparkles twinkling at both edges and in the middle. Chevrons are now the gold foil cut into chevron shapes, so they shimmer like the edges, without animating.
+- **The ending.** The ribbons no longer fall. They run on behind the rankings and then meet their end, just above where Integridy comes in. The end scrolls up like everything else, its last half-screen fading into the dark. Once the avatars and header have faded, the soft fade at the top of the field is switched off too, so the ribbons scroll cleanly off the top.
+- **Integridy.**
+  - The bars grow from Zaid (the worst) down to Dave.
+  - A dashed median line runs through them, labelled at its left end (median 10).
+  - New lede: "Every time a member acts with integridy, they get penalized. Golf scoring with data from Sleeper only."
+  - "lower is better" is gone from the open bar.
+  - Randy (desaturated, cut out by hand-traced polygon plus colour trimming, `public/tegridy/randy.png`) stands dark behind the low bars on the left, looming over the scores. He rises into place with the bars.
+- **Other.** The in/out arrows show faces only again. 2014 is back to normal length.

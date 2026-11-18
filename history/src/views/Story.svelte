@@ -5,7 +5,7 @@
   import { onMount } from 'svelte';
   import {
     makeLayout, cards, segments, members, people, legacy, constants, lineup, exits, isCurrent, statusOf, FIRST, LAST, CUT_GAP, SLOTS,
-    pourAt, growTip, avatarState, stopAt, clamp, lerp, back, smooth, easeOut, yearsLabel, tegridy, type AvatarState, type Spot, type TgMember,
+    pourAt, growTip, landing, avatarState, stopAt, clamp, lerp, back, smooth, easeOut, yearsLabel, tegridy, type AvatarState, type Spot, type TgMember,
   } from '../lib/model';
   import { scatter, type Spot as BurstSpot } from '../lib/scatter';
   import Avatar from './Avatar.svelte';
@@ -18,7 +18,21 @@
   import { backOut } from 'svelte/easing';
 
   type Photo = { src: string; alt: string };
-  let { onperson, onphoto }: { onperson: (id: string) => void; onphoto: (p: Photo) => void } = $props();
+  let { onperson }: { onperson: (id: string) => void } = $props();
+
+  // a tapped photo: the same print lifts out of its stack and grows to fill the screen; tap again (or the
+  // dimmed background, or scroll) and it goes back. `zoomMove` turns the easing on just while it moves.
+  let zoomKey = $state<string | null>(null);
+  let zoomMove = $state(false);
+  let zoomY = 0;
+  let zoomT = 0;
+  function zoomPhoto(key: string | null) {
+    zoomKey = zoomKey === key ? null : key;
+    zoomY = window.scrollY;
+    zoomMove = true;
+    clearTimeout(zoomT);
+    zoomT = window.setTimeout(() => (zoomMove = false), 620);
+  }
 
   let vh = $state(800);
   let W = $state(390);
@@ -78,13 +92,14 @@
     window.addEventListener('resize', size);
     const onScroll = () => {
       if (fanned && Math.abs(window.scrollY - fanY) > 40) fanned = false; // a real scroll, not an iOS toolbar nudge
+      if (zoomKey && Math.abs(window.scrollY - zoomY) > 40) zoomPhoto(null);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     // dev only: jump straight to a scroll position, skipping the easing (for testing in a throttled pane)
     if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__jump = (y: number) => (window.scrollTo(0, y), (s = y));
     let raf = 0;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') (focus = null), (tgFocus = null);
+      if (e.key === 'Escape') (focus = null), (tgFocus = null), zoomKey && zoomPhoto(null);
       if (focus !== null && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) openSlot(clamp(focus + (e.key === 'ArrowRight' ? 1 : -1), 0, SLOTS - 1));
       if (tgFocus !== null && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) tgFocus = tgShown = clamp(tgFocus + (e.key === 'ArrowRight' ? 1 : -1), 0, TGN - 1);
     };
@@ -338,7 +353,7 @@
   // Every ribbon runs to the bottom of the screen. Below the card's top edge it is in the card's
   // shadow (--lit: where the shadow starts, in the element's own pixels). Founders' ribbons are
   // there before the league, all in shadow, and the colour pours down them when 2011 starts.
-  type Piece = { key: string; person: string; slot: number; x: number; cw: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean; dotted: boolean; gold: number; plat: number; chev: number; chev2: number };
+  type Piece = { key: string; person: string; slot: number; x: number; cw: number; y: number; h: number; clip: string; g: number; py: number; lit: number; founder: boolean; constant: boolean; dotted: boolean; gold: number; plat: number; chev: number; chev2: number; gcut: number; pcut: number; ccut: number };
   type Tail = Piece & { tf: string; p: number };
   // while scrolling the ribbons sway a little side to side, each on its own slow phase
   const sway = (slot: number) => {
@@ -362,14 +377,16 @@
       const B1 = L.top(seg.end + 1);
       const cut = cutBot && w >= B1; // the cut has reached the playhead
       // today's ribbons run on past the timeline, behind the rankings, until they sink into the screen
-      const bottom = cutBot ? B1 + L.cutH / 2 - CUT_GAP / 2 : L.end + vh * 3;
+      const bottom = cutBot ? B1 + L.cutH / 2 - CUT_GAP / 2 : ribbonEnd;
       const tailTop = cutBot ? bottom - L.cutH - L.cw * 1.8 : bottom; // the last stretch hangs free once cut
 
       let top: number; // world
+      let reach = Infinity; // a landing founder's ribbon pours down from the header: this far so far (screen)
       if (founding) {
-        const tip = growTip(L, seg.person, w);
-        if (tip === null) continue;
-        top = tip + s;
+        const ld = landing(L, seg.person, w);
+        if (ld === null) continue;
+        top = L.headerY + s;
+        reach = ld.reach;
       } else {
         top = L.T[seg.start] - L.cutH / 2 + CUT_GAP / 2;
         if (!flat && w <= top + 1) continue; // arrives when its cut reaches the playhead
@@ -380,7 +397,7 @@
       const litY = founding ? lerp(L.headerY - 30, cardTop, pourAt(L, seg.slot, w)) : cardTop; // screen
       const base = { person: seg.person, slot: seg.slot, cw: gm.w, g: f.g, founder: !!people[seg.person].founder, constant: constants.has(seg.person), dotted: !people[seg.person].founder && isCurrent(seg.person), ...edgesOf(seg.person) };
 
-      const mEnd = flat ? (cutBot ? Math.min(bottom, floor) : floor) : cut ? tailTop : floor;
+      const mEnd = Math.min(flat ? (cutBot ? Math.min(bottom, floor) : floor) : cut ? tailTop : floor, reach + s, cutBot ? Infinity : ribbonEnd);
       if (mEnd > top + 1) {
         // once they fall, every ribbon starts above the screen: founders' tops sit under the header
         // (where they grew from), which made them look shorter than everyone else's as they dropped
@@ -393,7 +410,7 @@
           const tr = founding ? 0 : top + (L.cutH * fz) / 2 - o;
           const b = flat && cutBot ? bottom - L.cutH / 2 - o : h + 60;
           const clip = founding && !(flat && cutBot) ? 'none' : `polygon(0 ${px(tl)},100% ${px(tr)},100% ${px(b)},0 ${px(b)})`;
-          cols.push({ ...base, key, x, y, h, clip, py: -o, lit: litY - y });
+          cols.push({ ...base, key, x, y, h, clip, py: -o, lit: litY - y, gcut: edgeCut(base.gold, y, h), pcut: edgeCut(base.plat, y, h), ccut: edgeCut(base.chev, y, h) });
         }
       }
       if (cut && !flat) {
@@ -404,7 +421,7 @@
           const p = clamp((w - B1) / (vh * 0.12)); // how far it has fallen away
           const clip = `polygon(0 0,100% 0,100% ${px(bottom - L.cutH - tailTop + 2)},0 ${px(bottom - tailTop + 2)})`;
           const tf = `translate3d(${px(x)},${px(y)},0) perspective(260px) rotateX(${(-22 * p).toFixed(2)}deg)`;
-          tails.push({ ...base, key, x, y, h, clip, py: -(y + s), lit: litY - y, tf, p });
+          tails.push({ ...base, key, x, y, h, clip, py: -(y + s), lit: litY - y, tf, p, gcut: edgeCut(base.gold, y, h), pcut: edgeCut(base.plat, y, h), ccut: edgeCut(base.chev, y, h) });
         }
       }
     }
@@ -423,7 +440,7 @@
   const photos = $derived.by(() => {
     const out: { key: string; p: Photo; x: number; y: number; rot: number; z: number; o: number; sc: number }[] = [];
     const { w: pw, h: ph, step, gap } = L.photo;
-    for (const r of L.seq) {
+    for (const [ri, r] of L.seq.entries()) {
       const list = r.card.photos;
       if (!list?.length) continue;
       const top = r.a + r.h + gap - s; // screen y of the stack's top
@@ -434,7 +451,8 @@
         const t = easeOut(clamp((vh - (y - ph / 2)) / (vh * 0.42)));
         const x = L.cardX + L.trayW / 2 + [-0.12, 0.1, -0.05][k % 3] * L.trayW * 0.5;
         const rot = [-3, 2.5, -1.5][k % 3];
-        out.push({ key: p.src, p, x, y: y + (1 - t) * 30, rot: rot + (1 - t) * 7 * (k % 2 ? -1 : 1), z: k + 1, o: clamp(t * 2.5), sc: lerp(0.84, 1, t) });
+        const f = flick(y - ph / 2, ph, ri); // thrown off the same side as its card
+        out.push({ key: p.src, p, x: x + f.x, y: y + (1 - t) * 30, rot: rot + (1 - t) * 7 * (k % 2 ? -1 : 1) + f.rot, z: k + 1, o: clamp(t * 2.5), sc: lerp(0.84, 1, t) });
       });
     }
     return { list: out, pw, ph };
@@ -442,14 +460,24 @@
 
   // ---- story cards, anchored in the timeline: each scrolls with the ribbons, settling in a touch as
   // it comes up from the bottom of the screen
+  // ...and once its top climbs into the header, it's flicked off the side as it keeps rising (alternating
+  // left and right), so it never slides under the avatars
+  const exitLine = $derived(L.headerY * 2 + 85); // starts leaving here...
+  const clearLine = $derived(L.headerY + L.av / 2 + 4); // ...and is off the side by the time it reaches the avatars
+  const flick = (top: number, _h: number, i: number) => {
+    const e = clamp((exitLine - top) / (exitLine - clearLine));
+    const side = i % 2 ? 1 : -1;
+    return { x: side * Math.pow(e, 1.6) * (W * 1.05), rot: side * e * 9 };
+  };
   const anchored = $derived(
     L.seq
-      .map((r) => {
+      .map((r, i) => {
         const y = r.a - s;
         const e = easeOut(clamp((vh - y) / (vh * 0.3)));
-        return { r, i: L.seq.indexOf(r), y: y + (1 - e) * 26, o: clamp(e * 1.6) };
+        const yy = y + (1 - e) * 26;
+        return { r, i, y: yy, o: clamp(e * 1.6), f: flick(yy, r.h, i) };
       })
-      .filter((c) => c.y < vh + 30 && c.y + c.r.h > -30),
+      .filter((c) => c.y < vh + 30 && c.y + c.r.h > -30 && Math.abs(c.f.x) < W),
   );
 
   // ---- each season's results, written down the winner's (or loser's) ribbon: CHAMPION in gold foil,
@@ -758,11 +786,35 @@
   }
   // the ribbon's dressing for a person's titles (0..1 each, as each star lands):
   // 1st gold foil edges, 2nd platinum inside them, 3rd gold chevrons, 4th double chevrons
+  // ...and each one grows down the ribbon from the header as you keep scrolling once its star lands
+  // (over ~0.4 of a screen), a glittering flare riding the growing front
+  const edgeGrow = (year: number) => clamp((reach(midOf(year)) - L.av * 2.4) / (MARK_SPEED * vh * 0.09) / 4.5);
   const edgesOf = (p: string) => {
     const t = titles[p] ?? [];
-    const at = (k: number) => (t[k] ? starOf(t[k]) : 0);
+    const at = (k: number) => (t[k] ? edgeGrow(t[k]) : 0);
     return { gold: at(0), plat: at(1), chev: at(2), chev2: at(3) };
   };
+  /** where a growing edge has got to, on screen */
+  const edgeFront = (g: number) => L.headerY + g * (vh + 40 - L.headerY);
+  /** how much of a ribbon piece (screen top y, height h) the edge hasn't reached yet, from its bottom */
+  const edgeCut = (g: number, y: number, h: number) => (g >= 1 ? 0 : clamp(h - (edgeFront(g) - y), 0, h));
+  // the flare on each edge that's still growing
+  const glitz = $derived.by(() => {
+    const out: { key: string; x: number; w: number; y: number }[] = [];
+    if (fz > 0.5 || sink > 0) return out;
+    const yr = L.stops[Math.min(L.stops.length - 1, Math.floor(fi))];
+    for (const [p, list] of Object.entries(titles)) {
+      const slot = (lineup[yr] ?? []).indexOf(p);
+      if (slot < 0) continue;
+      list.forEach((y, k) => {
+        const g = edgeGrow(y);
+        if (g <= 0 || g >= 1 || k > 3) return;
+        const gm = gOf(slot);
+        out.push({ key: `${p}${y}`, x: gm.x, w: gm.w, y: edgeFront(g) });
+      });
+    }
+    return out;
+  });
   // the undefeated star gets its moment: once it's landed, a timed burst plays on the avatar (fast
   // scrolling can't skip it); scrolling back above it re-arms it
   let platBurst = $state<Record<string, number>>({});
@@ -787,13 +839,13 @@
   const started = $derived(clamp((w - (L.T[L.stops[0]] - vh * 0.35)) / (vh * 0.2)));
 
   const finaleCy = $derived((L.finale - w) * 0.94 + vh * 0.52);
-  // after the rankings, the ribbons (and everyone riding them) drop down the page, gathering speed,
-  // and run out into a dark abyss that rises from the bottom of the screen
+  // after the rankings the story winds down (`sink`): the avatars, the pile and the header fade away, and
+  // the ribbons, which have run on behind the rankings, meet their end: it scrolls up the screen like the
+  // rest of them, their last stretch fading into the dark, as if they run on into the screen
   const sink = $derived(clamp((w - (L.finale + vh * 0.3)) / (vh * 0.6)));
-  const fallY = $derived(sink * sink * vh * 1.15);
-  const sinkTf = $derived(sink > 0 ? `translate3d(0,${fallY.toFixed(1)}px,0)` : null);
-  // the avatars, the pile and the header don't fall with them: they just fade away as the fall begins
   const avFade = $derived(smooth(clamp(sink / 0.22)));
+  const ribbonEnd = $derived(L.finale + vh * 1.5 - L.P - 40); // world: just above where Integridy comes in
+  const endFade = $derived(vh * 0.55);
 
   // ---- Integridy Factor (the pipeline calls it Tegridy): the last word. Once the ribbons have fallen away, a header pops in and gets a
   // sticker slapped on it, a paragraph explains the score, and a bar chart rises in which every bar is
@@ -851,7 +903,8 @@
   const growOf = (i: number) => {
     if (reduced) return grown ? 1 : 0;
     const t = tgNow - growT0;
-    return grown ? back(clamp((t - i * 70) / 650)) : 1 - smooth(clamp((t - (TGN - 1 - i) * 18) / 320));
+    // the worst (Zaid, on the right) rises first, down to the best: you can see something's coming
+    return grown ? back(clamp((t - (TGN - 1 - i) * 70) / 650)) : 1 - smooth(clamp((t - i * 18) / 320));
   };
   /** 59.75 -> "59.75", 9.5 -> "9.5", 10 -> "10" */
   const fmtTF = (v: number) => (v < 0 ? '−' : '') + String(Math.round(Math.abs(v) * 100) / 100);
@@ -931,6 +984,12 @@
     }
     return Object.values(by).sort((a, b) => b.pts - a.pts);
   };
+  // the league's median, a quiet line through the bars
+  const tgMedian = (() => {
+    const v = tgM.map((m) => m.total).sort((a, b) => a - b);
+    const n = v.length;
+    return n ? (n % 2 ? v[(n - 1) / 2] : (v[n / 2 - 1] + v[n / 2]) / 2) : 0;
+  })();
   const tgSeasons = Array.from({ length: Number(tegridy.asOf.season) - 2019 + 1 }, (_, i) => String(2019 + i));
   const wt = tegridy.weights;
   const mt = tegridy.multipliers;
@@ -975,16 +1034,14 @@
 <!-- the platinum the undefeated star is made of -->
 <svg class="defs" width="0" height="0" aria-hidden="true">
   <defs>
-    <linearGradient id="goldfoil" x1="0" y1="0" x2="0.35" y2="1">
-      <stop offset="0" stop-color="#8a6510" /><stop offset="0.2" stop-color="#f8dc84" /><stop offset="0.4" stop-color="#b8861c" />
-      <stop offset="0.56" stop-color="#fff4c4" /><stop offset="0.76" stop-color="#a77a14" /><stop offset="1" stop-color="#8a6510" />
+    <linearGradient id="patchgold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9c7014" /><stop offset="0.5" stop-color="#c39222" /><stop offset="1" stop-color="#9c7014" />
     </linearGradient>
-    <linearGradient id="goldsheen" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0.3" stop-color="#fff" stop-opacity="0" /><stop offset="0.5" stop-color="#fff" stop-opacity="0.75" /><stop offset="0.7" stop-color="#fff" stop-opacity="0" />
+    <linearGradient id="patchsheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0.25" stop-color="#fff" stop-opacity="0" /><stop offset="0.42" stop-color="#fff" stop-opacity="0.22" /><stop offset="0.55" stop-color="#fff" stop-opacity="0" />
     </linearGradient>
-    <linearGradient id="char" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#000" stop-opacity="0.55" /><stop offset="0.3" stop-color="#000" stop-opacity="0" />
-      <stop offset="0.7" stop-color="#000" stop-opacity="0" /><stop offset="1" stop-color="#000" stop-opacity="0.55" />
+    <linearGradient id="patchplat" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a9b3be" /><stop offset="0.5" stop-color="#e9eef3" /><stop offset="1" stop-color="#a9b3be" />
     </linearGradient>
     <linearGradient id="platfoil" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#8d96a0" /><stop offset="0.3" stop-color="#ffffff" /><stop offset="0.5" stop-color="#b9c2cc" />
@@ -996,7 +1053,7 @@
 <!-- every card, measured off-screen at its real width, so the timeline can make room for it -->
 <div class="measure" inert aria-hidden="true" style:width="{L.trayW}px">
   {#each cards as c, i (i)}
-    <div use:measureCard={i}><Glass pad="16px 20px 18px"><CardView card={c} {onperson} full /></Glass></div>
+    <div use:measureCard={i}><Glass pad="16px 20px 18px"><CardView card={c} {onperson} /></Glass></div>
   {/each}
 </div>
 
@@ -1004,11 +1061,8 @@
   <!-- columns: nothing is ever drawn over these except their own markers -->
   <div
     class="field"
-    style:--fade="{L.headerY * 2 + 26}px"
+    style:--fade="{(L.headerY * 2 + 26) * (1 - avFade)}px"
     style:--cw="{L.cw}px"
-    style:transform={sinkTf}
-    style:opacity={sink > 0.75 ? 1 - smooth((sink - 0.75) / 0.25) : null}
-    style:visibility={sink >= 1 ? 'hidden' : null}
   >
     {#each field.cols as c (c.key)}
       <button
@@ -1018,7 +1072,8 @@
         class:chev={c.chev > 0}
         class:chev2={c.chev2 > 0.5}
         class:dotted={c.dotted}
-        style:--chev={c.chev}
+        style:--chev={Math.min(1, c.chev * 4)}
+        style:--ccut="{c.ccut}px"
         aria-label={focus === c.slot ? people[c.person].name : `Open ${first(c.person)}'s column`}
         style:--tone={people[c.person].color}
         style:--g={c.g}
@@ -1030,8 +1085,8 @@
         style:transform="translate3d({c.x}px,{c.y}px,0)"
         onclick={() => tapCol(c.slot)}
       >
-        {#if c.gold > 0}<i class="edge gold" style:opacity={c.gold}></i>{/if}
-        {#if c.plat > 0}<i class="edge plat" style:opacity={c.plat}></i>{/if}
+        {#if c.gold > 0}<i class="edge gold" style:--cut="{c.gcut}px"></i>{/if}
+        {#if c.plat > 0}<i class="edge plat" style:--cut="{c.pcut}px"></i>{/if}
       </button>
     {/each}
     {#each field.tails as t (t.key)}
@@ -1040,7 +1095,8 @@
         class:founder={t.founder}
         class:chev={t.chev > 0}
         class:chev2={t.chev2 > 0.5}
-        style:--chev={t.chev}
+        style:--chev={Math.min(1, t.chev * 4)}
+        style:--ccut="{t.ccut}px"
         style:--tone={people[t.person].color}
         style:--g={t.g}
         style:--p={t.p}
@@ -1051,11 +1107,17 @@
         style:transform={t.tf}
       >
         <!-- a title's foil runs all the way to the end of the cut -->
-        {#if t.gold > 0}<i class="edge gold" style:opacity={t.gold}></i>{/if}
-        {#if t.plat > 0}<i class="edge plat" style:opacity={t.plat}></i>{/if}
+        {#if t.gold > 0}<i class="edge gold" style:--cut="{t.gcut}px"></i>{/if}
+        {#if t.plat > 0}<i class="edge plat" style:--cut="{t.pcut}px"></i>{/if}
       </i>
     {/each}
-    <!-- the card's shadow falling on the ribbons just above it, and the ribbons falling away at the bottom -->
+    {#each glitz as gz (gz.key)}
+      <span class="flare" style:width="{gz.w}px" style:transform="translate3d({gz.x}px,{gz.y}px,0)"><i class="tw l"></i><i class="tw m"></i><i class="tw r"></i></span>
+    {/each}
+    {#if ribbonEnd - s < vh + 10}
+      <i class="rend" style:width="{L.fieldW + 8}px" style:height="{endFade + 2}px" style:transform="translate3d({L.padL - 4}px,{ribbonEnd - s - endFade}px,0)"></i>
+    {/if}
+    <!-- the ribbons falling away at the bottom -->
     <i class="floorshade" style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{vh - 110}px,0)"></i>
     {#each markers as m (m.y)}
       <span class="marker" style:opacity={started} style:width="{L.fieldW}px" style:transform="translate3d({L.padL}px,{m.sy}px,0)">
@@ -1068,62 +1130,34 @@
       </span>
     {/each}
     {#each marks as m (m.key)}
-      {#if m.kind === 'silver'}
-        <!-- UNDEFEATED: the letters are the platinum -->
-        <span
-          class="mark silver"
-          style:--reveal="{(100 - m.reveal * 100).toFixed(1)}%"
-          style:font-size="{markFs}px"
-          style:opacity={m.o}
-          title="{m.text}: {people[m.person].name}"
-          style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-100%)"
-        >{m.text}<i class="glint g1"></i><i class="glint g2"></i><i class="glint g3"></i></span>
-      {:else}
-        {@const id = `cut-${m.key}`}
-        {@const burnt = m.kind === 'sacko' || m.star}
-        <!-- CHAMPION / SACKO / champion*: the word is cut out of a block (gold, or burnt), so the ribbon shows through the letters -->
-        <span
-          class="mark block"
-          class:gold={!burnt}
-          class:burnt
-          style:--tone={people[m.person].color}
-          style:--reveal="{(100 - m.reveal * 100).toFixed(1)}%"
-          style:opacity={m.o}
-          style:--bh="{m.bh}px"
-          title="{m.text}: {people[m.person].name}"
-          style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-100%)"
-        >
-          <svg width={m.bw} height={m.bh} viewBox="0 0 {m.bw} {m.bh}" aria-hidden="true">
-            <defs>
-              <mask id={id} maskUnits="userSpaceOnUse" x="0" y="0" width={m.bw} height={m.bh}>
-                <rect width={m.bw} height={m.bh} rx="1.5" fill="#fff" />
-                <text
-                  class="cut"
-                  class:lower={m.star}
-                  transform="translate({m.bw / 2},{m.bh / 2}) rotate(90)"
-                  text-anchor="middle"
-                  dominant-baseline="central"
-                  font-size={markFs}
-                  textLength={m.len}
-                  lengthAdjust="spacing"
-                  fill="#000">{m.text}</text>
-              </mask>
-            </defs>
-            <g mask="url(#{id})">
-              <rect class="mat" width={m.bw} height={m.bh} rx="1.5" />
-              {#if burnt}<rect width={m.bw} height={m.bh} fill="url(#char)" />{:else}<rect class="sheen" x="0" y={-m.bh} width={m.bw} height={m.bh} fill="url(#goldsheen)" />{/if}
-            </g>
-          </svg>
-        </span>
-      {/if}
+      <!-- a result patch, stitched onto the ribbon -->
+      <span
+        class="mark"
+        class:champ={m.kind === 'champ' && !m.star}
+        class:brown={m.kind === 'sacko' || m.star}
+        class:silver={m.kind === 'silver'}
+        style:--reveal="{(100 - m.reveal * 100).toFixed(1)}%"
+        style:opacity={m.o}
+        title="{m.text}: {people[m.person].name}"
+        style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-100%)"
+      >
+        <svg width={m.bw} height={m.bh} viewBox="0 0 {m.bw} {m.bh}" aria-hidden="true">
+          <rect class="base" width={m.bw} height={m.bh} rx="2" />
+          {#if m.kind === 'champ' && !m.star}<rect width={m.bw} height={m.bh} rx="2" fill="url(#patchsheen)" />{/if}
+          <rect class="stitch" x="2" y="2" width={m.bw - 4} height={m.bh - 4} rx="1" />
+          <text
+            class="ptext"
+            transform="translate({m.bw / 2},{m.bh / 2}) rotate(90)"
+            text-anchor="middle"
+            dominant-baseline="central"
+            font-size={markFs}
+            textLength={m.len}
+            lengthAdjust="spacing">{m.text}</text>
+        </svg>
+      </span>
     {/each}
   </div>
 
-  <!-- the abyss the ribbons fall into at the end -->
-  {#if sink > 0}
-    {@const abH = 160 + sink * vh * 0.6}
-    <i class="abyss" style:width="{W}px" style:height="{abH}px" style:opacity={clamp(sink * 3)} style:transform="translate3d(0,{vh - abH}px,0)"></i>
-  {/if}
 
   <!-- story cards, in the timeline (under the header and avatars) -->
   {#if fz < 0.99}
@@ -1133,27 +1167,35 @@
         style:width="{L.trayW}px"
         style:--o={c.o * (1 - fz)}
         style:pointer-events={fz > 0.5 || c.o < 0.6 ? 'none' : null}
-        style:transform="translate3d({L.cardX}px,{c.y.toFixed(1)}px,0)"
+        style:transform="translate3d({(L.cardX + c.f.x).toFixed(1)}px,{c.y.toFixed(1)}px,0) rotate({c.f.rot.toFixed(2)}deg)"
       >
-        <Glass pad="16px 20px 18px"><CardView card={c.r.card} {onperson} full /></Glass>
+        <Glass pad="16px 20px 18px"><CardView card={c.r.card} {onperson} /></Glass>
       </div>
     {/each}
   {/if}
 
   <!-- photos, in a stack under their card -->
   {#if photos.list.length && fz < 0.99}
-    <div class="photos" style:opacity={1 - fz}>
+    <div class="photos" class:zooming={zoomKey !== null} style:opacity={1 - fz}>
+      <button class="pscrim" class:on={zoomKey !== null} aria-label="Put the photo back" tabindex={zoomKey ? 0 : -1} onclick={() => zoomPhoto(null)}></button>
       {#each photos.list as ph (ph.key)}
+        {@const big = ph.key === zoomKey}
+        {@const zs = Math.min((W - 28) / photos.pw, (vh - L.inset - 110) / photos.ph, 3.2)}
         <button
           class="photo"
-          aria-label="Photo: {ph.p.alt}"
+          class:big
+          class:moving={zoomMove}
+          aria-label={big ? `Put back: ${ph.p.alt}` : `Photo: ${ph.p.alt}`}
+          aria-expanded={big}
           style:width="{photos.pw}px"
           style:height="{photos.ph}px"
-          style:z-index={ph.z}
-          style:opacity={ph.o}
-          style:transform="translate3d({ph.x - photos.pw / 2}px,{ph.y - photos.ph / 2}px,0) rotate({ph.rot}deg) scale({ph.sc})"
-          onclick={() => onphoto(ph.p)}
-        ><img src={import.meta.env.BASE_URL + ph.p.src} alt="" decoding="async" /></button>
+          style:z-index={big ? 50 : ph.z}
+          style:opacity={big ? 1 : ph.o}
+          style:transform={big
+            ? `translate3d(${W / 2 - photos.pw / 2}px,${(vh - L.inset) / 2 - photos.ph / 2}px,0) rotate(0deg) scale(${zs})`
+            : `translate3d(${ph.x - photos.pw / 2}px,${ph.y - photos.ph / 2}px,0) rotate(${ph.rot}deg) scale(${ph.sc})`}
+          onclick={() => zoomPhoto(ph.key)}
+        ><img src={import.meta.env.BASE_URL + ph.p.src} alt={big ? ph.p.alt : ''} decoding="async" /></button>
       {/each}
     </div>
   {/if}
@@ -1258,7 +1300,7 @@
         Integridy<br />Facto<span class="r">r<img class="sticker" src="{import.meta.env.BASE_URL}tegridy/sticker.png" alt="An “I got tegridy” sticker" draggable="false" /></span>
       </h2>
       <div class="tgpara" class:in={paraIn} bind:clientHeight={paraH} style:left="{TG.x0}px" style:width="{Math.min(TG.chartW, 560)}px" style:top="{TG.paraOff}px">
-        <p class="lede">Golf rules: lower is better. Everyone starts at 0 and only fair-play violations count, costing more near the playoffs. 2019 on.</p>
+        <p class="lede">Every time a member acts with integridy, they get penalized. Golf scoring with data from Sleeper only.</p>
         <div class="rdiv"><span>Penalties</span></div>
         <div class="rules">
           {#each tgRules as r (r.label)}
@@ -1274,6 +1316,19 @@
       </div>
 
       <!-- the chart: every bar is that member's ribbon -->
+      <!-- Randy, dark, looming over the scores from the left -->
+      <img
+        class="randy"
+        class:in={grown}
+        src="{import.meta.env.BASE_URL}tegridy/randy.png"
+        alt=""
+        aria-hidden="true"
+        draggable="false"
+        style:height="{TG.chartH * 0.8}px"
+        style:left="{TG.x0 - 6}px"
+        style:top="{TG.base - TG.chartH * 0.8}px"
+        style:opacity={(1 - tfz) * 0.9}
+      />
       <i class="tgbase" style:left="{TG.x0}px" style:width="{TG.chartW}px" style:top="{TG.base}px" style:opacity={growOf(0) > 0 ? 1 : 0}></i>
       {#each tgBars as b (b.m.person)}
         {@const e = edgesOf(b.m.person)}
@@ -1314,6 +1369,14 @@
           ><Avatar id={b.m.person} size={TG.av} /></button>
         {/if}
       {/each}
+      <!-- the median: a quiet line through every bar, labelled at its left end -->
+      <span
+        class="tgmed"
+        style:left="{TG.x0}px"
+        style:width="{TG.chartW}px"
+        style:top="{TG.base - tgMedian * TG.unit}px"
+        style:opacity={growOf(0) > 0.6 ? 1 - tfz : 0}
+      ><b>Median {fmtTF(tgMedian)}</b></span>
       {#if tfz > 0.01}
         <!-- slices are thin; give them a fatter target -->
         {#each tgBars as b (b.m.person)}
@@ -1349,7 +1412,7 @@
                   <div class="top">
                     <div class="who">
                       <Avatar id={m.person} size={L.desktop ? 52 : 40} />
-                      <span><b class="display">{people[m.person].name}</b><small>Integridy rank {m.rank} of {TGN} · lower is better</small></span>
+                      <span><b class="display">{people[m.person].name}</b><small>Integridy rank {m.rank} of {TGN}</small></span>
                     </div>
                     <div class="yr display" style:color={tfHeat(m.total)}><Roll value={fmtTF(m.total)} /></div>
                     <p class="tally">
@@ -1541,7 +1604,7 @@
     pointer-events: none;
   }
   .acard {
-    z-index: 7; /* under the header (8) and the avatars (10) */
+    z-index: 12; /* above the avatars (10): a card is thrown off the side before it gets up to them */
     will-change: transform; /* not opacity: it would switch the glass off (Glass fades via --o) */
     /* heavier, darker glass than elsewhere: the ribbons behind stay a soft blur of colour */
     --glass-tint: rgba(10, 12, 17, 0.7);
@@ -1633,6 +1696,59 @@
     inset: 0;
     background-repeat: repeat-y;
     pointer-events: none;
+    clip-path: inset(0 0 var(--cut, 0px) 0); /* grows down the ribbon as it's earned */
+  }
+  /* the flare riding a growing edge's front: a bright line across the ribbon and sparkles winking at both
+     edges, like a little magic as the trim is sewn on */
+  .flare {
+    height: 0;
+    pointer-events: none;
+  }
+  .flare::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    right: -3px;
+    top: -1px;
+    height: 2px;
+    background: linear-gradient(to right, #fff4c4, #fff 50%, #fff4c4);
+    box-shadow:
+      0 0 8px 2px rgba(255, 236, 170, 0.9),
+      0 0 18px 4px rgba(248, 210, 110, 0.45);
+  }
+  .tw {
+    position: absolute;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    background: conic-gradient(from 0deg, transparent 0 40deg, #fff 45deg, transparent 50deg 130deg, #fff 135deg, transparent 140deg 220deg, #fff 225deg, transparent 230deg 310deg, #fff 315deg, transparent 320deg);
+    -webkit-mask: radial-gradient(circle, #000 0 25%, transparent 70%);
+    mask: radial-gradient(circle, #000 0 25%, transparent 70%);
+    filter: drop-shadow(0 0 3px rgba(255, 236, 170, 1));
+    animation: twinkle 700ms ease-in-out infinite;
+  }
+  .tw.l {
+    left: -5px;
+  }
+  .tw.r {
+    right: -5px;
+    animation-delay: 230ms;
+  }
+  .tw.m {
+    left: calc(50% - 5px);
+    top: -9px;
+    animation-delay: 460ms;
+  }
+  @keyframes twinkle {
+    0%,
+    100% {
+      transform: scale(0.35) rotate(0deg);
+      opacity: 0.4;
+    }
+    50% {
+      transform: scale(1.25) rotate(45deg);
+      opacity: 1;
+    }
   }
   .edge.gold {
     background-image: var(--foil-gold), var(--foil-gold);
@@ -1651,20 +1767,30 @@
   .col.chev::after,
   .tail.chev::after {
     /* a third title: gold chevrons running down the ribbon (anchored to the timeline), kept in
-       off the edges so they don't run into the foil; a fourth doubles them */
+       off the edges so they don't run into the foil; a fourth doubles them. They're the same foil as
+       the gold edges (cut to chevron shapes), so they catch the light the same way, and they grow
+       down the ribbon like the edges do */
     content: '';
     position: absolute;
     inset: 0 5px;
-    background-image: var(--chevrons);
+    background: var(--foil-gold);
+    background-size: 100% 96px;
+    background-position: 0 var(--py);
+    -webkit-mask-image: var(--chevrons);
+    mask-image: var(--chevrons);
     /* one ribbon's width per chevron, so an expanded column repeats them instead of stretching */
-    background-size: calc(var(--cw) - 10px) calc(var(--cw) * 0.8);
-    background-position: 50% var(--py);
-    opacity: calc(var(--chev) * 0.55);
+    -webkit-mask-size: calc(var(--cw) - 10px) calc(var(--cw) * 0.8);
+    mask-size: calc(var(--cw) - 10px) calc(var(--cw) * 0.8);
+    -webkit-mask-position: 50% var(--py);
+    mask-position: 50% var(--py);
+    clip-path: inset(0 0 var(--ccut, 0px) 0);
+    opacity: calc(var(--chev) * 0.9);
     pointer-events: none;
   }
   .col.chev2::after,
   .tail.chev2::after {
-    background-image: var(--chevrons2);
+    -webkit-mask-image: var(--chevrons2);
+    mask-image: var(--chevrons2);
   }
   .col.dotted::before {
     /* current members who weren't founders: a fine dot texture, so they pop */
@@ -1695,9 +1821,10 @@
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   }
   .marker b {
+    /* under the line: everything below a year line is that year */
     position: absolute;
-    bottom: 1px;
-    padding: 1px 3px 0;
+    top: 1px;
+    padding: 0 3px 1px;
     background: rgba(8, 9, 12, 0.72);
     color: var(--ink);
     font-size: 10px;
@@ -2007,11 +2134,48 @@
     text-decoration: underline;
     text-underline-offset: 2px;
   }
-  .abyss {
-    /* where the ribbons fall to: dark rising from the bottom of the screen */
-    z-index: 11;
+  .rend {
+    /* the ribbons' end, running on into the dark */
     pointer-events: none;
-    background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--bg) 75%, transparent) 45%, var(--bg) 80%);
+    background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--bg) 70%, transparent) 55%, var(--bg));
+  }
+  .randy {
+    /* desaturated and dark: a figure in the shadows, staring down at the scores */
+    max-width: none;
+    width: auto;
+    pointer-events: none;
+    user-select: none;
+    filter: brightness(0.32) contrast(1.15) drop-shadow(0 0 30px rgba(0, 0, 0, 0.6));
+    transform: translateY(14px);
+    clip-path: inset(0 0 14px 0); /* stands on the baseline */
+    visibility: hidden;
+    transition:
+      transform 900ms cubic-bezier(0.2, 1, 0.3, 1),
+      visibility 0s 900ms;
+  }
+  .randy.in {
+    visibility: visible;
+    transform: none;
+    clip-path: none;
+    transition: transform 900ms cubic-bezier(0.2, 1, 0.3, 1);
+  }
+  .tg > .tgmed {
+    height: 0;
+    border-top: 1px dashed rgba(255, 255, 255, 0.55);
+    pointer-events: none;
+    transition: opacity 500ms ease;
+  }
+  .tgmed b {
+    position: absolute;
+    left: 0; /* over the short bars on the left, clear of the tall ones */
+    bottom: 3px;
+    padding: 1px 5px;
+    background: rgba(8, 9, 12, 0.7);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #fff;
+    white-space: nowrap;
   }
   .tgbase {
     height: 1px;
@@ -2293,8 +2457,39 @@
   /* photos */
   .photos {
     inset: 0;
-    z-index: 7; /* with the cards: under the header and avatars */
+    z-index: 12; /* with the cards: above the avatars, thrown off before they reach them */
     pointer-events: none;
+  }
+  .photos.zooming {
+    z-index: 70; /* a photo blown up sits over everything */
+  }
+  .pscrim {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: rgba(5, 6, 9, 0.74);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    cursor: zoom-out;
+    transition: opacity 320ms ease;
+  }
+  .pscrim.on {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .photo.moving {
+    /* only while it lifts out or goes back: otherwise it tracks the scroll exactly */
+    transition: transform 560ms cubic-bezier(0.2, 1.05, 0.3, 1);
+  }
+  .photo.big {
+    cursor: zoom-out;
+    box-shadow:
+      0 30px 70px -10px rgba(0, 0, 0, 0.85),
+      0 4px 12px rgba(0, 0, 0, 0.5);
   }
   .photo {
     position: absolute;
@@ -2315,121 +2510,58 @@
     object-fit: cover;
     object-position: 50% 30%;
   }
-  /* season results, written down the ribbon (vertical, reading top to bottom) */
+  /* season results: a patch stitched onto the ribbon, the word printed down it */
   .mark {
     position: absolute;
-    writing-mode: vertical-rl;
-    font-family: var(--font-display);
-    font-stretch: var(--display-stretch);
-    font-weight: var(--display-weight);
-    line-height: 1;
-    letter-spacing: 0.14em;
-    white-space: nowrap;
+    line-height: 0;
     pointer-events: none;
     /* written onto the ribbon from the top down as it comes on screen */
-    clip-path: inset(0 0 var(--reveal, 0%) 0);
+    clip-path: inset(-2px -2px var(--reveal, 0%) -2px);
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.32)); /* sewn on: just a whisker of lift */
   }
-  /* CHAMPION, SACKO, champion*: a block of material with the word cut out of it */
-  .mark.block {
-    writing-mode: horizontal-tb;
-    line-height: 0;
-    letter-spacing: 0;
-  }
-  .mark.block svg {
+  .mark svg {
     display: block;
     overflow: visible;
   }
-  .cut {
+  .ptext {
     font-family: var(--font-display);
     font-weight: var(--display-weight);
-    letter-spacing: 0.1em;
   }
-  /* gold: foil, a sheen sliding down it, a warm glow */
-  .mark.block.gold .mat {
-    fill: url(#goldfoil);
+  .stitch {
+    fill: none;
+    stroke-width: 0.8;
+    stroke-dasharray: 2.2 1.5;
+    stroke-linecap: round;
   }
-  .mark.block.gold {
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 5px rgba(248, 220, 132, 0.4));
+  /* champion: gold, a light sheen, white lettering */
+  .mark.champ .base {
+    fill: url(#patchgold);
   }
-  .sheen {
-    animation: sheen-run 2.8s linear infinite;
+  .mark.champ .stitch {
+    stroke: #f6dc8c;
   }
-  @keyframes sheen-run {
-    to {
-      transform: translateY(calc(var(--bh) * 2));
-    }
+  .mark.champ .ptext {
+    fill: #fff;
   }
-  /* burnt: a charred block, a dark shade of the ribbon's own colour, scorched at the edges */
-  .mark.block.burnt .mat {
-    fill: color-mix(in srgb, var(--tone) 30%, #000);
+  /* sacko (and 2014's champion*): brown, no sheen, light brown lettering */
+  .mark.brown .base {
+    fill: #5b3b24;
   }
-  .mark.block.burnt {
-    filter: drop-shadow(0 0 3px color-mix(in srgb, var(--tone) 35%, #000)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+  .mark.brown .stitch {
+    stroke: #9a6c47;
   }
-  /* UNDEFEATED: platinum, and a big deal. Bright mirrored sheen, a cool glow that breathes, glints */
-  .mark.silver {
-    background: linear-gradient(to bottom, #7d8792, #ffffff 12%, #c3ccd6 26%, #f4f8fc 38%, #8e99a6 52%, #ffffff 64%, #b9c2cc 80%, #7d8792) 0 0 / 100% 240%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation:
-      foil-run 2.2s linear infinite,
-      plat-glow 2.6s ease-in-out infinite;
+  .mark.brown .ptext {
+    fill: #d8b48c;
   }
-  @keyframes foil-run {
-    to {
-      background-position: 0 -220%;
-    }
+  /* undefeated: platinum, dark lettering */
+  .mark.silver .base {
+    fill: url(#patchplat);
   }
-  @keyframes plat-glow {
-    0%,
-    100% {
-      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 4px rgba(225, 236, 255, 0.55));
-    }
-    50% {
-      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 10px rgba(235, 244, 255, 0.95)) drop-shadow(0 0 22px rgba(190, 215, 255, 0.45));
-    }
+  .mark.silver .stitch {
+    stroke: #ffffff;
   }
-  .glint {
-    /* four-point sparkles that wink along the word */
-    position: absolute;
-    left: 50%;
-    width: 0.9em;
-    height: 0.9em;
-    margin-left: -0.45em;
-    background: radial-gradient(circle, #fff 0 12%, transparent 13%),
-      conic-gradient(from 0deg, transparent 0 40deg, rgba(255, 255, 255, 0.95) 45deg, transparent 50deg 130deg, rgba(255, 255, 255, 0.95) 135deg, transparent 140deg 220deg, rgba(255, 255, 255, 0.95) 225deg, transparent 230deg 310deg, rgba(255, 255, 255, 0.95) 315deg, transparent 320deg);
-    -webkit-mask: radial-gradient(circle, #000 0 30%, transparent 70%);
-    mask: radial-gradient(circle, #000 0 30%, transparent 70%);
-    transform: scale(0) rotate(0deg);
-    animation: glint 2.4s ease-in-out infinite;
-  }
-  .glint.g1 {
-    top: 12%;
-  }
-  .glint.g2 {
-    top: 48%;
-    animation-delay: 0.8s;
-  }
-  .glint.g3 {
-    top: 82%;
-    animation-delay: 1.6s;
-  }
-  @keyframes glint {
-    0%,
-    60%,
-    100% {
-      transform: scale(0) rotate(0deg);
-      opacity: 0;
-    }
-    70% {
-      transform: scale(1.5) rotate(45deg);
-      opacity: 1;
-    }
-    85% {
-      transform: scale(0.6) rotate(90deg);
-      opacity: 0.6;
-    }
+  .mark.silver .ptext {
+    fill: #26303b;
   }
 
   /* finale */

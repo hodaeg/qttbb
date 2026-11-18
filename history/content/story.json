@@ -1,5 +1,5 @@
 {
-  "_about": "The glass info cards, in order. One or more per year. Write names as [[person-id|Display name]] to make them tappable. 'in' and 'out' list who joined or left the league that season. 'quote' is an optional pull-quote. 'kind': 'beat' marks a big held moment. Levi's voice; edit freely. 'photos' is an optional list of {src, alt} (files in public/photos); they slide in from the left one after another while the card is up. 'arrive' lists people whose ribbons come in with this card even though it doesn't name them. A card with \"kind\": \"season\" (and an empty body) adds a fun fact to that year's generated champion/sacko card. \"results\": <year> on a story card makes it carry that season's champion/sacko lines instead of a separate card. 'yearLength' stretches a year's stretch of scrolling (2 = twice as long).",
+  "_about": "The glass info cards, in order. One or more per year. Write names as [[person-id|Display name]] to make them tappable. 'in' and 'out' list who joined or left the league that season. 'quote' is an optional pull-quote. 'kind': 'beat' marks a big held moment. Levi's voice; edit freely. 'photos' is an optional list of {src, alt} (files in public/photos); they sit in a stack under the card. 'arrive' lists people whose ribbons come in with this card even though it doesn't name them. A card with \"kind\": \"season\" (and an empty body) gives that season a small fun-fact card (results are written on the ribbons, not in cards). 'yearLength' stretches a year's stretch of scrolling (2 = twice as long).",
   "cards": [
     {
       "year": 2002,
@@ -243,8 +243,5 @@
       "kind": "era",
       "body": "The lineup hasn't changed since. From here the story is told in champions and legacy rankings."
     }
-  ],
-  "yearLength": {
-    "2014": 2
-  }
+  ]
 }
