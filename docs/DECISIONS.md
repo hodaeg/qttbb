@@ -610,3 +610,10 @@ In Firefox the title showed faintly through the lock: the lock relied on its own
 
 ### D75 — History app: card glass readable without the blur — Accepted
 A screenshot's pixels confirm the card blur renders in Chrome: ribbon edges jump 92→12 above a card and are a smooth 45→23→44 wash under it. Levi's Edge and Firefox don't draw `backdrop-filter` at all, most likely because graphics acceleration is off there, and they fall back to the bare tint, which was too see-through (0.5) because the blur's own darkening was meant to do half the work. The card tint is now 0.68 and the blur darkens less (brightness 0.85, saturate 1.6), so cards read well with or without the blur.
+
+### D76 — History app: the production CSS was breaking the glass; CSS minification off — Accepted
+Headless Edge (157) screenshots of the live site showed no blur on cards, while the same code from the dev server blurred fine. The cause was Vite 8's CSS minifier (Lightning CSS):
+- It dropped every unprefixed `backdrop-filter`, keeping only `-webkit-backdrop-filter`. Firefox and current Edge ignore the prefixed form, so no glass on the site blurred there: cards, sheets, the lock, the column panels.
+- It re-emitted the `.stage > *` rule (`will-change: transform, opacity`) after the override meant to beat it (D73), so cards were still backdrop roots.
+
+Fix: `build.cssMinify: false` in `vite.config.ts` (esbuild isn't bundled with Vite 8). The CSS is 70 KB raw, 14.5 KB gzipped. The built CSS now carries both forms of `backdrop-filter`, and the override comes after the rule it beats. The test harness (headless Edge driven over the DevTools protocol) lives in the session scratchpad.
