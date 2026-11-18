@@ -642,3 +642,6 @@ Fix: `build.cssMinify: false` in `vite.config.ts` (esbuild isn't bundled with Vi
 
 ### D79 — History app: barer, darker title screen; ghost ribbons sway — Accepted
 The line under the title ("How twelve friends…") is gone. The ghost ribbons are darker (`saturate(0.1) brightness(0.36)`), so the colour title pops. While scrolling, they sway side to side like the real ribbons (the same `sway`, driven by scroll speed), easing off as they blur and fall away.
+
+### D80 — History app: a sheet always leaves room at the top — Accepted
+A long person sheet could fill the whole screen on iPhone, leaving no backdrop to tap: it was capped at `86vh`, and on iOS `vh` is the screen with Safari's bars hidden. It's now capped at `100dvh - 88px - safe-top` (falling back to `100vh - 88px`), so there's always at least 88px of backdrop above it to tap to close, besides the grab bar and Escape.

@@ -48,7 +48,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    max-height: 86vh;
+    /* always leave a strip of backdrop at the top to tap (or see) your way out. dvh is what's actually
+       visible right now; plain vh on iPhone is the screen with Safari's bars hidden, so 86vh could run the
+       sheet up past the top of what you can see */
+    max-height: calc(100vh - 88px);
+    max-height: calc(100dvh - 88px - var(--safe-top));
     margin: 0 auto;
     max-width: 560px;
     display: flex;
