@@ -1087,11 +1087,14 @@
   // the title screen: the ghost ribbons are centred on the screen (they aren't the real ribbons, so they
   // don't need the gutter), and the title's letters are cut from a painted copy of them in full colour
   const ghostX0 = $derived((L.W - L.fieldW) / 2);
+  // the ghost ribbons' sway, shared with the title so its colours move with the ribbons behind it
+  const ghostSway = (slot: number) => sway(slot) * (1 - ghostR) + idleSway(slot);
   const titleRibbons = $derived.by(() => {
     const stops: string[] = [];
     let at = 0;
     lineup[FIRST].forEach((p, slot) => {
-      const a = slot * (L.cw + L.gap);
+      // each ribbon's band of colour sways with its ghost, so the letters are a true window onto them
+      const a = slot ? Math.max(at, slot * (L.cw + L.gap) + ghostSway(slot)) : ghostSway(0); // the first can sway left of 0
       const b = a + L.cw;
       stops.push(`transparent ${at}px ${a}px`, `${people[p].color} ${a}px ${b}px`);
       at = b;
@@ -1667,7 +1670,7 @@
           style:--lit="99999px"
           style:width="{L.cw}px"
           style:height="{vh + 80}px"
-          style:transform="translate3d({ghostX0 + slot * (L.cw + L.gap) + (sway(slot) * (1 - ghostR) + idleSway(slot))}px,-40px,0)"
+          style:transform="translate3d({ghostX0 + slot * (L.cw + L.gap) + ghostSway(slot)}px,-40px,0)"
         ></i>
       {/each}
     </div>
@@ -1678,7 +1681,7 @@
     <div class="intro" style:opacity={introO} style:transform="translate3d(0,{-s * 0.35}px,0)">
       <!-- the title is the founders' ribbons in full colour, bunched up into letters (a painted copy of the
            columns behind, lined up with them, clipped to the type) -->
-      <h1 class="display title" style:--ribbons={titleRibbons} style:--rw="{L.fieldW}px" use:fitTitle={ghostX0}><span>Bria Bowl</span><span class="origins">Origins</span></h1>
+      <h1 class="display title" style:--ribbons={titleRibbons} style:--rw="{L.fieldW + 8}px" use:fitTitle={ghostX0}><span>Bria Bowl</span><span class="origins">Origins</span></h1>
       <span class="hint" aria-hidden="true">Scroll<i></i></span>
     </div>
   {/if}

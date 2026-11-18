@@ -680,3 +680,6 @@ Levi's corrections:
 - **Colour:** each branch, whether elbow or straight, is a gradient from the colour of whoever brought them in to the person's own colour, so there are no hard joints.
 - **Taps:** every row opens that person's sheet, checked with a hit test at each row.
 - **Photos:** a new photo of Dustin and Doug at a party leads the 2002 card. Doug's avatar is cropped from it, and Krissie and Kennedy have photo avatars.
+
+### D86 — History app: the title's colours sway with the ribbons behind it — Accepted
+The title's letters are cut from a painted copy of the founders' ribbons, lined up with the ghost ribbons behind. Now that those sway, on load and while scrolling, each colour band in the copy is offset by the same `ghostSway(slot)` as its ghost. The letters read as a true window onto the ribbons: measured drift is 0px across all 12, frame by frame.
