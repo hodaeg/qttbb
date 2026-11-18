@@ -631,3 +631,11 @@ Fix: `build.cssMinify: false` in `vite.config.ts` (esbuild isn't bundled with Vi
   - Progress is measured against where the logo comes to rest at the real end of the page. The page now ends where the window can actually scroll, using `innerHeight`, not the large viewport.
 - **Footer** under it: "© {year} Hodag Digital. All rights reserved." plus a line that the stories, design, artwork and code are original work, not to be reproduced or redistributed without permission. Nothing scrolls past it.
 - The old chomping PNG logo is gone.
+
+### D78 — History app: centred title, artwork's own blood drops, "Created by", footer room — Accepted
+- **Title.** "Bria Bowl" is now one line, with "Origins" under it set a little bigger (1.16em) and letter-spaced to exactly the width of "Bria Bowl". The spacing is measured at runtime (`fitTitle`) since it depends on the font. The title, lede and Scroll hint are centred.
+- **Ghost ribbons.** They're centred on the screen (they never become the real ribbons, so they don't need the gutter) and darker (brightness 0.5). Each title line's ribbon colours are shifted (`--bx`) so they line up with the ghosts behind it, since centred lines start at different points.
+- **The logo.**
+  - It comes up sooner after the chart (0.36 of a screen, not 0.62), with a small "Created by" above it.
+  - The falling blood is now the artwork's own drop shapes (from Levi's SVG): each forms on the tip of the drip above it, falls through its spot in the artwork onto DIGITAL, splats and runs down the letter, on a loop.
+- **Footer.** It sits higher, with bottom padding plus the safe area.

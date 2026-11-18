@@ -886,7 +886,7 @@
     const logoW = Math.min(W * 0.86, 620);
     const logoH = (logoW * 1980) / 2560; // the logo's viewBox
     const blackOff = chartEnd + 6;
-    const logoOff = chartEnd + vh * 0.62;
+    const logoOff = chartEnd + vh * 0.36; // comes up sooner after the chart
     const uEnd = logoOff + logoH / 2 + (vh + L.inset) * 0.5; // centred in what's visible
     // bars rise from a baseline at the chart's foot; if anyone ever goes negative, the baseline lifts
     // so their bar can hang below it, with the avatar at its lower end
@@ -1045,14 +1045,14 @@
   /** higher is redder, lower is greener */
   const heat = (v: number, lo: number, hi: number) => `hsl(${Math.round(130 * (1 - clamp((v - lo) / (hi - lo))))} 78% 62%)`;
   const introO = $derived(1 - clamp(s / (vh * 0.45)));
-  // the title screen: where the title starts (lined up with the ribbons on wide screens), and a painted
-  // copy of the twelve founders' columns in full colour, which the title's letters are cut from
-  const titleX = $derived(L.padL + (L.desktop ? 4 : 18));
+  // the title screen: the ghost ribbons are centred on the screen (they aren't the real ribbons, so they
+  // don't need the gutter), and the title's letters are cut from a painted copy of them in full colour
+  const ghostX0 = $derived((L.W - L.fieldW) / 2);
   const titleRibbons = $derived.by(() => {
     const stops: string[] = [];
     let at = 0;
     lineup[FIRST].forEach((p, slot) => {
-      const a = L.colX(slot) - L.cw / 2 - titleX;
+      const a = slot * (L.cw + L.gap);
       const b = a + L.cw;
       stops.push(`transparent ${at}px ${a}px`, `${people[p].color} ${a}px ${b}px`);
       at = b;
@@ -1060,6 +1060,36 @@
     stops.push(`transparent ${at}px`);
     return `linear-gradient(to right, ${stops.join(', ')})`;
   });
+  // "Origins" is set a little bigger and letter-spaced out to exactly the width of "Bria Bowl", and each
+  // line's ribbons are shifted so they line up with the ghost ribbons behind (the lines are centred, so
+  // each starts somewhere different). Measured, since the widths depend on the font.
+  function fitTitle(node: HTMLElement, x0: number) {
+    let left0 = x0;
+    const run = () => {
+      const [a, b] = node.querySelectorAll('span');
+      if (!a || !b) return;
+      b.style.letterSpacing = '0px';
+      b.style.marginRight = '0px';
+      const w1 = a.getBoundingClientRect().width;
+      const w2 = b.getBoundingClientRect().width;
+      const n = (b.textContent ?? '').length;
+      const ls = n > 1 ? (w1 - w2) / (n - 1) : 0;
+      b.style.letterSpacing = `${ls}px`;
+      b.style.marginRight = `${-ls}px`; // letter-spacing also follows the last letter: take it back
+      for (const sp of [a, b]) sp.style.setProperty('--bx', `${left0 - sp.getBoundingClientRect().left}px`);
+    };
+    run();
+    document.fonts?.ready.then(run);
+    const ro = new ResizeObserver(run);
+    ro.observe(node);
+    return {
+      update(x: number) {
+        left0 = x;
+        run();
+      },
+      destroy: () => ro.disconnect(),
+    };
+  }
   // the ghost ribbons: they tilt back and sink as you scroll the title away, then sit faint and blurred,
   // and their ends rise away just before the founders land in 2009
   const ghostR = $derived(smooth(clamp(s / (vh * 0.7))));
@@ -1553,7 +1583,7 @@
       <div class="hodag" style:left="{(W - TG.logoW) / 2}px" style:top="{TG.logoOff}px" style:width="{TG.logoW}px" style:height="{TG.logoH}px">
         <HodagLogo draw={logoDraw} fill={logoFill} lit={logoLit} {reduced} />
       </div>
-      <footer class="foot" style:width="{W}px" style:top="{uEndReal + innerH - vh - 54}px">
+      <footer class="foot" style:width="{W}px" style:top="{uEndReal + innerH - vh - 86}px">
         <p>© {new Date().getFullYear()} Hodag Digital. All rights reserved.</p>
         <p>The Quest to the Bria Bowl: its stories, design, artwork and code are original work. Reproduction or redistribution without permission is prohibited.</p>
       </footer>
@@ -1581,7 +1611,7 @@
           style:--lit="99999px"
           style:width="{L.cw}px"
           style:height="{vh + 80}px"
-          style:transform="translate3d({L.colX(slot) - L.cw / 2}px,-40px,0)"
+          style:transform="translate3d({ghostX0 + slot * (L.cw + L.gap)}px,-40px,0)"
         ></i>
       {/each}
     </div>
@@ -1589,10 +1619,10 @@
 
   <!-- intro -->
   {#if introO > 0}
-    <div class="intro" style:opacity={introO} style:padding-left="{titleX}px" style:transform="translate3d(0,{-s * 0.35}px,0)">
+    <div class="intro" style:opacity={introO} style:transform="translate3d(0,{-s * 0.35}px,0)">
       <!-- the title is the founders' ribbons in full colour, bunched up into letters (a painted copy of the
            columns behind, lined up with them, clipped to the type) -->
-      <h1 class="display title" style:--ribbons={titleRibbons}><span>Bria</span><span>Bowl</span><span>Origins</span></h1>
+      <h1 class="display title" style:--ribbons={titleRibbons} style:--rw="{L.fieldW}px" use:fitTitle={ghostX0}><span>Bria Bowl</span><span class="origins">Origins</span></h1>
       <p class="lede">How twelve friends ended up in one fantasy football league, and who we lost along the way.</p>
       <span class="hint" aria-hidden="true">Scroll<i></i></span>
     </div>
@@ -2466,7 +2496,7 @@
   }
   .tg > .foot {
     pointer-events: auto;
-    padding: 0 16px;
+    padding: 0 16px calc(28px + var(--safe-bottom));
     text-align: center;
     font-size: 11px;
     line-height: 1.5;
@@ -2652,8 +2682,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 26px calc(8vh + var(--safe-bottom));
-    max-width: 720px;
+    align-items: center;
+    text-align: center;
+    padding: 0 16px calc(8vh + var(--safe-bottom));
     pointer-events: none;
   }
   h1 {
@@ -2670,14 +2701,21 @@
       linear-gradient(to bottom, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.12)),
       repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0, rgba(255, 255, 255, 0.1) 0.09em, rgba(0, 0, 0, 0.1) 0.18em),
       var(--ribbons);
-    background-size: auto, auto, 100vw 100%;
+    background-size: auto, auto, var(--rw) 100%;
+    background-position: 0 0, 0 0, var(--bx, 0px) 0;
+    background-repeat: repeat, repeat, no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     filter: saturate(1.25) drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7)) drop-shadow(0 1px 0 rgba(0, 0, 0, 0.6));
   }
   .title {
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .title .origins {
+    font-size: 1.16em;
   }
   /* the ghost ribbons behind the title */
   .ghosts {
@@ -2693,7 +2731,7 @@
     top: 0;
     left: 0;
     pointer-events: none;
-    filter: saturate(0.12) brightness(0.62); /* drained: the title's colour is the only colour */
+    filter: saturate(0.12) brightness(0.5); /* drained: the title's colour is the only colour */
   }
   .lede {
     margin: 22px 0 0;
@@ -2704,7 +2742,8 @@
   }
   .hint {
     position: absolute;
-    left: 26px;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: calc(5vh + var(--safe-bottom));
     display: flex;
     align-items: center;
