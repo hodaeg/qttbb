@@ -2017,7 +2017,7 @@
   .marker {
     /* a year line: cuts happen here */
     height: 1px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.32));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.16));
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   }
   .marker b {
@@ -2025,7 +2025,7 @@
     position: absolute;
     top: 1px;
     padding: 0 3px 1px;
-    background: rgba(8, 9, 12, 0.82);
+    background: rgba(8, 9, 12, 0.72);
     color: var(--ink);
     font-size: 10px;
     line-height: 12px;

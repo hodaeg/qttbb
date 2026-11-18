@@ -142,6 +142,16 @@
   .years i.on {
     background: var(--tone);
   }
+  /* on the member's own ribbon the panel is their colour, so their colour vanishes: played seasons go
+     near-white, the rest are dark recesses */
+  .bare .years i {
+    background: rgba(0, 0, 0, 0.28);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
+  }
+  .bare .years i.on {
+    background: color-mix(in srgb, var(--tone) 18%, #fff);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
   .cap {
     margin: 8px 0 18px;
     color: var(--ink-2);

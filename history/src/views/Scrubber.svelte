@@ -306,7 +306,7 @@
   }
   .rail path {
     fill: none;
-    stroke: rgba(255, 255, 255, 0.3);
+    stroke: var(--line);
     stroke-width: 1;
   }
   /* a tick is a zero-size point on the rail; its line and label hang off to the left */
@@ -320,8 +320,7 @@
     pointer-events: none;
   }
   .tick {
-    /* brighter than the other quiet greys: they're read against whatever is behind the gutter */
-    color: #c9cbd1;
+    color: var(--ink-3);
   }
   .tick i {
     position: absolute;
@@ -330,12 +329,10 @@
     width: 6px;
     height: 1px;
     background: currentColor;
-    opacity: 0.7;
   }
   .tick.major i {
     width: 10px;
-    background: var(--ink);
-    opacity: 1;
+    background: var(--ink-2);
   }
   .tick b {
     position: absolute;
@@ -343,17 +340,13 @@
     top: -6px;
     line-height: 12px;
     font-size: 9px;
-    font-weight: 700;
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    font-weight: 600;
     letter-spacing: 0.02em;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
   .tick.now {
     color: var(--ink);
-  }
-  .tick.now i {
-    opacity: 1;
   }
   .tick.fine i {
     width: 5px;
@@ -364,7 +357,6 @@
     width: 12px;
     height: 1.5px;
     background: var(--ink);
-    opacity: 1;
   }
   .mark {
     transition: transform 90ms linear;

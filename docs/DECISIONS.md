@@ -656,3 +656,6 @@ A long person sheet could fill the whole screen on iPhone, leaving no backdrop t
   - Adam Field's avatar is cropped from the desk photo; he was dorm neighbours with Levi, Nate and Tim.
   - Alex Hoover went to high school only with Sam; he and Tim Underhill each met Alex Randall through friends their freshman year.
   - The Parallel Dat Park card gets a `note` aside.
+
+### D82 — History app: the season strip on an opened ribbon reads — Accepted
+D81 misread "year blips". Levi meant the row of season squares on an opened ribbon's panel: played seasons were filled with the member's colour, the same colour as the ribbon behind, so they washed out. On the ribbon (`.bare`), played seasons are now near-white (tinted 18% toward the member's colour) and the others are dark recesses. The sheet keeps the colour fill. D81's brighter scrubber and year lines are reverted.
