@@ -1638,8 +1638,10 @@
     z-index: 12; /* above the avatars (10), under the scrubber (26): thrown off the side before the avatars */
     will-change: transform; /* not opacity: it would switch the glass off (Glass fades via --o) */
     /* heavier, darker glass than elsewhere: the ribbons behind stay a soft blur of colour */
-    --glass-tint: rgba(10, 12, 17, 0.5);
-    --glass-filter: blur(34px) saturate(1.5) brightness(0.62);
+    /* the tint alone has to keep the text readable: browsers without graphics acceleration don't draw
+       the blur at all (Levi's Edge and Firefox), so it can't lean on the blur's darkening */
+    --glass-tint: rgba(10, 12, 17, 0.68);
+    --glass-filter: blur(34px) saturate(1.6) brightness(0.85);
   }
   .stage {
     position: fixed;

@@ -607,3 +607,6 @@ Replaces the pinned card tray (D39 and on).
 
 ### D74 — History app: the story itself is blurred behind the lock — Accepted
 In Firefox the title showed faintly through the lock: the lock relied on its own `backdrop-filter` to blur what's behind it, and Firefox wasn't applying it there, which left only the 94% tint. Now the story's stage carries the blur itself while locked (`.stage.veiled`: blur 28px, desaturated, dimmed). The Lock tells the app as its veil starts to melt (`onopening`), and the blur transitions away over a second, so the story comes into focus in every browser. Once it's cleared the stage has no filter, so its glass frosts as normal. The lock's own backdrop blur stays as a bonus where it's supported.
+
+### D75 — History app: card glass readable without the blur — Accepted
+A screenshot's pixels confirm the card blur renders in Chrome: ribbon edges jump 92→12 above a card and are a smooth 45→23→44 wash under it. Levi's Edge and Firefox don't draw `backdrop-filter` at all, most likely because graphics acceleration is off there, and they fall back to the bare tint, which was too see-through (0.5) because the blur's own darkening was meant to do half the work. The card tint is now 0.68 and the blur darkens less (brightness 0.85, saturate 1.6), so cards read well with or without the blur.
