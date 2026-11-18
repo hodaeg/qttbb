@@ -5,12 +5,13 @@
   import { onMount } from 'svelte';
   import {
     makeLayout, cards, segments, members, people, legacy, constants, lineup, exits, isCurrent, statusOf, FIRST, LAST, CUT_GAP, SLOTS,
-    pourAt, growTip, landing, avatarState, stopAt, clamp, lerp, back, smooth, easeOut, yearsLabel, tegridy, type AvatarState, type Spot, type TgMember,
+    pourAt, growTip, landing, LAND, avatarState, stopAt, clamp, lerp, back, smooth, easeOut, yearsLabel, tegridy, type AvatarState, type Spot, type TgMember,
   } from '../lib/model';
   import { scatter, type Spot as BurstSpot } from '../lib/scatter';
   import Avatar from './Avatar.svelte';
   import Glass from './Glass.svelte';
   import CardView from './Card.svelte';
+  import HodagLogo from './HodagLogo.svelte';
   import Scrubber from './Scrubber.svelte';
   import PersonPanel from './PersonPanel.svelte';
   import Roll from './Roll.svelte';
@@ -58,6 +59,7 @@
 
   // the bottom safe zone (see size() below): only ever grows, so nothing jumps as Safari's bars move
   let inset = $state(0);
+  let innerH = $state(800); // what the window actually shows (can be less than vh, the large viewport)
   const L = $derived(makeLayout(vh, W, inset, cardHs));
   const w = $derived(s + L.P); // the playhead, in world pixels
 
@@ -83,6 +85,7 @@
     const size = () => {
       const tall = probe.offsetHeight || window.innerHeight;
       vh = Math.max(tall, window.innerHeight);
+      innerH = window.innerHeight;
       W = document.documentElement.clientWidth;
       const seen = Math.min(small.offsetHeight || vh, window.innerHeight, window.visualViewport?.height ?? vh);
       const want = Math.min(Math.round(Math.max(0, vh - seen) + safe.offsetHeight), Math.round(vh * 0.22));
@@ -99,6 +102,7 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     // dev only: jump straight to a scroll position, skipping the easing (for testing in a throttled pane)
     if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__jump = (y: number) => (window.scrollTo(0, y), (s = y));
+    if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__dbg = () => ({ vh, innerH, inset, W, pageH, P: L.P, G: TG.G, uEnd: TG.uEnd, uEndReal, logoOff: TG.logoOff, logoH: TG.logoH, u, s, logoQ, logoRest });
     let raf = 0;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') (focus = null), (tgFocus = null), zoomKey && zoomPhoto(null);
@@ -367,6 +371,7 @@
   const field = $derived.by(() => {
     const cols: Piece[] = [];
     const tails: Tail[] = [];
+    const rolls: { key: string; x: number; w: number; y: number; tone: string; dark: number; spin: number }[] = [];
     const px = (n: number) => `${n.toFixed(1)}px`;
     const floor = s + vh + 10; // the bottom of the screen, in world pixels
     // expanded: no card, so nothing is in its shadow, and the timeline below the playhead is drawn
@@ -391,6 +396,11 @@
         if (ld === null) continue;
         top = L.headerY + s;
         reach = ld.reach;
+        // as it pours down the screen, the ribbon's front end is a little denser roll, unrolling
+        if (ld.reach < vh + 30 && ld.reach > L.headerY + 4) {
+          const gm0 = gOf(seg.slot);
+          rolls.push({ key: `roll${seg.person}`, x: gm0.x, w: gm0.w, y: ld.reach, tone: people[seg.person].color ?? "#888", dark: pourAt(L, seg.slot, w), spin: ld.reach });
+        }
       } else {
         top = L.T[seg.start] - L.cutH / 2 + CUT_GAP / 2;
         if (!flat && w <= top + 1) continue; // arrives when its cut reaches the playhead
@@ -429,7 +439,7 @@
         }
       }
     }
-    return { cols, tails };
+    return { cols, tails, rolls };
   });
 
   // ---- year markers: a faint line across the field, badged on Levi's ribbon. Cuts land on them.
@@ -873,8 +883,8 @@
     const chartOff = paraOff + paraH + 40;
     const chartEnd = chartOff + chartH + 34 + L.inset; // scrolled this far, the chart sits at the bottom of the visible screen
     // then the page falls away to black and the logo comes up out of it, ending centred on screen
-    const logoW = Math.min(W * 0.78, 520);
-    const logoH = (logoW * 505) / 900;
+    const logoW = Math.min(W * 0.86, 620);
+    const logoH = (logoW * 1980) / 2560; // the logo's viewBox
     const blackOff = chartEnd + 6;
     const logoOff = chartEnd + vh * 0.62;
     const uEnd = logoOff + logoH / 2 + (vh + L.inset) * 0.5; // centred in what's visible
@@ -889,12 +899,22 @@
   });
   const u = $derived(w - TG.G); // how far the scene has scrolled up
   const tgOn = $derived(u > -60);
-  const pageH = $derived(Math.max(L.pageHeight, TG.G + TG.uEnd - L.P + vh));
+  const pageH = $derived(Math.max(L.pageHeight, TG.G + TG.uEnd - L.P + innerH)); // ends with the logo at rest in what's visible
   const headIn = $derived(vh - u < vh * 0.84);
   const paraIn = $derived(vh - u + TG.paraOff < vh * 0.9);
   // Randy comes out of the shadows as the chart comes up: pitch black to dim, with the scroll
   const randyLit = $derived(clamp((vh * 0.95 - (vh - u + TG.chartOff)) / (vh * 0.55)));
-  const logoIn = $derived(vh - u + TG.logoOff < vh * 0.78);
+  // the logo: its outline draws in as it rises into view, then it fills, then it lights up (DIGITAL pops
+  // in, the blood starts to drip). Scrolling back reverses the draw and fill.
+  const logoTop = $derived(vh - u + TG.logoOff);
+  // where the page really ends: the document can only scroll to its height minus what the window shows,
+  // which on a phone with browser bars is less than the large viewport the layout uses
+  const uEndReal = $derived(pageH - innerH + L.P - TG.G);
+  const logoRest = $derived(vh - uEndReal + TG.logoOff); // where its top comes to rest at the end of the page
+  const logoQ = $derived(clamp((vh - logoTop) / Math.max(1, vh - logoRest))); // 0 entering .. 1 at rest
+  const logoDraw = $derived(clamp(logoQ / 0.62));
+  const logoFill = $derived(clamp((logoQ - 0.62) / 0.24));
+  const logoLit = $derived(logoQ >= 0.88);
   // the bars grow on the clock (left to right, overshooting a touch) once the chart is well in view
   let grown = $state(false);
   let growT0 = 0;
@@ -1025,6 +1045,32 @@
   /** higher is redder, lower is greener */
   const heat = (v: number, lo: number, hi: number) => `hsl(${Math.round(130 * (1 - clamp((v - lo) / (hi - lo))))} 78% 62%)`;
   const introO = $derived(1 - clamp(s / (vh * 0.45)));
+  // the title screen: where the title starts (lined up with the ribbons on wide screens), and a painted
+  // copy of the twelve founders' columns in full colour, which the title's letters are cut from
+  const titleX = $derived(L.padL + (L.desktop ? 4 : 18));
+  const titleRibbons = $derived.by(() => {
+    const stops: string[] = [];
+    let at = 0;
+    lineup[FIRST].forEach((p, slot) => {
+      const a = L.colX(slot) - L.cw / 2 - titleX;
+      const b = a + L.cw;
+      stops.push(`transparent ${at}px ${a}px`, `${people[p].color} ${a}px ${b}px`);
+      at = b;
+    });
+    stops.push(`transparent ${at}px`);
+    return `linear-gradient(to right, ${stops.join(', ')})`;
+  });
+  // the ghost ribbons: they tilt back and sink as you scroll the title away, then sit faint and blurred,
+  // and their ends rise away just before the founders land in 2009
+  const ghostR = $derived(smooth(clamp(s / (vh * 0.7))));
+  const ghostTf = $derived(
+    ghostR > 0 ? `perspective(${Math.round(vh)}px) translate3d(0,${(ghostR * vh * 0.1).toFixed(1)}px,${(-ghostR * vh * 0.55).toFixed(1)}px) rotateX(${(ghostR * 24).toFixed(2)}deg)` : null,
+  );
+  const ghostBlur = $derived(ghostR * 7);
+  const firstLand = $derived(Math.min(...Object.values(L.appearAt)) - vh * LAND);
+  const ghostEndT = $derived(clamp((w - (firstLand - vh * 0.85)) / (vh * 0.8)));
+  const ghostEnd = $derived(lerp(vh + 120, -60, smooth(ghostEndT)));
+  const ghostO = $derived(lerp(1, 0.2, ghostR) * (ghostEndT >= 1 ? 0 : 1));
   const first = (id: string) => people[id].nickname ?? people[id].name.split(' ')[0];
 </script>
 
@@ -1101,6 +1147,18 @@
         {#if c.gold > 0}<i class="edge gold" style:--cut="{c.gcut}px"></i>{/if}
         {#if c.plat > 0}<i class="edge plat" style:--cut="{c.pcut}px"></i>{/if}
       </button>
+    {/each}
+    {#each field.rolls as r (r.key)}
+      {@const rh = Math.max(12, r.w * 0.8)}
+      <i
+        class="roll"
+        style:--tone={r.tone}
+        style:--spin="{(r.spin * 0.6).toFixed(1)}px"
+        style:width="{r.w + 3}px"
+        style:height="{rh}px"
+        style:filter={r.dark < 1 ? `brightness(${lerp(0.5, 1, r.dark).toFixed(2)})` : null}
+        style:transform="translate3d({r.x - 1.5}px,{r.y - rh * 0.55}px,0)"
+      ></i>
     {/each}
     {#each field.tails as t (t.key)}
       <i
@@ -1490,20 +1548,51 @@
         Current members · through week {tegridy.asOf.last_scored_week} of {tegridy.asOf.season}. Tap a bar for the receipts.
       </p>
 
-      <!-- the end: everything falls away to black, and the logo comes up out of the abyss, chomping -->
+      <!-- the end: everything falls away to black, the Hodag logo draws itself in, fills, and bleeds onto DIGITAL -->
       <i class="tgblack" style:width="{W}px" style:top="{TG.blackOff}px" style:height="{TG.uEnd - TG.blackOff + vh}px" style:--fall="{Math.round(vh * 0.28)}px"></i>
-      <div class="hodag" class:in={logoIn} class:reduced role="img" aria-label="Hodag" style:left="{(W - TG.logoW) / 2}px" style:top="{TG.logoOff}px" style:width="{TG.logoW}px" style:height="{TG.logoH}px">
-        {#each ['jaw-top', 'jaw-bot', 'horn-l', 'horn-r'] as part (part)}
-          <img class="hp {part}" src="{import.meta.env.BASE_URL}tegridy/hodag.png" alt="" draggable="false" />
-        {/each}
+      <div class="hodag" style:left="{(W - TG.logoW) / 2}px" style:top="{TG.logoOff}px" style:width="{TG.logoW}px" style:height="{TG.logoH}px">
+        <HodagLogo draw={logoDraw} fill={logoFill} lit={logoLit} {reduced} />
       </div>
+      <footer class="foot" style:width="{W}px" style:top="{uEndReal + innerH - vh - 54}px">
+        <p>© {new Date().getFullYear()} Hodag Digital. All rights reserved.</p>
+        <p>The Quest to the Bria Bowl: its stories, design, artwork and code are original work. Reproduction or redistribution without permission is prohibited.</p>
+      </footer>
     </section>
+  {/if}
+
+  <!-- the title screen's ribbons: the twelve founders, drained of colour, filling the screen. Scrolling,
+       they tilt back and sink into the screen, blurring, a faint ghost until 2009, when their ends rise away -->
+  {#if ghostO > 0.005}
+    <div
+      class="ghosts"
+      style:opacity={ghostO}
+      style:transform={ghostTf}
+      style:filter={ghostBlur > 0.05 ? `blur(${ghostBlur.toFixed(1)}px)` : null}
+      style:--end="{ghostEnd.toFixed(0)}px"
+      style:--cw="{L.cw}px"
+    >
+      {#each lineup[FIRST] as p, slot (p)}
+        <i
+          class="col ghost"
+          class:founder={!!people[p].founder}
+          style:--tone={people[p].color}
+          style:--g="1"
+          style:--py="0px"
+          style:--lit="99999px"
+          style:width="{L.cw}px"
+          style:height="{vh + 80}px"
+          style:transform="translate3d({L.colX(slot) - L.cw / 2}px,-40px,0)"
+        ></i>
+      {/each}
+    </div>
   {/if}
 
   <!-- intro -->
   {#if introO > 0}
-    <div class="intro" style:opacity={introO} style:transform="translate3d(0,{-s * 0.35}px,0)">
-      <h1 class="display">The Quest <span>to the</span> <em>Bria Bowl</em></h1>
+    <div class="intro" style:opacity={introO} style:padding-left="{titleX}px" style:transform="translate3d(0,{-s * 0.35}px,0)">
+      <!-- the title is the founders' ribbons in full colour, bunched up into letters (a painted copy of the
+           columns behind, lined up with them, clipped to the type) -->
+      <h1 class="display title" style:--ribbons={titleRibbons}><span>Bria</span><span>Bowl</span><span>Origins</span></h1>
       <p class="lede">How twelve friends ended up in one fantasy football league, and who we lost along the way.</p>
       <span class="hint" aria-hidden="true">Scroll<i></i></span>
     </div>
@@ -1705,6 +1794,25 @@
     background:
       linear-gradient(to top, rgba(0, 0, 0, calc(var(--p) * 0.6)) 0, transparent calc(var(--p) * 100%)),
       var(--now);
+  }
+  .roll {
+    /* the rolled-up end of a founder's ribbon as it pours down: a little cylinder of the ribbon, shaded
+       round, its ridges turning as it unrolls */
+    border-radius: 4px;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.16) 0 1px, transparent 1px 4px) 0 var(--spin) / 100% 4px,
+      linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--tone) 45%, #000) 0%,
+        var(--tone) 30%,
+        color-mix(in srgb, var(--tone) 65%, #fff) 52%,
+        var(--tone) 72%,
+        color-mix(in srgb, var(--tone) 40%, #000) 100%
+      );
+    box-shadow:
+      0 5px 8px -2px rgba(0, 0, 0, 0.55),
+      0 1px 0 rgba(0, 0, 0, 0.4);
   }
   .floorshade {
     /* the ribbons fall down and away into the screen at the bottom edge */
@@ -2352,115 +2460,25 @@
     pointer-events: none;
     background: linear-gradient(to bottom, transparent 0, #000 var(--fall));
   }
-  /* the logo, up out of the abyss: four copies of one image, clipped into a top jaw, a bottom jaw
-     (split through the middle of the letters) and the two horn tips, so it can chomp */
+  /* the logo at the end, and the footer under it */
   .tg > .hodag {
     pointer-events: none;
-    opacity: 0;
-    transform: translateY(45%) scale(0.78);
-    filter: blur(10px);
-    transition:
-      opacity 300ms ease-in,
-      transform 300ms ease-in,
-      filter 300ms ease-in;
   }
-  .tg > .hodag.in {
-    opacity: 1;
-    transform: none;
-    filter: drop-shadow(0 0 22px rgba(255, 255, 255, 0.12));
-    transition:
-      opacity 700ms ease-out,
-      transform 1000ms cubic-bezier(0.2, 1.1, 0.3, 1),
-      filter 900ms ease-out;
+  .tg > .foot {
+    pointer-events: auto;
+    padding: 0 16px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.42);
   }
-  .hp {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    user-select: none;
+  .foot p {
+    margin: 0;
   }
-  .jaw-top {
-    clip-path: polygon(12.2% 0, 87.8% 0, 87.8% 29.6%, 100% 29.6%, 100% 45.3%, 0 45.3%, 0 29.6%, 12.2% 29.6%); /* overlaps the others a hair, so no seam shows */
-    transform-origin: 50% 45%;
-  }
-  .jaw-bot {
-    clip-path: inset(44.7% 0 0 0);
-    transform-origin: 50% 45%;
-  }
-  .horn-l {
-    clip-path: polygon(0 0, 12.5% 0, 12.5% 30%, 0 30%);
-    transform-origin: 12.5% 30%;
-  }
-  .horn-r {
-    clip-path: polygon(87.5% 0, 100% 0, 100% 30%, 87.5% 30%);
-    transform-origin: 87.5% 30%;
-  }
-  .hodag.in .jaw-top {
-    animation: chomp-top 1500ms cubic-bezier(0.45, 0, 0.3, 1) 650ms both;
-  }
-  .hodag.in .jaw-bot {
-    animation: chomp-bot 1500ms cubic-bezier(0.45, 0, 0.3, 1) 650ms both;
-  }
-  .hodag.in .horn-l {
-    animation: chomp-horn-l 1500ms cubic-bezier(0.45, 0, 0.3, 1) 650ms both;
-  }
-  .hodag.in .horn-r {
-    animation: chomp-horn-r 1500ms cubic-bezier(0.45, 0, 0.3, 1) 650ms both;
-  }
-  .hodag.reduced .hp {
-    animation: none !important;
-  }
-  /* three bites, each smaller, snapping shut with a little bounce, then it settles */
-  @keyframes chomp-top {
-    0% { transform: none; }
-    13% { transform: translateY(-10%) rotate(-1.5deg); }
-    22% { transform: translateY(1.5%); }
-    28% { transform: none; }
-    42% { transform: translateY(-7%) rotate(1deg); }
-    51% { transform: translateY(1%); }
-    57% { transform: none; }
-    70% { transform: translateY(-4%) rotate(-0.5deg); }
-    79% { transform: translateY(0.6%); }
-    100% { transform: none; }
-  }
-  @keyframes chomp-bot {
-    0% { transform: none; }
-    13% { transform: translateY(8%) rotate(1deg); }
-    22% { transform: translateY(-1.2%); }
-    28% { transform: none; }
-    42% { transform: translateY(5.5%) rotate(-0.8deg); }
-    51% { transform: translateY(-0.8%); }
-    57% { transform: none; }
-    70% { transform: translateY(3%); }
-    79% { transform: translateY(-0.5%); }
-    100% { transform: none; }
-  }
-  /* the horns ride the top jaw and flick outward on each bite */
-  @keyframes chomp-horn-l {
-    0% { transform: none; }
-    13% { transform: translateY(-10%) rotate(-14deg); }
-    22% { transform: translateY(1.5%) rotate(3deg); }
-    28% { transform: none; }
-    42% { transform: translateY(-7%) rotate(-10deg); }
-    51% { transform: translateY(1%) rotate(2deg); }
-    57% { transform: none; }
-    70% { transform: translateY(-4%) rotate(-6deg); }
-    79% { transform: translateY(0.6%) rotate(1deg); }
-    100% { transform: none; }
-  }
-  @keyframes chomp-horn-r {
-    0% { transform: none; }
-    13% { transform: translateY(-10%) rotate(14deg); }
-    22% { transform: translateY(1.5%) rotate(-3deg); }
-    28% { transform: none; }
-    42% { transform: translateY(-7%) rotate(10deg); }
-    51% { transform: translateY(1%) rotate(-2deg); }
-    57% { transform: none; }
-    70% { transform: translateY(-4%) rotate(6deg); }
-    79% { transform: translateY(0.6%) rotate(-1deg); }
-    100% { transform: none; }
+  .foot p + p {
+    margin-top: 2px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.3);
   }
 
   /* photos */
@@ -2643,13 +2661,39 @@
     font-size: calc(clamp(46px, 13.5vw, 104px) * var(--display-scale));
     line-height: 0.92;
   }
-  h1 span {
+  /* the title: the founders' ribbons in full colour, bunched up into the letters. Layers, top to bottom:
+     a soft light from above, the folds of the bunched fabric, the founders' faint lattice, the ribbons */
+  .title span {
     display: block;
-    color: var(--ink-3);
+    width: max-content;
+    background:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.12)),
+      repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0, rgba(255, 255, 255, 0.1) 0.09em, rgba(0, 0, 0, 0.1) 0.18em),
+      var(--ribbons);
+    background-size: auto, auto, 100vw 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: saturate(1.25) drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7)) drop-shadow(0 1px 0 rgba(0, 0, 0, 0.6));
   }
-  h1 em {
-    display: block;
-    font-style: normal;
+  .title {
+    width: 100vw;
+  }
+  /* the ghost ribbons behind the title */
+  .ghosts {
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    transform-origin: 50% 0;
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(var(--end) - 140px), transparent var(--end));
+    mask-image: linear-gradient(to bottom, #000 calc(var(--end) - 140px), transparent var(--end));
+  }
+  .ghosts > .ghost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    filter: saturate(0.12) brightness(0.62); /* drained: the title's colour is the only colour */
   }
   .lede {
     margin: 22px 0 0;

@@ -617,3 +617,17 @@ Headless Edge (157) screenshots of the live site showed no blur on cards, while 
 - It re-emitted the `.stage > *` rule (`will-change: transform, opacity`) after the override meant to beat it (D73), so cards were still backdrop roots.
 
 Fix: `build.cssMinify: false` in `vite.config.ts` (esbuild isn't bundled with Vite 8). The CSS is 70 KB raw, 14.5 KB gzipped. The built CSS now carries both forms of `backdrop-filter`, and the override comes after the rule it beats. The test harness (headless Edge driven over the DevTools protocol) lives in the session scratchpad.
+
+### D77 — History app: "Bria Bowl Origins" title screen, founders unroll, the Hodag Digital logo ends the page — Accepted
+- **Title screen.**
+  - The twelve founders' ribbons fill the screen, drained of colour (`--g: 1` plus `saturate(0.12) brightness(0.62)`).
+  - The title now reads **BRIA / BOWL / ORIGINS**. It's still real text, at the size and place the old title had, and its letters are the founders' ribbons in full colour: a painted copy of the twelve columns (a hard-stop gradient lined up with the columns behind) clipped to the type, with a soft top light, faint fabric folds and a drop shadow, so the ribbons look bunched up into the letters. The gaps between ribbons run through the letters. On wide screens the title lines up with the ribbons.
+  - As you scroll the title away, the grey ribbons tilt back and sink into the screen, blurring. They stay a faint ghost through 2002–2008, and their ends rise away just before the founders land in 2009.
+- **Founders unroll.** As a founder's ribbon pours down the screen, its front end is a little denser roll: a shaded cylinder of the ribbon whose ridges turn as it unrolls.
+- **The logo.** Levi's Hodag SVG, with the HODAG lettering and its blood; his team name ("Forest Lurkers") is dropped (`HodagLogo.svelte`).
+  - As it rises into view its outline draws in (`pathLength` dash), then it fills, then it lights up.
+  - **DIGITAL** pops into the mouth in Silkscreen (a pixel face), with a quick cyan/magenta glitch.
+  - The blood on the fangs and letters keeps oozing. Six drops form on the drip tips, fall (gathering speed), splat onto DIGITAL's letters and run down them, on a loop.
+  - Progress is measured against where the logo comes to rest at the real end of the page. The page now ends where the window can actually scroll, using `innerHeight`, not the large viewport.
+- **Footer** under it: "© {year} Hodag Digital. All rights reserved." plus a line that the stories, design, artwork and code are original work, not to be reproduced or redistributed without permission. Nothing scrolls past it.
+- The old chomping PNG logo is gone.
