@@ -18,7 +18,9 @@
   import { backOut } from 'svelte/easing';
 
   type Photo = { src: string; alt: string };
-  let { onperson }: { onperson: (id: string) => void } = $props();
+  // veiled: behind the lock, the story itself is blurred (not left to the lock's backdrop-filter, which
+  // some browsers, e.g. Firefox here, don't apply); unveiling animates it into focus
+  let { onperson, veiled = false }: { onperson: (id: string) => void; veiled?: boolean } = $props();
 
   // a tapped photo: the same print lifts out of its stack and grows to fill the screen; tap again (or the
   // dimmed background, or scroll) and it goes back. `zoomMove` turns the easing on just while it moves.
@@ -1068,7 +1070,7 @@
   {/each}
 </div>
 
-<div class="stage" class:reduced style:height="{vh}px" style:touch-action={focus !== null || tgFocus !== null ? 'pan-y' : null}>
+<div class="stage" class:reduced class:veiled style:height="{vh}px" style:touch-action={focus !== null || tgFocus !== null ? 'pan-y' : null}>
   <!-- columns: nothing is ever drawn over these except their own markers -->
   <div
     class="field"
@@ -1644,11 +1646,15 @@
     top: 0;
     left: 0;
     right: 0;
+    transition: filter 1000ms cubic-bezier(0.4, 0, 0.2, 1);
     overflow: clip; /* not hidden: a hidden box can still be scrolled sideways by focus or scrollIntoView */
     contain: strict;
     background:
       radial-gradient(120% 70% at 20% 0%, color-mix(in srgb, var(--bg-2) 85%, transparent), transparent 70%),
       var(--bg);
+  }
+  .stage.veiled {
+    filter: blur(28px) saturate(0.6) brightness(0.8);
   }
   .stage > * {
     position: absolute;

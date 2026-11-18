@@ -9,10 +9,12 @@
   let story: ReturnType<typeof Story> | undefined = $state();
 
   // the front door; once it's opened on a device, it stays open there
-  let locked = $state(true);
+  let openedHere = false;
   try {
-    locked = localStorage.getItem('qttbb-unlocked') !== '646cb782633388c0238caa63c765db3109e4ad6847db3f888689ef9eb271ea80';
+    openedHere = localStorage.getItem('qttbb-unlocked') === '646cb782633388c0238caa63c765db3109e4ad6847db3f888689ef9eb271ea80';
   } catch {}
+  let locked = $state(!openedHere);
+  let veiled = $state(!openedHere); // the story is blurred behind the lock, and comes into focus as it opens
   // someone holding a column right now opens it; the sheet is for everyone else
   function openPerson(id: string) {
     if (story?.show(id)) {
@@ -23,10 +25,10 @@
   }
 </script>
 
-<Story bind:this={story} onperson={openPerson} />
+<Story bind:this={story} onperson={openPerson} veiled={veiled} />
 
 {#if locked}
-  <Lock onunlock={() => (locked = false)} />
+  <Lock onunlock={() => (locked = false)} onopening={() => (veiled = false)} />
 {/if}
 
 {#if person}

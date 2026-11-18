@@ -8,7 +8,8 @@
   // the code, only a SHA-256 fingerprint of it.
   import { onMount } from 'svelte';
 
-  let { onunlock }: { onunlock: () => void } = $props();
+  // onopening: the moment the veil starts to melt (the story starts coming into focus); onunlock: it's gone
+  let { onunlock, onopening }: { onunlock: () => void; onopening?: () => void } = $props();
 
   const KEY = '646cb782633388c0238caa63c765db3109e4ad6847db3f888689ef9eb271ea80'; // sha256("qttbb:" + d1-d2-name)
   const DIGITS = Array.from({ length: 10 }, (_, i) => String(i));
@@ -64,7 +65,7 @@
     try {
       localStorage.setItem('qttbb-unlocked', KEY);
     } catch {}
-    window.setTimeout(() => (phase = 'gone'), reduced ? 0 : 520);
+    window.setTimeout(() => ((phase = 'gone'), onopening?.()), reduced ? 0 : 520);
     window.setTimeout(onunlock, reduced ? 0 : 1600);
   }
 

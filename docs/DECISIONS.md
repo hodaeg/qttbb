@@ -604,3 +604,6 @@ Replaces the pinned card tray (D39 and on).
 - **The Tegridy description** shares the `.lede` class with the intro, which caps it at 30ch in grey. `.tgpara .lede` now lifts the cap (full width) and is white.
 - **Legacy Rankings points** are coloured green (highest) through red (lowest).
 - **Haptics are gone entirely**: `lib/haptics.ts`, the lock's ticks and buzzes, and the scrubber's hold buzz. iOS Safari never fired them for Levi, and most of the league is on iPhone. This reverses D70's haptics.
+
+### D74 — History app: the story itself is blurred behind the lock — Accepted
+In Firefox the title showed faintly through the lock: the lock relied on its own `backdrop-filter` to blur what's behind it, and Firefox wasn't applying it there, which left only the 94% tint. Now the story's stage carries the blur itself while locked (`.stage.veiled`: blur 28px, desaturated, dimmed). The Lock tells the app as its veil starts to melt (`onopening`), and the blur transitions away over a second, so the story comes into focus in every browser. Once it's cleared the stage has no filter, so its glass frosts as normal. The lock's own backdrop blur stays as a bonus where it's supported.
