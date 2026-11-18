@@ -197,9 +197,13 @@
     },
     {
       "year": 2014,
-      "title": "A tumultuous season",
-      "kind": "beat",
-      "body": "[[max-christensen|Max]]'s one and only year as commissioner. He fleeces [[ben-rydberg|Ben Rydberg]] in a dubious trade, pushes it through himself, and wins the title (hence the asterisk). He's voted out, and [[levi-nellen|Levi]] is reinstated.",
+      "title": "Suze and Jordan",
+      "body": "Many in the league have met [[josh-susee|Suze]] over the years (Levi's high school friend), so he and [[jordan-morris|Jordan]] join. Jordan's way in: [[kyle-mont-blanc|Kyle]] met him through [[fish|\"Fish\"]], a high school friend of Kyle's who lived in the West Campus dorms with Jordan.",
+      "quote": {
+        "by": "max-christensen",
+        "text": "Personally, I don't want him. That's just me, everybody can have their own opinion.",
+        "context": "On Jordan being offered a spot"
+      },
       "out": [
         "andy-althoff",
         "sam-schurman"
@@ -211,13 +215,9 @@
     },
     {
       "year": 2014,
-      "title": "Suze and Jordan",
-      "body": "Many in the league have met [[josh-susee|Suze]] over the years (Levi's high school friend), so he and [[jordan-morris|Jordan]] join. Jordan's way in: [[kyle-mont-blanc|Kyle]] met him through [[fish|\"Fish\"]], a high school friend of Kyle's who lived in the West Campus dorms with Jordan.",
-      "quote": {
-        "by": "max-christensen",
-        "text": "Personally, I don't want him. That's just me, everybody can have their own opinion.",
-        "context": "On Jordan being offered a spot"
-      }
+      "title": "A tumultuous season",
+      "kind": "beat",
+      "body": "[[max-christensen|Max]]'s one and only year as commissioner. He fleeces [[ben-rydberg|Ben Rydberg]] in a dubious trade, pushes it through himself, and wins the title (hence the asterisk). He's voted out, and [[levi-nellen|Levi]] is reinstated."
     },
     {
       "year": 2016,

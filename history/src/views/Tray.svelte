@@ -56,7 +56,7 @@
         class="slot"
         use:more
         style:opacity={it.o}
-        style:pointer-events={it.o > 0.6 ? 'auto' : 'none'}
+        style:pointer-events={it.o > 0.6 && opacity > 0.6 ? 'auto' : 'none'}
         style:transform="translate3d(0,{it.dy}px,0)"
       >
         <div use:measure={it.i}><CardView card={it.card} {onperson} /></div>

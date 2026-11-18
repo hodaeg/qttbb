@@ -86,8 +86,15 @@
     if (!open) return;
     clearTimeout(settleTimer);
     settled = false;
+    // aim at where the pile is now (the panel may have moved), so they land exactly on it
+    const b = pileEl?.querySelector('.stack')?.getBoundingClientRect();
+    if (b) {
+      const nc = { x: b.left + b.width / 2, y: b.top + b.height / 2 };
+      spots = spots.map((s) => ({ ...s, x: s.x + c.x - nc.x, y: s.y + c.y - nc.y }));
+      c = nc;
+    }
     open = false;
-    timer = window.setTimeout(() => (live = false), reduced ? 0 : 640);
+    timer = window.setTimeout(() => (live = false), reduced ? 0 : 420 + links.length * 14 + 60); // once the last one has landed
   }
   function go(other: string) {
     collapse();
@@ -149,11 +156,9 @@
         aria-label="{people[l.other].name}: {l.how}"
         style:--i={i}
         style:--j={n - 1 - i}
-        style:left="{c.x}px"
-        style:top="{c.y}px"
         style:z-index={open ? 2 : 10 - i}
         style:opacity={open ? 1 : stack[i].o}
-        style:transform="translate({s.x}px,{s.y}px) rotate({s.rot}deg) scale({open ? 1 : PILE / BIG})"
+        style:transform="translate({c.x + s.x}px,{c.y + s.y}px) rotate({s.rot}deg) scale({open ? 1 : PILE / BIG})"
         onclick={() => go(l.other)}
       >
         <Avatar id={l.other} size={BIG} />
@@ -221,6 +226,9 @@
   }
   .node {
     position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 52px 23px; /* the avatar's centre, so it pivots and shrinks exactly like the pile's */
     display: grid;
     justify-items: center;
     gap: 5px;

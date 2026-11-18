@@ -420,3 +420,11 @@ Levi's next round, and what changed:
 - The "Connected to" burst only takes taps once its avatars have flown out (~380ms); falling back, the layer lets taps through to the pile. A quick double tap used to land on the top avatar and open its sheet. It no longer closes on iOS toolbar resizes, only on a real scroll (>40px). Each pile avatar sits in a box its own size, with a drop shadow.
 - Photos rise from behind the card, growing as they come, and when the next card arrives they drift up and shrink away into the top, the top of the stack first. They used to slide in from the left and out to the right.
 - Dustin's avatar is his face cropped from the 2002 photo.
+
+### D55 — History app: round of fixes on the column, piles, photos and cuts — Accepted
+- "Suze and Jordan" comes before "A tumultuous season" in 2014 and carries that year's in/out arrows.
+- A title's foil (and chevrons) runs onto the cut-off tail of a ribbon, all the way to the end of the cut.
+- The column panel's glass is nearly clear (1.5px blur, darkened by brightness) and every bit of type in it is pure white.
+- The story card no longer takes taps while a column is open: each card turned its own taps back on even when the faded tray had them off. That's how a tap on Max's pile (low on the screen) hit an invisible "Kyle" link.
+- The burst avatars pivot and shrink about the avatar's centre, and re-aim at the pile when they fall back, so they land exactly on it with no jump.
+- Photos leave about as slowly as they arrive (each takes roughly as long, eased as the mirror image), the top first, and the stack is anchored to a fixed line so a shorter next card doesn't drag leaving photos down.

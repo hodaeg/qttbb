@@ -399,15 +399,20 @@
     const pw = Math.min(L.fieldW * 0.7, 330);
     const ph = pw * 0.75;
     const regionTop = L.headerY + L.av + 14;
-    const regionBot = tt - 18;
+    const regionBot = L.trayTop - 18; // a fixed line (the tallest card's top): a shorter next card mustn't drag leaving photos down
     for (const r of L.seq) {
       const list = r.card.photos;
-      if (!list?.length || w < r.a - vh * 0.5 || w > r.b + vh * 0.25) continue;
-      const n = list.length;
       const span = r.b - r.a;
+      if (!list?.length || w < r.a - vh * 0.5 || w > r.b + span * 0.6) continue;
+      const n = list.length;
+      // leaving takes each photo about as long as arriving did (the mirror of its ease), the top of
+      // the stack first, overlapping a little more than the arrivals so the last isn't left alone
+      const dIn = (span * 0.6) / n;
+      const dOut = dIn * 0.85;
+      const exitAt = (k: number) => r.b - span * 0.18 + k * dOut * 0.45;
       const base = regionBot - ph / 2 - 4;
       const step = n > 1 ? Math.min(ph * 0.58, (base - ph / 2 - regionTop) / (n - 1)) : 0;
-      const ents = list.map((_, k) => easeOut(clamp((w - (r.a + span * (0.06 + (0.6 * k) / n))) / ((span * 0.6) / n))));
+      const ents = list.map((_, k) => easeOut(clamp((w - (r.a + span * 0.06 + k * dIn)) / dIn)));
       list.forEach((p, k) => {
         const e = ents[k];
         if (e <= 0) return;
@@ -415,10 +420,9 @@
         const tx = L.padL + L.fieldW / 2 + [-10, 14, -6][k % 3] * (L.fieldW / 300);
         const rot = [-3, 2.5, -1.5][k % 3];
         const ty = base - climb * step;
-        // leaving: the top of the stack goes first
-        const ex = smooth(clamp((w - (r.b - vh * 0.14 + k * vh * 0.035)) / (vh * 0.16)));
+        const ex = 1 - easeOut(1 - clamp((w - exitAt(k)) / dOut));
         if (ex >= 1) return;
-        const enterY = lerp(tt + ph * 0.25, ty, e); // from behind the card
+        const enterY = lerp(Math.max(tt, L.trayTop) + ph * 0.25, ty, e); // from behind the card
         const y = lerp(enterY, L.headerY - ph * 0.15, ex);
         const sc = lerp(0.5, 1, e) * lerp(1, 0.32, ex);
         out.push({ key: p.src, p, x: tx, y, rot: rot * (0.4 + 0.6 * e) + (1 - e) * 5 - ex * rot * 1.5, z: k + 1, o: clamp(e * 3) * (1 - ex * ex), sc });
@@ -770,6 +774,9 @@
       <i
         class="tail"
         class:founder={t.founder}
+        class:chev={t.chev > 0}
+        class:chev2={t.chev2 > 0.5}
+        style:--chev={t.chev}
         style:--tone={people[t.person].color}
         style:--g={t.g}
         style:--p={t.p}
@@ -778,7 +785,11 @@
         style:height="{t.h}px"
         style:clip-path={t.clip}
         style:transform={t.tf}
-      ></i>
+      >
+        <!-- a title's foil runs all the way to the end of the cut -->
+        {#if t.gold > 0}<i class="edge gold" style:opacity={t.gold}></i>{/if}
+        {#if t.plat > 0}<i class="edge plat" style:opacity={t.plat}></i>{/if}
+      </i>
     {/each}
     <!-- the card's shadow falling on the ribbons just above it, and the ribbons falling away at the bottom -->
     <i class="cardshade" style:opacity={started * (1 - fz)} style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{tt - 44}px,0)"></i>
@@ -1127,7 +1138,8 @@
       2px calc(var(--py) + 40px),
       calc(100% - 2px) calc(var(--py) + 40px);
   }
-  .col.chev::after {
+  .col.chev::after,
+  .tail.chev::after {
     /* a third title: gold chevrons running down the ribbon (anchored to the timeline), kept in
        off the edges so they don't run into the foil; a fourth doubles them */
     content: '';
@@ -1140,7 +1152,8 @@
     opacity: calc(var(--chev) * 0.55);
     pointer-events: none;
   }
-  .col.chev2::after {
+  .col.chev2::after,
+  .tail.chev2::after {
     background-image: var(--chevrons2);
   }
   .col.dotted::before {
@@ -1248,8 +1261,13 @@
        (which turned yellow ribbons orange and read as a solid block). A soft shadow on the type keeps
        it readable over bright ribbons. */
     --glass-tint: var(--glass-thin);
-    --glass-filter: blur(5px) brightness(0.74);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --glass-filter: blur(1.5px) brightness(0.72);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    /* every bit of type in here is pure white: no greys */
+    --ink: #fff;
+    --ink-2: #fff;
+    --ink-3: #fff;
+    color: #fff;
   }
   .pbody {
     display: flex;
