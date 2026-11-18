@@ -474,3 +474,12 @@ Found when the commissioner disputed Gabe's 2026 week 10 penalty: Drake Maye was
 - Totals on the bars and in the open bar's panel (the big number, each kind's points, each season) are coloured green at 0 through red at the league's worst total, matching the explainer grid.
 - Integridy values are shown as decimals (59.75, 9.5, 10), not fractions. While the bars grow, the count-up uses whole numbers, then lands on the exact total.
 - When the ribbons start their fall, the avatars, the alumni pile and the header no longer fall with them: they fade away where they are within the first fifth of the fall.
+
+### D62 — History app: clean ending, labelled explainer, the Hodag logo chomps in — Accepted
+- **Artifact fixed.** After the last card, the card's shadow (the `.cardshade` band, and the darkening of ribbons "under" the card) used to linger as a dark band with a hard edge. Both now lift as the card leaves.
+- **Founders fall with everyone.** Founders' ribbons start just under the header (where they grew from), while everyone else's start above the screen. When they fell, the founders looked shorter. Once the fall begins, every ribbon starts above the screen.
+- **Explainer.** A labelled hairline divider, "Penalties", sits above the costs, and another, "Multiplier", above the multipliers.
+- **The end.**
+  - Past the Integridy chart the page falls away to pure black, and Levi's Hodag logo (`public/tegridy/hodag.png`, cut out of its black background) rises out of the abyss, ending centred on screen.
+  - The logo is four copies of one image, clipped into a top jaw and a bottom jaw (split through the middle of the letters) and the two horn tips. It chomps three times, each bite smaller, with the horns riding the top jaw and flicking outward, then settles. No chomp with reduced motion.
+  - The chart's open-bar interaction now keys off the chart's position (`chartEnd`) instead of the end of the page.

@@ -335,7 +335,9 @@
     // expanded: no card, so nothing is in its shadow, and the timeline below the playhead is drawn
     // too (cuts are a flat gap you can see coming, not a slice that falls away)
     const flat = fz > 0.5;
-    const cardTop = lerp(tt, vh + 40, fz);
+    // past the last card its shadow lifts off the ribbons too (it used to linger as a dark band)
+    const cardGone = clamp((w - L.end) / (vh * 0.2));
+    const cardTop = lerp(tt, vh + 40, Math.max(fz, cardGone));
     for (const seg of segments) {
       const founding = seg.start === FIRST;
       const cutBot = seg.end !== LAST;
@@ -363,7 +365,9 @@
 
       const mEnd = flat ? (cutBot ? Math.min(bottom, floor) : floor) : cut ? tailTop : floor;
       if (mEnd > top + 1) {
-        const y = Math.max(top - s, -40);
+        // once they fall, every ribbon starts above the screen: founders' tops sit under the header
+        // (where they grew from), which made them look shorter than everyone else's as they dropped
+        const y = sink > 0 ? -40 : Math.max(top - s, -40);
         const h = mEnd - s - y;
         if (h > 0 && y < vh) {
           const o = y + s; // the element's top, in world pixels
@@ -774,7 +778,13 @@
     const av = Math.max(18, Math.min(bw - 2, L.desktop ? 44 : 30));
     const paraOff = headH + 18;
     const chartOff = paraOff + paraH + 40;
-    const uEnd = chartOff + chartH + 34; // the page ends with the chart sitting at the bottom of the screen
+    const chartEnd = chartOff + chartH + 34; // scrolled this far, the chart sits at the bottom of the screen
+    // then the page falls away to black and the logo comes up out of it, ending centred on screen
+    const logoW = Math.min(W * 0.78, 520);
+    const logoH = (logoW * 505) / 900;
+    const blackOff = chartEnd + 6;
+    const logoOff = chartEnd + vh * 0.62;
+    const uEnd = logoOff + logoH / 2 + vh * 0.5;
     // bars rise from a baseline at the chart's foot; if anyone ever goes negative, the baseline lifts
     // so their bar can hang below it, with the avatar at its lower end
     const pos = Math.max(0, ...tgM.map((m) => m.total));
@@ -782,13 +792,14 @@
     const room = chartH - (av + 30) * (neg ? 2 : 1);
     const unit = room / Math.max(1, pos + neg);
     const base = chartOff + chartH - (neg ? neg * unit + av + 30 : 0);
-    return { G, x0, chartW, chartH, gap, bw, av, paraOff, chartOff, uEnd, base, unit };
+    return { G, x0, chartW, chartH, gap, bw, av, paraOff, chartOff, chartEnd, logoW, logoH, blackOff, logoOff, uEnd, base, unit };
   });
   const u = $derived(w - TG.G); // how far the scene has scrolled up
   const tgOn = $derived(u > -60);
   const pageH = $derived(Math.max(L.pageHeight, TG.G + TG.uEnd - L.P + vh));
   const headIn = $derived(vh - u < vh * 0.84);
   const paraIn = $derived(vh - u + TG.paraOff < vh * 0.9);
+  const logoIn = $derived(vh - u + TG.logoOff < vh * 0.78);
   // the bars grow on the clock (left to right, overshooting a touch) once the chart is well in view
   let grown = $state(false);
   let growT0 = 0;
@@ -831,7 +842,7 @@
     return { x, w: width(i), r: i === f ? 1 : 0 };
   }
   const tgG = (i: number) => tgGeo[i] ?? tgTarget(i, null);
-  const tgReady = () => grown && u > TG.uEnd - vh * 0.22;
+  const tgReady = () => grown && u > TG.chartEnd - vh * 0.22 && u < TG.chartEnd + vh * 0.3;
   function tgOpen(i: number) {
     if (!tgReady() || tgFocus === i) return;
     tgFocus = tgShown = i;
@@ -843,7 +854,7 @@
     if ((Math.abs(dx) > 60 || Math.abs(dx) / Math.max(ms, 1) > 0.45) && to >= 0 && to < TGN) tgFocus = tgShown = to;
   }
   function stepTg() {
-    if (tgFocus !== null && u < TG.uEnd - vh * 0.3) tgFocus = null; // scrolled back up the page: close
+    if (tgFocus !== null && (u < TG.chartEnd - vh * 0.3 || u > TG.chartEnd + vh * 0.35)) tgFocus = null; // scrolled away from the chart: close
     const k = reduced ? 1 : drag ? 0.3 : 0.15;
     const ease = (c: number, t: number, eps = 0.2) => (Math.abs(t - c) < eps ? t : c + (t - c) * k);
     let changed = tgGeo.length !== TGN;
@@ -980,7 +991,7 @@
       </i>
     {/each}
     <!-- the card's shadow falling on the ribbons just above it, and the ribbons falling away at the bottom -->
-    <i class="cardshade" style:opacity={started * (1 - fz)} style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{tt - 44}px,0)"></i>
+    <i class="cardshade" style:opacity={started * (1 - fz) * (1 - clamp((w - L.end) / (vh * 0.2)))} style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{tt - 44}px,0)"></i>
     <i class="floorshade" style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{vh - 110}px,0)"></i>
     {#each markers as m (m.y)}
       <span class="marker" style:opacity={started} style:width="{L.fieldW}px" style:transform="translate3d({L.padL}px,{m.sy}px,0)">
@@ -1133,11 +1144,13 @@
       </h2>
       <div class="tgpara" class:in={paraIn} bind:clientHeight={paraH} style:left="{TG.x0}px" style:width="{Math.min(TG.chartW, 560)}px" style:top="{TG.paraOff}px">
         <p class="lede">Golf rules: lower is better. Everyone starts at 0 and only fair-play violations count, costing more near the playoffs. 2019 on.</p>
+        <div class="rdiv"><span>Penalties</span></div>
         <div class="rules">
           {#each tgRules as r (r.label)}
             <span style:--i={r.i}><b style:color={heat(r.v, 3, 10)}>{r.v}</b><small>{r.label}</small></span>
           {/each}
         </div>
+        <div class="rdiv"><span>Multiplier</span></div>
         <div class="rules mults">
           {#each tgMults as r (r.label)}
             <span style:--i={r.i + tgRules.length}><b style:color={heat(r.v, 1.5, 2)}>×{r.v}</b><small>{r.label}</small></span>
@@ -1263,6 +1276,14 @@
       <p class="tgfine" style:left="{TG.x0}px" style:width="{TG.chartW - 44}px" style:top="{TG.chartOff + TG.chartH + 10}px" style:opacity={growOf(TGN - 1) > 0.5 ? 1 : 0}>
         Current members · through week {tegridy.asOf.last_scored_week} of {tegridy.asOf.season}. Tap a bar for the receipts.
       </p>
+
+      <!-- the end: everything falls away to black, and the logo comes up out of the abyss, chomping -->
+      <i class="tgblack" style:width="{W}px" style:top="{TG.blackOff}px" style:height="{TG.uEnd - TG.blackOff + vh}px" style:--fall="{Math.round(vh * 0.28)}px"></i>
+      <div class="hodag" class:in={logoIn} class:reduced role="img" aria-label="Hodag" style:left="{(W - TG.logoW) / 2}px" style:top="{TG.logoOff}px" style:width="{TG.logoW}px" style:height="{TG.logoH}px">
+        {#each ['jaw-top', 'jaw-bot', 'horn-l', 'horn-r'] as part (part)}
+          <img class="hp {part}" src="{import.meta.env.BASE_URL}tegridy/hodag.png" alt="" draggable="false" />
+        {/each}
+      </div>
     </section>
   {/if}
 
@@ -1977,6 +1998,140 @@
   .pens b {
     font-size: 12px;
     font-variant-numeric: tabular-nums;
+  }
+
+  /* explainer dividers: a label sitting on a hairline */
+  .rdiv {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .rdiv::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.22);
+  }
+  /* the end: down to pure black */
+  .tg > .tgblack {
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 0, #000 var(--fall));
+  }
+  /* the logo, up out of the abyss: four copies of one image, clipped into a top jaw, a bottom jaw
+     (split through the middle of the letters) and the two horn tips, so it can chomp */
+  .tg > .hodag {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(45%) scale(0.78);
+    filter: blur(10px);
+    transition:
+      opacity 300ms ease-in,
+      transform 300ms ease-in,
+      filter 300ms ease-in;
+  }
+  .tg > .hodag.in {
+    opacity: 1;
+    transform: none;
+    filter: drop-shadow(0 0 22px rgba(255, 255, 255, 0.12));
+    transition:
+      opacity 700ms ease-out,
+      transform 1000ms cubic-bezier(0.2, 1.1, 0.3, 1),
+      filter 900ms ease-out;
+  }
+  .hp {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    user-select: none;
+  }
+  .jaw-top {
+    clip-path: polygon(12.2% 0, 87.8% 0, 87.8% 29.6%, 100% 29.6%, 100% 45.3%, 0 45.3%, 0 29.6%, 12.2% 29.6%); /* overlaps the others a hair, so no seam shows */
+    transform-origin: 50% 45%;
+  }
+  .jaw-bot {
+    clip-path: inset(44.7% 0 0 0);
+    transform-origin: 50% 45%;
+  }
+  .horn-l {
+    clip-path: polygon(0 0, 12.5% 0, 12.5% 30%, 0 30%);
+    transform-origin: 12.5% 30%;
+  }
+  .horn-r {
+    clip-path: polygon(87.5% 0, 100% 0, 100% 30%, 87.5% 30%);
+    transform-origin: 87.5% 30%;
+  }
+  .hodag.in .jaw-top {
+    animation: chomp-top 1500ms cubic-bezier(0.45, 0, 0.3, 1) 650ms both;
+  }
+  .hodag.in .jaw-bot {
+    animation: chomp-bot 1500ms cubic-bezier(0.45, 0, 0.3, 1) 650ms both;
+  }
+  .hodag.in .horn-l {
+    animation: chomp-horn-l 1500ms cubic-bezier(0.45, 0, 0.3, 1) 650ms both;
+  }
+  .hodag.in .horn-r {
+    animation: chomp-horn-r 1500ms cubic-bezier(0.45, 0, 0.3, 1) 650ms both;
+  }
+  .hodag.reduced .hp {
+    animation: none !important;
+  }
+  /* three bites, each smaller, snapping shut with a little bounce, then it settles */
+  @keyframes chomp-top {
+    0% { transform: none; }
+    13% { transform: translateY(-10%) rotate(-1.5deg); }
+    22% { transform: translateY(1.5%); }
+    28% { transform: none; }
+    42% { transform: translateY(-7%) rotate(1deg); }
+    51% { transform: translateY(1%); }
+    57% { transform: none; }
+    70% { transform: translateY(-4%) rotate(-0.5deg); }
+    79% { transform: translateY(0.6%); }
+    100% { transform: none; }
+  }
+  @keyframes chomp-bot {
+    0% { transform: none; }
+    13% { transform: translateY(8%) rotate(1deg); }
+    22% { transform: translateY(-1.2%); }
+    28% { transform: none; }
+    42% { transform: translateY(5.5%) rotate(-0.8deg); }
+    51% { transform: translateY(-0.8%); }
+    57% { transform: none; }
+    70% { transform: translateY(3%); }
+    79% { transform: translateY(-0.5%); }
+    100% { transform: none; }
+  }
+  /* the horns ride the top jaw and flick outward on each bite */
+  @keyframes chomp-horn-l {
+    0% { transform: none; }
+    13% { transform: translateY(-10%) rotate(-14deg); }
+    22% { transform: translateY(1.5%) rotate(3deg); }
+    28% { transform: none; }
+    42% { transform: translateY(-7%) rotate(-10deg); }
+    51% { transform: translateY(1%) rotate(2deg); }
+    57% { transform: none; }
+    70% { transform: translateY(-4%) rotate(-6deg); }
+    79% { transform: translateY(0.6%) rotate(1deg); }
+    100% { transform: none; }
+  }
+  @keyframes chomp-horn-r {
+    0% { transform: none; }
+    13% { transform: translateY(-10%) rotate(14deg); }
+    22% { transform: translateY(1.5%) rotate(-3deg); }
+    28% { transform: none; }
+    42% { transform: translateY(-7%) rotate(10deg); }
+    51% { transform: translateY(1%) rotate(-2deg); }
+    57% { transform: none; }
+    70% { transform: translateY(-4%) rotate(6deg); }
+    79% { transform: translateY(0.6%) rotate(-1deg); }
+    100% { transform: none; }
   }
 
   /* photos */
