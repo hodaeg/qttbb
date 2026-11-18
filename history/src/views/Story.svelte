@@ -409,7 +409,7 @@
         // as it pours down the screen, the ribbon's front end is a little denser roll, unrolling
         if (ld.reach < vh + 30 && ld.reach > L.headerY + 4) {
           const gm0 = gOf(seg.slot);
-          rolls.push({ key: `roll${seg.person}`, x: gm0.x, w: gm0.w, y: ld.reach, tone: people[seg.person].color ?? "#888", dark: pourAt(L, seg.slot, w), spin: ld.reach });
+          rolls.push({ key: `roll${seg.person}`, x: gm0.x + sway(seg.slot) * (1 - fz), w: gm0.w, y: ld.reach, tone: people[seg.person].color ?? "#888", dark: pourAt(L, seg.slot, w), spin: ld.reach });
         }
       } else {
         top = L.T[seg.start] - L.cutH / 2 + CUT_GAP / 2;
@@ -529,7 +529,8 @@
       const subLen = sub ? sub.length * subFs * 0.62 : 0;
       const pad = markFs * 0.65;
       const bh = Math.round(pad * 2 + len + (sub ? markFs * 0.45 + subLen : 0));
-      out.push({ key, kind, person, x: gOf(slot).x + gOf(slot).w / 2, y, o: (1 - merge) * (1 - fz), star, reveal, text, len, bw, bh, sub, subFs, subLen, pad });
+      // x sways with its ribbon, so the patch stays stitched on
+      out.push({ key, kind, person, x: gOf(slot).x + gOf(slot).w / 2 + sway(slot) * (1 - fz), y, o: (1 - merge) * (1 - fz), star, reveal, text, len, bw, bh, sub, subFs, subLen, pad });
     };
     if (fz > 0.99) return out;
     for (const [year, season] of Object.entries(legacy.seasons)) {
@@ -832,7 +833,7 @@
         const g = edgeGrow(y);
         if (g <= 0 || g >= 1 || k > 3) return;
         const gm = gOf(slot);
-        out.push({ key: `${p}${y}`, x: gm.x, w: gm.w, y: edgeFront(g) });
+        out.push({ key: `${p}${y}`, x: gm.x + sway(slot) * (1 - fz), w: gm.w, y: edgeFront(g) }); // sways with its ribbon
       });
     }
     return out;

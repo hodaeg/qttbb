@@ -683,3 +683,6 @@ Levi's corrections:
 
 ### D86 — History app: the title's colours sway with the ribbons behind it — Accepted
 The title's letters are cut from a painted copy of the founders' ribbons, lined up with the ghost ribbons behind. Now that those sway, on load and while scrolling, each colour band in the copy is offset by the same `ghostSway(slot)` as its ghost. The letters read as a true window onto the ribbons: measured drift is 0px across all 12, frame by frame.
+
+### D87 — History app: patches, the trim ripple and the pour roll sway with their ribbon — Accepted
+The result patches were placed on the ribbon's resting x, so they slid against it as the ribbons swayed while scrolling. Now they add the same `sway(slot)`, and so do the title trim's ripple and the founders' pour roll. Everything stitched to a ribbon moves with it: mid-scroll, the patch-to-ribbon centre offset is 0px.
