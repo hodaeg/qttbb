@@ -6,7 +6,6 @@
   import { people } from '../lib/model';
   import Avatar from './Avatar.svelte';
   import { scatter, rng, hashStr as hash } from '../lib/scatter';
-  import { haptic } from '../lib/haptics';
 
   let { id, links, onperson }: { id: string; links: { other: string; how: string; year: number | null }[]; onperson: (id: string) => void } = $props();
 
@@ -39,7 +38,6 @@
     c = { x: b.left + b.width / 2, y: b.top + b.height / 2 };
     spots = scatter(links.length, c, id + 'burst', BOX, { left: 10, top: 50, right: innerWidth - 10, bottom: innerHeight - 10 });
     live = true;
-    haptic(8);
     // one frame in the pile, then fly
     requestAnimationFrame(() =>
       requestAnimationFrame(() => {
@@ -52,7 +50,6 @@
     if (!open) return;
     clearTimeout(settleTimer);
     settled = false;
-    haptic(8);
     // aim at where the pile is now (the panel may have moved), so they land exactly on it
     const b = pileEl?.querySelector('.stack')?.getBoundingClientRect();
     if (b) {

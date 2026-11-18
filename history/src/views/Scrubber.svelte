@@ -136,11 +136,6 @@
   $effect(() => {
     if (driving && !g && !tweenRaf && Math.abs(fi - f) < 0.01) driving = false;
   });
-  function buzz() {
-    try {
-      if ((navigator as Navigator & { userActivation?: { hasBeenActive: boolean } }).userActivation?.hasBeenActive !== false) navigator.vibrate?.(8);
-    } catch {}
-  }
 
   // ---- the gesture
   type Gesture = { id: number; y0: number; f0: number; t0: number; held: boolean };
@@ -171,7 +166,6 @@
       af = fAt(fy);
       go(af);
       setBulge(1);
-      buzz();
     }, HOLD_MS);
   }
   function move(e: PointerEvent) {

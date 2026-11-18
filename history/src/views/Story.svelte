@@ -11,7 +11,6 @@
   import Avatar from './Avatar.svelte';
   import Glass from './Glass.svelte';
   import CardView from './Card.svelte';
-  import { haptic } from '../lib/haptics';
   import Scrubber from './Scrubber.svelte';
   import PersonPanel from './PersonPanel.svelte';
   import Roll from './Roll.svelte';
@@ -100,10 +99,7 @@
     if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__jump = (y: number) => (window.scrollTo(0, y), (s = y));
     let raf = 0;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        if (focus !== null || tgFocus !== null) haptic(8);
-        (focus = null), (tgFocus = null), zoomKey && zoomPhoto(null);
-      }
+      if (e.key === 'Escape') (focus = null), (tgFocus = null), zoomKey && zoomPhoto(null);
       if (focus !== null && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) openSlot(clamp(focus + (e.key === 'ArrowRight' ? 1 : -1), 0, SLOTS - 1));
       if (tgFocus !== null && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) tgFocus = tgShown = clamp(tgFocus + (e.key === 'ArrowRight' ? 1 : -1), 0, TGN - 1);
     };
@@ -155,7 +151,6 @@
     window.addEventListener('wheel', onWheel, { passive: false });
     const tick = (now: number) => {
       stepCuts(now);
-      stepLandings();
       stepFocus();
       stepTg();
       stepGrow(now);
@@ -250,7 +245,6 @@
   }
   function openSlot(slot: number) {
     if (focus === slot || !litFor(slot) || sink > 0.05) return;
-    if (focus === null) haptic(8); // opening (called inside the tap, so iOS honours it)
     fanned = false;
     if (focus !== null) {
       dir = slot > focus ? 1 : -1;
@@ -295,12 +289,11 @@
     return true;
   }
   // tap a ribbon to open it; tap the open one again to close it
-  const tapCol = (slot: number) => (focus === slot ? (haptic(8), (focus = null)) : openSlot(slot));
+  const tapCol = (slot: number) => (focus === slot ? (focus = null) : openSlot(slot));
   // the burnt-in Return under the glass: tapped, it backs up under the card as the column closes
   const RET = 54; // room kept under each panel for it
   let backing = $state<string | null>(null);
   function goBack(key: string, close: () => void) {
-    haptic(8);
     backing = key;
     window.setTimeout(close, reduced ? 0 : 170);
     window.setTimeout(() => (backing = null), reduced ? 0 : 700);
@@ -337,7 +330,6 @@
         a.t0 = now;
         a.g0 = fx[key]?.g ?? (passed ? 0 : 1);
         a.mode = passed ? 'shake' : 'unfade';
-        if (passed) haptic(18); // the cut hits (several in one year: still one tap)
       }
       let g = passed ? 1 : 0;
       let x = 0;
@@ -687,7 +679,6 @@
     wasFanned = fanned;
   });
   function toggleFan() {
-    haptic(8);
     if (fanned) return void (fanned = false);
     const a = L.av * fanScale;
     fanSpots = scatter(pileCount, L.pile, 'alumni', { w: 92, h: a + 40, up: a / 2 }, { left: 8, top: 8, right: L.W - 8, bottom: vh - L.inset - 10 });
@@ -702,7 +693,6 @@
     if (pileIx[p] === undefined) return onperson(p);
     if (!fanned) return toggleFan();
     if (!fanSettled) return; // still flying out
-    haptic(8);
     fanned = false;
     onperson(p);
   }
@@ -842,30 +832,15 @@
       } else if (!landed) platArmed[p] = false;
     }
   });
-  // one tap of haptics as a season's patches land on the avatars (champion and sacko together: one tap)
-  const honourYears = Object.keys(legacy.seasons).map(Number).filter((y) => lineup[y]);
-  const landedSeason: Record<number, boolean> = {};
-  function stepLandings() {
-    for (const y of honourYears) {
-      const now = reach(honourAt(y)) >= L.av * 1.5;
-      if (now && landedSeason[y] === false) haptic(14);
-      landedSeason[y] = now;
-    }
-  }
-  // a subtle tap as a column (or Tegridy bar, or the alumni pile) opens or closes. The handlers tap
-  // directly (iOS only honours it inside the tap); this catches the rest (auto-closes) on Android
-  let wasOpen = { col: false, bar: false, pile: false };
-  $effect(() => {
-    const open = { col: focus !== null, bar: tgFocus !== null, pile: fanned };
-    if (open.col !== wasOpen.col || open.bar !== wasOpen.bar || open.pile !== wasOpen.pile) haptic(8);
-    wasOpen = open;
-  });
   const grayOf = (st: AvatarState) => (st.cut ? (fx[st.cut]?.g ?? 1) : st.gray);
 
   // ---- where we are in time (the dial and the tray read this)
   const fi = $derived(stopAt(L, w));
   const started = $derived(clamp((w - (L.T[L.stops[0]] - vh * 0.35)) / (vh * 0.2)));
 
+  // the Legacy Rankings' points: green for the highest, through to red for the lowest
+  const rankPts = legacy.rankings.map((r) => r.points);
+  const rankHeat = (v: number) => heat(Math.max(...rankPts) - v, 0, Math.max(1, Math.max(...rankPts) - Math.min(...rankPts)));
   const finaleCy = $derived((L.finale - w) * 0.94 + vh * 0.52);
   // after the rankings the story winds down (`sink`): the avatars, the pile and the header fade away, and
   // the ribbons, which have run on behind the rankings, meet their end: it scrolls up the screen like the
@@ -969,9 +944,8 @@
   };
   const tgReady = () => grown && chartOnScreen();
   function tgOpen(i: number) {
-    if (tgFocus === i) return void (haptic(8), (tgFocus = null)); // tap the open bar again to close it
+    if (tgFocus === i) return void (tgFocus = null); // tap the open bar again to close it
     if (!tgReady()) return;
-    if (tgFocus === null) haptic(8);
     tgFocus = tgShown = i;
   }
   function tgSwipe(dx: number, ms: number) {
@@ -1333,7 +1307,7 @@
           {#each legacy.rankings as r}
             <li>
               <button class="pressable" onclick={() => onperson(r.person)}>
-                <span class="rk">{r.rank}</span><Avatar id={r.person} size={26} /><b>{first(r.person)}</b><span class="pts">{r.points}</span>
+                <span class="rk">{r.rank}</span><Avatar id={r.person} size={26} /><b>{first(r.person)}</b><span class="pts" style:color={rankHeat(r.points)}>{r.points}</span>
               </button>
             </li>
           {/each}
@@ -1544,7 +1518,7 @@
       tabindex={fanned ? 0 : -1}
       style:--cx="{L.pile.x}px"
       style:--cy="{L.pile.y}px"
-      onclick={() => (haptic(8), (fanned = false))}
+      onclick={() => (fanned = false)}
     ></button>
   {/if}
   {#each avatars as a (a.p)}
@@ -1662,8 +1636,8 @@
     z-index: 12; /* above the avatars (10), under the scrubber (26): thrown off the side before the avatars */
     will-change: transform; /* not opacity: it would switch the glass off (Glass fades via --o) */
     /* heavier, darker glass than elsewhere: the ribbons behind stay a soft blur of colour */
-    --glass-tint: rgba(10, 12, 17, 0.78);
-    --glass-filter: blur(60px) saturate(1.25) brightness(0.74);
+    --glass-tint: rgba(10, 12, 17, 0.5);
+    --glass-filter: blur(34px) saturate(1.5) brightness(0.62);
   }
   .stage {
     position: fixed;
@@ -1681,6 +1655,13 @@
     top: 0;
     left: 0;
     will-change: transform, opacity;
+  }
+  /* anything holding glass must not hint opacity: that makes it a backdrop root and switches the
+     frosting off (this outranks the line above, which otherwise wins on specificity) */
+  .stage > .acard,
+  .stage > .cardwrap,
+  .stage > .tg {
+    will-change: transform;
   }
 
   /* columns */
@@ -2106,6 +2087,9 @@
       transform 700ms cubic-bezier(0.2, 1, 0.3, 1) 120ms;
   }
   .tgpara .lede {
+    /* not the intro's lede: no 30ch cap, full width, white */
+    max-width: none;
+    color: #fff;
     margin: 0 0 12px;
     font-size: 14px;
     line-height: 1.45;

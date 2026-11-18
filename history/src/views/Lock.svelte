@@ -32,21 +32,10 @@
   let phase = $state<'idle' | 'no' | 'yes' | 'gone'>('idle');
   let flash = 0;
   const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const buzz = (p: number | number[]) => {
-    try {
-      if (navigator.userActivation?.hasBeenActive) navigator.vibrate?.(p);
-    } catch {}
-  };
 
   const sel = (k: number) => Math.max(0, Math.min(wheels[k].items.length - 1, Math.round(pos[k])));
-  let lastSel = [0, 0, 0];
   function onScroll(k: number) {
     pos[k] = els[k].scrollTop / ITEM;
-    const s = sel(k);
-    if (s !== lastSel[k]) {
-      lastSel[k] = s;
-      buzz(4); // a tick per detent
-    }
   }
   function step(k: number, d: number) {
     const to = Math.max(0, Math.min(wheels[k].items.length - 1, sel(k) + d));
@@ -68,12 +57,10 @@
     if (!ok) {
       phase = 'idle';
       requestAnimationFrame(() => (phase = 'no')); // restart the flash on repeat taps
-      buzz([30, 40, 30]);
       flash = window.setTimeout(() => (phase = 'idle'), 900);
       return;
     }
     phase = 'yes';
-    buzz(20);
     try {
       localStorage.setItem('qttbb-unlocked', KEY);
     } catch {}

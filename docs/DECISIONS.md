@@ -597,3 +597,10 @@ Replaces the pinned card tray (D39 and on).
   - iOS honours it only inside a user gesture, so the taps fire synchronously in the handlers: column open, tap-to-close and Return; Tegridy bar open and close; the alumni pile and its avatars; "Connected to" piles; Escape. The state watcher stays as a fallback for Android.
   - Patch landings and cuts happen while scrolling, which isn't a gesture iOS accepts, so on iPhone they stay silent (Android buzzes).
 - Story cards (fun facts, in/out cards, everything) have heavier frost: 78% tint, 60px blur, brightness 0.74.
+
+### D73 — History app: card blur fixed, full-width description, coloured rankings, no haptics — Accepted
+- **Card glass wasn't blurring at all.** `.stage > *` hints `will-change: transform, opacity` and outranked the card's own `will-change: transform` on specificity. An opacity hint makes an element a backdrop root, which switches its glass's frosting off. `.stage > .acard`, `.stage > .cardwrap` and `.stage > .tg` now hint transform only. With the blur working, the card glass is lighter (tint 0.5, blur 34px, saturate 1.5, brightness 0.62), so the ribbons read as smeared colour behind the text.
+- **The lock's blur** checks out in Chrome (`blur(90px)`, the title behind is gone). Levi's desktop was likely showing a cached older build.
+- **The Tegridy description** shares the `.lede` class with the intro, which caps it at 30ch in grey. `.tgpara .lede` now lifts the cap (full width) and is white.
+- **Legacy Rankings points** are coloured green (highest) through red (lowest).
+- **Haptics are gone entirely**: `lib/haptics.ts`, the lock's ticks and buzzes, and the scrubber's hold buzz. iOS Safari never fired them for Levi, and most of the league is on iPhone. This reverses D70's haptics.
