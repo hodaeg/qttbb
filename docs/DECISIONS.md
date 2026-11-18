@@ -435,3 +435,13 @@ Levi's next round, and what changed:
 
 ### D57 — History app: no friend web — Accepted
 - Phase 5 (the ring-based friend web, path sentences and the timeline-to-web morph) is dropped. The "Connected to" piles in each column and sheet, plus the alumni burst, now cover how everyone is linked, so a separate view isn't needed. `connections.json` stays as the data behind the piles. The finale no longer promises "The friend web comes next."
+
+### D58 — History app: the ending sinks, and Tegridy Factor gets the last word — Accepted
+- Today's ribbons now run on behind the Legacy Rankings card. As it leaves, the ribbons, avatars, header and scrubber tilt back and sink into the screen (perspective, a drop in depth and a fade).
+- Then a Tegridy Factor scene scrolls up like a page:
+  - The header pops in. The "I got tegridy" button, cut out as a die-cut sticker (`public/tegridy/sticker.png`), is slapped on overlapping the r of "Factor", and the header takes the thud.
+  - A paragraph explains the score, with weights and multipliers read from `config/league.json`.
+  - A bar chart of the current members follows, lowest (best) on the left. Every bar is the member's own ribbon (colour, founder lattice or dots, title foil and chevrons). Each bar's TF sits at its end, shown with quarter fractions (67¾), and the avatar sits just past it. If anyone ever goes negative, the baseline lifts and that bar hangs below it, with the avatar at the bottom.
+- The bars grow on the clock, left to right with a little overshoot, once the chart is in view, and shrink if you scroll back.
+- Tap a bar (or its avatar) and it opens like a column: it widens and rises to the top of the chart, and the others squeeze into slices. Tap a slice, swipe, or use the arrow keys to switch; the minimize button, Escape or scrolling back up closes it. The open bar's glass panel shows the rank, total, penalty count and clean seasons, then what the total is made of (per kind, with share bars), by season, and every penalty (season, week, headline, base × multiplier = points).
+- Data: `scripts/build-legacy.mjs` now also writes `src/generated/tegridy.json` from `data/processed` (owner profiles + penalties.json, counted penalties only). It checks that each member's penalties add up to their profile total, swaps Sleeper usernames for first names in headlines, and strips raw timestamps.

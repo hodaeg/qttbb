@@ -5,7 +5,7 @@
   import { onMount } from 'svelte';
   import {
     makeLayout, segments, members, people, legacy, constants, lineup, exits, isCurrent, statusOf, FIRST, LAST, CUT_GAP, SLOTS,
-    pourAt, growTip, avatarState, stopAt, trayAt, clamp, lerp, back, smooth, easeOut, yearsLabel, type AvatarState, type Spot,
+    pourAt, growTip, avatarState, stopAt, trayAt, clamp, lerp, back, smooth, easeOut, yearsLabel, tegridy, type AvatarState, type Spot, type TgMember,
   } from '../lib/model';
   import { scatter, type Spot as BurstSpot } from '../lib/scatter';
   import Avatar from './Avatar.svelte';
@@ -75,17 +75,18 @@
     let raf = 0;
     tt = L.trayTop;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') focus = null;
+      if (e.key === 'Escape') (focus = null), (tgFocus = null);
       if (focus !== null && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) openSlot(clamp(focus + (e.key === 'ArrowRight' ? 1 : -1), 0, SLOTS - 1));
+      if (tgFocus !== null && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) tgFocus = tgShown = clamp(tgFocus + (e.key === 'ArrowRight' ? 1 : -1), 0, TGN - 1);
     };
     window.addEventListener('keydown', onKey);
     // sideways swipes on an open column (touch), and sideways trackpad scrolls (desktop)
     let sx = 0, sy = 0, t0 = 0, track = false, side = false;
     const tStart = (e: TouchEvent) => {
       track = false;
-      if (focus === null || e.touches.length !== 1) return;
+      if ((focus === null && tgFocus === null) || e.touches.length !== 1) return;
       const t = e.touches[0];
-      if (t.clientX > L.padL + L.fieldW + 4 || (e.target as Element).closest?.('[role="dialog"]')) return; // the scrubber, sheets
+      if ((focus !== null && t.clientX > L.padL + L.fieldW + 4) || (e.target as Element).closest?.('[role="dialog"]')) return; // the scrubber, sheets
       (sx = t.clientX), (sy = t.clientY), (t0 = performance.now()), (track = true), (side = false);
     };
     const tMove = (e: TouchEvent) => {
@@ -102,19 +103,19 @@
       drag = dx;
     };
     const tEnd = () => {
-      if (track && side) swipeEnd(drag, performance.now() - t0);
+      if (track && side) (tgFocus !== null ? tgSwipe : swipeEnd)(drag, performance.now() - t0);
       track = side = false;
     };
     let wx = 0, wIdle = 0, wCool = 0;
     const onWheel = (e: WheelEvent) => {
-      if (focus === null || Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      if ((focus === null && tgFocus === null) || Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
       e.preventDefault();
       clearTimeout(wIdle);
       if (performance.now() < wCool) return;
       wx += e.deltaX;
       drag = clamp(-wx, -140, 140);
       if (Math.abs(wx) > 90) {
-        swipeEnd(-wx, 1000);
+        (tgFocus !== null ? tgSwipe : swipeEnd)(-wx, 1000);
         wx = 0;
         wCool = performance.now() + 450;
       } else wIdle = window.setTimeout(() => ((wx = 0), (drag = 0)), 140);
@@ -127,6 +128,8 @@
     const tick = (now: number) => {
       stepCuts(now);
       stepFocus();
+      stepTg();
+      stepGrow(now);
       const tTarget = L.vh - 10 - (want ? Math.min(want, L.trayH) : L.trayH);
       if (Math.abs(tTarget - tt) > 0.3) tt = reduced ? tTarget : tt + (tTarget - tt) * 0.2;
       else if (tt !== tTarget) tt = tTarget;
@@ -215,7 +218,7 @@
     if (changed || Object.keys(next).length !== Object.keys(pull).length) pull = next;
   }
   function openSlot(slot: number) {
-    if (focus === slot || !litFor(slot)) return;
+    if (focus === slot || !litFor(slot) || sink > 0.05) return;
     fanned = false;
     if (focus !== null) {
       dir = slot > focus ? 1 : -1;
@@ -227,8 +230,9 @@
     pull = { ...pull, [slot]: { x: prev === null ? (g.w - PW) / 2 : dir > 0 ? 8 : g.w - 8 - PW, v: 0 } };
   }
   function stepFocus() {
-    if (focus !== null && !litFor(focus)) focus = null; // scrolled back before the league: close
-    if (focus === null && (prev !== null || drag)) (prev = null), (drag = 0);
+    if (focus !== null && (!litFor(focus) || sink > 0.05)) focus = null; // scrolled back before the league, or past the end: close
+    if (focus === null && prev !== null) prev = null;
+    if (focus === null && tgFocus === null && drag) drag = 0;
     if (prev !== null && gOf(prev).w < slice.w + 0.6) prev = null; // done closing
     stepPull();
     const k = reduced ? 1 : drag ? 0.3 : 0.15; // under the finger it follows closely; let go, it eases over
@@ -338,7 +342,8 @@
       const key = `${seg.slot}-${seg.start}`;
       const B1 = L.top(seg.end + 1);
       const cut = cutBot && w >= B1; // the cut has reached the playhead
-      const bottom = cutBot ? B1 + L.cutH / 2 - CUT_GAP / 2 : L.end;
+      // today's ribbons run on past the timeline, behind the rankings, until they sink into the screen
+      const bottom = cutBot ? B1 + L.cutH / 2 - CUT_GAP / 2 : L.end + vh * 3;
       const tailTop = cutBot ? bottom - L.cutH - L.cw * 1.8 : bottom; // the last stretch hangs free once cut
 
       let top: number; // world
@@ -742,6 +747,147 @@
   const trayO = $derived(started * (1 - clamp((w - L.end) / (vh * 0.2))));
 
   const finaleCy = $derived((L.finale - w) * 0.94 + vh * 0.52);
+  // after the rankings, the ribbons (and everyone on them) tilt back and sink into the screen
+  const sink = $derived(smooth(clamp((w - (L.finale + vh * 0.32)) / (vh * 0.6))));
+  const sinkTf = $derived(
+    sink > 0 ? `perspective(${Math.round(vh * 1.1)}px) translate3d(0,${(-sink * vh * 0.08).toFixed(1)}px,${(-sink * vh * 0.9).toFixed(1)}px) rotateX(${(sink * 34).toFixed(2)}deg)` : null,
+  );
+
+  // ---- Tegridy Factor: the last word. Once the ribbons have sunk, a header pops in and gets a
+  // sticker slapped on it, a paragraph explains the score, and a bar chart rises in which every bar is
+  // that member's own ribbon, lowest (best) on the left. Tap a bar and it opens like a column, with
+  // everything that went into the number. The scene scrolls up from below like a page.
+  const tgM = tegridy.members;
+  const TGN = tgM.length;
+  let headH = $state(130);
+  let paraH = $state(220);
+  const TG = $derived.by(() => {
+    const G = L.finale + vh * 0.85; // the scene's top enters from the bottom of the screen here
+    const side = L.desktop ? 32 : 14;
+    const chartW = Math.min(W - side * 2, 880);
+    const x0 = (W - chartW) / 2;
+    const chartH = clamp(vh * 0.6, 300, 560);
+    const gap = L.desktop ? 8 : 4;
+    const bw = (chartW - (TGN - 1) * gap) / TGN;
+    const av = Math.max(18, Math.min(bw - 2, L.desktop ? 44 : 30));
+    const paraOff = headH + 18;
+    const chartOff = paraOff + paraH + 40;
+    const uEnd = chartOff + chartH + 34; // the page ends with the chart sitting at the bottom of the screen
+    // bars rise from a baseline at the chart's foot; if anyone ever goes negative, the baseline lifts
+    // so their bar can hang below it, with the avatar at its lower end
+    const pos = Math.max(0, ...tgM.map((m) => m.total));
+    const neg = Math.max(0, ...tgM.map((m) => -m.total));
+    const room = chartH - (av + 30) * (neg ? 2 : 1);
+    const unit = room / Math.max(1, pos + neg);
+    const base = chartOff + chartH - (neg ? neg * unit + av + 30 : 0);
+    return { G, x0, chartW, chartH, gap, bw, av, paraOff, chartOff, uEnd, base, unit };
+  });
+  const u = $derived(w - TG.G); // how far the scene has scrolled up
+  const tgOn = $derived(u > -60);
+  const pageH = $derived(Math.max(L.pageHeight, TG.G + TG.uEnd - L.P + vh));
+  const headIn = $derived(vh - u < vh * 0.78);
+  const paraIn = $derived(vh - u + TG.paraOff < vh * 0.9);
+  // the bars grow on the clock (left to right, overshooting a touch) once the chart is well in view
+  let grown = $state(false);
+  let growT0 = 0;
+  let tgNow = $state(0);
+  function stepGrow(now: number) {
+    const want = vh - u + TG.chartOff < vh * 0.62;
+    if (want !== grown) {
+      grown = want;
+      growT0 = now;
+    }
+    if (now - growT0 < 2400 || tgNow < growT0) tgNow = now;
+  }
+  const growOf = (i: number) => {
+    if (reduced) return grown ? 1 : 0;
+    const t = tgNow - growT0;
+    return grown ? back(clamp((t - i * 70) / 650)) : 1 - smooth(clamp((t - (TGN - 1 - i) * 18) / 320));
+  };
+  /** 67.75 -> "67¾": a narrow bar can hold it */
+  const fmtTF = (v: number) => {
+    const a = Math.abs(v);
+    const whole = Math.floor(a + 1e-6);
+    const q = Math.round((a - whole) * 4);
+    const frac = ['', '¼', '½', '¾', ''][q];
+    return (v < 0 ? '−' : '') + (q === 4 ? whole + 1 : whole) + frac;
+  };
+
+  // the open bar: same idea as an open column. It widens, rises to the top of the chart, and the
+  // others squeeze into slices (tap one, or swipe, to switch)
+  let tgFocus = $state<number | null>(null);
+  let tgShown = $state(0);
+  let tfz = $state(0);
+  let tgGeo = $state<{ x: number; w: number; r: number }[]>([]);
+  const tgSlice = $derived({ w: L.desktop ? 12 : 6, gap: L.desktop ? 6 : 3 });
+  const tgOpenW = $derived(TG.chartW - (TGN - 1) * (tgSlice.w + tgSlice.gap));
+  const tgPW = $derived(tgOpenW - 16);
+  function tgTarget(i: number, f: number | null) {
+    if (f === null) return { x: TG.x0 + i * (TG.bw + TG.gap), w: TG.bw, r: 0 };
+    const nb = drag ? f + (drag < 0 ? 1 : -1) : -1;
+    const peek = nb >= 0 && nb < TGN ? Math.min(Math.abs(drag) * 0.45, tgOpenW * 0.4) : 0;
+    const width = (k: number) => (k === f ? tgOpenW - peek : k === nb ? tgSlice.w + peek : tgSlice.w);
+    let x = TG.x0;
+    for (let k = 0; k < i; k++) x += width(k) + tgSlice.gap;
+    return { x, w: width(i), r: i === f ? 1 : 0 };
+  }
+  const tgG = (i: number) => tgGeo[i] ?? tgTarget(i, null);
+  const tgReady = () => grown && u > TG.uEnd - vh * 0.22;
+  function tgOpen(i: number) {
+    if (!tgReady() || tgFocus === i) return;
+    tgFocus = tgShown = i;
+  }
+  function tgSwipe(dx: number, ms: number) {
+    drag = 0;
+    if (tgFocus === null) return;
+    const to = tgFocus + (dx < 0 ? 1 : -1);
+    if ((Math.abs(dx) > 60 || Math.abs(dx) / Math.max(ms, 1) > 0.45) && to >= 0 && to < TGN) tgFocus = tgShown = to;
+  }
+  function stepTg() {
+    if (tgFocus !== null && u < TG.uEnd - vh * 0.3) tgFocus = null; // scrolled back up the page: close
+    const k = reduced ? 1 : drag ? 0.3 : 0.15;
+    const ease = (c: number, t: number, eps = 0.2) => (Math.abs(t - c) < eps ? t : c + (t - c) * k);
+    let changed = tgGeo.length !== TGN;
+    const next = Array.from({ length: TGN }, (_, i) => {
+      const t = tgTarget(i, tgFocus);
+      const c = tgGeo[i] ?? t;
+      const n = { x: ease(c.x, t.x), w: ease(c.w, t.w), r: ease(c.r, t.r, 0.003) };
+      if (n.x !== c.x || n.w !== c.w || n.r !== c.r) changed = true;
+      return n;
+    });
+    if (changed) tgGeo = next;
+    const fT = tgFocus === null ? 0 : 1;
+    const nf = Math.abs(fT - tfz) < 0.003 ? fT : tfz + (fT - tfz) * k;
+    if (nf !== tfz) tfz = nf;
+  }
+  // what each bar shows: its top edge (container px), and where the avatar and number sit
+  const tgBars = $derived(
+    tgM.map((m, i) => {
+      const g = tgG(i);
+      const gr = growOf(i);
+      const hNat = Math.max(Math.abs(m.total) * TG.unit * gr, gr > 0.01 ? 6 : 0); // a zero still shows a nub
+      const down = m.total < 0;
+      const top = down ? TG.base : TG.base - hNat;
+      const bot = down ? TG.base + hNat : TG.base;
+      // open, the bar runs from the top of the chart to its foot
+      const t2 = lerp(top, TG.chartOff, g.r);
+      const b2 = lerp(bot, TG.chartOff + TG.chartH, g.r);
+      return { m, i, g, gr, top: t2, h: Math.max(0, b2 - t2), end: down ? bot : top, down };
+    }),
+  );
+  const kindsOf = (m: TgMember) => {
+    const by: Record<string, { label: string; n: number; pts: number }> = {};
+    for (const p of m.penalties) {
+      const k = (by[p.kind] ??= { label: p.label, n: 0, pts: 0 });
+      k.n++;
+      k.pts += p.total;
+    }
+    return Object.values(by).sort((a, b) => b.pts - a.pts);
+  };
+  const tgSeasons = Array.from({ length: Number(tegridy.asOf.season) - 2019 + 1 }, (_, i) => String(2019 + i));
+  const wt = tegridy.weights;
+  const mt = tegridy.multipliers;
+  const wb = [...mt.weeks_before_playoffs].sort((a, b) => b.max_weeks - a.max_weeks); // 3-4 weeks out, then 1-2
   const introO = $derived(1 - clamp(s / (vh * 0.45)));
   const first = (id: string) => people[id].nickname ?? people[id].name.split(' ')[0];
 </script>
@@ -760,14 +906,17 @@
   {/if}
 {/snippet}
 
-<div class="spacer" style:height="{L.pageHeight}px"></div>
+<div class="spacer" style:height="{pageH}px"></div>
 
-<div class="stage" class:reduced style:height="{vh}px" style:touch-action={focus !== null ? 'pan-y' : null}>
+<div class="stage" class:reduced style:height="{vh}px" style:touch-action={focus !== null || tgFocus !== null ? 'pan-y' : null}>
   <!-- columns: nothing is ever drawn over these except their own markers -->
   <div
     class="field"
     style:--fade="{L.headerY * 2 + 26}px"
     style:--cw="{L.cw}px"
+    style:transform={sinkTf}
+    style:opacity={sink ? Math.pow(1 - sink, 1.4) : null}
+    style:visibility={sink >= 1 ? 'hidden' : null}
   >
     {#each field.cols as c (c.key)}
       <button
@@ -954,6 +1103,139 @@
     </div>
   {/if}
 
+  <!-- Tegridy Factor: the last word -->
+  {#if tgOn}
+    <section class="tg" aria-label="Tegridy Factor" style:width="{W}px" style:height="{TG.uEnd}px" style:transform="translate3d(0,{(vh - u).toFixed(1)}px,0)">
+      <h2 class="tghead display" class:in={headIn} bind:clientHeight={headH} style:left="{TG.x0}px" style:font-size="calc({L.desktop ? 104 : 64}px * var(--display-scale))">
+        Tegridy<br />Facto<span class="r">r<img class="sticker" src="{import.meta.env.BASE_URL}tegridy/sticker.png" alt="An “I got tegridy” sticker" draggable="false" /></span>
+      </h2>
+      <p class="tgpara" class:in={paraIn} bind:clientHeight={paraH} style:left="{TG.x0}px" style:width="{Math.min(TG.chartW, 560)}px" style:top="{TG.paraOff}px">
+        Golf rules: lower is better. Everyone starts at zero, and only fair-play violations add to it. A bad lineup is just a bad lineup.
+        Starting a player on a bye costs <b>{wt.bye_week_starter}</b>. Starting someone listed Out costs <b>{wt.injured_starter_out}</b>, a Questionable
+        player who then didn’t play <b>{wt.questionable_did_not_play}</b>, and a Doubtful one who scored nothing <b>{wt.injured_starter_doubtful}</b>.
+        Skipping the annual league note costs <b>{wt.missed_league_note}</b>. The closer to the playoffs, the more it hurts:
+        <b>×{wb[0]?.multiplier}</b> three or four weeks out, <b>×{wb[1]?.multiplier}</b> in the last two, and <b>×{mt.in_playoffs}</b> in a playoff
+        game that still matters. Sleeper years only, 2019 on.
+      </p>
+
+      <!-- the chart: every bar is that member's ribbon -->
+      <i class="tgbase" style:left="{TG.x0}px" style:width="{TG.chartW}px" style:top="{TG.base}px" style:opacity={growOf(0) > 0 ? 1 : 0}></i>
+      {#each tgBars as b (b.m.person)}
+        {@const e = edgesOf(b.m.person)}
+        {@const p = people[b.m.person]}
+        <button
+          class="col tgbar"
+          class:founder={!!p.founder}
+          class:dotted={!p.founder}
+          class:chev={e.chev > 0}
+          class:chev2={e.chev2 > 0.5}
+          aria-label="{p.name}: Tegridy Factor {b.m.total}"
+          style:--chev={e.chev}
+          style:--tone={p.color}
+          style:--g="0"
+          style:--py="0px"
+          style:--lit="99999px"
+          style:--cw="{TG.bw}px"
+          style:width="{b.g.w}px"
+          style:height="{b.h}px"
+          style:transform="translate3d({b.g.x}px,{b.top}px,0)"
+          onclick={() => tgOpen(b.i)}
+        >
+          {#if e.gold > 0}<i class="edge gold" style:opacity={e.gold}></i>{/if}
+          {#if e.plat > 0}<i class="edge plat" style:opacity={e.plat}></i>{/if}
+        </button>
+        {#if b.gr > 0.01 && tfz < 0.99}
+          <!-- the number at the bar's end, the avatar just past it -->
+          {@const cx = b.g.x + b.g.w / 2}
+          <b class="tgval" style:opacity={(1 - tfz) * clamp(b.gr * 3)} style:transform="translate3d({cx}px,{b.down ? b.end + 4 : b.end - 17}px,0) translateX(-50%)">{fmtTF(b.m.total * Math.min(1, b.gr))}</b>
+          <button
+            class="tgav"
+            aria-label="Open {p.name}'s Tegridy breakdown"
+            tabindex={tgReady() ? 0 : -1}
+            style:opacity={(1 - tfz) * clamp(b.gr * 3)}
+            style:pointer-events={tfz > 0.5 ? 'none' : null}
+            style:transform="translate3d({cx - TG.av / 2}px,{b.down ? b.end + 20 : b.end - 21 - TG.av}px,0)"
+            onclick={() => tgOpen(b.i)}
+          ><Avatar id={b.m.person} size={TG.av} /></button>
+        {/if}
+      {/each}
+      {#if tfz > 0.01}
+        <!-- slices are thin; give them a fatter target -->
+        {#each tgBars as b (b.m.person)}
+          {#if b.i !== tgFocus}
+            <button class="slicehit tgslice" aria-label="Open {people[b.m.person].name}" style:width="{b.g.w + tgSlice.gap}px" style:height="{TG.chartH}px" style:transform="translate3d({b.g.x - tgSlice.gap / 2}px,{TG.chartOff}px,0)" onclick={() => tgOpen(b.i)}></button>
+          {/if}
+        {/each}
+      {/if}
+      <!-- the open bar's glass: clipped to its bar, so it's pulled in and out with it -->
+      {#each tgBars as b (b.m.person)}
+        {#if b.g.r > 0.02}
+          {@const m = b.m}
+          <div class="pclip tgclip" style:--o={b.g.r} style:width="{Math.max(0, b.g.w)}px" style:height="{TG.chartH}px" style:transform="translate3d({b.g.x}px,{TG.chartOff}px,0)">
+            <div
+              class="panel"
+              style:pointer-events={b.i === tgFocus && tfz > 0.6 ? 'auto' : 'none'}
+              style:width="{tgPW}px"
+              style:height="{TG.chartH - 16}px"
+              style:transform="translate3d({(b.g.w - tgPW) / 2}px,8px,0) scale({lerp(0.94, 1, b.g.r)})"
+            >
+              <Glass full pad="0">
+                <div class="pbody">
+                  <div class="top">
+                    <div class="who">
+                      <Avatar id={m.person} size={L.desktop ? 52 : 40} />
+                      <span><b class="display">{people[m.person].name}</b><small>Tegridy rank {m.rank} of {TGN} · lower is better</small></span>
+                    </div>
+                    <div class="yr display"><Roll value={fmtTF(m.total)} /></div>
+                    <p class="tally">
+                      {#if m.penalties.length}{m.penalties.length} penalt{m.penalties.length > 1 ? 'ies' : 'y'} · {m.cleanSeasons.length} clean season{m.cleanSeasons.length === 1 ? '' : 's'}{:else}Not one penalty since 2019. A clean sheet.{/if}
+                    </p>
+                    <button class="minimize tgmin" aria-label="Back to the chart" onclick={() => (tgFocus = null)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4l-6 6M14 5v5h5M4 20l6-6M10 19v-5H5" /></svg></button>
+                  </div>
+                  <div class="more" use:moreFade>
+                    <div class="inner tgx">
+                      {#if m.penalties.length}
+                        <h4>What it’s made of</h4>
+                        {#each kindsOf(m) as k (k.label)}
+                          <div class="kind">
+                            <i style:width="{(k.pts / m.total) * 100}%"></i>
+                            <span>{k.label}{k.n > 1 ? ` ×${k.n}` : ''}</span><b>{fmtTF(k.pts)}</b>
+                          </div>
+                        {/each}
+                      {/if}
+                      <h4>By season</h4>
+                      <div class="seasons">
+                        {#each tgSeasons as y (y)}
+                          {@const v = m.bySeason[y] ?? 0}
+                          <span class:clean={!v}><small>{y.slice(2)}</small><b>{v ? fmtTF(v) : '✓'}</b></span>
+                        {/each}
+                      </div>
+                      {#if m.penalties.length}
+                        <h4>Every penalty</h4>
+                        <ul class="pens">
+                          {#each m.penalties as pn (pn.id)}
+                            <li>
+                              <small>{pn.season}{pn.week ? ` · Week ${pn.week}` : ''}</small>
+                              <p>{pn.headline}</p>
+                              <b>{pn.base}{pn.mult !== 1 ? ` × ${pn.mult}` : ''} = {fmtTF(pn.total)}</b>
+                            </li>
+                          {/each}
+                        </ul>
+                      {/if}
+                    </div>
+                  </div>
+                </div>
+              </Glass>
+            </div>
+          </div>
+        {/if}
+      {/each}
+      <p class="tgfine" style:left="{TG.x0}px" style:width="{TG.chartW - 44}px" style:top="{TG.chartOff + TG.chartH + 10}px" style:opacity={growOf(TGN - 1) > 0.5 ? 1 : 0}>
+        Current members · through week {tegridy.asOf.last_scored_week} of {tegridy.asOf.season}. Tap a bar for the receipts.
+      </p>
+    </section>
+  {/if}
+
   <!-- intro -->
   {#if introO > 0}
     <div class="intro" style:opacity={introO} style:transform="translate3d(0,{-s * 0.35}px,0)">
@@ -964,7 +1246,7 @@
   {/if}
 
   <!-- header -->
-  <div class="header" style:height="{L.headerY * 2 - 6}px" style:opacity={started}></div>
+  <div class="header" style:height="{L.headerY * 2 - 6}px" style:opacity={started * (1 - sink)}></div>
   {#if pileCount > 0}
     <!-- the dim behind a burst pile; tap it to put them back -->
     <button
@@ -991,8 +1273,8 @@
         style:width="{L.av}px"
         style:height="{L.av}px"
         style:z-index={zOf(a)}
-        style:opacity={a.st.opacity * (1 - fz)}
-        style:pointer-events={fz > 0.5 ? 'none' : null}
+        style:opacity={a.st.opacity * (1 - fz) * Math.pow(1 - sink, 1.4)}
+        style:pointer-events={fz > 0.5 || sink > 0.5 ? 'none' : null}
         style:--glow={a.st.flying}
         style:--win={h?.win ?? 0}
         style:--win-tone={h?.winSilver ? '#dfe5ea' : 'var(--gold)'}        style:--gray={fanned && ip !== undefined ? 0.35 : grayOf(a.st)}
@@ -1041,8 +1323,8 @@
       class="pile"
       aria-label="Alumni, {pileCount} people"
       aria-expanded={fanned}
-      style:opacity={1 - fz}
-      style:pointer-events={fz > 0.5 ? 'none' : null}
+      style:opacity={(1 - fz) * (1 - sink)}
+      style:pointer-events={fz > 0.5 || sink > 0.5 ? 'none' : null}
       style:transform="translate3d({L.pile.x - 31}px,{L.pile.y - 22}px,0) scale({1 + pileBump * 0.12})"
       onclick={toggleFan}
     >
@@ -1051,7 +1333,7 @@
   {/if}
 
   <!-- the year scrubber -->
-  <Scrubber {L} {fi} opacity={started} {reduced} onpreview={(pw) => (previewW = pw)} />
+  <Scrubber {L} {fi} opacity={started * (1 - sink)} {reduced} onpreview={(pw) => (previewW = pw)} />
 
   <!-- temporary: type set switcher for the design review -->
   <button class="typeswitch" onclick={() => setType(TYPES[(TYPES.indexOf(type) + 1) % TYPES.length])} aria-label="Switch typeface set, now {type.toUpperCase()}">{type.toUpperCase()}</button>
@@ -1381,6 +1663,228 @@
     stroke-linecap: round;
     stroke-linejoin: round;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+  }
+
+  /* Tegridy Factor */
+  .tg {
+    z-index: 20;
+    pointer-events: none;
+    will-change: transform; /* not opacity: that would switch the glass's frosting off */
+  }
+  .tg > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: auto;
+  }
+  .tghead {
+    margin: 0;
+    line-height: 0.92;
+    letter-spacing: 0.005em;
+    color: #fff;
+    text-transform: uppercase;
+    transform-origin: 0 100%;
+    opacity: 0;
+    transform: translateY(18px) scale(0.86);
+    transition:
+      opacity 160ms ease-in,
+      transform 200ms ease-in;
+  }
+  .tghead.in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    /* pops in, then takes the sticker's thud */
+    animation:
+      tgpop 560ms cubic-bezier(0.2, 1.5, 0.4, 1) both,
+      tgthud 300ms ease-out 640ms;
+  }
+  @keyframes tgpop {
+    from {
+      opacity: 0;
+      transform: translateY(26px) scale(0.6);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes tgthud {
+    0% {
+      transform: none;
+    }
+    30% {
+      transform: translateY(3px) scaleY(0.98);
+    }
+    100% {
+      transform: none;
+    }
+  }
+  .tghead .r {
+    position: relative;
+    display: inline-block;
+  }
+  .sticker {
+    /* slapped on, overlapping the r a little */
+    position: absolute;
+    left: 0.36em;
+    top: -0.5em;
+    width: 1.32em;
+    height: 1.32em;
+    max-width: none;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    transform: translate(18%, -30%) rotate(-42deg) scale(2.5);
+    transition:
+      opacity 120ms ease-in,
+      transform 160ms ease-in;
+  }
+  .in .sticker {
+    opacity: 1;
+    transform: rotate(-13deg);
+    transition:
+      opacity 90ms linear 600ms,
+      transform 300ms cubic-bezier(0.3, 1.35, 0.5, 1) 600ms;
+  }
+  .tgpara {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 200ms ease-in,
+      transform 200ms ease-in;
+  }
+  .tgpara.in {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 500ms ease-out 120ms,
+      transform 700ms cubic-bezier(0.2, 1, 0.3, 1) 120ms;
+  }
+  .tgpara b {
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .tgbase {
+    height: 1px;
+    background: var(--line);
+    transition: opacity 300ms;
+  }
+  .tgbar {
+    will-change: transform, width, height;
+  }
+  .tgval {
+    font-size: 11px;
+    font-weight: 800;
+    color: #fff;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+  }
+  .tgav {
+    line-height: 0;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+  }
+  .tgfine {
+    margin: 0;
+    font-size: 11px;
+    color: var(--ink-2);
+    transition: opacity 400ms;
+  }
+  .tg > .tgclip {
+    z-index: 9;
+    pointer-events: none;
+  }
+  .tg .panel .top {
+    position: relative;
+    padding-right: 44px;
+  }
+  .tgmin {
+    position: absolute;
+    top: 2px;
+    right: 0;
+  }
+  .tgx h4 {
+    margin: 14px 0 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .kind {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 7px 8px;
+    margin-bottom: 4px;
+    font-size: 13px;
+    overflow: hidden;
+  }
+  .kind > * {
+    position: relative;
+  }
+  .kind i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.34);
+  }
+  .kind {
+    background: rgba(0, 0, 0, 0.12);
+  }
+  .kind b {
+    font-variant-numeric: tabular-nums;
+  }
+  .seasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
+    gap: 4px;
+  }
+  .seasons span {
+    display: grid;
+    justify-items: center;
+    padding: 5px 0;
+    background: rgba(0, 0, 0, 0.28);
+    font-variant-numeric: tabular-nums;
+  }
+  .seasons span.clean {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .seasons small {
+    font-size: 10px;
+  }
+  .seasons b {
+    font-size: 13px;
+  }
+  .pens {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .pens li {
+    padding: 9px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .pens small {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .pens p {
+    margin: 3px 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .pens b {
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
   }
 
   /* photos */

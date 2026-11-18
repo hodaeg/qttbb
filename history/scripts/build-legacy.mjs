@@ -57,3 +57,48 @@ const out = {
 mkdirSync(resolve(root, 'src/generated'), { recursive: true });
 writeFileSync(resolve(root, 'src/generated/legacy.json'), JSON.stringify(out, null, 1));
 console.log(`legacy: ${rankings.length} ranked, ${Object.keys(seasons).length} seasons (as of ${lr.as_of.season} week ${lr.as_of.last_scored_week})`);
+
+// ---- Tegridy Factor: each current member's total, rank and every penalty that counted (2019+, Sleeper era)
+const config = read('../config/league.json').tegridy;
+const allPen = read('../data/processed/penalties.json').penalties;
+const index = read('../data/processed/owner_profiles/index.json');
+const owners = (Array.isArray(index) ? index : (index.owners ?? index.profiles ?? Object.values(index))).filter((o) => o && o.owner_id);
+const tg = [];
+const firstOf = (id) => {
+  const p = people.find((x) => x.id === id);
+  return p.nickname ?? p.name.split(' ')[0];
+};
+for (const o of owners) {
+  const prof = read(`../data/processed/owner_profiles/${o.owner_id}.json`);
+  if (!prof.in_current_league) continue;
+  const person = bySleeper[prof.display_name];
+  if (!person) throw new Error(`No person in people.json has the sleeper name "${prof.display_name}"`);
+  const t = prof.tegridy_factor;
+  const pens = allPen
+    .filter((p) => p.counts && p.manager.owner_id === o.owner_id)
+    .map((p) => ({
+      id: p.id,
+      kind: p.kind,
+      label: p.label,
+      season: Number(p.season),
+      week: p.week ?? null,
+      headline: p.headline
+        .split(prof.display_name)
+        .join(firstOf(person))
+        .replace(/ at \d{4}-\d\d-\d\dT[\d:.]+(?:Z|[+-]\d\d:\d\d)/g, ''), // "Out at 2026-11-10T04:36:01+00:00" -> "Out"
+      base: p.penalty.base,
+      mult: p.penalty.multiplier,
+      total: p.penalty.total,
+      when: p.timing?.phase ?? null,
+    }))
+    .sort((a, b) => a.season - b.season || (a.week ?? 99) - (b.week ?? 99));
+  const sum = pens.reduce((s, p) => s + p.total, 0);
+  if (Math.abs(sum - t.total) > 0.01) throw new Error(`Tegridy for ${person}: penalties add to ${sum}, profile says ${t.total}`);
+  tg.push({ person, total: t.total, rank: t.rank, bySeason: t.by_season, cleanSeasons: t.clean_seasons ?? [], penalties: pens });
+}
+tg.sort((a, b) => a.total - b.total || a.person.localeCompare(b.person));
+writeFileSync(
+  resolve(root, 'src/generated/tegridy.json'),
+  JSON.stringify({ weights: config.weights, multipliers: config.multipliers, asOf: lr.as_of, members: tg }, null, 1),
+);
+console.log(`tegridy: ${tg.length} members, ${tg.reduce((n, m) => n + m.penalties.length, 0)} penalties`);

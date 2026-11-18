@@ -6,6 +6,7 @@ import rosterFile from '../../content/roster.json';
 import storyFile from '../../content/story.json';
 import connFile from '../../content/connections.json';
 import legacyFile from '../generated/legacy.json';
+import tegridyFile from '../generated/tegridy.json';
 
 export type Person = {
   id: string; name: string; nickname: string | null; initials: string; role: 'member' | 'outsider';
@@ -38,6 +39,16 @@ export const legacy = legacyFile as {
   seasons: Record<string, SeasonInfo>;
 };
 export const legacyOf = Object.fromEntries(legacy.rankings.map((r) => [r.person, r]));
+
+// Tegridy Factor (2019+, from the data pipeline): current members, lowest (best) first
+export type TgPenalty = { id: string; kind: string; label: string; season: number; week: number | null; headline: string; base: number; mult: number; total: number; when: string | null };
+export type TgMember = { person: string; total: number; rank: number; bySeason: Record<string, number>; cleanSeasons: string[]; penalties: TgPenalty[] };
+export const tegridy = tegridyFile as {
+  weights: Record<string, number>;
+  multipliers: { in_playoffs: number; weeks_before_playoffs: { max_weeks: number; multiplier: number }[]; default: number };
+  asOf: { season: string; last_scored_week: number };
+  members: TgMember[];
+};
 
 export const FIRST = rosterFile.firstSeason;
 export const LAST = rosterFile.currentThrough;
