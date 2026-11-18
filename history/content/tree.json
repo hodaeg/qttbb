@@ -1,0 +1,35 @@
+{
+  "_about": "The family tree: how everyone traces back to Dustin and Doug. One parent ('via') per person, the one who brought them in; 'how' is the caption, from the child's side. Order matters: each parent's children grow in the order listed. Friends of the league who aren't on an origin path (Tim Underhill, Alex Hoover, Adam Field, Jake) are left out on purpose.",
+  "root": { "id": "dustin-sadnick", "how": "Where it all starts" },
+  "people": [
+    { "id": "doug-comes", "via": "dustin-sadnick", "how": "Dustin's freshman roommate at Winona State", "year": 2002 },
+    { "id": "tim-comes", "via": "doug-comes", "how": "Doug's brother" },
+    { "id": "luke-reinardy", "via": "tim-comes", "how": "Tim's freshman roommate", "year": 2009 },
+    { "id": "kalyn-reinardy", "via": "luke-reinardy", "how": "Luke's little sister" },
+    { "id": "andy-althoff", "via": "luke-reinardy", "how": "Grew up with Luke" },
+    { "id": "jon-petters", "via": "tim-comes", "how": "Tim's frat", "year": 2012 },
+
+    { "id": "levi-nellen", "via": "dustin-sadnick", "how": "Dustin's brother" },
+    { "id": "nate-mehlhoff", "via": "levi-nellen", "how": "Levi's freshman roommate", "year": 2009 },
+    { "id": "max-christensen", "via": "nate-mehlhoff", "how": "Nate's high school friend" },
+    { "id": "jared-haldemann", "via": "max-christensen", "how": "Max's freshman roommate", "year": 2009 },
+    { "id": "toby-bachuber", "via": "max-christensen", "how": "Max's dorm neighbor", "year": 2009 },
+    { "id": "alex-randall", "via": "max-christensen", "how": "Max's pal: the high school visit weekend", "year": 2008 },
+    { "id": "sam-schurman", "via": "alex-randall", "how": "Alex's high school friend" },
+    { "id": "zaid-hunitie", "via": "nate-mehlhoff", "how": "Nate's high school friend" },
+    { "id": "gabe-warneke", "via": "zaid-hunitie", "how": "Zaid's marketing project partner", "year": 2016 },
+    { "id": "stephen-rydberg", "via": "nate-mehlhoff", "how": "High school with Nate, Max and Zaid" },
+    { "id": "ben-rydberg", "via": "stephen-rydberg", "how": "Stephen's little brother" },
+    { "id": "dave-skradski", "via": "nate-mehlhoff", "how": "High school with Nate, Max, Zaid and the Rydbergs" },
+    { "id": "megan-hardie", "via": "levi-nellen", "how": "Freshman year friend", "year": 2009 },
+    { "id": "kennedy-curtis", "via": "megan-hardie", "how": "Megan's dorm neighbor", "year": 2009 },
+    { "id": "callan-curtis", "via": "kennedy-curtis", "how": "Kennedy's brother" },
+    { "id": "dominic-morelli", "via": "levi-nellen", "how": "Levi's dorm neighbor at Prentiss-Lucas", "year": 2009 },
+    { "id": "kyle-mont-blanc", "via": "levi-nellen", "how": "Levi's English classes", "year": 2010 },
+    { "id": "fish", "via": "kyle-mont-blanc", "how": "Kyle's high school friend" },
+    { "id": "jordan-morris", "via": "fish", "how": "Fish's West Campus dorm mate" },
+    { "id": "adam-herr", "via": "levi-nellen", "how": "Levi's high school friend" },
+    { "id": "mike-whiting", "via": "adam-herr", "how": "Adam's class project partner; bonded over wrestling", "year": 2011 },
+    { "id": "josh-susee", "via": "levi-nellen", "how": "Levi's high school friend" }
+  ]
+}

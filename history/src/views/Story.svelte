@@ -12,6 +12,7 @@
   import Glass from './Glass.svelte';
   import CardView from './Card.svelte';
   import HodagLogo from './HodagLogo.svelte';
+  import OriginTree, { treeLayout } from './OriginTree.svelte';
   import Scrubber from './Scrubber.svelte';
   import PersonPanel from './PersonPanel.svelte';
   import Roll from './Roll.svelte';
@@ -106,7 +107,7 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     // dev only: jump straight to a scroll position, skipping the easing (for testing in a throttled pane)
     if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__jump = (y: number) => (window.scrollTo(0, y), (s = y));
-    if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__dbg = () => ({ vh, innerH, inset, W, pageH, P: L.P, G: TG.G, uEnd: TG.uEnd, uEndReal, logoOff: TG.logoOff, logoH: TG.logoH, u, s, logoQ, logoRest });
+    if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__dbg = () => ({ trTop, trLen: TR.len, vh, innerH, inset, W, pageH, P: L.P, G: TG.G, uEnd: TG.uEnd, uEndReal, logoOff: TG.logoOff, logoH: TG.logoH, u, s, logoQ, logoRest });
     let raf = 0;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') (focus = null), (tgFocus = null), zoomKey && zoomPhoto(null);
@@ -879,8 +880,13 @@
   const TGN = tgM.length;
   let headH = $state(130);
   let paraH = $state(220);
+  // ---- the family tree: once the ribbons have run out, how everyone traces back to Dustin and Doug. It
+  // scrolls up from below like a page, growing as it goes; Tegridy follows it.
+  const TR = $derived(treeLayout(W, L.desktop, vh));
+  const trTop = $derived(L.finale + vh * 0.5); // its top enters from the bottom of the screen here
+  const uT = $derived(w - trTop);
   const TG = $derived.by(() => {
-    const G = L.finale + vh * 0.5; // the scene's top enters from the bottom of the screen here
+    const G = trTop + TR.len; // the scene's top enters from the bottom of the screen here
     const side = L.desktop ? 32 : 14;
     const chartW = Math.min(W - side * 2, 880);
     const x0 = (W - chartW) / 2;
@@ -1441,6 +1447,12 @@
   {/if}
 
   <!-- Tegridy Factor: the last word -->
+  {#if uT > -60 && uT < TR.len + vh + 200}
+    <section class="tree" aria-label="Family tree" style:width="{W}px" style:height="{TR.end + 20}px" style:transform="translate3d(0,{(vh - uT).toFixed(1)}px,0)">
+      <OriginTree T={TR} u={uT} {vh} desktop={L.desktop} {onperson} />
+    </section>
+  {/if}
+
   {#if tgOn}
     <section class="tg" aria-label="Tegridy Factor" style:width="{W}px" style:height="{TG.uEnd}px" style:transform="translate3d(0,{(vh - u).toFixed(1)}px,0)">
       <h2 class="tghead display" class:in={headIn} bind:clientHeight={headH} style:left="{TG.x0}px" style:font-size="calc({L.desktop ? 104 : 64}px * var(--display-scale))">
@@ -2176,6 +2188,9 @@
   }
 
   /* Tegridy Factor */
+  .tree {
+    z-index: 20;
+  }
   .tg {
     z-index: 20;
     pointer-events: none;

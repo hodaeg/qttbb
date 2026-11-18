@@ -659,3 +659,11 @@ A long person sheet could fill the whole screen on iPhone, leaving no backdrop t
 
 ### D82 — History app: the season strip on an opened ribbon reads — Accepted
 D81 misread "year blips". Levi meant the row of season squares on an opened ribbon's panel: played seasons were filled with the member's colour, the same colour as the ribbon behind, so they washed out. On the ribbon (`.bare`), played seasons are now near-white (tinted 18% toward the member's colour) and the others are dark recesses. The sheet keeps the colour fill. D81's brighter scrubber and year lines are reverted.
+
+### D83 — History app: the Family Tree, between the ribbons and Tegridy — Accepted
+With connections cut down to origins only (no "introduced by", no later roommates), the data is close to a tree, so it gets a section of its own after the ribbons run out and before Tegridy.
+- **Data:** `content/tree.json` gives one parent per person (`via`, whoever brought them in), with a caption from the child's side and a year where known. Dustin is the root and Doug is his freshman roommate, so the tree starts with both. Friends of the league who aren't on an origin path are left out: Tim Underhill, Alex Hoover, Adam Field and Jake.
+- **Look:** an outline tree in the app's ribbon language. Each person's ribbon, in their colour (grey for non-members), peels off the ribbon of whoever brought them in, with a rounded elbow, and runs down to the last person they brought in. Rows show the avatar, the name (nickname if different), the caption and the year.
+- **Motion:** it grows with the scroll, as a pure function of it like everything else. A growth front at 80% of the screen draws the ribbons down; each arrival draws its branch, pops its avatar and slides its words in.
+- **Interaction:** tapping a row opens that person's sheet.
+- **Placement:** `OriginTree.svelte` exports `treeLayout()` so the story knows its length, and Tegridy now starts after it.
