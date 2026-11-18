@@ -1611,7 +1611,7 @@
           style:--lit="99999px"
           style:width="{L.cw}px"
           style:height="{vh + 80}px"
-          style:transform="translate3d({ghostX0 + slot * (L.cw + L.gap)}px,-40px,0)"
+          style:transform="translate3d({ghostX0 + slot * (L.cw + L.gap) + sway(slot) * (1 - ghostR)}px,-40px,0)"
         ></i>
       {/each}
     </div>
@@ -1623,7 +1623,6 @@
       <!-- the title is the founders' ribbons in full colour, bunched up into letters (a painted copy of the
            columns behind, lined up with them, clipped to the type) -->
       <h1 class="display title" style:--ribbons={titleRibbons} style:--rw="{L.fieldW}px" use:fitTitle={ghostX0}><span>Bria Bowl</span><span class="origins">Origins</span></h1>
-      <p class="lede">How twelve friends ended up in one fantasy football league, and who we lost along the way.</p>
       <span class="hint" aria-hidden="true">Scroll<i></i></span>
     </div>
   {/if}
@@ -2731,7 +2730,7 @@
     top: 0;
     left: 0;
     pointer-events: none;
-    filter: saturate(0.12) brightness(0.5); /* drained: the title's colour is the only colour */
+    filter: saturate(0.1) brightness(0.36); /* drained and dark: the title's colour is the only colour */
   }
   .lede {
     margin: 22px 0 0;

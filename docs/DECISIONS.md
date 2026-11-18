@@ -639,3 +639,6 @@ Fix: `build.cssMinify: false` in `vite.config.ts` (esbuild isn't bundled with Vi
   - It comes up sooner after the chart (0.36 of a screen, not 0.62), with a small "Created by" above it.
   - The falling blood is now the artwork's own drop shapes (from Levi's SVG): each forms on the tip of the drip above it, falls through its spot in the artwork onto DIGITAL, splats and runs down the letter, on a loop.
 - **Footer.** It sits higher, with bottom padding plus the safe area.
+
+### D79 — History app: barer, darker title screen; ghost ribbons sway — Accepted
+The line under the title ("How twelve friends…") is gone. The ghost ribbons are darker (`saturate(0.1) brightness(0.36)`), so the colour title pops. While scrolling, they sway side to side like the real ribbons (the same `sway`, driven by scroll speed), easing off as they blur and fall away.
