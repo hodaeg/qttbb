@@ -493,3 +493,7 @@ Because the site shows personal data, it opens on a lock (`src/views/Lock.svelte
   - Once opened on a device it stays open there (localStorage).
 - **The combination** is Levi's (the house, 71 Johnson). Only a SHA-256 fingerprint of it is in the code.
 - **Limits, stated plainly.** This keeps casual visitors out; it is not security. The repo and therefore the data are public (D-entry 2026-11-16), and 5,000 combinations can be tried by anyone determined. Real protection would mean taking the data out of the public repo and serving it from somewhere that checks the combination server-side.
+
+### D64 — History app: tap the ribbon to close; a burnt-in Return under the glass — Accepted
+- The expand/minimize button on an open column (and on an open Integridy bar) is gone. Tapping the open ribbon again, anywhere outside the glass card, closes it.
+- A "Return" text button sits on the ribbon just under the glass card, "burnt" in: a dark shade of that ribbon's own colour (`color-mix(tone 40%, black)`) with a lit lower lip and a faint scorched halo. Tapped, it backs up under the glass card as the column closes. Panels leave room for it (54px), so it never falls off the screen. Integridy bars get the same treatment.

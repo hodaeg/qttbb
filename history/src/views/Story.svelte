@@ -262,7 +262,16 @@
     openSlot(slot);
     return true;
   }
-  const tapCol = openSlot;
+  // tap a ribbon to open it; tap the open one again to close it
+  const tapCol = (slot: number) => (focus === slot ? (focus = null) : openSlot(slot));
+  // the burnt-in Return under the glass: tapped, it backs up under the card as the column closes
+  const RET = 54; // room kept under each panel for it
+  let backing = $state<string | null>(null);
+  function goBack(key: string, close: () => void) {
+    backing = key;
+    window.setTimeout(close, reduced ? 0 : 170);
+    window.setTimeout(() => (backing = null), reduced ? 0 : 700);
+  }
 
   // Swiping sideways on an open column moves to the next one. The neighbour opens a little under
   // the finger as you drag; let go past ~60px (or flick) and it takes over, otherwise it springs back.
@@ -541,12 +550,12 @@
       const m = nat[key] ?? { n: vh * 0.6, t: 150 };
       const y0 = Math.max(stick, tip + 10);
       const segLimit = bot - 10;
-      let h = Math.min(m.n, Math.min(vh - 12, segLimit) - y0);
+      let h = Math.min(m.n, Math.min(vh - 12 - RET, segLimit - RET) - y0);
       let y = y0;
       const minH = Math.min(m.n, m.t + 96);
       if (h < minH) {
         h = minH;
-        y = Math.min(y0, segLimit - h);
+        y = Math.min(y0, segLimit - RET - h);
       }
       const yr = clamp(yrNow, seg.start, seg.end);
       const p = seg.person;
@@ -844,7 +853,8 @@
   const tgG = (i: number) => tgGeo[i] ?? tgTarget(i, null);
   const tgReady = () => grown && u > TG.chartEnd - vh * 0.22 && u < TG.chartEnd + vh * 0.3;
   function tgOpen(i: number) {
-    if (!tgReady() || tgFocus === i) return;
+    if (tgFocus === i) return void (tgFocus = null); // tap the open bar again to close it
+    if (!tgReady()) return;
     tgFocus = tgShown = i;
   }
   function tgSwipe(dx: number, ms: number) {
@@ -1071,6 +1081,17 @@
         style:transform="translate3d({pc.g.x}px,0,0)"
       >
         {#each pc.list as pn (pn.key)}
+          <!-- Return, burnt into the ribbon just under the card (drawn beneath the glass, so it can back up under it) -->
+          <button
+            class="ret"
+            class:back={backing === pn.key}
+            style:--tone={people[pn.person].color}
+            style:opacity={pc.k === shown ? fz : 0}
+            style:pointer-events={pc.k === focus && fz > 0.6 ? 'auto' : 'none'}
+            style:width="{PW}px"
+            style:transform="translate3d({pc.pull.x}px,{pn.y + pn.h + 6}px,0)"
+            onclick={() => goBack(pn.key, () => (focus = null))}
+          >Return</button>
           <div
             class="panel"
             style:pointer-events={pc.k === focus && fz > 0.6 ? 'auto' : 'none'}
@@ -1107,14 +1128,6 @@
         {/each}
       </div>
     {/each}
-    <button
-      class="minimize"
-      aria-label="Back to the story"
-      style:opacity={fz}
-      style:pointer-events={focus !== null ? 'auto' : 'none'}
-      style:transform="translate3d({gOf(shown).x + gOf(shown).w - 44}px,{Math.max(0, L.headerY - 22)}px,0)"
-      onclick={() => (focus = null)}
-    ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4l-6 6M14 5v5h5M4 20l6-6M10 19v-5H5" /></svg></button>
   {/if}
 
   <!-- finale -->
@@ -1212,11 +1225,21 @@
         {#if b.g.r > 0.02}
           {@const m = b.m}
           <div class="pclip tgclip" style:--o={b.g.r} style:width="{Math.max(0, b.g.w)}px" style:height="{TG.chartH}px" style:transform="translate3d({b.g.x}px,{TG.chartOff}px,0)">
+            <button
+              class="ret"
+              class:back={backing === b.m.person}
+              style:--tone={people[b.m.person].color}
+              style:opacity={b.g.r}
+              style:pointer-events={b.i === tgFocus && tfz > 0.6 ? 'auto' : 'none'}
+              style:width="{tgPW}px"
+              style:transform="translate3d({(b.g.w - tgPW) / 2}px,{TG.chartH - RET + 2}px,0)"
+              onclick={() => goBack(b.m.person, () => (tgFocus = null))}
+            >Return</button>
             <div
               class="panel"
               style:pointer-events={b.i === tgFocus && tfz > 0.6 ? 'auto' : 'none'}
               style:width="{tgPW}px"
-              style:height="{TG.chartH - 16}px"
+              style:height="{TG.chartH - 16 - RET}px"
               style:transform="translate3d({(b.g.w - tgPW) / 2}px,8px,0) scale({lerp(0.94, 1, b.g.r)})"
             >
               <Glass full pad="0">
@@ -1230,7 +1253,6 @@
                     <p class="tally">
                       {#if m.penalties.length}{m.penalties.length} penalt{m.penalties.length > 1 ? 'ies' : 'y'} · {m.cleanSeasons.length} clean season{m.cleanSeasons.length === 1 ? '' : 's'}{:else}Not one penalty since 2019. A clean sheet.{/if}
                     </p>
-                    <button class="minimize tgmin" aria-label="Back to the chart" onclick={() => (tgFocus = null)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4l-6 6M14 5v5h5M4 20l6-6M10 19v-5H5" /></svg></button>
                   </div>
                   <div class="more" use:moreFade>
                     <div class="inner tgx">
@@ -1697,24 +1719,6 @@
     font-size: 12px;
     color: var(--ink-2);
   }
-  .minimize {
-    z-index: 9;
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    color: var(--ink);
-  }
-  .minimize svg {
-    width: 22px;
-    height: 22px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
-  }
 
   /* Integridy Factor */
   .tg {
@@ -1915,12 +1919,36 @@
   }
   .tg .panel .top {
     position: relative;
-    padding-right: 44px;
   }
-  .tgmin {
+  /* Return: burnt into the ribbon, a dark shade of its own colour with a lit lower lip, like a brand */
+  .ret {
     position: absolute;
-    top: 2px;
-    right: 0;
+    top: 0;
+    left: 0;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-stretch: var(--display-stretch);
+    font-weight: var(--display-weight);
+    font-size: calc(18px * var(--display-scale));
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--tone) 40%, #000);
+    text-shadow:
+      0 1px 0 color-mix(in srgb, var(--tone) 72%, #fff 28%),
+      0 0 7px color-mix(in srgb, var(--tone) 50%, #000);
+    transition:
+      translate 420ms cubic-bezier(0.5, 0, 0.25, 1),
+      scale 420ms cubic-bezier(0.5, 0, 0.25, 1);
+  }
+  .ret:active {
+    scale: 0.96;
+  }
+  .ret.back {
+    /* backs up under the glass card */
+    translate: 0 -64px;
+    scale: 0.9;
   }
   .tgx h4 {
     margin: 14px 0 8px;
