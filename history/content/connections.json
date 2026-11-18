@@ -1,5 +1,5 @@
 {
-  "_about": "Edges for the friend web and the path sentences. 'how' is read aloud in the path sentence, so write it as a short phrase. Types: family, high-school, roommate, dorm, class, frat, party, friend. year is when the connection formed (null if unknown). 'inferred': true marks edges I read between the lines of the brief; Levi should confirm or delete them.",
+  "_about": "Who knows whom: shown in each person's Connected to pile, with 'how' as the caption, so write it as a short phrase. Types: family, high-school, roommate, dorm, class, frat, party, friend. year is when the connection formed (null if unknown). 'inferred': true marks edges I read between the lines of the brief; Levi should confirm or delete them.",
   "connections": [
     { "from": "dustin-sadnick", "to": "levi-nellen", "year": null, "how": "brothers", "type": "family" },
     { "from": "doug-comes", "to": "tim-comes", "year": null, "how": "brothers", "type": "family" },

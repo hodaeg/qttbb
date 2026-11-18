@@ -432,3 +432,6 @@ Levi's next round, and what changed:
 ### D56 — History app: the alumni pile bursts too; Fish gets a fish — Accepted
 - The alumni pile now behaves like a "Connected to" pile, replacing the 4-column grid in a glass box. Tap it and everyone bursts out to random, seeded, non-overlapping spots, captioned with their name and years. The screen dims and blurs behind them, with no box. They take taps only once they've flown out. Tap anywhere (or scroll) and they fall back in quickly, the last out going in first. The scatter is shared (`src/lib/scatter.ts`).
 - Fish's avatar is a bluegill.
+
+### D57 — History app: no friend web — Accepted
+- Phase 5 (the ring-based friend web, path sentences and the timeline-to-web morph) is dropped. The "Connected to" piles in each column and sheet, plus the alumni burst, now cover how everyone is linked, so a separate view isn't needed. `connections.json` stays as the data behind the piles. The finale no longer promises "The friend web comes next."

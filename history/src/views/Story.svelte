@@ -949,7 +949,7 @@
             </li>
           {/each}
         </ol>
-        <p class="fine">Mike's rankings, through week {legacy.asOf.last_scored_week} of {legacy.asOf.season}. The friend web comes next.</p>
+        <p class="fine">Mike's rankings, through week {legacy.asOf.last_scored_week} of {legacy.asOf.season}.</p>
       </article></Glass>
     </div>
   {/if}
