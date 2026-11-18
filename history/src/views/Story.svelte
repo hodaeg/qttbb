@@ -752,6 +752,8 @@
   const sink = $derived(clamp((w - (L.finale + vh * 0.3)) / (vh * 0.6)));
   const fallY = $derived(sink * sink * vh * 1.15);
   const sinkTf = $derived(sink > 0 ? `translate3d(0,${fallY.toFixed(1)}px,0)` : null);
+  // the avatars, the pile and the header don't fall with them: they just fade away as the fall begins
+  const avFade = $derived(smooth(clamp(sink / 0.22)));
 
   // ---- Integridy Factor (the pipeline calls it Tegridy): the last word. Once the ribbons have fallen away, a header pops in and gets a
   // sticker slapped on it, a paragraph explains the score, and a bar chart rises in which every bar is
@@ -804,14 +806,11 @@
     const t = tgNow - growT0;
     return grown ? back(clamp((t - i * 70) / 650)) : 1 - smooth(clamp((t - (TGN - 1 - i) * 18) / 320));
   };
-  /** 67.75 -> "67¾": a narrow bar can hold it */
-  const fmtTF = (v: number) => {
-    const a = Math.abs(v);
-    const whole = Math.floor(a + 1e-6);
-    const q = Math.round((a - whole) * 4);
-    const frac = ['', '¼', '½', '¾', ''][q];
-    return (v < 0 ? '−' : '') + (q === 4 ? whole + 1 : whole) + frac;
-  };
+  /** 59.75 -> "59.75", 9.5 -> "9.5", 10 -> "10" */
+  const fmtTF = (v: number) => (v < 0 ? '−' : '') + String(Math.round(Math.abs(v) * 100) / 100);
+  /** a total's colour: green at 0, red at the league's worst */
+  const tfMax = Math.max(1, ...tegridy.members.map((m) => m.total));
+  const tfHeat = (v: number) => heat(v, 0, tfMax);
 
   // the open bar: same idea as an open column. It widens, rises to the top of the chart, and the
   // others squeeze into slices (tap one, or swipe, to switch)
@@ -1175,7 +1174,7 @@
         {#if b.gr > 0.01 && tfz < 0.99}
           <!-- the number at the bar's end, the avatar just past it -->
           {@const cx = b.g.x + b.g.w / 2}
-          <b class="tgval" style:opacity={(1 - tfz) * clamp(b.gr * 3)} style:transform="translate3d({cx}px,{b.down ? b.end + 4 : b.end - 17}px,0) translateX(-50%)">{fmtTF(b.m.total * Math.min(1, b.gr))}</b>
+          <b class="tgval" style:color={tfHeat(b.m.total)} style:opacity={(1 - tfz) * clamp(b.gr * 3)} style:transform="translate3d({cx}px,{b.down ? b.end + 4 : b.end - 17}px,0) translateX(-50%)">{b.gr >= 0.999 ? fmtTF(b.m.total) : Math.round(b.m.total * Math.min(1, b.gr))}</b>
           <button
             class="tgav"
             aria-label="Open {p.name}'s Integridy breakdown"
@@ -1214,7 +1213,7 @@
                       <Avatar id={m.person} size={L.desktop ? 52 : 40} />
                       <span><b class="display">{people[m.person].name}</b><small>Integridy rank {m.rank} of {TGN} · lower is better</small></span>
                     </div>
-                    <div class="yr display"><Roll value={fmtTF(m.total)} /></div>
+                    <div class="yr display" style:color={tfHeat(m.total)}><Roll value={fmtTF(m.total)} /></div>
                     <p class="tally">
                       {#if m.penalties.length}{m.penalties.length} penalt{m.penalties.length > 1 ? 'ies' : 'y'} · {m.cleanSeasons.length} clean season{m.cleanSeasons.length === 1 ? '' : 's'}{:else}Not one penalty since 2019. A clean sheet.{/if}
                     </p>
@@ -1227,7 +1226,7 @@
                         {#each kindsOf(m) as k (k.label)}
                           <div class="kind">
                             <i style:width="{(k.pts / m.total) * 100}%"></i>
-                            <span>{k.label}{k.n > 1 ? ` ×${k.n}` : ''}</span><b>{fmtTF(k.pts)}</b>
+                            <span>{k.label}{k.n > 1 ? ` ×${k.n}` : ''}</span><b style:color={tfHeat(k.pts)}>{fmtTF(k.pts)}</b>
                           </div>
                         {/each}
                       {/if}
@@ -1235,7 +1234,7 @@
                       <div class="seasons">
                         {#each tgSeasons as y (y)}
                           {@const v = m.bySeason[y] ?? 0}
-                          <span class:clean={!v}><small>{y.slice(2)}</small><b>{v ? fmtTF(v) : '✓'}</b></span>
+                          <span class:clean={!v}><small>{y.slice(2)}</small><b style:color={tfHeat(v)}>{v ? fmtTF(v) : '✓'}</b></span>
                         {/each}
                       </div>
                       {#if m.penalties.length}
@@ -1277,7 +1276,7 @@
   {/if}
 
   <!-- header -->
-  <div class="header" style:height="{L.headerY * 2 - 6}px" style:opacity={started * (1 - sink)}></div>
+  <div class="header" style:height="{L.headerY * 2 - 6}px" style:opacity={started * (1 - avFade)}></div>
   {#if pileCount > 0}
     <!-- the dim behind a burst pile; tap it to put them back -->
     <button
@@ -1304,7 +1303,7 @@
         style:width="{L.av}px"
         style:height="{L.av}px"
         style:z-index={zOf(a)}
-        style:opacity={a.st.opacity * (1 - fz) * (sink > 0.75 ? 1 - smooth((sink - 0.75) / 0.25) : 1)}
+        style:opacity={a.st.opacity * (1 - fz) * (1 - avFade)}
         style:pointer-events={fz > 0.5 || sink > 0.5 ? 'none' : null}
         style:--glow={a.st.flying}
         style:--win={h?.win ?? 0}
@@ -1312,7 +1311,7 @@
         style:--tone={people[a.p].color}
         style:--i={ip ?? 0}
         style:--j={pileCount - 1 - (ip ?? 0)}
-        style:transform="translate3d({v.x - L.av / 2 + (h?.shake ?? 0)}px,{v.y - L.av / 2 + fallY}px,0) rotate({v.rot}deg) scale({v.scale * (1 + (h?.win ?? 0) * 0.24)})"
+        style:transform="translate3d({v.x - L.av / 2 + (h?.shake ?? 0)}px,{v.y - L.av / 2}px,0) rotate({v.rot}deg) scale({v.scale * (1 + (h?.win ?? 0) * 0.24)})"
         onclick={() => tapAvatar(a)}
       >
         <Avatar id={a.p} size={L.av} live />
@@ -1354,7 +1353,7 @@
       class="pile"
       aria-label="Alumni, {pileCount} people"
       aria-expanded={fanned}
-      style:opacity={(1 - fz) * (1 - sink)}
+      style:opacity={(1 - fz) * (1 - avFade)}
       style:pointer-events={fz > 0.5 || sink > 0.5 ? 'none' : null}
       style:transform="translate3d({L.pile.x - 31}px,{L.pile.y - 22}px,0) scale({1 + pileBump * 0.12})"
       onclick={toggleFan}
@@ -1870,7 +1869,8 @@
     will-change: transform, width, height;
   }
   .tgval {
-    font-size: 11px;
+    font-size: 10.5px;
+    letter-spacing: -0.02em;
     font-weight: 800;
     color: #fff;
     white-space: nowrap;

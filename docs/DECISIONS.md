@@ -469,3 +469,8 @@ Found when the commissioner disputed Gabe's 2026 week 10 penalty: Drake Maye was
 - 2026 snapshot penalties: TreVeyon Henderson, David Montgomery, Deebo Samuel, Davante Adams, Jeremiyah Love, Lamar Jackson (1 snap), Hunter Henry, Xavier Worthy, Rhamondre Stevenson, Josh Jacobs, Michael Wilson, Jaylen Waddle and Drake Maye.
 - 2024 report penalties for players who played: Christian Watson, Rashee Rice, Dallas Goedert, Marvin Harrison Jr. and Deebo Samuel.
 - All-time totals now: Hodaeg 6, MrSeeYou 5, JSusee 6, WhiskeyDicknCo 9.5, ToadLicker 10, gabroni 10, Gingivitis 14, ChinaKing 28, BigDogsRevenge 35.5, therealGandB 59.75, TheBoarHouse 67, DangerDave678 0.
+
+### D61 — History app: coloured Integridy totals, decimals, avatars fade instead of falling — Accepted
+- Totals on the bars and in the open bar's panel (the big number, each kind's points, each season) are coloured green at 0 through red at the league's worst total, matching the explainer grid.
+- Integridy values are shown as decimals (59.75, 9.5, 10), not fractions. While the bars grow, the count-up uses whole numbers, then lands on the exact total.
+- When the ribbons start their fall, the avatars, the alumni pile and the header no longer fall with them: they fade away where they are within the first fifth of the fall.
