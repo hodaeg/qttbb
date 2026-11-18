@@ -24,8 +24,6 @@
     { "from": "nate-mehlhoff", "to": "max-christensen", "year": null, "how": "high school", "type": "high-school" },
     { "from": "nate-mehlhoff", "to": "zaid-hunitie", "year": null, "how": "high school", "type": "high-school" },
     { "from": "max-christensen", "to": "zaid-hunitie", "year": null, "how": "high school", "type": "high-school" },
-    { "from": "levi-nellen", "to": "max-christensen", "year": 2009, "how": "introduced by Nate", "type": "friend" },
-    { "from": "levi-nellen", "to": "zaid-hunitie", "year": 2009, "how": "introduced by Nate", "type": "friend" },
     { "from": "max-christensen", "to": "jared-haldemann", "year": 2009, "how": "freshman roommates", "type": "roommate" },
     { "from": "max-christensen", "to": "toby-bachuber", "year": 2009, "how": "lived next door in the dorms", "type": "dorm" },
 
@@ -38,13 +36,10 @@
 
     { "from": "tim-comes", "to": "luke-reinardy", "year": 2009, "how": "freshman roommates", "type": "roommate" },
     { "from": "luke-reinardy", "to": "kalyn-reinardy", "year": null, "how": "brother and sister", "type": "family" },
-    { "from": "kalyn-reinardy", "to": "tim-comes", "year": null, "how": "came in through Luke, Tim's roommate", "type": "friend" },
     { "from": "luke-reinardy", "to": "andy-althoff", "year": null, "how": "grew up together", "type": "friend" },
     { "from": "andy-althoff", "to": "max-christensen", "year": 2011, "how": "roommates at 71, brought in by Luke", "type": "roommate" },
     { "from": "andy-althoff", "to": "tim-comes", "year": null, "how": "roommates at 71", "type": "roommate" },
     { "from": "andy-althoff", "to": "nate-mehlhoff", "year": null, "how": "roommates at 71", "type": "roommate" },
-    { "from": "tim-comes", "to": "nate-mehlhoff", "year": null, "how": "roommates at 71", "type": "roommate" },
-    { "from": "luke-reinardy", "to": "nate-mehlhoff", "year": null, "how": "roommates at 71", "type": "roommate" },
 
     { "from": "megan-hardie", "to": "levi-nellen", "year": 2009, "how": "freshman year friends", "type": "friend" },
     { "from": "megan-hardie", "to": "max-christensen", "year": 2009, "how": "freshman year friends", "type": "friend" },
@@ -77,7 +72,6 @@
     { "from": "dominic-morelli", "to": "callan-curtis", "year": null, "how": "classes together", "type": "class" },
     { "from": "kyle-mont-blanc", "to": "fish", "year": null, "how": "high school", "type": "high-school" },
     { "from": "fish", "to": "jordan-morris", "year": null, "how": "West Campus dorms", "type": "dorm" },
-    { "from": "kyle-mont-blanc", "to": "jordan-morris", "year": null, "how": "brought in through Fish", "type": "friend" },
     { "from": "gabe-warneke", "to": "zaid-hunitie", "year": 2016, "how": "a big marketing project", "type": "class" }
   ]
 }
