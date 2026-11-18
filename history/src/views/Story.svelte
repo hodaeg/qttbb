@@ -5,8 +5,9 @@
   import { onMount } from 'svelte';
   import {
     makeLayout, segments, members, people, legacy, constants, lineup, exits, isCurrent, statusOf, FIRST, LAST, CUT_GAP, SLOTS,
-    pourAt, growTip, avatarState, stopAt, trayAt, clamp, lerp, back, smooth, easeOut, type AvatarState, type Spot,
+    pourAt, growTip, avatarState, stopAt, trayAt, clamp, lerp, back, smooth, easeOut, yearsLabel, type AvatarState, type Spot,
   } from '../lib/model';
+  import { scatter, type Spot as BurstSpot } from '../lib/scatter';
   import Avatar from './Avatar.svelte';
   import Glass from './Glass.svelte';
   import Tray from './Tray.svelte';
@@ -68,7 +69,7 @@
     s = window.scrollY;
     window.addEventListener('resize', size);
     const onScroll = () => {
-      if (fanned && Math.abs(window.scrollY - fanY) > 12) fanned = false;
+      if (fanned && Math.abs(window.scrollY - fanY) > 40) fanned = false; // a real scroll, not an iOS toolbar nudge
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     let raf = 0;
@@ -585,34 +586,56 @@
   $effect(() => {
     if (pileCount === 0) fanned = false;
   });
-  const FAN_COLS = 4;
-  const cell = $derived(L.desktop ? 78 : 62);
-  const fanPos = (i: number) => ({
-    x: L.pile.x - 6 - (FAN_COLS - 1 - (i % FAN_COLS)) * cell,
-    y: L.headerY + 52 + Math.floor(i / FAN_COLS) * cell,
-  });
-  const fanBox = $derived.by(() => {
-    const rows = Math.max(1, Math.ceil(pileCount / FAN_COLS));
-    const x0 = L.pile.x - 6 - (FAN_COLS - 1) * cell - cell / 2 - 4;
-    return { x: x0, y: L.headerY + 20, w: Math.min(L.W - 6 - x0, FAN_COLS * cell + 16), h: rows * cell + 34 };
+  // Tapped, the pile bursts like a "Connected to" pile: everyone flies out to their own random spot
+  // (seeded, so it always flares the same way), captioned with their name and years. No box, no grid;
+  // the screen dims behind them. Tap anywhere and they fall back into the pile.
+  const fanScale = $derived(L.desktop ? 1.15 : 1.25);
+  let fanSpots = $state<BurstSpot[]>([]);
+  // they only take taps once they've flown out, so a quick double tap can't open whoever was on top
+  let fanSettled = $state(false);
+  let settleT = 0;
+  // `falling`: just closed, so the avatars take the quick fall-back easing home
+  let falling = $state(false);
+  let wasFanned = false;
+  let fallT = 0;
+  $effect(() => {
+    if (!fanned) {
+      clearTimeout(settleT);
+      fanSettled = false;
+      if (wasFanned) {
+        falling = true;
+        clearTimeout(fallT);
+        fallT = window.setTimeout(() => (falling = false), 420 + pileCount * 14 + 60);
+      }
+    } else {
+      clearTimeout(fallT);
+      falling = false;
+    }
+    wasFanned = fanned;
   });
   function toggleFan() {
-    fanned = !fanned;
+    if (fanned) return void (fanned = false);
+    const a = L.av * fanScale;
+    fanSpots = scatter(pileCount, L.pile, 'alumni', { w: 92, h: a + 40, up: a / 2 }, { left: 8, top: 8, right: L.W - 8, bottom: vh - 10 });
+    fanned = true;
     fanY = window.scrollY;
+    clearTimeout(settleT);
+    settleT = window.setTimeout(() => (fanSettled = true), reduced ? 0 : 380);
   }
   function tapAvatar(a: { p: string; st: AvatarState }) {
     const p = a.p;
     if (pileIx[p] === undefined && a.st.landed > 0 && pileCount) return toggleFan(); // still dropping onto the pile
     if (pileIx[p] === undefined) return onperson(p);
     if (!fanned) return toggleFan();
+    if (!fanSettled) return; // still flying out
     fanned = false;
     onperson(p);
   }
   function view(a: { p: string; st: AvatarState }) {
     const i = pileIx[a.p];
-    if (fanned && i !== undefined) {
-      const f = fanPos(i);
-      return { x: f.x, y: f.y, scale: L.desktop ? 1.05 : 1.2, rot: 0 };
+    if (fanned && i !== undefined && fanSpots[i]) {
+      const f = fanSpots[i];
+      return { x: L.pile.x + f.x, y: L.pile.y + f.y, scale: fanScale, rot: f.rot };
     }
     return { x: a.st.x, y: a.st.y, scale: a.st.scale, rot: a.st.rot };
   }
@@ -942,12 +965,17 @@
 
   <!-- header -->
   <div class="header" style:height="{L.headerY * 2 - 6}px" style:opacity={started}></div>
-  {#if fanned}
-    <button class="closer" aria-label="Close the alumni" onclick={() => (fanned = false)}></button>
-  {/if}
   {#if pileCount > 0}
-    <div class="fanback" class:show={fanned} style:width="{fanBox.w}px" style:height="{fanBox.h}px" style:transform="translate3d({fanBox.x}px,{fanBox.y}px,0)">
-    </div>
+    <!-- the dim behind a burst pile; tap it to put them back -->
+    <button
+      class="closer"
+      class:show={fanned}
+      aria-label="Put the alumni back"
+      tabindex={fanned ? 0 : -1}
+      style:--cx="{L.pile.x}px"
+      style:--cy="{L.pile.y}px"
+      onclick={() => (fanned = false)}
+    ></button>
   {/if}
   {#each avatars as a (a.p)}
     {#if a.st.opacity > 0.01 && a.st.y > -L.av * 1.2}
@@ -958,6 +986,7 @@
         class="av"
         class:piled={ip !== undefined}
         class:fanned={fanned && ip !== undefined}
+        class:falling={falling && ip !== undefined}
         aria-label={people[a.p].name}
         style:width="{L.av}px"
         style:height="{L.av}px"
@@ -969,6 +998,7 @@
         style:--win-tone={h?.winSilver ? '#dfe5ea' : 'var(--gold)'}        style:--gray={fanned && ip !== undefined ? 0.35 : grayOf(a.st)}
         style:--tone={people[a.p].color}
         style:--i={ip ?? 0}
+        style:--j={pileCount - 1 - (ip ?? 0)}
         style:transform="translate3d({v.x - L.av / 2 + (h?.shake ?? 0)}px,{v.y - L.av / 2}px,0) rotate({v.rot}deg) scale({v.scale * (1 + (h?.win ?? 0) * 0.24)})"
         onclick={() => tapAvatar(a)}
       >
@@ -1002,7 +1032,7 @@
           </span>
         {/if}
         {#if a.st.returning > 0.02}<span class="returns" style:opacity={a.st.returning}>returns</span>{/if}
-        {#if ip !== undefined}<span class="nm">{first(a.p)}</span>{/if}
+        {#if ip !== undefined}<span class="nm">{first(a.p)}<small>{yearsLabel(a.p)}</small></span>{/if}
       </button>
     {/if}
   {/each}
@@ -1644,47 +1674,66 @@
       transform 520ms var(--ease-spring) calc(var(--i) * 30ms),
       filter var(--dur-ui) var(--ease-out);
   }
+  .av.piled.fanned {
+    /* bursting out: an overshooting spring, one after another */
+    transition:
+      transform 680ms cubic-bezier(0.22, 1.5, 0.4, 1) calc(var(--i) * 32ms),
+      filter var(--dur-ui) var(--ease-out);
+  }
+  .av.piled.falling {
+    /* falling back: quick, the last out goes in first */
+    transition:
+      transform 420ms cubic-bezier(0.55, 0, 0.75, 0.15) calc(var(--j) * 14ms),
+      filter var(--dur-ui) var(--ease-out);
+  }
   .nm {
     position: absolute;
     top: 100%;
     left: 50%;
+    display: grid;
+    justify-items: center;
     margin-top: 3px;
-    transform: translateX(-50%);
     font-size: 9px;
-    font-weight: 600;
+    line-height: 1.2;
+    font-weight: 700;
     white-space: nowrap;
-    color: var(--ink);
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
     opacity: 0;
-    transition: opacity var(--dur-micro) var(--ease-out);
+    transform: translate(-50%, -4px);
+    transition:
+      opacity 120ms ease-in,
+      transform 120ms ease-in;
     pointer-events: none;
+  }
+  .nm small {
+    font-size: 7.5px;
+    font-weight: 600;
   }
   .av.fanned .nm {
     opacity: 1;
-    transition-delay: calc(180ms + var(--i) * 30ms);
+    transform: translate(-50%, 0);
+    transition:
+      opacity 260ms ease-out calc(260ms + var(--i) * 32ms),
+      transform 360ms cubic-bezier(0.22, 1.4, 0.4, 1) calc(260ms + var(--i) * 32ms);
   }
   .closer {
     inset: 0;
     z-index: 38;
-    background: transparent;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--cx) var(--cy), rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.45) 70%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 260ms ease-out 60ms;
     cursor: default;
   }
-  .fanback {
-    z-index: 39;
-    background: var(--glass-strong);
-    backdrop-filter: var(--glass-filter);
-    -webkit-backdrop-filter: var(--glass-filter);
-    box-shadow: var(--glass-rim), var(--glass-lift);
-    opacity: 0;
-    transform-origin: 100% 0;
-    scale: 0.6;
-    pointer-events: none;
-    transition:
-      opacity var(--dur-ui) var(--ease-out),
-      scale var(--dur-expand) var(--ease-spring);
-  }
-  .fanback.show {
+  .closer.show {
     opacity: 1;
-    scale: 1;
+    pointer-events: auto;
+    transition-delay: 0ms;
   }
   .pile {
     z-index: 27;
@@ -1719,8 +1768,11 @@
 
   @media (prefers-reduced-motion: reduce) {
     .av.piled,
-    .fanback {
+    .av.piled.fanned,
+    .av.piled.falling,
+    .closer {
       transition-duration: 1ms;
+      transition-delay: 0ms;
     }
     .col.constant,
     .hint i {

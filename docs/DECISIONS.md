@@ -428,3 +428,7 @@ Levi's next round, and what changed:
 - The story card no longer takes taps while a column is open: each card turned its own taps back on even when the faded tray had them off. That's how a tap on Max's pile (low on the screen) hit an invisible "Kyle" link.
 - The burst avatars pivot and shrink about the avatar's centre, and re-aim at the pile when they fall back, so they land exactly on it with no jump.
 - Photos leave about as slowly as they arrive (each takes roughly as long, eased as the mirror image), the top first, and the stack is anchored to a fixed line so a shorter next card doesn't drag leaving photos down.
+
+### D56 — History app: the alumni pile bursts too; Fish gets a fish — Accepted
+- The alumni pile now behaves like a "Connected to" pile, replacing the 4-column grid in a glass box. Tap it and everyone bursts out to random, seeded, non-overlapping spots, captioned with their name and years. The screen dims and blurs behind them, with no box. They take taps only once they've flown out. Tap anywhere (or scroll) and they fall back in quickly, the last out going in first. The scatter is shared (`src/lib/scatter.ts`).
+- Fish's avatar is a bluegill.

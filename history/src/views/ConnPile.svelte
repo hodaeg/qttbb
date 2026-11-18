@@ -5,28 +5,14 @@
   // Tap anywhere and they all fall back into the pile; tap someone to go to them.
   import { people } from '../lib/model';
   import Avatar from './Avatar.svelte';
+  import { scatter, rng, hashStr as hash } from '../lib/scatter';
 
   let { id, links, onperson }: { id: string; links: { other: string; how: string; year: number | null }[]; onperson: (id: string) => void } = $props();
 
   const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
   const PILE = 34; // avatar size in the pile
   const BIG = 46; // and burst out
-  const BOX = { w: 104, h: 104 }; // room each burst avatar and its caption needs
-
-  const hash = (s: string) => {
-    let h = 2166136261;
-    for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619);
-    return h >>> 0;
-  };
-  function rng(seed: number) {
-    let a = seed;
-    return () => {
-      a = (a + 0x6d2b79f5) | 0;
-      let t = Math.imul(a ^ (a >>> 15), 1 | a);
-      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    };
-  }
+  const BOX = { w: 104, h: 104, up: BIG / 2 }; // room each burst avatar and its caption needs
 
   // where each avatar sits in the pile (the first five show; the rest hide underneath)
   const stack = $derived.by(() => {
@@ -45,34 +31,12 @@
   let timer = 0;
   let settleTimer = 0;
 
-  // scatter: each avatar tries random spots near the pile, moving outward until it fits
-  function scatter() {
-    const W = innerWidth, H = innerHeight, m = 10;
-    const r = rng(hash(id + 'burst'));
-    const placed: { x: number; y: number }[] = [];
-    const fits = (x: number, y: number) =>
-      Math.hypot(x - c.x, (y - c.y) * 1.3) > 52 && placed.every((p) => Math.abs(p.x - x) > BOX.w + 4 || Math.abs(p.y - y) > BOX.h + 2);
-    return links.map(() => {
-      let best = { x: c.x, y: c.y };
-      for (let k = 0; k < 600; k++) {
-        const rad = 70 + k * 0.7 + r() * 50;
-        const a = r() * Math.PI * 2;
-        const x = Math.min(W - m - BOX.w / 2, Math.max(m + BOX.w / 2, c.x + Math.cos(a) * rad));
-        const y = Math.min(H - m - BOX.h + BIG / 2, Math.max(m + BIG / 2 + 40, c.y + Math.sin(a) * rad * 1.15));
-        best = { x, y };
-        if (fits(x, y)) break;
-      }
-      placed.push(best);
-      return { x: best.x - c.x, y: best.y - c.y, rot: (r() - 0.5) * 12 };
-    });
-  }
-
   function burst() {
     if (!pileEl) return;
     clearTimeout(timer);
     const b = pileEl.querySelector('.stack')!.getBoundingClientRect();
     c = { x: b.left + b.width / 2, y: b.top + b.height / 2 };
-    spots = scatter();
+    spots = scatter(links.length, c, id + 'burst', BOX, { left: 10, top: 50, right: innerWidth - 10, bottom: innerHeight - 10 });
     live = true;
     // one frame in the pile, then fly
     requestAnimationFrame(() =>

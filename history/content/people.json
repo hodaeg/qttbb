@@ -35,6 +35,6 @@
     { "id": "kennedy-curtis", "name": "Kennedy Curtis", "nickname": null, "initials": "KC", "role": "outsider", "avatar": null, "story": "Callan Curtis's sister." },
     { "id": "jake", "name": "Jake", "nickname": null, "initials": "J", "role": "outsider", "avatar": null, "story": "Produced rap songs with Alex Randall, including Parallel Dat Park." },
     { "id": "tattoo-adam", "name": "Adam Field", "nickname": null, "initials": "AF", "role": "outsider", "avatar": null, "story": "Got Parallel Dat Park tattooed. Later a Marine." },
-    { "id": "fish", "name": "Fish", "nickname": "Fish", "initials": "F", "role": "outsider", "avatar": null, "story": "A high school friend of Kyle's who lived in the West Campus dorms with Jordan." }
+    { "id": "fish", "name": "Fish", "nickname": "Fish", "initials": "F", "role": "outsider", "avatar": "avatars/fish.jpg", "story": "A high school friend of Kyle's who lived in the West Campus dorms with Jordan." }
   ]
 }
