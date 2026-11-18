@@ -747,13 +747,13 @@
   const trayO = $derived(started * (1 - clamp((w - L.end) / (vh * 0.2))));
 
   const finaleCy = $derived((L.finale - w) * 0.94 + vh * 0.52);
-  // after the rankings, the ribbons (and everyone on them) tilt back and sink into the screen
-  const sink = $derived(smooth(clamp((w - (L.finale + vh * 0.32)) / (vh * 0.6))));
-  const sinkTf = $derived(
-    sink > 0 ? `perspective(${Math.round(vh * 1.1)}px) translate3d(0,${(-sink * vh * 0.08).toFixed(1)}px,${(-sink * vh * 0.9).toFixed(1)}px) rotateX(${(sink * 34).toFixed(2)}deg)` : null,
-  );
+  // after the rankings, the ribbons (and everyone riding them) drop down the page, gathering speed,
+  // and run out into a dark abyss that rises from the bottom of the screen
+  const sink = $derived(clamp((w - (L.finale + vh * 0.3)) / (vh * 0.6)));
+  const fallY = $derived(sink * sink * vh * 1.15);
+  const sinkTf = $derived(sink > 0 ? `translate3d(0,${fallY.toFixed(1)}px,0)` : null);
 
-  // ---- Tegridy Factor: the last word. Once the ribbons have sunk, a header pops in and gets a
+  // ---- Integridy Factor (the pipeline calls it Tegridy): the last word. Once the ribbons have fallen away, a header pops in and gets a
   // sticker slapped on it, a paragraph explains the score, and a bar chart rises in which every bar is
   // that member's own ribbon, lowest (best) on the left. Tap a bar and it opens like a column, with
   // everything that went into the number. The scene scrolls up from below like a page.
@@ -762,7 +762,7 @@
   let headH = $state(130);
   let paraH = $state(220);
   const TG = $derived.by(() => {
-    const G = L.finale + vh * 0.85; // the scene's top enters from the bottom of the screen here
+    const G = L.finale + vh * 0.5; // the scene's top enters from the bottom of the screen here
     const side = L.desktop ? 32 : 14;
     const chartW = Math.min(W - side * 2, 880);
     const x0 = (W - chartW) / 2;
@@ -785,7 +785,7 @@
   const u = $derived(w - TG.G); // how far the scene has scrolled up
   const tgOn = $derived(u > -60);
   const pageH = $derived(Math.max(L.pageHeight, TG.G + TG.uEnd - L.P + vh));
-  const headIn = $derived(vh - u < vh * 0.78);
+  const headIn = $derived(vh - u < vh * 0.84);
   const paraIn = $derived(vh - u + TG.paraOff < vh * 0.9);
   // the bars grow on the clock (left to right, overshooting a touch) once the chart is well in view
   let grown = $state(false);
@@ -888,6 +888,23 @@
   const wt = tegridy.weights;
   const mt = tegridy.multipliers;
   const wb = [...mt.weeks_before_playoffs].sort((a, b) => b.max_weeks - a.max_weeks); // 3-4 weeks out, then 1-2
+  // the explainer, as a grid: what each violation costs (worst first), then the playoff multipliers
+  const tgRules = [
+    { v: wt.bye_week_starter, label: 'Started a bye' },
+    { v: wt.injured_starter_out, label: 'Started an Out' },
+    { v: wt.questionable_did_not_play, label: 'Questionable, sat' },
+    { v: wt.missed_league_note, label: 'Missed league note' },
+    { v: wt.injured_starter_doubtful, label: 'Doubtful, 0 pts' },
+  ]
+    .sort((a, b) => b.v - a.v)
+    .map((r, i) => ({ ...r, i }));
+  const tgMults = [
+    { v: wb[0]?.multiplier ?? 1.5, label: '3–4 wks out' },
+    { v: wb[1]?.multiplier ?? 1.75, label: 'Last 2 wks' },
+    { v: mt.in_playoffs, label: 'Playoffs' },
+  ].map((r, i) => ({ ...r, i }));
+  /** higher is redder, lower is greener */
+  const heat = (v: number, lo: number, hi: number) => `hsl(${Math.round(130 * (1 - clamp((v - lo) / (hi - lo))))} 78% 62%)`;
   const introO = $derived(1 - clamp(s / (vh * 0.45)));
   const first = (id: string) => people[id].nickname ?? people[id].name.split(' ')[0];
 </script>
@@ -915,7 +932,7 @@
     style:--fade="{L.headerY * 2 + 26}px"
     style:--cw="{L.cw}px"
     style:transform={sinkTf}
-    style:opacity={sink ? Math.pow(1 - sink, 1.4) : null}
+    style:opacity={sink > 0.75 ? 1 - smooth((sink - 0.75) / 0.25) : null}
     style:visibility={sink >= 1 ? 'hidden' : null}
   >
     {#each field.cols as c (c.key)}
@@ -991,6 +1008,12 @@
         </span>
     {/each}
   </div>
+
+  <!-- the abyss the ribbons fall into at the end -->
+  {#if sink > 0}
+    {@const abH = 160 + sink * vh * 0.6}
+    <i class="abyss" style:width="{W}px" style:height="{abH}px" style:opacity={clamp(sink * 3)} style:transform="translate3d(0,{vh - abH}px,0)"></i>
+  {/if}
 
   <!-- photos, between the ribbons and the card -->
   {#if photos.list.length && fz < 0.99}
@@ -1103,20 +1126,25 @@
     </div>
   {/if}
 
-  <!-- Tegridy Factor: the last word -->
+  <!-- Integridy Factor: the last word -->
   {#if tgOn}
-    <section class="tg" aria-label="Tegridy Factor" style:width="{W}px" style:height="{TG.uEnd}px" style:transform="translate3d(0,{(vh - u).toFixed(1)}px,0)">
+    <section class="tg" aria-label="Integridy Factor" style:width="{W}px" style:height="{TG.uEnd}px" style:transform="translate3d(0,{(vh - u).toFixed(1)}px,0)">
       <h2 class="tghead display" class:in={headIn} bind:clientHeight={headH} style:left="{TG.x0}px" style:font-size="calc({L.desktop ? 104 : 64}px * var(--display-scale))">
-        Tegridy<br />Facto<span class="r">r<img class="sticker" src="{import.meta.env.BASE_URL}tegridy/sticker.png" alt="An “I got tegridy” sticker" draggable="false" /></span>
+        Integridy<br />Facto<span class="r">r<img class="sticker" src="{import.meta.env.BASE_URL}tegridy/sticker.png" alt="An “I got tegridy” sticker" draggable="false" /></span>
       </h2>
-      <p class="tgpara" class:in={paraIn} bind:clientHeight={paraH} style:left="{TG.x0}px" style:width="{Math.min(TG.chartW, 560)}px" style:top="{TG.paraOff}px">
-        Golf rules: lower is better. Everyone starts at zero, and only fair-play violations add to it. A bad lineup is just a bad lineup.
-        Starting a player on a bye costs <b>{wt.bye_week_starter}</b>. Starting someone listed Out costs <b>{wt.injured_starter_out}</b>, a Questionable
-        player who then didn’t play <b>{wt.questionable_did_not_play}</b>, and a Doubtful one who scored nothing <b>{wt.injured_starter_doubtful}</b>.
-        Skipping the annual league note costs <b>{wt.missed_league_note}</b>. The closer to the playoffs, the more it hurts:
-        <b>×{wb[0]?.multiplier}</b> three or four weeks out, <b>×{wb[1]?.multiplier}</b> in the last two, and <b>×{mt.in_playoffs}</b> in a playoff
-        game that still matters. Sleeper years only, 2019 on.
-      </p>
+      <div class="tgpara" class:in={paraIn} bind:clientHeight={paraH} style:left="{TG.x0}px" style:width="{Math.min(TG.chartW, 560)}px" style:top="{TG.paraOff}px">
+        <p class="lede">Golf rules: lower is better. Everyone starts at 0 and only fair-play violations count, costing more near the playoffs. 2019 on.</p>
+        <div class="rules">
+          {#each tgRules as r (r.label)}
+            <span style:--i={r.i}><b style:color={heat(r.v, 3, 10)}>{r.v}</b><small>{r.label}</small></span>
+          {/each}
+        </div>
+        <div class="rules mults">
+          {#each tgMults as r (r.label)}
+            <span style:--i={r.i + tgRules.length}><b style:color={heat(r.v, 1.5, 2)}>×{r.v}</b><small>{r.label}</small></span>
+          {/each}
+        </div>
+      </div>
 
       <!-- the chart: every bar is that member's ribbon -->
       <i class="tgbase" style:left="{TG.x0}px" style:width="{TG.chartW}px" style:top="{TG.base}px" style:opacity={growOf(0) > 0 ? 1 : 0}></i>
@@ -1129,7 +1157,7 @@
           class:dotted={!p.founder}
           class:chev={e.chev > 0}
           class:chev2={e.chev2 > 0.5}
-          aria-label="{p.name}: Tegridy Factor {b.m.total}"
+          aria-label="{p.name}: Integridy Factor {b.m.total}"
           style:--chev={e.chev}
           style:--tone={p.color}
           style:--g="0"
@@ -1150,7 +1178,7 @@
           <b class="tgval" style:opacity={(1 - tfz) * clamp(b.gr * 3)} style:transform="translate3d({cx}px,{b.down ? b.end + 4 : b.end - 17}px,0) translateX(-50%)">{fmtTF(b.m.total * Math.min(1, b.gr))}</b>
           <button
             class="tgav"
-            aria-label="Open {p.name}'s Tegridy breakdown"
+            aria-label="Open {p.name}'s Integridy breakdown"
             tabindex={tgReady() ? 0 : -1}
             style:opacity={(1 - tfz) * clamp(b.gr * 3)}
             style:pointer-events={tfz > 0.5 ? 'none' : null}
@@ -1184,7 +1212,7 @@
                   <div class="top">
                     <div class="who">
                       <Avatar id={m.person} size={L.desktop ? 52 : 40} />
-                      <span><b class="display">{people[m.person].name}</b><small>Tegridy rank {m.rank} of {TGN} · lower is better</small></span>
+                      <span><b class="display">{people[m.person].name}</b><small>Integridy rank {m.rank} of {TGN} · lower is better</small></span>
                     </div>
                     <div class="yr display"><Roll value={fmtTF(m.total)} /></div>
                     <p class="tally">
@@ -1218,6 +1246,9 @@
                               <small>{pn.season}{pn.week ? ` · Week ${pn.week}` : ''}</small>
                               <p>{pn.headline}</p>
                               <b>{pn.base}{pn.mult !== 1 ? ` × ${pn.mult}` : ''} = {fmtTF(pn.total)}</b>
+                              {#if pn.sources.length}
+                                <span class="src">Source: {#each pn.sources as sr, k (k)}{k ? ', ' : ''}{#if sr.url}<a href={sr.url} target="_blank" rel="noopener noreferrer">{sr.name}</a>{:else}{sr.name}{/if}{/each}</span>
+                              {/if}
                             </li>
                           {/each}
                         </ul>
@@ -1273,7 +1304,7 @@
         style:width="{L.av}px"
         style:height="{L.av}px"
         style:z-index={zOf(a)}
-        style:opacity={a.st.opacity * (1 - fz) * Math.pow(1 - sink, 1.4)}
+        style:opacity={a.st.opacity * (1 - fz) * (sink > 0.75 ? 1 - smooth((sink - 0.75) / 0.25) : 1)}
         style:pointer-events={fz > 0.5 || sink > 0.5 ? 'none' : null}
         style:--glow={a.st.flying}
         style:--win={h?.win ?? 0}
@@ -1281,7 +1312,7 @@
         style:--tone={people[a.p].color}
         style:--i={ip ?? 0}
         style:--j={pileCount - 1 - (ip ?? 0)}
-        style:transform="translate3d({v.x - L.av / 2 + (h?.shake ?? 0)}px,{v.y - L.av / 2}px,0) rotate({v.rot}deg) scale({v.scale * (1 + (h?.win ?? 0) * 0.24)})"
+        style:transform="translate3d({v.x - L.av / 2 + (h?.shake ?? 0)}px,{v.y - L.av / 2 + fallY}px,0) rotate({v.rot}deg) scale({v.scale * (1 + (h?.win ?? 0) * 0.24)})"
         onclick={() => tapAvatar(a)}
       >
         <Avatar id={a.p} size={L.av} live />
@@ -1665,7 +1696,7 @@
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
   }
 
-  /* Tegridy Factor */
+  /* Integridy Factor */
   .tg {
     z-index: 20;
     pointer-events: none;
@@ -1765,9 +1796,70 @@
       opacity 500ms ease-out 120ms,
       transform 700ms cubic-bezier(0.2, 1, 0.3, 1) 120ms;
   }
-  .tgpara b {
-    font-weight: 800;
+  .tgpara .lede {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 3px;
+  }
+  .rules.mults {
+    margin-top: 4px;
+  }
+  .rules span {
+    display: grid;
+    gap: 2px;
+    padding: 6px 9px 7px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+    /* the cells deal in one after another */
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 160ms ease-in,
+      transform 160ms ease-in;
+  }
+  .tgpara.in .rules span {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 360ms ease-out calc(220ms + var(--i) * 55ms),
+      transform 520ms cubic-bezier(0.2, 1.4, 0.4, 1) calc(220ms + var(--i) * 55ms);
+  }
+  .rules b {
+    flex: none;
+    min-width: 1.6em;
+    font-family: var(--font-display);
+    font-stretch: var(--display-stretch);
+    font-weight: var(--display-weight);
+    font-size: calc(21px * var(--display-scale));
+    line-height: 1;
     font-variant-numeric: tabular-nums;
+  }
+  .rules small {
+    font-size: 11px;
+    white-space: nowrap;
+    line-height: 1.25;
+    color: #fff;
+  }
+  .src {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+  }
+  .src a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .abyss {
+    /* where the ribbons fall to: dark rising from the bottom of the screen */
+    z-index: 11;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--bg) 75%, transparent) 45%, var(--bg) 80%);
   }
   .tgbase {
     height: 1px;

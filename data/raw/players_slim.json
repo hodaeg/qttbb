@@ -555,7 +555,7 @@
   "injury_status": null,
   "name": "Jaydon Blue",
   "pos": "RB",
-  "team": null
+  "team": "PHI"
  },
  "12469": {
   "injury_status": null,
@@ -624,7 +624,7 @@
   "team": "DEN"
  },
  "12493": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Oronde Gadsden",
   "pos": "TE",
   "team": "LAC"
@@ -1896,7 +1896,7 @@
   "team": null
  },
  "4033": {
-  "injury_status": "IR",
+  "injury_status": null,
   "name": "David Njoku",
   "pos": "TE",
   "team": "LAC"
@@ -2151,7 +2151,7 @@
   "injury_status": null,
   "name": "Zane Gonzalez",
   "pos": "K",
-  "team": "MIA"
+  "team": null
  },
  "4234": {
   "injury_status": null,
@@ -2529,7 +2529,7 @@
   "injury_status": null,
   "name": "Daniel Carlson",
   "pos": "K",
-  "team": null
+  "team": "MIA"
  },
  "5096": {
   "injury_status": "Questionable",
@@ -3444,7 +3444,7 @@
   "team": null
  },
  "6945": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Antonio Gibson",
   "pos": "RB",
   "team": null
@@ -3936,7 +3936,7 @@
   "team": "NYG"
  },
  "8126": {
-  "injury_status": "Questionable",
+  "injury_status": "IR",
   "name": "Wan'Dale Robinson",
   "pos": "WR",
   "team": "TEN"

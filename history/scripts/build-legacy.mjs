@@ -85,7 +85,9 @@ for (const o of owners) {
       headline: p.headline
         .split(prof.display_name)
         .join(firstOf(person))
-        .replace(/ at \d{4}-\d\d-\d\dT[\d:.]+(?:Z|[+-]\d\d:\d\d)/g, ''), // "Out at 2026-11-10T04:36:01+00:00" -> "Out"
+        .replace(/ at \d{4}-\d\d-\d\dT[\d:.]+(?:Z|[+-]\d\d:\d\d)/g, '') // "Out at 2026-11-10T04:36:01+00:00" -> "Out"
+        .replace(/, so \$0 of FAAB was taken\./, '.'),
+      sources: (p.sources ?? []).filter((s) => s && s.name).map((s) => ({ name: s.name, url: s.url ?? null })),
       base: p.penalty.base,
       mult: p.penalty.multiplier,
       total: p.penalty.total,

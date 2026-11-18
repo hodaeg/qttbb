@@ -18,14 +18,14 @@
   "record": {
    "losses": 87,
    "ties": 0,
-   "wins": 119
+   "wins": 120
   },
   "sackos": 1,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
   "scoring_bonuses": [
    15
   ],
-  "win_pct": 0.5777
+  "win_pct": 0.5797
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -47,12 +47,12 @@
  "current_team_name": "Always A Bridesmaid",
  "display_name": "DangerDave678",
  "efficiency": {
-  "efficiency": 0.8849,
+  "efficiency": 0.8857,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14345.8,
-  "points": 12694.1,
+  "optimal_points": 14452.88,
+  "points": 12801.18,
   "points_left_on_bench": 1651.7,
-  "weeks": 122
+  "weeks": 123
  },
  "faab_and_transactions": {
   "adds": 239,
@@ -63,7 +63,7 @@
    "week": 8
   },
   "budget_per_season": 100,
-  "drops": 234,
+  "drops": 235,
   "faab_taken_as_penalty": 0,
   "free_agent_adds": 107,
   "most_frequent_trade_partner": {
@@ -633,9 +633,9 @@
    "2026": {
     "best_par_claim": {
      "bid": 4,
-     "par_per_dollar": 1.66,
+     "par_per_dollar": 1.75,
      "player": "Chase McLaughlin",
-     "points_above_replacement": 6.64,
+     "points_above_replacement": 7.0,
      "points_per_dollar": 7.75,
      "points_started": 31.0,
      "pos": "K",
@@ -644,39 +644,39 @@
      "weeks_started": 3
     },
     "best_value": {
-     "bid": 9,
-     "par_per_dollar": -0.77,
-     "player": "Romeo Doubs",
-     "points_above_replacement": -6.9,
-     "points_per_dollar": 0.23,
-     "points_started": 2.1,
-     "pos": "WR",
-     "season": "2026",
-     "week": 4,
-     "weeks_started": 1
-    },
-    "biggest_bust": {
      "bid": 5,
-     "par_per_dollar": 0.0,
+     "par_per_dollar": -0.5,
      "player": "Green Bay Packers",
-     "points_above_replacement": 0.0,
-     "points_per_dollar": 0.0,
-     "points_started": 0.0,
+     "points_above_replacement": -2.5,
+     "points_per_dollar": 0.8,
+     "points_started": 4.0,
      "pos": "DEF",
      "season": "2026",
      "week": 9,
+     "weeks_started": 1
+    },
+    "biggest_bust": {
+     "bid": 4,
+     "par_per_dollar": 0.0,
+     "player": "Dontayvion Wicks",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 2,
      "weeks_started": 0
     },
-    "claims_benched_only": 5,
+    "claims_benched_only": 2,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 35,
     "free_claims": 0,
-    "hit_rate": 0.375,
+    "hit_rate": 0.75,
     "most_points": {
      "bid": 4,
-     "par_per_dollar": 1.66,
+     "par_per_dollar": 1.75,
      "player": "Chase McLaughlin",
-     "points_above_replacement": 6.64,
+     "points_above_replacement": 7.0,
      "points_per_dollar": 7.75,
      "points_started": 31.0,
      "pos": "K",
@@ -685,16 +685,16 @@
      "weeks_started": 3
     },
     "paid_claims": 8,
-    "par_per_dollar": -0.15,
-    "points_above_replacement": -5.24,
+    "par_per_dollar": -0.28,
+    "points_above_replacement": -9.66,
     "points_from_free_claims": 0,
-    "points_from_paid_claims": 45.92,
-    "points_per_dollar": 1.31,
+    "points_from_paid_claims": 64.42,
+    "points_per_dollar": 1.84,
     "worst_par_claim": {
      "bid": 9,
-     "par_per_dollar": -0.77,
+     "par_per_dollar": -0.75,
      "player": "Romeo Doubs",
-     "points_above_replacement": -6.9,
+     "points_above_replacement": -6.78,
      "points_per_dollar": 0.23,
      "points_started": 2.1,
      "pos": "WR",
@@ -704,13 +704,13 @@
     }
    }
   },
-  "claims_benched_only": 24,
+  "claims_benched_only": 21,
   "claims_dropped_before_playing": 5,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 688,
   "free_claims": 33,
-  "hit_rate": 0.707,
-  "league_points_per_dollar": 2.39,
+  "hit_rate": 0.737,
+  "league_points_per_dollar": 2.41,
   "most_points": {
    "bid": 33,
    "par_per_dollar": 1.72,
@@ -727,10 +727,10 @@
   "paid_claims": 99,
   "par_per_dollar": 0.27,
   "par_rank": 3,
-  "points_above_replacement": 187.93,
+  "points_above_replacement": 183.51,
   "points_from_free_claims": 599.4,
-  "points_from_paid_claims": 2416.94,
-  "points_per_dollar": 3.51,
+  "points_from_paid_claims": 2435.44,
+  "points_per_dollar": 3.54,
   "rank": 1,
   "worst_par_claim": {
    "bid": 19,
@@ -804,13 +804,13 @@
     "wins": 7
    },
    "471359444949659648": {
-    "games": 10,
+    "games": 11,
     "losses": 6,
-    "points_against": 1090.5,
-    "points_for": 994.78,
+    "points_against": 1182.92,
+    "points_for": 1101.86,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 4
+    "wins": 5
    },
    "471359672478068736": {
     "games": 12,
@@ -850,7 +850,7 @@
    }
   },
   "favorite_victim_owner_id": "471083964757438464",
-  "nemesis_owner_id": "471359444949659648"
+  "nemesis_owner_id": "422102738889867264"
  },
  "in_current_league": true,
  "legacy": {
@@ -894,7 +894,7 @@
     "record": {
      "losses": 5,
      "ties": 0,
-     "wins": 4
+     "wins": 5
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1059,7 +1059,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "4-5",
+     "counted_record": "5-5",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1074,10 +1074,10 @@
   "snapshot_rank": 5
  },
  "luck": {
-  "expected_wins": 53.08,
-  "luck": 5.92,
+  "expected_wins": 53.63,
+  "luck": 6.37,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 59
+  "wins": 60
  },
  "owner_id": "471366618241298432",
  "record": {
@@ -1095,26 +1095,26 @@
    "wins": 8
   },
   "regular_season": {
-   "avg_points_against": 101.7,
-   "avg_points_for": 103.52,
-   "games": 105,
+   "avg_points_against": 101.62,
+   "avg_points_for": 103.56,
+   "games": 106,
    "losses": 46,
-   "points_against": 10678.88,
-   "points_for": 10869.92,
+   "points_against": 10771.3,
+   "points_for": 10977.0,
    "ties": 0,
-   "win_pct": 0.5619,
-   "wins": 59
+   "win_pct": 0.566,
+   "wins": 60
   },
   "total": {
-   "avg_points_against": 102.53,
-   "avg_points_for": 104.05,
-   "games": 122,
+   "avg_points_against": 102.45,
+   "avg_points_for": 104.07,
+   "games": 123,
    "losses": 55,
-   "points_against": 12508.52,
-   "points_for": 12694.1,
+   "points_against": 12600.94,
+   "points_for": 12801.18,
    "ties": 0,
-   "win_pct": 0.5492,
-   "wins": 67
+   "win_pct": 0.5528,
+   "wins": 68
   }
  },
  "scoring": {
@@ -2078,11 +2078,11 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.8364,
+   "efficiency": 0.8517,
    "faab": {
     "adds": 12,
     "budget": 100,
-    "drops": 10,
+    "drops": 11,
     "faab_taken_as_penalty": 0,
     "free_agent_adds": 4,
     "refunded": 0,
@@ -2099,9 +2099,9 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 4,
-     "par_per_dollar": 1.66,
+     "par_per_dollar": 1.75,
      "player": "Chase McLaughlin",
-     "points_above_replacement": 6.64,
+     "points_above_replacement": 7.0,
      "points_per_dollar": 7.75,
      "points_started": 31.0,
      "pos": "K",
@@ -2110,39 +2110,39 @@
      "weeks_started": 3
     },
     "best_value": {
-     "bid": 9,
-     "par_per_dollar": -0.77,
-     "player": "Romeo Doubs",
-     "points_above_replacement": -6.9,
-     "points_per_dollar": 0.23,
-     "points_started": 2.1,
-     "pos": "WR",
-     "season": "2026",
-     "week": 4,
-     "weeks_started": 1
-    },
-    "biggest_bust": {
      "bid": 5,
-     "par_per_dollar": 0.0,
+     "par_per_dollar": -0.5,
      "player": "Green Bay Packers",
-     "points_above_replacement": 0.0,
-     "points_per_dollar": 0.0,
-     "points_started": 0.0,
+     "points_above_replacement": -2.5,
+     "points_per_dollar": 0.8,
+     "points_started": 4.0,
      "pos": "DEF",
      "season": "2026",
      "week": 9,
+     "weeks_started": 1
+    },
+    "biggest_bust": {
+     "bid": 4,
+     "par_per_dollar": 0.0,
+     "player": "Dontayvion Wicks",
+     "points_above_replacement": 0.0,
+     "points_per_dollar": 0.0,
+     "points_started": 0.0,
+     "pos": "WR",
+     "season": "2026",
+     "week": 2,
      "weeks_started": 0
     },
-    "claims_benched_only": 5,
+    "claims_benched_only": 2,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 35,
     "free_claims": 0,
-    "hit_rate": 0.375,
+    "hit_rate": 0.75,
     "most_points": {
      "bid": 4,
-     "par_per_dollar": 1.66,
+     "par_per_dollar": 1.75,
      "player": "Chase McLaughlin",
-     "points_above_replacement": 6.64,
+     "points_above_replacement": 7.0,
      "points_per_dollar": 7.75,
      "points_started": 31.0,
      "pos": "K",
@@ -2151,16 +2151,16 @@
      "weeks_started": 3
     },
     "paid_claims": 8,
-    "par_per_dollar": -0.15,
-    "points_above_replacement": -5.24,
+    "par_per_dollar": -0.28,
+    "points_above_replacement": -9.66,
     "points_from_free_claims": 0,
-    "points_from_paid_claims": 45.92,
-    "points_per_dollar": 1.31,
+    "points_from_paid_claims": 64.42,
+    "points_per_dollar": 1.84,
     "worst_par_claim": {
      "bid": 9,
-     "par_per_dollar": -0.77,
+     "par_per_dollar": -0.75,
      "player": "Romeo Doubs",
-     "points_above_replacement": -6.9,
+     "points_above_replacement": -6.78,
      "points_per_dollar": 0.23,
      "points_started": 2.1,
      "pos": "WR",
@@ -2171,10 +2171,10 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "38-61",
-    "expected_wins": 3.45,
-    "luck": 0.55,
-    "wins": 4
+    "all_play_record": "44-66",
+    "expected_wins": 4.0,
+    "luck": 1.0,
+    "wins": 5
    },
    "made_playoffs": false,
    "playoff_result": null,
@@ -2190,21 +2190,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 90.77,
-    "avg_points_for": 96.11,
-    "games": 9,
+    "avg_points_against": 90.94,
+    "avg_points_for": 97.21,
+    "games": 10,
     "losses": 5,
-    "points_against": 816.94,
-    "points_for": 865.0,
+    "points_against": 909.36,
+    "points_for": 972.08,
     "ties": 0,
-    "win_pct": 0.4444,
-    "wins": 4
+    "win_pct": 0.5,
+    "wins": 5
    },
-   "regular_season_rank": 9,
+   "regular_season_rank": 7,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 816.94,
-    "points_for": 864.99
+    "points_against": 909.36,
+    "points_for": 972.08
    },
    "team_name": "Always A Bridesmaid"
   }

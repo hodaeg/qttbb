@@ -44,6 +44,11 @@
    "doubtful": 2,
    "out": 3,
    "questionable_dnp": 0
+  },
+  "79761560662589440": {
+   "doubtful": 0,
+   "out": 1,
+   "questionable_dnp": 0
   }
  },
  "excluded": [
@@ -506,6 +511,19 @@
    "source": "snapshot",
    "status": "Out",
    "week": 9
+  },
+  {
+   "injury": null,
+   "multiplier": 1.0,
+   "owner_id": "79761560662589440",
+   "player": "Drake Maye",
+   "player_id": "11564",
+   "pos": "QB",
+   "roster_id": 4,
+   "season": "2026",
+   "source": "snapshot",
+   "status": "Out",
+   "week": 10
   }
  ],
  "rule": "Official NFL injury report: Out/Doubtful, or Questionable who did not play, AND 0 points as a starter (plus game-day snapshot flags)"

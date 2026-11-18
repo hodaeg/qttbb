@@ -19,7 +19,7 @@
   "record": {
    "losses": 112,
    "ties": 1,
-   "wins": 93
+   "wins": 94
   },
   "sackos": 3,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -28,7 +28,7 @@
    -15,
    -15
   ],
-  "win_pct": 0.4539
+  "win_pct": 0.4565
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -50,12 +50,12 @@
  "current_team_name": "Lil Kings",
  "display_name": "TheBoarHouse",
  "efficiency": {
-  "efficiency": 0.8927,
+  "efficiency": 0.8917,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13940.3,
-  "points": 12445.1,
-  "points_left_on_bench": 1495.2,
-  "weeks": 124
+  "optimal_points": 14076.96,
+  "points": 12552.46,
+  "points_left_on_bench": 1524.5,
+  "weeks": 125
  },
  "faab_and_transactions": {
   "adds": 331,
@@ -658,7 +658,7 @@
   "dollars_spent": 334,
   "free_claims": 39,
   "hit_rate": 0.622,
-  "league_points_per_dollar": 2.39,
+  "league_points_per_dollar": 2.41,
   "most_points": {
    "bid": 26,
    "par_per_dollar": 0.56,
@@ -716,13 +716,13 @@
     "wins": 5
    },
    "423560331814510592": {
-    "games": 13,
+    "games": 14,
     "losses": 7,
-    "points_against": 1314.18,
-    "points_for": 1268.42,
+    "points_against": 1394.52,
+    "points_for": 1375.78,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 6
+    "wins": 7
    },
    "471074114505797632": {
     "games": 12,
@@ -842,7 +842,7 @@
     "record": {
      "losses": 5,
      "ties": 0,
-     "wins": 4
+     "wins": 5
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1009,7 +1009,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "4-5",
+     "counted_record": "5-5",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1024,10 +1024,10 @@
   "snapshot_rank": 11
  },
  "luck": {
-  "expected_wins": 46.98,
-  "luck": 2.02,
+  "expected_wins": 47.62,
+  "luck": 2.38,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 49
+  "wins": 50
  },
  "owner_id": "471359672478068736",
  "record": {
@@ -1045,26 +1045,26 @@
    "wins": 6
   },
   "regular_season": {
-   "avg_points_against": 103.26,
-   "avg_points_for": 99.98,
-   "games": 105,
+   "avg_points_against": 103.04,
+   "avg_points_for": 100.05,
+   "games": 106,
    "losses": 56,
-   "points_against": 10842.08,
-   "points_for": 10497.9,
+   "points_against": 10922.42,
+   "points_for": 10605.26,
    "ties": 0,
-   "win_pct": 0.4667,
-   "wins": 49
+   "win_pct": 0.4717,
+   "wins": 50
   },
   "total": {
-   "avg_points_against": 103.73,
-   "avg_points_for": 100.23,
-   "games": 124,
+   "avg_points_against": 103.55,
+   "avg_points_for": 100.29,
+   "games": 125,
    "losses": 69,
-   "points_against": 12863.04,
-   "points_for": 12428.5,
+   "points_against": 12943.38,
+   "points_for": 12535.86,
    "ties": 0,
-   "win_pct": 0.4435,
-   "wins": 55
+   "win_pct": 0.448,
+   "wins": 56
   }
  },
  "scoring": {
@@ -1984,7 +1984,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.9104,
+   "efficiency": 0.8954,
    "faab": {
     "adds": 26,
     "budget": 100,
@@ -2066,12 +2066,12 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "47-52",
-    "expected_wins": 4.27,
-    "luck": -0.27,
-    "wins": 4
+    "all_play_record": "54-56",
+    "expected_wins": 4.91,
+    "luck": 0.09,
+    "wins": 5
    },
-   "made_playoffs": false,
+   "made_playoffs": true,
    "playoff_result": null,
    "postseason": {
     "avg_points_against": null,
@@ -2085,21 +2085,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 114.03,
-    "avg_points_for": 101.12,
-    "games": 9,
+    "avg_points_against": 110.66,
+    "avg_points_for": 101.75,
+    "games": 10,
     "losses": 5,
-    "points_against": 1026.3,
-    "points_for": 910.1,
+    "points_against": 1106.64,
+    "points_for": 1017.46,
     "ties": 0,
-    "win_pct": 0.4444,
-    "wins": 4
+    "win_pct": 0.5,
+    "wins": 5
    },
-   "regular_season_rank": 8,
+   "regular_season_rank": 5,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 1026.3,
-    "points_for": 910.1
+    "points_against": 1106.64,
+    "points_for": 1017.46
    },
    "team_name": "Lil Kings"
   }

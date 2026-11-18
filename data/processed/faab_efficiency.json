@@ -37488,56 +37488,62 @@
    "first_week": 2,
    "outcome": "started",
    "owner_id": "383681356686950400",
-   "par_per_dollar": 8.39,
+   "par_per_dollar": 6.01,
    "player": "Jordan Love",
    "player_id": "6804",
-   "points_above_replacement": 25.18,
-   "points_per_dollar": 43.99,
-   "points_started": 131.98,
+   "points_above_replacement": 18.04,
+   "points_per_dollar": 47.59,
+   "points_started": 142.78,
    "pos": "QB",
    "roster_id": 1,
    "season": "2026",
    "week": 1,
    "weekly": [
     {
-     "above_replacement": -5.0,
+     "above_replacement": -5.02,
      "points": 12.8,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 2
     },
     {
-     "above_replacement": 6.48,
+     "above_replacement": 6.46,
      "points": 24.28,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 5
     },
     {
-     "above_replacement": 2.44,
+     "above_replacement": 2.42,
      "points": 20.24,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 6
     },
     {
-     "above_replacement": -0.84,
+     "above_replacement": -0.86,
      "points": 16.96,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 7
     },
     {
-     "above_replacement": 3.72,
+     "above_replacement": 3.7,
      "points": 21.52,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 8
     },
     {
-     "above_replacement": 18.38,
+     "above_replacement": 18.36,
      "points": 36.18,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 9
+    },
+    {
+     "above_replacement": -7.02,
+     "points": 10.8,
+     "replacement_level": 17.82,
+     "week": 10
     }
    ],
    "weeks_rostered": 17,
-   "weeks_started": 6
+   "weeks_started": 7
   },
   {
    "bid": 17,
@@ -37627,7 +37633,7 @@
    "par_per_dollar": null,
    "player": "Brock Purdy",
    "player_id": "8183",
-   "points_above_replacement": 23.72,
+   "points_above_replacement": 23.66,
    "points_per_dollar": null,
    "points_started": 77.12,
    "pos": "QB",
@@ -37636,21 +37642,21 @@
    "week": 1,
    "weekly": [
     {
-     "above_replacement": 10.68,
+     "above_replacement": 10.66,
      "points": 28.48,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 2
     },
     {
-     "above_replacement": 13.48,
+     "above_replacement": 13.46,
      "points": 31.28,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 3
     },
     {
-     "above_replacement": -0.44,
+     "above_replacement": -0.46,
      "points": 17.36,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 6
     }
    ],
@@ -37694,10 +37700,10 @@
    "first_week": 2,
    "outcome": "started",
    "owner_id": "471359444949659648",
-   "par_per_dollar": -0.56,
+   "par_per_dollar": -0.45,
    "player": "Pat Freiermuth",
    "player_id": "7600",
-   "points_above_replacement": -2.78,
+   "points_above_replacement": -2.24,
    "points_per_dollar": 1.08,
    "points_started": 5.4,
    "pos": "TE",
@@ -37706,9 +37712,9 @@
    "week": 1,
    "weekly": [
     {
-     "above_replacement": -2.78,
+     "above_replacement": -2.24,
      "points": 5.4,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 2
     }
    ],
@@ -37767,7 +37773,7 @@
    "par_per_dollar": -0.02,
    "player": "Bryce Young",
    "player_id": "9228",
-   "points_above_replacement": -0.5,
+   "points_above_replacement": -0.54,
    "points_per_dollar": 1.46,
    "points_started": 35.1,
    "pos": "QB",
@@ -37776,15 +37782,15 @@
    "week": 2,
    "weekly": [
     {
-     "above_replacement": -4.16,
+     "above_replacement": -4.18,
      "points": 13.64,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 3
     },
     {
-     "above_replacement": 3.66,
+     "above_replacement": 3.64,
      "points": 21.46,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 4
     }
    ],
@@ -37819,10 +37825,10 @@
    "first_week": 3,
    "outcome": "started",
    "owner_id": "423560331814510592",
-   "par_per_dollar": -5.36,
+   "par_per_dollar": -5.0,
    "player": "Chase McLaughlin",
    "player_id": "6650",
-   "points_above_replacement": -5.36,
+   "points_above_replacement": -5.0,
    "points_per_dollar": 19.0,
    "points_started": 19.0,
    "pos": "K",
@@ -37831,21 +37837,21 @@
    "week": 2,
    "weekly": [
     {
-     "above_replacement": 2.88,
+     "above_replacement": 3.0,
      "points": 11.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 3
     },
     {
-     "above_replacement": -6.12,
+     "above_replacement": -6.0,
      "points": 2.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 4
     },
     {
-     "above_replacement": -2.12,
+     "above_replacement": -2.0,
      "points": 6.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 5
     }
    ],
@@ -37860,10 +37866,10 @@
    "first_week": 3,
    "outcome": "started",
    "owner_id": "79761560662589440",
-   "par_per_dollar": 1.2,
+   "par_per_dollar": 1.19,
    "player": "Jared Goff",
    "player_id": "3163",
-   "points_above_replacement": 14.38,
+   "points_above_replacement": 14.32,
    "points_per_dollar": 5.65,
    "points_started": 67.78,
    "pos": "QB",
@@ -37872,21 +37878,21 @@
    "week": 2,
    "weekly": [
     {
-     "above_replacement": 1.56,
+     "above_replacement": 1.54,
      "points": 19.36,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 3
     },
     {
-     "above_replacement": 2.68,
+     "above_replacement": 2.66,
      "points": 20.48,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 4
     },
     {
-     "above_replacement": 10.14,
+     "above_replacement": 10.12,
      "points": 27.94,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 5
     }
    ],
@@ -37950,10 +37956,10 @@
    "first_week": 3,
    "outcome": "started",
    "owner_id": "471345530597797888",
-   "par_per_dollar": -2.63,
+   "par_per_dollar": -1.73,
    "player": "Juwan Johnson",
    "player_id": "7002",
-   "points_above_replacement": -7.9,
+   "points_above_replacement": -5.2,
    "points_per_dollar": 11.0,
    "points_started": 33.0,
    "pos": "TE",
@@ -37962,33 +37968,33 @@
    "week": 2,
    "weekly": [
     {
-     "above_replacement": 11.12,
+     "above_replacement": 11.66,
      "points": 19.3,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 3
     },
     {
-     "above_replacement": 0.72,
+     "above_replacement": 1.26,
      "points": 8.9,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 4
     },
     {
-     "above_replacement": -4.58,
+     "above_replacement": -4.04,
      "points": 3.6,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 5
     },
     {
-     "above_replacement": -8.18,
+     "above_replacement": -7.64,
      "points": 0,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 6
     },
     {
-     "above_replacement": -6.98,
+     "above_replacement": -6.44,
      "points": 1.2,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 7
     }
    ],
@@ -38032,10 +38038,10 @@
    "first_week": 3,
    "outcome": "started",
    "owner_id": "422102738889867264",
-   "par_per_dollar": 0.05,
+   "par_per_dollar": -0.04,
    "player": "Emanuel Wilson",
    "player_id": "11435",
-   "points_above_replacement": 0.34,
+   "points_above_replacement": -0.3,
    "points_per_dollar": 2.49,
    "points_started": 17.4,
    "pos": "RB",
@@ -38044,15 +38050,15 @@
    "week": 2,
    "weekly": [
     {
-     "above_replacement": 3.67,
+     "above_replacement": 3.35,
      "points": 12.2,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 5
     },
     {
-     "above_replacement": -3.33,
+     "above_replacement": -3.65,
      "points": 5.2,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 6
     }
    ],
@@ -38070,7 +38076,7 @@
    "par_per_dollar": null,
    "player": "Tyler Bass",
    "player_id": "7042",
-   "points_above_replacement": -2.12,
+   "points_above_replacement": -2.0,
    "points_per_dollar": null,
    "points_started": 6.0,
    "pos": "K",
@@ -38079,9 +38085,9 @@
    "week": 2,
    "weekly": [
     {
-     "above_replacement": -2.12,
+     "above_replacement": -2.0,
      "points": 6.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 3
     }
    ],
@@ -38128,53 +38134,59 @@
    "par_per_dollar": null,
    "player": "Evan McPherson",
    "player_id": "7839",
-   "points_above_replacement": -5.72,
+   "points_above_replacement": -6.0,
    "points_per_dollar": null,
-   "points_started": 43.0,
+   "points_started": 50.0,
    "pos": "K",
    "roster_id": 9,
    "season": "2026",
    "week": 2,
    "weekly": [
     {
-     "above_replacement": 1.88,
+     "above_replacement": 2.0,
      "points": 10.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 3
     },
     {
-     "above_replacement": -3.12,
+     "above_replacement": -3.0,
      "points": 5.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 4
     },
     {
-     "above_replacement": -1.12,
+     "above_replacement": -1.0,
      "points": 7.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 5
     },
     {
-     "above_replacement": -3.12,
+     "above_replacement": -3.0,
      "points": 5.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 7
     },
     {
-     "above_replacement": -3.12,
+     "above_replacement": -3.0,
      "points": 5.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 8
     },
     {
-     "above_replacement": 2.88,
+     "above_replacement": 3.0,
      "points": 11.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 9
+    },
+    {
+     "above_replacement": -1.0,
+     "points": 7.0,
+     "replacement_level": 8.0,
+     "week": 10
     }
    ],
    "weeks_rostered": 16,
-   "weeks_started": 6
+   "weeks_started": 7
   },
   {
    "bid": 25,
@@ -38184,10 +38196,10 @@
    "first_week": 3,
    "outcome": "started",
    "owner_id": "471360899853053952",
-   "par_per_dollar": 0.73,
+   "par_per_dollar": 0.7,
    "player": "Jonah Coleman",
    "player_id": "13345",
-   "points_above_replacement": 18.14,
+   "points_above_replacement": 17.5,
    "points_per_dollar": 1.41,
    "points_started": 35.2,
    "pos": "RB",
@@ -38196,15 +38208,15 @@
    "week": 2,
    "weekly": [
     {
-     "above_replacement": 9.87,
+     "above_replacement": 9.55,
      "points": 18.4,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 8
     },
     {
-     "above_replacement": 8.27,
+     "above_replacement": 7.95,
      "points": 16.8,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 9
     }
    ],
@@ -38259,10 +38271,10 @@
    "first_week": 4,
    "outcome": "started",
    "owner_id": "471083964757438464",
-   "par_per_dollar": -0.9,
+   "par_per_dollar": -0.83,
    "player": "Kenyon Sadiq",
    "player_id": "13330",
-   "points_above_replacement": -13.56,
+   "points_above_replacement": -12.48,
    "points_per_dollar": 0.19,
    "points_started": 2.8,
    "pos": "TE",
@@ -38271,15 +38283,15 @@
    "week": 3,
    "weekly": [
     {
-     "above_replacement": -6.48,
+     "above_replacement": -5.94,
      "points": 1.7,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 6
     },
     {
-     "above_replacement": -7.08,
+     "above_replacement": -6.54,
      "points": 1.1,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 7
     }
    ],
@@ -38338,44 +38350,50 @@
    "first_week": 4,
    "outcome": "started",
    "owner_id": "471345530597797888",
-   "par_per_dollar": 0.51,
+   "par_per_dollar": 0.67,
    "player": "Ollie Gordon II",
    "player_id": "12495",
-   "points_above_replacement": 11.28,
-   "points_per_dollar": 2.06,
-   "points_started": 45.4,
+   "points_above_replacement": 14.65,
+   "points_per_dollar": 2.68,
+   "points_started": 58.9,
    "pos": "RB",
    "roster_id": 6,
    "season": "2026",
    "week": 3,
    "weekly": [
     {
-     "above_replacement": 6.27,
+     "above_replacement": 5.95,
      "points": 14.8,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 5
     },
     {
-     "above_replacement": 8.27,
+     "above_replacement": 7.95,
      "points": 16.8,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 7
     },
     {
-     "above_replacement": -1.63,
+     "above_replacement": -1.95,
      "points": 6.9,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 8
     },
     {
-     "above_replacement": -1.63,
+     "above_replacement": -1.95,
      "points": 6.9,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 9
+    },
+    {
+     "above_replacement": 4.65,
+     "points": 13.5,
+     "replacement_level": 8.85,
+     "week": 10
     }
    ],
    "weeks_rostered": 15,
-   "weeks_started": 4
+   "weeks_started": 5
   },
   {
    "bid": 0,
@@ -38403,10 +38421,10 @@
    "first_week": 4,
    "outcome": "started",
    "owner_id": "471359444949659648",
-   "par_per_dollar": 1.17,
+   "par_per_dollar": 1.09,
    "player": "Braelon Allen",
    "player_id": "11576",
-   "points_above_replacement": 28.12,
+   "points_above_replacement": 26.2,
    "points_per_dollar": 3.3,
    "points_started": 79.3,
    "pos": "RB",
@@ -38415,39 +38433,39 @@
    "week": 3,
    "weekly": [
     {
-     "above_replacement": -0.83,
+     "above_replacement": -1.15,
      "points": 7.7,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 4
     },
     {
-     "above_replacement": 8.57,
+     "above_replacement": 8.25,
      "points": 17.1,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 5
     },
     {
-     "above_replacement": 2.87,
+     "above_replacement": 2.55,
      "points": 11.4,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 6
     },
     {
-     "above_replacement": 7.87,
+     "above_replacement": 7.55,
      "points": 16.4,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 7
     },
     {
-     "above_replacement": 13.77,
+     "above_replacement": 13.45,
      "points": 22.3,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 8
     },
     {
-     "above_replacement": -4.13,
+     "above_replacement": -4.45,
      "points": 4.4,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 9
     }
    ],
@@ -38462,10 +38480,10 @@
    "first_week": 5,
    "outcome": "started",
    "owner_id": "423560331814510592",
-   "par_per_dollar": 1.01,
+   "par_per_dollar": 1.28,
    "player": "T.J. Hockenson",
    "player_id": "5844",
-   "points_above_replacement": 6.06,
+   "points_above_replacement": 7.68,
    "points_per_dollar": 5.1,
    "points_started": 30.6,
    "pos": "TE",
@@ -38474,21 +38492,21 @@
    "week": 4,
    "weekly": [
     {
-     "above_replacement": 3.32,
+     "above_replacement": 3.86,
      "points": 11.5,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 7
     },
     {
-     "above_replacement": 5.62,
+     "above_replacement": 6.16,
      "points": 13.8,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 8
     },
     {
-     "above_replacement": -2.88,
+     "above_replacement": -2.34,
      "points": 5.3,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 9
     }
    ],
@@ -38504,7 +38522,7 @@
    "par_per_dollar": null,
    "player": "Mark Andrews",
    "player_id": "5012",
-   "points_above_replacement": -5.38,
+   "points_above_replacement": -4.84,
    "points_per_dollar": null,
    "points_started": 2.8,
    "pos": "TE",
@@ -38513,9 +38531,9 @@
    "week": 4,
    "weekly": [
     {
-     "above_replacement": -5.38,
+     "above_replacement": -4.84,
      "points": 2.8,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 5
     }
    ],
@@ -38574,10 +38592,10 @@
    "first_week": 5,
    "outcome": "started",
    "owner_id": "471345530597797888",
-   "par_per_dollar": 3.49,
+   "par_per_dollar": 3.48,
    "player": "Jacoby Brissett",
    "player_id": "3257",
-   "points_above_replacement": 6.98,
+   "points_above_replacement": 6.96,
    "points_per_dollar": 12.39,
    "points_started": 24.78,
    "pos": "QB",
@@ -38586,9 +38604,9 @@
    "week": 4,
    "weekly": [
     {
-     "above_replacement": 6.98,
+     "above_replacement": 6.96,
      "points": 24.78,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 5
     }
    ],
@@ -38635,7 +38653,7 @@
    "par_per_dollar": null,
    "player": "Jake Bates",
    "player_id": "11539",
-   "points_above_replacement": 0.88,
+   "points_above_replacement": 1.0,
    "points_per_dollar": null,
    "points_started": 9.0,
    "pos": "K",
@@ -38644,9 +38662,9 @@
    "week": 4,
    "weekly": [
     {
-     "above_replacement": 0.88,
+     "above_replacement": 1.0,
      "points": 9.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 5
     }
    ],
@@ -38694,10 +38712,10 @@
    "first_week": 5,
    "outcome": "started",
    "owner_id": "471360899853053952",
-   "par_per_dollar": -0.12,
+   "par_per_dollar": -0.11,
    "player": "Keon Coleman",
    "player_id": "11637",
-   "points_above_replacement": -1.8,
+   "points_above_replacement": -1.68,
    "points_per_dollar": 0.48,
    "points_started": 7.2,
    "pos": "WR",
@@ -38706,9 +38724,9 @@
    "week": 4,
    "weekly": [
     {
-     "above_replacement": -1.8,
+     "above_replacement": -1.68,
      "points": 7.2,
-     "replacement_level": 9.0,
+     "replacement_level": 8.88,
      "week": 5
     }
    ],
@@ -38723,10 +38741,10 @@
    "first_week": 5,
    "outcome": "started",
    "owner_id": "471359444949659648",
-   "par_per_dollar": 1.07,
+   "par_per_dollar": 1.06,
    "player": "C.J. Stroud",
    "player_id": "9758",
-   "points_above_replacement": 2.14,
+   "points_above_replacement": 2.12,
    "points_per_dollar": 9.97,
    "points_started": 19.94,
    "pos": "QB",
@@ -38735,9 +38753,9 @@
    "week": 4,
    "weekly": [
     {
-     "above_replacement": 2.14,
+     "above_replacement": 2.12,
      "points": 19.94,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 5
     }
    ],
@@ -38770,10 +38788,10 @@
    "first_week": 5,
    "outcome": "started",
    "owner_id": "471366618241298432",
-   "par_per_dollar": -0.77,
+   "par_per_dollar": -0.75,
    "player": "Romeo Doubs",
    "player_id": "8121",
-   "points_above_replacement": -6.9,
+   "points_above_replacement": -6.78,
    "points_per_dollar": 0.23,
    "points_started": 2.1,
    "pos": "WR",
@@ -38782,9 +38800,9 @@
    "week": 4,
    "weekly": [
     {
-     "above_replacement": -6.9,
+     "above_replacement": -6.78,
      "points": 2.1,
-     "replacement_level": 9.0,
+     "replacement_level": 8.88,
      "week": 5
     }
    ],
@@ -38799,10 +38817,10 @@
    "first_week": 6,
    "outcome": "started",
    "owner_id": "423560331814510592",
-   "par_per_dollar": -7.12,
+   "par_per_dollar": -7.0,
    "player": "Nick Folk",
    "player_id": "650",
-   "points_above_replacement": -7.12,
+   "points_above_replacement": -7.0,
    "points_per_dollar": 1.0,
    "points_started": 1.0,
    "pos": "K",
@@ -38811,9 +38829,9 @@
    "week": 5,
    "weekly": [
     {
-     "above_replacement": -7.12,
+     "above_replacement": -7.0,
      "points": 1.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 6
     }
    ],
@@ -38828,10 +38846,10 @@
    "first_week": 6,
    "outcome": "started",
    "owner_id": "79761560662589440",
-   "par_per_dollar": -0.92,
+   "par_per_dollar": -0.9,
    "player": "Germie Bernard",
    "player_id": "13274",
-   "points_above_replacement": -8.3,
+   "points_above_replacement": -8.06,
    "points_per_dollar": 1.08,
    "points_started": 9.7,
    "pos": "WR",
@@ -38840,15 +38858,15 @@
    "week": 5,
    "weekly": [
     {
-     "above_replacement": -4.8,
+     "above_replacement": -4.68,
      "points": 4.2,
-     "replacement_level": 9.0,
+     "replacement_level": 8.88,
      "week": 7
     },
     {
-     "above_replacement": -3.5,
+     "above_replacement": -3.38,
      "points": 5.5,
-     "replacement_level": 9.0,
+     "replacement_level": 8.88,
      "week": 8
     }
    ],
@@ -38914,10 +38932,10 @@
    "first_week": 6,
    "outcome": "started",
    "owner_id": "471345530597797888",
-   "par_per_dollar": 0.89,
+   "par_per_dollar": 0.83,
    "player": "Dameon Pierce",
    "player_id": "8129",
-   "points_above_replacement": 4.47,
+   "points_above_replacement": 4.15,
    "points_per_dollar": 2.6,
    "points_started": 13.0,
    "pos": "RB",
@@ -38926,9 +38944,9 @@
    "week": 5,
    "weekly": [
     {
-     "above_replacement": 4.47,
+     "above_replacement": 4.15,
      "points": 13.0,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 6
     }
    ],
@@ -38943,10 +38961,10 @@
    "first_week": 6,
    "outcome": "started",
    "owner_id": "471345530597797888",
-   "par_per_dollar": 0.72,
+   "par_per_dollar": 0.7,
    "player": "Kirk Cousins",
    "player_id": "1166",
-   "points_above_replacement": 0.72,
+   "points_above_replacement": 0.7,
    "points_per_dollar": 18.52,
    "points_started": 18.52,
    "pos": "QB",
@@ -38955,9 +38973,9 @@
    "week": 5,
    "weekly": [
     {
-     "above_replacement": 0.72,
+     "above_replacement": 0.7,
      "points": 18.52,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 6
     }
    ],
@@ -39032,47 +39050,53 @@
    "par_per_dollar": null,
    "player": "Spencer Shrader",
    "player_id": "12185",
-   "points_above_replacement": 1.4,
+   "points_above_replacement": 1.0,
    "points_per_dollar": null,
-   "points_started": 42.0,
+   "points_started": 49.0,
    "pos": "K",
    "roster_id": 7,
    "season": "2026",
    "week": 5,
    "weekly": [
     {
-     "above_replacement": 9.88,
+     "above_replacement": 10.0,
      "points": 18.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 5
     },
     {
-     "above_replacement": -0.12,
+     "above_replacement": 0.0,
      "points": 8.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 6
     },
     {
-     "above_replacement": -6.12,
+     "above_replacement": -6.0,
      "points": 2.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 7
     },
     {
-     "above_replacement": -7.12,
+     "above_replacement": -7.0,
      "points": 1.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 8
     },
     {
-     "above_replacement": 4.88,
+     "above_replacement": 5.0,
      "points": 13.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 9
+    },
+    {
+     "above_replacement": -1.0,
+     "points": 7.0,
+     "replacement_level": 8.0,
+     "week": 10
     }
    ],
    "weeks_rostered": 14,
-   "weeks_started": 5
+   "weeks_started": 6
   },
   {
    "bid": 0,
@@ -39083,7 +39107,7 @@
    "par_per_dollar": null,
    "player": "Dominic Zvada",
    "player_id": "13833",
-   "points_above_replacement": -1.12,
+   "points_above_replacement": -1.0,
    "points_per_dollar": null,
    "points_started": 7.0,
    "pos": "K",
@@ -39092,9 +39116,9 @@
    "week": 5,
    "weekly": [
     {
-     "above_replacement": -1.12,
+     "above_replacement": -1.0,
      "points": 7.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 6
     }
    ],
@@ -39185,35 +39209,41 @@
    "par_per_dollar": null,
    "player": "Jake Bates",
    "player_id": "11539",
-   "points_above_replacement": 2.64,
+   "points_above_replacement": 0.0,
    "points_per_dollar": null,
-   "points_started": 27.0,
+   "points_started": 32.0,
    "pos": "K",
    "roster_id": 2,
    "season": "2026",
    "week": 6,
    "weekly": [
     {
-     "above_replacement": -0.12,
+     "above_replacement": 0.0,
      "points": 8.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 7
     },
     {
-     "above_replacement": -2.12,
+     "above_replacement": -2.0,
      "points": 6.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 8
     },
     {
-     "above_replacement": 4.88,
+     "above_replacement": 5.0,
      "points": 13.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 9
+    },
+    {
+     "above_replacement": -3.0,
+     "points": 5.0,
+     "replacement_level": 8.0,
+     "week": 10
     }
    ],
    "weeks_rostered": 13,
-   "weeks_started": 3
+   "weeks_started": 4
   },
   {
    "bid": 6,
@@ -39224,7 +39254,7 @@
    "par_per_dollar": -0.65,
    "player": "Kyler Murray",
    "player_id": "5849",
-   "points_above_replacement": -3.9,
+   "points_above_replacement": -3.92,
    "points_per_dollar": 2.32,
    "points_started": 13.9,
    "pos": "QB",
@@ -39233,9 +39263,9 @@
    "week": 6,
    "weekly": [
     {
-     "above_replacement": -3.9,
+     "above_replacement": -3.92,
      "points": 13.9,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 7
     }
    ],
@@ -39278,7 +39308,7 @@
    "par_per_dollar": null,
    "player": "C.J. Stroud",
    "player_id": "9758",
-   "points_above_replacement": 3.9,
+   "points_above_replacement": 3.86,
    "points_per_dollar": null,
    "points_started": 39.5,
    "pos": "QB",
@@ -39287,15 +39317,15 @@
    "week": 6,
    "weekly": [
     {
-     "above_replacement": 5.18,
+     "above_replacement": 5.16,
      "points": 22.98,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 6
     },
     {
-     "above_replacement": -1.28,
+     "above_replacement": -1.3,
      "points": 16.52,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 7
     }
    ],
@@ -39335,7 +39365,7 @@
    "par_per_dollar": null,
    "player": "Bo Nix",
    "player_id": "11563",
-   "points_above_replacement": 7.38,
+   "points_above_replacement": 7.36,
    "points_per_dollar": null,
    "points_started": 25.18,
    "pos": "QB",
@@ -39344,9 +39374,9 @@
    "week": 6,
    "weekly": [
     {
-     "above_replacement": 7.38,
+     "above_replacement": 7.36,
      "points": 25.18,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 7
     }
    ],
@@ -39428,10 +39458,10 @@
    "first_week": 7,
    "outcome": "started",
    "owner_id": "471359444949659648",
-   "par_per_dollar": -3.62,
+   "par_per_dollar": -3.77,
    "player": "Roschon Johnson",
    "player_id": "10235",
-   "points_above_replacement": -7.23,
+   "points_above_replacement": -7.55,
    "points_per_dollar": 0.65,
    "points_started": 1.3,
    "pos": "RB",
@@ -39440,9 +39470,9 @@
    "week": 6,
    "weekly": [
     {
-     "above_replacement": -7.23,
+     "above_replacement": -7.55,
      "points": 1.3,
-     "replacement_level": 8.53,
+     "replacement_level": 8.85,
      "week": 7
     }
    ],
@@ -39460,7 +39490,7 @@
    "par_per_dollar": -1.25,
    "player": "Tyler Shough",
    "player_id": "12545",
-   "points_above_replacement": -4.98,
+   "points_above_replacement": -5.0,
    "points_per_dollar": 3.21,
    "points_started": 12.82,
    "pos": "QB",
@@ -39469,9 +39499,9 @@
    "week": 6,
    "weekly": [
     {
-     "above_replacement": -4.98,
+     "above_replacement": -5.0,
      "points": 12.82,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 7
     }
    ],
@@ -39486,10 +39516,10 @@
    "first_week": 7,
    "outcome": "started",
    "owner_id": "471366618241298432",
-   "par_per_dollar": 1.66,
+   "par_per_dollar": 1.75,
    "player": "Chase McLaughlin",
    "player_id": "6650",
-   "points_above_replacement": 6.64,
+   "points_above_replacement": 7.0,
    "points_per_dollar": 7.75,
    "points_started": 31.0,
    "pos": "K",
@@ -39498,21 +39528,21 @@
    "week": 6,
    "weekly": [
     {
-     "above_replacement": 2.88,
+     "above_replacement": 3.0,
      "points": 11.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 7
     },
     {
-     "above_replacement": 1.88,
+     "above_replacement": 2.0,
      "points": 10.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 8
     },
     {
-     "above_replacement": 1.88,
+     "above_replacement": 2.0,
      "points": 10.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 9
     }
    ],
@@ -39525,10 +39555,10 @@
    "first_week": 7,
    "outcome": "started",
    "owner_id": "471368473092550656",
-   "par_per_dollar": 0.16,
+   "par_per_dollar": -0.34,
    "player": "Omar Cooper Jr.",
    "player_id": "13276",
-   "points_above_replacement": 2.8,
+   "points_above_replacement": -5.72,
    "points_per_dollar": 1.75,
    "points_started": 29.8,
    "pos": "WR",
@@ -39537,26 +39567,32 @@
    "week": 6,
    "weekly": [
     {
-     "above_replacement": 11.0,
+     "above_replacement": 11.12,
      "points": 20.0,
-     "replacement_level": 9.0,
+     "replacement_level": 8.88,
      "week": 7
     },
     {
-     "above_replacement": -9.0,
+     "above_replacement": -8.88,
      "points": 0,
-     "replacement_level": 9.0,
+     "replacement_level": 8.88,
      "week": 8
     },
     {
-     "above_replacement": 0.8,
+     "above_replacement": 0.92,
      "points": 9.8,
-     "replacement_level": 9.0,
+     "replacement_level": 8.88,
      "week": 9
+    },
+    {
+     "above_replacement": -8.88,
+     "points": 0,
+     "replacement_level": 8.88,
+     "week": 10
     }
    ],
    "weeks_rostered": 12,
-   "weeks_started": 3
+   "weeks_started": 4
   },
   {
    "bid": 3,
@@ -39589,29 +39625,35 @@
    "par_per_dollar": null,
    "player": "Cam Little",
    "player_id": "11786",
-   "points_above_replacement": 4.76,
+   "points_above_replacement": 13.0,
    "points_per_dollar": null,
-   "points_started": 21.0,
+   "points_started": 37.0,
    "pos": "K",
    "roster_id": 3,
    "season": "2026",
    "week": 7,
    "weekly": [
     {
-     "above_replacement": -2.12,
+     "above_replacement": -2.0,
      "points": 6.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 8
     },
     {
-     "above_replacement": 6.88,
+     "above_replacement": 7.0,
      "points": 15.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 9
+    },
+    {
+     "above_replacement": 8.0,
+     "points": 16.0,
+     "replacement_level": 8.0,
+     "week": 10
     }
    ],
    "weeks_rostered": 12,
-   "weeks_started": 2
+   "weeks_started": 3
   },
   {
    "bid": 7,
@@ -39621,10 +39663,10 @@
    "first_week": 8,
    "outcome": "started",
    "owner_id": "79761560662589440",
-   "par_per_dollar": 0.14,
+   "par_per_dollar": 0.16,
    "player": "Caleb Douglas",
    "player_id": "13296",
-   "points_above_replacement": 1.0,
+   "points_above_replacement": 1.12,
    "points_per_dollar": 1.43,
    "points_started": 10.0,
    "pos": "WR",
@@ -39633,9 +39675,9 @@
    "week": 7,
    "weekly": [
     {
-     "above_replacement": 1.0,
+     "above_replacement": 1.12,
      "points": 10.0,
-     "replacement_level": 9.0,
+     "replacement_level": 8.88,
      "week": 9
     }
    ],
@@ -39648,12 +39690,12 @@
    "first_week": 7,
    "outcome": "started",
    "owner_id": "79761560662589440",
-   "par_per_dollar": 3.8,
+   "par_per_dollar": 3.1,
    "player": "Jacksonville Jaguars",
    "player_id": "JAX",
-   "points_above_replacement": 19.0,
-   "points_per_dollar": 6.4,
-   "points_started": 32.0,
+   "points_above_replacement": 15.5,
+   "points_per_dollar": 7.0,
+   "points_started": 35.0,
    "pos": "DEF",
    "roster_id": 4,
    "season": "2026",
@@ -39670,10 +39712,16 @@
      "points": 12.0,
      "replacement_level": 6.5,
      "week": 9
+    },
+    {
+     "above_replacement": -3.5,
+     "points": 3.0,
+     "replacement_level": 6.5,
+     "week": 10
     }
    ],
    "weeks_rostered": 12,
-   "weeks_started": 2
+   "weeks_started": 3
   },
   {
    "bid": 2,
@@ -39705,10 +39753,10 @@
    "first_week": 8,
    "outcome": "started",
    "owner_id": "471345530597797888",
-   "par_per_dollar": -0.73,
+   "par_per_dollar": -0.52,
    "player": "Dallas Goedert",
    "player_id": "5022",
-   "points_above_replacement": -3.66,
+   "points_above_replacement": -2.58,
    "points_per_dollar": 2.54,
    "points_started": 12.7,
    "pos": "TE",
@@ -39717,15 +39765,15 @@
    "week": 7,
    "weekly": [
     {
-     "above_replacement": -2.98,
+     "above_replacement": -2.44,
      "points": 5.2,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 8
     },
     {
-     "above_replacement": -0.68,
+     "above_replacement": -0.14,
      "points": 7.5,
-     "replacement_level": 8.18,
+     "replacement_level": 7.64,
      "week": 9
     }
    ],
@@ -39760,12 +39808,12 @@
    "first_week": 8,
    "outcome": "started",
    "owner_id": "383681356686950400",
-   "par_per_dollar": 0.31,
+   "par_per_dollar": 0.28,
    "player": "Houston Texans",
    "player_id": "HOU",
-   "points_above_replacement": 5.5,
-   "points_per_dollar": 0.67,
-   "points_started": 12.0,
+   "points_above_replacement": 5.0,
+   "points_per_dollar": 1.0,
+   "points_started": 18.0,
    "pos": "DEF",
    "roster_id": 1,
    "season": "2026",
@@ -39776,10 +39824,16 @@
      "points": 12.0,
      "replacement_level": 6.5,
      "week": 9
+    },
+    {
+     "above_replacement": -0.5,
+     "points": 6.0,
+     "replacement_level": 6.5,
+     "week": 10
     }
    ],
    "weeks_rostered": 11,
-   "weeks_started": 1
+   "weeks_started": 2
   },
   {
    "bid": 4,
@@ -39789,26 +39843,32 @@
    "first_week": 8,
    "outcome": "started",
    "owner_id": "79761560662589440",
-   "par_per_dollar": 1.72,
+   "par_per_dollar": 1.25,
    "player": "Ka'imi Fairbairn",
    "player_id": "3451",
-   "points_above_replacement": 6.88,
-   "points_per_dollar": 3.75,
-   "points_started": 15.0,
+   "points_above_replacement": 5.0,
+   "points_per_dollar": 5.25,
+   "points_started": 21.0,
    "pos": "K",
    "roster_id": 4,
    "season": "2026",
    "week": 8,
    "weekly": [
     {
-     "above_replacement": 6.88,
+     "above_replacement": 7.0,
      "points": 15.0,
-     "replacement_level": 8.12,
+     "replacement_level": 8.0,
      "week": 9
+    },
+    {
+     "above_replacement": -2.0,
+     "points": 6.0,
+     "replacement_level": 8.0,
+     "week": 10
     }
    ],
    "weeks_rostered": 11,
-   "weeks_started": 1
+   "weeks_started": 2
   },
   {
    "bid": 0,
@@ -39821,9 +39881,9 @@
    "par_per_dollar": null,
    "player": "Cleveland Browns",
    "player_id": "CLE",
-   "points_above_replacement": -1.0,
+   "points_above_replacement": -2.5,
    "points_per_dollar": null,
-   "points_started": 12.0,
+   "points_started": 17.0,
    "pos": "DEF",
    "roster_id": 5,
    "season": "2026",
@@ -39840,10 +39900,16 @@
      "points": 8.0,
      "replacement_level": 6.5,
      "week": 9
+    },
+    {
+     "above_replacement": -1.5,
+     "points": 5.0,
+     "replacement_level": 6.5,
+     "week": 10
     }
    ],
    "weeks_rostered": 11,
-   "weeks_started": 2
+   "weeks_started": 3
   },
   {
    "bid": 1,
@@ -39898,26 +39964,32 @@
    "first_week": 9,
    "outcome": "started",
    "owner_id": "471345530597797888",
-   "par_per_dollar": -0.39,
+   "par_per_dollar": 2.54,
    "player": "Patrick Mahomes",
    "player_id": "4046",
-   "points_above_replacement": -2.32,
-   "points_per_dollar": 2.58,
-   "points_started": 15.48,
+   "points_above_replacement": 15.26,
+   "points_per_dollar": 8.48,
+   "points_started": 50.9,
    "pos": "QB",
    "roster_id": 6,
    "season": "2026",
    "week": 8,
    "weekly": [
     {
-     "above_replacement": -2.32,
+     "above_replacement": -2.34,
      "points": 15.48,
-     "replacement_level": 17.8,
+     "replacement_level": 17.82,
      "week": 9
+    },
+    {
+     "above_replacement": 17.6,
+     "points": 35.42,
+     "replacement_level": 17.82,
+     "week": 10
     }
    ],
    "weeks_rostered": 10,
-   "weeks_started": 1
+   "weeks_started": 2
   },
   {
    "bid": 0,
@@ -39998,21 +40070,28 @@
     "Adonai Mitchell"
    ],
    "first_week": 10,
-   "outcome": "never_started",
+   "outcome": "started",
    "owner_id": "383681356686950400",
-   "par_per_dollar": 0.0,
+   "par_per_dollar": -0.17,
    "player": "Tank Dell",
    "player_id": "9502",
-   "points_above_replacement": 0.0,
-   "points_per_dollar": 0.0,
-   "points_started": 0.0,
+   "points_above_replacement": -5.28,
+   "points_per_dollar": 0.11,
+   "points_started": 3.6,
    "pos": "WR",
    "roster_id": 1,
    "season": "2026",
    "week": 9,
-   "weekly": [],
+   "weekly": [
+    {
+     "above_replacement": -5.28,
+     "points": 3.6,
+     "replacement_level": 8.88,
+     "week": 10
+    }
+   ],
    "weeks_rostered": 9,
-   "weeks_started": 0
+   "weeks_started": 1
   },
   {
    "bid": 12,
@@ -40020,21 +40099,28 @@
     "Samaje Perine"
    ],
    "first_week": 10,
-   "outcome": "never_started",
+   "outcome": "started",
    "owner_id": "423560331814510592",
-   "par_per_dollar": 0.0,
+   "par_per_dollar": -0.53,
    "player": "Corey Kiner",
    "player_id": "12491",
-   "points_above_replacement": 0.0,
-   "points_per_dollar": 0.0,
-   "points_started": 0.0,
+   "points_above_replacement": -6.35,
+   "points_per_dollar": 0.21,
+   "points_started": 2.5,
    "pos": "RB",
    "roster_id": 2,
    "season": "2026",
    "week": 9,
-   "weekly": [],
+   "weekly": [
+    {
+     "above_replacement": -6.35,
+     "points": 2.5,
+     "replacement_level": 8.85,
+     "week": 10
+    }
+   ],
    "weeks_rostered": 9,
-   "weeks_started": 0
+   "weeks_started": 1
   },
   {
    "bid": 6,
@@ -40064,21 +40150,28 @@
     "Chad Ryland"
    ],
    "first_week": 9,
-   "outcome": "never_started",
+   "outcome": "started",
    "owner_id": "471083964757438464",
    "par_per_dollar": null,
    "player": "Chris Boswell",
    "player_id": "1945",
-   "points_above_replacement": 0.0,
+   "points_above_replacement": -4.0,
    "points_per_dollar": null,
-   "points_started": 0.0,
+   "points_started": 4.0,
    "pos": "K",
    "roster_id": 5,
    "season": "2026",
    "week": 9,
-   "weekly": [],
+   "weekly": [
+    {
+     "above_replacement": -4.0,
+     "points": 4.0,
+     "replacement_level": 8.0,
+     "week": 10
+    }
+   ],
    "weeks_rostered": 10,
-   "weeks_started": 0
+   "weeks_started": 1
   },
   {
    "bid": 3,
@@ -40106,21 +40199,28 @@
    "bid": 0,
    "dropped": [],
    "first_week": 10,
-   "outcome": "never_started",
+   "outcome": "started",
    "owner_id": "471345530597797888",
    "par_per_dollar": null,
    "player": "Darren Waller",
    "player_id": "2505",
-   "points_above_replacement": 0.0,
+   "points_above_replacement": -4.24,
    "points_per_dollar": null,
-   "points_started": 0.0,
+   "points_started": 3.4,
    "pos": "TE",
    "roster_id": 6,
    "season": "2026",
    "week": 9,
-   "weekly": [],
+   "weekly": [
+    {
+     "above_replacement": -4.24,
+     "points": 3.4,
+     "replacement_level": 7.64,
+     "week": 10
+    }
+   ],
    "weeks_rostered": 9,
-   "weeks_started": 0
+   "weeks_started": 1
   },
   {
    "bid": 1,
@@ -40146,21 +40246,28 @@
    "bid": 0,
    "dropped": [],
    "first_week": 9,
-   "outcome": "never_started",
+   "outcome": "started",
    "owner_id": "471360899853053952",
    "par_per_dollar": null,
    "player": "Chimere Dike",
    "player_id": "12540",
-   "points_above_replacement": 0.0,
+   "points_above_replacement": -5.78,
    "points_per_dollar": null,
-   "points_started": 0.0,
+   "points_started": 3.1,
    "pos": "WR",
    "roster_id": 9,
    "season": "2026",
    "week": 9,
-   "weekly": [],
+   "weekly": [
+    {
+     "above_replacement": -5.78,
+     "points": 3.1,
+     "replacement_level": 8.88,
+     "week": 10
+    }
+   ],
    "weeks_rostered": 10,
-   "weeks_started": 0
+   "weeks_started": 1
   },
   {
    "bid": 3,
@@ -40168,41 +40275,55 @@
     "Chicago Bears"
    ],
    "first_week": 10,
-   "outcome": "never_started",
+   "outcome": "started",
    "owner_id": "471359444949659648",
-   "par_per_dollar": 0.0,
+   "par_per_dollar": -2.17,
    "player": "San Francisco 49ers",
    "player_id": "SF",
-   "points_above_replacement": 0.0,
+   "points_above_replacement": -6.5,
    "points_per_dollar": 0.0,
    "points_started": 0.0,
    "pos": "DEF",
    "roster_id": 10,
    "season": "2026",
    "week": 9,
-   "weekly": [],
+   "weekly": [
+    {
+     "above_replacement": -6.5,
+     "points": 0,
+     "replacement_level": 6.5,
+     "week": 10
+    }
+   ],
    "weeks_rostered": 9,
-   "weeks_started": 0
+   "weeks_started": 1
   },
   {
    "bid": 3,
    "dropped": [],
    "first_week": 10,
-   "outcome": "never_started",
+   "outcome": "started",
    "owner_id": "471359444949659648",
-   "par_per_dollar": 0.0,
+   "par_per_dollar": -3.97,
    "player": "Geno Smith",
    "player_id": "1373",
-   "points_above_replacement": 0.0,
-   "points_per_dollar": 0.0,
-   "points_started": 0.0,
+   "points_above_replacement": -11.9,
+   "points_per_dollar": 1.97,
+   "points_started": 5.92,
    "pos": "QB",
    "roster_id": 10,
    "season": "2026",
    "week": 9,
-   "weekly": [],
+   "weekly": [
+    {
+     "above_replacement": -11.9,
+     "points": 5.92,
+     "replacement_level": 17.82,
+     "week": 10
+    }
+   ],
    "weeks_rostered": 9,
-   "weeks_started": 0
+   "weeks_started": 1
   },
   {
    "bid": 3,
@@ -40210,21 +40331,28 @@
     "Brenton Strange"
    ],
    "first_week": 10,
-   "outcome": "never_started",
+   "outcome": "started",
    "owner_id": "471366618241298432",
    "par_per_dollar": 0.0,
    "player": "Eddy Pineiro",
    "player_id": "5189",
    "points_above_replacement": 0.0,
-   "points_per_dollar": 0.0,
-   "points_started": 0.0,
+   "points_per_dollar": 2.67,
+   "points_started": 8.0,
    "pos": "K",
    "roster_id": 11,
    "season": "2026",
    "week": 9,
-   "weekly": [],
+   "weekly": [
+    {
+     "above_replacement": 0.0,
+     "points": 8.0,
+     "replacement_level": 8.0,
+     "week": 10
+    }
+   ],
    "weeks_rostered": 9,
-   "weeks_started": 0
+   "weeks_started": 1
   },
   {
    "bid": 5,
@@ -40232,21 +40360,28 @@
     "Denver Broncos"
    ],
    "first_week": 10,
-   "outcome": "never_started",
+   "outcome": "started",
    "owner_id": "471366618241298432",
-   "par_per_dollar": 0.0,
+   "par_per_dollar": -0.5,
    "player": "Green Bay Packers",
    "player_id": "GB",
-   "points_above_replacement": 0.0,
-   "points_per_dollar": 0.0,
-   "points_started": 0.0,
+   "points_above_replacement": -2.5,
+   "points_per_dollar": 0.8,
+   "points_started": 4.0,
    "pos": "DEF",
    "roster_id": 11,
    "season": "2026",
    "week": 9,
-   "weekly": [],
+   "weekly": [
+    {
+     "above_replacement": -2.5,
+     "points": 4.0,
+     "replacement_level": 6.5,
+     "week": 10
+    }
+   ],
    "weeks_rostered": 9,
-   "weeks_started": 0
+   "weeks_started": 1
   },
   {
    "bid": 2,
@@ -40254,21 +40389,28 @@
     "Tyler Shough"
    ],
    "first_week": 10,
-   "outcome": "never_started",
+   "outcome": "started",
    "owner_id": "471366618241298432",
-   "par_per_dollar": 0.0,
+   "par_per_dollar": -1.19,
    "player": "Khalil Shakir",
    "player_id": "8134",
-   "points_above_replacement": 0.0,
-   "points_per_dollar": 0.0,
-   "points_started": 0.0,
+   "points_above_replacement": -2.38,
+   "points_per_dollar": 3.25,
+   "points_started": 6.5,
    "pos": "WR",
    "roster_id": 11,
    "season": "2026",
    "week": 10,
-   "weekly": [],
+   "weekly": [
+    {
+     "above_replacement": -2.38,
+     "points": 6.5,
+     "replacement_level": 8.88,
+     "week": 10
+    }
+   ],
    "weeks_rostered": 9,
-   "weeks_started": 0
+   "weeks_started": 1
   }
  ],
  "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
@@ -40309,11 +40451,11 @@
    "week": 3,
    "weeks_started": 0
   },
-  "claims_benched_only": 209,
+  "claims_benched_only": 202,
   "claims_dropped_before_playing": 51,
   "dollars_spent": 6972,
   "free_claims": 374,
-  "hit_rate": 0.693,
+  "hit_rate": 0.701,
   "most_points": {
    "bid": 33,
    "par_per_dollar": 1.72,
@@ -40328,10 +40470,10 @@
   },
   "paid_claims": 847,
   "par_per_dollar": 0.13,
-  "points_above_replacement": 922.54,
-  "points_from_free_claims": 4942.16,
-  "points_from_paid_claims": 16679.12,
-  "points_per_dollar": 2.39,
+  "points_above_replacement": 891.46,
+  "points_from_free_claims": 4992.66,
+  "points_from_paid_claims": 16784.36,
+  "points_per_dollar": 2.41,
   "worst_par_claim": {
    "bid": 4,
    "par_per_dollar": -8.38,
@@ -40373,15 +40515,15 @@
     "weeks_started": 5
    },
    "biggest_bust": {
-    "bid": 32,
+    "bid": 26,
     "par_per_dollar": 0.0,
-    "player": "Tank Dell",
+    "player": "Jacksonville Jaguars",
     "points_above_replacement": 0.0,
     "points_per_dollar": 0.0,
     "points_started": 0.0,
-    "pos": "WR",
-    "season": "2026",
-    "week": 9,
+    "pos": "DEF",
+    "season": "2025",
+    "week": 14,
     "weeks_started": 0
    },
    "by_season": {
@@ -40877,21 +41019,21 @@
     "2026": {
      "best_par_claim": {
       "bid": 3,
-      "par_per_dollar": 8.39,
+      "par_per_dollar": 6.01,
       "player": "Jordan Love",
-      "points_above_replacement": 25.18,
-      "points_per_dollar": 43.99,
-      "points_started": 131.98,
+      "points_above_replacement": 18.04,
+      "points_per_dollar": 47.59,
+      "points_started": 142.78,
       "pos": "QB",
       "season": "2026",
       "week": 1,
-      "weeks_started": 6
+      "weeks_started": 7
      },
      "best_value": {
       "bid": 24,
       "par_per_dollar": -0.02,
       "player": "Bryce Young",
-      "points_above_replacement": -0.5,
+      "points_above_replacement": -0.54,
       "points_per_dollar": 1.46,
       "points_started": 35.1,
       "pos": "QB",
@@ -40900,78 +41042,78 @@
       "weeks_started": 2
      },
      "biggest_bust": {
-      "bid": 32,
+      "bid": 14,
       "par_per_dollar": 0.0,
-      "player": "Tank Dell",
+      "player": "Adonai Mitchell",
       "points_above_replacement": 0.0,
       "points_per_dollar": 0.0,
       "points_started": 0.0,
       "pos": "WR",
       "season": "2026",
-      "week": 9,
+      "week": 2,
       "weeks_started": 0
      },
-     "claims_benched_only": 2,
+     "claims_benched_only": 1,
      "claims_dropped_before_playing": 0,
      "dollars_spent": 91,
      "free_claims": 0,
-     "hit_rate": 0.6,
+     "hit_rate": 0.8,
      "most_points": {
       "bid": 3,
-      "par_per_dollar": 8.39,
+      "par_per_dollar": 6.01,
       "player": "Jordan Love",
-      "points_above_replacement": 25.18,
-      "points_per_dollar": 43.99,
-      "points_started": 131.98,
+      "points_above_replacement": 18.04,
+      "points_per_dollar": 47.59,
+      "points_started": 142.78,
       "pos": "QB",
       "season": "2026",
       "week": 1,
-      "weeks_started": 6
+      "weeks_started": 7
      },
      "paid_claims": 5,
-     "par_per_dollar": 0.33,
-     "points_above_replacement": 30.18,
+     "par_per_dollar": 0.19,
+     "points_above_replacement": 17.22,
      "points_from_free_claims": 0,
-     "points_from_paid_claims": 179.08,
-     "points_per_dollar": 1.97,
+     "points_from_paid_claims": 199.48,
+     "points_per_dollar": 2.19,
      "worst_par_claim": {
-      "bid": 24,
-      "par_per_dollar": -0.02,
-      "player": "Bryce Young",
-      "points_above_replacement": -0.5,
-      "points_per_dollar": 1.46,
-      "points_started": 35.1,
-      "pos": "QB",
+      "bid": 32,
+      "par_per_dollar": -0.17,
+      "player": "Tank Dell",
+      "points_above_replacement": -5.28,
+      "points_per_dollar": 0.11,
+      "points_started": 3.6,
+      "pos": "WR",
       "season": "2026",
-      "week": 2,
-      "weeks_started": 2
+      "week": 9,
+      "weeks_started": 1
      }
     }
    },
-   "claims_benched_only": 11,
+   "claims_benched_only": 10,
    "claims_dropped_before_playing": 2,
    "dollars_spent": 741,
    "free_claims": 35,
-   "hit_rate": 0.772,
+   "hit_rate": 0.789,
    "most_points": {
     "bid": 3,
-    "par_per_dollar": 8.39,
+    "par_per_dollar": 6.01,
     "player": "Jordan Love",
-    "points_above_replacement": 25.18,
-    "points_per_dollar": 43.99,
-    "points_started": 131.98,
+    "points_above_replacement": 18.04,
+    "points_per_dollar": 47.59,
+    "points_started": 142.78,
     "pos": "QB",
     "season": "2026",
     "week": 1,
-    "weeks_started": 6
+    "weeks_started": 7
    },
    "paid_claims": 57,
-   "par_per_dollar": -0.03,
+   "par_per_dollar": -0.05,
    "par_rank": 10,
-   "points_above_replacement": -22.6,
+   "points_above_replacement": -35.56,
    "points_from_free_claims": 450.52,
-   "points_from_paid_claims": 1029.34,
-   "points_per_dollar": 1.39,
+   "points_from_paid_claims": 1049.74,
+   "points_per_dollar": 1.42,
    "rank": 10,
    "worst_par_claim": {
     "bid": 26,
@@ -41550,9 +41692,9 @@
      },
      "best_value": {
       "bid": 7,
-      "par_per_dollar": 0.05,
+      "par_per_dollar": -0.04,
       "player": "Emanuel Wilson",
-      "points_above_replacement": 0.34,
+      "points_above_replacement": -0.3,
       "points_per_dollar": 2.49,
       "points_started": 17.4,
       "pos": "RB",
@@ -41579,9 +41721,9 @@
      "hit_rate": 0.6,
      "most_points": {
       "bid": 7,
-      "par_per_dollar": 0.05,
+      "par_per_dollar": -0.04,
       "player": "Emanuel Wilson",
-      "points_above_replacement": 0.34,
+      "points_above_replacement": -0.3,
       "points_per_dollar": 2.49,
       "points_started": 17.4,
       "pos": "RB",
@@ -41590,9 +41732,9 @@
       "weeks_started": 2
      },
      "paid_claims": 5,
-     "par_per_dollar": -0.71,
-     "points_above_replacement": -10.66,
-     "points_from_free_claims": 70.0,
+     "par_per_dollar": -0.75,
+     "points_above_replacement": -11.3,
+     "points_from_free_claims": 77.0,
      "points_from_paid_claims": 19.4,
      "points_per_dollar": 1.29,
      "worst_par_claim": {
@@ -41627,10 +41769,10 @@
     "weeks_started": 10
    },
    "paid_claims": 92,
-   "par_per_dollar": 0.09,
+   "par_per_dollar": 0.08,
    "par_rank": 8,
-   "points_above_replacement": 53.62,
-   "points_from_free_claims": 457.0,
+   "points_above_replacement": 52.98,
+   "points_from_free_claims": 464.0,
    "points_from_paid_claims": 1330.26,
    "points_per_dollar": 2.13,
    "rank": 8,
@@ -42199,9 +42341,9 @@
     "2026": {
      "best_par_claim": {
       "bid": 6,
-      "par_per_dollar": 1.01,
+      "par_per_dollar": 1.28,
       "player": "T.J. Hockenson",
-      "points_above_replacement": 6.06,
+      "points_above_replacement": 7.68,
       "points_per_dollar": 5.1,
       "points_started": 30.6,
       "pos": "TE",
@@ -42211,9 +42353,9 @@
      },
      "best_value": {
       "bid": 6,
-      "par_per_dollar": 1.01,
+      "par_per_dollar": 1.28,
       "player": "T.J. Hockenson",
-      "points_above_replacement": 6.06,
+      "points_above_replacement": 7.68,
       "points_per_dollar": 5.1,
       "points_started": 30.6,
       "pos": "TE",
@@ -42233,16 +42375,16 @@
       "week": 1,
       "weeks_started": 0
      },
-     "claims_benched_only": 3,
+     "claims_benched_only": 2,
      "claims_dropped_before_playing": 0,
      "dollars_spent": 50,
      "free_claims": 1,
-     "hit_rate": 0.625,
+     "hit_rate": 0.75,
      "most_points": {
       "bid": 6,
-      "par_per_dollar": 1.01,
+      "par_per_dollar": 1.28,
       "player": "T.J. Hockenson",
-      "points_above_replacement": 6.06,
+      "points_above_replacement": 7.68,
       "points_per_dollar": 5.1,
       "points_started": 30.6,
       "pos": "TE",
@@ -42251,16 +42393,16 @@
       "weeks_started": 3
      },
      "paid_claims": 8,
-     "par_per_dollar": -0.24,
-     "points_above_replacement": -11.82,
-     "points_from_free_claims": 27.0,
-     "points_from_paid_claims": 69.5,
-     "points_per_dollar": 1.39,
+     "par_per_dollar": -0.32,
+     "points_above_replacement": -16.09,
+     "points_from_free_claims": 32.0,
+     "points_from_paid_claims": 72.0,
+     "points_per_dollar": 1.44,
      "worst_par_claim": {
       "bid": 1,
-      "par_per_dollar": -7.12,
+      "par_per_dollar": -7.0,
       "player": "Nick Folk",
-      "points_above_replacement": -7.12,
+      "points_above_replacement": -7.0,
       "points_per_dollar": 1.0,
       "points_started": 1.0,
       "pos": "K",
@@ -42270,11 +42412,11 @@
      }
     }
    },
-   "claims_benched_only": 20,
+   "claims_benched_only": 19,
    "claims_dropped_before_playing": 10,
    "dollars_spent": 635,
    "free_claims": 21,
-   "hit_rate": 0.625,
+   "hit_rate": 0.637,
    "most_points": {
     "bid": 7,
     "par_per_dollar": 8.37,
@@ -42288,11 +42430,11 @@
     "weeks_started": 13
    },
    "paid_claims": 80,
-   "par_per_dollar": -0.18,
+   "par_per_dollar": -0.19,
    "par_rank": 12,
-   "points_above_replacement": -117.41,
-   "points_from_free_claims": 436.6,
-   "points_from_paid_claims": 1547.42,
+   "points_above_replacement": -121.68,
+   "points_from_free_claims": 441.6,
+   "points_from_paid_claims": 1549.92,
    "points_per_dollar": 2.44,
    "rank": 5,
    "worst_par_claim": {
@@ -42793,7 +42935,7 @@
      "paid_claims": 0,
      "par_per_dollar": null,
      "points_above_replacement": 0,
-     "points_from_free_claims": 63.3,
+     "points_from_free_claims": 79.3,
      "points_from_paid_claims": 0,
      "points_per_dollar": null,
      "worst_par_claim": null
@@ -42820,7 +42962,7 @@
    "par_per_dollar": 0.31,
    "par_rank": 2,
    "points_above_replacement": 139.41,
-   "points_from_free_claims": 680.88,
+   "points_from_free_claims": 696.88,
    "points_from_paid_claims": 1077.98,
    "points_per_dollar": 2.42,
    "rank": 6,
@@ -43368,9 +43510,9 @@
      },
      "best_value": {
       "bid": 15,
-      "par_per_dollar": -0.9,
+      "par_per_dollar": -0.83,
       "player": "Kenyon Sadiq",
-      "points_above_replacement": -13.56,
+      "points_above_replacement": -12.48,
       "points_per_dollar": 0.19,
       "points_started": 2.8,
       "pos": "TE",
@@ -43397,9 +43539,9 @@
      "hit_rate": 0.333,
      "most_points": {
       "bid": 15,
-      "par_per_dollar": -0.9,
+      "par_per_dollar": -0.83,
       "player": "Kenyon Sadiq",
-      "points_above_replacement": -13.56,
+      "points_above_replacement": -12.48,
       "points_per_dollar": 0.19,
       "points_started": 2.8,
       "pos": "TE",
@@ -43408,16 +43550,16 @@
       "weeks_started": 2
      },
      "paid_claims": 3,
-     "par_per_dollar": -0.22,
-     "points_above_replacement": -13.56,
-     "points_from_free_claims": 12.0,
+     "par_per_dollar": -0.2,
+     "points_above_replacement": -12.48,
+     "points_from_free_claims": 21.0,
      "points_from_paid_claims": 2.8,
      "points_per_dollar": 0.04,
      "worst_par_claim": {
       "bid": 15,
-      "par_per_dollar": -0.9,
+      "par_per_dollar": -0.83,
       "player": "Kenyon Sadiq",
-      "points_above_replacement": -13.56,
+      "points_above_replacement": -12.48,
       "points_per_dollar": 0.19,
       "points_started": 2.8,
       "pos": "TE",
@@ -43446,9 +43588,9 @@
    },
    "paid_claims": 43,
    "par_per_dollar": 0.16,
-   "par_rank": 5,
-   "points_above_replacement": 76.47,
-   "points_from_free_claims": 344.44,
+   "par_rank": 6,
+   "points_above_replacement": 77.55,
+   "points_from_free_claims": 353.44,
    "points_from_paid_claims": 1010.96,
    "points_per_dollar": 2.14,
    "rank": 7,
@@ -44005,28 +44147,28 @@
     },
     "2026": {
      "best_par_claim": {
-      "bid": 22,
-      "par_per_dollar": 0.51,
-      "player": "Ollie Gordon II",
-      "points_above_replacement": 11.28,
-      "points_per_dollar": 2.06,
-      "points_started": 45.4,
-      "pos": "RB",
+      "bid": 6,
+      "par_per_dollar": 2.54,
+      "player": "Patrick Mahomes",
+      "points_above_replacement": 15.26,
+      "points_per_dollar": 8.48,
+      "points_started": 50.9,
+      "pos": "QB",
       "season": "2026",
-      "week": 3,
-      "weeks_started": 4
+      "week": 8,
+      "weeks_started": 2
      },
      "best_value": {
-      "bid": 5,
-      "par_per_dollar": 0.89,
-      "player": "Dameon Pierce",
-      "points_above_replacement": 4.47,
-      "points_per_dollar": 2.6,
-      "points_started": 13.0,
-      "pos": "RB",
+      "bid": 6,
+      "par_per_dollar": 2.54,
+      "player": "Patrick Mahomes",
+      "points_above_replacement": 15.26,
+      "points_per_dollar": 8.48,
+      "points_started": 50.9,
+      "pos": "QB",
       "season": "2026",
-      "week": 5,
-      "weeks_started": 1
+      "week": 8,
+      "weeks_started": 2
      },
      "biggest_bust": {
       "bid": 5,
@@ -44047,27 +44189,27 @@
      "hit_rate": 0.6,
      "most_points": {
       "bid": 22,
-      "par_per_dollar": 0.51,
+      "par_per_dollar": 0.67,
       "player": "Ollie Gordon II",
-      "points_above_replacement": 11.28,
-      "points_per_dollar": 2.06,
-      "points_started": 45.4,
+      "points_above_replacement": 14.65,
+      "points_per_dollar": 2.68,
+      "points_started": 58.9,
       "pos": "RB",
       "season": "2026",
       "week": 3,
-      "weeks_started": 4
+      "weeks_started": 5
      },
      "paid_claims": 15,
-     "par_per_dollar": 0.19,
-     "points_above_replacement": 12.57,
-     "points_from_free_claims": 25.18,
-     "points_from_paid_claims": 178.88,
-     "points_per_dollar": 2.67,
+     "par_per_dollar": 0.55,
+     "points_above_replacement": 36.94,
+     "points_from_free_claims": 28.58,
+     "points_from_paid_claims": 227.8,
+     "points_per_dollar": 3.4,
      "worst_par_claim": {
       "bid": 3,
-      "par_per_dollar": -2.63,
+      "par_per_dollar": -1.73,
       "player": "Juwan Johnson",
-      "points_above_replacement": -7.9,
+      "points_above_replacement": -5.2,
       "points_per_dollar": 11.0,
       "points_started": 33.0,
       "pos": "TE",
@@ -44095,12 +44237,12 @@
     "weeks_started": 14
    },
    "paid_claims": 104,
-   "par_per_dollar": 0.16,
-   "par_rank": 6,
-   "points_above_replacement": 107.61,
-   "points_from_free_claims": 216.72,
-   "points_from_paid_claims": 2262.56,
-   "points_per_dollar": 3.37,
+   "par_per_dollar": 0.2,
+   "par_rank": 4,
+   "points_above_replacement": 131.98,
+   "points_from_free_claims": 220.12,
+   "points_from_paid_claims": 2311.48,
+   "points_per_dollar": 3.44,
    "rank": 2,
    "worst_par_claim": {
     "bid": 11,
@@ -44667,9 +44809,9 @@
     "2026": {
      "best_par_claim": {
       "bid": 24,
-      "par_per_dollar": 1.17,
+      "par_per_dollar": 1.09,
       "player": "Braelon Allen",
-      "points_above_replacement": 28.12,
+      "points_above_replacement": 26.2,
       "points_per_dollar": 3.3,
       "points_started": 79.3,
       "pos": "RB",
@@ -44679,9 +44821,9 @@
      },
      "best_value": {
       "bid": 24,
-      "par_per_dollar": 1.17,
+      "par_per_dollar": 1.09,
       "player": "Braelon Allen",
-      "points_above_replacement": 28.12,
+      "points_above_replacement": 26.2,
       "points_per_dollar": 3.3,
       "points_started": 79.3,
       "pos": "RB",
@@ -44701,16 +44843,16 @@
       "week": 5,
       "weeks_started": 0
      },
-     "claims_benched_only": 4,
+     "claims_benched_only": 2,
      "claims_dropped_before_playing": 2,
      "dollars_spent": 69,
      "free_claims": 2,
-     "hit_rate": 0.455,
+     "hit_rate": 0.636,
      "most_points": {
       "bid": 24,
-      "par_per_dollar": 1.17,
+      "par_per_dollar": 1.09,
       "player": "Braelon Allen",
-      "points_above_replacement": 28.12,
+      "points_above_replacement": 26.2,
       "points_per_dollar": 3.3,
       "points_started": 79.3,
       "pos": "RB",
@@ -44719,30 +44861,30 @@
       "weeks_started": 6
      },
      "paid_claims": 11,
-     "par_per_dollar": 0.14,
-     "points_above_replacement": 9.75,
+     "par_per_dollar": -0.15,
+     "points_above_replacement": -10.37,
      "points_from_free_claims": -1.0,
-     "points_from_paid_claims": 114.94,
-     "points_per_dollar": 1.67,
+     "points_from_paid_claims": 120.86,
+     "points_per_dollar": 1.75,
      "worst_par_claim": {
-      "bid": 4,
-      "par_per_dollar": -2.62,
-      "player": "Kansas City Chiefs",
-      "points_above_replacement": -10.5,
-      "points_per_dollar": 2.25,
-      "points_started": 9.0,
-      "pos": "DEF",
+      "bid": 3,
+      "par_per_dollar": -3.97,
+      "player": "Geno Smith",
+      "points_above_replacement": -11.9,
+      "points_per_dollar": 1.97,
+      "points_started": 5.92,
+      "pos": "QB",
       "season": "2026",
-      "week": 1,
-      "weeks_started": 3
+      "week": 9,
+      "weeks_started": 1
      }
     }
    },
-   "claims_benched_only": 25,
+   "claims_benched_only": 23,
    "claims_dropped_before_playing": 3,
    "dollars_spent": 677,
    "free_claims": 28,
-   "hit_rate": 0.696,
+   "hit_rate": 0.717,
    "most_points": {
     "bid": 7,
     "par_per_dollar": 5.33,
@@ -44756,12 +44898,12 @@
     "weeks_started": 7
    },
    "paid_claims": 92,
-   "par_per_dollar": 0.22,
-   "par_rank": 4,
-   "points_above_replacement": 149.35,
+   "par_per_dollar": 0.19,
+   "par_rank": 5,
+   "points_above_replacement": 129.23,
    "points_from_free_claims": 302.82,
-   "points_from_paid_claims": 1910.74,
-   "points_per_dollar": 2.82,
+   "points_from_paid_claims": 1916.66,
+   "points_per_dollar": 2.83,
    "rank": 4,
    "worst_par_claim": {
     "bid": 5,
@@ -45923,9 +46065,9 @@
     "2026": {
      "best_par_claim": {
       "bid": 25,
-      "par_per_dollar": 0.73,
+      "par_per_dollar": 0.7,
       "player": "Jonah Coleman",
-      "points_above_replacement": 18.14,
+      "points_above_replacement": 17.5,
       "points_per_dollar": 1.41,
       "points_started": 35.2,
       "pos": "RB",
@@ -45935,9 +46077,9 @@
      },
      "best_value": {
       "bid": 25,
-      "par_per_dollar": 0.73,
+      "par_per_dollar": 0.7,
       "player": "Jonah Coleman",
-      "points_above_replacement": 18.14,
+      "points_above_replacement": 17.5,
       "points_per_dollar": 1.41,
       "points_started": 35.2,
       "pos": "RB",
@@ -45964,9 +46106,9 @@
      "hit_rate": 0.5,
      "most_points": {
       "bid": 25,
-      "par_per_dollar": 0.73,
+      "par_per_dollar": 0.7,
       "player": "Jonah Coleman",
-      "points_above_replacement": 18.14,
+      "points_above_replacement": 17.5,
       "points_per_dollar": 1.41,
       "points_started": 35.2,
       "pos": "RB",
@@ -45975,16 +46117,16 @@
       "weeks_started": 2
      },
      "paid_claims": 4,
-     "par_per_dollar": 0.33,
-     "points_above_replacement": 16.34,
-     "points_from_free_claims": 50.0,
+     "par_per_dollar": 0.32,
+     "points_above_replacement": 15.82,
+     "points_from_free_claims": 60.1,
      "points_from_paid_claims": 42.4,
      "points_per_dollar": 0.87,
      "worst_par_claim": {
       "bid": 15,
-      "par_per_dollar": -0.12,
+      "par_per_dollar": -0.11,
       "player": "Keon Coleman",
-      "points_above_replacement": -1.8,
+      "points_above_replacement": -1.68,
       "points_per_dollar": 0.48,
       "points_started": 7.2,
       "pos": "WR",
@@ -46014,8 +46156,8 @@
    "paid_claims": 59,
    "par_per_dollar": 0.01,
    "par_rank": 9,
-   "points_above_replacement": 8.57,
-   "points_from_free_claims": 703.56,
+   "points_above_replacement": 8.05,
+   "points_from_free_claims": 713.66,
    "points_from_paid_claims": 1255.42,
    "points_per_dollar": 1.79,
    "rank": 9,
@@ -46573,9 +46715,9 @@
     "2026": {
      "best_par_claim": {
       "bid": 4,
-      "par_per_dollar": 1.66,
+      "par_per_dollar": 1.75,
       "player": "Chase McLaughlin",
-      "points_above_replacement": 6.64,
+      "points_above_replacement": 7.0,
       "points_per_dollar": 7.75,
       "points_started": 31.0,
       "pos": "K",
@@ -46584,39 +46726,39 @@
       "weeks_started": 3
      },
      "best_value": {
-      "bid": 9,
-      "par_per_dollar": -0.77,
-      "player": "Romeo Doubs",
-      "points_above_replacement": -6.9,
-      "points_per_dollar": 0.23,
-      "points_started": 2.1,
-      "pos": "WR",
-      "season": "2026",
-      "week": 4,
-      "weeks_started": 1
-     },
-     "biggest_bust": {
       "bid": 5,
-      "par_per_dollar": 0.0,
+      "par_per_dollar": -0.5,
       "player": "Green Bay Packers",
-      "points_above_replacement": 0.0,
-      "points_per_dollar": 0.0,
-      "points_started": 0.0,
+      "points_above_replacement": -2.5,
+      "points_per_dollar": 0.8,
+      "points_started": 4.0,
       "pos": "DEF",
       "season": "2026",
       "week": 9,
+      "weeks_started": 1
+     },
+     "biggest_bust": {
+      "bid": 4,
+      "par_per_dollar": 0.0,
+      "player": "Dontayvion Wicks",
+      "points_above_replacement": 0.0,
+      "points_per_dollar": 0.0,
+      "points_started": 0.0,
+      "pos": "WR",
+      "season": "2026",
+      "week": 2,
       "weeks_started": 0
      },
-     "claims_benched_only": 5,
+     "claims_benched_only": 2,
      "claims_dropped_before_playing": 0,
      "dollars_spent": 35,
      "free_claims": 0,
-     "hit_rate": 0.375,
+     "hit_rate": 0.75,
      "most_points": {
       "bid": 4,
-      "par_per_dollar": 1.66,
+      "par_per_dollar": 1.75,
       "player": "Chase McLaughlin",
-      "points_above_replacement": 6.64,
+      "points_above_replacement": 7.0,
       "points_per_dollar": 7.75,
       "points_started": 31.0,
       "pos": "K",
@@ -46625,16 +46767,16 @@
       "weeks_started": 3
      },
      "paid_claims": 8,
-     "par_per_dollar": -0.15,
-     "points_above_replacement": -5.24,
+     "par_per_dollar": -0.28,
+     "points_above_replacement": -9.66,
      "points_from_free_claims": 0,
-     "points_from_paid_claims": 45.92,
-     "points_per_dollar": 1.31,
+     "points_from_paid_claims": 64.42,
+     "points_per_dollar": 1.84,
      "worst_par_claim": {
       "bid": 9,
-      "par_per_dollar": -0.77,
+      "par_per_dollar": -0.75,
       "player": "Romeo Doubs",
-      "points_above_replacement": -6.9,
+      "points_above_replacement": -6.78,
       "points_per_dollar": 0.23,
       "points_started": 2.1,
       "pos": "WR",
@@ -46644,11 +46786,11 @@
      }
     }
    },
-   "claims_benched_only": 24,
+   "claims_benched_only": 21,
    "claims_dropped_before_playing": 5,
    "dollars_spent": 688,
    "free_claims": 33,
-   "hit_rate": 0.707,
+   "hit_rate": 0.737,
    "most_points": {
     "bid": 33,
     "par_per_dollar": 1.72,
@@ -46664,10 +46806,10 @@
    "paid_claims": 99,
    "par_per_dollar": 0.27,
    "par_rank": 3,
-   "points_above_replacement": 187.93,
+   "points_above_replacement": 183.51,
    "points_from_free_claims": 599.4,
-   "points_from_paid_claims": 2416.94,
-   "points_per_dollar": 3.51,
+   "points_from_paid_claims": 2435.44,
+   "points_per_dollar": 3.54,
    "rank": 1,
    "worst_par_claim": {
     "bid": 19,
@@ -47212,27 +47354,27 @@
     "2026": {
      "best_par_claim": {
       "bid": 17,
-      "par_per_dollar": 0.16,
+      "par_per_dollar": -0.34,
       "player": "Omar Cooper Jr.",
-      "points_above_replacement": 2.8,
+      "points_above_replacement": -5.72,
       "points_per_dollar": 1.75,
       "points_started": 29.8,
       "pos": "WR",
       "season": "2026",
       "week": 6,
-      "weeks_started": 3
+      "weeks_started": 4
      },
      "best_value": {
       "bid": 17,
-      "par_per_dollar": 0.16,
+      "par_per_dollar": -0.34,
       "player": "Omar Cooper Jr.",
-      "points_above_replacement": 2.8,
+      "points_above_replacement": -5.72,
       "points_per_dollar": 1.75,
       "points_started": 29.8,
       "pos": "WR",
       "season": "2026",
       "week": 6,
-      "weeks_started": 3
+      "weeks_started": 4
      },
      "biggest_bust": null,
      "claims_benched_only": 0,
@@ -47242,33 +47384,33 @@
      "hit_rate": 1.0,
      "most_points": {
       "bid": 17,
-      "par_per_dollar": 0.16,
+      "par_per_dollar": -0.34,
       "player": "Omar Cooper Jr.",
-      "points_above_replacement": 2.8,
+      "points_above_replacement": -5.72,
       "points_per_dollar": 1.75,
       "points_started": 29.8,
       "pos": "WR",
       "season": "2026",
       "week": 6,
-      "weeks_started": 3
+      "weeks_started": 4
      },
      "paid_claims": 1,
-     "par_per_dollar": 0.16,
-     "points_above_replacement": 2.8,
+     "par_per_dollar": -0.34,
+     "points_above_replacement": -5.72,
      "points_from_free_claims": 0,
      "points_from_paid_claims": 29.8,
      "points_per_dollar": 1.75,
      "worst_par_claim": {
       "bid": 17,
-      "par_per_dollar": 0.16,
+      "par_per_dollar": -0.34,
       "player": "Omar Cooper Jr.",
-      "points_above_replacement": 2.8,
+      "points_above_replacement": -5.72,
       "points_per_dollar": 1.75,
       "points_started": 29.8,
       "pos": "WR",
       "season": "2026",
       "week": 6,
-      "weeks_started": 3
+      "weeks_started": 4
      }
     }
    },
@@ -47290,9 +47432,9 @@
     "weeks_started": 5
    },
    "paid_claims": 32,
-   "par_per_dollar": -0.12,
+   "par_per_dollar": -0.15,
    "par_rank": 11,
-   "points_above_replacement": -40.57,
+   "points_above_replacement": -49.09,
    "points_from_free_claims": 211.2,
    "points_from_paid_claims": 424.82,
    "points_per_dollar": 1.27,
@@ -47851,27 +47993,27 @@
     "2026": {
      "best_par_claim": {
       "bid": 5,
-      "par_per_dollar": 3.8,
+      "par_per_dollar": 3.1,
       "player": "Jacksonville Jaguars",
-      "points_above_replacement": 19.0,
-      "points_per_dollar": 6.4,
-      "points_started": 32.0,
+      "points_above_replacement": 15.5,
+      "points_per_dollar": 7.0,
+      "points_started": 35.0,
       "pos": "DEF",
       "season": "2026",
       "week": 7,
-      "weeks_started": 2
+      "weeks_started": 3
      },
      "best_value": {
       "bid": 5,
-      "par_per_dollar": 3.8,
+      "par_per_dollar": 3.1,
       "player": "Jacksonville Jaguars",
-      "points_above_replacement": 19.0,
-      "points_per_dollar": 6.4,
-      "points_started": 32.0,
+      "points_above_replacement": 15.5,
+      "points_per_dollar": 7.0,
+      "points_started": 35.0,
       "pos": "DEF",
       "season": "2026",
       "week": 7,
-      "weeks_started": 2
+      "weeks_started": 3
      },
      "biggest_bust": {
       "bid": 7,
@@ -47892,9 +48034,9 @@
      "hit_rate": 0.778,
      "most_points": {
       "bid": 12,
-      "par_per_dollar": 1.2,
+      "par_per_dollar": 1.19,
       "player": "Jared Goff",
-      "points_above_replacement": 14.38,
+      "points_above_replacement": 14.32,
       "points_per_dollar": 5.65,
       "points_started": 67.78,
       "pos": "QB",
@@ -47903,16 +48045,16 @@
       "weeks_started": 3
      },
      "paid_claims": 9,
-     "par_per_dollar": 0.63,
-     "points_above_replacement": 33.46,
+     "par_per_dollar": 0.54,
+     "points_above_replacement": 28.38,
      "points_from_free_claims": 0.0,
-     "points_from_paid_claims": 154.48,
-     "points_per_dollar": 2.91,
+     "points_from_paid_claims": 163.48,
+     "points_per_dollar": 3.08,
      "worst_par_claim": {
       "bid": 9,
-      "par_per_dollar": -0.92,
+      "par_per_dollar": -0.9,
       "player": "Germie Bernard",
-      "points_above_replacement": -8.3,
+      "points_above_replacement": -8.06,
       "points_per_dollar": 1.08,
       "points_started": 9.7,
       "pos": "WR",
@@ -47942,10 +48084,10 @@
    "paid_claims": 90,
    "par_per_dollar": 0.51,
    "par_rank": 1,
-   "points_above_replacement": 332.6,
+   "points_above_replacement": 327.52,
    "points_from_free_claims": 50.1,
-   "points_from_paid_claims": 2027.7,
-   "points_per_dollar": 3.13,
+   "points_from_paid_claims": 2036.7,
+   "points_per_dollar": 3.14,
    "rank": 3,
    "worst_par_claim": {
     "bid": 6,
@@ -48020,11 +48162,11 @@
   },
   "2026": {
    "DEF": 6.5,
-   "K": 8.12,
-   "QB": 17.8,
-   "RB": 8.53,
-   "TE": 8.18,
-   "WR": 9.0
+   "K": 8.0,
+   "QB": 17.82,
+   "RB": 8.85,
+   "TE": 7.64,
+   "WR": 8.88
   }
  }
 }

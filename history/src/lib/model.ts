@@ -41,7 +41,7 @@ export const legacy = legacyFile as {
 export const legacyOf = Object.fromEntries(legacy.rankings.map((r) => [r.person, r]));
 
 // Tegridy Factor (2019+, from the data pipeline): current members, lowest (best) first
-export type TgPenalty = { id: string; kind: string; label: string; season: number; week: number | null; headline: string; base: number; mult: number; total: number; when: string | null };
+export type TgPenalty = { id: string; kind: string; label: string; season: number; week: number | null; headline: string; base: number; mult: number; total: number; when: string | null; sources: { name: string; url: string | null }[] };
 export type TgMember = { person: string; total: number; rank: number; bySeason: Record<string, number>; cleanSeasons: string[]; penalties: TgPenalty[] };
 export const tegridy = tegridyFile as {
   weights: Record<string, number>;

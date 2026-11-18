@@ -1,6 +1,6 @@
 {
  "as_of": {
-  "last_scored_week": 9,
+  "last_scored_week": 10,
   "season": "2026"
  },
  "assumptions": [
@@ -52,7 +52,7 @@
     "record": {
      "losses": 94,
      "ties": 0,
-     "wins": 110
+     "wins": 111
     },
     "sackos": 0,
     "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -61,7 +61,7 @@
      15,
      15
     ],
-    "win_pct": 0.5392
+    "win_pct": 0.5415
    },
    "display_name": "WhiskeyDicknCo",
    "era_split": {
@@ -102,7 +102,7 @@
      "record": {
       "losses": 5,
       "ties": 0,
-      "wins": 4
+      "wins": 5
      },
      "sackos": 0,
      "scoring_bonuses": []
@@ -267,7 +267,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "4-5",
+      "counted_record": "5-5",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -301,7 +301,7 @@
      "wins": 10
     },
     "record": {
-     "losses": 99,
+     "losses": 100,
      "ties": 0,
      "wins": 109
     },
@@ -313,7 +313,7 @@
      15,
      15
     ],
-    "win_pct": 0.524
+    "win_pct": 0.5215
    },
    "display_name": "ToadLicker",
    "era_split": {
@@ -352,7 +352,7 @@
       "wins": 0
      },
      "record": {
-      "losses": 4,
+      "losses": 5,
       "ties": 0,
       "wins": 5
      },
@@ -524,7 +524,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "5-4",
+      "counted_record": "5-5",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -559,7 +559,7 @@
      "wins": 6
     },
     "record": {
-     "losses": 89,
+     "losses": 90,
      "ties": 0,
      "wins": 87
     },
@@ -570,7 +570,7 @@
      15,
      -15
     ],
-    "win_pct": 0.4943
+    "win_pct": 0.4915
    },
    "display_name": "JSusee",
    "era_split": {
@@ -609,7 +609,7 @@
       "wins": 0
      },
      "record": {
-      "losses": 5,
+      "losses": 6,
       "ties": 0,
       "wins": 4
      },
@@ -781,7 +781,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "4-5",
+      "counted_record": "4-6",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -816,7 +816,7 @@
      "wins": 6
     },
     "record": {
-     "losses": 91,
+     "losses": 92,
      "ties": 0,
      "wins": 115
     },
@@ -827,7 +827,7 @@
      15,
      15
     ],
-    "win_pct": 0.5583
+    "win_pct": 0.5556
    },
    "display_name": "Hodaeg",
    "era_split": {
@@ -866,7 +866,7 @@
       "wins": 0
      },
      "record": {
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
       "wins": 7
      },
@@ -1038,7 +1038,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "7-2",
+      "counted_record": "7-3",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -1074,14 +1074,14 @@
     "record": {
      "losses": 87,
      "ties": 0,
-     "wins": 119
+     "wins": 120
     },
     "sackos": 1,
     "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
     "scoring_bonuses": [
      15
     ],
-    "win_pct": 0.5777
+    "win_pct": 0.5797
    },
    "display_name": "DangerDave678",
    "era_split": {
@@ -1122,7 +1122,7 @@
      "record": {
       "losses": 5,
       "ties": 0,
-      "wins": 4
+      "wins": 5
      },
      "sackos": 0,
      "scoring_bonuses": []
@@ -1289,7 +1289,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "4-5",
+      "counted_record": "5-5",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -1324,7 +1324,7 @@
      "wins": 6
     },
     "record": {
-     "losses": 99,
+     "losses": 100,
      "ties": 1,
      "wins": 104
     },
@@ -1333,7 +1333,7 @@
     "scoring_bonuses": [
      -15
     ],
-    "win_pct": 0.5123
+    "win_pct": 0.5098
    },
    "display_name": "MrSeeYou",
    "era_split": {
@@ -1372,7 +1372,7 @@
       "wins": 0
      },
      "record": {
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
       "wins": 8
      },
@@ -1541,7 +1541,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "8-1",
+      "counted_record": "8-2",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -1578,7 +1578,7 @@
     "record": {
      "losses": 93,
      "ties": 0,
-     "wins": 80
+     "wins": 81
     },
     "sackos": 0,
     "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -1586,7 +1586,7 @@
      -15,
      -15
     ],
-    "win_pct": 0.4624
+    "win_pct": 0.4655
    },
    "display_name": "therealGandB",
    "era_split": {
@@ -1627,7 +1627,7 @@
      "record": {
       "losses": 5,
       "ties": 0,
-      "wins": 4
+      "wins": 5
      },
      "sackos": 0,
      "scoring_bonuses": []
@@ -1796,7 +1796,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "4-5",
+      "counted_record": "5-5",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -1831,7 +1831,7 @@
      "wins": 3
     },
     "record": {
-     "losses": 74,
+     "losses": 75,
      "ties": 0,
      "wins": 76
     },
@@ -1840,7 +1840,7 @@
     "scoring_bonuses": [
      15
     ],
-    "win_pct": 0.5067
+    "win_pct": 0.5033
    },
    "display_name": "gabroni",
    "era_split": {
@@ -1879,7 +1879,7 @@
       "wins": 0
      },
      "record": {
-      "losses": 5,
+      "losses": 6,
       "ties": 0,
       "wins": 4
      },
@@ -2050,7 +2050,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "4-5",
+      "counted_record": "4-6",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -2085,7 +2085,7 @@
      "wins": 3
     },
     "record": {
-     "losses": 100,
+     "losses": 101,
      "ties": 0,
      "wins": 84
     },
@@ -2094,7 +2094,7 @@
     "scoring_bonuses": [
      -15
     ],
-    "win_pct": 0.4565
+    "win_pct": 0.4541
    },
    "display_name": "BigDogsRevenge",
    "era_split": {
@@ -2133,7 +2133,7 @@
       "wins": 0
      },
      "record": {
-      "losses": 6,
+      "losses": 7,
       "ties": 0,
       "wins": 3
      },
@@ -2302,7 +2302,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "3-6",
+      "counted_record": "3-7",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -2338,7 +2338,7 @@
     "record": {
      "losses": 74,
      "ties": 0,
-     "wins": 73
+     "wins": 74
     },
     "sackos": 1,
     "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -2347,7 +2347,7 @@
      -15,
      -15
     ],
-    "win_pct": 0.4966
+    "win_pct": 0.5
    },
    "display_name": "Gingivitis",
    "era_split": {
@@ -2388,7 +2388,7 @@
      "record": {
       "losses": 6,
       "ties": 0,
-      "wins": 3
+      "wins": 4
      },
      "sackos": 0,
      "scoring_bonuses": []
@@ -2559,7 +2559,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "3-6",
+      "counted_record": "4-6",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -2596,7 +2596,7 @@
     "record": {
      "losses": 112,
      "ties": 1,
-     "wins": 93
+     "wins": 94
     },
     "sackos": 3,
     "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -2605,7 +2605,7 @@
      -15,
      -15
     ],
-    "win_pct": 0.4539
+    "win_pct": 0.4565
    },
    "display_name": "TheBoarHouse",
    "era_split": {
@@ -2646,7 +2646,7 @@
      "record": {
       "losses": 5,
       "ties": 0,
-      "wins": 4
+      "wins": 5
      },
      "sackos": 0,
      "scoring_bonuses": []
@@ -2815,7 +2815,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "4-5",
+      "counted_record": "5-5",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,
@@ -2851,12 +2851,12 @@
     "record": {
      "losses": 110,
      "ties": 0,
-     "wins": 85
+     "wins": 86
     },
     "sackos": 3,
     "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
     "scoring_bonuses": [],
-    "win_pct": 0.4359
+    "win_pct": 0.4388
    },
    "display_name": "ChinaKing",
    "era_split": {
@@ -2897,7 +2897,7 @@
      "record": {
       "losses": 5,
       "ties": 0,
-      "wins": 4
+      "wins": 5
      },
      "sackos": 0,
      "scoring_bonuses": []
@@ -3062,7 +3062,7 @@
       "after_published_snapshot": true,
       "bria_bowl_appearance": false,
       "championship": false,
-      "counted_record": "4-5",
+      "counted_record": "5-5",
       "division_title": false,
       "last_in_league_in_scoring": false,
       "led_league_in_scoring": false,

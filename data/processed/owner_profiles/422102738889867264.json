@@ -18,7 +18,7 @@
   "record": {
    "losses": 94,
    "ties": 0,
-   "wins": 110
+   "wins": 111
   },
   "sackos": 0,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -27,7 +27,7 @@
    15,
    15
   ],
-  "win_pct": 0.5392
+  "win_pct": 0.5415
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -49,12 +49,12 @@
  "current_team_name": "Whiskey Dick & Co",
  "display_name": "WhiskeyDicknCo",
  "efficiency": {
-  "efficiency": 0.8957,
+  "efficiency": 0.8963,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14404.56,
-  "points": 12901.58,
-  "points_left_on_bench": 1502.98,
-  "weeks": 121
+  "optimal_points": 14551.38,
+  "points": 13042.5,
+  "points_left_on_bench": 1508.88,
+  "weeks": 122
  },
  "faab_and_transactions": {
   "adds": 354,
@@ -658,9 +658,9 @@
     },
     "best_value": {
      "bid": 7,
-     "par_per_dollar": 0.05,
+     "par_per_dollar": -0.04,
      "player": "Emanuel Wilson",
-     "points_above_replacement": 0.34,
+     "points_above_replacement": -0.3,
      "points_per_dollar": 2.49,
      "points_started": 17.4,
      "pos": "RB",
@@ -687,9 +687,9 @@
     "hit_rate": 0.6,
     "most_points": {
      "bid": 7,
-     "par_per_dollar": 0.05,
+     "par_per_dollar": -0.04,
      "player": "Emanuel Wilson",
-     "points_above_replacement": 0.34,
+     "points_above_replacement": -0.3,
      "points_per_dollar": 2.49,
      "points_started": 17.4,
      "pos": "RB",
@@ -698,9 +698,9 @@
      "weeks_started": 2
     },
     "paid_claims": 5,
-    "par_per_dollar": -0.71,
-    "points_above_replacement": -10.66,
-    "points_from_free_claims": 70.0,
+    "par_per_dollar": -0.75,
+    "points_above_replacement": -11.3,
+    "points_from_free_claims": 77.0,
     "points_from_paid_claims": 19.4,
     "points_per_dollar": 1.29,
     "worst_par_claim": {
@@ -723,7 +723,7 @@
   "dollars_spent": 626,
   "free_claims": 64,
   "hit_rate": 0.598,
-  "league_points_per_dollar": 2.39,
+  "league_points_per_dollar": 2.41,
   "most_points": {
    "bid": 2,
    "par_per_dollar": 6.1,
@@ -738,10 +738,10 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 92,
-  "par_per_dollar": 0.09,
+  "par_per_dollar": 0.08,
   "par_rank": 8,
-  "points_above_replacement": 53.62,
-  "points_from_free_claims": 457.0,
+  "points_above_replacement": 52.98,
+  "points_from_free_claims": 464.0,
   "points_from_paid_claims": 1330.26,
   "points_per_dollar": 2.13,
   "rank": 8,
@@ -853,13 +853,13 @@
     "wins": 7
    },
    "79761560662589440": {
-    "games": 12,
+    "games": 13,
     "losses": 7,
-    "points_against": 1364.54,
-    "points_for": 1291.92,
+    "points_against": 1474.96,
+    "points_for": 1432.84,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 5
+    "wins": 6
    }
   },
   "favorite_victim_owner_id": "471345530597797888",
@@ -907,7 +907,7 @@
     "record": {
      "losses": 5,
      "ties": 0,
-     "wins": 4
+     "wins": 5
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1070,7 +1070,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "4-5",
+     "counted_record": "5-5",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1085,10 +1085,10 @@
   "snapshot_rank": 1
  },
  "luck": {
-  "expected_wins": 55.68,
-  "luck": -4.68,
+  "expected_wins": 56.59,
+  "luck": -4.59,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 51
+  "wins": 52
  },
  "owner_id": "422102738889867264",
  "record": {
@@ -1106,26 +1106,26 @@
    "wins": 12
   },
   "regular_season": {
-   "avg_points_against": 104.99,
-   "avg_points_for": 106.43,
-   "games": 105,
+   "avg_points_against": 105.04,
+   "avg_points_for": 106.75,
+   "games": 106,
    "losses": 54,
-   "points_against": 11023.96,
-   "points_for": 11174.92,
+   "points_against": 11134.38,
+   "points_for": 11315.84,
    "ties": 0,
-   "win_pct": 0.4857,
-   "wins": 51
+   "win_pct": 0.4906,
+   "wins": 52
   },
   "total": {
-   "avg_points_against": 104.03,
-   "avg_points_for": 106.62,
-   "games": 121,
+   "avg_points_against": 104.08,
+   "avg_points_for": 106.91,
+   "games": 122,
    "losses": 58,
-   "points_against": 12587.44,
-   "points_for": 12901.58,
+   "points_against": 12697.86,
+   "points_for": 13042.5,
    "ties": 0,
-   "win_pct": 0.5207,
-   "wins": 63
+   "win_pct": 0.5246,
+   "wins": 64
   }
  },
  "scoring": {
@@ -2100,7 +2100,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.8752,
+   "efficiency": 0.8845,
    "faab": {
     "adds": 27,
     "budget": 100,
@@ -2133,9 +2133,9 @@
     },
     "best_value": {
      "bid": 7,
-     "par_per_dollar": 0.05,
+     "par_per_dollar": -0.04,
      "player": "Emanuel Wilson",
-     "points_above_replacement": 0.34,
+     "points_above_replacement": -0.3,
      "points_per_dollar": 2.49,
      "points_started": 17.4,
      "pos": "RB",
@@ -2162,9 +2162,9 @@
     "hit_rate": 0.6,
     "most_points": {
      "bid": 7,
-     "par_per_dollar": 0.05,
+     "par_per_dollar": -0.04,
      "player": "Emanuel Wilson",
-     "points_above_replacement": 0.34,
+     "points_above_replacement": -0.3,
      "points_per_dollar": 2.49,
      "points_started": 17.4,
      "pos": "RB",
@@ -2173,9 +2173,9 @@
      "weeks_started": 2
     },
     "paid_claims": 5,
-    "par_per_dollar": -0.71,
-    "points_above_replacement": -10.66,
-    "points_from_free_claims": 70.0,
+    "par_per_dollar": -0.75,
+    "points_above_replacement": -11.3,
+    "points_from_free_claims": 77.0,
     "points_from_paid_claims": 19.4,
     "points_per_dollar": 1.29,
     "worst_par_claim": {
@@ -2193,10 +2193,10 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "59-40",
-    "expected_wins": 5.36,
-    "luck": -1.36,
-    "wins": 4
+    "all_play_record": "69-41",
+    "expected_wins": 6.27,
+    "luck": -1.27,
+    "wins": 5
    },
    "made_playoffs": true,
    "playoff_result": null,
@@ -2212,21 +2212,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 106.77,
-    "avg_points_for": 114.76,
-    "games": 9,
+    "avg_points_against": 107.13,
+    "avg_points_for": 117.37,
+    "games": 10,
     "losses": 5,
-    "points_against": 960.92,
-    "points_for": 1032.8,
+    "points_against": 1071.34,
+    "points_for": 1173.72,
     "ties": 0,
-    "win_pct": 0.4444,
-    "wins": 4
+    "win_pct": 0.5,
+    "wins": 5
    },
-   "regular_season_rank": 4,
+   "regular_season_rank": 3,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 960.92,
-    "points_for": 1032.8
+    "points_against": 1071.34,
+    "points_for": 1173.72
    },
    "team_name": "Whiskey Dick & Co"
   }
@@ -2277,7 +2277,7 @@
    "injured_starter_out": 8.0,
    "missed_league_note": 5
   },
-  "rank": 6,
+  "rank": 5,
   "rank_note": "1 = best (lowest). Ties share a rank.",
   "total": 17.5,
   "worst_penalty_id": "2026-w05-r7-injured_starter_out-5892"

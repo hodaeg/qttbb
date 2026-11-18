@@ -106,6 +106,15 @@
       "faab_taken": 6,
       "instances": 1,
       "status": "confirmed"
+    },
+    {
+      "owner": "gabroni",
+      "season": "2026",
+      "reason": "missed_league_note",
+      "faab_taken": 0,
+      "instances": 1,
+      "status": "confirmed",
+      "note": "Commissioner counted the missed note without taking FAAB."
     }
   ]
 }

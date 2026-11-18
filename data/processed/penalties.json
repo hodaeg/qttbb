@@ -679,10 +679,10 @@
     "faab_taken": 11,
     "instance": 1,
     "lifetime_instance": 1,
-    "lifetime_total": 1,
+    "lifetime_total": 2,
     "of_instances_that_season": 1,
     "recorded_by": "commissioner",
-    "repeat_offender": false,
+    "repeat_offender": true,
     "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
    },
    "excluded_reason": null,
@@ -3502,6 +3502,121 @@
     "weeks_before_playoffs": 6
    },
    "week": 9
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "evidence": {
+    "observed_at": "2026-11-15T20:28:19+00:00",
+    "rule": "Out/Doubtful at a game-day snapshot and still in the final lineup.",
+    "source": "game-day snapshot",
+    "status": "Out"
+   },
+   "excluded_reason": null,
+   "headline": "Drake Maye was Out at 2026-11-15T20:28:19+00:00 but stayed in the lineup.",
+   "id": "2026-w10-r4-injured_starter_out-11564",
+   "kind": "injured_starter_out",
+   "label": "Started a player listed Out",
+   "manager": {
+    "display_name": "gabroni",
+    "first_name": "Gabe",
+    "owner_id": "79761560662589440",
+    "roster_id": 4,
+    "team_name": "G H O S T\u2122"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 30.5,
+    "opponent_display_name": "WhiskeyDicknCo",
+    "opponent_owner_id": "422102738889867264",
+    "opponent_roster_id": 7,
+    "points_against": 140.92,
+    "points_for": 110.42,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2026-11-15",
+    "home": false,
+    "nfl_team": "NE",
+    "opponent": "DET"
+   },
+   "penalty": {
+    "base": 8,
+    "multiplier": 1.0,
+    "total": 8.0
+   },
+   "player": {
+    "lineup_slot": "QB",
+    "name": "Drake Maye",
+    "nfl_team": "NE",
+    "player_id": "11564",
+    "pos": "QB"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Sleeper game-day snapshot",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "5 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 10,
+    "weeks_before_playoffs": 5
+   },
+   "week": 10
+  },
+  {
+   "bench_option": null,
+   "counts": true,
+   "description": "Commissioner counted the missed note without taking FAAB.",
+   "evidence": {
+    "faab_taken": 0,
+    "instance": 1,
+    "lifetime_instance": 2,
+    "lifetime_total": 2,
+    "of_instances_that_season": 1,
+    "recorded_by": "commissioner",
+    "repeat_offender": true,
+    "rule": "Every member must post a league note once a year. Missing it costs FAAB, taken by the commissioner."
+   },
+   "excluded_reason": null,
+   "headline": "gabroni did not post the annual league note, so $0 of FAAB was taken.",
+   "id": "2026-note-r4-1",
+   "kind": "missed_league_note",
+   "label": "Missed the annual league note",
+   "manager": {
+    "display_name": "gabroni",
+    "first_name": "Gabe",
+    "owner_id": "79761560662589440",
+    "roster_id": 4,
+    "team_name": "G H O S T\u2122"
+   },
+   "matchup": null,
+   "nfl_game": null,
+   "penalty": {
+    "base": 5,
+    "multiplier": 1.0,
+    "total": 5
+   },
+   "player": null,
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Commissioner record",
+     "url": null
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "Not tied to a game week, so no timing multiplier.",
+    "phase": "season_long",
+    "week": null
+   },
+   "week": null
   }
  ]
 }
