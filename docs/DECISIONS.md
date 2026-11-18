@@ -414,3 +414,9 @@ Levi's next round, and what changed:
 ### D53 — History app: thinner column glass; "Connected to" is a pile that bursts — Accepted
 - The column's panel uses a thinner glass than the cards (`--glass-thin`, less blur), so the ribbon's colour comes through; type gets a faint shadow to stay readable on bright ribbons.
 - In the column, "Connected to" is a pile like the alumni pile. Tap it and the avatars burst out across the screen to random (seeded, so stable per person) non-overlapping spots, each captioned with how they're connected, no names, no box or grid; the screen dims and blurs behind them. Tap anywhere, scroll or Escape and they fall back into the pile. Tapping someone goes to them (their column, or their sheet). The sheet keeps the list.
+
+### D54 — History app: clear column glass, a pile that can't misfire, photos rise and fall away — Accepted
+- The column panel's glass is clear rather than frosted: a light blur (5px) darkened with `brightness`, which keeps the ribbon's hue, instead of the cards' tint and 1.7× saturation (that turned yellow ribbons orange and read as a solid block).
+- The "Connected to" burst only takes taps once its avatars have flown out (~380ms); falling back, the layer lets taps through to the pile. A quick double tap used to land on the top avatar and open its sheet. It no longer closes on iOS toolbar resizes, only on a real scroll (>40px). Each pile avatar sits in a box its own size, with a drop shadow.
+- Photos rise from behind the card, growing as they come, and when the next card arrives they drift up and shrink away into the top, the top of the stack first. They used to slide in from the left and out to the right.
+- Dustin's avatar is his face cropped from the 2002 photo.

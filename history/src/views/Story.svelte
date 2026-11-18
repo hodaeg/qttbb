@@ -391,10 +391,11 @@
       .filter((m) => m.sy > L.headerY + 14 && m.sy < vh + 4),
   );
 
-  // ---- photos: they slide in from the left, one after another. Each new one lands on top, where
-  // the last one was, and pushes the ones before it up the stack. All leave right as the next card arrives.
+  // ---- photos: they rise up from behind the card one after another, growing as they come. Each new
+  // one lands on top, where the last one was, and pushes the ones before it up the stack. As the next
+  // card arrives they drift up and shrink away into the top, the highest first.
   const photos = $derived.by(() => {
-    const out: { key: string; p: Photo; x: number; y: number; rot: number; z: number; o: number }[] = [];
+    const out: { key: string; p: Photo; x: number; y: number; rot: number; z: number; o: number; sc: number }[] = [];
     const pw = Math.min(L.fieldW * 0.7, 330);
     const ph = pw * 0.75;
     const regionTop = L.headerY + L.av + 14;
@@ -406,7 +407,6 @@
       const span = r.b - r.a;
       const base = regionBot - ph / 2 - 4;
       const step = n > 1 ? Math.min(ph * 0.58, (base - ph / 2 - regionTop) / (n - 1)) : 0;
-      const exit = smooth(clamp((w - (r.b - vh * 0.12)) / (vh * 0.14)));
       const ents = list.map((_, k) => easeOut(clamp((w - (r.a + span * (0.06 + (0.6 * k) / n))) / ((span * 0.6) / n))));
       list.forEach((p, k) => {
         const e = ents[k];
@@ -414,8 +414,14 @@
         const climb = ents.slice(k + 1).reduce((t, v) => t + v, 0); // pushed up by every later arrival
         const tx = L.padL + L.fieldW / 2 + [-10, 14, -6][k % 3] * (L.fieldW / 300);
         const rot = [-3, 2.5, -1.5][k % 3];
-        const x = lerp(-pw * 0.6, tx, e) + exit * (L.W + pw * 0.6 - tx) + (n - 1 - k) * exit * exit * 30;
-        out.push({ key: p.src, p, x, y: base - climb * step, rot: rot - (1 - e) * 12 + exit * 10, z: k + 1, o: 1 });
+        const ty = base - climb * step;
+        // leaving: the top of the stack goes first
+        const ex = smooth(clamp((w - (r.b - vh * 0.14 + k * vh * 0.035)) / (vh * 0.16)));
+        if (ex >= 1) return;
+        const enterY = lerp(tt + ph * 0.25, ty, e); // from behind the card
+        const y = lerp(enterY, L.headerY - ph * 0.15, ex);
+        const sc = lerp(0.5, 1, e) * lerp(1, 0.32, ex);
+        out.push({ key: p.src, p, x: tx, y, rot: rot * (0.4 + 0.6 * e) + (1 - e) * 5 - ex * rot * 1.5, z: k + 1, o: clamp(e * 3) * (1 - ex * ex), sc });
       });
     }
     return { list: out, pw, ph };
@@ -813,7 +819,8 @@
           style:width="{photos.pw}px"
           style:height="{photos.ph}px"
           style:z-index={ph.z}
-          style:transform="translate3d({ph.x - photos.pw / 2}px,{ph.y - photos.ph / 2}px,0) rotate({ph.rot}deg)"
+          style:opacity={ph.o}
+          style:transform="translate3d({ph.x - photos.pw / 2}px,{ph.y - photos.ph / 2}px,0) rotate({ph.rot}deg) scale({ph.sc})"
           onclick={() => onphoto(ph.p)}
         ><img src={import.meta.env.BASE_URL + ph.p.src} alt="" decoding="async" /></button>
       {/each}
@@ -1236,11 +1243,13 @@
     transform-origin: 50% 0;
     color: var(--ink);
     will-change: transform;
-    /* thinner glass than the cards, so the ribbon's colour comes through; a little less blur keeps
-       some of its texture, and a soft shadow on the type keeps it readable over bright ribbons */
+    /* clear glass, not the cards' frost: a light blur so the ribbon's pattern still reads through it,
+       darkened with brightness (which keeps the ribbon's hue) rather than a tint or extra saturation
+       (which turned yellow ribbons orange and read as a solid block). A soft shadow on the type keeps
+       it readable over bright ribbons. */
     --glass-tint: var(--glass-thin);
-    --glass-filter: blur(20px) saturate(1.7);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --glass-filter: blur(5px) brightness(0.74);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
   .pbody {
     display: flex;

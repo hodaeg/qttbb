@@ -54,7 +54,7 @@
     { "from": "levi-nellen", "to": "kyle-mont-blanc", "year": 2010, "how": "English courses", "type": "class" },
     { "from": "levi-nellen", "to": "adam-herr", "year": null, "how": "high school", "type": "high-school" },
     { "from": "adam-herr", "to": "zaid-hunitie", "year": 2011, "how": "roommates", "type": "roommate" },
-    { "from": "adam-herr", "to": "mike-whiting", "year": 2011, "how": "class project partners, bonded over wrestling", "type": "class" },
+    { "from": "adam-herr", "to": "mike-whiting", "year": 2011, "how": "class project partners, bonded over wrestling; Tim's frat", "type": "class" },
 
     { "from": "dave-skradski", "to": "max-christensen", "year": null, "how": "high school", "type": "high-school" },
     { "from": "dave-skradski", "to": "zaid-hunitie", "year": null, "how": "high school", "type": "high-school" },
@@ -63,7 +63,8 @@
     { "from": "tim-comes", "to": "mike-whiting", "year": 2012, "how": "Tim's frat", "type": "frat" },
     { "from": "tim-comes", "to": "jon-petters", "year": 2012, "how": "Tim's frat", "type": "frat" },
     { "from": "tim-comes", "to": "adam-herr", "year": 2012, "how": "Tim's frat", "type": "frat" },
-    { "from": "mike-whiting", "to": "jon-petters", "year": 2012, "how": "frat brothers", "type": "frat" },
+    { "from": "mike-whiting", "to": "jon-petters", "year": 2012, "how": "Tim's frat", "type": "frat" },
+    { "from": "adam-herr", "to": "jon-petters", "year": 2012, "how": "Tim's frat", "type": "frat" },
 
     { "from": "josh-susee", "to": "levi-nellen", "year": null, "how": "high school", "type": "high-school" },
     { "from": "josh-susee", "to": "adam-herr", "year": null, "how": "high school", "type": "high-school" },

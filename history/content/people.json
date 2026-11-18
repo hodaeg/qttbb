@@ -25,7 +25,7 @@
     { "id": "sam-schurman", "name": "Sam Schurman", "nickname": null, "initials": "SS", "role": "member", "founder": false, "sleeper": null, "color": "#A26769", "avatar": "avatars/sam-schurman.jpg", "story": "TODO", "anecdotes": [] },
     { "id": "ben-rydberg", "name": "Ben Rydberg", "nickname": null, "initials": "BR", "role": "member", "founder": false, "sleeper": null, "color": "#6D9DC5", "avatar": "avatars/ben-rydberg.jpg", "story": "TODO", "anecdotes": [] },
 
-    { "id": "dustin-sadnick", "name": "Dustin Sadnick", "nickname": null, "initials": "DS", "role": "outsider", "avatar": null, "story": "Levi's brother." },
+    { "id": "dustin-sadnick", "name": "Dustin Sadnick", "nickname": null, "initials": "DS", "role": "outsider", "avatar": "avatars/dustin-sadnick.jpg", "story": "Levi's brother." },
     { "id": "doug-comes", "name": "Doug Comes", "nickname": null, "initials": "DC", "role": "outsider", "avatar": null, "story": "Tim Comes's brother." },
     { "id": "luke-reinardy", "name": "Lucas Reinardy", "nickname": "Luke", "initials": "LR", "role": "outsider", "avatar": "avatars/luke-reinardy.jpg", "story": "Kalyn's older brother. Tim's freshman roommate; also lived with Max, Zaid and Nate." },
     { "id": "alex-randall", "name": "Alex Randall", "nickname": null, "initials": "AR", "role": "outsider", "avatar": "avatars/alex-randall.jpg", "story": "Max's pal. The group partied at his house." },

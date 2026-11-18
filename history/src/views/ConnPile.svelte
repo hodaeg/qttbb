@@ -39,7 +39,11 @@
   let open = $state(false); // and is flared out
   let c = $state({ x: 0, y: 0 }); // the pile's centre, on screen
   let spots = $state<{ x: number; y: number; rot: number }[]>([]);
+  // the burst avatars only take taps once they've flown out; until then (and while falling back) a
+  // quick second tap would land on whoever was on top of the pile and open them by accident
+  let settled = $state(false);
   let timer = 0;
+  let settleTimer = 0;
 
   // scatter: each avatar tries random spots near the pile, moving outward until it fits
   function scatter() {
@@ -71,10 +75,17 @@
     spots = scatter();
     live = true;
     // one frame in the pile, then fly
-    requestAnimationFrame(() => requestAnimationFrame(() => (open = true)));
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        open = true;
+        settleTimer = window.setTimeout(() => (settled = true), reduced ? 0 : 380);
+      }),
+    );
   }
   function collapse() {
     if (!open) return;
+    clearTimeout(settleTimer);
+    settled = false;
     open = false;
     timer = window.setTimeout(() => (live = false), reduced ? 0 : 640);
   }
@@ -92,17 +103,17 @@
         collapse();
       }
     };
-    const away = () => collapse();
+    // a real scroll, not the few pixels iOS nudges the page when its toolbars show or hide
+    const y0 = window.scrollY;
+    const away = () => Math.abs(window.scrollY - y0) > 40 && collapse();
     window.addEventListener('keydown', key, true);
     window.addEventListener('scroll', away, { passive: true });
-    window.addEventListener('resize', away);
     return () => {
       window.removeEventListener('keydown', key, true);
       window.removeEventListener('scroll', away);
-      window.removeEventListener('resize', away);
     };
   });
-  $effect(() => () => clearTimeout(timer));
+  $effect(() => () => (clearTimeout(timer), clearTimeout(settleTimer)));
 
   function portal(node: HTMLElement) {
     document.body.appendChild(node);
@@ -129,7 +140,7 @@
 </button>
 
 {#if live}
-  <div class="burst" class:open class:reduced role="dialog" aria-label="Connected to" use:portal style:--n={n}>
+  <div class="burst" class:open class:settled class:reduced role="dialog" aria-label="Connected to" use:portal style:--n={n}>
     <button class="scrim" aria-label="Back into the pile" style:--cx="{c.x}px" style:--cy="{c.y}px" onclick={collapse} ontouchmove={collapse} onwheel={collapse}></button>
     {#each links as l, i (l.other)}
       {@const s = open ? spots[i] : stack[i]}
@@ -170,7 +181,11 @@
   }
   .sa {
     grid-area: 1 / 1;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+    display: grid; /* hugs the avatar exactly, so nothing peeks out around the photos */
+    line-height: 0;
+  }
+  .sa {
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
   }
   .count {
     font-size: 12px;
@@ -183,6 +198,11 @@
     position: fixed;
     inset: 0;
     z-index: 80;
+    pointer-events: none; /* falling back, it lets taps through to the pile */
+  }
+  .burst.open .scrim,
+  .burst.settled .node {
+    pointer-events: auto;
   }
   .scrim {
     position: absolute;
@@ -219,7 +239,7 @@
       opacity 120ms ease-out calc(var(--i) * 32ms);
   }
   .node :global(.avatar) {
-    box-shadow: 0 8px 22px -4px rgba(0, 0, 0, 0.7);
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.6));
   }
   .node small {
     max-width: 100px;
