@@ -667,3 +667,10 @@ With connections cut down to origins only (no "introduced by", no later roommate
 - **Motion:** it grows with the scroll, as a pure function of it like everything else. A growth front at 80% of the screen draws the ribbons down; each arrival draws its branch, pops its avatar and slides its words in.
 - **Interaction:** tapping a row opens that person's sheet.
 - **Placement:** `OriginTree.svelte` exports `treeLayout()` so the story knows its length, and Tegridy now starts after it.
+
+### D84 — History app: Megan came in through Toby; Sam met Alex freshman year; only children carry straight down — Accepted
+Levi's corrections:
+- Sam and Alex Randall met freshman year, not in high school; only Sam and Hoover went to high school together.
+- Megan came in through Toby: his high school friend Krissie was Megan's roommate. Krissie joins as a friend of the league. Megan's links to Levi and Max are dropped, as "introduced by" links, and the 2009 dorm card now says how she came in.
+- The chain Toby → Krissie → Megan → Kennedy → Callan would have pushed names off a phone screen. So in the tree, someone who brought in just one person carries straight on down into them (a lineage) rather than stepping right.
+- Nate keeps Max and Zaid, not Levi: Levi brought Nate in (they were roommates), and Nate brought in his high school friends.

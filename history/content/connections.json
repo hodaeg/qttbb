@@ -7,7 +7,7 @@
     { "from": "levi-nellen", "to": "tim-comes", "year": 2009, "how": "same dorm floor, on Dustin's instruction", "type": "dorm" },
 
     { "from": "max-christensen", "to": "alex-randall", "year": 2008, "how": "pals; the high school visit weekend in Winona", "type": "friend" },
-    { "from": "alex-randall", "to": "sam-schurman", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "alex-randall", "to": "sam-schurman", "year": 2009, "how": "met freshman year", "type": "friend" },
     { "from": "alex-hoover", "to": "alex-randall", "year": null, "how": "met through friends, Hoover's freshman year", "type": "friend" },
     { "from": "tim-underhill", "to": "alex-randall", "year": null, "how": "met through friends, Tim's freshman year", "type": "friend" },
     { "from": "sam-schurman", "to": "alex-hoover", "year": null, "how": "high school", "type": "high-school" },
@@ -41,8 +41,8 @@
     { "from": "andy-althoff", "to": "tim-comes", "year": null, "how": "roommates at 71", "type": "roommate" },
     { "from": "andy-althoff", "to": "nate-mehlhoff", "year": null, "how": "roommates at 71", "type": "roommate" },
 
-    { "from": "megan-hardie", "to": "levi-nellen", "year": 2009, "how": "freshman year friends", "type": "friend" },
-    { "from": "megan-hardie", "to": "max-christensen", "year": 2009, "how": "freshman year friends", "type": "friend" },
+    { "from": "toby-bachuber", "to": "krissie", "year": null, "how": "high school", "type": "high-school" },
+    { "from": "krissie", "to": "megan-hardie", "year": 2009, "how": "roommates", "type": "roommate" },
     { "from": "megan-hardie", "to": "kennedy-curtis", "year": 2009, "how": "dorm neighbors", "type": "dorm" },
     { "from": "kennedy-curtis", "to": "callan-curtis", "year": null, "how": "brother and sister", "type": "family" },
     { "from": "callan-curtis", "to": "levi-nellen", "year": 2011, "how": "roommates", "type": "roommate" },

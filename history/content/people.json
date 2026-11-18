@@ -31,6 +31,7 @@
     { "id": "alex-randall", "name": "Alex Randall", "nickname": null, "initials": "AR", "role": "outsider", "avatar": "avatars/alex-randall.jpg", "story": "Max's pal. The group partied at his house.", "anecdotes": ["Is now a firefighter!"] },
     { "id": "alex-hoover", "name": "Alex Hoover", "nickname": null, "initials": "AH", "role": "outsider", "avatar": "avatars/alex-hoover.jpg", "story": "TODO", "anecdotes": ["Had a clock at Japs that read “Hoover Time!” with Hoover's face on it."] },
     { "id": "tim-underhill", "name": "Tim Underhill", "nickname": null, "initials": "TU", "role": "outsider", "avatar": "avatars/tim-underhill.jpg", "story": "Levi's future roommate.", "anecdotes": ["Is banned from the 4 Mile."] },
+    { "id": "krissie", "name": "Krissie", "nickname": null, "initials": "K", "role": "outsider", "avatar": null, "story": "Megan's roommate, and Toby's friend from high school.", "anecdotes": [] },
     { "id": "megan-hardie", "name": "Megan Hardie", "nickname": null, "initials": "MH", "role": "outsider", "avatar": "avatars/megan-hardie.jpg", "story": "TODO", "anecdotes": ["Mark Hardie"] },
     { "id": "kennedy-curtis", "name": "Kennedy Curtis", "nickname": null, "initials": "KC", "role": "outsider", "avatar": null, "story": "Callan Curtis's sister." },
     { "id": "jake", "name": "Jake", "nickname": null, "initials": "J", "role": "outsider", "avatar": null, "story": "Produced rap songs with Alex Randall, including Parallel Dat Park.", "anecdotes": ["Looks like Cam Skattebo."] },

@@ -1,12 +1,14 @@
 <script module lang="ts">
   // The family tree: how every member traces back to one dorm room. One parent per person (the one who
   // brought them in), laid out as an outline: each person's ribbon, in their own colour, peels off the
-  // ribbon of whoever brought them in and runs down to the people they brought in. It grows as you scroll.
+  // ribbon of whoever brought them in and runs down to the people they brought in. Someone who brought in
+  // just one person carries straight on down into them (a lineage, not a step), so long chains like
+  // Toby, Krissie, Megan, Kennedy, Callan don't march off the side of a phone. It grows as you scroll.
   import treeFile from '../../content/tree.json';
   import { people } from '../lib/model';
 
   type Entry = { id: string; via?: string; how: string; year?: number };
-  type Row = Entry & { x: number; y: number; depth: number; parent: Row | null; last: number; color: string };
+  type Row = Entry & { x: number; y: number; depth: number; parent: Row | null; last: number; color: string; straight: boolean };
   const tree = treeFile as { root: Entry; people: Entry[] };
   const kids = (id: string) => tree.people.filter((p) => p.via === id);
   const GREY = '#8d9099'; // friends of the league who aren't members: a plain grey ribbon
@@ -23,16 +25,17 @@
     const rows: Row[] = [];
     const add = (e: Entry, parent: Row | null, depth: number) => {
       const p = people[e.id];
+      const straight = !!parent && kids(parent.id).length === 1;
       const r: Row = {
-        ...e, depth, parent, last: 0,
-        x: parent ? parent.x + ind : x0 + av / 2,
+        ...e, depth, parent, last: 0, straight,
+        x: parent ? parent.x + (straight ? 0 : ind) : x0 + av / 2,
         y: head + rows.length * rh + av / 2,
         color: p?.role === 'member' && p.color ? p.color : GREY,
       };
       rows.push(r);
       for (const k of kids(e.id)) add(k, r, depth + 1);
       // the ribbon runs down to the last person this one brought in
-      const ch = rows.filter((c) => c.parent === r);
+      const ch = rows.filter((c) => c.parent === r && !c.straight);
       r.last = ch.length ? ch[ch.length - 1].y : r.y;
     };
     add(tree.root, null, 0);
@@ -59,7 +62,8 @@
   const first = (id: string) => people[id].nickname ?? people[id].name.split(' ')[0];
 
   // one arrival's progress, 0..1: the branch draws, the avatar pops, the words slide in
-  const progress = (r: Row) => (r.parent ? clamp((front - (r.y - R)) / SPAN) : clamp((front - (r.y - T.av)) / SPAN));
+  const progress = (r: Row) =>
+    clamp((front - (!r.parent ? r.y - T.av : r.straight ? r.parent.y + T.av / 2 : r.y - R)) / (r.straight ? T.rh - T.av + 20 : SPAN));
   const stem = (r: Row) => {
     // the ribbon running down from someone to the people they brought in, grown as far as the front
     const top = r.y + T.av / 2 - 2;
@@ -68,6 +72,7 @@
   };
   const elbow = (r: Row) => {
     const px = r.parent!.x;
+    if (r.straight) return `M${px} ${r.parent!.y + T.av / 2 - 2}V${r.y - T.av / 2 + 2}`;
     return `M${px} ${r.y - R - 0.5}Q${px} ${r.y} ${px + R} ${r.y}H${r.x - T.av / 2 + 1}`;
   };
 </script>
