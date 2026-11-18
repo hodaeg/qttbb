@@ -1,11 +1,11 @@
 ---
 name: integridy-rules
-description: The league's Integridy (Tegridy) Factor rules and how to verify a penalty. Use before changing anything in scripts/score.py, config/league.json (tegridy), config/commissioner_penalties.json or the penalties shown on the history site, and whenever someone questions a penalty or a refresh adds new ones.
+description: The league's Tegridy Factor rules and how to verify a penalty. Use before changing anything in scripts/score.py, config/league.json (tegridy), config/commissioner_penalties.json or the penalties shown on the history site, and whenever someone questions a penalty or a refresh adds new ones.
 ---
 
-# Integridy Factor rules (internally: Tegridy Factor)
+# Tegridy Factor rules
 
-A penalty count. Everyone starts at 0, higher is worse, and only **fair-play** violations count, never lineup skill. The full history is in `docs/DECISIONS.md` (D8, D11, D12, D14-D18, D21, D22, D25, D60). The site calls it **Integridy Factor**, while code and data keep the `tegridy` names.
+A penalty count. Everyone starts at 0, higher is worse, and only **fair-play** violations count, never lineup skill. The full history is in `docs/DECISIONS.md` (D8, D11, D12, D14-D18, D21, D22, D25, D60). The site and the code both call it **Tegridy Factor** (the site briefly said "Integridy"; see D59, D70).
 
 ## The one principle that overrides everything
 
