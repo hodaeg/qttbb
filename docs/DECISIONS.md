@@ -587,3 +587,13 @@ Replaces the pinned card tray (D39 and on).
 - **The lock.**
   - Right: a small green light now glows through the Enter glass from behind (a small blurred spot, 8% tint, faint outer glow), instead of washing the button out.
   - Unlocking: the controls blur, shrink slightly and fade, and the frosted veil (now a 93% dark tint with a 30px backdrop blur over the story) melts away, so the story comes into focus. It no longer wipes up off the screen.
+
+### D72 — History app: full-width explainer and floor shade, heavier lock blur, iOS haptics in the tap, frostier cards — Accepted
+- The Tegridy explainer's grids used `auto-fill`, which on a wide screen sets aside empty tracks, so the cells stopped short. They now use `auto-fit` and stretch across the full width.
+- The shade where the ribbons fall away at the bottom of the screen spans the whole viewport, not just the ribbon field.
+- The lock's veil blurs much harder (90px, 94% tint, desaturated): the title behind it is unrecognisable on desktop too.
+- **Haptics on iOS.**
+  - The fallback now matches the ios-haptics approach: a hidden `<label>` wrapping an `<input type=checkbox switch>`, clicked and removed.
+  - iOS honours it only inside a user gesture, so the taps fire synchronously in the handlers: column open, tap-to-close and Return; Tegridy bar open and close; the alumni pile and its avatars; "Connected to" piles; Escape. The state watcher stays as a fallback for Android.
+  - Patch landings and cuts happen while scrolling, which isn't a gesture iOS accepts, so on iPhone they stay silent (Android buzzes).
+- Story cards (fun facts, in/out cards, everything) have heavier frost: 78% tint, 60px blur, brightness 0.74.

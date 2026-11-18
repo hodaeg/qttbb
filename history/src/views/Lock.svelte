@@ -153,9 +153,9 @@
        as it fades, the story underneath comes into focus */
     background:
       radial-gradient(120% 70% at 20% 0%, color-mix(in srgb, var(--bg-2) 85%, transparent), transparent 70%),
-      color-mix(in srgb, var(--bg) 93%, transparent);
-    backdrop-filter: blur(30px) saturate(0.8);
-    -webkit-backdrop-filter: blur(30px) saturate(0.8);
+      color-mix(in srgb, var(--bg) 94%, transparent);
+    backdrop-filter: blur(90px) saturate(0.6);
+    -webkit-backdrop-filter: blur(90px) saturate(0.6);
     transition: opacity 900ms cubic-bezier(0.4, 0, 0.2, 1) 120ms;
   }
   .lock.gone {

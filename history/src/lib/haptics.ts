@@ -1,10 +1,12 @@
 // One light tap of haptic feedback. Android (and anything with the Vibration API) gets a short
 // vibration. iOS Safari has no Vibration API, but since iOS 18 toggling a native switch control gives a
-// light haptic tick, so there we toggle a hidden one. That works best inside a tap; during a scroll
-// iOS may not fire it. Calls within 120ms of the last are dropped, so several things landing at once
-// make one tap, not a stack of them.
+// light haptic tick, so there we toggle a hidden one: a <label> wrapping an <input type=checkbox switch>,
+// clicked and removed (the same approach as the ios-haptics library).
+//
+// iOS only honours it during a user gesture, so call haptic() synchronously inside a tap/click handler.
+// From a scroll, a timer or an $effect it's silently ignored there (Android still buzzes).
+// Calls within 120ms of the last are dropped, so several things at once make one tap.
 let last = 0;
-let label: HTMLLabelElement | null = null;
 
 export function haptic(ms = 10) {
   const now = performance.now();
@@ -12,27 +14,21 @@ export function haptic(ms = 10) {
   last = now;
   try {
     if (typeof navigator.vibrate === 'function') {
-      if (navigator.userActivation?.hasBeenActive === false) return; // vibrating before any tap is blocked anyway
+      if (navigator.userActivation?.hasBeenActive === false) return; // blocked before any tap anyway
       navigator.vibrate(ms);
       return;
     }
   } catch {}
   try {
-    if (!label) {
-      const input = document.createElement('input');
-      input.type = 'checkbox';
-      input.setAttribute('switch', '');
-      input.id = 'haptic-switch';
-      input.tabIndex = -1;
-      input.setAttribute('aria-hidden', 'true');
-      label = document.createElement('label');
-      label.htmlFor = input.id;
-      label.setAttribute('aria-hidden', 'true');
-      const hide = 'position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0;pointer-events:none';
-      input.style.cssText = hide;
-      label.style.cssText = hide;
-      document.body.append(input, label);
-    }
+    const label = document.createElement('label');
+    label.ariaHidden = 'true';
+    label.style.display = 'none';
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.setAttribute('switch', '');
+    label.appendChild(input);
+    document.head.appendChild(label);
     label.click();
+    document.head.removeChild(label);
   } catch {}
 }

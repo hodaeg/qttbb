@@ -100,7 +100,10 @@
     if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__jump = (y: number) => (window.scrollTo(0, y), (s = y));
     let raf = 0;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') (focus = null), (tgFocus = null), zoomKey && zoomPhoto(null);
+      if (e.key === 'Escape') {
+        if (focus !== null || tgFocus !== null) haptic(8);
+        (focus = null), (tgFocus = null), zoomKey && zoomPhoto(null);
+      }
       if (focus !== null && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) openSlot(clamp(focus + (e.key === 'ArrowRight' ? 1 : -1), 0, SLOTS - 1));
       if (tgFocus !== null && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) tgFocus = tgShown = clamp(tgFocus + (e.key === 'ArrowRight' ? 1 : -1), 0, TGN - 1);
     };
@@ -247,6 +250,7 @@
   }
   function openSlot(slot: number) {
     if (focus === slot || !litFor(slot) || sink > 0.05) return;
+    if (focus === null) haptic(8); // opening (called inside the tap, so iOS honours it)
     fanned = false;
     if (focus !== null) {
       dir = slot > focus ? 1 : -1;
@@ -291,11 +295,12 @@
     return true;
   }
   // tap a ribbon to open it; tap the open one again to close it
-  const tapCol = (slot: number) => (focus === slot ? (focus = null) : openSlot(slot));
+  const tapCol = (slot: number) => (focus === slot ? (haptic(8), (focus = null)) : openSlot(slot));
   // the burnt-in Return under the glass: tapped, it backs up under the card as the column closes
   const RET = 54; // room kept under each panel for it
   let backing = $state<string | null>(null);
   function goBack(key: string, close: () => void) {
+    haptic(8);
     backing = key;
     window.setTimeout(close, reduced ? 0 : 170);
     window.setTimeout(() => (backing = null), reduced ? 0 : 700);
@@ -682,6 +687,7 @@
     wasFanned = fanned;
   });
   function toggleFan() {
+    haptic(8);
     if (fanned) return void (fanned = false);
     const a = L.av * fanScale;
     fanSpots = scatter(pileCount, L.pile, 'alumni', { w: 92, h: a + 40, up: a / 2 }, { left: 8, top: 8, right: L.W - 8, bottom: vh - L.inset - 10 });
@@ -696,6 +702,7 @@
     if (pileIx[p] === undefined) return onperson(p);
     if (!fanned) return toggleFan();
     if (!fanSettled) return; // still flying out
+    haptic(8);
     fanned = false;
     onperson(p);
   }
@@ -845,7 +852,8 @@
       landedSeason[y] = now;
     }
   }
-  // a subtle tap as a column (or Tegridy bar, or the alumni pile) opens or closes
+  // a subtle tap as a column (or Tegridy bar, or the alumni pile) opens or closes. The handlers tap
+  // directly (iOS only honours it inside the tap); this catches the rest (auto-closes) on Android
   let wasOpen = { col: false, bar: false, pile: false };
   $effect(() => {
     const open = { col: focus !== null, bar: tgFocus !== null, pile: fanned };
@@ -961,8 +969,9 @@
   };
   const tgReady = () => grown && chartOnScreen();
   function tgOpen(i: number) {
-    if (tgFocus === i) return void (tgFocus = null); // tap the open bar again to close it
+    if (tgFocus === i) return void (haptic(8), (tgFocus = null)); // tap the open bar again to close it
     if (!tgReady()) return;
+    if (tgFocus === null) haptic(8);
     tgFocus = tgShown = i;
   }
   function tgSwipe(dx: number, ms: number) {
@@ -1146,7 +1155,7 @@
       <i class="rend" style:width="{L.fieldW + 8}px" style:height="{endFade + 2}px" style:transform="translate3d({L.padL - 4}px,{ribbonEnd - s - endFade}px,0)"></i>
     {/if}
     <!-- the ribbons falling away at the bottom -->
-    <i class="floorshade" style:width="{L.fieldW + 8}px" style:transform="translate3d({L.padL - 4}px,{vh - 110}px,0)"></i>
+    <i class="floorshade" style:width="{W}px" style:transform="translate3d(0,{vh - 110}px,0)"></i>
     {#each markers as m (m.y)}
       <span class="marker" style:opacity={started} style:width="{L.fieldW}px" style:transform="translate3d({L.padL}px,{m.sy}px,0)">
         <b class="display" style:left="{lerp(L.colX(L.leviSlot) - L.cw / 2, gOf(shown).x, fz) - L.padL}px">{m.y}</b>
@@ -1535,7 +1544,7 @@
       tabindex={fanned ? 0 : -1}
       style:--cx="{L.pile.x}px"
       style:--cy="{L.pile.y}px"
-      onclick={() => (fanned = false)}
+      onclick={() => (haptic(8), (fanned = false))}
     ></button>
   {/if}
   {#each avatars as a (a.p)}
@@ -1653,8 +1662,8 @@
     z-index: 12; /* above the avatars (10), under the scrubber (26): thrown off the side before the avatars */
     will-change: transform; /* not opacity: it would switch the glass off (Glass fades via --o) */
     /* heavier, darker glass than elsewhere: the ribbons behind stay a soft blur of colour */
-    --glass-tint: rgba(10, 12, 17, 0.7);
-    --glass-filter: blur(40px) saturate(1.5) brightness(0.82);
+    --glass-tint: rgba(10, 12, 17, 0.78);
+    --glass-filter: blur(60px) saturate(1.25) brightness(0.74);
   }
   .stage {
     position: fixed;
@@ -2103,7 +2112,7 @@
   }
   .rules {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* fit: the cells stretch across the whole width */
     gap: 3px;
   }
   .rules.mults {
