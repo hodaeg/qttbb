@@ -525,3 +525,15 @@ Replaces the pinned card tray (D39 and on).
   - Labels elsewhere say "Undefeated" instead of "Silver star".
 - **Fun facts.** A season card now exists only if the season has a fun fact. It's a small card with the year and "Fun fact", at the start of the next year's stretch.
 - Testing in a throttled (hidden) preview pane uses a dev-only `window.__jump(y)` that skips the scroll easing; it isn't in production builds.
+
+### D67 — History app: heavier card glass, type set A, cut-out results, faster arrivals — Accepted
+- **Cards.**
+  - The glass is darker and blurrier than elsewhere (tint 0.7, blur 40px, brightness 0.82).
+  - Cards sit in from the field's edges (16px total on phone, 32px on desktop), centred, with roomier padding inside (16/20/18).
+- **Type.** Set A (Big Shoulders Display + Instrument Sans) is final. The switcher, sets B and C, and their font downloads are gone.
+- **Scrubber.** It runs to the bottom of the visible screen (it used to stop short to clear the type switch).
+- **Arrivals travel faster than the scroll** (`ARRIVE_SPEED` 2.4), now that cards scroll with the page and could slide over a slow avatar:
+  - Founders rise on their ribbon tips 2.4× faster than the scroll. They start just before the card that brings them in comes up from the bottom (or before 2011's first card), so they stay ahead of it.
+  - Newcomers pop in at the playhead and ride up 2.4× faster; the leaver's push-out is timed to match.
+  - Avatars draw above cards (z 10 against 7). The only remaining overlap is a founder briefly passing a card already on screen as it rises.
+- **CHAMPION, SACKO and champion\*** are now cut out of a block of material instead of the letters being the material, so they read better. Inline SVG with a text mask: gold foil with a sliding sheen, or a charred block (a dark shade of the ribbon's colour, scorched at the edges), with the word cut out so the ribbon shows through. UNDEFEATED keeps its platinum letters.

@@ -45,23 +45,7 @@
   const L = $derived(makeLayout(vh, W, inset, cardHs));
   const w = $derived(s + L.P); // the playhead, in world pixels
 
-  // Temporary, for the design review: cycle through the type sets (also ?type=a|b|c).
-  const TYPES = ['a', 'b', 'c'];
-  let type = $state('a');
-  function setType(t: string) {
-    type = TYPES.includes(t) ? t : 'a';
-    document.documentElement.dataset.type = type;
-    try {
-      localStorage.setItem('type', type);
-    } catch {}
-  }
-
   onMount(() => {
-    let saved: string | null = null;
-    try {
-      saved = localStorage.getItem('type');
-    } catch {}
-    setType(new URLSearchParams(location.search).get('type') ?? saved ?? 'a');
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     reduced = mq.matches;
     // Lay the story out against the *large* viewport (address bar hidden), measured with a 100lvh
@@ -448,7 +432,7 @@
         const y = top + ph / 2 + k * step;
         if (y - ph / 2 > vh + 30 || y + ph / 2 < -30) return;
         const t = easeOut(clamp((vh - (y - ph / 2)) / (vh * 0.42)));
-        const x = L.padL + L.trayW / 2 + [-0.12, 0.1, -0.05][k % 3] * L.trayW * 0.5;
+        const x = L.cardX + L.trayW / 2 + [-0.12, 0.1, -0.05][k % 3] * L.trayW * 0.5;
         const rot = [-3, 2.5, -1.5][k % 3];
         out.push({ key: p.src, p, x, y: y + (1 - t) * 30, rot: rot + (1 - t) * 7 * (k % 2 ? -1 : 1), z: k + 1, o: clamp(t * 2.5), sc: lerp(0.84, 1, t) });
       });
@@ -475,7 +459,7 @@
   const markFs = $derived(clamp(L.cw * 0.58, 10, 17));
   const marks = $derived.by(() => {
     type Kind = 'champ' | 'sacko' | 'silver';
-    const out: { key: string; kind: Kind; person: string; x: number; y: number; o: number; star: boolean; reveal: number; text: string }[] = [];
+    const out: { key: string; kind: Kind; person: string; x: number; y: number; o: number; star: boolean; reveal: number; text: string; len: number; bw: number; bh: number }[] = [];
     const add = (key: string, kind: Kind, person: string, slot: number, world: number, star = false) => {
       const y = markY(world); // the word's foot
       const text = kind === 'sacko' ? 'SACKO' : kind === 'silver' ? 'UNDEFEATED' : star ? 'champion*' : 'CHAMPION';
@@ -485,7 +469,10 @@
       const merge = clamp((L.headerY + L.av * 4 - y) / (L.av * 3));
       if (merge >= (kind === 'sacko' ? 0.5 : 1)) return;
       const reveal = clamp((vh - (y - len)) / (len * 1.3)); // written down the ribbon as it comes on screen
-      out.push({ key, kind, person, x: gOf(slot).x + gOf(slot).w / 2, y, o: (1 - merge) * (1 - fz), star, reveal, text });
+      // CHAMPION and SACKO are cut out of a block of gold or charred material, a little narrower than the ribbon
+      const bw = Math.max(12, Math.round(L.cw - 4));
+      const bh = Math.round(len + markFs * 1.3);
+      out.push({ key, kind, person, x: gOf(slot).x + gOf(slot).w / 2, y, o: (1 - merge) * (1 - fz), star, reveal, text, len, bw, bh });
     };
     if (fz > 0.99) return out;
     for (const [year, season] of Object.entries(legacy.seasons)) {
@@ -988,6 +975,17 @@
 <!-- the platinum the undefeated star is made of -->
 <svg class="defs" width="0" height="0" aria-hidden="true">
   <defs>
+    <linearGradient id="goldfoil" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#8a6510" /><stop offset="0.2" stop-color="#f8dc84" /><stop offset="0.4" stop-color="#b8861c" />
+      <stop offset="0.56" stop-color="#fff4c4" /><stop offset="0.76" stop-color="#a77a14" /><stop offset="1" stop-color="#8a6510" />
+    </linearGradient>
+    <linearGradient id="goldsheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.3" stop-color="#fff" stop-opacity="0" /><stop offset="0.5" stop-color="#fff" stop-opacity="0.75" /><stop offset="0.7" stop-color="#fff" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="char" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity="0.55" /><stop offset="0.3" stop-color="#000" stop-opacity="0" />
+      <stop offset="0.7" stop-color="#000" stop-opacity="0" /><stop offset="1" stop-color="#000" stop-opacity="0.55" />
+    </linearGradient>
     <linearGradient id="platfoil" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#8d96a0" /><stop offset="0.3" stop-color="#ffffff" /><stop offset="0.5" stop-color="#b9c2cc" />
       <stop offset="0.68" stop-color="#ffffff" /><stop offset="1" stop-color="#7d8792" />
@@ -998,7 +996,7 @@
 <!-- every card, measured off-screen at its real width, so the timeline can make room for it -->
 <div class="measure" inert aria-hidden="true" style:width="{L.trayW}px">
   {#each cards as c, i (i)}
-    <div use:measureCard={i}><Glass pad="14px 18px 16px"><CardView card={c} {onperson} full /></Glass></div>
+    <div use:measureCard={i}><Glass pad="16px 20px 18px"><CardView card={c} {onperson} full /></Glass></div>
   {/each}
 </div>
 
@@ -1070,16 +1068,54 @@
       </span>
     {/each}
     {#each marks as m (m.key)}
-      <span
-        class="mark {m.kind}"
-        class:burnt={m.kind === 'sacko' || m.star}
-        style:--tone={people[m.person].color}
-        style:--reveal="{(100 - m.reveal * 100).toFixed(1)}%"
-        style:font-size="{markFs}px"
-        style:opacity={m.o}
-        title="{m.text}: {people[m.person].name}"
-        style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-100%)"
-      >{m.text}{#if m.kind === 'silver'}<i class="glint g1"></i><i class="glint g2"></i><i class="glint g3"></i>{/if}</span>
+      {#if m.kind === 'silver'}
+        <!-- UNDEFEATED: the letters are the platinum -->
+        <span
+          class="mark silver"
+          style:--reveal="{(100 - m.reveal * 100).toFixed(1)}%"
+          style:font-size="{markFs}px"
+          style:opacity={m.o}
+          title="{m.text}: {people[m.person].name}"
+          style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-100%)"
+        >{m.text}<i class="glint g1"></i><i class="glint g2"></i><i class="glint g3"></i></span>
+      {:else}
+        {@const id = `cut-${m.key}`}
+        {@const burnt = m.kind === 'sacko' || m.star}
+        <!-- CHAMPION / SACKO / champion*: the word is cut out of a block (gold, or burnt), so the ribbon shows through the letters -->
+        <span
+          class="mark block"
+          class:gold={!burnt}
+          class:burnt
+          style:--tone={people[m.person].color}
+          style:--reveal="{(100 - m.reveal * 100).toFixed(1)}%"
+          style:opacity={m.o}
+          style:--bh="{m.bh}px"
+          title="{m.text}: {people[m.person].name}"
+          style:transform="translate3d({m.x}px,{m.y}px,0) translate(-50%,-100%)"
+        >
+          <svg width={m.bw} height={m.bh} viewBox="0 0 {m.bw} {m.bh}" aria-hidden="true">
+            <defs>
+              <mask id={id} maskUnits="userSpaceOnUse" x="0" y="0" width={m.bw} height={m.bh}>
+                <rect width={m.bw} height={m.bh} rx="1.5" fill="#fff" />
+                <text
+                  class="cut"
+                  class:lower={m.star}
+                  transform="translate({m.bw / 2},{m.bh / 2}) rotate(90)"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size={markFs}
+                  textLength={m.len}
+                  lengthAdjust="spacing"
+                  fill="#000">{m.text}</text>
+              </mask>
+            </defs>
+            <g mask="url(#{id})">
+              <rect class="mat" width={m.bw} height={m.bh} rx="1.5" />
+              {#if burnt}<rect width={m.bw} height={m.bh} fill="url(#char)" />{:else}<rect class="sheen" x="0" y={-m.bh} width={m.bw} height={m.bh} fill="url(#goldsheen)" />{/if}
+            </g>
+          </svg>
+        </span>
+      {/if}
     {/each}
   </div>
 
@@ -1097,9 +1133,9 @@
         style:width="{L.trayW}px"
         style:--o={c.o * (1 - fz)}
         style:pointer-events={fz > 0.5 || c.o < 0.6 ? 'none' : null}
-        style:transform="translate3d({L.padL}px,{c.y.toFixed(1)}px,0)"
+        style:transform="translate3d({L.cardX}px,{c.y.toFixed(1)}px,0)"
       >
-        <Glass pad="14px 18px 16px"><CardView card={c.r.card} {onperson} full /></Glass>
+        <Glass pad="16px 20px 18px"><CardView card={c.r.card} {onperson} full /></Glass>
       </div>
     {/each}
   {/if}
@@ -1486,8 +1522,6 @@
   <!-- the year scrubber -->
   <Scrubber {L} {fi} opacity={started * (1 - sink)} {reduced} onpreview={(pw) => (previewW = pw)} />
 
-  <!-- temporary: type set switcher for the design review -->
-  <button class="typeswitch" style:bottom="{L.inset + 8}px" onclick={() => setType(TYPES[(TYPES.indexOf(type) + 1) % TYPES.length])} aria-label="Switch typeface set, now {type.toUpperCase()}">{type.toUpperCase()}</button>
 </div>
 
 <style>
@@ -1509,6 +1543,9 @@
   .acard {
     z-index: 7; /* under the header (8) and the avatars (10) */
     will-change: transform; /* not opacity: it would switch the glass off (Glass fades via --o) */
+    /* heavier, darker glass than elsewhere: the ribbons behind stay a soft blur of colour */
+    --glass-tint: rgba(10, 12, 17, 0.7);
+    --glass-filter: blur(40px) saturate(1.5) brightness(0.82);
   }
   .stage {
     position: fixed;
@@ -2292,26 +2329,42 @@
     /* written onto the ribbon from the top down as it comes on screen */
     clip-path: inset(0 0 var(--reveal, 0%) 0);
   }
-  /* CHAMPION: gold foil with a sheen running down it */
-  .mark.champ:not(.burnt) {
-    background: linear-gradient(to bottom, #8a6510, #f8dc84 18%, #b8861c 34%, #fff4c4 46%, #a77a14 60%, #f8dc84 76%, #8a6510) 0 0 / 100% 220%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 4px rgba(248, 220, 132, 0.35));
-    animation: foil-run 3.2s linear infinite;
+  /* CHAMPION, SACKO, champion*: a block of material with the word cut out of it */
+  .mark.block {
+    writing-mode: horizontal-tb;
+    line-height: 0;
+    letter-spacing: 0;
   }
-  /* SACKO and 2014's champion*: burnt into the ribbon, a dark shade of its own colour with a lit lip */
-  .mark.burnt {
-    color: color-mix(in srgb, var(--tone) 36%, #000);
-    text-shadow:
-      -1px 0 0 color-mix(in srgb, var(--tone) 72%, #fff 28%),
-      0 0 6px color-mix(in srgb, var(--tone) 45%, #000);
+  .mark.block svg {
+    display: block;
+    overflow: visible;
+  }
+  .cut {
+    font-family: var(--font-display);
+    font-weight: var(--display-weight);
     letter-spacing: 0.1em;
   }
-  .mark.champ.burnt {
-    text-transform: none;
-    letter-spacing: 0.06em;
+  /* gold: foil, a sheen sliding down it, a warm glow */
+  .mark.block.gold .mat {
+    fill: url(#goldfoil);
+  }
+  .mark.block.gold {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 5px rgba(248, 220, 132, 0.4));
+  }
+  .sheen {
+    animation: sheen-run 2.8s linear infinite;
+  }
+  @keyframes sheen-run {
+    to {
+      transform: translateY(calc(var(--bh) * 2));
+    }
+  }
+  /* burnt: a charred block, a dark shade of the ribbon's own colour, scorched at the edges */
+  .mark.block.burnt .mat {
+    fill: color-mix(in srgb, var(--tone) 30%, #000);
+  }
+  .mark.block.burnt {
+    filter: drop-shadow(0 0 3px color-mix(in srgb, var(--tone) 35%, #000)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
   }
   /* UNDEFEATED: platinum, and a big deal. Bright mirrored sheen, a cool glow that breathes, glints */
   .mark.silver {
@@ -2762,20 +2815,6 @@
     font-variant-numeric: tabular-nums;
   }
 
-  .typeswitch {
-    top: auto;
-    left: auto;
-    right: 8px;
-    bottom: calc(8px + var(--safe-bottom));
-    z-index: 35;
-    width: 30px;
-    height: 30px;
-    background: var(--glass-strong);
-    box-shadow: var(--glass-rim);
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--ink-2);
-  }
 
   @media (prefers-reduced-motion: reduce) {
     .av.piled,

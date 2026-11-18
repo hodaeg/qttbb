@@ -38,7 +38,7 @@
   --chevrons2: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8' preserveAspectRatio='none'%3E%3Cpath d='M0 0.8L5 3.6L10 0.8M0 3.6L5 6.4L10 3.6' fill='none' stroke='%23f6c445' stroke-width='1.2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
   --chevrons: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8' preserveAspectRatio='none'%3E%3Cpath d='M0 1.5L5 5L10 1.5' fill='none' stroke='%23f6c445' stroke-width='1.4' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
 
-  /* type: set A (see the [data-type] blocks below for the other sets) */
+  /* type: Big Shoulders Display for display, Instrument Sans for reading (set A, chosen) */
   --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
   --font-text: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --display-weight: 800;
@@ -60,28 +60,6 @@
   /* shape */
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
-}
-
-/* B: newsroom. Schibsted Grotesk (made for a news publisher), heavy and tight, same face for text */
-:root[data-type='b'] {
-  --font-display: 'Schibsted Grotesk', system-ui, sans-serif;
-  --font-text: 'Schibsted Grotesk', system-ui, sans-serif;
-  --display-weight: 900;
-  --display-case: none;
-  --display-track: -0.04em;
-  --display-scale: 1.02;
-  --year-scale: 1;
-}
-/* C: loud and wide. Anybody stretched out, all caps, with Figtree for reading */
-:root[data-type='c'] {
-  --font-display: 'Anybody', system-ui, sans-serif;
-  --font-text: 'Figtree', system-ui, sans-serif;
-  --display-weight: 800;
-  --display-case: uppercase;
-  --display-track: -0.01em;
-  --display-stretch: 135%;
-  --display-scale: 0.82;
-  --year-scale: 0.78;
 }
 
 @media (prefers-color-scheme: light) {

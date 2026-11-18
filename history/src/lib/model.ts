@@ -165,7 +165,8 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
   const colX = (slot: number) => padL + slot * (cw + gap) + cw / 2;
   const cutH = Math.round(cw * 0.6); // how far the diagonal cut drops across a column
 
-  const trayW = Math.min(fieldW, 620); // a card's width
+  const trayW = Math.min(fieldW - (desktop ? 32 : 16), 620); // a card's width: in off the field's edges
+  const cardX = padL + (fieldW - trayW) / 2;
   const P = Math.round((vh - inset) * 0.6); // playhead: where "now" sits on screen
 
   const stops = [...new Set([...cards.map((c) => c.year), ...Object.keys(lineup).map(Number)])].sort((a, b) => a - b);
@@ -223,19 +224,25 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
 
   // When each member first shows up in the header. Nobody gets a ribbon before 2009 (the year we
   // all got to Winona State): founders appear with the first card from then on that names them.
+  // A founder rises from the bottom of the screen on the tip of their ribbon (faster than the scroll), so
+  // they start just *before* the card that brings them in comes up from the bottom: they stay ahead of
+  // it and dock before it gets there, never crossing it.
+  const beforeCard = (a: number) => a + P - vh - av * 2 - 24; // the card's top is still below the screen
+  const firstCard = seq.find((r) => shownIn(r.card) >= FIRST);
+  const founding = firstCard ? beforeCard(firstCard.a) : T[FIRST];
   const appearAt: Record<string, number> = {};
   for (const p of members) {
     const first = tenures[p][0];
     if (first.start === FIRST) {
       const met = cards.find((c) => c.year >= RIBBONS_FROM && (mentions(c).includes(p) || c.arrive?.includes(p)));
-      const metW = met ? cardPos.get(met)! + vh * 0.05 : Infinity;
-      appearAt[p] = Math.min(metW, T[FIRST] + first.slot * vh * 0.018);
+      const metW = met ? beforeCard(cardPos.get(met)!) : Infinity;
+      appearAt[p] = Math.min(metW, founding - (SLOTS - 1 - first.slot) * vh * 0.02);
     } else appearAt[p] = T[first.start] + vh * 0.05;
   }
 
   const pile = { x: W - (desktop ? 60 : 30), y: headerY };
-  // the scrubber rail: from just under the pile to the bottom of the screen (clear of the type switch)
-  const scrub = { top: headerY + 44, bottom: vh - inset - 44 };
+  // the scrubber rail: from just under the pile all the way down (above any browser toolbar)
+  const scrub = { top: headerY + 44, bottom: vh - inset - 10 };
   const finale = end + vh * 0.35;
   const pageHeight = finale - P + vh * 1.15;
   const leviSlot = Math.max(0, lineup[FIRST].indexOf('levi-nellen')); // year badges sit on Levi's ribbon
@@ -243,7 +250,7 @@ export function makeLayout(vh: number, W: number, inset = 0, measured: Record<nu
   const bornAt = born ? cardPos.get(born)! : T[FIRST];
 
   return {
-    vh, W, inset, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayW, photo,
+    vh, W, inset, desktop, P, headerY, right, padL, gap, cw, av, colX, fieldW, cutH, trayW, cardX, photo,
     stops, T, top, end, bandH, seq, cardPos, appearAt, pile, scrub, finale, pageHeight, perYear, leviSlot, bornAt,
   };
 }
@@ -299,8 +306,13 @@ export function pourAt(L: Layout, slot: number, w: number): number {
 export function growTip(L: Layout, p: string, w: number): number | null {
   const a = L.appearAt[p];
   if (a === undefined || w < a) return null;
-  return Math.max(L.headerY, L.vh + L.av - (w - a));
+  return Math.max(L.headerY, L.vh + L.av - (w - a) * ARRIVE_SPEED);
 }
+/**
+ * Arriving avatars travel up faster than the scroll (cards and photos move with it), so they're
+ * always up and docked before a card can slide over them.
+ */
+export const ARRIVE_SPEED = 2.4;
 
 /**
  * A newcomer's avatar arrives big, spread over their ribbon, and shrinks into place as it docks.
@@ -341,8 +353,8 @@ export function avatarState(L: Layout, p: string, w: number, spot: Spot): Avatar
     const w0 = cut + ride; // the avatar's spot reaches the playhead: it pops in there
     if (w < w0) return false;
     const q = clamp((w - w0) / (vh * 0.06));
-    const y = cut - w + P + ride;
-    const wDock = cut + P + ride - headerY;
+    const y = P - (w - w0) * ARRIVE_SPEED; // pops in at the playhead, then rides up faster than the scroll
+    const wDock = w0 + (P - headerY) / ARRIVE_SPEED;
     Object.assign(st, {
       x: colX(seg.slot), y: Math.max(headerY, y), scale: back(q) * arriveScale(1 - (y - headerY) / (vh * 0.35)), rot: 0, opacity: clamp(q * 3), flying: 0, gray: 0, cut: null, pileAt: null, landed: 0,
       returning: ret ? (w < wDock ? 1 : clamp(1 - (w - wDock) / (vh * 0.5))) : 0,
@@ -366,7 +378,7 @@ export function avatarState(L: Layout, p: string, w: number, spot: Spot): Avatar
     st.cut = `${seg.slot}-${seg.start}`; // waits in the header, greying with its column
 
     // pushed out when the newcomer riding up the same slot gets within reach
-    const wPush = B + P + ride - headerY - 1.3 * av;
+    const wPush = B + ride + (P - headerY - 1.3 * av) / ARRIVE_SPEED;
     const order = exits.filter((x) => x.end === seg.end && x.slot < seg.slot).length; // several leavers land one after another
     const A = clamp((w - wPush) / (vh * 0.07));
     if (A <= 0) break;
