@@ -12,7 +12,7 @@
   "team": "HOU"
  },
  "10219": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Chris Rodriguez Jr.",
   "pos": "RB",
   "team": "JAX"
@@ -60,7 +60,7 @@
   "team": "CHI"
  },
  "10236": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Dalton Kincaid",
   "pos": "TE",
   "team": "BUF"
@@ -252,7 +252,7 @@
   "team": "NYJ"
  },
  "11575": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Ray Davis",
   "pos": "RB",
   "team": "BUF"
@@ -384,7 +384,7 @@
   "team": "DEN"
  },
  "11628": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Marvin Harrison Jr.",
   "pos": "WR",
   "team": "HOU"
@@ -564,7 +564,7 @@
   "team": "CLE"
  },
  "12474": {
-  "injury_status": "Doubtful",
+  "injury_status": "Out",
   "name": "Woody Marks",
   "pos": "RB",
   "team": "HOU"
@@ -606,7 +606,7 @@
   "team": "DEN"
  },
  "12490": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Bhayshul Tuten",
   "pos": "RB",
   "team": "JAX"
@@ -756,7 +756,7 @@
   "team": "WAS"
  },
  "12534": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Kyle Monangai",
   "pos": "RB",
   "team": "CHI"
@@ -864,7 +864,7 @@
   "team": "TEN"
  },
  "13281": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jordyn Tyson",
   "pos": "WR",
   "team": "NO"
@@ -894,7 +894,7 @@
   "team": "PHI"
  },
  "13296": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Caleb Douglas",
   "pos": "WR",
   "team": "MIA"
@@ -1524,7 +1524,7 @@
   "team": null
  },
  "2505": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Darren Waller",
   "pos": "TE",
   "team": "CAR"
@@ -2886,7 +2886,7 @@
   "team": null
  },
  "5947": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Jakobi Meyers",
   "pos": "WR",
   "team": "JAX"
@@ -2976,7 +2976,7 @@
   "team": null
  },
  "6083": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Matt Gay",
   "pos": "K",
   "team": "LV"
@@ -3423,7 +3423,7 @@
   "injury_status": null,
   "name": "Isaiah Hodgins",
   "pos": "WR",
-  "team": "PIT"
+  "team": null
  },
  "6931": {
   "injury_status": null,
@@ -3522,7 +3522,7 @@
   "team": null
  },
  "7049": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Jauan Jennings",
   "pos": "WR",
   "team": "MIN"
@@ -3600,7 +3600,7 @@
   "team": "DEN"
  },
  "7527": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Mac Jones",
   "pos": "QB",
   "team": "SF"
@@ -3684,7 +3684,7 @@
   "team": "TB"
  },
  "7568": {
-  "injury_status": "Questionable",
+  "injury_status": "Out",
   "name": "Brevin Jordan",
   "pos": "TE",
   "team": "HOU"
@@ -4404,7 +4404,7 @@
   "team": "TB"
  },
  "9508": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Tyjae Spears",
   "pos": "RB",
   "team": "TEN"

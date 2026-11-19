@@ -1,1 +1,122 @@
-[]
+[
+ {
+  "game": "Questionable",
+  "injury": "Calf",
+  "name": "Sauce Gardner",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Toe",
+  "name": "Anthony Gould",
+  "pos": "WR",
+  "practice": "Full Participation in Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Will Mallory",
+  "pos": "TE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Out",
+  "injury": "Concussion",
+  "name": "Bernhard Raimann",
+  "pos": "T",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Luke Rhodes",
+  "pos": "LS",
+  "practice": "Limited Participation in Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Out",
+  "injury": "Calf",
+  "name": "Jerry Tillery",
+  "pos": "DT",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Jalen Travis",
+  "pos": "T",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Charvarius Ward",
+  "pos": "CB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Colts"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Marvin Harrison Jr.",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Groin",
+  "name": "Jacob Hummel",
+  "pos": "LB",
+  "practice": "Full Participation in Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Hamstring",
+  "name": "Danielle Hunter",
+  "pos": "DE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Foot, Illness",
+  "name": "Brevin Jordan",
+  "pos": "TE",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Out",
+  "injury": "Concussion",
+  "name": "Woody Marks",
+  "pos": "RB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Hamstring",
+  "name": "Jaylin Smith",
+  "pos": "CB",
+  "practice": "Full Participation in Practice",
+  "team": "Texans"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Back",
+  "name": "Wyatt Teller",
+  "pos": "G",
+  "practice": "Full Participation in Practice",
+  "team": "Texans"
+ }
+]
