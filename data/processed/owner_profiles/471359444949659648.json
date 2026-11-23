@@ -90,7 +90,7 @@
   },
   "traded_in": 0,
   "traded_out": 0,
-  "trades": 3,
+  "trades": 4,
   "unexplained_difference": 35,
   "waiver_claims_lost": 93,
   "waiver_claims_won": 122
@@ -2119,7 +2119,7 @@
     "spent": 84,
     "traded_in": 0,
     "traded_out": 0,
-    "trades": 0,
+    "trades": 1,
     "unexplained_difference": 0,
     "waiver_claims_lost": 17,
     "waiver_claims_won": 15
