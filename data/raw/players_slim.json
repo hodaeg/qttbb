@@ -102,7 +102,7 @@
   "team": null
  },
  "10859": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Sam LaPorta",
   "pos": "TE",
   "team": "DET"
@@ -264,7 +264,7 @@
   "team": "NYJ"
  },
  "11577": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Will Shipley",
   "pos": "RB",
   "team": "PHI"
@@ -2454,7 +2454,7 @@
   "team": null
  },
  "5022": {
-  "injury_status": null,
+  "injury_status": "Questionable",
   "name": "Dallas Goedert",
   "pos": "TE",
   "team": "PHI"
@@ -3978,7 +3978,7 @@
   "team": "WAS"
  },
  "8136": {
-  "injury_status": "Questionable",
+  "injury_status": null,
   "name": "Rachaad White",
   "pos": "RB",
   "team": "WAS"

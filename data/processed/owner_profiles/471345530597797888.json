@@ -18,7 +18,7 @@
   "record": {
    "losses": 74,
    "ties": 0,
-   "wins": 74
+   "wins": 75
   },
   "sackos": 1,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
@@ -27,7 +27,7 @@
    -15,
    -15
   ],
-  "win_pct": 0.5
+  "win_pct": 0.5034
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -49,12 +49,12 @@
  "current_team_name": "Angry Beavers",
  "display_name": "Gingivitis",
  "efficiency": {
-  "efficiency": 0.8864,
+  "efficiency": 0.8873,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13939.84,
-  "points": 12356.48,
-  "points_left_on_bench": 1583.36,
-  "weeks": 123
+  "optimal_points": 14060.5,
+  "points": 12475.74,
+  "points_left_on_bench": 1584.76,
+  "weeks": 124
  },
  "faab_and_transactions": {
   "adds": 235,
@@ -635,27 +635,27 @@
    "2026": {
     "best_par_claim": {
      "bid": 6,
-     "par_per_dollar": 2.54,
+     "par_per_dollar": 3.96,
      "player": "Patrick Mahomes",
-     "points_above_replacement": 15.26,
-     "points_per_dollar": 8.48,
-     "points_started": 50.9,
+     "points_above_replacement": 23.75,
+     "points_per_dollar": 12.64,
+     "points_started": 75.86,
      "pos": "QB",
      "season": "2026",
      "week": 8,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "best_value": {
      "bid": 6,
-     "par_per_dollar": 2.54,
+     "par_per_dollar": 3.96,
      "player": "Patrick Mahomes",
-     "points_above_replacement": 15.26,
-     "points_per_dollar": 8.48,
-     "points_started": 50.9,
+     "points_above_replacement": 23.75,
+     "points_per_dollar": 12.64,
+     "points_started": 75.86,
      "pos": "QB",
      "season": "2026",
      "week": 8,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "biggest_bust": {
      "bid": 5,
@@ -675,34 +675,34 @@
     "free_claims": 3,
     "hit_rate": 0.6,
     "most_points": {
-     "bid": 22,
-     "par_per_dollar": 0.67,
-     "player": "Ollie Gordon II",
-     "points_above_replacement": 14.65,
-     "points_per_dollar": 2.68,
-     "points_started": 58.9,
-     "pos": "RB",
+     "bid": 6,
+     "par_per_dollar": 3.96,
+     "player": "Patrick Mahomes",
+     "points_above_replacement": 23.75,
+     "points_per_dollar": 12.64,
+     "points_started": 75.86,
+     "pos": "QB",
      "season": "2026",
-     "week": 3,
-     "weeks_started": 5
+     "week": 8,
+     "weeks_started": 3
     },
     "paid_claims": 15,
-    "par_per_dollar": 0.55,
-    "points_above_replacement": 36.94,
+    "par_per_dollar": 0.6,
+    "points_above_replacement": 40.35,
     "points_from_free_claims": 28.58,
-    "points_from_paid_claims": 227.8,
-    "points_per_dollar": 3.4,
+    "points_from_paid_claims": 264.76,
+    "points_per_dollar": 3.95,
     "worst_par_claim": {
-     "bid": 3,
-     "par_per_dollar": -1.73,
-     "player": "Juwan Johnson",
-     "points_above_replacement": -5.2,
-     "points_per_dollar": 11.0,
-     "points_started": 33.0,
+     "bid": 5,
+     "par_per_dollar": -1.11,
+     "player": "Dallas Goedert",
+     "points_above_replacement": -5.56,
+     "points_per_dollar": 3.4,
+     "points_started": 17.0,
      "pos": "TE",
      "season": "2026",
-     "week": 2,
-     "weeks_started": 5
+     "week": 7,
+     "weeks_started": 3
     }
    }
   },
@@ -712,7 +712,7 @@
   "dollars_spent": 671,
   "free_claims": 29,
   "hit_rate": 0.702,
-  "league_points_per_dollar": 2.4,
+  "league_points_per_dollar": 2.42,
   "most_points": {
    "bid": 5,
    "par_per_dollar": 2.79,
@@ -729,10 +729,10 @@
   "paid_claims": 104,
   "par_per_dollar": 0.2,
   "par_rank": 4,
-  "points_above_replacement": 131.98,
+  "points_above_replacement": 135.39,
   "points_from_free_claims": 220.12,
-  "points_from_paid_claims": 2311.48,
-  "points_per_dollar": 3.44,
+  "points_from_paid_claims": 2348.44,
+  "points_per_dollar": 3.5,
   "rank": 2,
   "worst_par_claim": {
    "bid": 11,
@@ -752,13 +752,13 @@
  "head_to_head": {
   "by_opponent": {
    "383681356686950400": {
-    "games": 11,
+    "games": 12,
     "losses": 6,
-    "points_against": 1056.96,
-    "points_for": 1127.86,
+    "points_against": 1165.12,
+    "points_for": 1247.12,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 5
+    "wins": 6
    },
    "422102738889867264": {
     "games": 11,
@@ -896,7 +896,7 @@
     "record": {
      "losses": 6,
      "ties": 0,
-     "wins": 4
+     "wins": 5
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1065,7 +1065,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "4-6",
+     "counted_record": "5-6",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1080,10 +1080,10 @@
   "snapshot_rank": 10
  },
  "luck": {
-  "expected_wins": 46.45,
-  "luck": 4.55,
+  "expected_wins": 47.36,
+  "luck": 4.64,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 51
+  "wins": 52
  },
  "owner_id": "471345530597797888",
  "record": {
@@ -1101,26 +1101,26 @@
    "wins": 6
   },
   "regular_season": {
-   "avg_points_against": 98.5,
-   "avg_points_for": 99.5,
-   "games": 106,
+   "avg_points_against": 98.59,
+   "avg_points_for": 99.69,
+   "games": 107,
    "losses": 55,
-   "points_against": 10440.96,
-   "points_for": 10547.22,
+   "points_against": 10549.12,
+   "points_for": 10666.48,
    "ties": 0,
-   "win_pct": 0.4811,
-   "wins": 51
+   "win_pct": 0.486,
+   "wins": 52
   },
   "total": {
-   "avg_points_against": 100.6,
-   "avg_points_for": 100.46,
-   "games": 123,
+   "avg_points_against": 100.66,
+   "avg_points_for": 100.61,
+   "games": 124,
    "losses": 66,
-   "points_against": 12374.2,
-   "points_for": 12356.48,
+   "points_against": 12482.36,
+   "points_for": 12475.74,
    "ties": 0,
-   "win_pct": 0.4634,
-   "wins": 57
+   "win_pct": 0.4677,
+   "wins": 58
   }
  },
  "scoring": {
@@ -2084,7 +2084,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.9305,
+   "efficiency": 0.9359,
    "faab": {
     "adds": 29,
     "budget": 100,
@@ -2105,27 +2105,27 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 6,
-     "par_per_dollar": 2.54,
+     "par_per_dollar": 3.96,
      "player": "Patrick Mahomes",
-     "points_above_replacement": 15.26,
-     "points_per_dollar": 8.48,
-     "points_started": 50.9,
+     "points_above_replacement": 23.75,
+     "points_per_dollar": 12.64,
+     "points_started": 75.86,
      "pos": "QB",
      "season": "2026",
      "week": 8,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "best_value": {
      "bid": 6,
-     "par_per_dollar": 2.54,
+     "par_per_dollar": 3.96,
      "player": "Patrick Mahomes",
-     "points_above_replacement": 15.26,
-     "points_per_dollar": 8.48,
-     "points_started": 50.9,
+     "points_above_replacement": 23.75,
+     "points_per_dollar": 12.64,
+     "points_started": 75.86,
      "pos": "QB",
      "season": "2026",
      "week": 8,
-     "weeks_started": 2
+     "weeks_started": 3
     },
     "biggest_bust": {
      "bid": 5,
@@ -2145,44 +2145,44 @@
     "free_claims": 3,
     "hit_rate": 0.6,
     "most_points": {
-     "bid": 22,
-     "par_per_dollar": 0.67,
-     "player": "Ollie Gordon II",
-     "points_above_replacement": 14.65,
-     "points_per_dollar": 2.68,
-     "points_started": 58.9,
-     "pos": "RB",
+     "bid": 6,
+     "par_per_dollar": 3.96,
+     "player": "Patrick Mahomes",
+     "points_above_replacement": 23.75,
+     "points_per_dollar": 12.64,
+     "points_started": 75.86,
+     "pos": "QB",
      "season": "2026",
-     "week": 3,
-     "weeks_started": 5
+     "week": 8,
+     "weeks_started": 3
     },
     "paid_claims": 15,
-    "par_per_dollar": 0.55,
-    "points_above_replacement": 36.94,
+    "par_per_dollar": 0.6,
+    "points_above_replacement": 40.35,
     "points_from_free_claims": 28.58,
-    "points_from_paid_claims": 227.8,
-    "points_per_dollar": 3.4,
+    "points_from_paid_claims": 264.76,
+    "points_per_dollar": 3.95,
     "worst_par_claim": {
-     "bid": 3,
-     "par_per_dollar": -1.73,
-     "player": "Juwan Johnson",
-     "points_above_replacement": -5.2,
-     "points_per_dollar": 11.0,
-     "points_started": 33.0,
+     "bid": 5,
+     "par_per_dollar": -1.11,
+     "player": "Dallas Goedert",
+     "points_above_replacement": -5.56,
+     "points_per_dollar": 3.4,
+     "points_started": 17.0,
      "pos": "TE",
      "season": "2026",
-     "week": 2,
-     "weeks_started": 5
+     "week": 7,
+     "weeks_started": 3
     }
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "62-48",
-    "expected_wins": 5.64,
-    "luck": -1.64,
-    "wins": 4
+    "all_play_record": "72-49",
+    "expected_wins": 6.55,
+    "luck": -1.55,
+    "wins": 5
    },
-   "made_playoffs": false,
+   "made_playoffs": true,
    "playoff_result": null,
    "postseason": {
     "avg_points_against": null,
@@ -2196,21 +2196,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 100.52,
-    "avg_points_for": 111.02,
-    "games": 10,
+    "avg_points_against": 101.21,
+    "avg_points_for": 111.77,
+    "games": 11,
     "losses": 6,
-    "points_against": 1005.18,
-    "points_for": 1110.16,
+    "points_against": 1113.34,
+    "points_for": 1229.42,
     "ties": 0,
-    "win_pct": 0.4,
-    "wins": 4
+    "win_pct": 0.4545,
+    "wins": 5
    },
-   "regular_season_rank": 9,
+   "regular_season_rank": 5,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 1005.18,
-    "points_for": 1110.16
+    "points_against": 1113.34,
+    "points_for": 1229.42
    },
    "team_name": "Angry Beavers"
   }

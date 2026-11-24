@@ -17,7 +17,7 @@
    "wins": 6
   },
   "record": {
-   "losses": 100,
+   "losses": 101,
    "ties": 1,
    "wins": 104
   },
@@ -26,7 +26,7 @@
   "scoring_bonuses": [
    -15
   ],
-  "win_pct": 0.5098
+  "win_pct": 0.5073
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -48,12 +48,12 @@
  "current_team_name": "Gotham Rogues",
  "display_name": "MrSeeYou",
  "efficiency": {
-  "efficiency": 0.9021,
+  "efficiency": 0.9027,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 13576.72,
-  "points": 12247.56,
-  "points_left_on_bench": 1329.16,
-  "weeks": 121
+  "optimal_points": 13664.98,
+  "points": 12335.22,
+  "points_left_on_bench": 1329.76,
+  "weeks": 122
  },
  "faab_and_transactions": {
   "adds": 248,
@@ -645,27 +645,27 @@
    "2026": {
     "best_par_claim": {
      "bid": 6,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.5,
      "player": "T.J. Hockenson",
-     "points_above_replacement": 7.68,
-     "points_per_dollar": 5.1,
-     "points_started": 30.6,
+     "points_above_replacement": 9.02,
+     "points_per_dollar": 6.52,
+     "points_started": 39.1,
      "pos": "TE",
      "season": "2026",
      "week": 4,
-     "weeks_started": 3
+     "weeks_started": 4
     },
     "best_value": {
      "bid": 6,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.5,
      "player": "T.J. Hockenson",
-     "points_above_replacement": 7.68,
-     "points_per_dollar": 5.1,
-     "points_started": 30.6,
+     "points_above_replacement": 9.02,
+     "points_per_dollar": 6.52,
+     "points_started": 39.1,
      "pos": "TE",
      "season": "2026",
      "week": 4,
-     "weeks_started": 3
+     "weeks_started": 4
     },
     "biggest_bust": {
      "bid": 17,
@@ -686,22 +686,22 @@
     "hit_rate": 0.75,
     "most_points": {
      "bid": 6,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.5,
      "player": "T.J. Hockenson",
-     "points_above_replacement": 7.68,
-     "points_per_dollar": 5.1,
-     "points_started": 30.6,
+     "points_above_replacement": 9.02,
+     "points_per_dollar": 6.52,
+     "points_started": 39.1,
      "pos": "TE",
      "season": "2026",
      "week": 4,
-     "weeks_started": 3
+     "weeks_started": 4
     },
     "paid_claims": 8,
-    "par_per_dollar": -0.32,
-    "points_above_replacement": -16.09,
-    "points_from_free_claims": 32.0,
-    "points_from_paid_claims": 72.0,
-    "points_per_dollar": 1.44,
+    "par_per_dollar": -0.29,
+    "points_above_replacement": -14.65,
+    "points_from_free_claims": 39.0,
+    "points_from_paid_claims": 80.5,
+    "points_per_dollar": 1.61,
     "worst_par_claim": {
      "bid": 1,
      "par_per_dollar": -7.0,
@@ -722,7 +722,7 @@
   "dollars_spent": 635,
   "free_claims": 21,
   "hit_rate": 0.637,
-  "league_points_per_dollar": 2.4,
+  "league_points_per_dollar": 2.42,
   "most_points": {
    "bid": 7,
    "par_per_dollar": 8.37,
@@ -739,10 +739,10 @@
   "paid_claims": 80,
   "par_per_dollar": -0.19,
   "par_rank": 12,
-  "points_above_replacement": -121.68,
-  "points_from_free_claims": 441.6,
-  "points_from_paid_claims": 1549.92,
-  "points_per_dollar": 2.44,
+  "points_above_replacement": -120.24,
+  "points_from_free_claims": 448.6,
+  "points_from_paid_claims": 1558.42,
+  "points_per_dollar": 2.45,
   "rank": 5,
   "worst_par_claim": {
    "bid": 4,
@@ -780,10 +780,10 @@
     "wins": 5
    },
    "471074114505797632": {
-    "games": 11,
-    "losses": 6,
-    "points_against": 1183.6,
-    "points_for": 1079.68,
+    "games": 12,
+    "losses": 7,
+    "points_against": 1287.36,
+    "points_for": 1167.34,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 5
@@ -904,7 +904,7 @@
      "wins": 0
     },
     "record": {
-     "losses": 2,
+     "losses": 3,
      "ties": 0,
      "wins": 8
     },
@@ -1071,7 +1071,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "8-2",
+     "counted_record": "8-3",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1086,8 +1086,8 @@
   "snapshot_rank": 6
  },
  "luck": {
-  "expected_wins": 47.86,
-  "luck": 1.14,
+  "expected_wins": 48.23,
+  "luck": 0.77,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
   "wins": 49
  },
@@ -1107,25 +1107,25 @@
    "wins": 7
   },
   "regular_season": {
-   "avg_points_against": 102.97,
-   "avg_points_for": 100.91,
-   "games": 106,
-   "losses": 57,
-   "points_against": 10914.68,
-   "points_for": 10696.28,
+   "avg_points_against": 102.98,
+   "avg_points_for": 100.78,
+   "games": 107,
+   "losses": 58,
+   "points_against": 11018.44,
+   "points_for": 10783.94,
    "ties": 0,
-   "win_pct": 0.4623,
+   "win_pct": 0.4579,
    "wins": 49
   },
   "total": {
    "avg_points_against": 103.83,
-   "avg_points_for": 101.22,
-   "games": 121,
-   "losses": 65,
-   "points_against": 12563.6,
-   "points_for": 12247.56,
+   "avg_points_for": 101.11,
+   "games": 122,
+   "losses": 66,
+   "points_against": 12667.36,
+   "points_for": 12335.22,
    "ties": 0,
-   "win_pct": 0.4628,
+   "win_pct": 0.459,
    "wins": 56
   }
  },
@@ -2101,7 +2101,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.9283,
+   "efficiency": 0.9328,
    "faab": {
     "adds": 20,
     "budget": 100,
@@ -2122,27 +2122,27 @@
    "faab_efficiency": {
     "best_par_claim": {
      "bid": 6,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.5,
      "player": "T.J. Hockenson",
-     "points_above_replacement": 7.68,
-     "points_per_dollar": 5.1,
-     "points_started": 30.6,
+     "points_above_replacement": 9.02,
+     "points_per_dollar": 6.52,
+     "points_started": 39.1,
      "pos": "TE",
      "season": "2026",
      "week": 4,
-     "weeks_started": 3
+     "weeks_started": 4
     },
     "best_value": {
      "bid": 6,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.5,
      "player": "T.J. Hockenson",
-     "points_above_replacement": 7.68,
-     "points_per_dollar": 5.1,
-     "points_started": 30.6,
+     "points_above_replacement": 9.02,
+     "points_per_dollar": 6.52,
+     "points_started": 39.1,
      "pos": "TE",
      "season": "2026",
      "week": 4,
-     "weeks_started": 3
+     "weeks_started": 4
     },
     "biggest_bust": {
      "bid": 17,
@@ -2163,22 +2163,22 @@
     "hit_rate": 0.75,
     "most_points": {
      "bid": 6,
-     "par_per_dollar": 1.28,
+     "par_per_dollar": 1.5,
      "player": "T.J. Hockenson",
-     "points_above_replacement": 7.68,
-     "points_per_dollar": 5.1,
-     "points_started": 30.6,
+     "points_above_replacement": 9.02,
+     "points_per_dollar": 6.52,
+     "points_started": 39.1,
      "pos": "TE",
      "season": "2026",
      "week": 4,
-     "weeks_started": 3
+     "weeks_started": 4
     },
     "paid_claims": 8,
-    "par_per_dollar": -0.32,
-    "points_above_replacement": -16.09,
-    "points_from_free_claims": 32.0,
-    "points_from_paid_claims": 72.0,
-    "points_per_dollar": 1.44,
+    "par_per_dollar": -0.29,
+    "points_above_replacement": -14.65,
+    "points_from_free_claims": 39.0,
+    "points_from_paid_claims": 80.5,
+    "points_per_dollar": 1.61,
     "worst_par_claim": {
      "bid": 1,
      "par_per_dollar": -7.0,
@@ -2194,9 +2194,9 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "60-50",
-    "expected_wins": 5.45,
-    "luck": 2.55,
+    "all_play_record": "64-57",
+    "expected_wins": 5.82,
+    "luck": 2.18,
     "wins": 8
    },
    "made_playoffs": true,
@@ -2213,21 +2213,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 96.27,
-    "avg_points_for": 108.45,
-    "games": 10,
-    "losses": 2,
-    "points_against": 962.72,
-    "points_for": 1084.52,
+    "avg_points_against": 96.95,
+    "avg_points_for": 106.56,
+    "games": 11,
+    "losses": 3,
+    "points_against": 1066.48,
+    "points_for": 1172.18,
     "ties": 0,
-    "win_pct": 0.8,
+    "win_pct": 0.7273,
     "wins": 8
    },
    "regular_season_rank": 1,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 962.72,
-    "points_for": 1084.52
+    "points_against": 1066.48,
+    "points_for": 1172.18
    },
    "team_name": "Gotham Rogues"
   }

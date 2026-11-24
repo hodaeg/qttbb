@@ -313,34 +313,34 @@
    },
    "side_by_side": {
     "a": {
-     "all_time_record": "73-50",
+     "all_time_record": "73-51",
      "championships": 0,
      "display_name": "Hodaeg",
-     "faab_par_per_dollar": -0.05,
+     "faab_par_per_dollar": -0.03,
      "first_name": "Levi",
-     "luck": 8.19,
+     "luck": 7.55,
      "owner_id": "383681356686950400",
-     "points_for": 13048.16,
+     "points_for": 13156.32,
      "sackos": 0,
      "team_name": "Hodag Forest Lurkers",
      "tegridy_factor": 6.0,
      "tegridy_rank": 3,
-     "win_pct": 0.5935
+     "win_pct": 0.5887
     },
     "b": {
-     "all_time_record": "61-61",
+     "all_time_record": "62-61",
      "championships": 0,
      "display_name": "gabroni",
-     "faab_par_per_dollar": 0.5,
+     "faab_par_per_dollar": 0.51,
      "first_name": "Gabe",
-     "luck": -5.1,
+     "luck": -4.92,
      "owner_id": "79761560662589440",
-     "points_for": 13090.46,
+     "points_for": 13204.18,
      "sackos": 0,
      "team_name": "G H O S T\u2122",
      "tegridy_factor": 10,
      "tegridy_rank": 6,
-     "win_pct": 0.5
+     "win_pct": 0.5041
     }
    },
    "trades": [],
@@ -694,34 +694,34 @@
    },
    "side_by_side": {
     "a": {
-     "all_time_record": "56-65",
+     "all_time_record": "56-66",
      "championships": 0,
      "display_name": "MrSeeYou",
      "faab_par_per_dollar": -0.19,
      "first_name": "Max",
-     "luck": 1.14,
+     "luck": 0.77,
      "owner_id": "423560331814510592",
-     "points_for": 12247.56,
+     "points_for": 12335.22,
      "sackos": 1,
      "team_name": "Gotham Rogues",
      "tegridy_factor": 5,
      "tegridy_rank": 2,
-     "win_pct": 0.4628
+     "win_pct": 0.459
     },
     "b": {
-     "all_time_record": "54-69",
+     "all_time_record": "55-69",
      "championships": 1,
      "display_name": "BigDogsRevenge",
      "faab_par_per_dollar": 0.16,
      "first_name": "Jon",
-     "luck": -4.77,
+     "luck": -4.05,
      "owner_id": "471083964757438464",
-     "points_for": 12615.48,
+     "points_for": 12698.82,
      "sackos": 1,
      "team_name": "Big Dog\u2019s Revenge",
      "tegridy_factor": 35.5,
-     "tegridy_rank": 10,
-     "win_pct": 0.439
+     "tegridy_rank": 9,
+     "win_pct": 0.4435
     }
    },
    "trades": [],
@@ -1096,34 +1096,34 @@
    },
    "side_by_side": {
     "a": {
-     "all_time_record": "65-56",
+     "all_time_record": "66-56",
      "championships": 2,
      "display_name": "JSusee",
      "faab_par_per_dollar": 0.31,
      "first_name": "Suze",
-     "luck": -2.92,
+     "luck": -2.47,
      "owner_id": "471074114505797632",
-     "points_for": 12953.76,
+     "points_for": 13057.52,
      "sackos": 0,
      "team_name": "Amazing Fantasy #15",
      "tegridy_factor": 6.0,
      "tegridy_rank": 3,
-     "win_pct": 0.5372
+     "win_pct": 0.541
     },
     "b": {
-     "all_time_record": "56-69",
+     "all_time_record": "56-70",
      "championships": 0,
      "display_name": "TheBoarHouse",
      "faab_par_per_dollar": 0.14,
      "first_name": "Zaid",
-     "luck": 2.38,
+     "luck": 1.65,
      "owner_id": "471359672478068736",
-     "points_for": 12535.86,
+     "points_for": 12644.86,
      "sackos": 2,
      "team_name": "Lil Kings",
      "tegridy_factor": 67.0,
      "tegridy_rank": 12,
-     "win_pct": 0.448
+     "win_pct": 0.4444
     }
    },
    "trades": [],
@@ -1510,34 +1510,34 @@
    },
    "side_by_side": {
     "a": {
-     "all_time_record": "57-66",
+     "all_time_record": "58-66",
      "championships": 0,
      "display_name": "Gingivitis",
      "faab_par_per_dollar": 0.2,
      "first_name": "Ging",
-     "luck": 4.55,
+     "luck": 4.64,
      "owner_id": "471345530597797888",
-     "points_for": 12356.48,
+     "points_for": 12475.74,
      "sackos": 1,
      "team_name": "Angry Beavers",
      "tegridy_factor": 14.0,
      "tegridy_rank": 8,
-     "win_pct": 0.4634
+     "win_pct": 0.4677
     },
     "b": {
-     "all_time_record": "51-71",
+     "all_time_record": "51-72",
      "championships": 0,
      "display_name": "ChinaKing",
-     "faab_par_per_dollar": 0.01,
+     "faab_par_per_dollar": 0.04,
      "first_name": "Adam",
      "luck": -0.7,
      "owner_id": "471360899853053952",
-     "points_for": 12020.44,
+     "points_for": 12101.64,
      "sackos": 1,
      "team_name": "China King",
-     "tegridy_factor": 28.0,
-     "tegridy_rank": 9,
-     "win_pct": 0.418
+     "tegridy_factor": 37.0,
+     "tegridy_rank": 10,
+     "win_pct": 0.4146
     }
    },
    "trades": [],
@@ -1881,34 +1881,34 @@
    },
    "side_by_side": {
     "a": {
-     "all_time_record": "64-58",
+     "all_time_record": "65-58",
      "championships": 2,
      "display_name": "WhiskeyDicknCo",
      "faab_par_per_dollar": 0.08,
      "first_name": "Mike",
      "luck": -4.59,
      "owner_id": "422102738889867264",
-     "points_for": 13042.5,
+     "points_for": 13165.4,
      "sackos": 0,
      "team_name": "Whiskey Dick & Co",
      "tegridy_factor": 9.5,
      "tegridy_rank": 5,
-     "win_pct": 0.5246
+     "win_pct": 0.5285
     },
     "b": {
-     "all_time_record": "68-53",
+     "all_time_record": "68-54",
      "championships": 1,
      "display_name": "ToadLicker",
-     "faab_par_per_dollar": 0.19,
+     "faab_par_per_dollar": 0.16,
      "first_name": "Kyle",
-     "luck": -0.11,
+     "luck": -0.29,
      "owner_id": "471359444949659648",
-     "points_for": 13262.14,
+     "points_for": 13345.44,
      "sackos": 0,
      "team_name": "Grin & Bear It",
      "tegridy_factor": 10,
      "tegridy_rank": 6,
-     "win_pct": 0.562
+     "win_pct": 0.5574
     }
    },
    "trades": [
@@ -2278,34 +2278,34 @@
    },
    "side_by_side": {
     "a": {
-     "all_time_record": "68-55",
+     "all_time_record": "68-56",
      "championships": 0,
      "display_name": "DangerDave678",
      "faab_par_per_dollar": 0.26,
      "first_name": "Dave",
-     "luck": 6.37,
+     "luck": 6.28,
      "owner_id": "471366618241298432",
-     "points_for": 12801.18,
+     "points_for": 12882.82,
      "sackos": 1,
      "team_name": "Always A Bridesmaid",
      "tegridy_factor": 0,
      "tegridy_rank": 1,
-     "win_pct": 0.5528
+     "win_pct": 0.5484
     },
     "b": {
-     "all_time_record": "61-61",
+     "all_time_record": "62-61",
      "championships": 1,
      "display_name": "therealGandB",
      "faab_par_per_dollar": -0.15,
      "first_name": "Jordan",
-     "luck": -4.45,
+     "luck": -3.91,
      "owner_id": "471368473092550656",
-     "points_for": 12957.14,
+     "points_for": 13049.7,
      "sackos": 0,
      "team_name": "Green and Bowled",
      "tegridy_factor": 59.75,
      "tegridy_rank": 11,
-     "win_pct": 0.5
+     "win_pct": 0.5041
     }
    },
    "trades": [

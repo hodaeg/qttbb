@@ -2296,6 +2296,76 @@
   {
    "bench_option": null,
    "counts": true,
+   "evidence": {
+    "injury": "Ankle, Quadricep",
+    "note": "Sleeper recorded no stats for him that week, so he was ruled out after the Friday report.",
+    "played": false,
+    "points_scored": 0,
+    "practice_status": "Limited Participation in Practice",
+    "report_status": "Questionable",
+    "rule": "Listed Questionable on the official NFL injury report, did not play (no stats that week), started, and scored 0."
+   },
+   "excluded_reason": null,
+   "headline": "Brock Bowers was listed Questionable (Ankle, Quadricep), did not play, and scored 0 in the starting lineup.",
+   "id": "2026-w11-r9-questionable_did_not_play-11604",
+   "kind": "questionable_did_not_play",
+   "label": "Started a Questionable player who didn't play",
+   "manager": {
+    "display_name": "ChinaKing",
+    "first_name": "Adam",
+    "owner_id": "471360899853053952",
+    "roster_id": 9,
+    "team_name": "China King"
+   },
+   "matchup": {
+    "bench_option_would_have_changed_result": null,
+    "margin": 2.14,
+    "opponent_display_name": "BigDogsRevenge",
+    "opponent_owner_id": "471083964757438464",
+    "opponent_roster_id": 5,
+    "points_against": 83.34,
+    "points_for": 81.2,
+    "result": "lost"
+   },
+   "nfl_game": {
+    "date": "2026-11-22",
+    "home": false,
+    "nfl_team": "LV",
+    "opponent": "DEN"
+   },
+   "penalty": {
+    "base": 6,
+    "multiplier": 1.5,
+    "total": 9.0
+   },
+   "player": {
+    "lineup_slot": "TE",
+    "name": "Brock Bowers",
+    "nfl_team": "LV",
+    "player_id": "11604",
+    "pos": "TE"
+   },
+   "season": "2026",
+   "sources": [
+    {
+     "name": "Official NFL injury report",
+     "url": "https://www.nfl.com/injuries/league/2026/reg11"
+    }
+   ],
+   "timing": {
+    "multiplier_reason": "4 weeks before the playoffs (playoffs start week 15)",
+    "phase": "regular_season",
+    "playoff_bracket": null,
+    "playoff_round": null,
+    "playoff_start_week": 15,
+    "week": 11,
+    "weeks_before_playoffs": 4
+   },
+   "week": 11
+  },
+  {
+   "bench_option": null,
+   "counts": true,
    "description": "Commissioner counted the missed note without taking FAAB.",
    "evidence": {
     "faab_taken": 0,

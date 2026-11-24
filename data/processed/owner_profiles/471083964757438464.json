@@ -19,14 +19,14 @@
   "record": {
    "losses": 101,
    "ties": 0,
-   "wins": 84
+   "wins": 85
   },
   "sackos": 2,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
   "scoring_bonuses": [
    -15
   ],
-  "win_pct": 0.4541
+  "win_pct": 0.457
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -48,12 +48,12 @@
  "current_team_name": "Big Dog\u2019s Revenge",
  "display_name": "BigDogsRevenge",
  "efficiency": {
-  "efficiency": 0.8999,
+  "efficiency": 0.9001,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14018.72,
-  "points": 12615.48,
-  "points_left_on_bench": 1403.24,
-  "weeks": 123
+  "optimal_points": 14107.56,
+  "points": 12698.82,
+  "points_left_on_bench": 1408.74,
+  "weeks": 124
  },
  "faab_and_transactions": {
   "adds": 147,
@@ -623,16 +623,16 @@
      "weeks_started": 0
     },
     "best_value": {
-     "bid": 15,
-     "par_per_dollar": -0.83,
-     "player": "Kenyon Sadiq",
-     "points_above_replacement": -12.48,
-     "points_per_dollar": 0.19,
-     "points_started": 2.8,
-     "pos": "TE",
+     "bid": 6,
+     "par_per_dollar": -0.31,
+     "player": "Germie Bernard",
+     "points_above_replacement": -1.88,
+     "points_per_dollar": 1.17,
+     "points_started": 7.0,
+     "pos": "WR",
      "season": "2026",
-     "week": 3,
-     "weeks_started": 2
+     "week": 9,
+     "weeks_started": 1
     },
     "biggest_bust": {
      "bid": 42,
@@ -646,34 +646,34 @@
      "week": 3,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 1,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 63,
     "free_claims": 3,
-    "hit_rate": 0.333,
+    "hit_rate": 0.667,
     "most_points": {
-     "bid": 15,
-     "par_per_dollar": -0.83,
-     "player": "Kenyon Sadiq",
-     "points_above_replacement": -12.48,
-     "points_per_dollar": 0.19,
-     "points_started": 2.8,
-     "pos": "TE",
+     "bid": 6,
+     "par_per_dollar": -0.31,
+     "player": "Germie Bernard",
+     "points_above_replacement": -1.88,
+     "points_per_dollar": 1.17,
+     "points_started": 7.0,
+     "pos": "WR",
      "season": "2026",
-     "week": 3,
-     "weeks_started": 2
+     "week": 9,
+     "weeks_started": 1
     },
     "paid_claims": 3,
-    "par_per_dollar": -0.2,
-    "points_above_replacement": -12.48,
-    "points_from_free_claims": 21.0,
-    "points_from_paid_claims": 2.8,
-    "points_per_dollar": 0.04,
+    "par_per_dollar": -0.22,
+    "points_above_replacement": -14.12,
+    "points_from_free_claims": 32.0,
+    "points_from_paid_claims": 9.8,
+    "points_per_dollar": 0.16,
     "worst_par_claim": {
      "bid": 15,
-     "par_per_dollar": -0.83,
+     "par_per_dollar": -0.82,
      "player": "Kenyon Sadiq",
-     "points_above_replacement": -12.48,
+     "points_above_replacement": -12.24,
      "points_per_dollar": 0.19,
      "points_started": 2.8,
      "pos": "TE",
@@ -683,13 +683,13 @@
     }
    }
   },
-  "claims_benched_only": 6,
+  "claims_benched_only": 5,
   "claims_dropped_before_playing": 1,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 472,
   "free_claims": 13,
-  "hit_rate": 0.837,
-  "league_points_per_dollar": 2.4,
+  "hit_rate": 0.86,
+  "league_points_per_dollar": 2.42,
   "most_points": {
    "bid": 12,
    "par_per_dollar": 3.68,
@@ -706,10 +706,10 @@
   "paid_claims": 43,
   "par_per_dollar": 0.16,
   "par_rank": 6,
-  "points_above_replacement": 77.55,
-  "points_from_free_claims": 353.44,
-  "points_from_paid_claims": 1010.96,
-  "points_per_dollar": 2.14,
+  "points_above_replacement": 75.91,
+  "points_from_free_claims": 364.44,
+  "points_from_paid_claims": 1017.96,
+  "points_per_dollar": 2.16,
   "rank": 7,
   "worst_par_claim": {
    "bid": 45,
@@ -792,13 +792,13 @@
     "wins": 4
    },
    "471360899853053952": {
-    "games": 13,
+    "games": 14,
     "losses": 6,
-    "points_against": 1321.1,
-    "points_for": 1321.28,
+    "points_against": 1402.3,
+    "points_for": 1404.62,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 7
+    "wins": 8
    },
    "471366618241298432": {
     "games": 12,
@@ -873,7 +873,7 @@
     "record": {
      "losses": 7,
      "ties": 0,
-     "wins": 3
+     "wins": 4
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1038,7 +1038,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "3-7",
+     "counted_record": "4-7",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1053,10 +1053,10 @@
   "snapshot_rank": 9
  },
  "luck": {
-  "expected_wins": 48.77,
-  "luck": -4.77,
+  "expected_wins": 49.05,
+  "luck": -4.05,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 44
+  "wins": 45
  },
  "owner_id": "471083964757438464",
  "record": {
@@ -1074,26 +1074,26 @@
    "wins": 10
   },
   "regular_season": {
-   "avg_points_against": 105.11,
-   "avg_points_for": 101.19,
-   "games": 106,
+   "avg_points_against": 104.89,
+   "avg_points_for": 101.02,
+   "games": 107,
    "losses": 62,
-   "points_against": 11141.92,
-   "points_for": 10725.82,
+   "points_against": 11223.12,
+   "points_for": 10809.16,
    "ties": 0,
-   "win_pct": 0.4151,
-   "wins": 44
+   "win_pct": 0.4206,
+   "wins": 45
   },
   "total": {
-   "avg_points_against": 105.15,
-   "avg_points_for": 102.56,
-   "games": 123,
+   "avg_points_against": 104.95,
+   "avg_points_for": 102.41,
+   "games": 124,
    "losses": 69,
-   "points_against": 12933.02,
-   "points_for": 12615.48,
+   "points_against": 13014.22,
+   "points_for": 12698.82,
    "ties": 0,
-   "win_pct": 0.439,
-   "wins": 54
+   "win_pct": 0.4435,
+   "wins": 55
   }
  },
  "scoring": {
@@ -1107,7 +1107,7 @@
   "close_games": {
    "definition": "decided by less than 5 points",
    "losses": 10,
-   "wins": 5
+   "wins": 6
   },
   "highest_score": {
    "opponent_owner_id": "471345530597797888",
@@ -2035,7 +2035,7 @@
   "2026": {
    "complete": false,
    "division": "Hodag\u2019s Harem",
-   "efficiency": 0.9144,
+   "efficiency": 0.9164,
    "faab": {
     "adds": 22,
     "budget": 100,
@@ -2067,16 +2067,16 @@
      "weeks_started": 0
     },
     "best_value": {
-     "bid": 15,
-     "par_per_dollar": -0.83,
-     "player": "Kenyon Sadiq",
-     "points_above_replacement": -12.48,
-     "points_per_dollar": 0.19,
-     "points_started": 2.8,
-     "pos": "TE",
+     "bid": 6,
+     "par_per_dollar": -0.31,
+     "player": "Germie Bernard",
+     "points_above_replacement": -1.88,
+     "points_per_dollar": 1.17,
+     "points_started": 7.0,
+     "pos": "WR",
      "season": "2026",
-     "week": 3,
-     "weeks_started": 2
+     "week": 9,
+     "weeks_started": 1
     },
     "biggest_bust": {
      "bid": 42,
@@ -2090,34 +2090,34 @@
      "week": 3,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 1,
     "claims_dropped_before_playing": 0,
     "dollars_spent": 63,
     "free_claims": 3,
-    "hit_rate": 0.333,
+    "hit_rate": 0.667,
     "most_points": {
-     "bid": 15,
-     "par_per_dollar": -0.83,
-     "player": "Kenyon Sadiq",
-     "points_above_replacement": -12.48,
-     "points_per_dollar": 0.19,
-     "points_started": 2.8,
-     "pos": "TE",
+     "bid": 6,
+     "par_per_dollar": -0.31,
+     "player": "Germie Bernard",
+     "points_above_replacement": -1.88,
+     "points_per_dollar": 1.17,
+     "points_started": 7.0,
+     "pos": "WR",
      "season": "2026",
-     "week": 3,
-     "weeks_started": 2
+     "week": 9,
+     "weeks_started": 1
     },
     "paid_claims": 3,
-    "par_per_dollar": -0.2,
-    "points_above_replacement": -12.48,
-    "points_from_free_claims": 21.0,
-    "points_from_paid_claims": 2.8,
-    "points_per_dollar": 0.04,
+    "par_per_dollar": -0.22,
+    "points_above_replacement": -14.12,
+    "points_from_free_claims": 32.0,
+    "points_from_paid_claims": 9.8,
+    "points_per_dollar": 0.16,
     "worst_par_claim": {
      "bid": 15,
-     "par_per_dollar": -0.83,
+     "par_per_dollar": -0.82,
      "player": "Kenyon Sadiq",
-     "points_above_replacement": -12.48,
+     "points_above_replacement": -12.24,
      "points_per_dollar": 0.19,
      "points_started": 2.8,
      "pos": "TE",
@@ -2128,10 +2128,10 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "25-85",
-    "expected_wins": 2.27,
-    "luck": 0.73,
-    "wins": 3
+    "all_play_record": "28-93",
+    "expected_wins": 2.55,
+    "luck": 1.45,
+    "wins": 4
    },
    "made_playoffs": false,
    "playoff_result": null,
@@ -2147,21 +2147,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 108.96,
-    "avg_points_for": 86.05,
-    "games": 10,
+    "avg_points_against": 106.44,
+    "avg_points_for": 85.81,
+    "games": 11,
     "losses": 7,
-    "points_against": 1089.6,
-    "points_for": 860.52,
+    "points_against": 1170.8,
+    "points_for": 943.86,
     "ties": 0,
-    "win_pct": 0.3,
-    "wins": 3
+    "win_pct": 0.3636,
+    "wins": 4
    },
    "regular_season_rank": 12,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 1089.6,
-    "points_for": 860.52
+    "points_against": 1170.8,
+    "points_for": 943.86
    },
    "team_name": "Big Dog\u2019s Revenge"
   }
@@ -2211,7 +2211,7 @@
    "injured_starter_out": 8.0,
    "missed_league_note": 10
   },
-  "rank": 10,
+  "rank": 9,
   "rank_note": "1 = best (lowest). Ties share a rank.",
   "total": 35.5,
   "worst_penalty_id": "2023-w13-r5-bye_week_starter-BAL"

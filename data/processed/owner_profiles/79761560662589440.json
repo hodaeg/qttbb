@@ -19,14 +19,14 @@
   "record": {
    "losses": 75,
    "ties": 0,
-   "wins": 76
+   "wins": 77
   },
   "sackos": 1,
   "scope": "ESPN era + Sleeper era (published through 2025, plus Sleeper since)",
   "scoring_bonuses": [
    15
   ],
-  "win_pct": 0.5033
+  "win_pct": 0.5066
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -48,12 +48,12 @@
  "current_team_name": "G H O S T\u2122",
  "display_name": "gabroni",
  "efficiency": {
-  "efficiency": 0.8929,
+  "efficiency": 0.8937,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14660.98,
-  "points": 13090.46,
-  "points_left_on_bench": 1570.52,
-  "weeks": 122
+  "optimal_points": 14775.5,
+  "points": 13204.18,
+  "points_left_on_bench": 1571.32,
+  "weeks": 123
  },
  "faab_and_transactions": {
   "adds": 296,
@@ -633,28 +633,28 @@
    },
    "2026": {
     "best_par_claim": {
-     "bid": 5,
-     "par_per_dollar": 3.1,
-     "player": "Jacksonville Jaguars",
-     "points_above_replacement": 15.5,
-     "points_per_dollar": 7.0,
-     "points_started": 35.0,
-     "pos": "DEF",
+     "bid": 12,
+     "par_per_dollar": 1.31,
+     "player": "Jared Goff",
+     "points_above_replacement": 15.67,
+     "points_per_dollar": 5.65,
+     "points_started": 67.78,
+     "pos": "QB",
      "season": "2026",
-     "week": 7,
+     "week": 2,
      "weeks_started": 3
     },
     "best_value": {
      "bid": 5,
-     "par_per_dollar": 3.1,
+     "par_per_dollar": 2.8,
      "player": "Jacksonville Jaguars",
-     "points_above_replacement": 15.5,
-     "points_per_dollar": 7.0,
-     "points_started": 35.0,
+     "points_above_replacement": 14.0,
+     "points_per_dollar": 8.0,
+     "points_started": 40.0,
      "pos": "DEF",
      "season": "2026",
      "week": 7,
-     "weeks_started": 3
+     "weeks_started": 4
     },
     "biggest_bust": {
      "bid": 7,
@@ -668,16 +668,16 @@
      "week": 4,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 1,
     "claims_dropped_before_playing": 1,
     "dollars_spent": 54,
     "free_claims": 1,
-    "hit_rate": 0.7,
+    "hit_rate": 0.8,
     "most_points": {
      "bid": 12,
-     "par_per_dollar": 1.19,
+     "par_per_dollar": 1.31,
      "player": "Jared Goff",
-     "points_above_replacement": 14.32,
+     "points_above_replacement": 15.67,
      "points_per_dollar": 5.65,
      "points_started": 67.78,
      "pos": "QB",
@@ -686,11 +686,11 @@
      "weeks_started": 3
     },
     "paid_claims": 10,
-    "par_per_dollar": 0.53,
-    "points_above_replacement": 28.38,
+    "par_per_dollar": 0.58,
+    "points_above_replacement": 31.08,
     "points_from_free_claims": 0.0,
-    "points_from_paid_claims": 163.48,
-    "points_per_dollar": 3.03,
+    "points_from_paid_claims": 196.7,
+    "points_per_dollar": 3.64,
     "worst_par_claim": {
      "bid": 9,
      "par_per_dollar": -0.9,
@@ -705,13 +705,13 @@
     }
    }
   },
-  "claims_benched_only": 18,
+  "claims_benched_only": 17,
   "claims_dropped_before_playing": 3,
   "definition": "Starting-lineup points a FAAB-acquired player scored for the owner, divided by the dollars bid. Only claims of $1+ count as paid; $0 claims are tracked separately. Bench points don't count. Claims the commissioner undid are ignored. Claims dropped before the player ever shows on a roster for a game week count as dollars spent with no return (outcome 'dropped_before_playing'). points_above_replacement (PAR) subtracts the position's replacement level for each week he started: the points per game of the (N+1)th best player at that position over the season, where N is the average number started league-wide per week (see replacement_levels). Bench stashes bought on purpose (handcuffs, injury stashes) still look like busts.",
   "dollars_spent": 649,
   "free_claims": 8,
-  "hit_rate": 0.769,
-  "league_points_per_dollar": 2.4,
+  "hit_rate": 0.78,
+  "league_points_per_dollar": 2.42,
   "most_points": {
    "bid": 12,
    "par_per_dollar": 1.48,
@@ -726,12 +726,12 @@
   },
   "name": "Bang for Buck",
   "paid_claims": 91,
-  "par_per_dollar": 0.5,
+  "par_per_dollar": 0.51,
   "par_rank": 1,
-  "points_above_replacement": 327.52,
+  "points_above_replacement": 330.22,
   "points_from_free_claims": 50.1,
-  "points_from_paid_claims": 2036.7,
-  "points_per_dollar": 3.14,
+  "points_from_paid_claims": 2069.92,
+  "points_per_dollar": 3.19,
   "rank": 3,
   "worst_par_claim": {
    "bid": 6,
@@ -832,13 +832,13 @@
     "wins": 5
    },
    "471366618241298432": {
-    "games": 12,
+    "games": 13,
     "losses": 8,
-    "points_against": 1304.3,
-    "points_for": 1244.56,
+    "points_against": 1385.94,
+    "points_for": 1358.28,
     "protected_rivalry": null,
     "ties": 0,
-    "wins": 4
+    "wins": 5
    },
    "471368473092550656": {
     "games": 10,
@@ -851,7 +851,7 @@
    }
   },
   "favorite_victim_owner_id": "423560331814510592",
-  "nemesis_owner_id": "471366618241298432"
+  "nemesis_owner_id": "471359444949659648"
  },
  "in_current_league": true,
  "legacy": {
@@ -895,7 +895,7 @@
     "record": {
      "losses": 6,
      "ties": 0,
-     "wins": 4
+     "wins": 5
     },
     "sackos": 0,
     "scoring_bonuses": []
@@ -1062,7 +1062,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "4-6",
+     "counted_record": "5-6",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1077,10 +1077,10 @@
   "snapshot_rank": 8
  },
  "luck": {
-  "expected_wins": 57.1,
-  "luck": -5.1,
+  "expected_wins": 57.92,
+  "luck": -4.92,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
-  "wins": 52
+  "wins": 53
  },
  "owner_id": "79761560662589440",
  "record": {
@@ -1098,26 +1098,26 @@
    "wins": 9
   },
   "regular_season": {
-   "avg_points_against": 105.59,
-   "avg_points_for": 106.78,
-   "games": 106,
+   "avg_points_against": 105.36,
+   "avg_points_for": 106.84,
+   "games": 107,
    "losses": 54,
-   "points_against": 11192.18,
-   "points_for": 11318.18,
+   "points_against": 11273.82,
+   "points_for": 11431.9,
    "ties": 0,
-   "win_pct": 0.4906,
-   "wins": 52
+   "win_pct": 0.4953,
+   "wins": 53
   },
   "total": {
-   "avg_points_against": 105.26,
-   "avg_points_for": 107.3,
-   "games": 122,
+   "avg_points_against": 105.07,
+   "avg_points_for": 107.35,
+   "games": 123,
    "losses": 61,
-   "points_against": 12842.2,
-   "points_for": 13090.46,
+   "points_against": 12923.84,
+   "points_for": 13204.18,
    "ties": 0,
-   "win_pct": 0.5,
-   "wins": 61
+   "win_pct": 0.5041,
+   "wins": 62
   }
  },
  "scoring": {
@@ -2081,7 +2081,7 @@
   "2026": {
    "complete": false,
    "division": "The Graveyard",
-   "efficiency": 0.9214,
+   "efficiency": 0.9276,
    "faab": {
     "adds": 31,
     "budget": 100,
@@ -2101,28 +2101,28 @@
    },
    "faab_efficiency": {
     "best_par_claim": {
-     "bid": 5,
-     "par_per_dollar": 3.1,
-     "player": "Jacksonville Jaguars",
-     "points_above_replacement": 15.5,
-     "points_per_dollar": 7.0,
-     "points_started": 35.0,
-     "pos": "DEF",
+     "bid": 12,
+     "par_per_dollar": 1.31,
+     "player": "Jared Goff",
+     "points_above_replacement": 15.67,
+     "points_per_dollar": 5.65,
+     "points_started": 67.78,
+     "pos": "QB",
      "season": "2026",
-     "week": 7,
+     "week": 2,
      "weeks_started": 3
     },
     "best_value": {
      "bid": 5,
-     "par_per_dollar": 3.1,
+     "par_per_dollar": 2.8,
      "player": "Jacksonville Jaguars",
-     "points_above_replacement": 15.5,
-     "points_per_dollar": 7.0,
-     "points_started": 35.0,
+     "points_above_replacement": 14.0,
+     "points_per_dollar": 8.0,
+     "points_started": 40.0,
      "pos": "DEF",
      "season": "2026",
      "week": 7,
-     "weeks_started": 3
+     "weeks_started": 4
     },
     "biggest_bust": {
      "bid": 7,
@@ -2136,16 +2136,16 @@
      "week": 4,
      "weeks_started": 0
     },
-    "claims_benched_only": 2,
+    "claims_benched_only": 1,
     "claims_dropped_before_playing": 1,
     "dollars_spent": 54,
     "free_claims": 1,
-    "hit_rate": 0.7,
+    "hit_rate": 0.8,
     "most_points": {
      "bid": 12,
-     "par_per_dollar": 1.19,
+     "par_per_dollar": 1.31,
      "player": "Jared Goff",
-     "points_above_replacement": 14.32,
+     "points_above_replacement": 15.67,
      "points_per_dollar": 5.65,
      "points_started": 67.78,
      "pos": "QB",
@@ -2154,11 +2154,11 @@
      "weeks_started": 3
     },
     "paid_claims": 10,
-    "par_per_dollar": 0.53,
-    "points_above_replacement": 28.38,
+    "par_per_dollar": 0.58,
+    "points_above_replacement": 31.08,
     "points_from_free_claims": 0.0,
-    "points_from_paid_claims": 163.48,
-    "points_per_dollar": 3.03,
+    "points_from_paid_claims": 196.7,
+    "points_per_dollar": 3.64,
     "worst_par_claim": {
      "bid": 9,
      "par_per_dollar": -0.9,
@@ -2174,12 +2174,12 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "63-47",
-    "expected_wins": 5.73,
-    "luck": -1.73,
-    "wins": 4
+    "all_play_record": "72-49",
+    "expected_wins": 6.55,
+    "luck": -1.55,
+    "wins": 5
    },
-   "made_playoffs": false,
+   "made_playoffs": true,
    "playoff_result": null,
    "postseason": {
     "avg_points_against": null,
@@ -2193,21 +2193,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 108.77,
-    "avg_points_for": 110.15,
-    "games": 10,
+    "avg_points_against": 106.3,
+    "avg_points_for": 110.47,
+    "games": 11,
     "losses": 6,
-    "points_against": 1087.68,
-    "points_for": 1101.5,
+    "points_against": 1169.32,
+    "points_for": 1215.22,
     "ties": 0,
-    "win_pct": 0.4,
-    "wins": 4
+    "win_pct": 0.4545,
+    "wins": 5
    },
-   "regular_season_rank": 10,
+   "regular_season_rank": 6,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 1087.68,
-    "points_for": 1101.5
+    "points_against": 1169.32,
+    "points_for": 1215.22
    },
    "team_name": "G H O S T\u2122"
   }

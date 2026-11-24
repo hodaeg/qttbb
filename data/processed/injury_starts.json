@@ -33,7 +33,7 @@
   "471360899853053952": {
    "doubtful": 0,
    "out": 2,
-   "questionable_dnp": 1
+   "questionable_dnp": 2
   },
   "471368473092550656": {
    "doubtful": 2,
@@ -280,6 +280,19 @@
    "source": "nfl_report_dnp",
    "status": "Questionable",
    "week": 4
+  },
+  {
+   "injury": "Ankle, Quadricep",
+   "multiplier": 1.5,
+   "owner_id": "471360899853053952",
+   "player": "Brock Bowers",
+   "player_id": "11604",
+   "pos": "TE",
+   "roster_id": 9,
+   "season": "2026",
+   "source": "nfl_report_dnp",
+   "status": "Questionable",
+   "week": 11
   }
  ],
  "rule": "Official NFL injury report: Out/Doubtful, or Questionable who did not play, AND 0 points as a starter (plus game-day snapshot flags)"

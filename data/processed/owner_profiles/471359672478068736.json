@@ -17,7 +17,7 @@
    "wins": 5
   },
   "record": {
-   "losses": 112,
+   "losses": 113,
    "ties": 1,
    "wins": 94
   },
@@ -28,7 +28,7 @@
    -15,
    -15
   ],
-  "win_pct": 0.4565
+  "win_pct": 0.4543
  },
  "asterisk_legend": {
   "*": "2019 and later only (Sleeper-era data). There is no ESPN-era data for these."
@@ -52,10 +52,10 @@
  "efficiency": {
   "efficiency": 0.8917,
   "note": "A skill stat. Deliberately NOT part of Tegridy Factor.",
-  "optimal_points": 14076.96,
-  "points": 12552.46,
-  "points_left_on_bench": 1524.5,
-  "weeks": 125
+  "optimal_points": 14198.66,
+  "points": 12661.46,
+  "points_left_on_bench": 1537.2,
+  "weeks": 126
  },
  "faab_and_transactions": {
   "adds": 332,
@@ -658,7 +658,7 @@
   "dollars_spent": 334,
   "free_claims": 39,
   "hit_rate": 0.622,
-  "league_points_per_dollar": 2.4,
+  "league_points_per_dollar": 2.42,
   "most_points": {
    "bid": 26,
    "par_per_dollar": 0.56,
@@ -707,10 +707,10 @@
     "wins": 5
    },
    "422102738889867264": {
-    "games": 9,
-    "losses": 4,
-    "points_against": 962.4,
-    "points_for": 960.32,
+    "games": 10,
+    "losses": 5,
+    "points_against": 1085.3,
+    "points_for": 1069.32,
     "protected_rivalry": null,
     "ties": 0,
     "wins": 5
@@ -840,7 +840,7 @@
      "wins": 0
     },
     "record": {
-     "losses": 5,
+     "losses": 6,
      "ties": 0,
      "wins": 5
     },
@@ -1009,7 +1009,7 @@
      "after_published_snapshot": true,
      "bria_bowl_appearance": false,
      "championship": false,
-     "counted_record": "5-5",
+     "counted_record": "5-6",
      "division_title": false,
      "last_in_league_in_scoring": false,
      "led_league_in_scoring": false,
@@ -1024,8 +1024,8 @@
   "snapshot_rank": 11
  },
  "luck": {
-  "expected_wins": 47.62,
-  "luck": 2.38,
+  "expected_wins": 48.35,
+  "luck": 1.65,
   "note": "Regular season. luck = actual wins minus wins expected from your scores vs. everyone each week.",
   "wins": 50
  },
@@ -1045,25 +1045,25 @@
    "wins": 6
   },
   "regular_season": {
-   "avg_points_against": 103.04,
-   "avg_points_for": 100.05,
-   "games": 106,
-   "losses": 56,
-   "points_against": 10922.42,
-   "points_for": 10605.26,
+   "avg_points_against": 103.23,
+   "avg_points_for": 100.13,
+   "games": 107,
+   "losses": 57,
+   "points_against": 11045.32,
+   "points_for": 10714.26,
    "ties": 0,
-   "win_pct": 0.4717,
+   "win_pct": 0.4673,
    "wins": 50
   },
   "total": {
-   "avg_points_against": 103.55,
-   "avg_points_for": 100.29,
-   "games": 125,
-   "losses": 69,
-   "points_against": 12943.38,
-   "points_for": 12535.86,
+   "avg_points_against": 103.7,
+   "avg_points_for": 100.36,
+   "games": 126,
+   "losses": 70,
+   "points_against": 13066.28,
+   "points_for": 12644.86,
    "ties": 0,
-   "win_pct": 0.448,
+   "win_pct": 0.4444,
    "wins": 56
   }
  },
@@ -2066,12 +2066,12 @@
    },
    "final_place": null,
    "luck": {
-    "all_play_record": "54-56",
-    "expected_wins": 4.91,
-    "luck": 0.09,
+    "all_play_record": "62-59",
+    "expected_wins": 5.64,
+    "luck": -0.64,
     "wins": 5
    },
-   "made_playoffs": true,
+   "made_playoffs": false,
    "playoff_result": null,
    "postseason": {
     "avg_points_against": null,
@@ -2085,21 +2085,21 @@
     "wins": 0
    },
    "regular_season": {
-    "avg_points_against": 110.66,
-    "avg_points_for": 101.75,
-    "games": 10,
-    "losses": 5,
-    "points_against": 1106.64,
-    "points_for": 1017.46,
+    "avg_points_against": 111.78,
+    "avg_points_for": 102.41,
+    "games": 11,
+    "losses": 6,
+    "points_against": 1229.54,
+    "points_for": 1126.46,
     "ties": 0,
-    "win_pct": 0.5,
+    "win_pct": 0.4545,
     "wins": 5
    },
-   "regular_season_rank": 5,
+   "regular_season_rank": 8,
    "season": "2026",
    "sleeper_standings_reported": {
-    "points_against": 1106.64,
-    "points_for": 1017.46
+    "points_against": 1229.54,
+    "points_for": 1126.46
    },
    "team_name": "Lil Kings"
   }
