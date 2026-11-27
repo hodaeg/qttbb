@@ -304,6 +304,14 @@
   "team": "Bills"
  },
  {
+  "game": "Questionable",
+  "injury": "Thumb",
+  "name": "Tyler Badie",
+  "pos": "RB",
+  "practice": "Full Participation in Practice",
+  "team": "Broncos"
+ },
+ {
   "game": "Out",
   "injury": "Hamstring",
   "name": "Sai'vion Jones",
@@ -313,10 +321,50 @@
  },
  {
   "game": "Out",
+  "injury": "Foot",
+  "name": "Caleb Lohner",
+  "pos": "TE",
+  "practice": "Full Participation in Practice",
+  "team": "Broncos"
+ },
+ {
+  "game": "Out",
   "injury": "Quadricep",
   "name": "Taylor Rapp",
   "pos": "S",
-  "practice": "Limited Participation in Practice",
+  "practice": "Did Not Participate In Practice",
   "team": "Broncos"
+ },
+ {
+  "game": "Out",
+  "injury": "Knee",
+  "name": "Gennings Dunker",
+  "pos": "G",
+  "practice": "Full Participation in Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Out",
+  "injury": "Ankle",
+  "name": "Alex Highsmith",
+  "pos": "LB",
+  "practice": "Did Not Participate In Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Questionable",
+  "injury": "Heel",
+  "name": "Cole Holcomb",
+  "pos": "LB",
+  "practice": "Limited Participation in Practice",
+  "team": "Steelers"
+ },
+ {
+  "game": "Out",
+  "injury": "Calf",
+  "name": "Ben Skowronek",
+  "pos": "WR",
+  "practice": "Did Not Participate In Practice",
+  "team": "Steelers"
  }
 ]
